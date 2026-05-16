@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /scripts/
+Disallow: /data/
+
+Sitemap: https://techspecshub.com/sitemap.xml
+Host: https://techspecshub.com
+
+# Crawl-delay for aggressive bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

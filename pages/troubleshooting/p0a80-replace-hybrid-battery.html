@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P0A80 Repair Guide - Hybrid Battery Replacement | TechSpecsHub</title>
+  <meta name="description" content="Step-by-step guide for Toyota Prius P0A80 hybrid battery fault repair. Tools, safety procedures, and cost breakdown for DIY replacement.">
+  <link rel="canonical" href="https://techspecshub.com/troubleshooting/p0a80-replace-hybrid-battery.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 850: '#0f172a', 800: '#1e293b', 700: '#334155' },
+            electric: { 300: '#67e8f9', 400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2' }
+          },
+          fontFamily: { display: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0a0f1e 0%, #1a1f35 50%, #0f172a 100%); min-height: 100vh; }
+    .gradient-text { background: linear-gradient(90deg, #22d3ee, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .glass-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(10px); }
+    .glass-card-hover:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
+    .hover-lift { transition: transform 0.2s ease; }
+    .hover-lift:hover { transform: translateY(-2px); }
+    .step-number { width: 32px; height: 32px; min-width: 32px; }
+    .warning-box { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); }
+    .info-box { background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.3); }
+    .success-box { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #22d3ee, #818cf8); transition: width 0.2s; }
+    .nav-link:hover::after { width: 100%; }
+  </style>
+</head>
+<body class="text-gray-200 antialiased">
+  <!-- Header -->
+  <header class="border-b border-white/10 sticky top-0 z-50 bg-navy-850/80 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:1rem;height:1rem;color:#0a1628"></i></div>
+          <span class="font-bold text-lg text-white">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <nav class="hidden md:flex items-center gap-1">
+          <a href="../specs/outdoor-power.html" class="nav-link px-3 py-2 text-sm text-gray-300 hover:text-white transition-colors">Outdoor Power</a>
+          <a href="../specs/hybrid-cars.html" class="nav-link px-3 py-2 text-sm text-gray-300 hover:text-white transition-colors">Hybrid & EV</a>
+          <a href="../specs/drones.html" class="nav-link px-3 py-2 text-sm text-gray-300 hover:text-white transition-colors">Drones</a>
+          <a href="../error-code-db.html" class="nav-link px-3 py-2 text-sm text-electric-400 font-medium">Error Codes</a>
+          <a href="../master-specs.html" class="nav-link px-3 py-2 text-sm text-gray-300 hover:text-white transition-colors">Specs</a>
+        </nav>
+        <button class="md:hidden p-2 text-gray-400" id="mobile-menu-btn"><i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i></button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden border-t border-white/10 bg-navy-850" id="mobile-menu">
+      <nav class="px-4 py-3 space-y-1">
+        <a href="/" class="block px-3 py-2 rounded-lg text-gray-300 hover:bg-white/5">Home</a>
+        <a href="../specs/outdoor-power.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:bg-white/5">Outdoor Power</a>
+        <a href="../specs/hybrid-cars.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:bg-white/5">Hybrid & EV</a>
+        <a href="../specs/drones.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:bg-white/5">Drones</a>
+        <a href="../error-code-db.html" class="block px-3 py-2 rounded-lg bg-white/5 text-electric-400">Error Codes</a>
+        <a href="../master-specs.html" class="block px-3 py-2 rounded-lg text-gray-300 hover:bg-white/5">Specs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb mb-6"><a href="/">Home</a><span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span><a href="../error-code-db.html">Error Codes</a><span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span><span class="breadcrumb-current">P0A80 Repair Guide</span></nav>
+
+    <!-- Hero -->
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center"><i data-lucide="alert-triangle" style="width:1.75rem;height:1.75rem;color:#f87171"></i></div>
+        <div>
+          <h1 class="font-display font-bold text-3xl text-white">P0A80 Repair Guide</h1>
+          <p class="text-gray-400">Hybrid Battery Module Replacement for Toyota Prius</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm font-medium">Difficulty: Advanced</span>
+        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm font-medium">Time: 4-6 hours</span>
+        <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">Savings: $2,000-$4,000</span>
+      </div>
+    </div>
+
+    <!-- Quick Summary -->
+    <section class="glass-card rounded-2xl p-6 mb-8">
+      <h2 class="font-display font-bold text-xl mb-4 flex items-center gap-2"><i data-lucide="file-text" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i> What is P0A80?</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">P0A80 is a generic hybrid battery fault code indicating that one or more battery modules in your Toyota hybrid system have failed. The code specifically means "Drive Motor Generator Position Sensor Performance" but in practice, it's usually triggered by voltage imbalance between modules.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-navy-800/50 rounded-lg p-4 text-center">
+          <p class="text-2xl font-bold text-red-400">$1,500-$6,000</p>
+          <p class="text-xs text-gray-500 mt-1">Dealer Repair Cost</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-4 text-center">
+          <p class="text-2xl font-bold text-green-400">$400-$1,200</p>
+          <p class="text-xs text-gray-500 mt-1">DIY Repair Cost</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-4 text-center">
+          <p class="text-2xl font-bold text-yellow-400">85%</p>
+          <p class="text-xs text-gray-500 mt-1">Success Rate DIY</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WARNING -->
+    <div class="warning-box rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-3">
+        <i data-lucide="alert-octagon" style="width:1.5rem;height:1.5rem;color:#f87171;flex-shrink:0;margin-top:2px"></i>
+        <div>
+          <h3 class="font-semibold text-red-400 mb-2">⚠️ High Voltage Safety Warning</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">This repair involves working with <strong>274V+ hybrid battery systems</strong>. Failure to follow safety procedures can result in fatal electrical shock. If you're not comfortable with high voltage work, <strong>do not attempt this repair</strong> — go to a qualified hybrid technician.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Required Tools -->
+    <section class="mb-8">
+      <h2 class="font-display font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="wrench" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i> Required Tools</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="glass-card rounded-xl p-5">
+          <h3 class="font-semibold text-gray-200 mb-3 flex items-center gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#22c55e"></i> Essential Tools</h3>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22c55e"></i> 10mm socket wrench set</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22c55e"></i> 12mm socket wrench set</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22c55e"></i> Extension bars (3" and 6")</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22c55e"></i> Ratchet with 10cm handle</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22c55e"></i> Insulated screwdrivers (Flathead + Phillips)</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22c55e"></i> Digital multimeter (CAT III rated)</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22c55e"></i> Hybrid battery lift table or jack</li>
+          </ul>
+        </div>
+        <div class="glass-card rounded-xl p-5">
+          <h3 class="font-semibold text-gray-200 mb-3 flex items-center gap-2"><i data-lucide="shield-check" style="width:1rem;height:1rem;color:#22d3ee"></i> Safety Equipment</h3>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22d3ee"></i> <strong>Class 0 insulated gloves</strong> (rated for 1000V+)</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22d3ee"></i> Safety glasses or face shield</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22d3ee"></i> Voltage tester (non-contact)</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22d3ee"></i> Electrical tape (rated)</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22d3ee"></i> Fire extinguisher (Class ABC)</li>
+            <li class="flex items-center gap-2"><i data-lucide="circle" style="width:0.5rem;height:0.5rem;color:#22d3ee"></i> Well-ventilated workspace</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step by Step -->
+    <section class="mb-8">
+      <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-2"><i data-lucide="list-ordered" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i> Step-by-Step Procedure</h2>
+
+      <!-- Step 1 -->
+      <div class="glass-card rounded-xl p-6 mb-4">
+        <div class="flex items-start gap-4">
+          <div class="step-number bg-electric-500 rounded-full flex items-center justify-center text-navy-950 font-bold text-sm">1</div>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-200 mb-3">Discharge the Hybrid Battery</h3>
+            <p class="text-gray-400 text-sm mb-3">Before touching the battery, you must discharge it to safe levels.</p>
+            <div class="info-box rounded-lg p-4">
+              <p class="text-sm text-gray-300"><strong class="text-electric-400">Procedure:</strong></p>
+              <ol class="mt-2 space-y-1 text-sm text-gray-400 list-decimal list-inside">
+                <li>Start the vehicle and let it idle for 30 minutes</li>
+                <li>Turn on headlights, wipers, and AC at medium</li>
+                <li>Use the READY light to monitor battery discharge</li>
+                <li>When battery drops below 20%, proceed to next step</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="glass-card rounded-xl p-6 mb-4">
+        <div class="flex items-start gap-4">
+          <div class="step-number bg-electric-500 rounded-full flex items-center justify-center text-navy-950 font-bold text-sm">2</div>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-200 mb-3">Disconnect 12V Battery</h3>
+            <p class="text-gray-400 text-sm mb-3">Always disconnect the 12V battery first to disable the high-voltage interlock.</p>
+            <div class="bg-navy-800/50 rounded-lg p-3">
+              <p class="text-sm text-gray-400"><strong class="text-yellow-400">Location:</strong> Trunk area, under cargo floor panel</p>
+              <p class="text-sm text-gray-400 mt-1"><strong class="text-yellow-400">Order:</strong> Negative terminal FIRST, then positive terminal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="glass-card rounded-xl p-6 mb-4">
+        <div class="flex items-start gap-4">
+          <div class="step-number bg-electric-500 rounded-full flex items-center justify-center text-navy-950 font-bold text-sm">3</div>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-200 mb-3">Remove HV Service Plug</h3>
+            <p class="text-gray-400 text-sm mb-3">The orange service plug is your main disconnect for the HV circuit.</p>
+            <div class="warning-box rounded-lg p-4">
+              <p class="text-sm text-gray-300"><strong class="text-red-400">⚠️ Wait 5-10 minutes</strong> after removing the service plug before touching any orange cables. This allows capacitors to discharge.</p>
+            </div>
+            <p class="text-sm text-gray-400 mt-3"><strong class="text-gray-300">Location:</strong> Rear cargo area, marked orange plug in battery assembly</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="glass-card rounded-xl p-6 mb-4">
+        <div class="flex items-start gap-4">
+          <div class="step-number bg-electric-500 rounded-full flex items-center justify-center text-navy-950 font-bold text-sm">4</div>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-200 mb-3">Remove Battery Cover & Check Voltages</h3>
+            <p class="text-gray-400 text-sm mb-3">Remove the metal cover and test individual module voltages to identify the failed module.</p>
+            <div class="success-box rounded-lg p-4">
+              <p class="text-sm text-gray-300"><strong class="text-green-400">Normal voltage:</strong> Each module should read 7.2V - 8.4V when fully charged</p>
+              <p class="text-sm text-gray-300 mt-1"><strong class="text-red-400">Failed module:</strong> Will read below 6V or show rapid voltage drop under load</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="glass-card rounded-xl p-6 mb-4">
+        <div class="flex items-start gap-4">
+          <div class="step-number bg-electric-500 rounded-full flex items-center justify-center text-navy-950 font-bold text-sm">5</div>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-200 mb-3">Replace Failed Module(s)</h3>
+            <p class="text-gray-400 text-sm mb-3">Prius Gen 3-4 batteries have 28 modules. Usually only 1-3 fail. Replace only the failed modules.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+              <div class="bg-navy-800/50 rounded-lg p-3">
+                <p class="text-xs text-gray-500 mb-1">New Module Cost</p>
+                <p class="text-lg font-bold text-electric-400">$80-$150 each</p>
+              </div>
+              <div class="bg-navy-800/50 rounded-lg p-3">
+                <p class="text-xs text-gray-500 mb-1">Refurbished Cost</p>
+                <p class="text-lg font-bold text-yellow-400">$40-$80 each</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="glass-card rounded-xl p-6 mb-4">
+        <div class="flex items-start gap-4">
+          <div class="step-number bg-electric-500 rounded-full flex items-center justify-center text-navy-950 font-bold text-sm">6</div>
+          <div class="flex-1">
+            <h3 class="font-semibold text-gray-200 mb-3">Reassemble & Clear Codes</h3>
+            <p class="text-gray-400 text-sm mb-3">Reassemble in reverse order, reconnect 12V, and clear diagnostic codes.</p>
+            <div class="bg-navy-800/50 rounded-lg p-3">
+              <p class="text-sm text-gray-400"><strong class="text-gray-300">Clear codes:</strong> Use OBD2 scanner or disconnect 12V for 30 seconds</p>
+              <p class="text-sm text-gray-400 mt-1"><strong class="text-gray-300">Test drive:</strong> Minimum 20 miles to relearn battery calibration</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost Comparison -->
+    <section class="glass-card rounded-2xl p-6 mb-8">
+      <h2 class="font-display font-bold text-xl mb-4 flex items-center gap-2"><i data-lucide="calculator" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i> Cost Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="text-left py-3 px-4 text-gray-400 font-medium">Option</th>
+              <th class="text-right py-3 px-4 text-gray-400 font-medium">Parts</th>
+              <th class="text-right py-3 px-4 text-gray-400 font-medium">Labor</th>
+              <th class="text-right py-3 px-4 text-gray-400 font-medium">Total</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5">
+            <tr>
+              <td class="py-3 px-4 font-medium">Dealer Replacement</td>
+              <td class="py-3 px-4 text-right text-red-400">$4,000-$5,500</td>
+              <td class="py-3 px-4 text-right text-red-400">$500-$800</td>
+              <td class="py-3 px-4 text-right font-bold text-red-400">$4,500-$6,300</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-medium">Independent Shop</td>
+              <td class="py-3 px-4 text-right text-yellow-400">$800-$1,500</td>
+              <td class="py-3 px-4 text-right text-yellow-400">$300-$500</td>
+              <td class="py-3 px-4 text-right font-bold text-yellow-400">$1,100-$2,000</td>
+            </tr>
+            <tr class="bg-green-500/10">
+              <td class="py-3 px-4 font-medium text-green-400">DIY Module Swap</td>
+              <td class="py-3 px-4 text-right text-green-400">$80-$400</td>
+              <td class="py-3 px-4 text-right text-green-400">$0</td>
+              <td class="py-3 px-4 text-right font-bold text-green-400">$80-$400</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-medium">Full Battery Rebuild</td>
+              <td class="py-3 px-4 text-right text-blue-400">$800-$1,200</td>
+              <td class="py-3 px-4 text-right text-blue-400">$200-$400</td>
+              <td class="py-3 px-4 text-right font-bold text-blue-400">$1,000-$1,600</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Related Pages -->
+    <section class="mb-8">
+      <h2 class="font-display font-bold text-xl mb-4">Related Resources</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="../error-code-db.html" class="glass-card glass-card-hover rounded-xl p-5 hover-lift transition-all">
+          <div class="flex items-center gap-2 mb-2"><i data-lucide="database" style="width:1rem;height:1rem;color:#fbbf24"></i><span class="font-semibold text-sm">Error Code Database</span></div>
+          <p class="text-gray-500 text-xs">All Toyota HV fault codes explained</p>
+        </a>
+        <a href="../tools/best-multimeters-2026.html" class="glass-card glass-card-hover rounded-xl p-5 hover-lift transition-all">
+          <div class="flex items-center gap-2 mb-2"><i data-lucide="gauge" style="width:1rem;height:1rem;color:#22d3ee"></i><span class="font-semibold text-sm">Best Multimeters 2026</span></div>
+          <p class="text-gray-500 text-xs">CAT III meters for safe HV testing</p>
+        </a>
+        <a href="../specs/hybrid-cars.html" class="glass-card glass-card-hover rounded-xl p-5 hover-lift transition-all">
+          <div class="flex items-center gap-2 mb-2"><i data-lucide="car" style="width:1rem;height:1rem;color:#818cf8"></i><span class="font-semibold text-sm">Hybrid Car Specs</span></div>
+          <p class="text-gray-500 text-xs">Full specs for all hybrid vehicles</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 mt-16 py-8 px-4">
+    <div class="max-w-6xl mx-auto text-center text-sm text-gray-500">
+      <p>© 2026 TechSpecsHub · <a href="../about.html" class="hover:text-electric-400 transition-colors">About</a> · <a href="../privacy-policy.html" class="hover:text-electric-400 transition-colors">Privacy</a></p>
+      <p class="mt-2 text-xs text-gray-600">This guide is for informational purposes only. Always consult official service manuals and qualified technicians.</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

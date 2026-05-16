@@ -1,0 +1,5 @@
+# TechSpecsHub AdSense Configuration
+# Add this file after your AdSense application is approved
+# Replace with your actual publisher ID after approval
+
+# google.com, pub-XXXXXXXXXX, DIRECT, f08c47fec0942fa0
