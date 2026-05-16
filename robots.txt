@@ -3,8 +3,8 @@ Allow: /
 Disallow: /scripts/
 Disallow: /data/
 
-Sitemap: https://techspecshub.com/sitemap.xml
-Host: https://techspecshub.com
+Sitemap: https://zhang1-CPU.github.io/tech-specs-hub/sitemap.xml
+Host: https://zhang1-CPU.github.io/tech-specs-hub
 
 # Crawl-delay for aggressive bots
 User-agent: AhrefsBot

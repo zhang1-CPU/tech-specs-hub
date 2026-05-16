@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://techspecshub.com/</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/brand-index.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/brand-index.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/master-specs.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/master-specs.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/error-code-db.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/error-code-db.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/about.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/about.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/contact.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/contact.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/privacy-policy.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/privacy-policy.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -46,19 +46,19 @@
 
   <!-- Tools Pages -->
   <url>
-    <loc>https://techspecshub.com/tools/best-multimeters-2026.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/tools/best-multimeters-2026.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/tools/runtime-calculator.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/tools/runtime-calculator.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/tools/unit-converter.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/tools/unit-converter.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -66,7 +66,7 @@
 
   <!-- Troubleshooting Pages -->
   <url>
-    <loc>https://techspecshub.com/troubleshooting/p0a80-replace-hybrid-battery.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/troubleshooting/p0a80-replace-hybrid-battery.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -74,43 +74,43 @@
 
   <!-- Outdoor Power Station Specs -->
   <url>
-    <loc>https://techspecshub.com/specs/outdoor-power.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/outdoor-power.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/outdoor-power.html#ecoflow</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/outdoor-power.html#ecoflow</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/outdoor-power.html#jackery</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/outdoor-power.html#jackery</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/outdoor-power.html#bluetti</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/outdoor-power.html#bluetti</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/outdoor-power.html#anker</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/outdoor-power.html#anker</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/outdoor-power.html#victron</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/outdoor-power.html#victron</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/ecoflow-delta-pro-3.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/ecoflow-delta-pro-3.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -118,25 +118,25 @@
 
   <!-- Hybrid & EV Battery Specs -->
   <url>
-    <loc>https://techspecshub.com/specs/hybrid-cars.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/hybrid-cars.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/hybrid-cars.html#toyota</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/hybrid-cars.html#toyota</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/hybrid-cars.html#tesla</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/hybrid-cars.html#tesla</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/toyota-prius-2022-battery.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/toyota-prius-2022-battery.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -144,25 +144,25 @@
 
   <!-- Drone Specs -->
   <url>
-    <loc>https://techspecshub.com/specs/drones.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/drones.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/drones.html#dji</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/drones.html#dji</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/drones.html#autel</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/drones.html#autel</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/drones.html#skydio</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/drones.html#skydio</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -170,31 +170,31 @@
 
   <!-- Smart Home Specs -->
   <url>
-    <loc>https://techspecshub.com/specs/smart-home.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/smart-home.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/smart-home.html#roborock</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/smart-home.html#roborock</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/smart-home.html#dreame</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/smart-home.html#dreame</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/smart-home.html#dyson</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/smart-home.html#dyson</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/smart-home.html#husqvarna</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/smart-home.html#husqvarna</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -202,25 +202,25 @@
 
   <!-- E-Bike & Micromobility Specs -->
   <url>
-    <loc>https://techspecshub.com/specs/ebike-micromobility.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/ebike-micromobility.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/ebike-micromobility.html#bosch</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/ebike-micromobility.html#bosch</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/ebike-micromobility.html#bafang</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/ebike-micromobility.html#bafang</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/ebike-micromobility.html#segway</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/ebike-micromobility.html#segway</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -228,25 +228,25 @@
 
   <!-- 3D Printer Specs -->
   <url>
-    <loc>https://techspecshub.com/specs/3d-printers.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/3d-printers.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/3d-printers.html#bambulab</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/3d-printers.html#bambulab</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/3d-printers.html#prusa</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/3d-printers.html#prusa</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/3d-printers.html#creality</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/3d-printers.html#creality</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -254,13 +254,13 @@
 
   <!-- Navigation & Marine Specs -->
   <url>
-    <loc>https://techspecshub.com/specs/navigation.html</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/navigation.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://techspecshub.com/specs/navigation.html#garmin</loc>
+    <loc>https://zhang1-CPU.github.io/tech-specs-hub/pages/specs/navigation.html#garmin</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
