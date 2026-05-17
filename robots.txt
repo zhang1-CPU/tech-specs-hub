@@ -1,14 +1,11 @@
+# TechSpecsHub robots.txt
 User-agent: *
 Allow: /
-Disallow: /scripts/
-Disallow: /data/
+Allow: /pages/
+Allow: /assets/
+Disallow: /deploy.bat
+Disallow: /search?
+Disallow: /*.md$
 
-Sitemap: https://zhang1-CPU.github.io/tech-specs-hub/sitemap.xml
-Host: https://zhang1-CPU.github.io/tech-specs-hub
-
-# Crawl-delay for aggressive bots
-User-agent: AhrefsBot
-Crawl-delay: 10
-
-User-agent: SemrushBot
-Crawl-delay: 10
+Sitemap: https://zhang1-CPU.github.io/techhub/sitemap.xml
+Host: https://zhang1-CPU.github.io/techhub
