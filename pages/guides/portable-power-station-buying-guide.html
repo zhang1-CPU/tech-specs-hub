@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portable Power Station Buying Guide 2026 — How to Choose the Right Capacity, Output, and Solar | TechSpecsHub</title>
+  <meta name="description" content="Complete buying guide for portable power stations. Calculate your watt-hour needs, compare LFP vs NMC batteries, understand AC output ratings, and find the right unit for camping, home backup, or off-grid use.">
+  <link rel="canonical" href="https://powerspecshub.com/pages/guides/portable-power-station-buying-guide.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#0a1628',900:'#0f1d32',800:'#162544',700:'#1e3259'},electric:{300:'#67e8f9',400:'#00d4ff',500:'#00b8e6',600:'#0099cc'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body class="bg-navy-950 text-white min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i></div>
+          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
+          <a href="../specs/outdoor-power.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">Outdoor Power</a>
+          <a href="../specs/drones.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">Drones</a>
+          <a href="../error-code-db.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">Error Codes</a>
+        </nav>
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/10"><i data-lucide="menu" style="width:1.1rem;height:1.1rem"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Article Header -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="badge badge-lfp">Buying Guide</span>
+        <span class="badge badge-ok">Updated June 2026</span>
+        <span class="text-sm text-gray-500">12 min read</span>
+      </div>
+      <h1 class="font-display font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Portable Power Station Buying Guide: <span class="gradient-text">How to Pick the Right One in 2026</span>
+      </h1>
+      <p class="text-gray-400 text-lg leading-relaxed">
+        Watt-hours, inverter ratings, MPPT solar charging, LiFePO4 vs lithium-ion — the jargon is everywhere. This guide breaks down every spec that actually matters, with real numbers from verified manufacturer data.
+      </p>
+    </div>
+
+    <!-- Table of Contents -->
+    <section class="glass-card rounded-2xl p-6 mb-12">
+      <h2 class="font-semibold mb-4 flex items-center gap-2">
+        <i data-lucide="list" style="width:1rem;height:1rem;color:#00d4ff"></i>
+        Table of Contents
+      </h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#step1" class="text-gray-300 hover:text-electric-400">Step 1: Calculate Your Watt-Hour Needs</a></li>
+        <li><a href="#step2" class="text-gray-300 hover:text-electric-400">Step 2: Make Sure AC Output Is Enough</a></li>
+        <li><a href="#step3" class="text-gray-300 hover:text-electric-400">Step 3: LFP vs NMC — Why Battery Chemistry Matters</a></li>
+        <li><a href="#step4" class="text-gray-300 hover:text-electric-400">Step 4: Solar Charging (MPPT, Voltage, Current)</a></li>
+        <li><a href="#step5" class="text-gray-300 hover:text-electric-400">Step 5: Ports, Weight, and Practical Features</a></li>
+        <li><a href="#by-use-case" class="text-gray-300 hover:text-electric-400">Recommendations by Use Case</a></li>
+        <li><a href="#pitfalls" class="text-gray-300 hover:text-electric-400">Common Spec Pitfalls to Avoid</a></li>
+      </ul>
+    </section>
+
+    <!-- Step 1 -->
+    <section id="step1" class="mb-12">
+      <h2 class="font-display font-bold text-3xl mb-4">Step 1: Calculate Your Watt-Hour Needs</h2>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+        Capacity is the single most important number. It tells you how much total energy the battery holds. Think of it like a gas tank — a 2,000 Wh power station can theoretically run a 2,000 W device for 1 hour, or a 200 W device for 10 hours. In practice, inverter efficiency drops this to about 85-90%.
+      </p>
+
+      <div class="glass-card rounded-2xl p-6 mb-6">
+        <h3 class="font-semibold mb-4">Common Device Power Draw (Real-World)</h3>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Device</th>
+                <th>Running Watts</th>
+                <th>Startup/Surge Watts</th>
+                <th>Wh per Hour</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mini fridge (12V)</td>
+                <td class="font-mono">45-60 W</td>
+                <td class="font-mono">150 W</td>
+                <td class="font-mono">~500 Wh/24h</td>
+              </tr>
+              <tr>
+                <td>Full-size refrigerator</td>
+                <td class="font-mono">150-300 W</td>
+                <td class="font-mono text-yellow-400">1,200 W</td>
+                <td class="font-mono">~2 kWh/24h</td>
+              </tr>
+              <tr>
+                <td>CPAP machine</td>
+                <td class="font-mono">30-90 W</td>
+                <td class="font-mono">N/A</td>
+                <td class="font-mono">~600 Wh/night</td>
+              </tr>
+              <tr>
+                <td>Laptop (charging)</td>
+                <td class="font-mono">45-85 W</td>
+                <td class="font-mono">N/A</td>
+                <td class="font-mono">~80 Wh/h</td>
+              </tr>
+              <tr>
+                <td>Electric kettle</td>
+                <td class="font-mono text-red-400">1,200-1,500 W</td>
+                <td class="font-mono">1,500 W</td>
+                <td class="font-mono">Use sparingly</td>
+              </tr>
+              <tr>
+                <td>Microwave (700W)</td>
+                <td class="font-mono text-yellow-400">700-1,100 W</td>
+                <td class="font-mono">1,500 W</td>
+                <td class="font-mono">~150 Wh/use</td>
+              </tr>
+              <tr>
+                <td>LED TV (40-55 in)</td>
+                <td class="font-mono">80-150 W</td>
+                <td class="font-mono">N/A</td>
+                <td class="font-mono">~100 Wh/h</td>
+              </tr>
+              <tr>
+                <td>Space heater</td>
+                <td class="font-mono text-red-400">1,500 W</td>
+                <td class="font-mono">1,500 W</td>
+                <td class="font-mono">Drain batteries fast</td>
+              </tr>
+              <tr>
+                <td>Well pump (1/2 HP)</td>
+                <td class="font-mono text-yellow-400">500-700 W</td>
+                <td class="font-mono text-red-400">2,000 W</td>
+                <td class="font-mono">High startup demand</td>
+              </tr>
+              <tr>
+                <td>LED lights (10 bulbs)</td>
+                <td class="font-mono">100 W</td>
+                <td class="font-mono">N/A</td>
+                <td class="font-mono">~100 Wh/h</td>
+              </tr>
+              <tr>
+                <td>WiFi router + modem</td>
+                <td class="font-mono">15-30 W</td>
+                <td class="font-mono">N/A</td>
+                <td class="font-mono">~400 Wh/24h</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-navy-800/70 border border-electric-400/30 rounded-xl p-6 mb-6">
+        <h3 class="font-semibold mb-3 text-electric-400">The 30% Safety Margin Rule</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Never size a power station to exactly match your calculated need. Always add 30% headroom. Why? Because: (1) inverter efficiency is 85-90%, not 100%; (2) battery capacity degrades over cycles; (3) real-world conditions are colder, which reduces lithium output; (4) startup surges briefly double the draw.
+        </p>
+        <p class="text-sm text-gray-400 mt-3 font-mono">Needed: 1,500 Wh → Buy: 1,500 × 1.3 = 1,950 Wh (round to 2,000+ Wh unit)</p>
+      </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section id="step2" class="mb-12">
+      <h2 class="font-display font-bold text-3xl mb-4">Step 2: Make Sure AC Output Is Enough</h2>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+        Two numbers matter here: <strong>continuous output</strong> (what the inverter can sustain) and <strong>peak/surge output</strong> (what it can handle for 2-5 seconds during motor startup). Surge is critical for refrigerators, well pumps, and power tools.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="glass-card rounded-xl p-5">
+          <h3 class="font-semibold mb-3 text-green-400 text-sm">Small: 500-1,000 W</h3>
+          <p class="text-xs text-gray-500 mb-3">Phones, laptops, LED lights, CPAP, mini fridge</p>
+          <p class="text-sm text-gray-400">Example: EcoFlow River 2 (600 W), Jackery 500 (500 W)</p>
+        </div>
+        <div class="glass-card rounded-xl p-5">
+          <h3 class="font-semibold mb-3 text-yellow-400 text-sm">Medium: 1,500-2,500 W</h3>
+          <p class="text-xs text-gray-500 mb-3">Full-size fridge, microwave, TV, coffee maker</p>
+          <p class="text-sm text-gray-400">Example: Jackery 1500, EcoFlow Delta 2, Bluetti EB240</p>
+        </div>
+        <div class="glass-card rounded-xl p-5">
+          <h3 class="font-semibold mb-3 text-red-400 text-sm">Large: 3,000-5,000 W</h3>
+          <p class="text-xs text-gray-500 mb-3">Well pumps, window AC, space heaters, multiple devices</p>
+          <p class="text-sm text-gray-400">Example: EcoFlow Delta Pro 3, Bluetti AC500</p>
+        </div>
+      </div>
+
+      <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-6">
+        <h3 class="font-semibold mb-3 text-yellow-400 flex items-center gap-2">
+          <i data-lucide="alert-triangle" style="width:1rem;height:1rem"></i>
+          Beware the "Boost Mode" Fine Print
+        </h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Some manufacturers (notably EcoFlow with "X-Boost") advertise that their units can "run" devices above the rated continuous output. This works by dropping voltage, which can damage or cause overheating in sensitive electronics like medical devices, power tool chargers, and modern refrigerators with variable-speed compressors. Always match the <strong>rated</strong> continuous output to your load, not the marketing "boost" number.
+        </p>
+      </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section id="step3" class="mb-12">
+      <h2 class="font-display font-bold text-3xl mb-4">Step 3: LFP vs NMC — Battery Chemistry Deep Dive</h2>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+        This is the most important technical choice for long-term value. Both are lithium-based, but they behave very differently over time.
+      </p>
+
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th class="text-green-400">LiFePO4 (LFP)</th>
+                <th class="text-yellow-400">Li-ion (NMC/NCA)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-gray-400">Cycles to 80% capacity</td>
+                <td class="font-mono text-green-400">3,000-6,000 cycles</td>
+                <td class="font-mono text-yellow-400">500-1,000 cycles</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Expected lifespan</td>
+                <td class="font-mono text-green-400">8-12 years</td>
+                <td class="font-mono text-yellow-400">3-5 years</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Thermal runaway risk</td>
+                <td class="font-mono text-green-400">Very low</td>
+                <td class="font-mono text-yellow-400">Higher</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Energy density (Wh/kg)</td>
+                <td class="font-mono">90-110</td>
+                <td class="font-mono text-green-400">150-200</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Weight for 2 kWh</td>
+                <td class="font-mono">~22 kg (48 lbs)</td>
+                <td class="font-mono text-green-400">~15 kg (33 lbs)</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Charge acceptance</td>
+                <td class="font-mono text-green-400">Excellent</td>
+                <td class="font-mono text-green-400">Good</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Cold weather (-10°C)</td>
+                <td class="font-mono">~60% capacity</td>
+                <td class="font-mono text-green-400">~70% capacity</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Contains cobalt/nickel</td>
+                <td class="font-mono text-green-400">No</td>
+                <td class="font-mono text-yellow-400">Yes</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Best for</td>
+                <td class="text-sm text-gray-300">Daily cycling, off-grid, long-term investment</td>
+                <td class="text-sm text-gray-300">Occasional use, portability, weight-sensitive</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-green-500/10 border border-green-500/30 rounded-xl p-6">
+        <h3 class="font-semibold mb-3 text-green-400 flex items-center gap-2">
+          <i data-lucide="check-circle-2" style="width:1rem;height:1rem"></i>
+          Recommendation
+        </h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Unless portability/weight is your absolute #1 priority, choose LFP. The 6× longer cycle life means that over a 10-year ownership, an LFP unit actually costs less per usable Wh than an NMC unit, even if the sticker price is 20-30% higher today.
+        </p>
+      </div>
+    </section>
+
+    <!-- Step 4 -->
+    <section id="step4" class="mb-12">
+      <h2 class="font-display font-bold text-3xl mb-4">Step 4: Solar Charging — What MPPT, Voltage, and Current Actually Mean</h2>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+        Solar is what makes a "portable power station" into an energy system. Here's what to look for:
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="font-semibold mb-2 text-electric-400">MPPT vs PWM — Always Choose MPPT</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            MPPT (Maximum Power Point Tracking) is a smart charge controller that squeezes 30-40% more charging power out of solar panels compared to the older PWM (Pulse Width Modulation) method. Every modern power station worth considering includes built-in MPPT — if it doesn't, skip it.
+          </p>
+        </div>
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="font-semibold mb-2 text-electric-400">Solar Input Voltage Window</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Check the MPPT voltage range. A unit accepting 12-150V gives you flexibility to wire panels in series for higher voltage and lower current (thinner cables, less loss). Narrow ranges like 12-30V force parallel wiring which creates cable-thickness problems at high wattages.
+          </p>
+        </div>
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="font-semibold mb-2 text-electric-400">Combined AC + Solar Charge Speed</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            The best units can charge from AC wall outlet and solar panels simultaneously. EcoFlow advertises a "dual input" — wall AC + solar at the same time — which dramatically cuts charge time in mixed-source scenarios. This is a game-changer for grid-tied backup situations.
+          </p>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-xl p-6">
+        <h3 class="font-semibold mb-4">Real-World Solar Charge Times (1 kWh unit)</h3>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Panel Rating</th>
+                <th>Peak Sun Hours</th>
+                <th>0→80% Charge Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-mono">200 W</td>
+                <td class="font-mono">5 hours/day</td>
+                <td class="font-mono text-yellow-400">8-10 hours</td>
+              </tr>
+              <tr>
+                <td class="font-mono">400 W</td>
+                <td class="font-mono">5 hours/day</td>
+                <td class="font-mono">4-5 hours</td>
+              </tr>
+              <tr>
+                <td class="font-mono">800 W</td>
+                <td class="font-mono">5 hours/day</td>
+                <td class="font-mono text-green-400">2-3 hours</td>
+              </tr>
+              <tr>
+                <td class="font-mono">1,200 W</td>
+                <td class="font-mono">5 hours/day</td>
+                <td class="font-mono text-green-400">1.5-2 hours</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-500 mt-4">Note: Real solar output is ~70-80% of panel rating due to real-world sun angle, temperature, and cabling losses.</p>
+      </div>
+    </section>
+
+    <!-- Step 5 -->
+    <section id="step5" class="mb-12">
+      <h2 class="font-display font-bold text-3xl mb-4">Step 5: Ports, Weight, and Practical Features</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="font-semibold mb-3">Must-Have Ports</h3>
+          <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
+            <li><strong>AC outlets:</strong> At least 4 for versatility</li>
+            <li><strong>USB-C PD (100W):</strong> Fast laptop/tablet charging without adapters</li>
+            <li><strong>USB-A QC 3.0:</strong> Standard phone charging</li>
+            <li><strong>12V DC/Car port:</strong> Fridges, car electronics</li>
+            <li><strong>Anderson/Solar input:</strong> For solar panel connection</li>
+          </ul>
+        </div>
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="font-semibold mb-3">Nice-to-Have Features</h3>
+          <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
+            <li><strong>WiFi/Bluetooth app:</strong> Remote monitoring, firmware updates</li>
+            <li><strong>Expandable batteries:</strong> Add capacity later without buying new inverter</li>
+            <li><strong>UPS/EPS mode:</strong> Switch-over within 20ms for desktop computers</li>
+            <li><strong>Display with SOC%:</strong> Battery State of Charge percentage (not just bars)</li>
+            <li><strong>Low-temp charging cutoff:</strong> Protects LFP cells below 0°C/32°F</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-6">
+        <h3 class="font-semibold mb-3 text-blue-400 flex items-center gap-2">
+          <i data-lucide="scale" style="width:1rem;height:1rem"></i>
+          The Weight Tradeoff
+        </h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Larger LFP units weigh 50+ lbs. For camping where you'll transport the unit weekly, cap at 500-1,500 Wh. For stationary home backup that moves once per season, 2,000+ Wh is fine. Consider wheeled cases for anything above 30 lbs that might need occasional transport.
+        </p>
+      </div>
+    </section>
+
+    <!-- By Use Case -->
+    <section id="by-use-case" class="mb-12">
+      <h2 class="font-display font-bold text-3xl mb-4">Recommendations by Use Case</h2>
+
+      <div class="space-y-4">
+        <div class="glass-card rounded-xl p-6 border-l-4 border-electric-400">
+          <h3 class="font-semibold mb-2">Home Backup for Power Outages</h3>
+          <p class="text-sm text-gray-400 mb-3">
+            <strong>Minimum:</strong> 2,000 Wh capacity, 2,000 W continuous AC output, LFP battery.
+            <br><strong>Recommended:</strong> 4,000+ Wh with 3,000+ W output. Aim for a unit with UPS/EPS mode.
+          </p>
+          <p class="text-sm text-gray-500">Top picks: <a href="../specs/ecoflow-delta-pro-3.html" class="text-electric-400 hover:underline">EcoFlow Delta Pro 3</a>, Bluetti AC500 + B300S</p>
+        </div>
+        <div class="glass-card rounded-xl p-6 border-l-4 border-yellow-400">
+          <h3 class="font-semibold mb-2">Weekend Camping / RV</h3>
+          <p class="text-sm text-gray-400 mb-3">
+            <strong>Minimum:</strong> 500 Wh, 500 W output. 12V DC output essential for portable fridge.
+            <br><strong>Recommended:</strong> 500-1,500 Wh with 500-1,500 W output. Prioritize weight.
+          </p>
+          <p class="text-sm text-gray-500">Top picks: Jackery Explorer 1000, EcoFlow River 2 Max</p>
+        </div>
+        <div class="glass-card rounded-xl p-6 border-l-4 border-purple-400">
+          <h3 class="font-semibold mb-2">Off-Grid Cabin / Daily Use</h3>
+          <p class="text-sm text-gray-400 mb-3">
+            <strong>Minimum:</strong> 3,000 Wh LFP, 1,200 W solar input minimum. Expandable architecture required.
+            <br><strong>Recommended:</strong> 6,000-12,000 Wh with 3,000+ W output. Multiple MPPT inputs.
+          </p>
+          <p class="text-sm text-gray-500">Top picks: <a href="../specs/bluetti-ac200max.html" class="text-electric-400 hover:underline">Bluetti AC200Max</a> + expansion packs, EcoFlow Delta Pro Ultra</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pitfalls -->
+    <section id="pitfalls" class="mb-12">
+      <h2 class="font-display font-bold text-3xl mb-4">Common Spec Pitfalls to Avoid</h2>
+      <div class="glass-card rounded-2xl p-6">
+        <ol class="space-y-4 text-sm text-gray-300 list-decimal list-inside">
+          <li>
+            <strong class="text-red-400">Peak wattage ≠ continuous wattage.</strong>
+            A "3,000W peak" unit might only sustain 1,500W continuously. Always use the continuous rating.
+          </li>
+          <li>
+            <strong class="text-red-400">"110V outlet" doesn't mean the unit produces 110V.</strong>
+            Some cheap inverters output modified sine wave, which damages power tool chargers, medical devices, and audio equipment. Look for "pure sine wave" — it's non-negotiable for anything above 300W.
+          </li>
+          <li>
+            <strong class="text-red-400">No-name brands on Amazon.</strong>
+            Many list inflated wattage ratings and don't disclose cycle life. A "5,000W" $400 unit is using recycled laptop cells with 200-300 real cycles and poor thermal management.
+          </li>
+          <li>
+            <strong class="text-red-400">Ignoring the warranty.</strong>
+            LFP cells have a 10-year lifespan, so warranty should reflect that. 2-year warranty on a 10-year-life product is a red flag.
+          </li>
+          <li>
+            <strong class="text-red-400">Buying the solar panel bundle at face value.</strong>
+            Manufacturer "solar generator" kits bundle panels that are often undersized relative to the battery. Check the actual MPPT input capacity — you can usually add more panels later.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Data Sources -->
+    <section class="mb-12">
+      <div class="glass-card rounded-2xl p-6">
+        <h3 class="font-semibold text-sm text-gray-400 mb-4 flex items-center gap-2">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#00d4ff"></i>
+          Data Sources &amp; Methodology
+        </h3>
+        <div class="text-xs text-gray-500 space-y-3">
+          <p>
+            <strong class="text-gray-400">Manufacturer data:</strong>
+            Specifications cross-checked against <a href="https://www.ecoflow.com" target="_blank" class="text-electric-400 hover:underline">EcoFlow</a>, <a href="https://www.bluettipower.com" target="_blank" class="text-electric-400 hover:underline">Bluetti</a>, and <a href="https://www.jackery.com" target="_blank" class="text-electric-400 hover:underline">Jackery</a> official product pages.
+          </p>
+          <p>
+            <strong class="text-gray-400">Cycle life data:</strong>
+            Based on manufacturer published cycle counts at 80% capacity retention. Real-world cycle life varies with depth-of-discharge, temperature, and charge rate.
+          </p>
+          <p>
+            <strong class="text-gray-400">Device power draw:</strong>
+            Typical values from Energy Star ratings and manufacturer product data sheets. Individual devices vary — always check your specific device's label.
+          </p>
+          <p class="pt-3 border-t border-white/10">
+            See also: <a href="../specs/outdoor-power.html" class="text-electric-400 hover:underline">Complete Outdoor Power Station Specs</a>, <a href="ecoflow-vs-bluetti-vs-jackery.html" class="text-electric-400 hover:underline">Brand Comparison</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section class="mb-12">
+      <h2 class="font-display font-bold text-2xl mb-6">More Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="ecoflow-vs-bluetti-vs-jackery.html" class="glass-card rounded-xl p-6 hover:bg-navy-700/50 transition-all">
+          <h3 class="font-semibold mb-2">EcoFlow vs Bluetti vs Jackery</h3>
+          <p class="text-sm text-gray-500">Head-to-head comparison of the top three brands.</p>
+        </a>
+        <a href="../tools/runtime-calculator.html" class="glass-card rounded-xl p-6 hover:bg-navy-700/50 transition-all">
+          <h3 class="font-semibold mb-2">Runtime Calculator</h3>
+          <p class="text-sm text-gray-500">Calculate real-world runtime for your specific devices.</p>
+        </a>
+        <a href="../specs/outdoor-power.html" class="glass-card rounded-xl p-6 hover:bg-navy-700/50 transition-all">
+          <h3 class="font-semibold mb-2">Full Spec Database</h3>
+          <p class="text-sm text-gray-500">Complete technical data for 20+ power station models.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-navy-900 border-t border-white/10 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <a href="/" class="flex items-center gap-2">
+          <div class="w-6 h-6 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:0.75rem;height:0.75rem;color:#0a1628"></i></div>
+          <span class="font-bold">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <p class="text-xs text-gray-500">© 2026 TechSpecsHub. Educational content — always verify specs with the manufacturer.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

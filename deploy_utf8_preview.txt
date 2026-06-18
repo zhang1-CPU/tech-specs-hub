@@ -1,0 +1,82 @@
+@echo off
+echo ============================================
+echo TechSpecsHub 涓�閿�閮ㄧ讲鑴氭�?echo ============================================
+echo.
+
+REM 妫�鏌ユ槸鍚﹀凡缁忓垵濮嬪寲 Git
+if exist ".git" (
+    echo [INFO] Git 浠撳簱宸插瓨鍦�锛岃烦杩囧垵濮嬪�?) else (
+    echo [INFO] 鍒濆�嬪�?Git 浠撳簱...
+    git init
+    if errorlevel 1 goto error
+)
+
+echo [INFO] 娣诲姞鎵�鏈夋枃浠?..
+git add .
+if errorlevel 1 goto error
+
+echo [INFO] 鍒涘缓鎻愪氦...
+git commit -m "Initial commit - full tech specs database"
+if errorlevel 1 goto error
+
+REM 妫�鏌ユ槸鍚﹀凡娣诲姞杩滅▼浠撳簱
+git remote -v | findstr /C:"origin" >nul
+if %errorlevel% == 0 (
+    echo [INFO] 杩滅▼浠撳簱宸插瓨鍦?) else (
+    echo [INFO] 娣诲姞杩滅▼浠撳簱...
+    git remote add origin https://github.com/zhang1-CPU/techhub.git
+    if errorlevel 1 goto error
+)
+
+echo [INFO] 璁剧疆涓诲垎鏀?..
+git branch -M main
+if errorlevel 1 goto error
+
+echo.
+echo ============================================
+echo 鍑嗗�囨帹閫佹枃浠跺埌 GitHub锛?echo ============================================
+echo.
+echo 璇风‘淇濅綘宸茬粡鍦?GitHub 涓婂垱寤轰簡浠撳簱锛?echo   浠撳簱鍚? techhub
+echo   鍦板潃: https://github.com/zhang1-CPU/techhub
+echo.
+echo 鎸変换鎰忛敭缁х画鎺ㄩ�?..
+pause >nul
+
+echo [INFO] 姝ｅ湪鎺ㄩ�佸埌 GitHub...
+git push -u origin main
+
+if errorlevel 1 (
+    echo.
+    echo ============================================
+    echo 鎺ㄩ�佸け璐ワ紒
+    echo ============================================
+    echo 鍙�鑳界殑鍘熷洜锛�
+    echo 1. 浣犺繕娌℃湁鍦?GitHub 涓婂垱寤?techhub 浠撳簱
+    echo 2. 闇�瑕佸厛鐧诲綍 GitHub
+    echo 3. 鍒嗘敮鍐茬獊
+    echo.
+    echo 璇峰厛鍦?GitHub 涓婂垱寤轰粨搴撳悗鍐嶈繍琛屾�よ剼鏈�锛?    echo.
+    goto end
+) else (
+    echo.
+    echo ============================================
+    echo 鉁?閮ㄧ讲鎴愬姛锛?    echo ============================================
+    echo.
+    echo 浣犵殑缃戠珯灏嗗緢蹇�涓婄嚎锛�
+    echo   https://zhang1-CPU.github.io/techhub/
+    echo.
+    echo 涓嬩竴姝ワ細鍚�鐢� GitHub Pages
+    echo   1. 璁块棶 https://github.com/zhang1-CPU/techhub/settings/pages
+    echo   2. Branch 閫夋嫨 main锛岀偣鍑?Save
+    echo.
+)
+
+goto end
+
+:error
+echo.
+echo ============================================
+echo 鉂?鎵ц�屽け璐�
+echo ============================================
+:end
+pause

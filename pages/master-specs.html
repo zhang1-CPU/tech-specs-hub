@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Specs Comparison | TechSpecsHub | Cross-Brand Spec Tables</title>
+  <meta name="description" content="Side-by-side spec comparisons for portable power stations, hybrid/EV batteries, drones, and smart home devices. All major brands in one table.">
+  <link rel="canonical" href="https://powerspecshub.com/pages/master-specs.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#0a1628',900:'#0f1d32',800:'#162544',700:'#1e3259'},electric:{300:'#67e8f9',400:'#00d4ff',500:'#00b8e6',600:'#0099cc'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Master Specs Comparison","description":"Cross-brand spec comparison tables for consumer electronics and power devices","url":"https://powerspecshub.com/pages/master-specs.html","publisher":{"@type":"Organization","name":"TechSpecsHub","url":"https://powerspecshub.com"}}</script>
+</head>
+<body class="bg-navy-950 text-white min-h-screen">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/80 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i></div>
+          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50">Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Outdoor Power Stations</a>
+              <a href="specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Hybrid &amp; EV Batteries</a>
+              <a href="specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Drones &amp; UAV</a>
+              <a href="specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Smart Home Devices</a>
+            </div>
+          </div>
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 bg-white/50 text-white rounded-lg">Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="/pages/error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i> Error Code Database</a>
+              <a href="/pages/master-specs.html" class="text-electric-400"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Master Specs Comparison</a>
+              <a href="/pages/brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Brand Index A–Z</a>
+            </div>
+          </div>
+          <a href="/pages/about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">About</a>
+          <a href="/pages/contact.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/50 hover:bg-white/100 border border-white/100 rounded-lg transition-all text-sm text-gray-600 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search specs?/span>
+            <kbd class="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/80 rounded text-xs text-gray-500 font-mono">⌘K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-white rounded-lg hover:bg-white/50"><i data-lucide="menu" style="width:1.1rem;height:1.1rem"></i></button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-t border-white/80 ">
+      <div class="max-w-7xl mx-auto px-4 py-4 space-y-1 text-sm">
+        <a href="/" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6"></i> Home</a>
+        <a href="specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6"></i> Outdoor Power</a>
+        <a href="specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6"></i> Hybrid &amp; EV</a>
+        <a href="specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="plane" style="width:1rem;height:1rem;color:#00b8e6"></i> Drones</a>
+        <a href="/pages/error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i> Error Codes</a>
+        <a href="/pages/master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/50 text-electric-400"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#00b8e6"></i> Master Specs</a>
+        <a href="/pages/about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="info" style="width:1rem;height:1rem;color:#00b8e6"></i> About</a>
+        <a href="/pages/contact.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="mail" style="width:1rem;height:1rem;color:#00b8e6"></i> Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal" class="hidden"><div id="search-backdrop"></div><div class="modal-inner"><div class="modal-box"><div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/100"><i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#4b5563;flex-shrink:0"></i><input id="search-input-field" type="text" placeholder="Search models, error codes, specs" autocomplete="off"><button id="search-close-btn" class="p-1 text-gray-500 hover:text-white rounded"><i data-lucide="x" style="width:1rem;height:1rem"></i></button></div><div id="search-results-list" class="p-2"></div></div></div></div>
+
+  <div class="bg-navy-900/50 border-b border-white/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span>
+        <span class="breadcrumb-current">Master Specs Comparison</span>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="bg-gradient-to-b from-navy-900 to-navy-950 border-b border-white/60 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-electric-500/150 border border-electric-500/250 rounded-full text-electric-400 text-xs font-medium">
+              <i data-lucide="table-2" style="width:0.75rem;height:0.75rem"></i> Comparison Tables
+            </span>
+          </div>
+          <h1 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+            Master Specs <span class="gradient-text">Comparison</span>
+          </h1>
+          <p class="text-gray-600 text-lg leading-relaxed">
+            All major models from all major brands side-by-side. Filter by category, sort by any column, and see exactly how devices compare on the specs that matter.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY TABS -->
+    <section class="bg-navy-900/60 border-b border-white/60 py-3 sticky top-16 z-30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex gap-2 overflow-x-auto" data-tabs="master-cat">
+          <button data-tab="power" class="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-electric-500 text-navy-950 transition-all">
+            <i data-lucide="battery-charging" style="width:0.875rem;height:0.875rem"></i> Power Stations
+          </button>
+          <button data-tab="hybrid" class="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-white/80 text-gray-300 hover:bg-white/150 transition-all">
+            <i data-lucide="car" style="width:0.875rem;height:0.875rem"></i> Hybrid &amp; EV
+          </button>
+          <button data-tab="drone" class="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-white/80 text-gray-300 hover:bg-white/150 transition-all">
+            <i data-lucide="plane" style="width:0.875rem;height:0.875rem"></i> Drones
+          </button>
+          <button data-tab="smarthome" class="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-white/80 text-gray-300 hover:bg-white/150 transition-all">
+            <i data-lucide="home" style="width:0.875rem;height:0.875rem"></i> Smart Home
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+      <!-- POWER STATIONS -->
+      <div data-panel="master-cat" data-panel-id="power" class="space-y-10">
+        <div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+            <div>
+              <h2 class="font-display font-bold text-2xl mb-1">Portable Power Stations</h2>
+              <p class="text-gray-500 text-sm">15 models · EcoFlow, Jackery, Bluetti, Anker SOLIX · Sorted by capacity</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="relative">
+                <i data-lucide="search" style="width:0.875rem;height:0.875rem;color:#4b5563;position:absolute;left:0.75rem;top:50%;transform:translateY(-50%)"></i>
+                <input data-filter-input="power-table" type="text" placeholder="Filter models......" class="pl-8 pr-4 py-2 bg-navy-800 border border-white/100 hover:border-white/2000 focus:border-electric-400 rounded-lg text-sm text-white placeholder-gray-600 focus:outline-none transition-colors w-48">
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-xl overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="specs-table" id="power-table">
+                <thead>
+                  <tr>
+                    <th style="min-width:160px">Model</th>
+                    <th>Brand</th>
+                    <th>Capacity (Wh)</th>
+                    <th>AC Output (W)</th>
+                    <th>AC Charge (W)</th>
+                    <th>Solar In (W)</th>
+                    <th>Chemistry</th>
+                    <th>Cycles</th>
+                    <th>Weight (kg)</th>
+                    <th>Warranty</th>
+                    <th>Price/Wh</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-medium"><a href="specs/outdoor-power.html#ecoflow" class="text-electric-400 hover:underline">Delta Pro 3 <span class="badge badge-info ml-1" style="font-size:0.5rem">New</span></a></td>
+                    <td class="text-gray-600">EcoFlow</td>
+                    <td class="font-mono">4,096</td>
+                    <td class="font-mono">4,000 <span class="text-xs text-gray-500">(X-Boost 6,000)</span></td>
+                    <td class="font-mono">4,000</td>
+                    <td class="font-mono">2,600</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">4,000</td>
+                    <td class="font-mono">~52</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$36</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium"><a href="specs/outdoor-power.html#ecoflow" class="text-electric-400 hover:underline">Delta Pro</a></td>
+                    <td class="text-gray-600">EcoFlow</td>
+                    <td class="font-mono">3,600</td>
+                    <td class="font-mono">3,600 <span class="text-xs text-gray-500">(X-Boost 4,500)</span></td>
+                    <td class="font-mono">1,800</td>
+                    <td class="font-mono">1,600</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">6,500+</td>
+                    <td class="font-mono">~45</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$39</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium"><a href="specs/outdoor-power.html#ecoflow" class="text-electric-400 hover:underline">Delta 2 Max</a></td>
+                    <td class="text-gray-600">EcoFlow</td>
+                    <td class="font-mono">2,048</td>
+                    <td class="font-mono">2,400 <span class="text-xs text-gray-500">(X-Boost 3,000)</span></td>
+                    <td class="font-mono">2,400</td>
+                    <td class="font-mono">1,000</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">3,000</td>
+                    <td class="font-mono">~23</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$39</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium"><a href="specs/outdoor-power.html#ecoflow" class="text-electric-400 hover:underline">Delta 2</a></td>
+                    <td class="text-gray-600">EcoFlow</td>
+                    <td class="font-mono">1,024</td>
+                    <td class="font-mono">1,800 <span class="text-xs text-gray-500">(X-Boost 2,400)</span></td>
+                    <td class="font-mono">1,200</td>
+                    <td class="font-mono">500</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">3,000</td>
+                    <td class="font-mono">~12</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$38</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium text-yellow-300">Delta Max <span class="text-xs text-yellow-500 font-normal">(NMC)</span></td>
+                    <td class="text-gray-600">EcoFlow</td>
+                    <td class="font-mono">2,016</td>
+                    <td class="font-mono">2,400 <span class="text-xs text-gray-500">(X-Boost 3,000)</span></td>
+                    <td class="font-mono">2,000</td>
+                    <td class="font-mono">800</td>
+                    <td><span class="badge badge-nmc">NMC</span></td>
+                    <td class="font-mono text-yellow-400">~800</td>
+                    <td class="font-mono">~22</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">Discontinued</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium"><a href="specs/outdoor-power.html#ecoflow" class="text-electric-400 hover:underline">River 2 Pro</a></td>
+                    <td class="text-gray-600">EcoFlow</td>
+                    <td class="font-mono">768</td>
+                    <td class="font-mono">800 <span class="text-xs text-gray-500">(X-Boost 1,600)</span></td>
+                    <td class="font-mono">1,000</td>
+                    <td class="font-mono">220</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">3,000</td>
+                    <td class="font-mono">~7.8</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$35</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Explorer 3000 Pro</td>
+                    <td class="text-gray-600">Jackery</td>
+                    <td class="font-mono">3,024</td>
+                    <td class="font-mono">3,000</td>
+                    <td class="font-mono">1,800</td>
+                    <td class="font-mono">600</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">4,000</td>
+                    <td class="font-mono">28.0</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$33</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Explorer 2000 Plus</td>
+                    <td class="text-gray-600">Jackery</td>
+                    <td class="font-mono">2,042</td>
+                    <td class="font-mono">2,000</td>
+                    <td class="font-mono">1,400</td>
+                    <td class="font-mono">400 <span class="text-xs text-gray-500">(2,000 w/ expansion)</span></td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">4,000</td>
+                    <td class="font-mono">19.5</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$37</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Explorer 1000 v2</td>
+                    <td class="text-gray-600">Jackery</td>
+                    <td class="font-mono">1,070</td>
+                    <td class="font-mono">1,500</td>
+                    <td class="font-mono">1,000</td>
+                    <td class="font-mono">400</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">4,000</td>
+                    <td class="font-mono">10.6</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$36</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">AC200L</td>
+                    <td class="text-gray-600">Bluetti</td>
+                    <td class="font-mono">2,048</td>
+                    <td class="font-mono">2,400 <span class="text-xs text-gray-500">(turbo 3,000)</span></td>
+                    <td class="font-mono">2,400</td>
+                    <td class="font-mono">1,200</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">3,500</td>
+                    <td class="font-mono">28.1</td>
+                    <td class="text-gray-600">4 yr</td>
+                    <td class="font-mono text-sm">~$0-$32</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">AC180</td>
+                    <td class="text-gray-600">Bluetti</td>
+                    <td class="font-mono">1,152</td>
+                    <td class="font-mono">1,800 <span class="text-xs text-gray-500">(turbo 2,700)</span></td>
+                    <td class="font-mono">1,440</td>
+                    <td class="font-mono">500</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">3,500</td>
+                    <td class="font-mono">16.0</td>
+                    <td class="text-gray-600">4 yr</td>
+                    <td class="font-mono text-sm">~$0-$33</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">EP500 Pro</td>
+                    <td class="text-gray-600">Bluetti</td>
+                    <td class="font-mono">5,100</td>
+                    <td class="font-mono">3,000</td>
+                    <td class="font-mono">3,000</td>
+                    <td class="font-mono">2,400</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">3,500</td>
+                    <td class="font-mono">82.0</td>
+                    <td class="text-gray-600">4 yr</td>
+                    <td class="font-mono text-sm">~$0-$39</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">SOLIX F3800</td>
+                    <td class="text-gray-600">Anker</td>
+                    <td class="font-mono">3,840</td>
+                    <td class="font-mono">6,000</td>
+                    <td class="font-mono">3,000</td>
+                    <td class="font-mono">2,400</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">3,000</td>
+                    <td class="font-mono">55.0</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$32</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">SOLIX F2000</td>
+                    <td class="text-gray-600">Anker</td>
+                    <td class="font-mono">2,048</td>
+                    <td class="font-mono">2,400</td>
+                    <td class="font-mono">2,400</td>
+                    <td class="font-mono">1,000</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">3,000</td>
+                    <td class="font-mono">27.0</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$37</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">SOLIX C1000</td>
+                    <td class="text-gray-600">Anker</td>
+                    <td class="font-mono">1,056</td>
+                    <td class="font-mono">1,800</td>
+                    <td class="font-mono">1,100</td>
+                    <td class="font-mono">600</td>
+                    <td><span class="badge badge-lfp">LFP</span></td>
+                    <td class="font-mono text-green-400">3,000</td>
+                    <td class="font-mono">13.0</td>
+                    <td class="text-gray-600">5 yr</td>
+                    <td class="font-mono text-sm">~$0-$33</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs mt-2 px-1">Prices shown as USD cost per Wh at retail MSRP (as of May 2026). X-Boost figures represent Power Lifting mode on supported EcoFlow models. <a href="specs/outdoor-power.html" class="text-electric-400 hover:underline">Full outdoor power specs ></a>?/a></p>
+        </div>
+
+        <!-- CHEMISTRY COMPARISON INSET -->
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="font-display font-semibold text-lg mb-4 flex items-center gap-2">
+            <i data-lucide="zap" style="width:1rem;height:1rem;color:#00d4ff"></i> Battery Chemistry Quick Reference
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-green-500/8 border border-green-500/20 rounded-xl p-4">
+              <div class="flex items-center gap-2 mb-2"><span class="badge badge-lfp">LFP</span><span class="font-semibold text-sm">Lithium Iron Phosphate</span></div>
+              <ul class="space-y-1.5 text-sm text-gray-600">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.75rem;height:0.75rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i> 3,0005,000+ cycles to 80% capacity</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.75rem;height:0.75rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i> Thermally stable - no thermal runaway under normal conditions</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.75rem;height:0.75rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i> Lower energy density means heavier units for same capacity</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.75rem;height:0.75rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i> Recommended for stationary and frequent-use applications</li>
+              </ul>
+            </div>
+            <div class="bg-yellow-500/8 border border-yellow-500/20 rounded-xl p-4">
+              <div class="flex items-center gap-2 mb-2"><span class="badge badge-nmc">NMC</span><span class="font-semibold text-sm">Nickel Manganese Cobalt</span></div>
+              <ul class="space-y-1.5 text-sm text-gray-600">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.75rem;height:0.75rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i> Higher energy density - lighter for equivalent capacity</li>
+                <li class="flex items-start gap-2"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem;color:#facc15;flex-shrink:0;margin-top:3px"></i> ~800 cycles before significant degradation</li>
+                <li class="flex items-start gap-2"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem;color:#facc15;flex-shrink:0;margin-top:3px"></i> Higher risk of thermal runaway at high temperatures</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.75rem;height:0.75rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i> Suitable for portable/travel use where weight matters most</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HYBRID & EV -->
+      <div data-panel="master-cat" data-panel-id="hybrid" class="hidden space-y-8">
+        <div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+            <div>
+              <h2 class="font-display font-bold text-2xl mb-1">Hybrid &amp; EV Battery Systems</h2>
+              <p class="text-gray-500 text-sm">Toyota, Honda, Ford - HV battery pack specifications</p>
+            </div>
+          </div>
+          <div class="glass-card rounded-xl overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="specs-table">
+                <thead>
+                  <tr>
+                    <th style="min-width:160px">Vehicle</th>
+                    <th>Model Year</th>
+                    <th>Chemistry</th>
+                    <th>Pack Voltage (V)</th>
+                    <th>Pack Capacity (Ah)</th>
+                    <th>Pack Energy (kWh)</th>
+                    <th>Cell Config</th>
+                    <th>EV Range (mi)</th>
+                    <th>Cooling</th>
+                    <th>Warranty</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-medium"><a href="specs/hybrid-cars.html" class="text-electric-400 hover:underline">Toyota Prius (Gen 5)</a></td>
+                    <td class="text-gray-600 font-mono">2023-2025</td>
+                    <td><span class="badge badge-lfp text-xs" style="background:rgba(156,163,175,0.15);color:#9ca3af;border-color:rgba(156,163,175,0.3)">NiMH/Li-ion</span></td>
+                    <td class="font-mono">207.2</td>
+                    <td class="font-mono">6.5</td>
+                    <td class="font-mono">1.3</td>
+                    <td class="font-mono text-xs text-gray-600">28S × 1P</td>
+                    <td class="font-mono text-gray-600">HEV (no EV)</td>
+                    <td class="text-gray-600 text-sm">Air</td>
+                    <td class="text-gray-600">10yr / 150k mi</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium"><a href="specs/hybrid-cars.html" class="text-electric-400 hover:underline">Toyota Prius Prime (Gen 2)</a></td>
+                    <td class="text-gray-600 font-mono">2023-2025</td>
+                    <td><span class="badge badge-li">Li-ion</span></td>
+                    <td class="font-mono">302.8</td>
+                    <td class="font-mono">29.0</td>
+                    <td class="font-mono">8.8</td>
+                    <td class="font-mono text-xs text-gray-600">82S × 2P</td>
+                    <td class="font-mono">38</td>
+                    <td class="text-gray-600 text-sm">Liquid</td>
+                    <td class="text-gray-600">10yr / 150k mi</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Toyota RAV4 Prime</td>
+                    <td class="text-gray-600 font-mono">2021-2025</td>
+                    <td><span class="badge badge-li">Li-ion</span></td>
+                    <td class="font-mono">355.2</td>
+                    <td class="font-mono">52.0</td>
+                    <td class="font-mono">18.1</td>
+                    <td class="font-mono text-xs text-gray-600">96S × 2P</td>
+                    <td class="font-mono">42</td>
+                    <td class="text-gray-600 text-sm">Liquid</td>
+                    <td class="text-gray-600">10yr / 150k mi</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Toyota bZ4X</td>
+                    <td class="text-gray-600 font-mono">2023-2025</td>
+                    <td><span class="badge badge-li">Li-ion</span></td>
+                    <td class="font-mono">355.2</td>
+                    <td class="font-mono">196.0</td>
+                    <td class="font-mono">72.8</td>
+                    <td class="font-mono text-xs text-gray-600">96S × 2P</td>
+                    <td class="font-mono">252</td>
+                    <td class="text-gray-600 text-sm">Liquid</td>
+                    <td class="text-gray-600">10yr / 150k mi</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Toyota Camry Hybrid</td>
+                    <td class="text-gray-600 font-mono">2023-2025</td>
+                    <td><span class="badge badge-lfp text-xs" style="background:rgba(156,163,175,0.15);color:#9ca3af;border-color:rgba(156,163,175,0.3)">NiMH</span></td>
+                    <td class="font-mono">244.8</td>
+                    <td class="font-mono">6.5</td>
+                    <td class="font-mono">1.6</td>
+                    <td class="font-mono text-xs text-gray-600">34S × 1P</td>
+                    <td class="font-mono text-gray-600">HEV</td>
+                    <td class="text-gray-600 text-sm">Air</td>
+                    <td class="text-gray-600">10yr / 150k mi</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Honda CR-V Hybrid</td>
+                    <td class="text-gray-600 font-mono">2023-2025</td>
+                    <td><span class="badge badge-li">Li-ion</span></td>
+                    <td class="font-mono">259.2</td>
+                    <td class="font-mono">50.0</td>
+                    <td class="font-mono">1.3 <span class="text-xs text-gray-500">(HEV)</span></td>
+                    <td class="font-mono text-xs text-gray-600">72S</td>
+                    <td class="font-mono text-gray-600">HEV</td>
+                    <td class="text-gray-600 text-sm">Air</td>
+                    <td class="text-gray-600">8yr / 100k mi</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Ford Escape PHEV</td>
+                    <td class="text-gray-600 font-mono">2022-2025</td>
+                    <td><span class="badge badge-li">Li-ion</span></td>
+                    <td class="font-mono">150.0</td>
+                    <td class="font-mono">93.0</td>
+                    <td class="font-mono">14.4</td>
+                    <td class="font-mono text-xs text-gray-600">?/td>
+                    <td class="font-mono">37</td>
+                    <td class="text-gray-600 text-sm">Liquid</td>
+                    <td class="text-gray-600">8yr / 100k mi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs mt-2 px-1">Pack voltage = nominal. EV range = EPA rated. Warranty shown for US market; other regions may vary. <a href="specs/hybrid-cars.html" class="text-electric-400 hover:underline">Full hybrid &amp; EV specs ?/a></p>
+        </div>
+      </div>
+
+      <!-- DRONES -->
+      <div data-panel="master-cat" data-panel-id="drone" class="hidden space-y-8">
+        <div>
+          <div class="mb-5">
+            <h2 class="font-display font-bold text-2xl mb-1">Drones &amp; UAV</h2>
+            <p class="text-gray-500 text-sm">DJI and Autel ?battery, motor, and sensor specifications</p>
+          </div>
+          <div class="glass-card rounded-xl overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="specs-table">
+                <thead>
+                  <tr>
+                    <th style="min-width:160px">Model</th>
+                    <th>Brand</th>
+                    <th>Battery (Wh)</th>
+                    <th>Max Flight (min)</th>
+                    <th>Max Range (km)</th>
+                    <th>Max Speed (km/h)</th>
+                    <th>Motor (kV)</th>
+                    <th>Obstacle Avoid.</th>
+                    <th>Camera</th>
+                    <th>Weight (g)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-medium">Mavic 3 Pro</td>
+                    <td class="text-gray-600">DJI</td>
+                    <td class="font-mono">77.0</td>
+                    <td class="font-mono">43</td>
+                    <td class="font-mono">15</td>
+                    <td class="font-mono">75</td>
+                    <td class="font-mono text-gray-600">?/td>
+                    <td class="text-gray-600 text-sm">Omnidirectional</td>
+                    <td class="text-gray-600 text-sm">4/3" + 1/2" tele</td>
+                    <td class="font-mono">958</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Mavic 3 Classic</td>
+                    <td class="text-gray-600">DJI</td>
+                    <td class="font-mono">77.0</td>
+                    <td class="font-mono">46</td>
+                    <td class="font-mono">15</td>
+                    <td class="font-mono">75</td>
+                    <td class="font-mono text-gray-600">?/td>
+                    <td class="text-gray-600 text-sm">Omnidirectional</td>
+                    <td class="text-gray-600 text-sm">4/3" Hasselblad</td>
+                    <td class="font-mono">895</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Air 3</td>
+                    <td class="text-gray-600">DJI</td>
+                    <td class="font-mono">53.4</td>
+                    <td class="font-mono">46</td>
+                    <td class="font-mono">20</td>
+                    <td class="font-mono">75</td>
+                    <td class="font-mono text-gray-600">?/td>
+                    <td class="text-gray-600 text-sm">Omnidirectional</td>
+                    <td class="text-gray-600 text-sm">1/1.3" main + 1/2" tele</td>
+                    <td class="font-mono">720</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Mini 4 Pro</td>
+                    <td class="text-gray-600">DJI</td>
+                    <td class="font-mono">34.4</td>
+                    <td class="font-mono">34 <span class="text-xs text-gray-500">(Plus: 45)</span></td>
+                    <td class="font-mono">20</td>
+                    <td class="font-mono">57</td>
+                    <td class="font-mono text-gray-600">?/td>
+                    <td class="text-gray-600 text-sm">Omnidirectional</td>
+                    <td class="text-gray-600 text-sm">1/1.3"</td>
+                    <td class="font-mono">249</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Mini 3 Pro</td>
+                    <td class="text-gray-600">DJI</td>
+                    <td class="font-mono">33.5</td>
+                    <td class="font-mono">34 <span class="text-xs text-gray-500">(Plus: 47)</span></td>
+                    <td class="font-mono">12</td>
+                    <td class="font-mono">57</td>
+                    <td class="font-mono text-gray-600">?/td>
+                    <td class="text-gray-600 text-sm">Tri-directional</td>
+                    <td class="text-gray-600 text-sm">1/1.3"</td>
+                    <td class="font-mono">249</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">EVO II Pro</td>
+                    <td class="text-gray-600">Autel</td>
+                    <td class="font-mono">41.0</td>
+                    <td class="font-mono">40</td>
+                    <td class="font-mono">9</td>
+                    <td class="font-mono">72</td>
+                    <td class="font-mono text-gray-600">?/td>
+                    <td class="text-gray-600 text-sm">12-direction</td>
+                    <td class="text-gray-600 text-sm">1" Sony sensor</td>
+                    <td class="font-mono">1,150</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">EVO Nano+</td>
+                    <td class="text-gray-600">Autel</td>
+                    <td class="font-mono">17.6</td>
+                    <td class="font-mono">28</td>
+                    <td class="font-mono">9</td>
+                    <td class="font-mono">57</td>
+                    <td class="font-mono text-gray-600">?/td>
+                    <td class="text-gray-600 text-sm">Tri-directional</td>
+                    <td class="text-gray-600 text-sm">1/1.28"</td>
+                    <td class="font-mono">249</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs mt-2 px-1">Flight time = DJI/Autel rated in calm conditions at 25 °C with standard battery. Actual flight time varies ±20% depending on wind, payload, and maneuvers. <a href="specs/drones.html" class="text-electric-400 hover:underline">Full drone specs > ?/a></p>
+        </div>
+      </div>
+
+      <!-- SMART HOME -->
+      <div data-panel="master-cat" data-panel-id="smarthome" class="hidden space-y-8">
+        <div>
+          <div class="mb-5">
+            <h2 class="font-display font-bold text-2xl mb-1">Smart Home Devices</h2>
+            <p class="text-gray-500 text-sm">Robot vacuums, smart locks, and home automation hardware specs</p>
+          </div>
+          <div class="glass-card rounded-xl overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="specs-table">
+                <thead>
+                  <tr>
+                    <th style="min-width:160px">Model</th>
+                    <th>Brand</th>
+                    <th>Suction (Pa)</th>
+                    <th>Battery (Wh)</th>
+                    <th>Runtime (min)</th>
+                    <th>Navigation</th>
+                    <th>Mop</th>
+                    <th>Auto Empty</th>
+                    <th>Noise (dB)</th>
+                    <th>Weight (kg)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-medium">S8 Pro Ultra</td>
+                    <td class="text-gray-600">Roborock</td>
+                    <td class="font-mono">6,000</td>
+                    <td class="font-mono">76.5</td>
+                    <td class="font-mono">180</td>
+                    <td class="text-gray-600 text-sm">LiDAR + Vision</td>
+                    <td class="text-green-400 text-sm">?Sonic</td>
+                    <td class="text-green-400 text-sm">?Auto-wash</td>
+                    <td class="font-mono">71</td>
+                    <td class="font-mono">4.8</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">S7 MaxV Ultra</td>
+                    <td class="text-gray-600">Roborock</td>
+                    <td class="font-mono">5,100</td>
+                    <td class="font-mono">76.5</td>
+                    <td class="font-mono">180</td>
+                    <td class="text-gray-600 text-sm">LiDAR + RGB Camera</td>
+                    <td class="text-green-400 text-sm">?Sonic</td>
+                    <td class="text-green-400 text-sm">?Auto-wash</td>
+                    <td class="font-mono">67</td>
+                    <td class="font-mono">4.6</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Q7 Max</td>
+                    <td class="text-gray-600">Roborock</td>
+                    <td class="font-mono">4,200</td>
+                    <td class="font-mono">58.0</td>
+                    <td class="font-mono">180</td>
+                    <td class="text-gray-600 text-sm">LiDAR</td>
+                    <td class="text-green-400 text-sm">?Vibrate</td>
+                    <td class="text-gray-500 text-sm">Optional dock</td>
+                    <td class="font-mono">65</td>
+                    <td class="font-mono">4.2</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Roomba j9+</td>
+                    <td class="text-gray-600">iRobot</td>
+                    <td class="font-mono text-gray-600">?/td>
+                    <td class="font-mono text-gray-600">?/td>
+                    <td class="font-mono">75</td>
+                    <td class="text-gray-600 text-sm">Optical + AI Vision</td>
+                    <td class="text-gray-500 text-sm">?/td>
+                    <td class="text-green-400 text-sm">?Auto-fill</td>
+                    <td class="font-mono">65</td>
+                    <td class="font-mono">4.1</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">DEEBOT X2 Omni</td>
+                    <td class="text-gray-600">Ecovacs</td>
+                    <td class="font-mono">8,000</td>
+                    <td class="font-mono">84.0</td>
+                    <td class="font-mono">260</td>
+                    <td class="text-gray-600 text-sm">AIVI 3D + LiDAR</td>
+                    <td class="text-green-400 text-sm">?OZMO Turbo</td>
+                    <td class="text-green-400 text-sm">?Auto-wash</td>
+                    <td class="font-mono">70</td>
+                    <td class="font-mono">5.0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs mt-2 px-1">Suction measured at motor; effective suction at floor varies by flooring type. Runtime = manufacturer rated on lowest suction mode. <a href="specs/smart-home.html" class="text-electric-400 hover:underline">Full smart home specs > ?/a></p>
+        </div>
+      </div>
+
+      <!-- DATA VERIFY -->
+      <div class="data-verify mt-10">
+        <div class="flex items-start gap-3">
+          <i data-lucide="shield-check" style="width:1.1rem;height:1.1rem;color:#00d4ff;flex-shrink:0;margin-top:2px"></i>
+          <div>
+            <p class="font-semibold text-sm mb-1">Data Verification</p>
+            <p class="text-sm text-gray-600 mb-2">All specifications sourced from manufacturer datasheets and official product pages. Cross-referenced with teardown reports where available.</p>
+            <div class="flex flex-wrap gap-x-5 gap-y-1 text-xs text-gray-500">
+              <span><strong class="text-gray-600">Last Updated:</strong> May 14, 2026</span>
+              <span><strong class="text-gray-600">Sources:</strong> EcoFlow, Jackery, Bluetti, Anker official product pages; Toyota TIS; DJI Specs; Roborock product specs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 border-t border-white/80  mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+        <div class="col-span-2">
+          <a href="/" class="flex items-center gap-2 mb-3">
+            <div class="w-7 h-7 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:0.9rem;height:0.9rem;color:#0a1628"></i></div>
+            <span class="font-display font-bold text-base">TechSpecs<span class="gradient-text">Hub</span></span>
+          </a>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">The technical parameter and fault diagnosis reference for consumer electronics, EVs, and power devices.</p>
+          <p class="text-gray-600 text-xs leading-relaxed">TechSpecsHub participates in the Amazon Associates Program. Affiliate links may appear on product pages. This does not influence our editorial accuracy standards.</p>
+        </div>
+        <div>
+          <p class="footer-col-title">Categories</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li><a href="specs/outdoor-power.html" class="hover:text-electric-400 transition-colors">Outdoor Power</a></li>
+            <li><a href="specs/hybrid-cars.html" class="hover:text-electric-400 transition-colors">Hybrid &amp; EV</a></li>
+            <li><a href="specs/drones.html" class="hover:text-electric-400 transition-colors">Drones &amp; UAV</a></li>
+            <li><a href="specs/smart-home.html" class="hover:text-electric-400 transition-colors">Smart Home</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Data Tools</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li><a href="/pages/error-code-db.html" class="hover:text-electric-400 transition-colors">Error Code DB</a></li>
+            <li><a href="/pages/master-specs.html" class="text-electric-400">Master Specs</a></li>
+            <li><a href="/pages/brand-index.html" class="hover:text-electric-400 transition-colors">Brand Index A–Z</a></li>
+            <li><a href="tools/best-multimeters-2026.html" class="hover:text-electric-400 transition-colors">Best Multimeters</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Company</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li><a href="/pages/about.html" class="hover:text-electric-400 transition-colors">About</a></li>
+            <li><a href="/pages/contact.html" class="hover:text-electric-400 transition-colors">Contact</a></li>
+            <li><a href="/pages/privacy-policy.html" class="hover:text-electric-400 transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/60 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+        <span class="text-gray-600 text-xs">© 2026 TechSpecsHub. Specifications for informational reference only. Verify with manufacturer before making purchasing or repair decisions.</span>
+        <div class="flex items-center gap-1 text-xs text-gray-600">
+          <i data-lucide="database" style="width:0.75rem;height:0.75rem;color:#00b8e6"></i>
+          <span>40+ models compared</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

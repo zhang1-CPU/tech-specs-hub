@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Bike & Micromobility Specs  | TechSpecsHub | Bosch, Bafang, Segway-Ninebot</title>
+  <meta name="description" content="Technical specifications for e-bike motors, batteries, and scooters. Bosch Performance Line CX, Bafang M400/M620, Segway-Ninebot Max G2/G30P. Fault codes, BMS data, and repair guides.">
+  <link rel="canonical" href="https://powerspecshub.com/pages/specs/ebike-micromobility.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#0a1628',900:'#0f1d32',800:'#162544',700:'#1e3259'},electric:{300:'#67e8f9',400:'#00d4ff',500:'#00b8e6',600:'#0099cc'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body class="bg-navy-950 text-white min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/80 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i></div>
+          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 bg-white/50 text-white rounded-lg">Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Smart Home Devices</a>
+              <a href="ebike-micromobility.html" class="text-electric-400"><i data-lucide="bike" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> E-Bike &amp; Micromobility</a>
+            </div>
+          </div>
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50">Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i> Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Brand Index A–Z</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">About</a>
+          <a href="../contact.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/50 hover:bg-white/100 border border-white/100 rounded-lg transition-all text-sm text-gray-400 hover:text-white">
+            <i data-lucide="search" style="width:0.875rem;height:0.875rem"></i>
+            <span class="hidden sm:inline">Search specs?/span>
+            <span class="hidden sm:inline px-1.5 py-0.5 bg-white/100 rounded text-xs">⌘K</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Modal -->
+  <div id="search-modal" class="hidden"><div id="search-backdrop"></div><div class="modal-inner"><div class="modal-box"><div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/100"><i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#4b5563;flex-shrink:0"></i><input id="search-input-field" type="text" placeholder="Search models, error codes, specs? autocomplete="off"><button id="search-close-btn" class="p-1 text-gray-500 hover:text-white rounded"><i data-lucide="x" style="width:1rem;height:1rem"></i></button></div><div id="search-results-list" class="p-2"></div></div></div></div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+    <div class="mb-8">
+      <nav class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span><span class="breadcrumb-current">E-Bike &amp; Micromobility</span></nav>
+    </div>
+
+    <!-- Hero -->
+    <div class="mb-10">
+      <p class="section-label">Technical Specifications</p>
+      <h1 class="font-display font-bold text-3xl md:text-4xl mb-2">E-Bike &amp; <span class="gradient-text">Micromobility</span></h1>
+      <p class="text-gray-400 max-w-2xl">Complete technical specifications for e-bike drive systems, batteries, and electric scooters. Motor torque, BMS data, fault codes, and repair guides for Bosch, Bafang, and Segway-Ninebot.</p>
+    </div>
+
+    <!-- IN-PAGE NAVIGATION -->
+    <section class="mb-8">
+      <div class="glass-card rounded-xl p-4">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-semibold text-gray-400 flex items-center gap-2">
+            <i data-lucide="navigation" style="width:0.875rem;height:0.875rem"></i>
+            Page Navigation
+          </h3>
+          <span class="text-xs text-gray-500">Quick jump to brand sections</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a href="#bosch" class="nav-tag">
+            <span class="w-5 h-5 bg-red-500/20 rounded-md flex items-center justify-center mr-2">
+              <span class="text-red-400 font-bold text-xs">B</span>
+            </span>
+            Bosch eBike
+          </a>
+          <a href="#bafang" class="nav-tag">
+            <span class="w-5 h-5 bg-green-500/20 rounded-md flex items-center justify-center mr-2">
+              <span class="text-green-400 font-bold text-xs">BF</span>
+            </span>
+            Bafang
+          </a>
+          <a href="#segway" class="nav-tag">
+            <span class="w-5 h-5 bg-blue-500/20 rounded-md flex items-center justify-center mr-2">
+              <span class="text-blue-400 font-bold text-xs">N</span>
+            </span>
+            Segway-Ninebot
+          </a>
+          <a href="#shimano" class="nav-tag">
+            <span class="w-5 h-5 bg-cyan-500/20 rounded-md flex items-center justify-center mr-2">
+              <span class="text-cyan-400 font-bold text-xs">S</span>
+            </span>
+            Shimano
+          </a>
+          <a href="#yamaha" class="nav-tag">
+            <span class="w-5 h-5 bg-purple-500/20 rounded-md flex items-center justify-center mr-2">
+              <span class="text-purple-400 font-bold text-xs">Y</span>
+            </span>
+            Yamaha
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="mb-10">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="glass-card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold gradient-text font-display">5</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Brands Covered</div>
+        </div>
+        <div class="glass-card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold gradient-text font-display">18+</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Motor Models</div>
+        </div>
+        <div class="glass-card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold gradient-text font-display">8+</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Battery Packs</div>
+        </div>
+        <div class="glass-card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold gradient-text font-display">15+</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Error Codes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Source Notice -->
+    <div class="alert alert-info mb-8">
+      <div class="alert-title"><i data-lucide="info" style="width:0.875rem;height:0.875rem"></i> Data Source Notice</div>
+      E-bike battery repair is a critical need in 2026 due to expensive and fragile battery packs. Data sourced from official manufacturer documentation and verified third-party reports.
+    </div>
+
+    <!-- ── BOSCH EBIKE ── -->
+    <section id="bosch" class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-8 h-8 bg-red-500/15 rounded-lg flex items-center justify-center">
+          <span class="text-red-400 font-bold text-xs font-mono">B</span>
+        </div>
+        <h2 class="font-display font-bold text-2xl">Bosch eBike Systems</h2>
+        <span class="text-xs text-gray-500">Reutlingen, Germany</span>
+      </div>
+      
+      <p class="text-gray-400 text-sm mb-4">Bosch is the global leader in e-bike drive systems. Their Performance Line CX dominates the eMTB market with up to 120 Nm torque and 600% support factor. All systems use The Smart System with Bluetooth connectivity and app integration.</p>
+
+      <!-- Drive Units -->
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="zap" style="width:0.875rem;height:0.875rem"></i>
+            Drive Units (Motors)
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Model</th><th>Max Torque</th><th>Max Power</th><th>Max Support</th><th>Weight</th><th>System</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">Performance Line CX Gen 4 <span class="winner-badge ml-1">NEW 2024</span></td>
+                <td class="font-mono text-green-400">125 Nm</td>
+                <td class="font-mono">750 W</td>
+                <td class="font-mono text-green-400">600%</td>
+                <td class="font-mono">2.5 kg</td>
+                <td><span class="badge badge-lfp">Smart System 2.0</span></td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Performance Line CX (BDU384Y) <span class="winner-badge ml-1">Best eMTB</span></td>
+                <td class="font-mono">120 Nm</td>
+                <td class="font-mono">750 W</td>
+                <td class="font-mono text-green-400">600%</td>
+                <td class="font-mono">2.8 kg</td>
+                <td><span class="badge badge-lfp">Smart System</span></td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Performance Line CX Race</td>
+                <td class="font-mono">112 Nm</td>
+                <td class="font-mono">600 W</td>
+                <td class="font-mono text-green-400">400%</td>
+                <td class="font-mono">2.8 kg</td>
+                <td><span class="badge badge-lfp">Smart System</span></td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Performance Line Speed</td>
+                <td class="font-mono">85 Nm</td>
+                <td class="font-mono">600 W</td>
+                <td class="font-mono">340%</td>
+                <td class="font-mono">2.9 kg</td>
+                <td><span class="badge badge-lfp">Smart System</span></td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Active Line Plus</td>
+                <td class="font-mono">50 Nm</td>
+                <td class="font-mono">270 W</td>
+                <td class="font-mono">270%</td>
+                <td class="font-mono">3.2 kg</td>
+                <td><span class="badge badge-lfp">Smart System</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Battery Packs -->
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="battery-charging" style="width:0.875rem;height:0.875rem"></i>
+            Battery Packs
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Model</th><th>Capacity</th><th>Voltage</th><th>Chemistry</th><th>Weight</th><th>Charging</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">PowerTube 800 <span class="badge badge-info ml-1">NEW Gen 4</span></td>
+                <td class="font-mono text-green-400">800 Wh</td>
+                <td class="font-mono">36V</td>
+                <td><span class="badge badge-lfp">Li-ion</span></td>
+                <td class="font-mono">4.6 kg</td>
+                <td class="font-mono text-green-400">6A Fast</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">PowerTube 750</td>
+                <td class="font-mono">750 Wh</td>
+                <td class="font-mono">36V</td>
+                <td><span class="badge badge-lfp">Li-ion</span></td>
+                <td class="font-mono">4.4 kg</td>
+                <td class="font-mono text-green-400">4A Charger</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">PowerTube 625</td>
+                <td class="font-mono">625 Wh</td>
+                <td class="font-mono">36V</td>
+                <td><span class="badge badge-lfp">Li-ion</span></td>
+                <td class="font-mono">3.6 kg</td>
+                <td class="font-mono text-green-400">4A Charger</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">PowerPack 750 Frame</td>
+                <td class="font-mono">750 Wh</td>
+                <td class="font-mono">36V</td>
+                <td><span class="badge badge-lfp">Li-ion</span></td>
+                <td class="font-mono">4.3 kg</td>
+                <td class="font-mono text-green-400">4A Charger</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">PowerPack 500 Rack</td>
+                <td class="font-mono">500 Wh</td>
+                <td class="font-mono">36V</td>
+                <td><span class="badge badge-lfp">Li-ion</span></td>
+                <td class="font-mono">2.9 kg</td>
+                <td class="font-mono text-green-400">4A Charger</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">PowerPack 400 Frame</td>
+                <td class="font-mono">400 Wh</td>
+                <td class="font-mono">36V</td>
+                <td><span class="badge badge-lfp">Li-ion</span></td>
+                <td class="font-mono">2.4 kg</td>
+                <td class="font-mono">2A Charger</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BMS Data -->
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="cpu" style="width:0.875rem;height:0.875rem"></i>
+            BMS Diagnostic Data (Expert)
+          </h3>
+        </div>
+        <div class="p-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <div class="bg-navy-800/50 rounded-lg p-3">
+              <div class="text-xs text-gray-500 mb-1">Cell Configuration</div>
+              <div class="font-mono text-sm text-yellow-400">10S4P (Typical)</div>
+            </div>
+            <div class="bg-navy-800/50 rounded-lg p-3">
+              <div class="text-xs text-gray-500 mb-1">Cell Voltage Range</div>
+              <div class="font-mono text-sm">3.0V - 4.2V</div>
+            </div>
+            <div class="bg-navy-800/50 rounded-lg p-3">
+              <div class="text-xs text-gray-500 mb-1">Communication</div>
+              <div class="font-mono text-sm text-green-400">CAN Bus</div>
+            </div>
+          </div>
+          <p class="text-gray-500 text-xs">Data source: <a href="https://www.bosch-ebike.com/en/products/performance-line-cx/" class="text-electric-400 hover:underline" target="_blank">Bosch eBike Official ?/a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BAFANG ── -->
+    <section id="bafang" class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-8 h-8 bg-green-500/15 rounded-lg flex items-center justify-center">
+          <span class="text-green-400 font-bold text-xs font-mono">BF</span>
+        </div>
+        <h2 class="font-display font-bold text-2xl">Bafang</h2>
+        <span class="text-xs text-gray-500">Suzhou, China</span>
+      </div>
+      
+      <p class="text-gray-400 text-sm mb-4">Bafang is the DIY enthusiast's choice with open-source motor systems and extensive customization options. The M620 Ultra dominates the high-torque segment, while M400 is the most popular mid-drive for urban e-bikes. Error codes are extensively documented in community forums.</p>
+
+      <!-- Motors -->
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="zap" style="width:0.875rem;height:0.875rem"></i>
+            Mid-Drive Motors
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Model</th><th>Max Torque</th><th>Max Power</th><th>Cadence</th><th>Weight</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">M620 Ultra (BBS02) <span class="winner-badge ml-1">DIY Favorite</span></td>
+                <td class="font-mono text-yellow-400">160 Nm</td>
+                <td class="font-mono">1000 W</td>
+                <td class="font-mono">100 rpm</td>
+                <td class="font-mono">3.4 kg</td>
+                <td class="text-gray-400 text-xs">Open source, most error codes</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">M500</td>
+                <td class="font-mono">95 Nm</td>
+                <td class="font-mono">500 W</td>
+                <td class="font-mono">100 rpm</td>
+                <td class="font-mono">2.9 kg</td>
+                <td class="text-gray-400 text-xs">Urban commute focus</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">M400</td>
+                <td class="font-mono">80 Nm</td>
+                <td class="font-mono">350 W</td>
+                <td class="font-mono">100 rpm</td>
+                <td class="font-mono">2.9 kg</td>
+                <td class="text-gray-400 text-xs">Most popular mid-drive</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">HMI Display</td>
+                <td class="font-mono">-</td>
+                <td class="font-mono">-</td>
+                <td class="font-mono">-</td>
+                <td class="font-mono">0.15 kg</td>
+                <td class="text-gray-400 text-xs">C961, C18, DPC18</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Error Codes -->
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="alert-circle" style="width:0.875rem;height:0.875rem;color:#f87171"></i>
+            Common Error Codes
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Code</th><th>Description</th><th>Possible Cause</th><th>Solution</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-mono text-red-400">05</td>
+                <td>Motor Hall Sensor Error</td>
+                <td class="text-gray-400 text-sm">Loose connection, damaged Hall sensor</td>
+                <td class="text-gray-400 text-sm">Check 3-pin motor connector, replace motor if damaged</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">06</td>
+                <td>Low Voltage Protection</td>
+                <td class="text-gray-400 text-sm">Battery depleted, bad connection</td>
+                <td class="text-gray-400 text-sm">Charge battery, check connector pins</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">07</td>
+                <td>Motor Overheat</td>
+                <td class="text-gray-400 text-sm">Excessive load, climbing steep hills</td>
+                <td class="text-gray-400 text-sm">Let motor cool 15-20 min, reduce load</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">08</td>
+                <td>Throttle Signal Error</td>
+                <td class="text-gray-400 text-sm">Thumb throttle malfunction</td>
+                <td class="text-gray-400 text-sm">Check throttle connector, replace if damaged</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">09</td>
+                <td>Brake Signal Error</td>
+                <td class="text-gray-400 text-sm">E-brake sensor disengaged</td>
+                <td class="text-gray-400 text-sm">Check brake lever sensors, reconnect or replace</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">10</td>
+                <td>Controller Overheat</td>
+                <td class="text-gray-400 text-sm">High ambient temp, excessive power draw</td>
+                <td class="text-gray-400 text-sm">Let cool, ensure adequate ventilation</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">21</td>
+                <td>Speed Sensor Error</td>
+                <td class="text-gray-400 text-sm">Magnet displaced, sensor dirty</td>
+                <td class="text-gray-400 text-sm">Reposition spoke magnet, clean sensor</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">25</td>
+                <td>Cruise Mode Error</td>
+                <td class="text-gray-400 text-sm">Throttle engaged while entering cruise</td>
+                <td class="text-gray-400 text-sm">Release throttle fully before activating cruise</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 class="font-semibold text-base mb-3 text-gray-300">Routine Maintenance for Bafang Motors</h3>
+      <div class="glass-card rounded-xl overflow-hidden mb-6">
+        <table class="specs-table">
+          <thead>
+            <tr><th>Task</th><th>Frequency</th><th>How To Do It</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-medium">Check Connectors</td>
+              <td class="text-gray-400 text-sm">Weekly</td>
+              <td class="text-gray-400 text-sm">Inspect motor, battery, and display connectors for corrosion or loose pins</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Lubricate Chain</td>
+              <td class="text-gray-400 text-sm">Every 200 km</td>
+              <td class="text-gray-400 text-sm">Clean chain with degreaser, apply e-bike specific lubricant</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Torque Bolts</td>
+              <td class="text-gray-400 text-sm">Monthly</td>
+              <td class="text-gray-400 text-sm">Check motor mount bolts, crank arms, and chainring bolts for proper torque</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Clean Speed Sensor</td>
+              <td class="text-gray-400 text-sm">Monthly</td>
+              <td class="text-gray-400 text-sm">Wipe magnet and sensor with isopropyl alcohol, ensure proper gap</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="glass-card rounded-xl p-6 border-l-4 border-green-500 mb-6">
+        <h3 class="font-semibold text-lg mb-3 flex items-center gap-2 text-green-400">
+          <i data-lucide="wrench" style="width:1.1rem;height:1.1rem"></i> Battery Care & Storage Tips
+        </h3>
+        <div class="text-sm text-gray-300 space-y-2">
+          <p><strong class="text-green-300">Storage Temperature:</strong> Store battery at 15?5°C, never below freezing or above 40°C</p>
+          <p><strong class="text-green-300">Charge Level:</strong> Store at 40?0% charge, never fully charged or fully discharged</p>
+          <p><strong class="text-yellow-400">Long-Term Storage ( > 1 month):</strong> Check and recharge to 50% every 2 months</p>
+          <p><strong class="text-red-400">Water Protection:</strong> Never submerge battery, avoid riding in heavy rain without proper sealing</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEGWAY-NINEBOT ── -->
+    <section id="segway" class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-8 h-8 bg-blue-500/15 rounded-lg flex items-center justify-center">
+          <span class="text-blue-400 font-bold text-xs font-mono">N</span>
+        </div>
+        <h2 class="font-display font-bold text-2xl">Segway-Ninebot</h2>
+        <span class="text-xs text-gray-500">Beijing, China</span>
+      </div>
+      
+      <p class="text-gray-400 text-sm mb-4">Segway-Ninebot dominates both shared mobility and personal scooter markets. Max G2 series offers best-in-class range with dual suspension, while G30P remains the most popular private scooter globally. Battery management requires specialized tools.</p>
+
+      <!-- Electric Scooters -->
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="bike" style="width:0.875rem;height:0.875rem"></i>
+            Electric Scooters
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Model</th><th>Motor Power</th><th>Battery</th><th>Range</th><th>Max Speed</th><th>Weight</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">Max G2 Ultra</td>
+                <td class="font-mono">450W</td>
+                <td class="font-mono">551Wh / 36V</td>
+                <td class="font-mono">70 km</td>
+                <td class="font-mono">25 km/h</td>
+                <td class="font-mono">26 kg</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Max G2</td>
+                <td class="font-mono">350W</td>
+                <td class="font-mono">459Wh / 36V</td>
+                <td class="font-mono">55 km</td>
+                <td class="font-mono">25 km/h</td>
+                <td class="font-mono">24 kg</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Max G30LP</td>
+                <td class="font-mono">350W</td>
+                <td class="font-mono">367Wh / 36V</td>
+                <td class="font-mono">40 km</td>
+                <td class="font-mono">25 km/h</td>
+                <td class="font-mono">17 kg</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Max G30P (II) <span class="winner-badge ml-1">Best Seller</span></td>
+                <td class="font-mono">350W</td>
+                <td class="font-mono">551Wh / 36V</td>
+                <td class="font-mono">65 km</td>
+                <td class="font-mono">25 km/h</td>
+                <td class="font-mono">19 kg</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Ninebot S2</td>
+                <td class="font-mono">400W</td>
+                <td class="font-mono">236Wh / 36V</td>
+                <td class="font-mono">30 km</td>
+                <td class="font-mono">25 km/h</td>
+                <td class="font-mono">12 kg</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Battery Specifications -->
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="battery-charging" style="width:0.875rem;height:0.875rem"></i>
+            Battery Specifications
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Model</th><th>Capacity</th><th>Cell Type</th><th>Cell Config</th><th>Charging Time</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">G30 Series</td>
+                <td class="font-mono">367-551 Wh</td>
+                <td><span class="badge badge-lfp">Li-ion</span></td>
+                <td class="font-mono text-yellow-400">20S / 10S2P</td>
+                <td class="font-mono">69 hrs (stock charger)</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Max G2</td>
+                <td class="font-mono">459-551 Wh</td>
+                <td><span class="badge badge-lfp">Li-ion</span></td>
+                <td class="font-mono">Custom BMS</td>
+                <td class="font-mono">4A fast charge capable</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Error Codes -->
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="alert-circle" style="width:0.875rem;height:0.875rem;color:#f87171"></i>
+            Ninebot Error Codes (via Segway-Ninebot App)
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Code</th><th>Description</th><th>Cause</th><th>Fix</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-mono text-red-400">E0</td>
+                <td>Motor Hall Sensor Fault</td>
+                <td class="text-gray-400 text-sm">Hall sensor damaged</td>
+                <td class="text-gray-400 text-sm">Motor replacement required</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">E1</td>
+                <td>Controller Communication Error</td>
+                <td class="text-gray-400 text-sm">CAN bus failure</td>
+                <td class="text-gray-400 text-sm">Check wiring, update firmware</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">E2</td>
+                <td>Throttle Fault</td>
+                <td class="text-gray-400 text-sm">Throttle not returning</td>
+                <td class="text-gray-400 text-sm">Check throttle connector</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">E3</td>
+                <td>Brake Sensor Fault</td>
+                <td class="text-gray-400 text-sm">E-brake not engaged</td>
+                <td class="text-gray-400 text-sm">Check brake lever sensor</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">E4</td>
+                <td>Charging Protection</td>
+                <td class="text-gray-400 text-sm">Plugged in while riding</td>
+                <td class="text-gray-400 text-sm">Unplug before riding</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">E5</td>
+                <td>Low Voltage Cutoff</td>
+                <td class="text-gray-400 text-sm">Battery depleted</td>
+                <td class="text-gray-400 text-sm">Charge battery immediately</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">E6</td>
+                <td>High Temperature</td>
+                <td class="text-gray-400 text-sm">Motor/controller overheat</td>
+                <td class="text-gray-400 text-sm">Let cool before continuing</td>
+              </tr>
+              <tr>
+                <td class="font-mono text-red-400">E7</td>
+                <td>Stem Connection Error</td>
+                <td class="text-gray-400 text-sm">Loose stem connector</td>
+                <td class="text-gray-400 text-sm">Tighten stem, check connector</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 class="font-semibold text-base mb-3 text-gray-300">Scooter Maintenance Schedule</h3>
+      <div class="glass-card rounded-xl overflow-hidden mb-6">
+        <table class="specs-table">
+          <thead>
+            <tr><th>Task</th><th>Frequency</th><th>How To Do It</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-medium">Check Tire Pressure</td>
+              <td class="text-gray-400 text-sm">Every ride</td>
+              <td class="text-gray-400 text-sm">Inflate to recommended PSI (usually 35-50 PSI depending on model)</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Clean Deck & Components</td>
+              <td class="text-gray-400 text-sm">Weekly</td>
+              <td class="text-gray-400 text-sm">Wipe with damp cloth, avoid spraying water directly on electronics</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Check Stem & Folding Mechanism</td>
+              <td class="text-gray-400 text-sm">Monthly</td>
+              <td class="text-gray-400 text-sm">Tighten bolts, lubricate folding hinge with silicone spray</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Inspect Brakes</td>
+              <td class="text-gray-400 text-sm">Every 500 km</td>
+              <td class="text-gray-400 text-sm">Check brake pad wear, adjust cable tension if needed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="glass-card rounded-xl p-6 border-l-4 border-blue-500 mb-6">
+        <h3 class="font-semibold text-lg mb-3 flex items-center gap-2 text-blue-400">
+          <i data-lucide="battery-charging" style="width:1.1rem;height:1.1rem"></i> Scooter Battery Best Practices
+        </h3>
+        <div class="text-sm text-gray-300 space-y-2">
+          <p><strong class="text-blue-300">Avoid Deep Discharges:</strong> Don't let battery go below 20% regularly</p>
+          <p><strong class="text-blue-300">Charge After Rides:</strong> Charge within 24 hours of riding, especially after heavy use</p>
+          <p><strong class="text-yellow-400">Temperature Awareness:</strong> Don't charge in temperatures below 0°C or above 40°C</p>
+          <p><strong class="text-red-400">Water Protection:</strong> Never use pressure washers, wipe only with damp cloth</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SHIMANO E-BIKE ── -->
+    <section id="shimano" class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-8 h-8 bg-cyan-500/15 rounded-lg flex items-center justify-center">
+          <span class="text-cyan-400 font-bold text-xs font-mono">S</span>
+        </div>
+        <h2 class="font-display font-bold text-2xl">Shimano E-Bike Systems</h2>
+        <span class="text-xs text-gray-500">Sakai, Japan</span>
+      </div>
+      
+      <p class="text-gray-400 text-sm mb-4">Shimano's STEPS (Shimano Total Electric Power System) is the premium choice for city, trekking, and mountain e-bikes. EP8 and EP6 motors are industry benchmarks for reliability and smooth power delivery, perfectly integrated with Shimano's di2 shifting systems.</p>
+
+      <!-- Drive Units -->
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="settings" style="width:0.875rem;height:0.875rem"></i>
+            E-Bike Drive Units
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Model</th><th>Torque</th><th>Max Support</th><th>Weight</th><th>Type</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">EP801 (EP8) <span class="winner-badge ml-1">Flagship</span></td>
+                <td class="font-mono">85 Nm</td>
+                <td class="font-mono">400%</td>
+                <td class="font-mono">2.6 kg</td>
+                <td class="text-gray-400 text-sm">Mid-drive - eMTB</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">EP600 (EP6)</td>
+                <td class="font-mono">85 Nm</td>
+                <td class="font-mono">350%</td>
+                <td class="font-mono">3.0 kg</td>
+                <td class="text-gray-400 text-sm">Mid-drive - City/Trekking</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">E5000</td>
+                <td class="font-mono">60 Nm</td>
+                <td class="font-mono">300%</td>
+                <td class="font-mono">3.0 kg</td>
+                <td class="text-gray-400 text-sm">Mid-drive - Urban</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">E6100</td>
+                <td class="font-mono">70 Nm</td>
+                <td class="font-mono">300%</td>
+                <td class="font-mono">3.1 kg</td>
+                <td class="text-gray-400 text-sm">Mid-drive - Trekking</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Batteries -->
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="battery-charging" style="width:0.875rem;height:0.875rem"></i>
+            Battery Packs
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Model</th><th>Capacity</th><th>Voltage</th><th>Cells</th><th>Weight</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">BT-E8036</td>
+                <td class="font-mono">630 Wh</td>
+                <td class="font-mono">36 V</td>
+                <td class="font-mono">1750 mAh × 10S2P</td>
+                <td class="font-mono">3.7 kg</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">BT-E8035</td>
+                <td class="font-mono">504 Wh</td>
+                <td class="font-mono">36 V</td>
+                <td class="font-mono">1400 mAh × 10S2P</td>
+                <td class="font-mono">3.1 kg</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">BT-E8034</td>
+                <td class="font-mono">408 Wh</td>
+                <td class="font-mono">36 V</td>
+                <td class="font-mono">1133 mAh × 10S2P</td>
+                <td class="font-mono">2.7 kg</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── YAMAHA E-BIKE ── -->
+    <section id="yamaha" class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-8 h-8 bg-purple-500/15 rounded-lg flex items-center justify-center">
+          <span class="text-purple-400 font-bold text-xs font-mono">Y</span>
+        </div>
+        <h2 class="font-display font-bold text-2xl">Yamaha E-Bike Systems</h2>
+        <span class="text-xs text-gray-500">Hamamatsu, Japan</span>
+      </div>
+      
+      <p class="text-gray-400 text-sm mb-4">Yamaha invented the modern e-bike with the 1993 PAS system. Today's PWseries motors are renowned for natural-feeling assist and legendary reliability. PW-X3 and PW-X2 dominate European and Japanese eMTB markets, while PWseries CE and PWseries ST power urban and trekking bikes.</p>
+
+      <!-- Drive Units -->
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="settings" style="width:0.875rem;height:0.875rem"></i>
+            E-Bike Drive Units
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Model</th><th>Torque</th><th>Max Support</th><th>Weight</th><th>Type</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">PW-X3 <span class="winner-badge ml-1">Flagship</span></td>
+                <td class="font-mono">85 Nm</td>
+                <td class="font-mono">500%</td>
+                <td class="font-mono">2.85 kg</td>
+                <td class="text-gray-400 text-sm">Mid-drive - eMTB</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">PW-X2</td>
+                <td class="font-mono">80 Nm</td>
+                <td class="font-mono">400%</td>
+                <td class="font-mono">3.1 kg</td>
+                <td class="text-gray-400 text-sm">Mid-drive - eMTB</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">PWseries CE</td>
+                <td class="font-mono">70 Nm</td>
+                <td class="font-mono">350%</td>
+                <td class="font-mono">3.3 kg</td>
+                <td class="text-gray-400 text-sm">Mid-drive - Urban</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">PWseries ST</td>
+                <td class="font-mono">70 Nm</td>
+                <td class="font-mono">320%</td>
+                <td class="font-mono">3.0 kg</td>
+                <td class="text-gray-400 text-sm">Mid-drive - Trekking</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Batteries -->
+      <div class="glass-card rounded-2xl overflow-hidden mb-6">
+        <div class="p-4 bg-navy-800/50 border-b border-white/50">
+          <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+            <i data-lucide="battery-charging" style="width:0.875rem;height:0.875rem"></i>
+            Battery Packs
+          </h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Model</th><th>Capacity</th><th>Voltage</th><th>Cells</th><th>Weight</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">Yamaha PW-X3 Battery</td>
+                <td class="font-mono">720 Wh</td>
+                <td class="font-mono">36 V</td>
+                <td class="font-mono">2000 mAh × 10S2P</td>
+                <td class="font-mono">4.0 kg</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Yamaha PW-X2 Battery</td>
+                <td class="font-mono">630 Wh</td>
+                <td class="font-mono">36 V</td>
+                <td class="font-mono">1750 mAh × 10S2P</td>
+                <td class="font-mono">3.6 kg</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Yamaha 500 Wh Battery</td>
+                <td class="font-mono">500 Wh</td>
+                <td class="font-mono">36 V</td>
+                <td class="font-mono">1388 mAh × 10S2P</td>
+                <td class="font-mono">3.0 kg</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Source Documentation -->
+    <div class="mt-12 pt-8 border-t border-white/100">
+      <h3 class="text-sm font-semibold text-gray-400 mb-4">Data Source Notes</h3>
+      <div class="glass-card rounded-xl p-4">
+        <ul class="text-xs text-gray-500 space-y-2">
+          <li><strong class="text-gray-400">Bosch Performance Line CX:</strong> Data from <a href="https://www.bosch-ebike.com/en/products/performance-line-cx/" class="text-electric-400 hover:underline" target="_blank">Bosch eBike Official Website ?/a> - Grade A (Official Documentation)</li>
+          <li><strong class="text-gray-400">Bafang M400/M620:</strong> Data from manufacturer specs and community forums (Reddit r/ebikes, ES forums) - Grade B/C</li>
+          <li><strong class="text-gray-400">Segway-Ninebot Max G2/G30P:</strong> Data from Amazon listings, ZOL specifications, and user forums - Grade B</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/80  mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col md:flex-row items-start gap-8">
+        <div class="flex-1">
+          <a href="/" class="flex items-center gap-2.5 mb-4"><div class="w-7 h-7 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:0.9rem;height:0.9rem;color:#0a1628"></i></div><span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span></a>
+          <p class="text-gray-500 text-sm max-w-md">Expert technical specifications and fault code database for e-bikes, outdoor power stations, hybrid vehicles, drones, and smart home devices.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-8 text-sm">
+          <div>
+            <h4 class="font-semibold mb-3">Categories</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="outdoor-power.html" class="hover:text-electric-400 transition-colors">Outdoor Power Stations</a></li>
+              <li><a href="hybrid-cars.html" class="hover:text-electric-400 transition-colors">Hybrid &amp; EV Batteries</a></li>
+              <li><a href="drones.html" class="hover:text-electric-400 transition-colors">Drones &amp; UAV</a></li>
+              <li><a href="smart-home.html" class="hover:text-electric-400 transition-colors">Smart Home Devices</a></li>
+              <li><a href="ebike-micromobility.html" class="hover:text-electric-400 transition-colors">E-Bike &amp; Micromobility</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">Resources</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="../error-code-db.html" class="hover:text-electric-400 transition-colors">Error Code Database</a></li>
+              <li><a href="../master-specs.html" class="hover:text-electric-400 transition-colors">Master Specs Comparison</a></li>
+              <li><a href="../brand-index.html" class="hover:text-electric-400 transition-colors">Brand Index A–Z</a></li>
+              <li><a href="../about.html" class="hover:text-electric-400 transition-colors">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/80  mt-8 pt-8 text-center text-sm text-gray-500">
+        <span>&copy; 2026 TechSpecsHub. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

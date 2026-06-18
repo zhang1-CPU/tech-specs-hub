@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About TechSpecsHub | Mission, Data Sources &amp; Methodology</title>
+  <meta name="description" content="TechSpecsHub is a technical specification and fault-diagnosis reference built on official OEM documentation, certified lab standards, and community-verified data.">
+  <link rel="canonical" href="https://powerspecshub.com/pages/about.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#0a1628',900:'#0f1d32',800:'#162544'},electric:{300:'#67e8f9',400:'#00d4ff',500:'#00b8e6',600:'#0099cc'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About TechSpecsHub","url":"https://powerspecshub.com/pages/about.html","publisher":{"@type":"Organization","name":"TechSpecsHub","url":"https://powerspecshub.com"}}</script>
+</head>
+<body class="bg-navy-950 text-white min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/80 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i></div>
+          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 text-gray-500 hover:text-white rounded-lg hover:bg-white/50 transition-all">Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="/pages/specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Outdoor Power Stations</a>
+              <a href="specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Hybrid &amp; EV Batteries</a>
+              <a href="/pages/specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Drones &amp; UAV</a>
+              <a href="/pages/specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Smart Home Devices</a>
+            </div>
+          </div>
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 text-gray-500 hover:text-white rounded-lg hover:bg-white/50 transition-all">Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="/pages/error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i> Error Code Database</a>
+              <a href="/pages/master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Master Specs Comparison</a>
+              <a href="/pages/brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Brand Index A–Z</a>
+              <hr><a href="tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i> Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="/pages/about.html" class="px-3 py-2 text-white bg-white/80 rounded-lg font-semibold">About</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/50 hover:bg-white/100 border border-white/100 rounded-lg transition-all text-sm text-gray-600 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search specs?/span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-white rounded-lg hover:bg-white/50"><i data-lucide="menu" style="width:1.1rem;height:1.1rem"></i></button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-t border-white/80 ">
+      <div class="max-w-7xl mx-auto px-4 py-4 space-y-1 text-sm">
+        <a href="/pages/specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-500"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6"></i> Outdoor Power</a>
+        <a href="/pages/specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-500"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6"></i> Hybrid &amp; EV</a>
+        <a href="/pages/error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-500"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i> Error Codes</a>
+        <a href="/pages/master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-500"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#00b8e6"></i> Master Specs</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal" class="hidden"><div id="search-backdrop"></div><div class="modal-inner"><div class="modal-box"><div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/100"><i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#4b5563;flex-shrink:0"></i><input id="search-input-field" type="text" placeholder="Search models, error codes, specs? autocomplete="off"><button id="search-close-btn" class="p-1 text-gray-500 hover:text-white rounded"><i data-lucide="x" style="width:1rem;height:1rem"></i></button></div><div id="search-results-list" class="p-2"></div><div class="border-t border-white/80  px-4 py-2 text-xs text-gray-600 flex justify-between"><span>Press <kbd class="bg-white/80 px-1 rounded font-mono">Enter</kbd> to search</span><span>Press <kbd class="bg-white/80 px-1 rounded font-mono">Esc</kbd> to close</span></div></div></div></div>
+
+  <div class="bg-navy-900/50 border-b border-white/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <nav class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span><span class="breadcrumb-current">About</span></nav>
+    </div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+    <div class="text-center mb-14">
+      <h1 class="font-display font-bold text-4xl md:text-5xl mb-4">About <span class="gradient-text">TechSpecsHub</span></h1>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">A utility-first technical reference built for engineers, repair technicians, and serious DIYers who need accurate data ?not paraphrased forum guesses.</p>
+    </div>
+
+    <!-- Mission -->
+    <section id="mission" class="glass-card rounded-2xl p-8 mb-6">
+      <h2 class="font-display font-semibold text-2xl mb-4 flex items-center gap-3">
+        <i data-lucide="target" style="width:1.25rem;height:1.25rem;color:#00d4ff"></i> Our Mission
+      </h2>
+      <p class="text-gray-500 leading-relaxed mb-4">
+        TechSpecsHub exists to eliminate the gap between official OEM documentation and the people who actually need it. When a Prius battery fails at 150,000 miles, the owner shouldn't have to scroll through 40 forum pages to find the correct internal resistance threshold. When an EcoFlow stops charging after two years, the fix shouldn't require a service appointment ?it's usually a $0 app setting change.
+      </p>
+      <p class="text-gray-500 leading-relaxed">
+        We compile, verify, and structure technical data ?cycle-life numbers, fault code definitions, measurement tolerances, diagnostic logic ?into searchable, scannable reference pages that give you the answer in 60 seconds.
+      </p>
+    </section>
+
+    <!-- Data Sources -->
+    <section id="sources" class="glass-card rounded-2xl p-8 mb-6">
+      <h2 class="font-display font-semibold text-2xl mb-6 flex items-center gap-3">
+        <i data-lucide="database" style="width:1.25rem;height:1.25rem;color:#00d4ff"></i> Data Sources
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 bg-electric-500/150 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="file-text" style="width:1.1rem;height:1.1rem;color:#00d4ff"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">Official Service Manuals &amp; TSBs</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Manufacturer-issued technical service bulletins, repair manuals, and product datasheets are the primary source for all specification values. NHTSA.gov, official brand portals.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 bg-electric-500/150 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="users" style="width:1.1rem;height:1.1rem;color:#00d4ff"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">Community Verification</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Data from PriusChat, r/EcoFlow, RCGroups, and iFixit teardowns is collected and filtered to statistically validate or challenge OEM claims with real-world results.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 bg-electric-500/150 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="flask-conical" style="width:1.1rem;height:1.1rem;color:#00d4ff"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">Lab &amp; Academic Standards</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Battery parameters are cross-referenced against ISO 12405 (Li-ion traction batteries), IEC 62133 (portable cell safety), and OSHA 1910.269 for high-voltage electrical safety.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 bg-electric-500/150 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="calendar-check" style="width:1.1rem;height:1.1rem;color:#00d4ff"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">Regular Re-Verification</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Each data page carries a "Last Verified" date. Pages older than 6 months are flagged for review. Manufacturers occasionally revise specs after product releases.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section id="methodology" class="glass-card rounded-2xl p-8 mb-6">
+      <h2 class="font-display font-semibold text-2xl mb-6 flex items-center gap-3">
+        <i data-lucide="git-branch" style="width:1.25rem;height:1.25rem;color:#00d4ff"></i> Editorial Methodology
+      </h2>
+      <ol class="space-y-5">
+        <li class="flex items-start gap-4">
+          <div class="step-number flex-shrink-0">01</div>
+          <div>
+            <h3 class="font-semibold mb-1">Extract from Primary Sources</h3>
+            <p class="text-gray-600 text-sm">Every spec table begins with official documentation. We use filetype:pdf searches against manufacturer domains, NHTSA.gov TSB databases, and FCC ID filings to locate primary source materials.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <div class="step-number flex-shrink-0">02</div>
+          <div>
+            <h3 class="font-semibold mb-1">Translate into Human-Readable Diagnostic Logic</h3>
+            <p class="text-gray-600 text-sm">Technical parameters are converted into actionable troubleshooting steps ?not just "battery voltage: 201.6V" but "measure cell groups; if any block reads below 14V, that block requires replacement."</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <div class="step-number flex-shrink-0">03</div>
+          <div>
+            <h3 class="font-semibold mb-1">Visualize with Diagnostic Flowcharts</h3>
+            <p class="text-gray-600 text-sm">Mermaid.js decision trees are built for every major fault pattern, showing the exact measurement sequence from symptom to root cause. Each branch references a specific parameter from the spec table.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <div class="step-number flex-shrink-0">04</div>
+          <div>
+            <h3 class="font-semibold mb-1">Cite and Date-Stamp Everything</h3>
+            <p class="text-gray-600 text-sm">Every page ends with a Technical References block: primary source document, sample size for community data, applicable lab standard, and the date of last verification.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Monetization Disclosure -->
+    <section class="glass-card rounded-2xl p-8 mb-6 border-l-4 border-electric-500">
+      <h2 class="font-display font-semibold text-2xl mb-4 flex items-center gap-3">
+        <i data-lucide="circle-dollar-sign" style="width:1.25rem;height:1.25rem;color:#00d4ff"></i> Monetization &amp; Affiliate Disclosure
+      </h2>
+      <p class="text-gray-500 leading-relaxed mb-4">TechSpecsHub is maintained through the following revenue sources, which we disclose fully in accordance with FTC guidelines:</p>
+      <ul class="space-y-2.5 text-gray-500 mb-4">
+        <li class="flex items-center gap-2.5 text-sm"><i data-lucide="check-circle" style="width:0.875rem;height:0.875rem;color:#4ade80;flex-shrink:0"></i> <strong>Amazon Associates affiliate links</strong> ?tools, parts, and equipment recommendations. Labeled with "?Amazon" or [affiliate] on the relevant pages.</li>
+        <li class="flex items-center gap-2.5 text-sm"><i data-lucide="check-circle" style="width:0.875rem;height:0.875rem;color:#4ade80;flex-shrink:0"></i> <strong>Google AdSense</strong> ?contextual advertising. Ads are clearly separated from content.</li>
+        <li class="flex items-center gap-2.5 text-sm"><i data-lucide="check-circle" style="width:0.875rem;height:0.875rem;color:#4ade80;flex-shrink:0"></i> <strong>Other partner programs</strong> ?clearly disclosed in-line wherever applicable.</li>
+      </ul>
+      <p class="text-gray-600 text-sm">No advertiser influences our technical recommendations or data. If a product performs poorly on our tested parameters, we say so ?regardless of affiliate relationships. Our credibility as a technical reference depends on it.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="glass-card rounded-2xl p-8">
+      <h2 class="font-display font-semibold text-2xl mb-4 flex items-center gap-3">
+        <i data-lucide="mail" style="width:1.25rem;height:1.25rem;color:#00d4ff"></i> Get in Touch
+      </h2>
+      <p class="text-gray-500 mb-5">Found an error in our data? Have a primary source we missed? Want to suggest a product for coverage? We genuinely want to hear from you.</p>
+      <div class="space-y-3 text-sm">
+        <div class="flex items-center gap-3 text-gray-500">
+          <i data-lucide="mail" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i>
+          <span>General: <a href="mailto:support@techspecshub.com" class="text-electric-400 hover:underline">support@techspecshub.com</a></span>
+        </div>
+        <div class="flex items-center gap-3 text-gray-500">
+          <i data-lucide="database" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i>
+          <span>Data corrections: <a href="mailto:data@techspecshub.com" class="text-electric-400 hover:underline">data@techspecshub.com</a></span>
+        </div>
+        <div class="flex items-center gap-3 text-gray-500">
+          <i data-lucide="briefcase" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i>
+          <span>Partnerships: <a href="mailto:business@techspecshub.com" class="text-electric-400 hover:underline">business@techspecshub.com</a></span>
+        </div>
+        <div class="mt-4">
+          <a href="/pages/contact.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-xl text-sm transition-all">
+            <i data-lucide="send" style="width:0.875rem;height:0.875rem"></i> Use the Contact Form
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-navy-900 border-t border-white/80  mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        <div class="lg:col-span-2">
+          <a href="/" class="flex items-center gap-2.5 mb-4"><div class="w-7 h-7 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:0.9rem;height:0.9rem;color:#0a1628"></i></div><span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span></a>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">The definitive technical reference for portable power stations, hybrid batteries, drones, and smart home devices.</p>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Categories</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/pages/specs/outdoor-power.html" class="text-gray-600 hover:text-electric-400 transition-colors">Outdoor Power Stations</a></li>
+            <li><a href="/pages/specs/hybrid-cars.html" class="text-gray-600 hover:text-electric-400 transition-colors">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="/pages/specs/drones.html" class="text-gray-600 hover:text-electric-400 transition-colors">Drones &amp; UAV</a></li>
+            <li><a href="/pages/specs/smart-home.html" class="text-gray-600 hover:text-electric-400 transition-colors">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Data Tools</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/pages/error-code-db.html" class="text-gray-600 hover:text-electric-400 transition-colors">Error Code Database</a></li>
+            <li><a href="/pages/master-specs.html" class="text-gray-600 hover:text-electric-400 transition-colors">Master Specs Comparison</a></li>
+            <li><a href="/pages/brand-index.html" class="text-gray-600 hover:text-electric-400 transition-colors">Brand Index A–Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Company</h3>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="/pages/about.html" class="text-electric-400 font-medium">About Us</a></li>
+            <li><a href="/pages/contact.html" class="text-gray-600 hover:text-electric-400 transition-colors">Contact</a></li>
+            <li><a href="/pages/privacy-policy.html" class="text-gray-600 hover:text-electric-400 transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/80  pt-6">
+        <p class="text-xs text-gray-600 mb-3"><strong class="text-gray-500">Affiliate Disclosure:</strong> Some links are Amazon affiliate links. Purchases may earn us a small commission at no extra cost to you.</p>
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs text-gray-600">
+          <span>© 2026 TechSpecsHub. All rights reserved.</span>
+          <div class="flex gap-5"><a href="/pages/privacy-policy.html" class="hover:text-electric-400 transition-colors">Privacy Policy</a><a href="/pages/contact.html" class="hover:text-electric-400 transition-colors">Contact</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

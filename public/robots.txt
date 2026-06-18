@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /scripts/
+Disallow: /data/
+
+Sitemap: https://powerspecshub.com/sitemap-index.xml
+
+# Crawl-delay for aggressive bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

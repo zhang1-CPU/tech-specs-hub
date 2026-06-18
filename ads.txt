@@ -1,0 +1,6 @@
+# AdSense Publisher ID
+# This file is required for AdSense verification
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# Additional ad networks (optional)
+# Example: amazon-adsystem.com, pub-1234567890123456, DIRECT, 99a4043b00d34859

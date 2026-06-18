@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter Tools | TechSpecsHub</title>
+  <meta name="description" content="Free online unit converters for electronics: Wh to mAh, km to miles, temperature, voltage, and more.">
+  <link rel="canonical" href="https://powerspecshub.com/pages/tools/unit-converter.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#0a1628',900:'#0f1d32',800:'#162544',700:'#1e3259'},electric:{300:'#67e8f9',400:'#00d4ff',500:'#00b8e6',600:'#0099cc'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Unit Converter Tools","description":"Free online unit converters for electronics specifications","url":"https://powerspecshub.com/pages/tools/unit-converter.html","applicationCategory":"UtilityApplication","publisher":{"@type":"Organization","name":"TechSpecsHub","url":"https://powerspecshub.com"}}</script>
+</head>
+<body class="bg-navy-950 text-white min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/80 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center">
+            <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+          </div>
+          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Smart Home Devices</a>
+            </div>
+          </div>
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 bg-white/50 text-white rounded-lg">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="runtime-calculator.html"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Runtime Calculator</a>
+              <a href="unit-converter.html" class="text-electric-400"><i data-lucide="arrowLeftRight" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Unit Converter</a>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i> Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Master Specs Comparison</a>
+            </div>
+          </div>
+          <a href="../brand-index.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">Brand Index</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/50 hover:bg-white/100 border border-white/100 rounded-lg transition-all text-sm text-gray-400 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search specs...</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/50">
+            <i data-lucide="menu" style="width:1.1rem;height:1.1rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-t border-white/80 ">
+      <div class="max-w-7xl mx-auto px-4 py-4 space-y-1 text-sm">
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6"></i> Outdoor Power</a>
+        <a href="runtime-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#00b8e6"></i> Runtime Calculator</a>
+        <a href="unit-converter.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/50 text-electric-400"><i data-lucide="arrowLeftRight" style="width:1rem;height:1rem;color:#00b8e6"></i> Unit Converter</a>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i> Error Codes</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal" class="hidden"><div id="search-backdrop"></div><div class="modal-inner"><div class="modal-box"><div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/100"><i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#4b5563;flex-shrink:0"></i><input id="search-input-field" type="text" placeholder="Search models, error codes, specs" autocomplete="off"><button id="search-close-btn" class="p-1 text-gray-500 hover:text-white rounded"><i data-lucide="x" style="width:1rem;height:1rem"></i></button></div><div id="search-results-list" class="p-2"></div></div></div></div>
+
+  <div class="bg-navy-900/50 border-b border-white/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span>
+        <a href="#">Tools</a>
+        <span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span>
+        <span class="breadcrumb-current">Unit Converter</span>
+      </nav>
+    </div>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-electric-400/100 border border-electric-400/200 rounded-full text-electric-400 text-xs font-medium mb-4">
+        <i data-lucide="arrowLeftRight" style="width:0.75rem;height:0.75rem"></i> Essential Tools
+      </div>
+      <h1 class="font-display font-bold text-3xl md:text-4xl mb-3">
+        Unit <span class="gradient-text">Converter</span> Tools
+      </h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Convert between metric and imperial units, battery specifications, and more. Essential tools for comparing electronics specs.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+      
+      <!-- Wh to mAh -->
+      <div class="glass-card rounded-2xl p-6">
+        <h2 class="font-semibold text-lg mb-4 flex items-center gap-2">
+          <i data-lucide="battery-full" style="width:1.1rem;height:1.1rem;color:#00d4ff"></i>
+          Wh to mAh
+        </h2>
+        <div class="space-y-3">
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Watt-hours (Wh)</label>
+            <input type="number" id="wh-input" placeholder="e.g., 100" oninput="convertWhMahl()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-center text-gray-500 text-sm">=</div>
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Milliamp-hours (mAh)</label>
+            <input type="number" id="mah-input" placeholder="e.g., 10000" oninput="convertMahlWh()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-xs text-gray-500">
+            <label class="text-xs text-gray-500 mb-1 block">Voltage (V)</label>
+            <select id="voltage-select" onchange="convertWhMahl()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 text-sm">
+              <option value="3.7">3.7V (Li-ion single cell)</option>
+              <option value="3.85">3.85V (LiPo typical)</option>
+              <option value="12">12V (Lead acid)</option>
+              <option value="24">24V (Li-ion pack)</option>
+              <option value="36">36V (E-bike)</option>
+              <option value="48">48V (E-bike/ESS)</option>
+            </select>
+          </div>
+          <p class="text-xs text-gray-600 mt-2">Formula: mAh = (Wh × 1000) ÷ V</p>
+        </div>
+      </div>
+
+      <!-- Temperature -->
+      <div class="glass-card rounded-2xl p-6">
+        <h2 class="font-semibold text-lg mb-4 flex items-center gap-2">
+          <i data-lucide="thermometer" style="width:1.1rem;height:1.1rem;color:#f87171"></i>
+          Temperature
+        </h2>
+        <div class="space-y-3">
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Celsius (°C)</label>
+            <input type="number" id="celsius-input" placeholder="e.g., 25" oninput="convertCelsius()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-center text-gray-500 text-sm">=</div>
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Fahrenheit (°F)</label>
+            <input type="number" id="fahrenheit-input" placeholder="e.g., 77" oninput="convertFahrenheit()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-center text-gray-500 text-sm">or</div>
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Kelvin (K)</label>
+            <input type="number" id="kelvin-input" placeholder="e.g., 298" oninput="convertKelvin()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+        </div>
+      </div>
+
+      <!-- Distance -->
+      <div class="glass-card rounded-2xl p-6">
+        <h2 class="font-semibold text-lg mb-4 flex items-center gap-2">
+          <i data-lucide="ruler" style="width:1.1rem;height:1.1rem;color:#22c55e"></i>
+          Distance
+        </h2>
+        <div class="space-y-3">
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Kilometers (km)</label>
+            <input type="number" id="km-input" placeholder="e.g., 100" oninput="convertKm()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-center text-gray-500 text-sm">=</div>
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Miles (mi)</label>
+            <input type="number" id="mi-input" placeholder="e.g., 62" oninput="convertMi()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-xs text-gray-600 mt-2">Range example: 100km = 62 miles</div>
+        </div>
+      </div>
+
+      <!-- Weight -->
+      <div class="glass-card rounded-2xl p-6">
+        <h2 class="font-semibold text-lg mb-4 flex items-center gap-2">
+          <i data-lucide="scale" style="width:1.1rem;height:1.1rem;color:#a855f7"></i>
+          Weight
+        </h2>
+        <div class="space-y-3">
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Kilograms (kg)</label>
+            <input type="number" id="kg-input" placeholder="e.g., 10" oninput="convertKg()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-center text-gray-500 text-sm">=</div>
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Pounds (lbs)</label>
+            <input type="number" id="lbs-input" placeholder="e.g., 22" oninput="convertLbs()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-xs text-gray-600 mt-2">1 kg = 2.205 lbs</div>
+        </div>
+      </div>
+
+      <!-- Power -->
+      <div class="glass-card rounded-2xl p-6">
+        <h2 class="font-semibold text-lg mb-4 flex items-center gap-2">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          Power
+        </h2>
+        <div class="space-y-3">
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Watts (W)</label>
+            <input type="number" id="watts-input" placeholder="e.g., 1500" oninput="convertWatts()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-center text-gray-500 text-sm">=</div>
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Horsepower (HP)</label>
+            <input type="number" id="hp-input" placeholder="e.g., 2" oninput="convertHp()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-xs text-gray-600 mt-2">1 HP = 746 W</div>
+        </div>
+      </div>
+
+      <!-- Energy -->
+      <div class="glass-card rounded-2xl p-6">
+        <h2 class="font-semibold text-lg mb-4 flex items-center gap-2">
+          <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#f97316"></i>
+          Energy
+        </h2>
+        <div class="space-y-3">
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Kilowatt-hours (kWh)</label>
+            <input type="number" id="kwh-input" placeholder="e.g., 75" step="0.1" oninput="convertKwh()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-center text-gray-500 text-sm">=</div>
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Joules (J)</label>
+            <input type="number" id="joules-input" placeholder="e.g., 27000-0" oninput="convertJoules()" class="w-full bg-navy-800 border border-white/100 rounded-lg px-3 py-2 font-mono focus:border-electric-400 outline-none">
+          </div>
+          <div class="text-xs text-gray-600 mt-2">1 kWh = 3.6 MJ = 3,600,000 J</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="glass-card rounded-2xl p-6 mb-8">
+      <h2 class="font-semibold text-xl mb-4 flex items-center gap-2">
+        <i data-lucide="info" style="width:1.1rem;height:1.1rem;color:#00d4ff"></i>
+        Common Reference Conversions
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <div class="bg-navy-800/50 rounded-lg p-3">
+          <p class="text-yellow-400 font-medium mb-1">Battery Capacity</p>
+          <p class="text-gray-400 text-xs">10000mAh @ 3.7V = 37Wh</p>
+          <p class="text-gray-400 text-xs">5000mAh @ 7.4V = 37Wh</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-3">
+          <p class="text-yellow-400 font-medium mb-1">E-Bike Range</p>
+          <p class="text-gray-400 text-xs">25km = 15.5 miles</p>
+          <p class="text-gray-400 text-xs">50km = 31 miles</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-3">
+          <p class="text-yellow-400 font-medium mb-1">Drone Flight Time</p>
+          <p class="text-gray-400 text-xs">30 min = 0.5 hours</p>
+          <p class="text-gray-400 text-xs">45 min = 0.75 hours</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-3">
+          <p class="text-yellow-400 font-medium mb-1">Temperature</p>
+          <p class="text-gray-400 text-xs">0°C = 32°F (freezing)</p>
+          <p class="text-gray-400 text-xs">25°C = 77°F (room temp)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6">
+      <h2 class="font-semibold text-xl mb-4 flex items-center gap-2">
+        <i data-lucide="lightbulb" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+        Conversion Tips
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <div class="bg-navy-800/50 rounded-lg p-4">
+          <h3 class="font-medium text-gray-300 mb-2">Why Voltage Matters for Wh to mAh</h3>
+          <p class="text-gray-500">Watt-hours = Volts × Amp-hours. Same mAh at different voltages = different Wh. Always check both specs!</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-4">
+          <h3 class="font-medium text-gray-300 mb-2">Metric Prefixes</h3>
+          <p class="text-gray-500">1 kWh = 1,000 Wh | 1 MWh = 1,000,000 Wh | 1 mAh = 0.001 Ah</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-4">
+          <h3 class="font-medium text-gray-300 mb-2">US vs Metric Units</h3>
+          <p class="text-gray-500">Miles, pounds, Fahrenheit - US uses different systems. Use these converters to compare specs accurately.</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-4">
+          <h3 class="font-medium text-gray-300 mb-2">EV Battery Sizing</h3>
+          <p class="text-gray-500">Tesla Model 3: 6082 kWh | Ford F-150 Lightning: 98-131 kWh | Chevrolet Bolt: 65 kWh</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-navy-900 border-t border-white/80  mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 bg-electric-400 rounded-lg flex items-center justify-center">
+            <i data-lucide="cpu" style="width:0.9rem;height:0.9rem;color:#0a1628"></i>
+          </div>
+          <span class="font-display font-bold text-base">TechSpecs<span class="gradient-text">Hub</span></span>
+        </div>
+        <div class="text-gray-500 text-sm">
+          © 2026 TechSpecsHub · <a href="../about.html" class="hover:text-electric-400">About</a> · <a href="../privacy-policy.html" class="hover:text-electric-400">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function convertWhMahl() {
+      const wh = parseFloat(document.getElementById('wh-input').value);
+      const v = parseFloat(document.getElementById('voltage-select').value);
+      if (wh && v) {
+        document.getElementById('mah-input').value = ((wh * 1000) / v).toFixed(0);
+      }
+    }
+    
+    function convertMahlWh() {
+      const mah = parseFloat(document.getElementById('mah-input').value);
+      const v = parseFloat(document.getElementById('voltage-select').value);
+      if (mah && v) {
+        document.getElementById('wh-input').value = ((mah * v) / 1000).toFixed(2);
+      }
+    }
+    
+    function convertCelsius() {
+      const c = parseFloat(document.getElementById('celsius-input').value);
+      if (!isNaN(c)) {
+        document.getElementById('fahrenheit-input').value = ((c * 9/5) + 32).toFixed(1);
+        document.getElementById('kelvin-input').value = (c + 273.15).toFixed(1);
+      }
+    }
+    
+    function convertFahrenheit() {
+      const f = parseFloat(document.getElementById('fahrenheit-input').value);
+      if (!isNaN(f)) {
+        document.getElementById('celsius-input').value = ((f - 32) * 5/9).toFixed(1);
+        document.getElementById('kelvin-input').value = (((f - 32) * 5/9) + 273.15).toFixed(1);
+      }
+    }
+    
+    function convertKelvin() {
+      const k = parseFloat(document.getElementById('kelvin-input').value);
+      if (!isNaN(k)) {
+        document.getElementById('celsius-input').value = (k - 273.15).toFixed(1);
+        document.getElementById('fahrenheit-input').value = (((k - 273.15) * 9/5) + 32).toFixed(1);
+      }
+    }
+    
+    function convertKm() {
+      const km = parseFloat(document.getElementById('km-input').value);
+      if (!isNaN(km)) {
+        document.getElementById('mi-input').value = (km * 0.621371).toFixed(2);
+      }
+    }
+    
+    function convertMi() {
+      const mi = parseFloat(document.getElementById('mi-input').value);
+      if (!isNaN(mi)) {
+        document.getElementById('km-input').value = (mi * 1.60934).toFixed(2);
+      }
+    }
+    
+    function convertKg() {
+      const kg = parseFloat(document.getElementById('kg-input').value);
+      if (!isNaN(kg)) {
+        document.getElementById('lbs-input').value = (kg * 2.20462).toFixed(2);
+      }
+    }
+    
+    function convertLbs() {
+      const lbs = parseFloat(document.getElementById('lbs-input').value);
+      if (!isNaN(lbs)) {
+        document.getElementById('kg-input').value = (lbs / 2.20462).toFixed(2);
+      }
+    }
+    
+    function convertWatts() {
+      const w = parseFloat(document.getElementById('watts-input').value);
+      if (!isNaN(w)) {
+        document.getElementById('hp-input').value = (w / 746).toFixed(3);
+      }
+    }
+    
+    function convertHp() {
+      const hp = parseFloat(document.getElementById('hp-input').value);
+      if (!isNaN(hp)) {
+        document.getElementById('watts-input').value = (hp * 746).toFixed(0);
+      }
+    }
+    
+    function convertKwh() {
+      const kwh = parseFloat(document.getElementById('kwh-input').value);
+      if (!isNaN(kwh)) {
+        document.getElementById('joules-input').value = (kwh * 3600000).toFixed(0);
+      }
+    }
+    
+    function convertJoules() {
+      const j = parseFloat(document.getElementById('joules-input').value);
+      if (!isNaN(j)) {
+        document.getElementById('kwh-input').value = (j / 3600000).toFixed(4);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+# TechSpecsHub 閮ㄧ讲鎸囧崡
+
+## 馃搵 鍓嶇疆鍑嗗��
+
+### 1. 鍦?GitHub 涓婂垱寤烘柊浠撳簱
+1. 璁块棶锛歨ttps://github.com/new
+2. 濉�鍏ヤ互涓嬩俊鎭�锛?   - Repository name: `techhub`
+   - Description: `Technical specifications database for tech products`
+   - 閫夋嫨 Public
+   - 鉁?鍕鹃�?"Initialize this repository with a README"
+3. 鐐瑰嚮 "Create repository"
+
+---
+
+## 馃殌 閮ㄧ讲姝ラ�わ紙鏂规�?B锛?
+### 2. 涓婁紶鏂囦欢鍒颁粨搴?
+浣犳湁涓や釜閫夐」锛?
+#### 閫夐」 A锛氫娇鐢?GitHub 缃戦〉鐣岄潰锛堢畝鍗曪級
+
+1. 鎵撳紑浣犲垰鍒涘缓鐨勪粨搴擄細https://github.com/zhang1-CPU/techhub
+2. 鐐瑰嚮椤甸潰涓婄殑 "Add file" 鈫?"Upload files"
+3. 浠庢湰鍦版枃浠跺す `c:\Users\23028\Desktop\3web\techhub` 鎷栧叆鎵�鏈夋枃浠?4. 濉�鍐� Commit message锛歚Initial commit - full tech specs database`
+5. 鐐瑰嚮 "Commit changes"
+
+#### 閫夐」 B锛氫娇鐢?Git锛堟帹鑽愶級
+
+```bash
+# 杩涘叆椤圭洰鐩�褰�
+cd c:\Users\23028\Desktop\3web\techhub
+
+# 鍒濆�嬪�?Git
+git init
+git add .
+git commit -m "Initial commit - full tech specs database"
+
+# 娣诲姞杩滅▼浠撳簱
+git remote add origin https://github.com/zhang1-CPU/techhub.git
+
+# 鎺ㄩ�佸埌 main 鍒嗘敮
+git branch -M main
+git push -u origin main
+```
+
+---
+
+## 馃寪 鍚�鐢� GitHub Pages
+
+1. 鍦ㄤ粨搴撻〉闈�锛岀偣鍑� "Settings"
+2. 宸︿晶鑿滃崟鎵惧埌 "Pages"
+3. 鍦?"Build and deployment" 涓嬫柟锛?   - Source: 閫夋嫨 "Deploy from a branch"
+   - Branch: 閫夋嫨 `main` / `gh-pages` 鍜?`/ (root)`
+4. 鐐瑰嚮 "Save"
+5. 绛夊緟 1-3 鍒嗛挓锛屼綘鐨勭綉绔欏氨閮ㄧ讲瀹屾垚浜嗭紒
+
+---
+
+## 馃搶 璁块棶鍦板潃
+
+閮ㄧ讲瀹屾垚鍚庯紝浣犵殑缃戠珯鍦板潃涓猴細
+
+```
+https://zhang1-CPU.github.io/techhub/
+```
+
+---
+
+## 馃攳 鎻愪氦 Sitemap 鍒?Google
+
+### 1. Google Search Console
+
+1. 璁块棶锛歨ttps://search.google.com/search-console
+2. 鐐瑰嚮 "Add property"
+3. 杈撳叆浣犵殑缃戠珯 URL锛歚https://zhang1-CPU.github.io/techhub/`
+4. 閫夋嫨楠岃瘉鏂瑰紡锛堟帹鑽?"HTML tag"锛?5. 鍦ㄧ綉绔欓�栭〉锛坕ndex.html锛夋坊鍔?meta 鏍囩��
+
+### 2. 鎻愪氦 Sitemap
+
+1. 宸︿晶鑿滃崟鎵惧埌 "Sitemaps"
+2. 鍦ㄨ緭鍏ユ�嗚緭鍏ワ細`sitemap.xml`
+3. 鐐瑰嚮 "Submit"
+
+---
+
+## 馃搳 宸插噯澶囧ソ鐨勬枃浠?
+| 鏂囦欢 | 浣滅敤 |
+|------|------|
+| `CNAME` | 鑷�瀹氫箟鍩熷悕閰嶇疆锛堝彲閫夛級 |
+| `404.html` | 404 閿欒��椤甸潰 |
+| `sitemap.xml` | 缃戠珯鍦板浘 |
+| `robots.txt` | 鎼滅储寮曟搸鐖�铏�寮曞�� |
+| `ads.txt` | AdSense 閰嶇疆锛堝彲閫夛級 |
+
+---
+
+## 鈿狅笍 閲嶈�佹彁绀�
+
+### 鑷�瀹氫箟鍩熷悕锛堝彲閫夛級
+
+濡傛灉浣犳兂鐢?`techspecshub.com` 鍩熷悕锛岄渶瑕侊細
+
+1. 鍦ㄤ粨搴?Settings 鈫?Pages 涓�璁剧�?Custom domain
+2. 鍦ㄤ綘鐨勫煙鍚?DNS 涓�娣诲姞锛�
+   ```
+   @  A  185.199.108.153
+   @  A  185.199.109.153
+   @  A  185.199.110.153
+   @  A  185.199.111.153
+   ```
+3. 鍕鹃�?"Enforce HTTPS"
+
+---
+
+## 馃摓 闇�瑕佸府鍔╋紵
+
+濡傛灉鏈夐棶棰橈紝璁块棶 GitHub Pages 瀹樻柟鏂囨。锛?https://pages.github.com/

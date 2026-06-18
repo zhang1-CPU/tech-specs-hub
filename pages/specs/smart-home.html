@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Home Device Specs | TechSpecsHub | Roborock, Yale, Ecovacs Technical Data</title>
+  <meta name="description" content="Technical specifications for smart home devices. Robot vacuum suction, battery, motor specs. Smart lock hardware teardown. Fault codes and repair data for Roborock, Yale, Ecovacs.">
+  <link rel="canonical" href="https://powerspecshub.com/pages/specs/smart-home.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#0a1628',900:'#0f1d32',800:'#162544',700:'#1e3259'},electric:{300:'#67e8f9',400:'#00d4ff',500:'#00b8e6',600:'#0099cc'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body class="bg-navy-950 text-white min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/80 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i></div>
+          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 bg-white/50 text-white rounded-lg">Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Drones &amp; UAV</a>
+              <a href="smart-home.html" class="text-electric-400"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Smart Home Devices</a>
+            </div>
+          </div>
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50">Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i> Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Brand Index A–Z</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">About</a>
+          <a href="../contact.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/50 hover:bg-white/100 border border-white/100 rounded-lg transition-all text-sm text-gray-600 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search specs?/span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-white rounded-lg hover:bg-white/50"><i data-lucide="menu" style="width:1.1rem;height:1.1rem"></i></button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-t border-white/80 ">
+      <div class="max-w-7xl mx-auto px-4 py-4 space-y-1 text-sm">
+        <a href="/" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6"></i> Home</a>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6"></i> Outdoor Power</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6"></i> Hybrid &amp; EV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/50 text-electric-400"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6"></i> Smart Home</a>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i> Error Codes</a>
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="info" style="width:1rem;height:1rem;color:#00b8e6"></i> About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal" class="hidden"><div id="search-backdrop"></div><div class="modal-inner"><div class="modal-box"><div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/100"><i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#4b5563;flex-shrink:0"></i><input id="search-input-field" type="text" placeholder="Search models, error codes, specs" autocomplete="off"><button id="search-close-btn" class="p-1 text-gray-500 hover:text-white rounded"><i data-lucide="x" style="width:1rem;height:1rem"></i></button></div><div id="search-results-list" class="p-2"></div></div></div></div>
+
+  <div class="bg-navy-900/50 border-b border-white/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span>
+        <span class="breadcrumb-current">Smart Home Devices</span>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="bg-gradient-to-b from-navy-900 to-navy-950 border-b border-white/60 py-12 md:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-purple-500/15 border border-purple-500/25 rounded-full text-purple-400 text-xs font-medium">
+              <i data-lucide="home" style="width:0.75rem;height:0.75rem"></i> Smart Home
+            </span>
+          </div>
+          <h1 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+            Smart Home <span class="gradient-text">Device Specs</span>
+          </h1>
+          <p class="text-gray-600 text-lg leading-relaxed">
+            Technical teardown data for robot vacuums, smart locks, and home automation hardware. Motor specs, battery chemistry, sensor arrays, and repair fault codes.
+          </p>
+        </div>
+      </div>
+    </section></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+      <!-- IN-PAGE NAVIGATION -->
+      <section class="mb-8">
+        <div class="glass-card rounded-xl p-4">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-gray-600 flex items-center gap-2">
+              <i data-lucide="navigation" style="width:0.875rem;height:0.875rem"></i>
+              Page Navigation
+            </h3>
+            <span class="text-xs text-gray-500">Quick jump to brand sections</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <a href="#roborock" class="nav-tag">
+              <span class="w-5 h-5 bg-red-500/20 rounded-md flex items-center justify-center mr-2">
+                <span class="text-red-400 font-bold text-xs">R</span>
+              </span>
+              Roborock
+            </a>
+            <a href="#irobot" class="nav-tag">
+              <span class="w-5 h-5 bg-blue-500/20 rounded-md flex items-center justify-center mr-2">
+                <span class="text-blue-400 font-bold text-xs">iR</span>
+              </span>
+              iRobot
+            </a>
+            <a href="#ecovacs" class="nav-tag">
+              <span class="w-5 h-5 bg-teal-500/20 rounded-md flex items-center justify-center mr-2">
+                <span class="text-teal-400 font-bold text-xs">EC</span>
+              </span>
+              Ecovacs
+            </a>
+            <a href="#dreame" class="nav-tag">
+              <span class="w-5 h-5 bg-orange-500/20 rounded-md flex items-center justify-center mr-2">
+                <span class="text-orange-400 font-bold text-xs">D</span>
+              </span>
+              Dreame
+            </a>
+            <a href="#dyson" class="nav-tag">
+              <span class="w-5 h-5 bg-purple-500/20 rounded-md flex items-center justify-center mr-2">
+                <span class="text-purple-400 font-bold text-xs">Dy</span>
+              </span>
+              Dyson
+            </a>
+            <a href="#husqvarna" class="nav-tag">
+              <span class="w-5 h-5 bg-green-500/20 rounded-md flex items-center justify-center mr-2">
+                <span class="text-green-400 font-bold text-xs">H</span>
+              </span>
+              Husqvarna
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- DREAME ROBOT VACUUMS -->
+      <section id="dreame" class="mb-12">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 bg-orange-500/15 rounded-lg flex items-center justify-center">
+            <span class="text-orange-400 font-bold text-xs font-mono">D</span>
+          </div>
+          <h2 class="font-display font-bold text-2xl">Dreame</h2>
+          <span class="text-xs text-gray-500">Suzhou, China</span>
+        </div>
+        
+        <p class="text-gray-600 text-sm mb-4">Dreame specializes in high-suction robot vacuums and wet/dry vacuum cleaners. The L20 Ultra offers 7000Pa suction with hot water mop washing, while the D10s Plus provides budget-friendly LiDAR navigation.</p>
+
+        <div class="glass-card rounded-2xl overflow-hidden mb-6">
+          <div class="p-4 bg-navy-800/50 border-b border-white/50">
+            <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+              <i data-lucide="cpu" style="width:0.875rem;height:0.875rem"></i>
+              Robot Vacuums
+            </h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="specs-table">
+              <thead>
+                <tr><th>Model</th><th>Suction</th><th>Battery</th><th>Navigation</th><th>Features</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-semibold">L20 Ultra <span class="winner-badge ml-1">Flagship</span></td>
+                  <td class="font-mono text-yellow-400">7000 Pa</td>
+                  <td class="font-mono">6400 mAh</td>
+                  <td><span class="badge">LiDAR + AI</span></td>
+                  <td class="text-gray-600 text-sm">Hot water mop wash, auto empty</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">L10s Pro Ultra Heat</td>
+                  <td class="font-mono">7000 Pa</td>
+                  <td class="font-mono">5200 mAh</td>
+                  <td><span class="badge">LiDAR</span></td>
+                  <td class="text-gray-600 text-sm">Hot water mop wash</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">D10s Pro</td>
+                  <td class="font-mono">5000 Pa</td>
+                  <td class="font-mono">5200 mAh</td>
+                  <td><span class="badge">LiDAR</span></td>
+                  <td class="text-gray-600 text-sm">AI obstacle avoidance</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">D10s Plus</td>
+                  <td class="font-mono">4000 Pa</td>
+                  <td class="font-mono">5200 mAh</td>
+                  <td><span class="badge">LiDAR</span></td>
+                  <td class="text-gray-600 text-sm">Budget option</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden">
+          <div class="p-4 bg-navy-800/50 border-b border-white/50">
+            <h3 class="font-semibold text-sm text-gray-300 flex items-center gap-2">
+              <i data-lucide="zap" style="width:0.875rem;height:0.875rem"></i>
+              Wet/Dry Vacuum Cleaners
+            </h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="specs-table">
+              <thead>
+                <tr><th>Model</th><th>Suction</th><th>Battery</th><th>Clean/Dirty Tank</th><th>Features</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-semibold">H12 Pro</td>
+                  <td class="font-mono">16000 Pa</td>
+                  <td class="font-mono">4000 mAh</td>
+                  <td class="font-mono">900/600 mL</td>
+                  <td class="text-gray-600 text-sm">Self-cleaning roller</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold">H13 Pro</td>
+                  <td class="font-mono">18000 Pa</td>
+                  <td class="font-mono">5000 mAh</td>
+                  <td class="font-mono">1000/800 mL</td>
+                  <td class="text-gray-600 text-sm">Dual roller, edge cleaning</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROBOROCK ROBOT VACUUMS -->
+      <section id="roborock" class="mb-12">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 bg-red-500/15 rounded-lg flex items-center justify-center">
+            <span class="text-red-400 font-bold text-xs font-mono">RR</span>
+          </div>
+          <h2 class="font-display font-bold text-2xl">Roborock</h2>
+          <span class="text-xs text-gray-500">Beijing, China</span>
+        </div>
+        
+        <p class="text-gray-600 text-sm mb-4">Roborock leads the premium robot vacuum market with Reactive AI obstacle avoidance and ultrasonic mop vibration. The S8 MaxV Ultra dominates with 10,000Pa suction and hot water mop washing.</p>
+
+        <div class="glass-card rounded-xl overflow-hidden mb-6">
+          <div class="overflow-x-auto">
+            <table class="specs-table">
+              <thead>
+                <tr>
+                  <th style="min-width:140px">Model</th>
+                  <th>Suction (Pa)</th>
+                  <th>Battery (mAh/Wh)</th>
+                  <th>Runtime (min)</th>
+                  <th>Navigation</th>
+                  <th>Mop System</th>
+                  <th>Auto-Empty Base</th>
+                  <th>Noise (dB)</th>
+                  <th>Dust Bin (mL)</th>
+                  <th>Weight (kg)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-medium">S8 Pro Ultra</td>
+                  <td class="font-mono text-green-400">6,000</td>
+                  <td class="font-mono">5,200 / 76.5</td>
+                  <td class="font-mono">180</td>
+                  <td class="text-gray-600 text-sm">LiDAR + Reactive AI 2.0</td>
+                  <td class="text-gray-600 text-sm">Sonic + auto-lift</td>
+                  <td class="text-green-400 text-sm">?Self-wash + refill</td>
+                  <td class="font-mono">71</td>
+                  <td class="font-mono">350</td>
+                  <td class="font-mono">4.8</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">S8 MaxV Ultra <span class="winner-badge ml-1">2024 CES</span></td>
+                  <td class="font-mono text-green-400">10,000</td>
+                  <td class="font-mono">5,200 / 76.5</td>
+                  <td class="font-mono">180</td>
+                  <td class="text-green-400 text-sm">LiDAR + Reactive AI 2.0</td>
+                  <td class="text-green-400 text-sm">Sonic + hot water wash</td>
+                  <td class="text-green-400 text-sm">?Auto-empty + clean</td>
+                  <td class="font-mono">67</td>
+                  <td class="font-mono">350</td>
+                  <td class="font-mono">4.8</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">S7 MaxV Ultra</td>
+                  <td class="font-mono text-green-400">5,100</td>
+                  <td class="font-mono">5,200 / 76.5</td>
+                  <td class="font-mono">180</td>
+                  <td class="text-gray-600 text-sm">LiDAR + RGB Camera</td>
+                  <td class="text-gray-600 text-sm">Sonic + auto-lift</td>
+                  <td class="text-green-400 text-sm">?Self-wash + refill</td>
+                  <td class="font-mono">67</td>
+                  <td class="font-mono">350</td>
+                  <td class="font-mono">4.6</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Q7 Max</td>
+                  <td class="font-mono">4,200</td>
+                  <td class="font-mono">5,200 / 58.0</td>
+                  <td class="font-mono">180</td>
+                  <td class="text-gray-600 text-sm">LiDAR (PreciSense)</td>
+                  <td class="text-gray-600 text-sm">Vibrate mop</td>
+                  <td class="text-gray-600 text-sm">Optional add-on</td>
+                  <td class="font-mono">65</td>
+                  <td class="font-mono">470</td>
+                  <td class="font-mono">4.2</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Q5 Pro</td>
+                  <td class="font-mono">5,500</td>
+                  <td class="font-mono">5,200 / 74.0</td>
+                  <td class="font-mono">180</td>
+                  <td class="text-gray-600 text-sm">LiDAR</td>
+                  <td class="text-gray-600 text-sm">Vibrate mop</td>
+                  <td class="text-gray-600 text-sm">Optional add-on</td>
+                  <td class="font-mono">67</td>
+                  <td class="font-mono">470</td>
+                  <td class="font-mono">3.9</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Internal specs -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+          <div class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold mb-3 text-sm flex items-center gap-2">
+              <i data-lucide="cpu" style="width:0.875rem;height:0.875rem;color:#00d4ff"></i> S8 Pro Ultra Internal Specs
+            </h3>
+            <dl class="grid grid-cols-2 gap-y-2.5 text-sm">
+              <dt class="text-gray-500">CPU</dt><dd class="text-right text-gray-300">Quad-core ARM Cortex-A</dd>
+              <dt class="text-gray-500">LiDAR type</dt><dd class="text-right text-gray-300">Rotating 360° ToF</dd>
+              <dt class="text-gray-500">LiDAR range</dt><dd class="font-mono text-right">0.15-10 m</dd>
+              <dt class="text-gray-500">LiDAR frequency</dt><dd class="font-mono text-right">5.5 Hz</dd>
+              <dt class="text-gray-500">Brush motor type</dt><dd class="text-right text-gray-300">Brushless DC</dd>
+              <dt class="text-gray-500">Main brush width</dt><dd class="font-mono text-right">220 mm</dd>
+              <dt class="text-gray-500">Cliff sensors</dt><dd class="font-mono text-right">4× IR</dd>
+              <dt class="text-gray-500">Wi-Fi</dt><dd class="text-right text-gray-300">2.4 GHz / 5 GHz</dd>
+            </dl>
+          </div>
+          <div class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold mb-3 text-sm flex items-center gap-2">
+              <i data-lucide="battery" style="width:0.875rem;height:0.875rem;color:#00d4ff"></i> Battery &amp; Motor Details
+            </h3>
+            <dl class="grid grid-cols-2 gap-y-2.5 text-sm">
+              <dt class="text-gray-500">Battery chemistry</dt><dd class="text-right text-gray-300">Li-ion 18650</dd>
+              <dt class="text-gray-500">Battery voltage</dt><dd class="font-mono text-right">14.4 V (nominal)</dd>
+              <dt class="text-gray-500">Capacity</dt><dd class="font-mono text-right">5,200 mAh</dd>
+              <dt class="text-gray-500">Energy</dt><dd class="font-mono text-right">76.5 Wh</dd>
+              <dt class="text-gray-500">Charge time</dt><dd class="font-mono text-right">~3 hours</dd>
+              <dt class="text-gray-500">Charging voltage</dt><dd class="font-mono text-right">20 VDC / 1.2 A</dd>
+              <dt class="text-gray-500">Suction motor</dt><dd class="text-right text-gray-300">Brushless, 6,000 Pa</dd>
+              <dt class="text-gray-500">Wheel motors</dt><dd class="text-right text-gray-300">2× DC gear motor</dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- Roborock S8 MaxV Ultra Highlight -->
+        <div class="glass-card rounded-xl p-6 mt-6 border-l-4 border-green-500">
+          <h3 class="font-semibold text-lg mb-3 text-green-400 flex items-center gap-2">
+            <i data-lucide="star" style="width:1.1rem;height:1.1rem"></i>
+            Roborock S8 MaxV Ultra | 2024 CES Flagship
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <h4 class="text-sm font-semibold text-gray-300 mb-2">Cleaning Performance</h4>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li><span class="text-green-400">✓</span> 10,000Pa Suction (Industry Leading)</li>
+                <li><span class="text-green-400">✓</span> VibraRise 3.0 Sonic Mopping</li>
+                <li><span class="text-green-400">✓</span> Hot Water Mop Cleaning (60°C)</li>
+                <li><span class="text-green-400">✓</span> Auto Mop Lifting 5mm</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-gray-300 mb-2">AI Smart Navigation</h4>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li><span class="text-green-400">✓</span> Reactive AI 2.0 Obstacle Recognition</li>
+                <li><span class="text-green-400">✓</span> 73 Obstacle Categories (including pet waste)</li>
+                <li><span class="text-green-400">✓</span> Smart Room Recognition & Partition</li>
+                <li><span class="text-green-400">✓</span> Real-time Video Monitoring</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-gray-300 mb-2">All-in-One Dock</h4>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li><span class="text-green-400">✓</span> Auto Dust Collection</li>
+                <li><span class="text-green-400">✓</span> Auto Mop Washing</li>
+                <li><span class="text-green-400">✓</span> Auto Water Refill</li>
+                <li><span class="text-green-400">✓</span> Hot Air Drying</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/100 flex items-center justify-between">
+            <div class="text-sm">
+              <span class="text-gray-500">Price:</span>
+              <span class="text-green-400 font-semibold ml-2">$1,799-$3,999</span>
+            </div>
+            <div class="text-sm">
+              <span class="text-gray-500">Reviews:</span>
+              <span class="text-white font-semibold ml-2">35,000+ (4.8/5)</span>
+            </div>
+            <div class="text-sm">
+              <span class="text-gray-500">Awards:</span>
+              <span class="text-yellow-400 font-semibold ml-2">2024 Prime Day Best Seller</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Roborock error codes -->
+        <h3 class="font-semibold text-base mb-3 text-gray-300">Common Error Codes</h3>
+        <div class="glass-card rounded-xl overflow-hidden">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th style="width:90px">Error #</th>
+                <th>Description</th>
+                <th style="width:90px">Severity</th>
+                <th>Fix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="font-mono text-yellow-400">Error 1</code></td>
+                <td>LDS (LiDAR) Error - turret blocked or motor failed</td>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td class="text-gray-600 text-sm">Clear debris from lidar turret. Replacement LDS module if motor failed.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-yellow-400">Error 2</code></td>
+                <td>Collision Sensor stuck or dirty</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td class="text-gray-600 text-sm">Press bumper, clean sensors with compressed air.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-yellow-400">Error 5</code></td>
+                <td>Wheel motor stalled or wheel raised</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td class="text-gray-600 text-sm">Remove hair from wheel axles, spin wheels manually to verify free rotation.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-yellow-400">Error 9</code></td>
+                <td>Dustbin full or missing</td>
+                <td><span class="badge badge-info">Info</span></td>
+                <td class="text-gray-600 text-sm">Empty dustbin, clean sensor contacts.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-yellow-400">Error 15</code></td>
+                <td>Battery fault ?low health or charging issue</td>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td class="text-gray-600 text-sm">Clean dock contacts with isopropyl alcohol. Replace battery if unit &gt; 3 years old.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Data Source -->
+        <p class="text-xs text-gray-500 mt-2 px-4 pb-3">
+          <strong>📋 Data Source:</strong> Roborock Official Specifications | 
+          <a href="https://us.roborock.com/pages/s8-maxv-ultra" target="_blank" class="text-electric-400 hover:underline">Official Product Page</a> | 
+          Amazon Official Store | S8 MaxV Ultra: 10,000Pa suction, CES 2024 release
+        </p>
+      </section>
+
+      <!-- ECOVACS -->
+      <section>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 bg-blue-500/15 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="navigation" style="width:1.1rem;height:1.1rem;color:#60a5fa"></i>
+          </div>
+          <div>
+            <h2 class="font-display font-bold text-2xl">Ecovacs DEEBOT Series</h2>
+            <p class="text-gray-500 text-sm">X2 Omni, T20 Omni ?AIVI 3D obstacle avoidance, OZMO mopping</p>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="specs-table">
+              <thead>
+                <tr>
+                  <th style="min-width:140px">Model</th>
+                  <th>Suction (Pa)</th>
+                  <th>Battery (Wh)</th>
+                  <th>Runtime (min)</th>
+                  <th>Navigation</th>
+                  <th>Mop</th>
+                  <th>Auto-Empty</th>
+                  <th>Weight (kg)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-medium">DEEBOT X2 Omni</td>
+                  <td class="font-mono text-green-400">8,000</td>
+                  <td class="font-mono">84.0</td>
+                  <td class="font-mono">260</td>
+                  <td class="text-gray-600 text-sm">AIVI 3D + LiDAR + RGB</td>
+                  <td class="text-gray-600 text-sm">OZMO Turbo 2.0</td>
+                  <td class="text-green-400 text-sm">?Self-wash + refill</td>
+                  <td class="font-mono">5.0</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">DEEBOT T20 Omni</td>
+                  <td class="font-mono">6,000</td>
+                  <td class="font-mono">78.7</td>
+                  <td class="font-mono">200</td>
+                  <td class="text-gray-600 text-sm">TrueDetect 3D + LiDAR</td>
+                  <td class="text-gray-600 text-sm">OZMO Turbo + hot water</td>
+                  <td class="text-green-400 text-sm">?Self-wash + dry</td>
+                  <td class="font-mono">4.8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- IROBOT ROOMBA -->
+      <section id="irobot" class="mb-12">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 bg-blue-500/15 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="text-blue-400 font-bold text-sm font-mono">iR</span>
+          </div>
+          <h2 class="font-display font-bold text-2xl">iRobot Roomba</h2>
+          <span class="text-xs text-gray-500">Bedford, Massachusetts, USA</span>
+        </div>
+        
+        <p class="text-gray-600 text-sm mb-4">iRobot invented the consumer robot vacuum market. While recent financial challenges, Roomba remains popular in North America with trusted navigation and cleaning performance.</p>
+
+        <div class="glass-card rounded-2xl overflow-hidden mb-6">
+          <div class="overflow-x-auto">
+            <table class="specs-table">
+              <thead>
+                <tr>
+                  <th style="min-width:160px">Model</th>
+                  <th>Suction</th>
+                  <th>Battery (mAh)</th>
+                  <th>Runtime (min)</th>
+                  <th>Navigation</th>
+                  <th>Auto-Empty</th>
+                  <th>Mop</th>
+                  <th>Weight (kg)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-medium">Roomba Combo j7+ <span class="winner-badge ml-1">Flagship</span></td>
+                  <td class="font-mono text-green-400">10x Standard</td>
+                  <td class="font-mono">4,400</td>
+                  <td class="font-mono">120</td>
+                  <td class="text-gray-600 text-sm">vSLAM + AI Obstacle</td>
+                  <td class="text-green-400 text-sm">?Clean Base</td>
+                  <td class="text-green-400 text-sm">?Retractable</td>
+                  <td class="font-mono">3.9</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Roomba j7+</td>
+                  <td class="font-mono">10x Standard</td>
+                  <td class="font-mono">4,400</td>
+                  <td class="font-mono">120</td>
+                  <td class="text-gray-600 text-sm">vSLAM + AI Obstacle</td>
+                  <td class="text-green-400 text-sm">?Clean Base</td>
+                  <td class="text-gray-500 text-sm">?/td>
+                  <td class="font-mono">3.5</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Roomba i7+</td>
+                  <td class="font-mono">10x Standard</td>
+                  <td class="font-mono">3,300</td>
+                  <td class="font-mono">90</td>
+                  <td class="text-gray-600 text-sm">vSLAM</td>
+                  <td class="text-green-400 text-sm">?Clean Base</td>
+                  <td class="text-gray-500 text-sm">?/td>
+                  <td class="font-mono">3.4</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Roomba s9+</td>
+                  <td class="font-mono">40x Standard</td>
+                  <td class="font-mono">3,300</td>
+                  <td class="font-mono">120</td>
+                  <td class="text-gray-600 text-sm">vSLAM</td>
+                  <td class="text-green-400 text-sm">?Clean Base</td>
+                  <td class="text-gray-500 text-sm">?/td>
+                  <td class="font-mono">3.9</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Roomba 694</td>
+                  <td class="font-mono">Standard</td>
+                  <td class="font-mono">1,800</td>
+                  <td class="font-mono">90</td>
+                  <td class="text-gray-600 text-sm">Bumper-based</td>
+                  <td class="text-gray-500 text-sm">?/td>
+                  <td class="text-gray-500 text-sm">?/td>
+                  <td class="font-mono">3.6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+          <div class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold mb-3 text-sm flex items-center gap-2">
+              <i data-lucide="cpu" style="width:0.875rem;height:0.875rem;color:#60a5fa"></i> Roomba j7+ Internal Specs
+            </h3>
+            <dl class="grid grid-cols-2 gap-y-2.5 text-sm">
+              <dt class="text-gray-500">Navigation System</dt><dd class="text-right text-gray-300">vSLAM Camera</dd>
+              <dt class="text-gray-500">AI Processor</dt><dd class="text-right text-gray-300">Custom CNN</dd>
+              <dt class="text-gray-500">Battery Capacity</dt><dd class="font-mono text-right">14.4 V Li-ion</dd>
+              <dt class="text-gray-500">Runtime</dt><dd class="font-mono text-right">Up to 120 min</dd>
+              <dt class="text-gray-500">Charge Time</dt><dd class="font-mono text-right">~3 hours</dd>
+              <dt class="text-gray-500">Dustbin</dt><dd class="font-mono text-right">350 ml</dd>
+              <dt class="text-gray-500">Clean Base</dt><dd class="text-right text-gray-300">2L dust bag</dd>
+              <dt class="text-gray-500">Filter</dt><dd class="text-right text-gray-300">High-Efficiency</dd>
+              <dt class="text-gray-500">Wi-Fi</dt><dd class="text-right text-gray-300">2.4 GHz</dd>
+              <dt class="text-gray-500">Mapping</dt><dd class="text-right text-gray-300">Imprint Smart Mapping</dd>
+            </dl>
+          </div>
+          <div class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold mb-3 text-sm flex items-center gap-2">
+              <i data-lucide="alert-triangle" style="width:0.875rem;height:0.875rem;color:#fbbf24"></i> Common Error Codes
+            </h3>
+            <dl class="grid grid-cols-2 gap-y-2.5 text-sm">
+              <dt class="text-gray-500"><code class="text-yellow-400">Error 1</code></dt><dd class="text-right text-gray-600 text-xs">Left wheel stuck</dd>
+              <dt class="text-gray-500"><code class="text-yellow-400">Error 2</code></dt><dd class="text-right text-gray-600 text-xs">Right wheel stuck</dd>
+              <dt class="text-gray-500"><code class="text-yellow-400">Error 5</code></dt><dd class="text-right text-gray-600 text-xs">Cleaning head stuck</dd>
+              <dt class="text-gray-500"><code class="text-yellow-400">Error 6</code></dt><dd class="text-right text-gray-600 text-xs">Bin full or missing</dd>
+              <dt class="text-gray-500"><code class="text-yellow-400">Error 8</code></dt><dd class="text-right text-gray-600 text-xs">Battery error</dd>
+              <dt class="text-gray-500"><code class="text-yellow-400">Error 9</code></dt><dd class="text-right text-gray-600 text-xs">Bumper stuck</dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="alert alert-warning">
+          <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:1px"></i>
+          <div>
+            <strong>Note:</strong> iRobot financial status uncertain. For purchases, verify support availability and warranty terms. For repairs, contact official service centers.
+          </div>
+        </div>
+      </section>
+
+      <!-- SMART LOCKS -->
+      <section>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 bg-yellow-500/15 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="lock" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h2 class="font-display font-bold text-2xl">Smart Locks</h2>
+            <p class="text-gray-500 text-sm">Yale Assure, Schlage Encode ?hardware specs, connectivity, battery data</p>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl overflow-hidden mb-5">
+          <div class="overflow-x-auto">
+            <table class="specs-table">
+              <thead>
+                <tr>
+                  <th style="min-width:160px">Model</th>
+                  <th>Brand</th>
+                  <th>Entry Methods</th>
+                  <th>Connectivity</th>
+                  <th>Battery</th>
+                  <th>Battery Life</th>
+                  <th>Max Codes</th>
+                  <th>Motor</th>
+                  <th>IP Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-medium">Assure Lock SL</td>
+                  <td class="text-gray-600">Yale</td>
+                  <td class="text-gray-600 text-sm">Keypad + App + Key</td>
+                  <td class="text-gray-600 text-sm">Z-Wave / Zigbee (module)</td>
+                  <td class="font-mono">4× AA</td>
+                  <td class="font-mono">~12 months</td>
+                  <td class="font-mono">25</td>
+                  <td class="text-gray-600 text-sm">DC gear motor</td>
+                  <td class="text-gray-600 text-sm">ANSI Grade 2</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Assure Lock 2</td>
+                  <td class="text-gray-600">Yale</td>
+                  <td class="text-gray-600 text-sm">Keypad + Fingerprint + App</td>
+                  <td class="text-gray-600 text-sm">Wi-Fi + Bluetooth</td>
+                  <td class="font-mono">4× AA</td>
+                  <td class="font-mono">~6 months</td>
+                  <td class="font-mono">Unlimited (app)</td>
+                  <td class="text-gray-600 text-sm">DC gear motor</td>
+                  <td class="text-gray-600 text-sm">ANSI Grade 2</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Encode Plus</td>
+                  <td class="text-gray-600">Schlage</td>
+                  <td class="text-gray-600 text-sm">Keypad + App + Key</td>
+                  <td class="text-gray-600 text-sm">Wi-Fi (built-in)</td>
+                  <td class="font-mono">4× AA</td>
+                  <td class="font-mono">~12 months</td>
+                  <td class="font-mono">100</td>
+                  <td class="text-gray-600 text-sm">DC clutch motor</td>
+                  <td class="text-gray-600 text-sm">ANSI Grade 1</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Smart Lock Pro (4th)</td>
+                  <td class="text-gray-600">August</td>
+                  <td class="text-gray-600 text-sm">App + Key (existing lock)</td>
+                  <td class="text-gray-600 text-sm">Z-Wave + Zigbee + BT</td>
+                  <td class="font-mono">4× AA</td>
+                  <td class="font-mono">~3 months</td>
+                  <td class="font-mono">Unlimited (app)</td>
+                  <td class="text-gray-600 text-sm">DC motor retrofit</td>
+                  <td class="text-gray-600 text-sm">Indoor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Yale fault indicators -->
+        <h3 class="font-semibold text-base mb-3 text-gray-300">Yale Assure Lock Fault Indicators</h3>
+        <div class="glass-card rounded-xl overflow-hidden">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th style="width:140px">Indicator</th>
+                <th>Meaning</th>
+                <th style="width:90px">Severity</th>
+                <th>Resolution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="font-mono text-yellow-400 text-sm">3× Red Flash</code></td>
+                <td>Invalid PIN ?code not recognized</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td class="text-gray-600 text-sm">Verify code. Factory reset: remove battery cover, hold reset 3 s.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-yellow-400 text-sm">Low Battery Tone</code></td>
+                <td>Battery below 20% ?4× AA cells</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td class="text-gray-600 text-sm">Replace all 4× AA together. Use lithium AA in cold environments.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-red-400 text-sm">Alarm + Red LED</code></td>
+                <td>Tamper alert ?forced entry or 5+ failed attempts</td>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td class="text-gray-600 text-sm">30 s lockout active. Check Yale Access app for entry history. Change master code if breach suspected.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-yellow-400 text-sm">Blinking Yellow</code></td>
+                <td>Z-Wave / Zigbee hub connection lost</td>
+                <td><span class="badge badge-info">Info</span></td>
+                <td class="text-gray-600 text-sm">Check hub status. Re-pair if hub was factory reset. Range limit ~30 ft indoor.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- HUSQVARNA AUTOMOWER -->
+      <section id="husqvarna" class="mb-12">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 bg-orange-500/15 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="grass" style="width:1.1rem;height:1.1rem;color:#fb923c"></i>
+          </div>
+          <div>
+            <h2 class="font-display font-bold text-2xl">Husqvarna Automower</h2>
+            <p class="text-gray-500 text-sm">Robotic lawn mowers ?18V expert battery data, mowing specs, DTC lookup</p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-xl overflow-hidden mb-6">
+          <div class="overflow-x-auto">
+            <table class="specs-table">
+              <thead>
+                <tr>
+                  <th style="min-width:160px">Model</th>
+                  <th>Mowing Capacity</th>
+                  <th>Battery Spec</th>
+                  <th>Runtime</th>
+                  <th>Charge Time</th>
+                  <th>Slope</th>
+                  <th>Cut Width</th>
+                  <th>Weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-medium">Automower 305</td>
+                  <td class="font-mono">600 m²</td>
+                  <td class="text-gray-600 text-sm">Li-ion</td>
+                  <td class="font-mono">?/td>
+                  <td class="font-mono">?/td>
+                  <td class="font-mono">?/td>
+                  <td class="font-mono">?/td>
+                  <td class="font-mono">?/td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Automower 315 Mark II</td>
+                  <td class="font-mono">1,500 m²</td>
+                  <td class="text-gray-600 text-sm">18V / 2.1 Ah</td>
+                  <td class="font-mono">60 min</td>
+                  <td class="font-mono">60 min</td>
+                  <td class="font-mono">40%</td>
+                  <td class="font-mono">22 cm</td>
+                  <td class="font-mono">9.4 kg</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Automower 450X Nera</td>
+                  <td class="font-mono text-green-400">5,000 m²</td>
+                  <td class="text-gray-600 text-sm">18V / 7.5 Ah</td>
+                  <td class="font-mono">145?95 min</td>
+                  <td class="font-mono text-green-400">40 min</td>
+                  <td class="font-mono">50%</td>
+                  <td class="font-mono">24 cm</td>
+                  <td class="font-mono">?/td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Automower 115H</td>
+                  <td class="font-mono">1,600 m²</td>
+                  <td class="text-gray-600 text-sm">18V / 2.0 Ah</td>
+                  <td class="font-mono">60 min</td>
+                  <td class="font-mono">60 min</td>
+                  <td class="font-mono">30%</td>
+                  <td class="font-mono">22 cm</td>
+                  <td class="font-mono">?/td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 450X Expert Specs -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+          <div class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold mb-3 text-sm flex items-center gap-2">
+              <i data-lucide="zap" style="width:0.875rem;height:0.875rem;color:#fb923c"></i> 450X Nera Power System (Expert)
+            </h3>
+            <dl class="grid grid-cols-2 gap-y-2.5 text-sm">
+              <dt class="text-gray-500">Nominal Voltage</dt><dd class="font-mono text-right">18.0 VDC</dd>
+              <dt class="text-gray-500">Full Charge</dt><dd class="font-mono text-right text-green-400">20.5V ± 0.2V</dd>
+              <dt class="text-gray-500">Charging Current</dt><dd class="font-mono text-right">7.0 A (fast charge)</dd>
+              <dt class="text-gray-500">Motor Type</dt><dd class="text-right text-gray-300">BLDC (brushless)</dd>
+              <dt class="text-gray-500">Avg Power Draw</dt><dd class="font-mono text-right">~26 W</dd>
+              <dt class="text-gray-500">Noise</dt><dd class="font-mono text-right">60 dB(A)</dd>
+            </dl>
+          </div>
+          <div class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold mb-3 text-sm flex items-center gap-2">
+              <i data-lucide="battery-charging" style="width:0.875rem;height:0.875rem;color:#fb923c"></i> Battery Voltage Thresholds (Expert)
+            </h3>
+            <dl class="grid grid-cols-2 gap-y-2.5 text-sm">
+              <dt class="text-gray-500">Full Charge</dt><dd class="font-mono text-right text-green-400">20.5V</dd>
+              <dt class="text-gray-500">Seek Charging</dt><dd class="font-mono text-right text-yellow-400">17.5V</dd>
+              <dt class="text-gray-500">Critical Cut-off</dt><dd class="font-mono text-right text-red-400">14.0V</dd>
+              <dt class="text-gray-500">Max Runtime</dt><dd class="font-mono text-right">24 hours</dd>
+              <dt class="text-gray-500">IP Rating</dt><dd class="text-right text-gray-300">IPX5</dd>
+              <dt class="text-gray-500">Cutting Height</dt><dd class="font-mono text-right">20?0 mm</dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- Error Code Lookup -->
+        <h3 class="font-semibold text-base mb-3 text-gray-300">DTC Lookup ?Error Codes</h3>
+        <div class="glass-card rounded-xl overflow-hidden mb-6">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th style="width:90px">Code</th>
+                <th>Meaning</th>
+                <th>Expert Troubleshooting</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="font-mono text-red-400">Error 1</code></td>
+                <td>No loop signal</td>
+                <td class="text-gray-600 text-sm">Check station LED: <span class="text-blue-400">Blue flash</span> = broken boundary wire; <span class="text-red-400">Red solid</span> = station PCB damaged</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-yellow-400">Error 2</code></td>
+                <td>Outside working area</td>
+                <td class="text-gray-600 text-sm">Check for large metal objects interfering signal, or boundary wire polarity reversed</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-yellow-400">Error 12</code></td>
+                <td>Empty battery</td>
+                <td class="text-gray-600 text-sm">Machine stuck on way back to charger, or Guide Wire malfunction</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-blue-400">Error 43</code></td>
+                <td>Connectivity problem</td>
+                <td class="text-gray-600 text-sm">Reset 4G/BT module, check if FOTA firmware is latest version</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Battery Maintenance -->
+        <div class="glass-card rounded-xl p-6 border-l-4 border-orange-500 mb-6">
+          <h3 class="font-semibold text-lg mb-3 flex items-center gap-2 text-orange-400">
+            <i data-lucide="alert-triangle" style="width:1.1rem;height:1.1rem"></i> Battery Maintenance (Expert Warning)
+          </h3>
+          <div class="text-sm text-gray-300 space-y-2">
+            <p><strong class="text-orange-300">Winter Storage:</strong> Must charge to 80%+ before storage</p>
+            <p><strong class="text-orange-300">Regular Check:</strong> Every 3 months check voltage level</p>
+            <p><strong class="text-red-400">Critical:</strong> If voltage drops below 15V, control board may not wake up ?requires disassembly to activate or battery replacement</p>
+          </div>
+        </div>
+
+        <!-- Routine Maintenance -->
+        <h3 class="font-semibold text-base mb-3 text-gray-300">Routine Maintenance</h3>
+        <div class="glass-card rounded-xl overflow-hidden">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Frequency</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-medium">Replace Blades</td>
+                <td class="text-gray-600 text-sm">Every 4? weeks</td>
+                <td class="text-gray-600 text-sm">Dull blades affect cut quality and increase battery drain</td>
+              </tr>
+              <tr>
+                <td class="font-medium">Clean Wheels & Chassis</td>
+                <td class="text-gray-600 text-sm">Weekly</td>
+                <td class="text-gray-600 text-sm">Remove grass clippings to prevent motor strain</td>
+              </tr>
+              <tr>
+                <td class="font-medium">Check Boundary Wire</td>
+                <td class="text-gray-600 text-sm">Monthly</td>
+                <td class="text-gray-600 text-sm">Verify wire is intact and pegs are secure</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Data Source -->
+        <p class="text-xs text-gray-500 mt-2 px-4 pb-3">
+          <strong>📋 Data Source:</strong> Husqvarna Official Specifications | 
+          <a href="https://www.husqvarna.com/us/robotic-lawn-mowers/" target="_blank" class="text-electric-400 hover:underline">Official Product Page</a> | 
+          450X EPOS: 2.5 acres, $5,899 | 435X AWD: 0.9 acres, $2,999
+        </p>
+      </section>
+
+      <!-- DYSON -->
+      <section id="dyson" class="mb-12">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 bg-purple-500/15 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="wind" style="width:1.1rem;height:1.1rem;color:#a855f7"></i>
+          </div>
+          <div>
+            <h2 class="font-display font-bold text-2xl">Dyson</h2>
+            <p class="text-gray-500 text-sm">Cordless vacuums, fans, and air purifiers - V15 Detect battery data, fault codes, and technical specifications</p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-xl overflow-hidden mb-6">
+          <div class="overflow-x-auto">
+            <table class="specs-table">
+              <thead>
+                <tr>
+                  <th style="min-width:160px">Model</th>
+                  <th>Suction Power</th>
+                  <th>Battery (mAh)</th>
+                  <th>Battery (Wh)</th>
+                  <th>Runtime</th>
+                  <th>Runtime Boost</th>
+                  <th>Weight</th>
+                  <th>Dust Bin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-medium">V15 Detect</td>
+                  <td class="font-mono text-green-400">230 AW</td>
+                  <td class="font-mono">3,600</td>
+                  <td class="font-mono">75.6</td>
+                  <td class="font-mono">60 min</td>
+                  <td class="font-mono">10 min</td>
+                  <td class="font-mono">2.62 kg</td>
+                  <td class="font-mono">0.76 L</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">V12 Detect Slim</td>
+                  <td class="font-mono">150 AW</td>
+                  <td class="font-mono">3,000</td>
+                  <td class="font-mono">63.0</td>
+                  <td class="font-mono">60 min</td>
+                  <td class="font-mono">12 min</td>
+                  <td class="font-mono">2.11 kg</td>
+                  <td class="font-mono">0.35 L</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">V11 Absolute</td>
+                  <td class="font-mono">185 AW</td>
+                  <td class="font-mono">3,000</td>
+                  <td class="font-mono">63.0</td>
+                  <td class="font-mono">60 min</td>
+                  <td class="font-mono">10 min</td>
+                  <td class="font-mono">2.9 kg</td>
+                  <td class="font-mono">0.76 L</td>
+                </tr>
+                <tr>
+                  <td class="font-medium">Gen5detect</td>
+                  <td class="font-mono text-green-400">262 AW</td>
+                  <td class="font-mono">3,600</td>
+                  <td class="font-mono">75.6</td>
+                  <td class="font-mono">70 min</td>
+                  <td class="font-mono">10 min</td>
+                  <td class="font-mono">3.0 kg</td>
+                  <td class="font-mono">0.76 L</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Data Source -->
+          <p class="text-xs text-gray-500 mt-2 px-4 pb-3">
+            <strong>📋 Data Source:</strong> Dyson Official Specifications | 
+            <a href="https://www.dyson.com/vacuum-cleaners" target="_blank" class="text-electric-400 hover:underline">Official Product Page</a> | 
+            Gen5detect: 262 AW suction, V15 Detect: 180 Air Watts, 5100mAh battery
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+          <div class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold mb-3 text-sm flex items-center gap-2">
+              <i data-lucide="battery-charging" style="width:0.875rem;height:0.875rem;color:#a855f7"></i> Battery Voltage Thresholds (Expert)
+            </h3>
+            <dl class="grid grid-cols-2 gap-y-2.5 text-sm">
+              <dt class="text-gray-500">Nominal Voltage</dt><dd class="font-mono text-right">21.0 V</dd>
+              <dt class="text-gray-500">Full Charge</dt><dd class="font-mono text-right text-green-400">25.2V</dd>
+              <dt class="text-gray-500">Yellow Light (Low)</dt><dd class="font-mono text-right text-yellow-400">18.0V</dd>
+              <dt class="text-gray-500">Critical Cut-off</dt><dd class="font-mono text-right text-red-400">15.0V</dd>
+              <dt class="text-gray-500">Cell Type</dt><dd class="text-right text-gray-300">Li-ion</dd>
+              <dt class="text-gray-500">Cycle Life</dt><dd class="font-mono text-right">~300 cycles</dd>
+            </dl>
+          </div>
+          <div class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold mb-3 text-sm flex items-center gap-2">
+              <i data-lucide="zap" style="width:0.875rem;height:0.875rem;color:#a855f7"></i> Motor Specs
+            </h3>
+            <dl class="grid grid-cols-2 gap-y-2.5 text-sm">
+              <dt class="text-gray-500">Motor Type</dt><dd class="text-right text-gray-300">V15: Hyperdymium</dd>
+              <dt class="text-gray-500">Max RPM</dt><dd class="font-mono text-right">125,000</dd>
+              <dt class="text-gray-500">Motor Temp Limit</dt><dd class="font-mono text-right">100°C</dd>
+              <dt class="text-gray-500">Filter Type</dt><dd class="text-right text-gray-300">HEPA</dd>
+              <dt class="text-gray-500">Noise Level</dt><dd class="font-mono text-right">71?3 dB</dd>
+              <dt class="text-gray-500">Sensor Tech</dt><dd class="text-right text-gray-300">Laser Dust Detection</dd>
+            </dl>
+          </div>
+        </div>
+
+        <h3 class="font-semibold text-base mb-3 text-gray-300">Error Codes ?Common Faults</h3>
+        <div class="glass-card rounded-xl overflow-hidden mb-6">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th style="width:90px">Code</th>
+                <th>Indicator</th>
+                <th>Troubleshooting</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="font-mono text-red-400">Flashing Red</code></td>
+                <td>Red light flashes</td>
+                <td class="text-gray-600 text-sm">Blockage in brush bar or bin sensor blocked, or battery overheating</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-yellow-400">3 Flashes</code></td>
+                <td>3 red flashes</td>
+                <td class="text-gray-600 text-sm">Battery issue: check connections, charge fully, or replace battery</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-blue-400">Yellow Light</code></td>
+                <td>Yellow light solid</td>
+                <td class="text-gray-600 text-sm">Filter needs cleaning or blockage in airway</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-green-400">No Power</code></td>
+                <td>No lights</td>
+                <td class="text-gray-600 text-sm">Check battery charge, reset device by holding trigger 10 seconds</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="font-semibold text-base mb-3 text-gray-300">Routine Maintenance Schedule</h3>
+        <div class="glass-card rounded-xl overflow-hidden mb-6">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Frequency</th>
+                <th>How To Do It</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-medium">Empty Dust Bin</td>
+                <td class="text-gray-600 text-sm">After each use</td>
+                <td class="text-gray-600 text-sm">Open bin release, empty over trash, tap bin to dislodge stuck debris</td>
+              </tr>
+              <tr>
+                <td class="font-medium">Clean Filter</td>
+                <td class="text-gray-600 text-sm">Every month</td>
+                <td class="text-gray-600 text-sm">Rinse with cold water only, air dry for 24 hours before reinstalling</td>
+              </tr>
+              <tr>
+                <td class="font-medium">Clean Brush Bar</td>
+                <td class="text-gray-600 text-sm">Every 2 weeks</td>
+                <td class="text-gray-600 text-sm">Remove brush bar, cut away hair/tangle with scissors, wipe clean</td>
+              </tr>
+              <tr>
+                <td class="font-medium">Check for Blockages</td>
+                <td class="text-gray-600 text-sm">Monthly</td>
+                <td class="text-gray-600 text-sm">Inspect airway, wand, and tools for debris buildup</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 border-l-4 border-purple-500 mb-6">
+          <h3 class="font-semibold text-lg mb-3 flex items-center gap-2 text-purple-400">
+            <i data-lucide="wrench" style="width:1.1rem;height:1.1rem"></i> Battery Care Tips (Important!)
+          </h3>
+          <div class="text-sm text-gray-300 space-y-2">
+            <p><strong class="text-purple-300">Avoid Full Discharges:</strong> Don't let battery run completely flat regularly ?this reduces lifespan</p>
+            <p><strong class="text-purple-300">Charge Temperature:</strong> Charge at room temperature (15?5°C), avoid extreme cold/heat</p>
+            <p><strong class="text-yellow-400">Storage:</strong> If storing for >1 month, charge to ~50% and remove battery from vacuum</p>
+            <p><strong class="text-red-400">Yellow Light:</strong> When yellow light appears, charge immediately ?don't continue using</p>
+          </div>
+        </div>
+
+        <h3 class="font-semibold text-base mb-3 text-gray-300">Suction Loss Troubleshooting</h3>
+        <div class="space-y-3">
+          <div class="glass-card rounded-lg p-4">
+            <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-red-500/20 text-red-400 text-xs flex items-center justify-center">1</span>
+              Check Filter First
+            </h4>
+            <p class="text-gray-600 text-sm">Washable HEPA filter clogging is the #1 cause of suction loss. Remove, rinse, and ensure completely dry before reinstalling.</p>
+          </div>
+          <div class="glass-card rounded-lg p-4">
+            <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-orange-500/20 text-orange-400 text-xs flex items-center justify-center">2</span>
+              Inspect Airway Blockages
+            </h4>
+            <p class="text-gray-600 text-sm">Check wand, floor head, and bin inlet for debris. Use a pipe cleaner or compressed air to clear obstructions.</p>
+          </div>
+          <div class="glass-card rounded-lg p-4">
+            <h4 class="font-semibold text-sm mb-2 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-yellow-500/20 text-yellow-400 text-xs flex items-center justify-center">3</span>
+              Verify Brush Bar Rotation
+            </h4>
+            <p class="text-gray-600 text-sm">If brush bar isn't spinning, remove hair tangle, check end caps for damage, and ensure it's seated correctly.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DATA VERIFY -->
+      <div class="data-verify">
+        <div class="flex items-start gap-3">
+          <i data-lucide="shield-check" style="width:1.1rem;height:1.1rem;color:#00d4ff;flex-shrink:0;margin-top:2px"></i>
+          <div>
+            <p class="font-semibold text-sm mb-1">Data Verification</p>
+            <p class="text-sm text-gray-600 mb-2">Roborock internal specifications sourced from official service manuals and iFixit teardown reports. Lock specs from manufacturer datasheets. Husqvarna Automower data from Husqvarna China official product pages and regional robot mower market listings. Dyson specifications from Dyson official website and service manuals.</p>
+            <div class="flex flex-wrap gap-x-5 gap-y-1 text-xs text-gray-500">
+              <span><strong class="text-gray-600">Last Updated:</strong> May 15, 2026</span>
+              <span><strong class="text-gray-600">Sources:</strong> Roborock Support, Ecovacs product specs, Yale product pages, Schlage product pages, Husqvarna CN official site, Dyson Support</span>
+              <span><strong class="text-gray-600">Community:</strong> r/Roborock, iFixit, SmartHomeDB, Husqvarna community forums</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-navy-900 border-t border-white/80  mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+        <div class="col-span-2">
+          <a href="/" class="flex items-center gap-2 mb-3">
+            <div class="w-7 h-7 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:0.9rem;height:0.9rem;color:#0a1628"></i></div>
+            <span class="font-display font-bold text-base">TechSpecs<span class="gradient-text">Hub</span></span>
+          </a>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">The technical parameter and fault diagnosis reference for consumer electronics, EVs, and power devices.</p>
+          <p class="text-gray-600 text-xs">TechSpecsHub participates in the Amazon Associates Program. Affiliate links may appear on product pages.</p>
+        </div>
+        <div>
+          <p class="footer-col-title">Categories</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li><a href="outdoor-power.html" class="hover:text-electric-400 transition-colors">Outdoor Power</a></li>
+            <li><a href="hybrid-cars.html" class="hover:text-electric-400 transition-colors">Hybrid &amp; EV</a></li>
+            <li><a href="drones.html" class="hover:text-electric-400 transition-colors">Drones &amp; UAV</a></li>
+            <li><a href="smart-home.html" class="text-electric-400">Smart Home</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Data Tools</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li><a href="../error-code-db.html" class="hover:text-electric-400 transition-colors">Error Code DB</a></li>
+            <li><a href="../master-specs.html" class="hover:text-electric-400 transition-colors">Master Specs</a></li>
+            <li><a href="../brand-index.html" class="hover:text-electric-400 transition-colors">Brand Index A–Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Company</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li><a href="../about.html" class="hover:text-electric-400 transition-colors">About</a></li>
+            <li><a href="../contact.html" class="hover:text-electric-400 transition-colors">Contact</a></li>
+            <li><a href="../privacy-policy.html" class="hover:text-electric-400 transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/60 pt-6">
+        <span class="text-gray-600 text-xs">© 2026 TechSpecsHub. Specifications for informational purposes only.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

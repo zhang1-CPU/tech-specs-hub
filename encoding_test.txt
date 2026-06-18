@@ -1,0 +1,7 @@
+utf-8 failed: 'utf-8' codec can't decode bytes in position 93-94: invalid continuation byte
+utf-8-sig failed: 'utf-8' codec can't decode bytes in position 93-94: invalid continuation byte
+gbk failed: 'gbk' codec can't decode byte 0x80 in position 80: illegal multibyte sequence
+gb18030 failed: 'gb18030' codec can't decode byte 0x80 in position 80: illegal multibyte sequence
+big5 failed: 'big5' codec can't decode byte 0x80 in position 80: illegal multibyte sequence
+=== latin1 ===
+latin1 failed: 'gbk' codec can't encode character '\xe4' in position 80: illegal multibyte sequence

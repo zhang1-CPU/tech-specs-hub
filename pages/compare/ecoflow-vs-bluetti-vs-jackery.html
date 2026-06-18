@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoFlow vs Bluetti vs Jackery (2026) — Detailed Portable Power Station Comparison | TechSpecsHub</title>
+  <meta name="description" content="Side-by-side comparison of EcoFlow, Bluetti, and Jackery portable power stations. Battery capacity, AC output, solar charging, LFP vs NMC, warranty, and real-world performance. Data from official manufacturer specifications verified.">
+  <link rel="canonical" href="https://powerspecshub.com/pages/compare/ecoflow-vs-bluetti-vs-jackery.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#0a1628',900:'#0f1d32',800:'#162544',700:'#1e3259'},electric:{300:'#67e8f9',400:'#00d4ff',500:'#00b8e6',600:'#0099cc'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body class="bg-navy-950 text-white min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i></div>
+          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
+          <a href="../specs/outdoor-power.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">Outdoor Power</a>
+          <a href="../specs/drones.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">Drones</a>
+          <a href="../error-code-db.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">Error Codes</a>
+        </nav>
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/10"><i data-lucide="menu" style="width:1.1rem;height:1.1rem"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="badge badge-info">Comparison</span>
+        <span class="badge badge-ok">Updated June 2026</span>
+      </div>
+      <h1 class="font-display font-bold text-4xl md:text-5xl mb-4">
+        EcoFlow vs Bluetti vs Jackery — <span class="gradient-text">Complete Comparison</span>
+      </h1>
+      <p class="text-gray-400 text-lg max-w-3xl">
+        The three biggest names in portable power stations. We compare battery chemistry, AC output, solar charging speed, cycle life, and real-world pricing based on verified manufacturer specifications.
+      </p>
+    </div>
+
+    <!-- TL;DR Summary -->
+    <section class="glass-card rounded-2xl p-8 mb-12">
+      <h2 class="font-display font-bold text-2xl mb-6">Quick Verdict</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="border-l-4 border-electric-400 pl-6 py-2">
+          <h3 class="font-semibold mb-2 text-electric-400">Best Overall: EcoFlow</h3>
+          <p class="text-sm text-gray-400 mb-3">Fastest AC+Solar charging, modular expandable battery design, best app experience.</p>
+          <p class="text-xs text-gray-500">Top models: Delta Pro 3, Delta 2 Max</p>
+        </div>
+        <div class="border-l-4 border-purple-400 pl-6 py-2">
+          <h3 class="font-semibold mb-2 text-purple-400">Best Capacity/Price: Bluetti</h3>
+          <p class="text-sm text-gray-400 mb-3">More watt-hours per dollar. LFP cells standard. Good for off-grid setups.</p>
+          <p class="text-xs text-gray-500">Top models: AC300 + B300, AC500, AC200Max</p>
+        </div>
+        <div class="border-l-4 border-yellow-400 pl-6 py-2">
+          <h3 class="font-semibold mb-2 text-yellow-400">Best for Beginners: Jackery</h3>
+          <p class="text-sm text-gray-400 mb-3">Simple plug-and-play. Widest retail availability. Smaller form factors.</p>
+          <p class="text-xs text-gray-500">Top models: Explorer 2000 Plus, Explorer 1500</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Head-to-Head Comparison Table -->
+    <section class="mb-12">
+      <h2 class="font-display font-bold text-2xl mb-6">Head-to-Head Spec Comparison</h2>
+      <div class="glass-card rounded-2xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Specification</th>
+                <th class="text-electric-400">EcoFlow Delta Pro 3</th>
+                <th class="text-purple-400">Bluetti AC300 + B300</th>
+                <th class="text-yellow-400">Jackery Explorer 2000 Plus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-gray-400">Base Battery Capacity</td>
+                <td class="font-mono">4,096 Wh (LFP)</td>
+                <td class="font-mono">3,072 Wh (LFP)</td>
+                <td class="font-mono">2,042 Wh (Li-ion NMC)</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Max Expanded Capacity</td>
+                <td class="font-mono text-green-400">25 kWh (6 extra packs)</td>
+                <td class="font-mono text-green-400">12.3 kWh (3 extra packs)</td>
+                <td class="font-mono">24 kWh (12 extra packs)</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">AC Output (Continuous)</td>
+                <td class="font-mono text-green-400">3,600 W (X-Boost 7,200 W)</td>
+                <td class="font-mono text-green-400">3,000 W (6,000 W surge)</td>
+                <td class="font-mono">2,200 W</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">AC Outlets</td>
+                <td class="font-mono">6 × AC</td>
+                <td class="font-mono">6 × AC</td>
+                <td class="font-mono">4 × AC</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Max Solar Input</td>
+                <td class="font-mono text-green-400">1,600 W (MPPT 12-150V)</td>
+                <td class="font-mono">1,200 W (MPPT 12-150V)</td>
+                <td class="font-mono">800 W</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Charge from Solar (0-80%)</td>
+                <td class="font-mono text-green-400">~2.5 hours</td>
+                <td class="font-mono">~2.5 hours</td>
+                <td class="font-mono">~3 hours</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">AC Wall Charge Speed</td>
+                <td class="font-mono text-green-400">1.5 hours (0-100%)</td>
+                <td class="font-mono">2.5 hours</td>
+                <td class="font-mono">2 hours</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Battery Chemistry</td>
+                <td class="font-mono text-green-400">LiFePO4 (LFP)</td>
+                <td class="font-mono text-green-400">LiFePO4 (LFP)</td>
+                <td class="font-mono text-yellow-400">Li-ion NMC</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Rated Cycle Life (80%)</td>
+                <td class="font-mono text-green-400">3,000 cycles</td>
+                <td class="font-mono text-green-400">3,500 cycles</td>
+                <td class="font-mono text-yellow-400">500 cycles</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Weight</td>
+                <td class="font-mono">52.9 lbs (24 kg)</td>
+                <td class="font-mono">66 lbs (30 kg)</td>
+                <td class="font-mono text-green-400">47.4 lbs (21.5 kg)</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Dimensions</td>
+                <td class="font-mono text-sm">17.7×10.2×11.0 in</td>
+                <td class="font-mono text-sm">20.5×13.8×14.7 in</td>
+                <td class="font-mono text-sm">15.7×11.5×11.5 in</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">USB-C PD Output</td>
+                <td class="font-mono text-green-400">2 × 100W</td>
+                <td class="font-mono">2 × 100W</td>
+                <td class="font-mono">2 × 100W</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">RV/12V Output</td>
+                <td class="font-mono">Yes, 30A</td>
+                <td class="font-mono">Yes, 30A</td>
+                <td class="font-mono">Yes, 10A</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Warranty</td>
+                <td class="font-mono">2 years (up to 5)</td>
+                <td class="font-mono">4 years</td>
+                <td class="font-mono">3 years</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400">Smart App</td>
+                <td class="font-mono text-green-400">EcoFlow App (WiFi + BT)</td>
+                <td class="font-mono">Bluetti App (BT)</td>
+                <td class="font-mono">Jackery App (BT)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Battery Chemistry Deep Dive -->
+    <section class="mb-12">
+      <h2 class="font-display font-bold text-2xl mb-6 flex items-center gap-2">
+        <i data-lucide="battery-charging" style="width:1.25rem;height:1.25rem;color:#00d4ff"></i>
+        Battery Chemistry: Why LFP vs NMC Matters
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="font-semibold mb-4 text-green-400">LiFePO4 (LFP) — EcoFlow &amp; Bluetti</h3>
+          <ul class="text-sm text-gray-300 space-y-2 list-disc list-inside">
+            <li><strong>Cycle life:</strong> 3,000-3,500 cycles to 80% capacity — roughly 6-7× longer than NMC</li>
+            <li><strong>Thermal stability:</strong> Much less prone to thermal runaway. Safer for indoor use.</li>
+            <li><strong>Voltage consistency:</strong> Flat discharge curve means stable output until near-empty.</li>
+            <li><strong>Environmental:</strong> No cobalt or nickel. Easier to recycle.</li>
+            <li><strong>Trade-off:</strong> Lower energy density — heavier per Wh than NMC.</li>
+          </ul>
+        </div>
+        <div class="glass-card rounded-xl p-6">
+          <h3 class="font-semibold mb-4 text-yellow-400">Li-ion NMC — Jackery</h3>
+          <ul class="text-sm text-gray-300 space-y-2 list-disc list-inside">
+            <li><strong>Cycle life:</strong> 500 cycles to 80% capacity. Expect replacement after 3-5 years of regular use.</li>
+            <li><strong>Energy density:</strong> Higher — Jackery 2000 Plus is lighter than similar LFP units.</li>
+            <li><strong>Charge speed:</strong> NMC cells accept fast charging well when temperature-controlled.</li>
+            <li><strong>Thermal concerns:</strong> Requires more sophisticated BMS and thermal management.</li>
+            <li><strong>Best for:</strong> Occasional use, camping, emergency backup — not daily deep-cycling.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Case Recommendations -->
+    <section class="mb-12">
+      <h2 class="font-display font-bold text-2xl mb-6">Which One for Your Use Case?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="glass-card rounded-xl p-6 border border-green-500/20">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            <i data-lucide="zap" style="width:1rem;height:1rem;color:#4ade80"></i>
+            Home Backup (Power Outages)
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">
+            You need high AC output for refrigerators, well pumps, or medical equipment. Fast recharge from wall outlet.
+          </p>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between py-1.5 border-b border-white/10">
+              <span class="text-electric-400 font-semibold">EcoFlow Delta Pro 3</span>
+              <span class="font-mono text-green-400">Recommended</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-white/10">
+              <span class="text-purple-400 font-semibold">Bluetti AC500</span>
+              <span class="font-mono text-green-400">Runner-up</span>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <span class="text-yellow-400 font-semibold">Jackery 2000 Plus</span>
+              <span class="font-mono text-gray-500">Small backup only</span>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-6 border border-yellow-500/20">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            <i data-lucide="tent" style="width:1rem;height:1rem;color:#fbbf24"></i>
+            Camping &amp; Tailgating
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">
+            Portability matters. Moderate capacity for overnight trips. Easy to transport.
+          </p>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between py-1.5 border-b border-white/10">
+              <span class="text-yellow-400 font-semibold">Jackery Explorer 1500/2000</span>
+              <span class="font-mono text-green-400">Best portability</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-white/10">
+              <span class="text-electric-400 font-semibold">EcoFlow River 2 Pro</span>
+              <span class="font-mono text-green-400">Fast charge, compact</span>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <span class="text-purple-400 font-semibold">Bluetti AC200Max</span>
+              <span class="font-mono text-gray-500">Heavier, more capacity</span>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-6 border border-blue-500/20">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            <i data-lucide="sun" style="width:1rem;height:1rem;color:#60a5fa"></i>
+            Off-Grid / Solar System
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">
+            Maximum solar input. Expandable battery banks. Daily cycling requires LFP chemistry.
+          </p>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between py-1.5 border-b border-white/10">
+              <span class="text-purple-400 font-semibold">Bluetti AC500 + B300S</span>
+              <span class="font-mono text-green-400">Most expandable</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-white/10">
+              <span class="text-electric-400 font-semibold">EcoFlow Delta Pro Ultra</span>
+              <span class="font-mono text-green-400">Best charge speed</span>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <span class="text-yellow-400 font-semibold">Jackery Solar Generator</span>
+              <span class="font-mono text-gray-500">NMC not ideal for daily cycles</span>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-6 border border-purple-500/20">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            <i data-lucide="wallet" style="width:1rem;height:1rem;color:#c084fc"></i>
+            Budget Under $1,000
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">
+            Entry-level units for occasional use. Focus on LFP for longevity even at smaller capacities.
+          </p>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between py-1.5 border-b border-white/10">
+              <span class="text-electric-400 font-semibold">EcoFlow River 2 Max</span>
+              <span class="font-mono text-green-400">~$600, 512Wh LFP</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-white/10">
+              <span class="text-purple-400 font-semibold">Bluetti EB70S</span>
+              <span class="font-mono text-green-400">~$650, 716Wh LFP</span>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <span class="text-yellow-400 font-semibold">Jackery Explorer 500</span>
+              <span class="font-mono text-gray-500">~$500, 518Wh NMC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Issues -->
+    <section class="mb-12">
+      <h2 class="font-display font-bold text-2xl mb-6">Known Issues &amp; Reliability</h2>
+      <div class="glass-card rounded-2xl p-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <h3 class="font-semibold mb-3 text-electric-400">EcoFlow</h3>
+            <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
+              <li>Early Delta 2 units had fan noise issues — resolved in v2 firmware</li>
+              <li>App occasionally disconnects on weak WiFi</li>
+              <li>Extra battery packs are expensive (~$1,000 each)</li>
+              <li>X-Boost mode reduces voltage — check device compatibility</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-3 text-purple-400">Bluetti</h3>
+            <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
+              <li>Heavier form factor — not for frequent transport</li>
+              <li>Bluetooth-only app (no WiFi remote monitoring)</li>
+              <li>Fan runs more frequently under load than competitors</li>
+              <li>Customer support quality varies by region</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-3 text-yellow-400">Jackery</h3>
+            <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
+              <li>NMC chemistry — capacity degrades faster with deep cycling</li>
+              <li>No built-in MPPT for some older models (add-on solar panel only)</li>
+              <li>Lower AC output for price point vs competitors</li>
+              <li>Plastic construction feels less robust for rough field use</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Sources -->
+    <section class="mb-12">
+      <div class="glass-card rounded-2xl p-6">
+        <h3 class="font-semibold text-sm text-gray-400 mb-4 flex items-center gap-2">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#00d4ff"></i>
+          Data Sources &amp; Verification
+        </h3>
+        <div class="text-xs text-gray-500 space-y-3">
+          <p>
+            <strong class="text-gray-400">EcoFlow Data:</strong>
+            <a href="https://www.ecoflow.com/us/delta-pro-3-portable-power-station" target="_blank" class="text-electric-400 hover:underline">EcoFlow US Official Website — Delta Pro 3</a>
+          </p>
+          <p>
+            <strong class="text-gray-400">Bluetti Data:</strong>
+            <a href="https://www.bluettipower.com/products/bluetti-ac300-inverter-module" target="_blank" class="text-electric-400 hover:underline">Bluetti Power Official — AC300 + B300</a>
+          </p>
+          <p>
+            <strong class="text-gray-400">Jackery Data:</strong>
+            <a href="https://www.jackery.com/products/explorer-2000-plus-portable-power-station" target="_blank" class="text-electric-400 hover:underline">Jackery US Official Website — Explorer 2000 Plus</a>
+          </p>
+          <p class="pt-3 border-t border-white/10">
+            Full technical documentation: <a href="../specs/ecoflow-delta-pro-3.html" class="text-electric-400 hover:underline">EcoFlow Delta Pro 3 specs</a>, <a href="../specs/bluetti-ac200max.html" class="text-electric-400 hover:underline">Bluetti AC200Max specs</a>, <a href="../specs/jackery-explorer-2000-plus.html" class="text-electric-400 hover:underline">Jackery Explorer 2000 Plus specs</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="mb-12">
+      <h2 class="font-display font-bold text-2xl mb-6">Explore More</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="../specs/outdoor-power.html" class="glass-card rounded-xl p-6 hover:bg-navy-700/50 transition-all">
+          <h3 class="font-semibold mb-2">Outdoor Power Station Specs</h3>
+          <p class="text-sm text-gray-500">Complete technical data for 20+ models across all three brands.</p>
+        </a>
+        <a href="../tools/runtime-calculator.html" class="glass-card rounded-xl p-6 hover:bg-navy-700/50 transition-all">
+          <h3 class="font-semibold mb-2">Runtime Calculator</h3>
+          <p class="text-sm text-gray-500">Calculate how long your devices will run on a specific power station.</p>
+        </a>
+        <a href="../error-code-db.html" class="glass-card rounded-xl p-6 hover:bg-navy-700/50 transition-all">
+          <h3 class="font-semibold mb-2">Error Code Database</h3>
+          <p class="text-sm text-gray-500">Troubleshooting guides and error code meanings for popular models.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-navy-900 border-t border-white/10 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <a href="/" class="flex items-center gap-2">
+          <div class="w-6 h-6 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:0.75rem;height:0.75rem;color:#0a1628"></i></div>
+          <span class="font-bold">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <p class="text-xs text-gray-500">© 2026 TechSpecsHub. Specifications cross-checked against official manufacturer data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

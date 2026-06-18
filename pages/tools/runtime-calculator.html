@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Station Runtime Calculator | TechSpecsHub</title>
+  <meta name="description" content="Calculate how long your portable power station will run your appliances. Enter battery capacity and device wattage to estimate runtime.">
+  <link rel="canonical" href="https://powerspecshub.com/pages/tools/runtime-calculator.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#0a1628',900:'#0f1d32',800:'#162544',700:'#1e3259'},electric:{300:'#67e8f9',400:'#00d4ff',500:'#00b8e6',600:'#0099cc'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Power Station Runtime Calculator","description":"Calculate how long your portable power station will run your appliances","url":"https://powerspecshub.com/pages/tools/runtime-calculator.html","applicationCategory":"UtilityApplication","publisher":{"@type":"Organization","name":"TechSpecsHub","url":"https://powerspecshub.com"}}</script>
+  <style>
+    .result-display { background: linear-gradient(135deg, #0f1d32 0%, #162544 100%); }
+    .glow-cyan { box-shadow: 0 0 30px rgba(0, 212, 255, 0.15); }
+    .glow-green { box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+    .glow-orange { box-shadow: 0 0 20px rgba(249, 115, 22, 0.2); }
+    .glow-red { box-shadow: 0 0 20px rgba(239, 68, 68, 0.2); }
+  </style>
+</head>
+<body class="bg-navy-950 text-white min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/80 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center">
+            <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+          </div>
+          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Smart Home Devices</a>
+            </div>
+          </div>
+          <div class="relative nav-dropdown-trigger">
+            <button class="flex items-center gap-1 px-3 py-2 bg-white/50 text-white rounded-lg">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="runtime-calculator.html" class="text-electric-400"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Runtime Calculator</a>
+              <a href="unit-converter.html"><i data-lucide="arrowLeftRight" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Unit Converter</a>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i> Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Master Specs Comparison</a>
+            </div>
+          </div>
+          <a href="../brand-index.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">Brand Index</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/50 hover:bg-white/100 border border-white/100 rounded-lg transition-all text-sm text-gray-400 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search?/span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/50">
+            <i data-lucide="menu" style="width:1.1rem;height:1.1rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-t border-white/80 ">
+      <div class="max-w-7xl mx-auto px-4 py-4 space-y-1 text-sm">
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6"></i> Outdoor Power</a>
+        <a href="runtime-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/50 text-electric-400"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#00b8e6"></i> Runtime Calculator</a>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i> Error Codes</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal" class="hidden"><div id="search-backdrop"></div><div class="modal-inner"><div class="modal-box"><div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/100"><i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#4b5563;flex-shrink:0"></i><input id="search-input-field" type="text" placeholder="Search models, error codes, specs? autocomplete="off"><button id="search-close-btn" class="p-1 text-gray-500 hover:text-white rounded"><i data-lucide="x" style="width:1rem;height:1rem"></i></button></div><div id="search-results-list" class="p-2"></div></div></div></div>
+
+  <div class="bg-navy-900/50 border-b border-white/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span>
+        <a href="#">Tools</a>
+        <span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span>
+        <span class="breadcrumb-current">Runtime Calculator</span>
+      </nav>
+    </div>
+  </div>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-electric-400/100 border border-electric-400/200 rounded-full text-electric-400 text-xs font-medium mb-4">
+        <i data-lucide="calculator" style="width:0.75rem;height:0.75rem"></i> Essential Tool
+      </div>
+      <h1 class="font-display font-bold text-3xl md:text-4xl mb-3">
+        Power Station <span class="gradient-text">Runtime Calculator</span>
+      </h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Calculate how long your portable power station will run your appliances. Enter battery capacity and device wattage to estimate runtime.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+      <div class="glass-card rounded-2xl p-6">
+        <h2 class="font-semibold text-lg mb-5 flex items-center gap-2">
+          <i data-lucide="settings-2" style="width:1rem;height:1rem;color:#00d4ff"></i>
+          Input Parameters
+        </h2>
+        
+        <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Battery Capacity (Wh)</label>
+            <input type="number" id="battery-capacity" placeholder="e.g., 2048" min="1" max="20000" value="2048"
+              class="w-full bg-navy-800 border border-white/100 rounded-lg px-4 py-3 text-lg font-mono focus:border-electric-400 focus:ring-1 focus:ring-electric-400 outline-none transition">
+            <p class="text-xs text-gray-500 mt-1">Common: Delta 2 = 1024Wh, Delta 2 Max = 2048Wh, Delta Pro = 3600Wh</p>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Battery Efficiency</label>
+            <div class="flex gap-3">
+              <label class="flex-1 flex items-center gap-2 bg-navy-800 border border-white/100 rounded-lg p-3 cursor-pointer hover:border-electric-400/500 transition">
+                <input type="radio" name="efficiency" value="0.85" checked class="accent-electric-400">
+                <div>
+                  <span class="text-sm font-medium">85%</span>
+                  <span class="text-xs text-gray-500 block">Most common</span>
+                </div>
+              </label>
+              <label class="flex-1 flex items-center gap-2 bg-navy-800 border border-white/100 rounded-lg p-3 cursor-pointer hover:border-electric-400/500 transition">
+                <input type="radio" name="efficiency" value="0.90" class="accent-electric-400">
+                <div>
+                  <span class="text-sm font-medium">90%</span>
+                  <span class="text-xs text-gray-500 block">High efficiency</span>
+                </div>
+              </label>
+              <label class="flex-1 flex items-center gap-2 bg-navy-800 border border-white/100 rounded-lg p-3 cursor-pointer hover:border-electric-400/500 transition">
+                <input type="radio" name="efficiency" value="0.95" class="accent-electric-400">
+                <div>
+                  <span class="text-sm font-medium">95%</span>
+                  <span class="text-xs text-gray-500 block">Maximum</span>
+                </div>
+              </label>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">LFP batteries typically have 85-95% round-trip efficiency</p>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Device Wattage (W)</label>
+            <input type="number" id="device-wattage" placeholder="e.g., 100" min="1" max="5000" value="100"
+              class="w-full bg-navy-800 border border-white/100 rounded-lg px-4 py-3 text-lg font-mono focus:border-electric-400 focus:ring-1 focus:ring-electric-400 outline-none transition">
+            <p class="text-xs text-gray-500 mt-1">Or select from common appliances below</p>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Or Select Appliance</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <button onclick="selectAppliance(10)" class="appliance-btn bg-navy-800 border border-white/100 rounded-lg p-2 text-center hover:border-electric-400/500 transition">
+                <div class="text-lg">📱</div>
+                <div class="text-xs text-gray-400">Phone (10W)</div>
+              </button>
+              <button onclick="selectAppliance(60)" class="appliance-btn bg-navy-800 border border-white/100 rounded-lg p-2 text-center hover:border-electric-400/500 transition">
+                <div class="text-lg">💡</div>
+                <div class="text-xs text-gray-400">LED Lamp (60W)</div>
+              </button>
+              <button onclick="selectAppliance(150)" class="appliance-btn bg-navy-800 border border-white/100 rounded-lg p-2 text-center hover:border-electric-400/500 transition">
+                <div class="text-lg">💻</div>
+                <div class="text-xs text-gray-400">Laptop (150W)</div>
+              </button>
+              <button onclick="selectAppliance(800)" class="appliance-btn bg-navy-800 border border-white/100 rounded-lg p-2 text-center hover:border-electric-400/500 transition">
+                <div class="text-lg">🧊</div>
+                <div class="text-xs text-gray-400">Mini Fridge (800W)</div>
+              </button>
+              <button onclick="selectAppliance(1200)" class="appliance-btn bg-navy-800 border border-white/100 rounded-lg p-2 text-center hover:border-electric-400/500 transition">
+                <div class="text-lg">☕</div>
+                <div class="text-xs text-gray-400">Coffee Maker (1200W)</div>
+              </button>
+              <button onclick="selectAppliance(1800)" class="appliance-btn bg-navy-800 border border-white/100 rounded-lg p-2 text-center hover:border-electric-400/500 transition">
+                <div class="text-lg">🍳</div>
+                <div class="text-xs text-gray-400">Microwave (1800W)</div>
+              </button>
+            </div>
+          </div>
+
+          <button onclick="calculateRuntime()" class="w-full bg-electric-400 text-navy-900 font-bold py-3 rounded-lg hover:bg-electric-300 transition flex items-center justify-center gap-2">
+            <i data-lucide="calculator" style="width:1rem;height:1rem"></i>
+            Calculate Runtime
+          </button>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="glass-card rounded-2xl p-6 result-display glow-cyan border border-electric-400/200">
+          <h3 class="text-sm font-medium text-gray-400 mb-2">Estimated Runtime</h3>
+          <div class="text-5xl font-bold font-display gradient-text mb-2" id="runtime-result">--</div>
+          <div class="text-gray-400" id="runtime-detail">Enter values above to calculate</div>
+        </div>
+
+        <div class="glass-card rounded-xl p-5">
+          <h3 class="font-semibold mb-4 flex items-center gap-2">
+            <i data-lucide="battery-full" style="width:1rem;height:1rem;color:#00d4ff"></i>
+            Quick Reference
+          </h3>
+          <div class="space-y-3 text-sm" id="quick-ref">
+            <div class="flex justify-between items-center py-2 border-b border-white/50">
+              <span class="text-gray-400">Delta 2 (1024Wh) + Laptop (150W)</span>
+              <span class="font-mono text-electric-400">~5.8 hrs</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-white/50">
+              <span class="text-gray-400">Delta 2 Max (2048Wh) + Mini Fridge (800W)</span>
+              <span class="font-mono text-electric-400">~2.2 hrs</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-white/50">
+              <span class="text-gray-400">Delta Pro (3600Wh) + Coffee Maker (1200W)</span>
+              <span class="font-mono text-electric-400">~2.6 hrs</span>
+            </div>
+            <div class="flex justify-between items-center py-2">
+              <span class="text-gray-400">River 2 (256Wh) + Phone (10W)</span>
+              <span class="font-mono text-electric-400">~21.8 hrs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:1px"></i>
+          <div>
+            <strong>Formula:</strong> Runtime = (Battery Wh × Efficiency) ÷ Device Wattage<br>
+            <span class="text-xs text-gray-500">Actual runtime may vary based on battery age, temperature, and device load patterns.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6 mb-10">
+      <h2 class="font-semibold text-xl mb-5 flex items-center gap-2">
+        <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#00d4ff"></i>
+        Common Appliance Wattage Reference
+      </h2>
+      <div class="overflow-x-auto">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Appliance</th>
+              <th>Typical Wattage</th>
+              <th>Delta 2 (1024Wh)</th>
+              <th>Delta 2 Max (2048Wh)</th>
+              <th>Delta Pro (3600Wh)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-medium">Smartphone</td>
+              <td class="font-mono">5-10W</td>
+              <td class="font-mono text-green-400">87-174 hrs</td>
+              <td class="font-mono text-green-400">174-348 hrs</td>
+              <td class="font-mono text-green-400">305-611 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">LED Light Bulb</td>
+              <td class="font-mono">5-15W</td>
+              <td class="font-mono text-green-400">58-174 hrs</td>
+              <td class="font-mono text-green-400">116-348 hrs</td>
+              <td class="font-mono text-green-400">203-611 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Laptop</td>
+              <td class="font-mono">50-150W</td>
+              <td class="font-mono text-green-400">5.8-17 hrs</td>
+              <td class="font-mono text-green-400">11.634 hrs</td>
+              <td class="font-mono text-green-400">2061 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">32" LED TV</td>
+              <td class="font-mono">50-100W</td>
+              <td class="font-mono text-green-400">8.7-17 hrs</td>
+              <td class="font-mono text-green-400">17-35 hrs</td>
+              <td class="font-mono text-green-400">3061 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">CPAP Machine</td>
+              <td class="font-mono">30-60W</td>
+              <td class="font-mono text-green-400">14-29 hrs</td>
+              <td class="font-mono text-green-400">2-958 hrs</td>
+              <td class="font-mono text-green-400">51-102 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Mini Fridge</td>
+              <td class="font-mono">50-100W (avg)</td>
+              <td class="font-mono text-yellow-400">8.7-17 hrs</td>
+              <td class="font-mono text-green-400">17-35 hrs</td>
+              <td class="font-mono text-green-400">3061 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Full-size Fridge</td>
+              <td class="font-mono">100-400W</td>
+              <td class="font-mono text-orange-400">2.28.7 hrs</td>
+              <td class="font-mono text-yellow-400">4.3-17 hrs</td>
+              <td class="font-mono text-yellow-400">7.7-30 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Electric Kettle</td>
+              <td class="font-mono">1000-1500W</td>
+              <td class="font-mono text-red-400">0.60.9 hrs</td>
+              <td class="font-mono text-orange-400">1.21.7 hrs</td>
+              <td class="font-mono text-yellow-400">23.1 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Coffee Maker</td>
+              <td class="font-mono">800-1200W</td>
+              <td class="font-mono text-red-400">0.71.1 hrs</td>
+              <td class="font-mono text-orange-400">1.52.2 hrs</td>
+              <td class="font-mono text-yellow-400">2.63.8 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Microwave</td>
+              <td class="font-mono">800-1500W</td>
+              <td class="font-mono text-red-400">0.61.1 hrs</td>
+              <td class="font-mono text-orange-400">1.22.2 hrs</td>
+              <td class="font-mono text-yellow-400">23.8 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Space Heater</td>
+              <td class="font-mono">750-1500W</td>
+              <td class="font-mono text-red-400">0.61.2 hrs</td>
+              <td class="font-mono text-orange-400">1.22.3 hrs</td>
+              <td class="font-mono text-yellow-400">24.1 hrs</td>
+            </tr>
+            <tr>
+              <td class="font-medium">Power Tool (Drill)</td>
+              <td class="font-mono">500-1000W</td>
+              <td class="font-mono text-orange-400">0.91.7 hrs</td>
+              <td class="font-mono text-yellow-400">1.73.5 hrs</td>
+              <td class="font-mono text-yellow-400">36.1 hrs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-500 mt-3">⚠️ Estimates based on 85% efficiency. Actual runtime varies by device load pattern and battery condition.</p>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6">
+      <h2 class="font-semibold text-xl mb-4 flex items-center gap-2">
+        <i data-lucide="lightbulb" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+        Tips for Accurate Calculations
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <div class="bg-navy-800/50 rounded-lg p-4">
+          <h3 class="font-medium text-gray-300 mb-2">Understand Peak vs. Continuous</h3>
+          <p class="text-gray-500">Some appliances (like microwaves) draw more power at startup. Use the continuous wattage for estimation.</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-4">
+          <h3 class="font-medium text-gray-300 mb-2">Battery Age Matters</h3>
+          <p class="text-gray-500">New batteries deliver full capacity. After 500+ cycles, expect 80-90% of rated capacity.</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-4">
+          <h3 class="font-medium text-gray-300 mb-2">Temperature Effects</h3>
+          <p class="text-gray-500">Cold weather reduces capacity by 10-20%. Optimal operating temp: 15-25°C (597-7°F).</p>
+        </div>
+        <div class="bg-navy-800/50 rounded-lg p-4">
+          <h3 class="font-medium text-gray-300 mb-2">Reserve Capacity</h3>
+          <p class="text-gray-500">Most power stations protect 5-10% battery. Actual usable capacity = rated × 90-95%.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-navy-900 border-t border-white/80  mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 bg-electric-400 rounded-lg flex items-center justify-center">
+            <i data-lucide="cpu" style="width:0.9rem;height:0.9rem;color:#0a1628"></i>
+          </div>
+          <span class="font-display font-bold text-base">TechSpecs<span class="gradient-text">Hub</span></span>
+        </div>
+        <div class="text-gray-500 text-sm">
+          © 2026 TechSpecsHub · <a href="../about.html" class="hover:text-electric-400">About</a> · <a href="../privacy-policy.html" class="hover:text-electric-400">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function selectAppliance(wattage) {
+      document.getElementById('device-wattage').value = wattage;
+      document.querySelectorAll('.appliance-btn').forEach(btn => {
+        btn.classList.remove('border-electric-400', 'bg-electric-400/100');
+      });
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('border-electric-400', 'bg-electric-400/100');
+      }
+      calculateRuntime();
+    }
+
+    function calculateRuntime() {
+      const capacity = parseFloat(document.getElementById('battery-capacity').value);
+      const wattage = parseFloat(document.getElementById('device-wattage').value);
+      const efficiency = parseFloat(document.querySelector('input[name="efficiency"]:checked').value);
+      
+      if (!capacity || !wattage || capacity <= 0 || wattage <= 0) {
+        document.getElementById('runtime-result').textContent = '--';
+        document.getElementById('runtime-detail').textContent = 'Please enter valid values';
+        return;
+      }
+
+      const usableCapacity = capacity * efficiency;
+      const runtime = usableCapacity / wattage;
+      
+      document.getElementById('runtime-result').textContent = runtime.toFixed(1) + ' hrs';
+      
+      let detail = `${(capacity * efficiency / 1000).toFixed(1)} kWh usable × 100% load`;
+      if (wattage > 2000) {
+        detail += ` · High power device may reduce runtime`;
+      } else if (wattage < 50) {
+        detail += ` · Low power device, longer runtime`;
+      }
+      document.getElementById('runtime-detail').textContent = detail;
+    }
+
+    document.getElementById('battery-capacity').addEventListener('input', calculateRuntime);
+    document.getElementById('device-wattage').addEventListener('input', calculateRuntime);
+    document.querySelectorAll('input[name="efficiency"]').forEach(radio => {
+      radio.addEventListener('change', calculateRuntime);
+    });
+
+    calculateRuntime();
+  </script>
+</body>
+</html>
