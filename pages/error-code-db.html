@@ -3,23 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Error Code Database &mdash; TechSpecsHub</title>
-  <meta name="description" content="Searchable database of 200+ fault codes for hybrid/EV batteries, portable power stations, drones, and smart home devices. Each entry includes severity rating, affected models, root cause analysis, and step-by-step repair guidance.">
+  <title>Error Code Database &mdash; Hybrid, Power Station, Drone, Smart Home Fault Codes</title>
+  <meta name="description" content="A searchable database of fault and error codes for hybrid vehicles, portable power stations, drones, and smart home devices. Includes severity, typical cause, and recommended action.">
   <meta name="theme-color" content="#0a1628">
-  <link rel="canonical" href="https://powerspecshub.com/pages/error-code-db.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Error Code Database &mdash; TechSpecsHub">
-  <meta property="og:description" content="Searchable database of 200+ fault codes for hybrid/EV batteries, portable power stations, drones, and smart home devices.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://powerspecshub.com/pages/error-code-db.html">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -38,22 +29,15 @@
     }
   </script>
 
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
-  <!-- ========================================================
-       HEADER / NAV
-       ======================================================== -->
+  <!-- HEADER -->
   <header>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 gap-4">
-
-        <!-- Logo -->
         <a href="../index.html" class="flex items-center gap-2.5 flex-shrink-0">
           <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
             <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
@@ -61,14 +45,10 @@
           <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
         </a>
 
-        <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
-
-          <!-- Categories dropdown -->
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Categories
-              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
@@ -81,33 +61,16 @@
               <a href="specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
             </div>
           </div>
-
-          <!-- Tools & Data dropdown -->
-          <div class="nav-dropdown-trigger">
-            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data
-              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
-            </button>
-            <div class="nav-dropdown">
-              <p class="nav-dropdown-section-label">Data Resources</p>
-              <a href="error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
-              <a href="master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
-              <a href="brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
-              <hr class="my-2 border-white/10">
-              <p class="nav-dropdown-section-label">Buyer's Guides</p>
-              <a href="tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
-            </div>
-          </div>
-
+          <a href="error-code-db.html" class="px-3 py-2 text-white rounded-lg bg-white/5 transition-all">Error Codes</a>
+          <a href="master-specs.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Compare</a>
+          <a href="brand-index.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Brands</a>
           <a href="about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
         </nav>
 
-        <!-- Right: Search + Mobile toggle -->
         <div class="flex items-center gap-2">
           <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
             <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
             <span class="hidden sm:inline">Search</span>
-            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
           </button>
           <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
             <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
@@ -116,7 +79,6 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
       <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
         <p class="nav-dropdown-section-label">Categories</p>
@@ -124,143 +86,87 @@
         <a href="specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
         <a href="specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
         <a href="specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
-        <a href="specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
-        <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
-        <a href="error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/5 text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
-        <a href="brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
-        <a href="tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
-        <hr class="border-white/10 my-2">
+        <a href="brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index</a>
         <a href="about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
       </div>
     </div>
   </header>
 
-  <!-- ========================================================
-       SEARCH MODAL
-       ======================================================== -->
+  <!-- SEARCH MODAL -->
   <div id="search-modal">
     <div id="search-backdrop"></div>
     <div class="modal-inner">
       <div class="modal-box">
         <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
           <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
-          <input id="search-input-field" type="text" placeholder="Search error codes, models, symptoms&hellip;" autocomplete="off" spellcheck="false">
-          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink:0">
+          <input id="search-input-field" type="text" placeholder="Search error codes, models&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
             <i data-lucide="x" style="width:1rem;height:1rem"></i>
           </button>
         </div>
         <div id="search-results-list"></div>
-        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
-          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
-        </div>
       </div>
     </div>
   </div>
 
-  <!-- ========================================================
-       BREADCRUMB
-       ======================================================== -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a>
-      <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">Error Code Database</span>
-    </nav>
-  </section>
-
-  <!-- ========================================================
-       HERO / STATS BAR
-       ======================================================== -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8">
-    <div class="glass-card p-8 md:p-10 bg-gradient-to-br from-red-950/20 to-navy-900/80">
-      <div class="flex items-start gap-4 mb-6">
-        <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-          <i data-lucide="database" style="width:1.5rem;height:1.5rem;color:#f87171"></i>
-        </div>
-        <div>
-          <h1 class="font-bold text-3xl md:text-4xl mb-2">Error Code Database</h1>
-          <p class="text-gray-400 leading-relaxed">200+ verified fault codes for hybrid/EV batteries, portable power stations, drones, and smart home devices. Each entry includes severity rating, affected models, root cause analysis, and step-by-step repair guidance.</p>
-        </div>
-      </div>
-
-      <!-- Stats bar -->
-      <div class="inline-grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10 w-full">
-        <div class="bg-navy-900 px-4 py-4 text-center">
-          <div class="text-2xl sm:text-3xl font-bold text-gray-100 font-mono">200+</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium">Error Codes</div>
-        </div>
-        <div class="bg-navy-900 px-4 py-4 text-center">
-          <div class="text-2xl sm:text-3xl font-bold text-red-400 font-mono">47</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium">Critical</div>
-        </div>
-        <div class="bg-navy-900 px-4 py-4 text-center">
-          <div class="text-2xl sm:text-3xl font-bold text-yellow-400 font-mono">89</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium">Warning</div>
-        </div>
-        <div class="bg-navy-900 px-4 py-4 text-center">
-          <div class="text-2xl sm:text-3xl font-bold text-electric-400 font-mono">64</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium">Informational</div>
-        </div>
-      </div>
+  <!-- HERO -->
+  <section class="relative overflow-hidden pt-20 pb-12">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-1/3 w-[500px] h-[500px] bg-electric-500/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="breadcrumb mb-6">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Error Code Database</span>
+      </nav>
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Error Code <span class="gradient-text">Database</span>
+      </h1>
+      <p class="text-lg text-gray-400 max-w-2xl">
+        Fault codes grouped by device category. Each entry shows severity, the most common cause, and a recommended action.
+      </p>
     </div>
   </section>
 
-  <!-- ========================================================
-       FILTER / TAB BAR
-       ======================================================== -->
+  <!-- TABS -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-    <div class="glass-card p-2 flex flex-wrap gap-2">
-      <button class="px-4 py-2 bg-electric-500 text-navy-950 rounded-lg text-sm font-semibold flex items-center gap-2">
-        <i data-lucide="layers" style="width:0.9rem;height:0.9rem"></i>
-        All
-      </button>
-      <a href="#hybrid-ev" class="px-4 py-2 bg-white/5 hover:bg-white/10 text-gray-200 rounded-lg text-sm font-medium flex items-center gap-2 transition-all">
-        <i data-lucide="car" style="width:0.9rem;height:0.9rem;color:#22d3ee"></i>
+    <div class="flex flex-wrap gap-2 mb-4" id="code-tabs">
+      <button data-tab="hybrid" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-electric-500 text-navy-950 font-semibold text-sm transition-all">
+        <i data-lucide="car" style="width:1rem;height:1rem"></i>
         Hybrid &amp; EV
-      </a>
-      <a href="#power-stations" class="px-4 py-2 bg-white/5 hover:bg-white/10 text-gray-200 rounded-lg text-sm font-medium flex items-center gap-2 transition-all">
-        <i data-lucide="battery-charging" style="width:0.9rem;height:0.9rem;color:#22d3ee"></i>
+      </button>
+      <button data-tab="power" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white font-medium text-sm transition-all">
+        <i data-lucide="battery-charging" style="width:1rem;height:1rem"></i>
         Power Stations
-      </a>
-      <a href="#drones" class="px-4 py-2 bg-white/5 hover:bg-white/10 text-gray-200 rounded-lg text-sm font-medium flex items-center gap-2 transition-all">
-        <i data-lucide="plane" style="width:0.9rem;height:0.9rem;color:#22d3ee"></i>
+      </button>
+      <button data-tab="drones" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white font-medium text-sm transition-all">
+        <i data-lucide="plane" style="width:1rem;height:1rem"></i>
         Drones
-      </a>
-      <a href="#smart-home" class="px-4 py-2 bg-white/5 hover:bg-white/10 text-gray-200 rounded-lg text-sm font-medium flex items-center gap-2 transition-all">
-        <i data-lucide="home" style="width:0.9rem;height:0.9rem;color:#22d3ee"></i>
+      </button>
+      <button data-tab="smarthome" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white font-medium text-sm transition-all">
+        <i data-lucide="home" style="width:1rem;height:1rem"></i>
         Smart Home
-      </a>
+      </button>
     </div>
+    <p class="text-sm text-gray-500">Click a category to jump to its table &darr;</p>
   </section>
 
-  <!-- ========================================================
-       HYBRID & EV SECTION
-       ======================================================== -->
-  <section id="hybrid-ev" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex items-start gap-3 mb-6">
-      <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-        <i data-lucide="car" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+  <!-- HYBRID & EV -->
+  <section id="tab-hybrid" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 code-section">
+    <div class="glass-card p-6 md:p-8">
+      <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
+        <div>
+          <h2 class="font-bold text-2xl mb-2 flex items-center gap-2">
+            <i data-lucide="car" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+            Hybrid &amp; EV Battery
+          </h2>
+          <p class="text-gray-400 text-sm">Common OBD-II and manufacturer-specific hybrid fault codes. Covers Toyota, Lexus, Ford, and similar systems.</p>
+        </div>
+        <span class="badge badge-info">6 codes</span>
       </div>
-      <div>
-        <h2 class="font-bold text-2xl md:text-3xl mb-1">Hybrid &amp; EV Battery Codes</h2>
-        <p class="text-sm text-gray-400">Toyota, Lexus, Honda hybrid systems &mdash; HV battery pack, inverter, and control module diagnostics.</p>
-      </div>
-    </div>
-
-    <!-- Warning alert -->
-    <div class="alert alert-critical mb-6">
-      <i data-lucide="alert-triangle" style="width:1.1rem;height:1.1rem;flex-shrink:0;color:#f87171"></i>
-      <div class="text-sm">
-        <strong class="font-semibold">High-voltage hazard.</strong> Codes <code class="font-mono text-red-300">P0A80</code>, <code class="font-mono text-red-300">P0A7F</code>, and <code class="font-mono text-red-300">P0A7E</code> indicate high-voltage battery pack faults. Always de-power the HV system and wear insulated gloves before opening the battery service cover. Measure interlock continuity and service plug resistance before proceeding.
-      </div>
-    </div>
-
-    <!-- Table -->
-    <div class="glass-card overflow-hidden">
       <div class="overflow-x-auto">
         <table class="specs-table">
           <thead>
@@ -268,91 +174,52 @@
               <th>Code</th>
               <th>Description</th>
               <th>Severity</th>
-              <th>Affected Models</th>
               <th>Typical Cause</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><code class="font-mono text-red-400 font-semibold">P0A80</code></td>
+              <td><code class="font-mono text-electric-300">P0A7F</code></td>
+              <td>Hybrid Battery Pack "A" Performance</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Degraded cells causing module voltage spread beyond tolerance.</td>
+              <td>Measure individual module voltages. Replace weakest modules or recondition pack.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">P0A80</code></td>
               <td>Replace Hybrid Battery Pack</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Toyota Prius 2004&ndash;2022, Camry Hybrid, Highlander HV, Lexus CT200h</td>
-              <td>Pack State-of-Health (SOH) below threshold; individual module voltage under 14.0V under load</td>
-              <td>Measure each module voltage with load. Replace modules below 13.8V. Battery control module relearn procedure required post-install.</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Overall pack capacity has dropped below the manufacturer's replacement threshold.</td>
+              <td>Plan full pack replacement. Check module-to-module variance first to confirm.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-red-400 font-semibold">P0A7F</code></td>
-              <td>HV Battery Pack Deterioration</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Toyota Prius 2010&ndash;2022, Lexus RX450h</td>
-              <td>Module balance fault; delta between strongest and weakest module exceeds 0.8V</td>
-              <td>Isolate pack. Perform manual discharge-charge cycle to rebalance, or replace degraded modules. Check cooling fan operation.</td>
+              <td><code class="font-mono text-electric-300">P3000</code></td>
+              <td>Hybrid Battery Control System Malfunction</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Battery ECU internal fault or corrupted calibration.</td>
+              <td>Scan with manufacturer-specific tool. Re-flash ECU if advised; otherwise replace ECU.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">P0A7E</code></td>
-              <td>HV Battery Module Voltage Variation</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Toyota Prius 2016&ndash;2022, RAV4 Hybrid</td>
-              <td>Excessive cell imbalance (typically &gt; 0.3V delta between modules)</td>
-              <td>Record module voltages at rest and under 10A load. Charge/discharge cycle. If delta persists, replace out-of-spec module.</td>
+              <td><code class="font-mono text-electric-300">P3004</code></td>
+              <td>Battery ECU Communication Lost</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>CAN bus wiring issue, loose connector, or blown fuse in HV control circuit.</td>
+              <td>Check fuses, reseat ECU connectors, measure CAN-H / CAN-L resistance (should be ~60 &Omega;).</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">P0A94</code></td>
-              <td>DC/DC Converter Performance</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Toyota Prius 2010+, all Toyota/Lexus hybrids using G9200 inverter</td>
-              <td>12V system charge failure; DC/DC output out of 13.8V&ndash;14.2V target window</td>
-              <td>Check 12V battery condition. Verify DC/DC output at idle. Check HV fuse and connector terminals for corrosion.</td>
+              <td><code class="font-mono text-electric-300">P3009</code></td>
+              <td>Hybrid Battery System Over-Temperature</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Blocked cooling fan, failed temperature sensor, or extreme load in hot conditions.</td>
+              <td>Inspect cooling fan and intake filter. Replace temp sensor if out of spec. Let pack cool before reuse.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-red-400 font-semibold">P0A78</code></td>
-              <td>Drive Motor A Inverter Performance</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Toyota Prius 2004&ndash;2022, Prius Prime, Corolla Hybrid</td>
-              <td>MG1 power electronics fault; IGBT module thermal runaway or phase current imbalance</td>
-              <td>Inspect inverter coolant flow. Check phase resistance balance between MG1 phases. Replace G9200 inverter if out of spec.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">P0A1F</code></td>
-              <td>Battery Energy Control Module Internal</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All Toyota THS-II hybrid platforms</td>
-              <td>Internal communication error between battery ECU sub-modules</td>
-              <td>Update battery ECU firmware if available. Check wiring harness continuity. Replace battery ECU if hardware fault confirmed.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">P3000</code></td>
-              <td>Battery Control System Malfunction</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All Toyota hybrid platforms</td>
-              <td>General HV fault flag &mdash; a secondary DTC is stored</td>
-              <td>Always check for sub-codes. Address the specific fault before clearing P3000. Common: P0A80 or P0A7F as root cause.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">P0BD5</code></td>
-              <td>Honda IMA Battery Module Deterioration</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Honda Civic Hybrid 2006&ndash;2015, Insight, Accord Hybrid</td>
-              <td>Individual NiMH module capacity degradation below 75%</td>
-              <td>Grid-charge pack using Honda IMA charger. Replace modules showing voltage &lt; 1.2V/cell under load. Clear code with Honda Diagnostic System (HDS).</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">P0A0D</code></td>
-              <td>Hybrid Battery Temperature Sensor A Circuit High</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>All Toyota/Lexus HV battery platforms</td>
-              <td>Open circuit in thermistor circuit; pack cooling fan stalled</td>
-              <td>Measure thermistor resistance at connector (should read 10k&Omega; at 25&deg;C). Check fan intake filter for debris. Replace sensor or fan motor as needed.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">P0BBA</code></td>
-              <td>Hybrid Battery Current Sensor Performance</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Toyota Prius 2010&ndash;2022, Camry Hybrid</td>
-              <td>Hall-effect current sensor drift or offset error outside &plusmn;2A window</td>
-              <td>Check connector for corrosion. Perform current sensor zero-point calibration using Techstream. Replace sensor if calibration fails.</td>
+              <td><code class="font-mono text-electric-300">C1259</code></td>
+              <td>Hybrid System Malfunction (Brake / Regen)</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Regenerative braking coordination fault between brake ECU and hybrid ECU.</td>
+              <td>Check brake fluid level. Scan for sub-codes. Clear codes and test drive to confirm.</td>
             </tr>
           </tbody>
         </table>
@@ -360,26 +227,19 @@
     </div>
   </section>
 
-  <!-- ========================================================
-       PORTABLE POWER STATIONS SECTION
-       ======================================================== -->
-  <section id="power-stations" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex items-start gap-3 mb-6">
-      <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-        <i data-lucide="battery-charging" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+  <!-- POWER STATIONS -->
+  <section id="tab-power" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 code-section" style="display:none">
+    <div class="glass-card p-6 md:p-8">
+      <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
+        <div>
+          <h2 class="font-bold text-2xl mb-2 flex items-center gap-2">
+            <i data-lucide="battery-charging" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+            Power Stations
+          </h2>
+          <p class="text-gray-400 text-sm">EcoFlow-style error codes. Codes with similar meanings on Jackery, Bluetti, and Anker models are usually named identically or differ only by a numeric prefix.</p>
+        </div>
+        <span class="badge badge-info">8 codes</span>
       </div>
-      <div>
-        <h2 class="font-bold text-2xl md:text-3xl mb-1">Portable Power Station Codes</h2>
-        <p class="text-sm text-gray-400">EcoFlow E-series codes, Jackery ERR codes, Bluetti E-series, and generic fault indicators.</p>
-      </div>
-    </div>
-
-    <!-- EcoFlow Table -->
-    <div class="glass-card p-6 mb-6">
-      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-        <span class="px-2.5 py-1 bg-electric-500/20 text-electric-400 text-xs font-mono font-semibold rounded-md">ECOFLOW</span>
-        E0&ndash;E7 Inverter &amp; Battery Codes
-      </h3>
       <div class="overflow-x-auto">
         <table class="specs-table">
           <thead>
@@ -387,251 +247,66 @@
               <th>Code</th>
               <th>Description</th>
               <th>Severity</th>
-              <th>Affected Models</th>
               <th>Typical Cause</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><code class="font-mono text-red-400 font-semibold">E0</code></td>
-              <td>AC Over-temperature</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Delta Pro 3, Delta 2 Max, River 2 Pro</td>
-              <td>Inverter heatsink temperature &gt; 75&deg;C; cooling airflow blocked</td>
-              <td>Shut down unit immediately. Move to well-ventilated area. Clear intake/exhaust vents. Allow 30 minutes to cool before restarting.</td>
+              <td><code class="font-mono text-electric-300">E0</code></td>
+              <td>AC Over-Temperature</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Inverter heat sink above threshold. Heavy sustained load, blocked ventilation, or failed fan.</td>
+              <td>Reduce load. Power off. Clear ventilation openings. Allow 30 min to cool. If returns, service.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E1</code></td>
-              <td>Battery Over-temperature</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All EcoFlow LFP models</td>
-              <td>Cell temperature &gt; 45&deg;C during charging or discharge</td>
-              <td>Pause charge/discharge. Move to cooler environment. Verify ambient temperature &lt; 35&deg;C. Resume when cells &lt; 40&deg;C.</td>
+              <td><code class="font-mono text-electric-300">E1</code></td>
+              <td>DC Over-Temperature</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Battery cells or charge controller overheating. Often triggered by fast charging in hot weather.</td>
+              <td>Stop charging. Move to cooler environment. Do not discharge until temperature is in-range.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E2</code></td>
-              <td>DC Over-temperature</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Delta Pro, Delta 2 series</td>
-              <td>DC-DC converter thermal warning; MPPT input stage overheating</td>
-              <td>Reduce solar array wattage below nameplate. Check MPPT airflow. Allow cooling period before connecting additional DC load.</td>
+              <td><code class="font-mono text-electric-300">E2</code></td>
+              <td>Battery Over-Voltage</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Charging at too high a voltage, or a cell string that has drifted high.</td>
+              <td>Stop charging. Disconnect solar/wall input. Let BMS balance. If persistent, check for failing cell.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E3</code></td>
-              <td>AC Overload</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All EcoFlow models</td>
-              <td>Continuous output exceeds rated wattage for more than 5 seconds (X-Boost excluded)</td>
-              <td>Identify and remove offending AC load. Verify total wattage &lt; unit rated output. Press power button to reset inverter stage.</td>
+              <td><code class="font-mono text-electric-300">E3</code></td>
+              <td>AC Overload (X-Boost)</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Connected AC load exceeds the inverter's continuous rating for more than a few seconds.</td>
+              <td>Unplug devices. Total AC wattage must be below the unit's continuous rating. Check for startup inrush.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E4</code></td>
-              <td>Input Over-current</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All EcoFlow models with solar input</td>
-              <td>Solar panel series configuration exceeds MPPT input current rating</td>
-              <td>Reconfigure panels from series to parallel. Verify total short-circuit current (Isc) &times; 1.25 safety factor. Check panel VOC does not exceed 60V/100V rating.</td>
+              <td><code class="font-mono text-electric-300">E4</code></td>
+              <td>Input Over-Current</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Solar array or adapter current exceeds the MPPT's input limit.</td>
+              <td>Reduce solar array wattage. Check panel open-circuit voltage is within the MPPT's Voc range.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-electric-400 font-semibold">E5</code></td>
+              <td><code class="font-mono text-electric-300">E5</code></td>
               <td>Communication Error</td>
-              <td><span class="badge badge-info"><i data-lucide="info" style="width:0.75rem;height:0.75rem"></i>Info</span></td>
-              <td>EcoFlow expansion batteries + BMS</td>
-              <td>CAN bus communication loss between master unit and expansion battery</td>
-              <td>Power-cycle all units. Re-seat Anderson connector between main and expansion pack. Check for bent pins on both ends of cable.</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Internal bus between BMS and main MCU has lost sync, or an expansion battery is not responding.</td>
+              <td>Power cycle the unit. Reseat expansion battery connectors. If returns, check for firmware update.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-red-400 font-semibold">E6</code></td>
+              <td><code class="font-mono text-electric-300">E6</code></td>
               <td>Battery Cell Failure</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>All EcoFlow LFP battery modules</td>
-              <td>Individual cell voltage below 2.5V or above 3.65V; internal short suspected</td>
-              <td>DO NOT charge unit. Disconnect all loads. Contact EcoFlow warranty service. Module requires BMS + cell stack replacement.</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>One or more cells reporting voltage significantly outside the pack's normal range.</td>
+              <td>Stop using the unit. Under-warranty: contact manufacturer for replacement. Out of warranty: service.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E7</code></td>
+              <td><code class="font-mono text-electric-300">E7</code></td>
               <td>Fan Blocked</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Delta Pro, Delta 2 Max, River 2 Pro</td>
-              <td>Fan tachometer reads 0 RPM; physical obstruction or fan motor failure</td>
-              <td>Inspect fan intake. Clear debris. If no obstruction found, fan motor replacement required. Run 20-minute burn-in test post-repair.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Jackery Table -->
-    <div class="glass-card p-6 mb-6">
-      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-        <span class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 text-xs font-mono font-semibold rounded-md">JACKERY</span>
-        ERR-series Fault Codes
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Code</th>
-              <th>Description</th>
-              <th>Severity</th>
-              <th>Affected Models</th>
-              <th>Typical Cause</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">ERR1</code></td>
-              <td>Low Battery</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Jackery Explorer 300, 500, 1000, 1500, 2000 Pro</td>
-              <td>Battery discharged below minimum operating voltage</td>
-              <td>Connect AC charger immediately. Do not deep-discharge below 10% state of charge. Replace if battery fails to hold charge after 4&ndash;8 hours of charging.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">ERR2</code></td>
-              <td>Overload</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All Jackery Explorer series</td>
-              <td>Connected AC load exceeds unit continuous output rating</td>
-              <td>Remove surplus AC loads. Verify combined wattage with inline power meter. Inverter auto-resets after overload condition clears.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">ERR3</code></td>
-              <td>Over-temperature</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All Jackery Explorer series</td>
-              <td>Ambient temperature &gt; 40&deg;C or internal thermal protection tripped</td>
-              <td>Move unit to shaded, ventilated area. Disconnect high-power loads. Wait until internal temperature drops below 45&deg;C before resuming operation.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">ERR4</code></td>
-              <td>Internal Fault</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Jackery Explorer 1000+, 1500, 2000 Pro</td>
-              <td>BMS-inverter communication fault or protection circuit failure</td>
-              <td>Full power-cycle (30 seconds off) required. If code persists, unit requires factory service. Do not attempt DIY repair &mdash; contains sealed LFP modules.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">ERR5</code></td>
-              <td>Charger Fault</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All Jackery Explorer series</td>
-              <td>External AC wall charger adapter failure or incorrect voltage</td>
-              <td>Test charger output voltage with multimeter. Replace charger if outside 19.5V&ndash;20.5V window. Verify wall socket provides correct mains voltage.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Bluetti Table -->
-    <div class="glass-card p-6 mb-6">
-      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-        <span class="px-2.5 py-1 bg-blue-500/20 text-blue-400 text-xs font-mono font-semibold rounded-md">BLUETTI</span>
-        E-series BMS Codes
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Code</th>
-              <th>Description</th>
-              <th>Severity</th>
-              <th>Affected Models</th>
-              <th>Typical Cause</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E101</code></td>
-              <td>Battery Over-discharge</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>AC200P, AC300, AC500, EP500</td>
-              <td>Pack voltage dropped below low-voltage protection threshold</td>
-              <td>Connect charger at low current (5A) first. After 20 minutes switch to standard charge rate. BMS will re-engage once pack recovers.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E102</code></td>
-              <td>Battery Over-voltage</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All Bluetti LFP models</td>
-              <td>Charge voltage exceeds per-cell 3.65V target; charger handshake mismatch</td>
-              <td>Disconnect charger. Verify charger output matches pack spec. Replace charger if fault recurs. Check individual cell voltages when possible.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-electric-400 font-semibold">E103</code></td>
-              <td>Communication Error</td>
-              <td><span class="badge badge-info"><i data-lucide="info" style="width:0.75rem;height:0.75rem"></i>Info</span></td>
-              <td>AC300 + B300 expansion packs, AC500</td>
-              <td>RS485 bus communication failure between master and slave BMS units</td>
-              <td>Verify communication cable is fully seated at both ends. Power-cycle all connected units in sequence: expansions first, then master.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E104</code></td>
-              <td>Inverter Overload</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>AC200P, AC300, AC500</td>
-              <td>Continuous AC output exceeds inverter nameplate rating</td>
-              <td>Reduce connected load. Total AC wattage must not exceed rated output. Inverter auto-recovers after 30-second cooldown with reduced load.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E105</code></td>
-              <td>Inverter Over-temperature</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All Bluetti inverter-equipped models</td>
-              <td>IGBT heatsink temperature exceeds 70&deg;C thermal cutout</td>
-              <td>Clear intake/exhaust vents. Move unit to ambient &lt; 30&deg;C environment. Inspect cooling fans for seized bearings; replace if stalled.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Generic Codes Table -->
-    <div class="glass-card p-6">
-      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-        <span class="px-2.5 py-1 bg-gray-500/20 text-gray-300 text-xs font-mono font-semibold rounded-md">GENERIC</span>
-        Universal Power Station Fault Indicators
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Code / Indicator</th>
-              <th>Description</th>
-              <th>Severity</th>
-              <th>Affected Models</th>
-              <th>Typical Cause</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="text-red-400 font-semibold">Check Engine LED Flashing</span></td>
-              <td>General system fault indicator</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Anker, Goal Zero, Rockpals, other non-display models</td>
-              <td>Any fault condition not mapped to specific code; BMS self-test failure</td>
-              <td>Count flash pattern (short vs long blinks) and cross-reference to manual. Perform full 30-second power reset. Consult manufacturer support if pattern recurs.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">Fault: BMS Internal</code></td>
-              <td>Battery Management System internal failure</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>All portable power station brands</td>
-              <td>Firmware corruption, voltage sense calibration drift, or MOSFET drive circuit failure</td>
-              <td>Attempt firmware update via manufacturer app if unit still boots. If unresponsive, warranty service required. Do not attempt to re-flash without OEM tooling.</td>
-            </tr>
-            <tr>
-              <td><span class="text-yellow-400 font-semibold">Solar Input Not Detected</span></td>
-              <td>MPPT controller not seeing solar panel</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Any unit with solar charging input</td>
-              <td>Open circuit in panel wiring; MC4 connector not fully latched; panel VOC below MPPT minimum input threshold</td>
-              <td>Check panel open-circuit voltage under sunlight. Verify MC4 connectors are locked. Ensure at least 12V (for 12V MPPT) or 30V (for high-voltage MPPT) present at input.</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Inverter cooling fan unable to spin. Dust, debris, or mechanical failure.</td>
+              <td>Power off and unplug. Visually inspect fan. Blow out debris with compressed air (low pressure).</td>
             </tr>
           </tbody>
         </table>
@@ -639,372 +314,287 @@
     </div>
   </section>
 
-  <!-- ========================================================
-       DRONES SECTION
-       ======================================================== -->
-  <section id="drones" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex items-start gap-3 mb-6">
-      <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-        <i data-lucide="plane" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+  <!-- DRONES -->
+  <section id="tab-drones" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 code-section" style="display:none">
+    <div class="glass-card p-6 md:p-8">
+      <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
+        <div>
+          <h2 class="font-bold text-2xl mb-2 flex items-center gap-2">
+            <i data-lucide="plane" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+            Drones
+          </h2>
+          <p class="text-gray-400 text-sm">Most common gimbal, IMU, compass, ESC, and battery faults reported by DJI and similar drones.</p>
+        </div>
+        <span class="badge badge-info">8 codes</span>
       </div>
+      <div class="overflow-x-auto">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Description</th>
+              <th>Severity</th>
+              <th>Typical Cause</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code class="font-mono text-electric-300">GIMBAL MOTOR STUCK</code></td>
+              <td>Gimbal motor unable to move</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Physical obstruction, bent gimbal arm, debris in motor, or crash damage.</td>
+              <td>Power off. Inspect gimbal. Remove debris. If mechanically bent, replace gimbal assembly.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">GIMBAL OVERLOAD</code></td>
+              <td>Gimbal motor current over limit</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Filter too heavy for gimbal rating, or gimbal hit during flight.</td>
+              <td>Remove any filter/add-on and retest. Verify gimbal payload is within spec.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">IMU CALIBRATION ERROR</code></td>
+              <td>IMU calibration failed</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Drone not on a perfectly level surface, or vibration during calibration. Sometimes a failing IMU.</td>
+              <td>Place drone on a known-level surface. Retry calibration. If it fails repeatedly, service IMU.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">COMPASS ERROR</code></td>
+              <td>Compass reading unreliable or outside tolerance</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Magnetic interference (metal, power lines, motors), loose compass module, or failed calibration.</td>
+              <td>Move away from metal/steel structures. Recalibrate compass in an open area. Check module connector.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">ESC ERROR</code></td>
+              <td>Electronic speed controller fault</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Damaged motor winding, shorted ESC, prop strike, or overheating during sustained high-thrust flight.</td>
+              <td>Land immediately. Inspect motor and ESC for damage. Replace matched ESC/motor pair.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">BATTERY COMMUNICATION ERROR</code></td>
+              <td>Flight controller lost battery telemetry</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Dirty or corroded battery pins, third-party battery without proper serial interface.</td>
+              <td>Clean battery contacts with isopropyl alcohol. Use only manufacturer-approved batteries.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">BATTERY OVER-DISCHARGE</code></td>
+              <td>Battery cell voltage below minimum</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Battery left fully discharged for weeks, or deep-discharged during a long flight.</td>
+              <td>Do NOT attempt to fast-charge a deeply-discharged battery. Slow-charge at 0.1C. If voltage doesn't recover, retire the battery.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">BATTERY OVER-TEMPERATURE</code></td>
+              <td>Battery temperature above limit</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>High-ambient flight, aggressive maneuvers, or direct sun on battery.</td>
+              <td>Land. Let battery cool to room temperature before charging or re-flight.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMART HOME -->
+  <section id="tab-smarthome" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 code-section" style="display:none">
+    <div class="glass-card p-6 md:p-8">
+      <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
+        <div>
+          <h2 class="font-bold text-2xl mb-2 flex items-center gap-2">
+            <i data-lucide="home" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+            Smart Home
+          </h2>
+          <p class="text-gray-400 text-sm">Robot vacuums (Roomba, Roborock generic faults), Nest thermostats, and Ecobee sensor errors.</p>
+        </div>
+        <span class="badge badge-info">13 codes</span>
+      </div>
+
+      <!-- Robot Vacuums -->
+      <div class="mb-8">
+        <h3 class="font-bold text-lg mb-3 text-gray-200">Robot Vacuum &mdash; Common Errors</h3>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Typical Cause</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="font-mono text-electric-300">Error 1</code></td>
+                <td>Wheels stuck</td>
+                <td><span class="badge badge-info">Info</span></td>
+                <td>Hair/string wrapped around wheel axle, or robot trapped.</td>
+                <td>Inspect wheels. Remove debris. Manually spin wheels to confirm free movement.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">Error 2</code></td>
+                <td>Main brush jammed</td>
+                <td><span class="badge badge-info">Info</span></td>
+                <td>Hair, string, or carpet fibers wound around the main roller brush.</td>
+                <td>Remove brush module. Clean end caps. Use the brush-cutting tool if included.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">Error 3</code></td>
+                <td>Side brush error</td>
+                <td><span class="badge badge-info">Info</span></td>
+                <td>Side brush motor stalled or drawing too much current.</td>
+                <td>Remove side brush. Clean hub. Re-seat. If persistent, replace side brush motor.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">Error 4</code></td>
+                <td>Cliff sensor dirty</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td>Dust or debris covering the downward-facing cliff sensors.</td>
+                <td>Wipe cliff sensor lenses with a clean, dry cloth. Avoid liquids.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">Error 5</code></td>
+                <td>Bin missing or not detected</td>
+                <td><span class="badge badge-info">Info</span></td>
+                <td>Dust bin not seated, or optical sensor dirty.</td>
+                <td>Remove and re-insert bin. Clean bin sensor window.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">Error 6</code></td>
+                <td>Bumper stuck</td>
+                <td><span class="badge badge-info">Info</span></td>
+                <td>Debris under or behind the front bumper preventing movement.</td>
+                <td>Tap the bumper gently to dislodge. Clean around the bumper edges.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">Error 7</code></td>
+                <td>Wheel encoder issue</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td>Wheel encoder not registering movement. Often a dirty optical disk or broken wire.</td>
+                <td>Clean encoder disk. If error persists, replace the wheel module.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">Error 8</code></td>
+                <td>Vacuum fan / suction motor</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td>Blocked airway, clogged filter, or failed suction motor.</td>
+                <td>Clean filter. Check airway for obstructions. If returns with clear airway, replace motor.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">Error 9</code></td>
+                <td>Battery fault</td>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td>Battery outside temperature range, or aged battery failing to hold charge.</td>
+                <td>Let battery reach room temperature. If error persists, replace battery.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nest -->
+      <div class="mb-8">
+        <h3 class="font-bold text-lg mb-3 text-gray-200">Nest Thermostats</h3>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Typical Cause</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="font-mono text-electric-300">E74</code></td>
+                <td>No power to Rh wire</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td>Disconnected or loose Rh wire, or fuse blown at the HVAC system.</td>
+                <td>Check Rh wire connection at thermostat and at HVAC. Check HVAC fuses / breakers.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">E73</code></td>
+                <td>No power to Rc wire</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td>Disconnected or loose Rc wire, or fuse blown in cooling circuit.</td>
+                <td>Check Rc wire connection. Confirm HVAC fuse is intact. Inspect for loose splice behind the wall.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">E194</code></td>
+                <td>Heat Link / relay communication lost</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td>Heat Link lost power, or Wi-Fi / Zigbee mesh between thermostat and Heat Link dropped.</td>
+                <td>Confirm Heat Link has power. Re-pair thermostat to Heat Link. Check for Wi-Fi interference.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">H71</code></td>
+                <td>Humidity sensor out of range</td>
+                <td><span class="badge badge-info">Info</span></td>
+                <td>Humidity sensor reporting implausibly high or low value. Usually condensation after AC run.</td>
+                <td>Allow unit to ventilate. If code persists, perform a factory reset of the thermostat.</td>
+              </tr>
+              <tr>
+                <td><code class="font-mono text-electric-300">C155</code></td>
+                <td>C wire / common wire not detected</td>
+                <td><span class="badge badge-info">Info</span></td>
+                <td>Install attempted without a common wire on a system that requires one.</td>
+                <td>Install a C wire, or use the Nest Power Connector / the included "C wire adapter" if your model ships with one.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Ecobee -->
       <div>
-        <h2 class="font-bold text-2xl md:text-3xl mb-1">Drone Fault Codes (DJI)</h2>
-        <p class="text-sm text-gray-400">Gimbal, battery, flight controller, and ESC fault codes for Mavic, Air, and Mini series.</p>
-      </div>
-    </div>
-
-    <!-- Gimbal Table -->
-    <div class="glass-card p-6 mb-6">
-      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-        <i data-lucide="camera" style="width:1rem;height:1rem;color:#fbbf24"></i>
-        Gimbal Errors
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Code / Indicator</th>
-              <th>Description</th>
-              <th>Severity</th>
-              <th>Affected Models</th>
-              <th>Typical Cause</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">GIMBAL MOTOR STUCK</code></td>
-              <td>Gimbal motor over-current / stalled</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Mavic Pro, Mavic Air 2, Air 2S</td>
-              <td>Physical obstruction in gimbal travel; shock-damage misalignment after hard landing</td>
-              <td>Inspect gimbal cage for debris. Check gimbal motor winding resistance (target 3.5&ndash;4.2&Omega; per phase). Perform gimbal calibration through DJI Fly app. Replace motor assembly if out of spec.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">GIMBAL OVERLOAD</code></td>
-              <td>Motor torque limit exceeded</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Mavic 2 Pro, Mavic 3, Air 2S</td>
-              <td>Gimbal damper balls out-of-spec or deformed; camera/filter combination overweight</td>
-              <td>Inspect gimbal damper for cracked or deformed rubber. Replace ND filter with lighter alternative. Perform gimbal IMU calibration on flat surface post-repair.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">GIMBAL IMU CALIBRATION</code></td>
-              <td>Gimbal IMU calibration required</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All DJI models with 3-axis gimbal</td>
-              <td>Gyro bias drift exceeding tolerance; typically after firmware update or temperature change &gt; 20&deg;C</td>
-              <td>Re-calibrate gimbal IMU on perfectly flat, non-vibrating surface. Use DJI-level calibration surface. If calibration fails repeatedly, IMU module faulty.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">GIMBAL PITCH MOTOR</code></td>
-              <td>Pitch-axis motor driver fault</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Mavic Pro, Mavic 2, Phantom 4 Pro</td>
-              <td>Physical damage to pitch-axis motor winding; H-bridge driver IC failure on gimbal PCB</td>
-              <td>Replace gimbal pitch motor assembly. Verify motor winding continuity &lt; 5&Omega;. Check gimbal PCB for visible burn marks on driver chip. Full gimbal replacement may be most cost-effective path.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">GIMBAL ROLL MOTOR</code></td>
-              <td>Roll-axis motor driver fault</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Mavic 3, Mavic 2 Enterprise, Inspire 2</td>
-              <td>Crash-damaged roll motor; bearing seizure; cable harness fatigue at joint</td>
-              <td>Inspect roll-axis for mechanical binding. Test motor phase resistance balance. Replace damaged cable harness or motor. Factory-level repair recommended for Inspire 2 X7/X5S cameras.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">GIMBAL YAW MOTOR</code></td>
-              <td>Yaw-axis motor driver fault</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Phantom 4 Pro, Mavic Air, FPV drone</td>
-              <td>Yaw motor bearing failure or driver PCB fault; cracked solder joints from vibration fatigue</td>
-              <td>Check yaw motor for free rotation without excessive play. If resistance felt, replace bearing/motor assembly. Verify ribbon cable continuity between gimbal and main board.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Battery Table -->
-    <div class="glass-card p-6 mb-6">
-      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-        <i data-lucide="battery-warning" style="width:1rem;height:1rem;color:#fbbf24"></i>
-        Battery Errors
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Code / Indicator</th>
-              <th>Description</th>
-              <th>Severity</th>
-              <th>Affected Models</th>
-              <th>Typical Cause</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">BATTERY COMMUNICATION</code></td>
-              <td>Battery-BMS communication failure</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Mavic Mini, Mini 2, Mini 3 Pro</td>
-              <td>Corroded or dirty battery-to-drone contact pads; firmware mismatch between battery BMS and flight controller</td>
-              <td>Clean battery contacts with 99% isopropyl alcohol and cotton swab. Update both battery and drone firmware to latest version. Verify battery insertion lock is properly engaged.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">BATTERY OVER-DISCHARGE</code></td>
-              <td>Battery cells deeply discharged</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>All DJI Intelligent Battery models</td>
-              <td>Battery left in storage &gt; 6 months; self-discharge brought cells below 3.0V minimum safe level</td>
-              <td>Attempt recondition cycle: charge at 0.1C for 2 hours, then 0.5C to 3.5V/cell. If voltage does not recover after 30 minutes at 0.1C, battery is unrecoverable. Recycle at approved facility.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">BATTERY TEMPERATURE HIGH</code></td>
-              <td>Battery temperature exceeds safe window</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Mavic 3, Mavic 2, Air 2S (high-power draw)</td>
-              <td>Direct sunlight heating; post-crash internal short suspected; aggressive sport-mode flight in &gt; 35&deg;C ambient</td>
-              <td>Land drone immediately if in-flight. Remove battery from aircraft. Allow full 15-minute cooling period before re-insertion or charging. Do not charge battery while still warm to touch.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Flight Controller / ESC Table -->
-    <div class="glass-card p-6">
-      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-        <i data-lucide="navigation" style="width:1rem;height:1rem;color:#fbbf24"></i>
-        Flight Controller &amp; ESC Errors
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Code / Indicator</th>
-              <th>Description</th>
-              <th>Severity</th>
-              <th>Affected Models</th>
-              <th>Typical Cause</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">COMPASS ERROR</code></td>
-              <td>Magnetometer calibration out-of-tolerance</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All DJI GPS-equipped models</td>
-              <td>Flight controller compass calibration performed near metal objects; residual magnetic field in frame after crash repair</td>
-              <td>Calibrate compass away from metal, power lines, and reinforced concrete. Rotate drone through full 360&deg; in horizontal plane, then nose-down. If calibration fails at same location, try different site.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">IMU ERROR</code></td>
-              <td>Inertial Measurement Unit fault</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All DJI flight controller models</td>
-              <td>Gyro bias drift; accelerometer offset; temperature-induced calibration shift</td>
-              <td>Recalibrate IMU on perfectly level, vibration-free surface. Warm up drone for 5 minutes in current environment before calibration. If IMU reports inconsistency between dual IMUs, flight controller repair required.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">ESC ERROR</code></td>
-              <td>Electronic Speed Controller fault</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Mavic Pro, Mavic 2, Phantom series</td>
-              <td>Motor winding phase short; ESC MOSFET thermal failure; damaged motor/ESC cable from crash impact</td>
-              <td>Ground drone &mdash; do not fly. Identify affected motor/ESC by error position. Test motor phase resistance balance (all three phases should match within &plusmn;5%). Replace motor + ESC pair as matched set.</td>
-            </tr>
-          </tbody>
-        </table>
+        <h3 class="font-bold text-lg mb-3 text-gray-200">Ecobee Sensors</h3>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Typical Cause</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="font-mono text-electric-300">Sensor Not Detected</code></td>
+                <td>Room sensor lost from the sensor list</td>
+                <td><span class="badge badge-info">Info</span></td>
+                <td>Dead sensor battery, or sensor outside radio range of the thermostat.</td>
+                <td>Replace CR2032 battery. Move sensor closer to thermostat. Re-pair in Ecobee settings.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================
-       SMART HOME SECTION
-       ======================================================== -->
-  <section id="smart-home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex items-start gap-3 mb-6">
-      <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-        <i data-lucide="home" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
-      </div>
-      <div>
-        <h2 class="font-bold text-2xl md:text-3xl mb-1">Smart Home Device Codes</h2>
-        <p class="text-sm text-gray-400">Robot vacuum error codes (Roomba, Xiaomi, Roborock) and smart thermostat fault diagnostics.</p>
-      </div>
-    </div>
-
-    <!-- Robot Vacuum Table -->
-    <div class="glass-card p-6 mb-6">
-      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-        <i data-lucide="brush" style="width:1rem;height:1rem;color:#fbbf24"></i>
-        Robot Vacuum Error Codes
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Code</th>
-              <th>Description</th>
-              <th>Severity</th>
-              <th>Affected Models</th>
-              <th>Typical Cause</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">Error 1</code></td>
-              <td>Side Brush Stuck</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Roomba 600/700/800/900, i series, Xiaomi Roborock S4/S5/S6/S7/S8</td>
-              <td>Hair (human or pet), string, or debris wrapped around side brush axle; brush motor over-current</td>
-              <td>Power off robot. Lift side brush cover. Use scissors or seam-ripper to cut wrapped debris from brush hub. Re-insert brush. Verify brush spins freely by hand before resuming. Replace brush if bearing seized.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">Error 2</code></td>
-              <td>Main Brush Stuck</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Roomba i3/i4/i7/s9, Roborock S5 Max/S7/S8, Xiaomi Mi Robot 1S/2</td>
-              <td>Hair/fiber wrapped around main brush end caps; brush motor current exceed ~1.8A threshold</td>
-              <td>Remove main brush module. Clean brush and both end caps. Use brush-cleaning tool to strip hair. Check motor connector. Replace main brush rubber every 3&ndash;6 months.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">Error 3</code></td>
-              <td>Left Wheel Stuck</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All Roomba/iRobot, Roborock, Xiaomi robot vacuums</td>
-              <td>Hair/thread wrapped around left drive wheel axle; wheel encoder reports no motion; debris in wheel well</td>
-              <td>Turn robot upside-down. Pull wheel module away from body. Cut wrapped debris. Manually rotate wheel. Re-assemble. If error persists, wheel motor assembly requires replacement.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">Error 4</code></td>
-              <td>Right Wheel Stuck</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All Roomba/iRobot, Roborock, Xiaomi robot vacuums</td>
-              <td>Identical to Error 3 but on right drive wheel assembly</td>
-              <td>Same procedure as Error 3, applied to right wheel. If both wheels report stuck, verify main logic board power (19V Roomba, 14.4V Roborock). Factory reset via companion app.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">Error 5</code></td>
-              <td>Charging Error</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Roomba i series, s series, Roborock E/S/Q series</td>
-              <td>Dirty or oxidized charging contacts; dock not powered; battery below minimum charge voltage; faulty dock</td>
-              <td>Clean both robot and dock contacts with isopropyl alcohol. Verify wall outlet powered. Check dock LED indicator. If dock is fine, suspect battery age &mdash; replace if &gt; 2 years. Factory reset can clear comm glitches.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">Error 6</code></td>
-              <td>Cliff Sensor Dirty</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Roomba 600+, Roborock all models, Xiaomi Mi Robot</td>
-              <td>Optical cliff sensor window blocked by dust/hair; sensor mis-calibrated; dark/black flooring false triggering</td>
-              <td>Turn robot upside-down. Locate 4&ndash;6 cliff sensor optical windows. Clean with dry microfiber cloth (no liquid on sensors). If on black carpet, apply small white tape squares. Some models allow sensitivity adjustment via advanced app settings.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">Error 7</code></td>
-              <td>Bin Full</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Roomba i3+/i4+/i7+/s9+ (self-empty base), Roborock S7 MaxV, Q Revo</td>
-              <td>Dust bin actually full; optical-bin-full sensor dirty; bin not properly seated; or base dust bag full</td>
-              <td>Empty dust bin. Clean bin-full optical sensor pair inside bin compartment. Re-insert bin with clean contacts. On self-empty models, also verify base dust bag is not full.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">Error 8</code></td>
-              <td>Vacuum Fan Motor Stalled</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Roomba 900/i series, Roborock S5/S6/S7/S8</td>
-              <td>Main suction fan motor stalled; debris in fan impeller; motor bearing seized from dust ingress; driver FET failure</td>
-              <td>Inspect suction fan intake port for debris blockage. If obstruction found, clear it. If no obstruction and error persists, fan motor is failed &mdash; replace full fan module. Check main PCB for burnt smell near motor driver on Roomba i series.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Thermostat Table -->
-    <div class="glass-card p-6">
-      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-        <i data-lucide="thermometer" style="width:1rem;height:1rem;color:#fbbf24"></i>
-        Smart Thermostat Error Codes
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="specs-table">
-          <thead>
-            <tr>
-              <th>Code</th>
-              <th>Description</th>
-              <th>Severity</th>
-              <th>Affected Models</th>
-              <th>Typical Cause</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E74</code></td>
-              <td>Rh Wire Report &mdash; Thermostat Wiring</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Nest Thermostat E, Nest Learning Thermostat 2nd/3rd gen, Nest Thermostat 2020+</td>
-              <td>Rh wire voltage outside 24V expected range; loose connection; wire in wrong terminal; Rh/Rc confused</td>
-              <td>Turn off HVAC breaker. Remove Nest from base. Check each wire in correct labeled terminal. Common mistake: Rh/Rc swapped, or jumper wire missing between Rh and Rc on single-transformer systems. Verify 24V AC at Rh-to-C. Use Nest Wiring Report in app.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E73</code></td>
-              <td>Rh Wire Disconnected</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>All Nest Thermostat models</td>
-              <td>Rh (heat power) wire no longer making contact; HVAC transformer dead; blown HVAC fuse</td>
-              <td>Check HVAC 3A or 5A low-voltage fuse on furnace control board. Check Rh wire at Nest terminal for loose fit. Verify 24V AC between Rh and C wire. Replace HVAC transformer if &lt; 20V. Re-insert wire with terminal fully depressed before releasing.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-yellow-400 font-semibold">E194</code></td>
-              <td>Wi-Fi / Cloud Connection Failure</td>
-              <td><span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Warning</span></td>
-              <td>Nest Thermostat, Nest Learning Thermostat, Ecobee 3/4/5 Lite/Premium</td>
-              <td>Wi-Fi AP out of range; 2.4GHz band not available (Nest requires 2.4GHz); SSID changed; DHCP/DNS failure; Nest cloud outage</td>
-              <td>Move router closer or install Wi-Fi extender. Confirm thermostat sees 2.4GHz SSID (NOT 5GHz-only). Re-enter Wi-Fi password through Settings > Network. Verify internet is up. Check Nest Service Status page. Factory reset only after all network checks pass.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">H71</code></td>
-              <td>Heating Relay Fault</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Nest Learning Thermostat 3rd gen, Nest Thermostat 2020+</td>
-              <td>Internal heating relay (W terminal) stuck ON or OFF; relay contact weld from high inrush; no C-wire causing brown-out</td>
-              <td>Power off HVAC system immediately &mdash; stuck-on relay can overheat furnace. Check if C-wire is installed. If no C-wire, install C-wire adapter or Nest Power Connector. If C-wire present and code persists, thermostat relay is failed &mdash; replace unit. Verify furnace board not also damaged.</td>
-            </tr>
-            <tr>
-              <td><code class="font-mono text-red-400 font-semibold">C155</code></td>
-              <td>Compressor Communication Fault</td>
-              <td><span class="badge badge-critical"><i data-lucide="alert-octagon" style="width:0.75rem;height:0.75rem"></i>Critical</span></td>
-              <td>Nest Thermostat with heat pump systems, Ecobee with modulating equipment</td>
-              <td>RS485 bus communication loss between thermostat and heat pump outdoor unit; proprietary Carrier Infinity/Bryant Evolution protocol NOT supported by Nest</td>
-              <td>For Carrier/Bryant Infinity/Evolution: Nest does NOT support proprietary comm bus. Use manufacturer thermostat or rewire to standard R/W/Y/G/C. For standard heat pump, check reversing valve wire (O/B terminal) and 24V at outdoor unit. Check ACC terminal. Reset to factory defaults and re-walk equipment wizard.</td>
-            </tr>
-          </tbody>
-        </table>
+  <!-- DISCLAIMER -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="glass-card p-6 bg-gradient-to-br from-navy-900 to-navy-800/60">
+      <div class="flex items-start gap-3">
+        <i data-lucide="info" style="width:1.1rem;height:1.1rem;color:#22d3ee;flex-shrink:0;margin-top:2px"></i>
+        <div class="text-sm text-gray-300 leading-relaxed">
+          <strong class="text-white">Disclaimer.</strong> This table is a condensed reference of the most commonly reported codes. Manufacturers use different names and numeric identifiers for similar faults, and firmware revisions often change which code is shown on the display. Always cross-check against the device's official service manual before ordering parts or attempting repair. See something wrong? <a href="contact.html" class="text-electric-400 hover:text-electric-300 underline underline-offset-2">Tell us</a>.
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================
-       CTA SECTION
-       ======================================================== -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="glass-card p-10 md:p-14 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
-      <h2 class="font-bold text-3xl md:text-4xl mb-4">Can&rsquo;t find the code you&rsquo;re looking for?</h2>
-      <p class="text-gray-400 mb-6 max-w-xl mx-auto">Our editorial team actively expands this database with verified fault codes. Submit an unknown code and we&rsquo;ll research it against OEM service documentation.</p>
-      <a href="../index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all">
-        Back to TechSpecsHub <i data-lucide="arrow-right" style="width:1rem;height:1rem"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       FOOTER
-       ======================================================== -->
+  <!-- FOOTER -->
   <footer class="border-t border-white/10 bg-navy-950 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -1015,11 +605,8 @@
             </div>
             <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
           </div>
-          <p class="text-sm text-gray-400 leading-relaxed">
-            Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.
-          </p>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting.</p>
         </div>
-
         <div>
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
@@ -1027,20 +614,16 @@
             <li><a href="specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
             <li><a href="specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
             <li><a href="specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
-            <li><a href="specs/ebike-micromobility.html" class="text-gray-400 hover:text-electric-400">E-Bike &amp; Micromobility</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
             <li><a href="brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
-            <li><a href="tools/best-multimeters-2026.html" class="text-gray-400 hover:text-electric-400">Best Multimeters 2026</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
           <ul class="space-y-2 text-sm">
@@ -1050,9 +633,7 @@
           </ul>
         </div>
       </div>
-
       <hr class="border-white/10 my-8">
-
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
         <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
         <div class="flex items-center gap-1">
@@ -1063,7 +644,49 @@
     </div>
   </footer>
 
-  <script src="../assets/js/main.js"></script>
+  <script>
+    // Tab switching for error code categories
+    (function () {
+      const tabs = document.querySelectorAll('#code-tabs button');
+      const sections = document.querySelectorAll('.code-section');
 
+      function show(name) {
+        sections.forEach(s => {
+          s.style.display = (s.id === 'tab-' + name) ? '' : 'none';
+        });
+        tabs.forEach(btn => {
+          const isActive = btn.getAttribute('data-tab') === name;
+          if (isActive) {
+            btn.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-electric-500 text-navy-950 font-semibold text-sm transition-all';
+          } else {
+            btn.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white font-medium text-sm transition-all';
+          }
+        });
+        // Re-render lucide icons inside the newly-shown tab (they already render, but ensure)
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+        }
+      }
+
+      tabs.forEach(btn => {
+        btn.addEventListener('click', function () {
+          show(btn.getAttribute('data-tab'));
+          if (history && history.replaceState) {
+            history.replaceState(null, '', '#tab-' + btn.getAttribute('data-tab'));
+          }
+        });
+      });
+
+      // Honor #tab-xxx hash on load
+      const hash = (window.location.hash || '').replace('#', '');
+      if (hash && hash.indexOf('tab-') === 0) {
+        const name = hash.replace('tab-', '');
+        if (document.getElementById('tab-' + name)) {
+          show(name);
+        }
+      }
+    })();
+  </script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
