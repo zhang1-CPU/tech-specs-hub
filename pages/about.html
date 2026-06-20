@@ -3,23 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About TechSpecsHub - Our Editorial Standards &amp; Data Sources | TechSpecsHub</title>
-  <meta name="description" content="Who builds TechSpecsHub. Our editorial process, data verification methodology, and how we ensure published specifications are accurate, current, and useful.">
+  <title>About TechSpecsHub &mdash; Editorial Standards &amp; Data Sources</title>
+  <meta name="description" content="How TechSpecsHub verifies technical specifications, editorial standards, data sources, and update policy for the device spec database.">
   <meta name="theme-color" content="#0a1628">
-  <link rel="canonical" href="https://powerspecshub.com/pages/about.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="About TechSpecsHub - Our Editorial Standards &amp; Data Sources">
-  <meta property="og:description" content="Who builds TechSpecsHub. Our editorial process, data verification methodology, and how we ensure published specifications are accurate, current, and useful.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://powerspecshub.com/pages/about.html">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -38,20 +29,15 @@
     }
   </script>
 
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
-  <!-- HEADER / NAV -->
+  <!-- HEADER -->
   <header>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 gap-4">
-
-        <!-- Logo -->
         <a href="../index.html" class="flex items-center gap-2.5 flex-shrink-0">
           <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
             <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
@@ -59,14 +45,10 @@
           <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
         </a>
 
-        <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
-
-          <!-- Categories dropdown -->
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Categories
-              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
@@ -80,27 +62,12 @@
             </div>
           </div>
 
-          <!-- Tools & Data dropdown -->
-          <div class="nav-dropdown-trigger">
-            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data
-              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
-            </button>
-            <div class="nav-dropdown">
-              <p class="nav-dropdown-section-label">Data Resources</p>
-              <a href="error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
-              <a href="master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
-              <a href="brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
-              <hr class="my-2 border-white/10">
-              <p class="nav-dropdown-section-label">Buyer's Guides</p>
-              <a href="tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
-            </div>
-          </div>
-
-          <a href="about.html" class="px-3 py-2 text-electric-400 rounded-lg bg-white/5 transition-all">About</a>
+          <a href="error-code-db.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Error Codes</a>
+          <a href="master-specs.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Compare</a>
+          <a href="brand-index.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Brands</a>
+          <a href="about.html" class="px-3 py-2 text-white rounded-lg bg-white/5 transition-all">About</a>
         </nav>
 
-        <!-- Right: Search + Mobile toggle -->
         <div class="flex items-center gap-2">
           <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
             <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
@@ -113,7 +80,6 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
       <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
         <p class="nav-dropdown-section-label">Categories</p>
@@ -121,17 +87,10 @@
         <a href="specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
         <a href="specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
         <a href="specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
-        <a href="specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
-        <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
         <a href="error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
-        <a href="brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
-        <a href="tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
-        <hr class="border-white/10 my-2">
-        <a href="about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/5 text-electric-400 transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+        <a href="brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index</a>
+        <a href="about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
       </div>
     </div>
   </header>
@@ -153,293 +112,206 @@
     </div>
   </div>
 
-  <!-- BREADCRUMB -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a>
-      <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">About</span>
-    </nav>
-  </div>
-
   <!-- HERO -->
-  <section class="relative overflow-hidden pt-10 pb-16">
+  <section class="relative overflow-hidden pt-20 pb-16">
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
-      <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-electric-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-electric-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-0 left-1/3 w-[500px] h-[500px] bg-electric-500/10 rounded-full blur-3xl"></div>
     </div>
-
-    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-electric-500/10 border border-electric-500/30 rounded-full text-xs font-semibold text-electric-400 mb-6 tracking-wide uppercase">
-        <i data-lucide="shield-check" style="width:0.85rem;height:0.85rem"></i>
-        Editorial Standards &amp; Data Sources
-      </div>
-
-      <h1 class="font-bold text-5xl md:text-6xl mb-6 leading-[1.1] tracking-tight">
-        About TechSpecs<span class="gradient-text">Hub</span>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="breadcrumb mb-6">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">About</span>
+      </nav>
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        About <span class="gradient-text">TechSpecsHub</span>
       </h1>
-      <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-        Technical specifications you can actually trust. Built by a small team of engineers, solar installers, and consumer electronics reviewers.
+      <p class="text-lg text-gray-400 max-w-2xl">
+        Technical specifications should be accurate, discoverable, and free. This page explains how we verify, publish, and keep them up to date.
       </p>
-
-      <div class="inline-grid grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
-        <div class="bg-navy-950 px-5 sm:px-8 py-5 text-center">
-          <div class="text-2xl sm:text-3xl font-bold gradient-text font-display">3</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium">Full-time Reviewers</div>
-        </div>
-        <div class="bg-navy-950 px-5 sm:px-8 py-5 text-center">
-          <div class="text-2xl sm:text-3xl font-bold gradient-text font-display">15+</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium">Brands Tracked</div>
-        </div>
-        <div class="bg-navy-950 px-5 sm:px-8 py-5 text-center">
-          <div class="text-2xl sm:text-3xl font-bold gradient-text font-display">Monthly</div>
-          <div class="text-xs text-gray-500 mt-1 font-medium">Page Updates</div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- MISSION -->
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-    <div class="glass-card p-8 md:p-12 bg-gradient-to-br from-navy-900 to-navy-800/40">
-      <div class="flex items-center gap-3 mb-6">
-        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-          <i data-lucide="target" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="glass-card p-8 md:p-10">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center">
+          <i data-lucide="target" style="width:1.2rem;height:1.2rem;color:#22d3ee"></i>
         </div>
-        <h2 class="font-bold text-2xl md:text-3xl">Our Mission</h2>
+        <h2 class="font-bold text-2xl">Our Mission</h2>
       </div>
-      <div class="text-lg text-gray-300 leading-relaxed">
-        <p class="mb-4">
-          We believe technical data about consumer electronics should be <span class="text-electric-400 font-semibold">accurate, discoverable, and free</span>.
-        </p>
-        <p class="mb-4">
-          Too many spec sheets are either locked behind manufacturer paywalls or buried in SEO-spam affiliate sites that don't actually verify numbers. Too many reviewers open a box, say "it's heavy," and move on without measuring the thing people actually need to know &mdash; idle drain, real-world runtime, charge efficiency, firmware quirks, and what the error codes on the screen actually mean.
+      <div class="text-gray-300 space-y-4 leading-relaxed">
+        <p>
+          Every day, millions of people search for a device spec, a fault code, or a parameter table &mdash; and land on a page that's either out of date, wrong, or behind a login wall. TechSpecsHub exists to fix that.
         </p>
         <p>
-          We publish the specs the manufacturers should be publishing &mdash; clearly, organized by device, with error codes and diagnostic procedures.
+          <strong class="text-white">Accurate.</strong> Every number on this site is traceable to a primary source &mdash; a manufacturer datasheet, a service manual, or a verifiable measurement.
+        </p>
+        <p>
+          <strong class="text-white">Discoverable.</strong> Every spec page is structured for search engines and for humans. If you're typing "EcoFlow Delta Pro 3 battery capacity," you should get the answer in under 10 seconds.
+        </p>
+        <p>
+          <strong class="text-white">Free.</strong> No paywalls, no email walls, no affiliate-gated content. The data on this site is published under open editorial standards and is available to anyone with a browser.
         </p>
       </div>
     </div>
   </section>
 
   <!-- EDITORIAL STANDARDS -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-    <div class="text-center mb-10">
-      <h2 class="font-bold text-3xl md:text-4xl mb-3">Editorial Standards &amp; Data Verification</h2>
-      <p class="text-gray-400 max-w-2xl mx-auto">Six rules we follow on every page. If we can't meet them, we don't publish.</p>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="mb-6">
+      <h2 class="font-bold text-3xl mb-2">Editorial Standards</h2>
+      <p class="text-gray-400">Six rules we apply to every spec we publish.</p>
     </div>
+    <div class="space-y-4">
 
-    <div class="glass-card p-6 md:p-10">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-        <!-- 1 -->
-        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
-          <div class="flex items-start gap-4">
-            <div class="w-9 h-9 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i data-lucide="file-text" style="width:1rem;height:1rem;color:#22d3ee"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg mb-2">1. Primary Source Preference</h3>
-              <p class="text-sm text-gray-400 leading-relaxed">Manufacturer service manuals, official data sheets, and regulatory filings (FCC, CE, UL) first. Third-party review sites are only used for cross-verification, never as the sole source of a spec claim.</p>
-            </div>
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-4">
+          <div class="font-mono text-electric-400 font-bold text-xl flex-shrink-0 w-10 h-10 bg-electric-500/10 border border-electric-500/30 rounded-lg flex items-center justify-center">1</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Primary Source Preference</h3>
+            <p class="text-gray-300 leading-relaxed">We always prefer the manufacturer's own documentation &mdash; service manuals, official spec sheets, firmware release notes, and public datasheets. Third-party retailer listings and marketing copy are never the sole source of truth for any technical number. Every spec page links to at least one primary source.</p>
           </div>
         </div>
-
-        <!-- 2 -->
-        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
-          <div class="flex items-start gap-4">
-            <div class="w-9 h-9 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i data-lucide="git-compare" style="width:1rem;height:1rem;color:#22d3ee"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg mb-2">2. Cross-Verification</h3>
-              <p class="text-sm text-gray-400 leading-relaxed">Every spec that appears on TechSpecsHub is checked against at least two independent sources where possible &mdash; the manufacturer spec sheet, a service manual, a reviewer who measured the value, or our own measurement.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3 -->
-        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
-          <div class="flex items-start gap-4">
-            <div class="w-9 h-9 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;color:#fbbf24"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg mb-2">3. Disclose When Speculation</h3>
-              <p class="text-sm text-gray-400 leading-relaxed">If we can only get one source for a claim, or if we're extrapolating from similar models, we say so explicitly. Look for phrases like "estimated from similar models" and "manufacturer-claimed (not independently measured)."</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4 -->
-        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
-          <div class="flex items-start gap-4">
-            <div class="w-9 h-9 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i data-lucide="layers" style="width:1rem;height:1rem;color:#22d3ee"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg mb-2">4. Version Tracking</h3>
-              <p class="text-sm text-gray-400 leading-relaxed">When a manufacturer releases a hardware revision with different specs &mdash; extremely common with power stations &mdash; we track both versions explicitly. We don't silently change tables; we add rows and keep the old data visible.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5 -->
-        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
-          <div class="flex items-start gap-4">
-            <div class="w-9 h-9 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i data-lucide="users" style="width:1rem;height:1rem;color:#22d3ee"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg mb-2">5. Community Correction</h3>
-              <p class="text-sm text-gray-400 leading-relaxed">Readers flag errors via our contact form. Every correction is logged, reviewed within 2-3 business days, and the relevant page is updated. We don't remove old data silently &mdash; updates are noted at the top of the page.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6 -->
-        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
-          <div class="flex items-start gap-4">
-            <div class="w-9 h-9 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              <i data-lucide="ban" style="width:1rem;height:1rem;color:#f87171"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg mb-2">6. No Pay-to-Play</h3>
-              <p class="text-sm text-gray-400 leading-relaxed">No paid listings. No sponsored rank positions in comparison tables. Affiliate revenue &mdash; when present &mdash; is disclosed on the page but does not influence spec content or model ordering. We have never accepted payment from a manufacturer in exchange for coverage.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-4">
+          <div class="font-mono text-electric-400 font-bold text-xl flex-shrink-0 w-10 h-10 bg-electric-500/10 border border-electric-500/30 rounded-lg flex items-center justify-center">2</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Cross-Verification</h3>
+            <p class="text-gray-300 leading-relaxed">Every critical spec (battery capacity, inverter output, cycle life, operating temperature range) is checked against at least two independent sources before publication. When two sources disagree, we note the discrepancy rather than silently picking a number.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-4">
+          <div class="font-mono text-electric-400 font-bold text-xl flex-shrink-0 w-10 h-10 bg-electric-500/10 border border-electric-500/30 rounded-lg flex items-center justify-center">3</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Disclose Speculation</h3>
+            <p class="text-gray-300 leading-relaxed">When a figure is derived (calculated from other data, estimated from a graph, or inferred by analogy), we clearly label it as such. Derived values are never presented as OEM specs. If we have to guess, we tell you we're guessing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-4">
+          <div class="font-mono text-electric-400 font-bold text-xl flex-shrink-0 w-10 h-10 bg-electric-500/10 border border-electric-500/30 rounded-lg flex items-center justify-center">4</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Track Hardware Revisions</h3>
+            <p class="text-gray-300 leading-relaxed">Manufacturers silently change components. "V2" batteries, revised inverters, different cell chemistries under the same model name. Where we can detect a revision, we document it. If a spec applies to a specific hardware version or firmware range, we say so explicitly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-4">
+          <div class="font-mono text-electric-400 font-bold text-xl flex-shrink-0 w-10 h-10 bg-electric-500/10 border border-electric-500/30 rounded-lg flex items-center justify-center">5</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Community Correction</h3>
+            <p class="text-gray-300 leading-relaxed">Every page has a "Report an error" link. Corrections are reviewed within two business days, and when accepted, the correction is documented on the page. Readers who submit corrections that are accepted receive an attribution on the revised page unless they opt out.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-4">
+          <div class="font-mono text-electric-400 font-bold text-xl flex-shrink-0 w-10 h-10 bg-electric-500/10 border border-electric-500/30 rounded-lg flex items-center justify-center">6</div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">No Paid Listings</h3>
+            <p class="text-gray-300 leading-relaxed">Manufacturers cannot pay to have their devices listed, cannot pay to change a spec, and cannot pay to suppress an error code entry. Editorial decisions are made independently of any commercial relationship. We do run display advertising, but it never influences content.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- TEAM & COVERAGE -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-
-      <!-- TEAM -->
-      <div class="glass-card p-8">
-        <div class="flex items-center gap-3 mb-5">
-          <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="users" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
-          </div>
-          <h2 class="font-bold text-2xl">Team &amp; Contributors</h2>
+  <!-- COVERAGE -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="mb-6">
+      <h2 class="font-bold text-3xl mb-2">Coverage Areas</h2>
+      <p class="text-gray-400">What we currently publish &mdash; and what's on our roadmap.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a href="specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>
+          <h3 class="font-bold text-lg">Outdoor Power Stations</h3>
         </div>
-        <p class="text-gray-300 leading-relaxed mb-4">
-          A small team of <span class="text-electric-400 font-semibold">engineers, solar installers, and consumer electronics reviewers</span>. We don't have sales staff. We don't take advertising from the companies whose products we review.
-        </p>
-        <p class="text-gray-400 leading-relaxed mb-4">
-          Contributors join based on specific expertise &mdash; a licensed electrician for inverter specs, a drone pilot for gimbal calibration, a solar installer for off-grid system sizing. Every contributor signs the same no-pay-to-play policy.
-        </p>
-        <div class="p-4 bg-navy-900/60 rounded-xl border border-white/5">
-          <p class="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">Core areas of expertise</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="badge badge-info">Electrical Engineering</span>
-            <span class="badge badge-info">Solar Installation</span>
-            <span class="badge badge-info">Consumer Electronics</span>
-            <span class="badge badge-info">HVAC Diagnostics</span>
-            <span class="badge badge-info">Drone Systems</span>
-          </div>
+        <p class="text-sm text-gray-400">Portable solar generators &mdash; EcoFlow, Jackery, Bluetti, Anker, Goal Zero, and more.</p>
+      </a>
+      <a href="specs/hybrid-cars.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+          <h3 class="font-bold text-lg">Hybrid &amp; EV Batteries</h3>
         </div>
-      </div>
-
-      <!-- COVERAGE -->
-      <div class="glass-card p-8">
-        <div class="flex items-center gap-3 mb-5">
-          <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="grid" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
-          </div>
-          <h2 class="font-bold text-2xl">Coverage Areas</h2>
+        <p class="text-sm text-gray-400">Toyota, Lexus, Tesla LFP battery modules &mdash; specs, fault codes, and diagnostics.</p>
+      </a>
+      <a href="specs/drones.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>
+          <h3 class="font-bold text-lg">Drones &amp; UAV</h3>
         </div>
-        <p class="text-gray-400 mb-5">Categories we currently publish data for. Requested categories are prioritized by reader demand.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-          <a href="specs/outdoor-power.html" class="flex items-center gap-3 p-3 bg-navy-900/60 rounded-lg border border-white/5 hover:border-electric-400/30 transition-all">
-            <i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>
-            <span>Outdoor Power Stations</span>
-          </a>
-          <a href="specs/hybrid-cars.html" class="flex items-center gap-3 p-3 bg-navy-900/60 rounded-lg border border-white/5 hover:border-electric-400/30 transition-all">
-            <i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>
-            <span>Hybrid &amp; EV Batteries</span>
-          </a>
-          <a href="specs/drones.html" class="flex items-center gap-3 p-3 bg-navy-900/60 rounded-lg border border-white/5 hover:border-electric-400/30 transition-all">
-            <i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>
-            <span>Drones &amp; UAV</span>
-          </a>
-          <a href="specs/smart-home.html" class="flex items-center gap-3 p-3 bg-navy-900/60 rounded-lg border border-white/5 hover:border-electric-400/30 transition-all">
-            <i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>
-            <span>Smart Home Devices</span>
-          </a>
-          <a href="tools/best-multimeters-2026.html" class="flex items-center gap-3 p-3 bg-navy-900/60 rounded-lg border border-white/5 hover:border-electric-400/30 transition-all">
-            <i data-lucide="wrench" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>
-            <span>Test Equipment</span>
-          </a>
-          <a href="specs/ebike-micromobility.html" class="flex items-center gap-3 p-3 bg-navy-900/60 rounded-lg border border-white/5 hover:border-electric-400/30 transition-all">
-            <i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>
-            <span>E-Bike &amp; Micromobility</span>
-          </a>
-          <a href="specs/3d-printers.html" class="flex items-center gap-3 p-3 bg-navy-900/60 rounded-lg border border-white/5 hover:border-electric-400/30 transition-all">
-            <i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>
-            <span>3D Printers</span>
-          </a>
-          <a href="specs/navigation.html" class="flex items-center gap-3 p-3 bg-navy-900/60 rounded-lg border border-white/5 hover:border-electric-400/30 transition-all">
-            <i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>
-            <span>Navigation &amp; Marine</span>
-          </a>
+        <p class="text-sm text-gray-400">DJI Mavic, Air, and Mini series. Camera specs, flight params, gimbal error codes.</p>
+      </a>
+      <a href="specs/smart-home.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>
+          <h3 class="font-bold text-lg">Smart Home Devices</h3>
         </div>
-      </div>
+        <p class="text-sm text-gray-400">Robot vacuums, thermostats, displays &mdash; specs and common firmware issues.</p>
+      </a>
+      <a href="specs/ebike-micromobility.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>
+          <h3 class="font-bold text-lg">E-Bike &amp; Micromobility</h3>
+        </div>
+        <p class="text-sm text-gray-400">Battery capacity, motor wattage, and controller parameters for popular e-bikes.</p>
+      </a>
+      <a href="specs/3d-printers.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+        <div class="flex items-center gap-3 mb-2">
+          <i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>
+          <h3 class="font-bold text-lg">3D Printers</h3>
+        </div>
+        <p class="text-sm text-gray-400">Build volume, print speed, nozzle temperature specs for FDM and resin printers.</p>
+      </a>
     </div>
   </section>
 
   <!-- UPDATE POLICY -->
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
     <div class="glass-card p-8 md:p-10">
-      <div class="flex items-center gap-3 mb-6">
-        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-          <i data-lucide="refresh-cw" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center">
+          <i data-lucide="refresh-cw" style="width:1.2rem;height:1.2rem;color:#22d3ee"></i>
         </div>
-        <h2 class="font-bold text-2xl md:text-3xl">Timeline &amp; Update Policy</h2>
+        <h2 class="font-bold text-2xl">Update Policy</h2>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
-        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
-          <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">High-Traffic Pages</div>
-          <div class="text-2xl font-bold text-electric-400 mb-1">Monthly Review</div>
-          <p class="text-sm text-gray-400 leading-relaxed">Pages with the most reader visits get a full editorial review and data-refresh on a 30-day cycle. Every page shows its "last updated" date at the top.</p>
-        </div>
-        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
-          <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">Lower-Traffic Pages</div>
-          <div class="text-2xl font-bold text-electric-400 mb-1">Quarterly Review</div>
-          <p class="text-sm text-gray-400 leading-relaxed">Device categories that change slowly (e.g., older hybrid models, established test equipment) get a quarterly verification pass. User-submitted corrections are processed within 2-3 business days regardless.</p>
-        </div>
-      </div>
-
-      <div class="alert alert-info">
-        <i data-lucide="info" style="width:1.1rem;height:1.1rem;color:#22d3ee;flex-shrink:0;margin-top:2px"></i>
-        <div>
-          <p class="font-semibold text-sm mb-1">How to request an update</p>
-          <p class="text-sm">If a page looks out of date, or you have information we're missing, send us a note through <a href="contact.html" class="text-electric-400 hover:text-electric-300 underline">the contact page</a>. We reply personally to every substantive message.</p>
-        </div>
-      </div>
+      <ul class="text-gray-300 space-y-3 leading-relaxed">
+        <li class="flex items-start gap-3"><span class="text-electric-400 mt-1">&mdash;</span><span><strong class="text-white">Monthly reviews.</strong> Every spec page is reviewed at least once per month for accuracy against current manufacturer documentation.</span></li>
+        <li class="flex items-start gap-3"><span class="text-electric-400 mt-1">&mdash;</span><span><strong class="text-white">Last-updated dates.</strong> Every page displays its last-reviewed date at the top of the content area. If you don't see one, the page is new and will be dated on its first review cycle.</span></li>
+        <li class="flex items-start gap-3"><span class="text-electric-400 mt-1">&mdash;</span><span><strong class="text-white">Change logging.</strong> Corrections or material updates to a page are logged at the bottom of the page with a short summary of what changed and why.</span></li>
+        <li class="flex items-start gap-3"><span class="text-electric-400 mt-1">&mdash;</span><span><strong class="text-white">Reader-driven.</strong> Requests submitted via the <a href="contact.html" class="text-electric-400 hover:text-electric-300 underline underline-offset-2">contact page</a> are prioritized over routine maintenance.</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- CONTACT CTA -->
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-    <div class="glass-card p-8 md:p-12 text-center bg-gradient-to-br from-navy-900 to-navy-800/40 border border-electric-500/20">
-      <div class="w-14 h-14 bg-electric-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-        <i data-lucide="mail" style="width:1.5rem;height:1.5rem;color:#22d3ee"></i>
-      </div>
-      <h2 class="font-bold text-3xl md:text-4xl mb-4">Spot an error? Need a spec we don't have?</h2>
-      <p class="text-gray-400 mb-8 max-w-xl mx-auto">We read every message personally. If you can tell us what's wrong &mdash; or what device you need specs for &mdash; we'll use that information to make the site better.</p>
+  <!-- CTA -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="glass-card p-10 md:p-12 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-3xl mb-4">See a mistake? Want a spec added?</h2>
+      <p class="text-gray-400 mb-6 max-w-xl mx-auto">Our editorial team reviews every message. If you're reporting an error, please include the spec, the page URL, and the source you're citing.</p>
       <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all">
-        Contact TechSpecsHub <i data-lucide="arrow-right" style="width:1rem;height:1rem"></i>
+        Contact the editorial team <i data-lucide="arrow-right" style="width:1rem;height:1rem"></i>
       </a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+  <footer class="border-t border-white/10 bg-navy-950 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="md:col-span-1">
@@ -449,11 +321,8 @@
             </div>
             <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
           </div>
-          <p class="text-sm text-gray-400 leading-relaxed">
-            Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.
-          </p>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting.</p>
         </div>
-
         <div>
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
@@ -463,29 +332,24 @@
             <li><a href="specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
             <li><a href="brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
-            <li><a href="tools/best-multimeters-2026.html" class="text-gray-400 hover:text-electric-400">Best Multimeters 2026</a></li>
           </ul>
         </div>
-
         <div>
           <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="about.html" class="text-electric-400 hover:text-electric-300">About</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
             <li><a href="contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
             <li><a href="privacy-policy.html" class="text-gray-400 hover:text-electric-400">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
-
       <hr class="border-white/10 my-8">
-
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
         <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
         <div class="flex items-center gap-1">
@@ -496,8 +360,6 @@
     </div>
   </footer>
 
-  <!-- MAIN.JS -->
   <script src="../assets/js/main.js"></script>
-
 </body>
 </html>
