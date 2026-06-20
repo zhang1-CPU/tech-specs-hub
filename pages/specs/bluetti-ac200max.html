@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluetti AC200MAX Technical Specs - 2,200Wh, 2,200W Output | TechSpecsHub</title>
+  <meta name="description" content="Complete Bluetti AC200MAX specifications. 2,200Wh LiFePO4 battery, 2,200W continuous output, 4,800W surge, charging speeds, output ports, error codes, and real-world performance data.">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bluetti AC200MAX Technical Specs - 2,200Wh, 2,200W Output">
+  <meta property="og:description" content="Complete Bluetti AC200MAX specifications. 2,200Wh LiFePO4 battery, 2,200W continuous output, 4,800W surge, charging speeds, output ports, error codes, and real-world performance data.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-bluetti-ac200max.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    h2 { scroll-margin-top: 100px; }
+    h3 { scroll-margin-top: 100px; }
+  </style>
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <!-- ========================================================
+       HEADER / NAV
+       ======================================================== -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+
+          <!-- Categories dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <!-- Tools & Data dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="../tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <!-- Right: Search + Mobile toggle -->
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="../tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       SEARCH MODAL
+       ======================================================== -->
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       BREADCRUMB
+       ======================================================== -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="outdoor-power.html">Outdoor Power Stations</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Bluetti AC200MAX</span>
+    </nav>
+  </div>
+
+  <!-- ========================================================
+       HERO
+       ======================================================== -->
+  <section class="relative pt-6 pb-14">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-[400px] h-[400px] bg-electric-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex flex-wrap items-center justify-center gap-2 mb-6">
+        <span class="badge badge-ok"><i data-lucide="leaf" style="width:0.7rem;height:0.7rem"></i>LiFePO4</span>
+        <span class="badge badge-info"><i data-lucide="zap" style="width:0.7rem;height:0.7rem"></i>Portable Power</span>
+        <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>Expansion Ready</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-[1.1] tracking-tight">
+        Bluetti AC200MAX <span class="gradient-text">Specifications</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+        2,200 Wh expandable portable power station. A popular mid-range model for home backup and off-grid use.
+      </p>
+
+      <!-- Quick stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">2,200 Wh</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">LiFePO4 Capacity</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">2,200W</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Continuous AC</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">4,800W</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Surge Peak</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">61.9 lbs</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Weight</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       KEY SPECIFICATIONS AT-A-GLANCE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <h2 class="font-bold text-2xl md:text-3xl mb-2">Key Specifications &mdash; At-A-Glance</h2>
+        <p class="text-gray-400 text-sm">Every major specification on one page, cross-checked against Bluetti's official documentation.</p>
+      </div>
+    </div>
+
+    <div class="glass-card p-6 md:p-8">
+      <table class="specs-table">
+        <tbody>
+          <tr><th>Battery Capacity</th><td class="font-mono text-electric-400">2,200 Wh</td></tr>
+          <tr><th>AC Output</th><td class="font-mono text-electric-400">2,200W continuous / 4,800W surge</td></tr>
+          <tr><th>Battery Chemistry</th><td class="font-mono">LiFePO4 (Lithium Iron Phosphate)</td></tr>
+          <tr><th>Cycle Life</th><td class="font-mono text-electric-400">3,500+ cycles to 80% SOH</td></tr>
+          <tr><th>AC Charging</th><td class="font-mono text-electric-400">900W max (dedicated 15A circuit recommended)</td></tr>
+          <tr><th>Solar Charging</th><td class="font-mono text-electric-400">900W max, dual MPPT, 35V&ndash;150V input range</td></tr>
+          <tr><th>Combined Charging (AC + Solar)</th><td class="font-mono text-electric-400">1,400W max</td></tr>
+          <tr><th>Output Ports</th><td class="font-mono text-electric-400">4 &times; AC (NEMA 5-20R), 2 &times; USB-A, 2 &times; USB-C PD 60W, 1 &times; 12V car port, 2 &times; DC 5521</td></tr>
+          <tr><th>Expansion Capacity</th><td class="font-mono text-electric-400">Up to 2 &times; B230 battery packs (adds 4,608 Wh total)</td></tr>
+          <tr><th>Weight</th><td class="font-mono text-electric-400">61.9 lbs / 28.1 kg</td></tr>
+          <tr><th>Dimensions (W &times; D &times; H)</th><td class="font-mono text-electric-400">16.5 &times; 11 &times; 15.2 in / 42 &times; 28 &times; 38.6 cm</td></tr>
+          <tr><th>Warranty</th><td class="font-mono text-electric-400">2 years + 1 year extension after registration</td></tr>
+          <tr><th>MSRP</th><td class="font-mono text-electric-400">$1,499 USD</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       DETAILED SPECIFICATIONS 3-COLUMN GRID
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Detailed Specifications</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Battery details, AC output waveform, and charging parameters broken out by subsystem.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="battery-charging" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-4">Battery Details</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Total capacity</span><span class="font-mono text-white">2,200 Wh</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Cell chemistry</span><span class="font-mono text-white">LiFePO4</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Nominal voltage</span><span class="font-mono text-white">51.2V</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Cycle life</span><span class="font-mono text-white">3,500+ cycles to 80% SOH</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">BMS</span><span class="font-mono text-white">Smart BMS with cell-level monitoring (&plusmn;15mV)</span></div>
+          <div class="flex justify-between py-2"><span class="text-gray-400">Cell-level monitoring</span><span class="font-mono text-white">Per-cell voltage tracking</span></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="plug-zap" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-4">AC Output</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Continuous power</span><span class="font-mono text-white">2,200W</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Peak surge</span><span class="font-mono text-white">4,800W</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Waveform</span><span class="font-mono text-white">Pure sine wave</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Voltage / frequency</span><span class="font-mono text-white">120V, 60 Hz</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Total AC outlets</span><span class="font-mono text-white">4 &times; NEMA 5-20R</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Idle power draw</span><span class="font-mono text-white">~5-8W</span></div>
+          <div class="flex justify-between py-2"><span class="text-gray-400">USB-C PD</span><span class="font-mono text-white">2 ports, 60W each</span></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="zap" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-4">Charging</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">AC charging (standard)</span><span class="font-mono text-white">900W max</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Solar input (max)</span><span class="font-mono text-white">900W (dual MPPT)</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">MPPT voltage range</span><span class="font-mono text-white">35V&ndash;150V DC</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Combined (AC + Solar)</span><span class="font-mono text-white">1,400W max</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">0-100% AC time</span><span class="font-mono text-white">~2.5-3 hours</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Car input</span><span class="font-mono text-white">12V car port supported</span></div>
+          <div class="flex justify-between py-2"><span class="text-gray-400">Charge-through supported</span><span class="font-mono text-green-400">Yes (pass-through)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       EXPANSION BATTERY OPTIONS
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Expansion Battery Options</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Bluetti's modular architecture supports up to 2 expansion packs for higher total capacity. Note: only Bluetti-branded packs are compatible. Expansion packs from other manufacturers are NOT interoperable.</p>
+    </div>
+
+    <div class="glass-card p-6 md:p-8">
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Expansion Model</th>
+            <th>Capacity per Pack</th>
+            <th>Chemistry</th>
+            <th>MSRP</th>
+            <th>Total with AC200MAX + 2 packs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-mono text-electric-400 font-bold">Bluetti B230</td>
+            <td class="font-mono text-white">2,304 Wh</td>
+            <td class="font-mono text-white">LiFePO4</td>
+            <td class="font-mono text-white">$1,199</td>
+            <td class="font-mono text-electric-400">2,200 + 4,608 = <strong>6,808 Wh</strong></td>
+          </tr>
+          <tr>
+            <td class="font-mono text-electric-400 font-bold">Bluetti B300</td>
+            <td class="font-mono text-white">3,072 Wh</td>
+            <td class="font-mono text-white">LiFePO4</td>
+            <td class="font-mono text-white">$1,599</td>
+            <td class="font-mono text-electric-400">2,200 + 6,000 = <strong>8,200 Wh</strong></td>
+          </tr>
+          <tr>
+            <td colspan="5" class="text-sm text-gray-400 italic">
+              <i data-lucide="alert-triangle" style="width:0.9rem;height:0.9rem;color:#fbbf24;display:inline;vertical-align:middle;margin-right:0.25rem"></i>
+              <strong class="text-gray-300">Important:</strong> Do not mix B230 and B300 packs on the same AC200MAX unit. Use two identical expansion models only. Mixing pack models can cause communication errors and potential BMS faults.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       BLUETTI ERROR CODE TABLE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Bluetti Error Code Reference</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Cross-referenced from Bluetti BMS diagnostics, engineering documents, and verified user field reports.</p>
+    </div>
+
+    <div class="glass-card p-6 md:p-8">
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Severity</th>
+            <th>Description / Trigger</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code class="font-mono text-red-400 font-bold">E001</code></td>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td>Inverter Over-temperature</td>
+            <td><strong>Stop use immediately.</strong> Allow the unit to cool down. Check cooling fan for obstruction &mdash; ensure at least 12 inches of clearance on all sides. Verify that the air intake and exhaust vents are not blocked by dust, debris, or other objects. Do not resume operation until unit has returned to room temperature.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-red-400 font-bold">E002</code></td>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td>Inverter Output Short</td>
+            <td><strong>Disconnect all loads immediately.</strong> Inspect all AC cables for damage, frayed insulation, or loose connections. Check each device individually by reconnecting one at a time to identify the faulty device. Do not use damaged cables.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E003</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>Overload Warning / Output Overload</td>
+            <td>Reduce total connected load to under <strong class="text-white">2,200W continuous</strong>. Calculate combined wattage of all devices. Inductive motor-driven loads (refrigerators, pumps, AC units) draw 3&ndash;5 times rated wattage at startup and may trigger this code even if within continuous rating.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E004</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>Battery Over-temperature</td>
+            <td>Move unit to shade or a cooler location. Stop charging immediately. If in direct sun, relocate indoors or under cover. Wait for battery temperature to drop below 45&deg;C (113&deg;F) before resuming. Do not place unit near heat sources (fire pits, heaters, direct sunlight).</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E005</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>Battery Under-voltage</td>
+            <td>Battery is nearly depleted. <strong>Recharge immediately.</strong> Do not continue discharging below the warning threshold &mdash; LiFePO4 cells can be permanently damaged by deep over-discharge. Connect AC charger or solar panels as soon as possible.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E006</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>Battery Over-voltage</td>
+            <td>Charging stopped by BMS to protect cells. Likely caused by an over-voltage from an external source (faulty charger, incorrectly configured solar array, or voltage spike from wall outlet). Disconnect charging source. Verify panel open-circuit voltage (Voc) is within the 35V&ndash;150V range. Test with a known-good wall outlet.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E007</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>Solar / MPPT Input Error</td>
+            <td>Check solar panel connections. Verify panel Voc is in the 35V&ndash;150V range. Check for shade on panels (even partial shading on one cell in a series string can drop MPPT voltage below threshold). Inspect MC4 connectors for corrosion or loose fit. Test panels with a multimeter to confirm expected open-circuit voltage.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-blue-400 font-bold">E008</code></td>
+            <td><span class="badge badge-info">Info</span></td>
+            <td>Communication Error</td>
+            <td>Internal BMS-to-inverter handshake fault. <strong class="text-white">Perform a full reboot:</strong> power off, disconnect all loads, hold power button for 10+ seconds. If persistent, update firmware via micro SD card. If expansion packs are connected, reseat the expansion battery connector and verify identical pack models.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E009</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>Fan Failure</td>
+            <td>Audible fan fault or fan not spinning. Check for physical obstruction near fan vents. If fan is mechanically failed, <strong class="text-red-400">contact Bluetti support for RMA</strong>. Do not operate the unit without active cooling &mdash; sustained overheating degrades cell life and is a safety risk.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-red-400 font-bold">E010</code></td>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td>BMS Error</td>
+            <td>Internal battery management system fault. <strong class="text-white">Contact Bluetti support immediately.</strong> Do not attempt to charge or discharge. Do not attempt self-repair &mdash; BMS faults require factory service. Covered under the 2-year warranty (3 years after registration).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       TROUBLESHOOTING
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Troubleshooting Guide</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Step-by-step diagnostic procedures for the most common user-reported issues with the AC200MAX.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="power-off" style="width:1.15rem;height:1.15rem;color:#f87171"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">Unit Won't Turn On</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>Verify battery state of charge &mdash; if below 10%, connect to AC charger first.</li>
+          <li><strong class="text-white">Hard reset:</strong> Disconnect all loads, then hold the main power button for <strong class="text-electric-400 font-mono">10+ continuous seconds</strong>.</li>
+          <li>After the reset, reconnect AC power and observe the LCD wake-up sequence.</li>
+          <li>Check that expansion-pack connectors are fully seated (if used) and that both packs are the same model (both B230 or both B300).</li>
+          <li>If still unresponsive and <code class="font-mono text-red-400">E010</code> appears, contact Bluetti support for RMA.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="plug-zap" style="width:1.15rem;height:1.15rem;color:#fbbf24"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">AC Outlets Not Working</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>Check for <code class="font-mono text-red-400">E001</code> (inverter over-temperature), <code class="font-mono text-red-400">E002</code> (output short), or <code class="font-mono text-yellow-400">E003</code> (overload) on the display.</li>
+          <li>Disconnect all devices, then reconnect one at a time to identify the problematic device.</li>
+          <li>Verify total continuous load is under 2,200W. Inductive startup surges may exceed 4,800W peak &mdash; use soft-start kits for large compressors.</li>
+          <li>Check AC cable connections and NEMA 5-20R receptacles for physical damage.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">Solar Charging Slower Than Expected</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li><strong class="text-white">Verify panel Voc is in the 35V&ndash;150V range</strong> &mdash; this is the MPPT operating window for the AC200MAX. Panels with Voc below 35V will not trigger MPPT charging.</li>
+          <li>Check combined panel wattage does not exceed <strong class="text-white">900W</strong>. Oversized arrays are clipped at the 900W ceiling.</li>
+          <li>Inspect MC4 panel connectors for corrosion, dust, or loose fit &mdash; poor connections reduce voltage reaching the MPPT controller.</li>
+          <li>Check for shade on panels &mdash; even partial shading on a single cell in a series string dramatically reduces output.</li>
+          <li>If <code class="font-mono text-yellow-400">E007</code> appears, see the solar input error section above.</li>
+          <li>Firmware v2.08 had a documented MPPT bug where solar input was incorrectly capped at ~400W. <strong class="text-green-400">Update to v2.12 or newer</strong> to resolve.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="zap-off" style="width:1.15rem;height:1.15rem;color:#fbbf24"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">Slow AC Charging</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>Must use a <strong class="text-white">dedicated 15A circuit</strong> &mdash; shared circuits with other high-draw devices throttle charging.</li>
+          <li><strong class="text-white">900W is the max charging rate</strong> for this model. Do not expect 1,800W or higher rates &mdash; this is a hardware limitation of the internal charging circuit.</li>
+          <li>Extremely cold (&lt; 0&deg;C) or hot (&gt; 45&deg;C) ambient temperatures reduce charge rate &mdash; this is normal LiFePO4 thermal behavior.</li>
+          <li>Test with a known-good, dedicated wall outlet to rule out building wiring issues.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="monitor" style="width:1.15rem;height:1.15rem;color:#60a5fa"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">LCD Display Flickering</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>Firmware update usually resolves LCD flickering issues. See the firmware update procedure at the bottom of this page.</li>
+          <li>Perform a hard reset (hold power button 10+ seconds) to rule out transient display controller glitches.</li>
+          <li>Some early production units had minor LCD backlight bleed at screen edges &mdash; this is cosmetic and not covered under warranty.</li>
+          <li>If flickering persists after firmware update and the display becomes unreadable, contact Bluetti support.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="fan" style="width:1.15rem;height:1.15rem;color:#a78bfa"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">Fan Noise / Fan Always On</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>The AC200MAX fan kicks in at approximately <strong class="text-white">60% load</strong> and produces roughly ~55 dB, which is louder than EcoFlow equivalents in comparative testing.</li>
+          <li>Variable-speed thermal control adjusts fan RPM based on inverter temperature. Expect louder fan operation during sustained high-draw use.</li>
+          <li>If fan noise suddenly increases or fan stalls, check for <code class="font-mono text-yellow-400">E009</code> (fan failure) and inspect vents for obstruction.</li>
+          <li>In temperatures below 0&deg;C, bearings may produce audible noise during initial spin-up &mdash; this typically diminishes as the unit warms.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       REAL-WORLD RUNTIME DATA
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Real-World Runtime Data</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">What a single charge actually powers. Runtime estimates based on measured load at 80% state of charge, LiFePO4 chemistry, from the 2,200 Wh base capacity.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="snowflake" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">Full-Size Refrigerator</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">14-20 hrs</div>
+        <p class="text-sm text-gray-400">~150-180W cycling with typical door-open frequency. Suitable for short-duration grid outage backup. Freezers with higher compressor draw will reduce runtime.</p>
+      </div>
+
+      <div class="glass-card p-6 border border-yellow-500/20">
+        <div class="w-11 h-11 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="wind" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>
+        </div>
+        <h3 class="font-bold mb-1">Window AC Unit</h3>
+        <div class="text-3xl font-bold font-mono text-yellow-400 mb-2">Not recommended</div>
+        <p class="text-sm text-gray-400"><strong class="text-white">2,200W continuous rating is usually insufficient</strong> for startup surge on most window AC units. If attempting, use a unit under 8,000 BTU with a soft-start kit. Expect very short runtime even if it starts.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="bed" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">CPAP Machine</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">40-60 hrs</div>
+        <p class="text-sm text-gray-400">~40-55W average with humidifier. Turn off heated humidifier for longest backup runtime. USB-C PD 60W port can power many modern CPAP units directly.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="tv" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">55" LED TV</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">12-18 hrs</div>
+        <p class="text-sm text-gray-400">~130-180W at typical viewing brightness. Combine with a streaming device and laptop for a full media workstation during extended outages.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="laptop" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">Gaming Laptop</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">20-30 charges</div>
+        <p class="text-sm text-gray-400">Assuming 80-110Wh laptop battery with typical mixed use. USB-C PD 60W ports work well for charging notebooks and 2-in-1 devices.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="smartphone" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">iPhone / Smartphone</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">300+ charges</div>
+        <p class="text-sm text-gray-400">Assuming 3,000&ndash;4,500 mAh smartphone. USB-A and USB-C PD 60W ports both deliver fast-charging to modern flagships.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="chef-hat" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">Microwave 1,000W</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">1.5-2 hrs</div>
+        <p class="text-sm text-gray-400">Total accumulated operating time (short duty-cycle use for heating food). Continuous high-draw operation not recommended.</p>
+      </div>
+
+      <div class="glass-card p-6 border border-red-500/20">
+        <div class="w-11 h-11 bg-red-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="thermometer-sun" style="width:1.25rem;height:1.25rem;color:#f87171"></i>
+        </div>
+        <h3 class="font-bold mb-1">Electric Space Heater</h3>
+        <div class="text-3xl font-bold font-mono text-red-400 mb-2">1.5-2 hrs</div>
+        <p class="text-sm text-gray-400"><strong class="text-white">NOT recommended.</strong> ~1,500W standard unit. Resistive heating is the worst-case load for any LiFePO4 power station &mdash; extremely energy-intensive with very high continuous draw. Consider propane or other fuel-based heating for off-grid or emergency scenarios.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="router" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">Router + Modem + Lights</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">40-60 hrs</div>
+        <p class="text-sm text-gray-400">Small electronics combined (~30-50W total). Keep internet connectivity and essential lighting during extended grid outages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       KNOWN ISSUES
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Known Issues &amp; Firmware Notes</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Documented hardware and software issues. Most resolved by firmware update to v2.12 or newer.</p>
+    </div>
+
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-900/10 to-navy-900">
+      <div class="space-y-6">
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="alert-triangle" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">MPPT Solar Input Bug (Firmware v2.08)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-2">
+              Firmware v2.08 had a documented MPPT charge controller bug where solar input was incorrectly capped at approximately 400W, regardless of panel array size. Users with 700W&ndash;900W solar arrays reported charging rates far below expected.
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              <strong class="text-green-400">Fixed in firmware v2.12 and newer.</strong> See the firmware update procedure below for micro SD card flash instructions.
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="monitor" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">LCD Backlight Bleed (Early Production Units)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-2">
+              Some early production units exhibited minor LCD backlight bleed at the screen edges. This appears as faint light leakage around the display borders and is visible in dim environments.
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              <strong class="text-yellow-400">Status:</strong> Cosmetic issue, not covered under warranty. Does not affect unit operation, charging, or output performance.
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="layers" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Expansion Battery Communication Error When Packs Mixed</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-2">
+              The AC200MAX does not support mixing B230 and B300 expansion packs. Connecting different models triggers <code class="font-mono text-yellow-400">E008</code> (communication error) and may cause unstable charging behavior.
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              <strong class="text-green-400">Resolution:</strong> Use two identical expansion packs only &mdash; both B230 or both B300. Do not attempt to use expansion packs from other manufacturers (EcoFlow, Jackery, etc.) &mdash; they are NOT interoperable.
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="fan" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Fan Noise is Louder Than EcoFlow Equivalent</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-2">
+              Comparative testing confirms the AC200MAX cooling fan runs noticeably louder than comparable EcoFlow models. Fan kicks in at approximately 60% load, producing ~55 dB at close range.
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              This is by design and is not a hardware fault. If fan noise suddenly increases dramatically, check for <code class="font-mono text-yellow-400">E009</code> (fan failure) and verify vents are clear.
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="zap-off" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">AC Charging Limited to 900W</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-2">
+              Some users report surprise that AC charging is capped at 900W on this model, expecting higher rates like premium EcoFlow units. This is a hardware specification, not a bug.
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Combined AC + Solar charging reaches 1,400W max. For fastest top-up, connect both AC charger and solar panels simultaneously.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       BATTERY CELL ARCHITECTURE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="glass-card p-8 md:p-10">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="cpu" style="width:1.5rem;height:1.5rem;color:#22d3ee"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-2xl md:text-3xl mb-2">Battery Cell Architecture</h2>
+          <p class="text-gray-400 text-sm">Cell configuration, nominal voltage, and BMS monitoring precision.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-sm">
+        <div class="p-5 bg-navy-800/40 rounded-lg border border-white/5">
+          <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">Cell Configuration</div>
+          <div class="text-xl font-bold text-electric-400 font-mono mb-2">16S &times; N Parallel (32 cells)</div>
+          <p class="text-gray-400 leading-relaxed">32 LiFePO4 cells arranged in a 16-series configuration to produce the 51.2V nominal bus. Parallel strings provide high current capacity and redundancy.</p>
+        </div>
+        <div class="p-5 bg-navy-800/40 rounded-lg border border-white/5">
+          <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">Voltage &amp; Cycles</div>
+          <div class="text-xl font-bold text-electric-400 font-mono mb-2">51.2V nominal / 3,500+ cycles</div>
+          <p class="text-gray-400 leading-relaxed">51.2V nominal bus voltage. Rated for 3,500+ full charge&ndash;discharge cycles to 80% state-of-health (SOH). Typical LiFePO4 self-discharge ~1&ndash;2% per month at room temperature.</p>
+        </div>
+        <div class="p-5 bg-navy-800/40 rounded-lg border border-white/5">
+          <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">BMS Monitoring Precision</div>
+          <div class="text-xl font-bold text-electric-400 font-mono mb-2">&plusmn;15 mV per cell</div>
+          <p class="text-gray-400 leading-relaxed">Individual cell voltage is monitored to &plusmn;15 mV accuracy across all 32 cells. Cell-level balancing ensures uniform charging and extends overall pack life. Over-temperature sensors at strategic busbar points.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FIRMWARE UPDATE PROCEDURE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Firmware Update Procedure</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Step-by-step instructions for updating the AC200MAX firmware via micro SD card. This resolves the v2.08 MPPT bug, display flickering, and fan-curve calibration issues.</p>
+    </div>
+
+    <div class="glass-card p-8 md:p-10 bg-gradient-to-br from-electric-900/15 to-navy-900">
+      <div class="space-y-6">
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <span class="font-bold text-electric-400 font-mono">1</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Download firmware from Bluetti support website</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">Visit the official Bluetti support page and locate the AC200MAX firmware download section. Download the latest <code class="font-mono text-electric-400">.bin</code> file. Verify the file version is <strong class="text-white">v2.12 or newer</strong> to ensure the MPPT bug and display fixes are included. Do not download firmware from untrusted third-party sources.</p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <span class="font-bold text-electric-400 font-mono">2</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Copy .bin file to a FAT32-formatted micro SD card (max 32 GB)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">Format a micro SD card as <strong class="text-white">FAT32</strong> &mdash; the card must be <strong class="text-white">32 GB or smaller</strong>. Copy the firmware <code class="font-mono text-electric-400">.bin</code> file to the <strong class="text-white">root directory</strong> of the card (not inside a subfolder). Safely eject the card using the operating system's "Eject" function before physically removing it.</p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <span class="font-bold text-electric-400 font-mono">3</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Insert card into AC200MAX</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">Ensure the AC200MAX is powered on and displaying the main menu. Insert the micro SD card into the card slot on the side panel. Wait 2&ndash;3 seconds for the unit to detect the card.</p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <span class="font-bold text-electric-400 font-mono">4</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Menu &rarr; Settings &rarr; Firmware Update</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">Navigate through the LCD menu: press <strong class="text-white">Menu</strong>, select <strong class="text-white">Settings</strong>, then select <strong class="text-white">Firmware Update</strong>. Confirm the update when prompted. The unit will display the detected firmware version and ask for confirmation before proceeding.</p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="alert-triangle" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Wait 2&ndash;5 minutes &mdash; do NOT power off during update</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-2">The update process takes approximately <strong class="text-white">2 to 5 minutes</strong>. During this time, the display may show a progress bar or a static update screen. The unit will automatically reboot when complete.</p>
+            <p class="text-sm text-red-300 leading-relaxed"><strong class="text-white">&rarr; Do NOT power off the unit during the update.</strong> Do NOT remove the SD card, disconnect the charger, or press any buttons until the unit has fully rebooted and returned to the main display. Interrupting the firmware update may corrupt the bootloader and require factory service.</p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="check-circle" style="width:1.1rem;height:1.1rem;color:#4ade80"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Post-update verification</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">After the reboot completes, verify the firmware version in <strong class="text-white">Menu &rarr; Settings &rarr; About</strong>. The displayed version should match the version you downloaded. Remove the micro SD card. If the update failed or the unit does not boot, contact Bluetti support with your serial number.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="border-t border-white/10 bg-navy-950 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+            <li><a href="ebike-micromobility.html" class="text-gray-400 hover:text-electric-400">E-Bike &amp; Micromobility</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+            <li><a href="../tools/best-multimeters-2026.html" class="text-gray-400 hover:text-electric-400">Best Multimeters 2026</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-white/10 my-8">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       MAIN.JS
+       ======================================================== -->
+  <script src="../../assets/js/main.js"></script>
+
+</body>
+</html>

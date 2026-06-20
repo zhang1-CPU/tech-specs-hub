@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Specs Comparison - Compare Every Device Side-by-Side | TechSpecsHub</title>
+  <meta name="description" content="Side-by-side technical comparison of portable power stations, drone cameras, hybrid battery modules, EV battery packs, and smart home devices. Capacity, output, cycle life, chemistry, and warranty on one page.">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <!-- ========================================================
+       HEADER / NAV
+       ======================================================== -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+
+        <!-- Logo -->
+        <a href="../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+
+          <!-- Categories dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <!-- Tools & Data dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <!-- Right: Search + Mobile toggle -->
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       SEARCH MODAL
+       ======================================================== -->
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search devices, specs, categories..." autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink:0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       BREADCRUMB
+       ======================================================== -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Master Specs Comparison</span>
+    </nav>
+  </div>
+
+  <!-- ========================================================
+       HERO
+       ======================================================== -->
+  <section class="relative pt-6 pb-14">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-[400px] h-[400px] bg-electric-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="badge badge-info mb-5"><i data-lucide="table-2" style="width:0.7rem;height:0.7rem"></i>Side-by-Side Comparison</span>
+      <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-[1.1] tracking-tight">
+        Master Specifications <span class="gradient-text">Comparison</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Every major spec on one page. Filter by device category and look up the exact numbers that matter for your buying or repair decision.
+      </p>
+
+      <!-- Category Tabs (visual only) -->
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <a href="#power-stations" class="px-4 py-2 bg-electric-500/15 text-electric-300 hover:bg-electric-500/25 border border-electric-400/30 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-2"><i data-lucide="battery-charging" style="width:0.875rem;height:0.875rem"></i>Power Stations</a>
+        <a href="#hybrid-batteries" class="px-4 py-2 bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-2"><i data-lucide="car" style="width:0.875rem;height:0.875rem"></i>Hybrid/EV Batteries</a>
+        <a href="#drones" class="px-4 py-2 bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-2"><i data-lucide="plane" style="width:0.875rem;height:0.875rem"></i>Drones</a>
+        <a href="#smart-home" class="px-4 py-2 bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-2"><i data-lucide="home" style="width:0.875rem;height:0.875rem"></i>Smart Home</a>
+        <a href="#tools" class="px-4 py-2 bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-2"><i data-lucide="wrench" style="width:0.875rem;height:0.875rem"></i>Tools</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       POWER STATIONS TABLE
+       ======================================================== -->
+  <section id="power-stations" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div class="flex items-start gap-3">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="battery-charging" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-2xl md:text-3xl mb-1">Power Stations Comparison</h2>
+          <p class="text-gray-400 text-sm">Capacity, chemistry, AC output, solar input, weight, price, and warranty side-by-side.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card p-0 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10 bg-navy-800/40">
+              <th class="px-5 py-4 text-left font-semibold text-white">Device</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Capacity (Wh)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Chemistry</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Cycle Life</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">AC Output (W)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Solar (W)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Weight (lbs)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Price (USD)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Warranty</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5">
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">EcoFlow Delta Pro 3</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">4,096</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">LFP (LiFePO4)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">4,000+ to 80%</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">4,000 / 8,000 surge</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">2,600</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~70</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$3,999</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">5 years</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Jackery Explorer 2000 Plus</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">2,042</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">NMC</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">500+ to 80%</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">3,000 / 6,000 surge</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">800</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">43</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$1,999</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">5 years</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Anker SOLIX F3800</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">3,840</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">LFP (LiFePO4)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">3,000+ to 80%</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">3,800 / 6,000 surge</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">2,400</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~65</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$3,499</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">5 years</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Bluetti AC200L</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">2,048</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">LFP (LiFePO4)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">3,500+ to 80%</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">2,400 / 4,800 surge</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">1,200</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~41</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$1,799</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">5 years</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">EcoFlow River 2 Pro</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">768</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">LFP (LiFePO4)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">3,000+ to 80%</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">800 / 1,600 surge</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">220</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~16</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$599</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">5 years</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Jackery Explorer 1000 Plus</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">1,024</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">NMC</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">500+ to 80%</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">1,500 / 3,000 surge</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">400</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~26</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$1,199</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">5 years</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Anker SOLIX C1000 Gen 2</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">1,056</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">LFP (LiFePO4)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">3,000+ to 80%</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">1,000 / 2,000 surge</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">300</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~22</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$999</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">5 years</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Bluetti AC70P</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">864</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">LFP (LiFePO4)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">3,000+ to 80%</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">1,000 / 2,000 surge</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">200</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~19</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$799</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">5 years</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       HYBRID / EV BATTERY TABLE
+       ======================================================== -->
+  <section id="hybrid-batteries" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div class="flex items-start gap-3">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="car" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-2xl md:text-3xl mb-1">Hybrid &amp; EV Battery Modules</h2>
+          <p class="text-gray-400 text-sm">Battery type, capacity, nominal voltage, chemistry, cycle life, and warranty across popular hybrid and EV platforms.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card p-0 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10 bg-navy-800/40">
+              <th class="px-5 py-4 text-left font-semibold text-white">Vehicle / Platform</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Battery Type</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Capacity (kWh)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Nominal Voltage</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Chemistry</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Cycle Life</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Warranty</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5">
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Toyota Prius Gen 2</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Ni-MH HV pack</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">1.31</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">201.6V</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Nickel-Metal Hydride</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~1,500 cycles</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">8 yrs / 100k mi</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Toyota Prius Gen 3</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Ni-MH HV pack</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">1.31</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">201.6V</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Nickel-Metal Hydride</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~1,500 cycles</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">8 yrs / 100k mi</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Toyota Prius Gen 4 (Lithium)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Li-ion HV pack</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">0.75 (Lithium) / 1.2 (Ni-MH)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">207.2V (Lithium)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Lithium-ion / Ni-MH</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~2,000 cycles</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">8 yrs / 100k mi</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Toyota Camry Hybrid</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Ni-MH / Li-ion HV pack</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">1.0 / 1.6</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">244.8V</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Nickel-Metal Hydride / Li-ion</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~1,500-2,000 cycles</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">8 yrs / 100k mi</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Toyota RAV4 Hybrid</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Ni-MH / Li-ion HV pack</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">1.6 (Ni-MH) / 18.1 (PHEV)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">244.8V / 355.2V (PHEV)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Nickel-Metal Hydride / Li-ion</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~1,500-2,000 cycles</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">8 yrs / 100k mi / 10 yrs 150k (PHEV)</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Lexus CT200h</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Ni-MH HV pack</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">1.31</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">201.6V</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Nickel-Metal Hydride</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~1,500 cycles</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">8 yrs / 100k mi</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Tesla Model 3 (LFP)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">High-voltage EV pack</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">~57.5</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~380V</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">LFP (LiFePO4)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">3,000-4,000+ cycles</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">8 yrs / 100k mi (or 70% capacity)</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Tesla Model Y (LFP)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">High-voltage EV pack</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">~57.5</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~380V</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">LFP (LiFePO4)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">3,000-4,000+ cycles</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">8 yrs / 100k mi (or 70% capacity)</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">Honda Insight</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Li-ion HV pack</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">1.1</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">216V</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">Lithium-ion</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">~2,000 cycles</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">8 yrs / 100k mi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       DRONES TABLE
+       ======================================================== -->
+  <section id="drones" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div class="flex items-start gap-3">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="plane" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-2xl md:text-3xl mb-1">Drone Cameras &amp; Flight Specs</h2>
+          <p class="text-gray-400 text-sm">Camera system, flight time, transmission range, weight, max speed, operating temperature, and price.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card p-0 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10 bg-navy-800/40">
+              <th class="px-5 py-4 text-left font-semibold text-white">Drone Model</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Camera</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Flight Time (min)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Transmission (km)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Weight (g)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Max Speed (km/h)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Operating Temp (&deg;C)</th>
+              <th class="px-5 py-4 text-right font-semibold text-white">Price (USD)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5">
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">DJI Mavic 3 Pro</td>
+              <td class="px-5 py-4 text-right text-gray-300">Hasselblad 4/3 CMOS + 70mm Tele + 166mm Tele</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">43</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">15 (O3+)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">958</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">75.6 (Sport)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">-10 to 40</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$2,199</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">DJI Air 3</td>
+              <td class="px-5 py-4 text-right text-gray-300">Dual 1/1.3-inch CMOS wide + 70mm tele</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">46</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">20 (O4)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">720</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">72.0 (Sport)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">-10 to 40</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$1,099</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">DJI Mini 4 Pro</td>
+              <td class="px-5 py-4 text-right text-gray-300">1/1.3-inch CMOS wide-angle</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">34</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">20 (O4)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">249</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">57.6 (Sport)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">-10 to 40</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$759</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">DJI Mavic 3 Classic</td>
+              <td class="px-5 py-4 text-right text-gray-300">Hasselblad 4/3 CMOS wide-angle</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">46</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">15 (O3+)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">895</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">75.6 (Sport)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">-10 to 40</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$1,499</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="px-5 py-4 font-medium text-white">DJI Avata 2</td>
+              <td class="px-5 py-4 text-right text-gray-300">1/1.3-inch CMOS, FPV aerial</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">23</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">10 (O3)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">410</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">80.0 (Sport)</td>
+              <td class="px-5 py-4 text-right font-mono text-gray-300">-10 to 40</td>
+              <td class="px-5 py-4 text-right font-mono text-electric-400">$999</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       HOW TO USE THIS DATA
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center mb-12">
+      <span class="badge badge-info mb-4"><i data-lucide="lightbulb" style="width:0.7rem;height:0.7rem"></i>What actually matters</span>
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">How to Use This Data</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Not all specs are created equal. Here's what to prioritize when making a buying or repair decision.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="refresh-cw" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Cycle Life &gt; Headline Capacity</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          A device rated for 4,000+ cycles (LFP) at 80% state of health will deliver far more usable energy over its lifetime than a device with 500 cycles (NMC) even if the headline watt-hour number is similar. LFP chemistry (LiFePO4) typically delivers 6-10x the cycle life of NMC. Compare <span class="text-electric-400 font-mono">cycle life &times; capacity</span>, not just capacity alone.
+        </p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="zap" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Surge Output &gt; Continuous Output</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Motor-driven devices (well pumps, refrigerators, window AC, power tools) briefly draw 2-5x their rated wattage at startup. A 4,000W continuous / 8,000W surge rating handles these real-world loads where a 3,000W continuous / 3,000W surge unit will trip. Match the <span class="text-electric-400 font-mono">surge rating</span> to the largest motor-driven load you intend to run.
+        </p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="thermometer-snowflake" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Chemistry Temperature Sensitivity</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Different chemistries respond very differently to cold and heat: <span class="text-electric-400 font-mono">LFP</span> is rated to -20&deg;C but pre-warming is recommended; <span class="text-electric-400 font-mono">NMC</span> degrades faster above 45&deg;C; <span class="text-electric-400 font-mono">Ni-MH</span> has the narrowest sweet-spot and drops significant capacity below freezing. Always check the <span class="text-electric-400 font-mono">operating temperature range</span> for your climate.
+        </p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="sun" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Solar Input &amp; MPPT Range</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          The solar wattage spec tells you how fast the unit can recharge off-grid, but the <span class="text-electric-400 font-mono">MPPT voltage window</span> determines what panels it can actually use. A 12-120V dual MPPT accepts nearly any panel configuration; a narrower 12-60V unit won't pair well with high-voltage commercial panels. Match panel VOC (open-circuit voltage) to the MPPT window.
+        </p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="shield-check" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Warranty &amp; Repair Availability</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Nearly every power station brand offers a 5-year warranty, but real-world support quality varies dramatically. Brands with <span class="text-electric-400 font-mono">documented error codes</span>, published disassembly procedures, and replacement-part ecosystems give you real options beyond warranty expiration. A device that bricks at year 6 with no repair path is effectively a 5-year device regardless of original cycle-life promise.
+        </p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="scale" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Weight &amp; Portability Tradeoffs</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Higher-capacity units are heavy &mdash; 70 lbs for the top-tier power stations is not unusual. Plan your transport: wheeled cases exist for some models; other units are designed primarily for fixed installation. The <span class="text-electric-400 font-mono">price per watt-hour</span> metric ($/Wh) normalizes comparisons: EcoFlow Delta Pro 3 sits at ~$0.98/Wh, while smaller budget units range from $0.70-1.20/Wh depending on the generation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="border-t border-white/10 bg-navy-950 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+            <li><a href="specs/ebike-micromobility.html" class="text-gray-400 hover:text-electric-400">E-Bike &amp; Micromobility</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+            <li><a href="tools/best-multimeters-2026.html" class="text-gray-400 hover:text-electric-400">Best Multimeters 2026</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-white/10 my-8">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       MAIN.JS
+       ======================================================== -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+</html>

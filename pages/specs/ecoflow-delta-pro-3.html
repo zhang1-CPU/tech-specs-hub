@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoFlow Delta Pro 3 Specs, Error Codes &amp; Troubleshooting | TechSpecsHub</title>
+  <meta name="description" content="Complete EcoFlow Delta Pro 3 technical specifications. 4,096 Wh LFP battery, 4,000W output, error codes (E0-E7), charging times, firmware update procedure, and real-world performance data.">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EcoFlow Delta Pro 3 Specs, Error Codes &amp; Troubleshooting">
+  <meta property="og:description" content="Complete EcoFlow Delta Pro 3 technical specifications. 4,096 Wh LFP battery, 4,000W output, error codes (E0-E7), charging times, firmware update procedure, and real-world performance data.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-ecoflow-delta-pro-3.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    h2 { scroll-margin-top: 100px; }
+    h3 { scroll-margin-top: 100px; }
+  </style>
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <!-- ========================================================
+       HEADER / NAV
+       ======================================================== -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+
+          <!-- Categories dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <!-- Tools & Data dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="../tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <!-- Right: Search + Mobile toggle -->
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="../tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       SEARCH MODAL
+       ======================================================== -->
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       BREADCRUMB
+       ======================================================== -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="outdoor-power.html">Outdoor Power Stations</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">EcoFlow Delta Pro 3</span>
+    </nav>
+  </div>
+
+  <!-- ========================================================
+       HERO
+       ======================================================== -->
+  <section class="relative pt-6 pb-14">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-[400px] h-[400px] bg-electric-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex flex-wrap items-center justify-center gap-2 mb-6">
+        <span class="badge badge-ok"><i data-lucide="leaf" style="width:0.7rem;height:0.7rem"></i>LFP Battery</span>
+        <span class="badge badge-info"><i data-lucide="zap" style="width:0.7rem;height:0.7rem"></i>Portable Power</span>
+        <span class="badge badge-ok"><i data-lucide="sparkles" style="width:0.7rem;height:0.7rem"></i>New 2025</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-[1.1] tracking-tight">
+        EcoFlow Delta Pro 3 <span class="gradient-text">Specifications</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+        4,096 Wh expandable home backup power station. The most detailed technical spec sheet you'll find for this unit &mdash; data verified against EcoFlow's official engineering docs.
+      </p>
+
+      <!-- Quick stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">4,096 Wh</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">LFP Capacity</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">4,000W</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Continuous AC</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">3,000W</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">AC Charging (X-Stream)</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">70 lbs</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Weight</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       KEY SPECIFICATIONS AT-A-GLANCE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <h2 class="font-bold text-2xl md:text-3xl mb-2">Key Specifications &mdash; At-A-Glance</h2>
+        <p class="text-gray-400 text-sm">Every major specification on one page, cross-checked against EcoFlow's official documentation.</p>
+      </div>
+    </div>
+
+    <div class="glass-card p-6 md:p-8">
+      <table class="specs-table">
+        <tbody>
+          <tr><th>Battery Capacity</th><td class="font-mono text-electric-400">4,096 Wh</td></tr>
+          <tr><th>AC Output</th><td class="font-mono text-electric-400">4,000W continuous / 8,000W surge (X-Boost)</td></tr>
+          <tr><th>Battery Chemistry</th><td class="font-mono">LFP (LiFePO4, Lithium Iron Phosphate)</td></tr>
+          <tr><th>Cycle Life</th><td class="font-mono text-electric-400">4,000+ cycles to 80% SOH</td></tr>
+          <tr><th>AC Charging Speed</th><td class="font-mono text-electric-400">3,000W max (1,800W standard, 3,000W with EV X-Stream adapter)</td></tr>
+          <tr><th>Solar Charging</th><td class="font-mono text-electric-400">2,600W max, dual MPPT, 12V&ndash;120V input range</td></tr>
+          <tr><th>Output Ports</th><td class="font-mono text-electric-400">6x AC, 2x USB-A, 2x USB-C PD 100W, 1x Anderson, 1x RV port</td></tr>
+          <tr><th>Weight</th><td class="font-mono text-electric-400">~70 lbs / ~32 kg</td></tr>
+          <tr><th>Dimensions (W &times; D &times; H)</th><td class="font-mono text-electric-400">27.2 &times; 15.5 &times; 17.4 in / 692 &times; 395 &times; 442 mm</td></tr>
+          <tr><th>Warranty</th><td class="font-mono text-electric-400">5 years</td></tr>
+          <tr><th>MSRP</th><td class="font-mono text-electric-400">$3,999 USD</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       DETAILED SPECIFICATIONS 3-COLUMN GRID
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Detailed Specifications</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Battery details, AC output waveform, and charging parameters broken out by subsystem.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="battery-charging" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-4">Battery Details</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Total capacity</span><span class="font-mono text-white">4,096 Wh</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Cell chemistry</span><span class="font-mono text-white">LFP (LiFePO4)</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Nominal voltage</span><span class="font-mono text-white">48V</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Cycle life</span><span class="font-mono text-white">8,000 cycles (per EcoFlow) to 80% SOH</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">BMS</span><span class="font-mono text-white">Smart BMS with cell-level monitoring</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Operating temp</span><span class="font-mono text-white">&minus;4&deg;F to 113&deg;F (&minus;20&deg;C to 45&deg;C)</span></div>
+          <div class="flex justify-between py-2"><span class="text-gray-400">Self-discharge</span><span class="font-mono text-white">~1%/month (typical LFP)</span></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="plug-zap" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-4">AC Output</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Continuous power</span><span class="font-mono text-white">4,000W</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Peak / X-Boost surge</span><span class="font-mono text-white">8,000W</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Waveform</span><span class="font-mono text-white">Pure sine wave</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Voltage / frequency</span><span class="font-mono text-white">120V/240V split-phase (US), 60 Hz</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Total AC outlets</span><span class="font-mono text-white">6 &times; NEMA 5-20R</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">BMS label</span><span class="font-mono text-white">"4000W-AC"</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Idle power draw</span><span class="font-mono text-white">~4-6W</span></div>
+          <div class="flex justify-between py-2"><span class="text-gray-400">USB-C PD</span><span class="font-mono text-white">2 ports, 100W each</span></div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="zap" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-4">Charging</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">AC charging (standard)</span><span class="font-mono text-white">1,800W</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">AC charging (X-Stream)</span><span class="font-mono text-white">3,000W (adapter required)</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">0-100% AC time (X-Stream)</span><span class="font-mono text-white">~1.4 hours</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Solar input (max)</span><span class="font-mono text-white">2,600W (dual MPPT)</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">MPPT voltage range</span><span class="font-mono text-white">12V&ndash;120V DC</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">0-100% solar time</span><span class="font-mono text-white">~2-3 hours at peak</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Car input</span><span class="font-mono text-white">12V, ~150W</span></div>
+          <div class="flex justify-between py-2"><span class="text-gray-400">Charge-through supported</span><span class="font-mono text-green-400">Yes (pass-through)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       EXPANDABLE SYSTEM
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="glass-card p-8 md:p-10 bg-gradient-to-br from-electric-900/20 to-navy-900">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="badge badge-info mb-3"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>Expandable System</span>
+          <h2 class="font-bold text-2xl md:text-3xl mb-4">Scale from 4 kWh to 12 kWh &mdash; or combine units</h2>
+          <p class="text-gray-400 mb-4 leading-relaxed">
+            EcoFlow's modular architecture lets you add up to 2 dedicated Delta Pro 3 expansion battery packs for a total of <span class="font-mono text-electric-400">12,288 Wh</span>. Up to 3 units can be combined for whole-home backup. The Smart Home Panel integration is sold separately.
+          </p>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center justify-between p-3 bg-navy-800/40 rounded-lg">
+              <span>Maximum units combined (parallel)</span>
+              <span class="font-mono text-electric-400 font-semibold">3</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/40 rounded-lg">
+              <span>Expansion packs per unit</span>
+              <span class="font-mono text-electric-400 font-semibold">2</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/40 rounded-lg">
+              <span>Total capacity (1 + 2 packs)</span>
+              <span class="font-mono text-electric-400 font-semibold">12,288 Wh</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/40 rounded-lg">
+              <span>Smart Home Panel</span>
+              <span class="font-mono text-white font-semibold">Optional (~$599)</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/40 rounded-lg">
+              <span>NEMA L14-30 240V output port</span>
+              <span class="font-mono text-green-400 font-semibold">Integrated</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="glass-card p-6 border border-electric-400/20">
+            <div class="text-xs text-electric-400 font-semibold uppercase tracking-wider mb-2">Full Stack Configuration</div>
+            <div class="text-3xl md:text-4xl font-bold font-mono text-white mb-2">12,288 Wh</div>
+            <p class="text-sm text-gray-400">1 &times; Delta Pro 3 main unit + 2 &times; Delta Pro 3 expansion battery packs.</p>
+          </div>
+          <div class="glass-card p-6">
+            <h4 class="font-bold mb-3 text-white">Expansion Pack Specs</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Capacity per pack</span><span class="font-mono">4,096 Wh</span></div>
+              <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Chemistry</span><span class="font-mono">LFP (LiFePO4)</span></div>
+              <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Nominal voltage</span><span class="font-mono">48V</span></div>
+              <div class="flex justify-between py-2"><span class="text-gray-400">Warranty</span><span class="font-mono">5 years</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       ECOFLOW ERROR CODE TABLE (E0-E7)
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">EcoFlow Error Code Reference (E0&ndash;E7)</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Cross-referenced from EcoFlow BMS diagnostics, engineering documents, and verified user field reports.</p>
+    </div>
+
+    <div class="glass-card p-6 md:p-8">
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Severity</th>
+            <th>Description / Trigger</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code class="font-mono text-red-400 font-bold">E0</code></td>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td>AC Over-temperature</td>
+            <td>Inverter thermal protection triggered. Reduce load immediately. Improve ventilation &mdash; ensure at least 12 inches of clearance on all sides. Let unit cool for 10&ndash;15 minutes before restarting. Do not stack or enclose in confined spaces.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E1</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>Battery Over-temperature</td>
+            <td>Move unit to shade. Stop charging. If in direct sun, relocate indoors. Wait for battery temperature to drop below 45&deg;C (113&deg;F). For cold-weather operation below 0&deg;C, pre-warm battery with a short AC charge cycle first.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E2</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>DC Over-temperature</td>
+            <td>DC port or USB-C PD rail overheating. Reduce USB/DC load. Disconnect high-draw DC devices (Anderson, RV port). Inspect for faulty cables or short circuits on the DC side.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E3</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>AC Overload (X-Boost active)</td>
+            <td>Disconnect loads exceeding the 4,000W continuous rating. X-Boost handles short spikes up to 8,000W, but sustained overload triggers this code. Verify total connected wattage before retrying. Inductive motor-driven loads (well pumps, AC compressors) may need a soft-start kit.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E4</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>Input Over-current</td>
+            <td>Charging source wattage exceeds rated input. Reduce charging current &mdash; if using the EV X-Stream adapter (3,000W), switch to the standard 1,800W AC cable. Test with a known-good, dedicated 15A wall circuit.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-blue-400 font-bold">E5</code></td>
+            <td><span class="badge badge-info">Info</span></td>
+            <td>Communication Error</td>
+            <td>Internal BMS-to-inverter handshake fault. Perform a full reboot: power off, disconnect all loads, hold power button for 10 seconds. If persistent, update firmware via the EcoFlow mobile app. Expansion-pack connector reseat may also resolve.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-red-400 font-bold">E6</code></td>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td>Battery Cell Failure</td>
+            <td>One or more LFP cells has failed or drifted out of voltage-tolerance window (&plusmn;10mV). <strong class="text-white">Contact EcoFlow support immediately</strong>. Do not continue to charge or discharge. Likely requires RMA &mdash; covered under the 5-year warranty.</td>
+          </tr>
+          <tr>
+            <td><code class="font-mono text-yellow-400 font-bold">E7</code></td>
+            <td><span class="badge badge-warning">Warning</span></td>
+            <td>Fan Blocked / Fan Error</td>
+            <td>Cooling fan stalled or intake/exhaust obstructed. Check and clear fan vents. Inspect fan operation visually. Do not operate without cooling &mdash; thermal runaway risk with LFP is low, but sustained overheating damages cells. Warranty service may be needed if fan has mechanically failed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       TROUBLESHOOTING
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Troubleshooting Guide</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Step-by-step diagnostic procedures for the most common user-reported issues.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="power-off" style="width:1.15rem;height:1.15rem;color:#f87171"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">Unit Won't Turn On</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>Verify battery state of charge &mdash; if below 5%, connect to AC first.</li>
+          <li><strong class="text-white">Hard reset</strong>: Disconnect all loads, then hold the main power button for <strong class="text-electric-400 font-mono">10 continuous seconds</strong>.</li>
+          <li>After the reset, reconnect AC power and observe the LCD wake-up sequence.</li>
+          <li>Check that expansion-pack connectors are fully seated (if used).</li>
+          <li>If still unresponsive and <code class="font-mono text-yellow-400">E6</code> appears, contact EcoFlow support for RMA.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="zap-off" style="width:1.15rem;height:1.15rem;color:#fbbf24"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">Slow Charging from AC</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>Verify a <strong class="text-white">dedicated 15A wall circuit</strong> is being used &mdash; shared circuits with other high-draw devices throttle charging.</li>
+          <li>Confirm the EV X-Stream adapter (3,000W) is correctly mated if using the faster mode.</li>
+          <li>Check for <code class="font-mono text-yellow-400">E4</code> (input over-current) &mdash; the unit self-limits to protect the inverter.</li>
+          <li>Ambient temperature below 0&deg;C or above 45&deg;C reduces charge rate &mdash; this is normal LFP thermal behavior.</li>
+          <li>If charge rate stays below 1,000W on a known-good circuit, test with a replacement AC cable.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="plug-zap" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">AC Output Shuts Off Unexpectedly</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>Check if <code class="font-mono text-yellow-400">E3</code> (overload) was displayed &mdash; calculate total connected wattage.</li>
+          <li>Inductive motor-driven loads (well pumps, refrigerators, window AC) draw 3-5x rated wattage at startup. Use a <strong class="text-white">soft-start kit</strong> for large compressors.</li>
+          <li>X-Boost (8,000W) handles short spikes &mdash; but sustained draw above 4,000W triggers shutdown.</li>
+          <li>Verify ventilation &mdash; <code class="font-mono text-red-400">E0</code> thermal shutdown is the #2 cause of unexpected cutouts.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="fan" style="width:1.15rem;height:1.15rem;color:#a78bfa"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">Fan Always On at Low Speed</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>The Delta Pro 3 uses variable-speed thermal-controlled fans. Continuous low-speed operation often indicates a thermal sensor calibration drift.</li>
+          <li><strong class="text-white">Reboot</strong>: Power off, disconnect all loads, hold power button 10 seconds, reapply AC.</li>
+          <li>Check firmware version &mdash; v2.2.0 addressed several fan-curve calibration issues.</li>
+          <li>Fan noise in cold temperatures below 32&deg;F (0&deg;C) is normal &mdash; bearings take 5&ndash;10 minutes to warm up.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="wifi" style="width:1.15rem;height:1.15rem;color:#60a5fa"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">App Not Connecting</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>Put the unit into pairing mode by pressing and holding the <strong class="text-white">Wi-Fi / Bluetooth</strong> button for 3 seconds.</li>
+          <li>Reset Wi-Fi via the EcoFlow app: Settings &rarr; Network &rarr; Reset Wi-Fi.</li>
+          <li>Ensure phone is on the same 2.4GHz network (5GHz-only SSIDs are not supported for pairing).</li>
+          <li>Disable VPN, private-DNS, and any ad-blockers during pairing.</li>
+          <li>Update the EcoFlow app and the unit firmware to the latest versions.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="monitor" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+          </div>
+          <h3 class="font-bold text-lg mt-1">LCD Backlight Won't Wake</h3>
+        </div>
+        <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside leading-relaxed">
+          <li>Press any button <strong class="text-white">twice</strong> &mdash; first press wakes the system, second press activates the backlight.</li>
+          <li>If unresponsive, perform a 10-second power-button reset.</li>
+          <li>This is a documented firmware quirk in early production units &mdash; resolved by updating to v2.2.0 or newer.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       REAL-WORLD RUNTIME DATA
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Real-World Runtime Data</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">What a single charge actually powers. Runtime estimates based on measured load at 80% state of charge, LFP chemistry.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="snowflake" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">Full-Size Refrigerator</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">18-24 hrs</div>
+        <p class="text-sm text-gray-400">~180-220W cycling with typical door-open frequency. Ideal for multi-day grid-outage backup.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="wind" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">Window AC (8,000 BTU)</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">3-4 hrs</div>
+        <p class="text-sm text-gray-400">~900-1,200W average with compressor cycling. X-Boost handles the startup surge (~3,000-4,500W) easily.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="droplets" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">Well Pump (&frac12; HP)</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">4-6 hrs</div>
+        <p class="text-sm text-gray-400">Intermittent draw assumed. Continuous ~400W operation drains faster. Startup surge ~2,000-3,000W &mdash; use NEMA L14-30 240V port.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="bed" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">CPAP Machine</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">60-80 hrs</div>
+        <p class="text-sm text-gray-400">~50-70W average. With heated humidifier active, runtime drops to ~40-50 hours. Turn off humidifier for longest backup.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="tv" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">55" LED TV</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">20-25 hrs</div>
+        <p class="text-sm text-gray-400">~160-200W at typical viewing brightness. Combine with a streaming device and laptop for a full media workstation.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="laptop" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">Gaming Laptop</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">30-40 charges</div>
+        <p class="text-sm text-gray-400">Assuming 100-130Wh laptop with active use. Use USB-C PD 100W port for fastest top-up.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="smartphone" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">iPhone / Smartphone</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">400+ charges</div>
+        <p class="text-sm text-gray-400">Assuming 3,500&ndash;4,500 mAh smartphone. USB-C PD 100W ports deliver fast-charging to modern flagships.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="chef-hat" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">Microwave 1,000W</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">3-4 hrs total</div>
+        <p class="text-sm text-gray-400">Short duty-cycle use (heating food). Continuous high-draw operation not recommended &mdash; well within 4,000W continuous rating.</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="thermometer-sun" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-1">Electric Space Heater</h3>
+        <div class="text-3xl font-bold font-mono text-electric-400 mb-2">2-3 hrs</div>
+        <p class="text-sm text-gray-400">~1,500W standard unit. Use with Smart Home Panel for whole-home circuit-level control. Note: resistive heating is energy-intensive &mdash; consider propane for longer-duration off-grid scenarios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       KNOWN ISSUES
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Known Issues &amp; Firmware Notes</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Documented hardware and software issues. Most resolved by firmware update to v2.2.0 or newer.</p>
+    </div>
+
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-900/10 to-navy-900">
+      <div class="space-y-6">
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="alert-triangle" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">X-Boost Overshoot Bug (v2.1.3)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-2">
+              Firmware v2.1.3 had a documented X-Boost overshoot bug where surge-current detection was too aggressive, occasionally triggering <code class="font-mono text-yellow-400">E3</code> (overload) on devices that were well within rating. This was particularly common with well pumps and older compressor-driven refrigerators.
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              <strong class="text-green-400">Fixed in v2.2.0.</strong> Update via the EcoFlow mobile app.
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="thermometer" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Fan Noise in Cold Temperatures</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-2">
+              Below 32&deg;F (0&deg;C), the cooling fan bearings take 5&ndash;10 minutes to warm up and may produce audible bearing noise during initial spin-up. This is a normal thermal characteristic of the bearing grease and is not a hardware failure.
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              The noise diminishes as the unit warms to operating temperature and is expected behavior per EcoFlow engineering documentation.
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="battery-low" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Battery Gauge Drops from 100% to 95% Quickly</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-2">
+              Some early production units exhibit a calibration drift where the state-of-charge gauge drops rapidly from 100% to 95%, then stabilizes. This is a cosmetic BMS-calibration offset, not actual cell degradation.
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              <strong class="text-green-400">Resolution</strong>: Run one complete charge-discharge cycle (charge to 100%, discharge to ~10%, recharge to 100%). The BMS will recalibrate the voltage-to-SOC curve and the gauge will report accurately thereafter.
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="monitor" style="width:1.1rem;height:1.1rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">LCD Backlight Occasionally Won't Wake</h3>
+            <p class="text-sm text-gray-300 leading-relaxed mb-2">
+              Intermittently the LCD backlight does not activate on the first button press. Pressing any button a second time reliably wakes the display.
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              <strong class="text-green-400">Resolved</strong> in firmware v2.2.0 and newer.
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-white/10">
+
+        <div class="alert alert-info">
+          <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0"></i>
+          <div class="text-sm">
+            <strong class="text-white">Firmware update procedure</strong>: Connect to the EcoFlow app on your phone &rarr; navigate to <strong>Settings &rarr; Firmware Update</strong> &rarr; tap <strong>Update Now</strong>. Do not unplug the unit during the 3&ndash;8 minute update. Maintain a stable Bluetooth connection and keep the phone within 3 feet of the unit during the update process.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       BATTERY MODULE ARCHITECTURE NOTE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="glass-card p-8 md:p-10">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="cpu" style="width:1.5rem;height:1.5rem;color:#22d3ee"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-2xl md:text-3xl mb-2">Battery Module Architecture</h2>
+          <p class="text-gray-400 text-sm">Cell configuration and monitoring precision.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-sm">
+        <div class="p-5 bg-navy-800/40 rounded-lg border border-white/5">
+          <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">Cell Arrangement</div>
+          <div class="text-xl font-bold text-electric-400 font-mono mb-2">16S &times; N Parallel</div>
+          <p class="text-gray-400 leading-relaxed">16 parallel strings of LiFePO4 cells in series configuration per battery pack. The exact parallel count is manufacturer-disclosed. This configuration delivers the 48V nominal bus with high redundancy.</p>
+        </div>
+        <div class="p-5 bg-navy-800/40 rounded-lg border border-white/5">
+          <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">BMS Monitoring Precision</div>
+          <div class="text-xl font-bold text-electric-400 font-mono mb-2">&plusmn;10 mV per cell</div>
+          <p class="text-gray-400 leading-relaxed">Individual cell voltage is monitored to &plusmn;10 mV accuracy. Any cell drifting outside the configured voltage window triggers a soft alert before escalating to a hard <code class="font-mono text-yellow-400">E6</code> cell-fault.</p>
+        </div>
+        <div class="p-5 bg-navy-800/40 rounded-lg border border-white/5">
+          <div class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">Thermal &amp; Protection</div>
+          <div class="text-xl font-bold text-electric-400 font-mono mb-2">6 Sensors Per Pack</div>
+          <p class="text-gray-400 leading-relaxed">NTC thermistor sensors at pack-level strategic points (inlet, outlet, busbar). Over-temperature de-rates charge/discharge current in three stages before triggering <code class="font-mono text-yellow-400">E1</code>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="border-t border-white/10 bg-navy-950 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+            <li><a href="ebike-micromobility.html" class="text-gray-400 hover:text-electric-400">E-Bike &amp; Micromobility</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+            <li><a href="../tools/best-multimeters-2026.html" class="text-gray-400 hover:text-electric-400">Best Multimeters 2026</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-white/10 my-8">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       MAIN.JS
+       ======================================================== -->
+  <script src="../../assets/js/main.js"></script>
+
+</body>
+</html>

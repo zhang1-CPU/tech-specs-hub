@@ -1,0 +1,389 @@
+/* ============================================================
+   TechSpecsHub - Global Stylesheet
+   Dark navy theme with cyan/electric accent colors
+   Tailwind CDN provides utility classes; this file adds components
+   ============================================================ */
+
+:root {
+  --navy-950: #0a1628;
+  --navy-900: #0f1d32;
+  --navy-800: #162544;
+  --navy-700: #1e3259;
+  --electric-400: #22d3ee;
+  --electric-500: #06b6d4;
+  --electric-600: #0891b2;
+  --green-400: #4ade80;
+  --red-400: #f87171;
+  --yellow-400: #fbbf24;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+}
+
+/* ---------- Body defaults (in case Tailwind is slow) ---------- */
+body {
+  background: var(--navy-950);
+  color: #ffffff;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* ---------- Header ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Navigation dropdown ---------- */
+.nav-dropdown-trigger {
+  position: relative;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  margin-top: 8px;
+  padding: 8px;
+  background-color: var(--navy-900);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.nav-dropdown-trigger:hover .nav-dropdown,
+.nav-dropdown-trigger:focus-within .nav-dropdown,
+.nav-dropdown-trigger.is-open .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.nav-dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--electric-400);
+}
+
+.nav-dropdown-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 12px 4px;
+}
+
+/* ---------- Search Modal ---------- */
+#search-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+}
+
+#search-modal.is-open {
+  display: block;
+}
+
+#search-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+#search-modal .modal-inner {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+#search-modal .modal-box {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 16px;
+  background-color: var(--navy-900);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#search-modal input {
+  width: 100%;
+  padding: 16px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e5e7eb;
+  font-size: 16px;
+}
+
+#search-modal input::placeholder {
+  color: var(--gray-500);
+}
+
+#search-results-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.search-result-item {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #e5e7eb;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.search-result-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.search-result-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.search-result-desc {
+  font-size: 13px;
+  color: var(--gray-400);
+}
+
+.search-result-empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--gray-500);
+  font-size: 14px;
+}
+
+/* ---------- Mobile menu ---------- */
+#mobile-menu {
+  display: none;
+}
+
+#mobile-menu.is-open {
+  display: block;
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.badge-lfp {
+  background-color: rgba(132, 204, 22, 0.15);
+  color: #84cc16;
+  border: 1px solid rgba(132, 204, 22, 0.35);
+}
+
+.badge-info {
+  background-color: rgba(34, 211, 238, 0.15);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+}
+
+.badge-ok {
+  background-color: rgba(251, 191, 36, 0.18);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+.badge-critical {
+  background-color: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+}
+
+.badge-warning {
+  background-color: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+/* ---------- Glass card ---------- */
+.glass-card {
+  background: linear-gradient(145deg, rgba(30, 50, 89, 0.4), rgba(22, 37, 68, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(6, 12, 24, 0.3);
+}
+
+/* ---------- Specs table ---------- */
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.specs-table thead th {
+  background-color: rgba(22, 37, 68, 0.8);
+  color: #e5e7eb;
+  font-weight: 600;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.specs-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.specs-table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.specs-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+  font-size: 13px;
+  color: var(--gray-400);
+}
+
+.breadcrumb a {
+  color: var(--gray-400);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--electric-400);
+}
+
+.breadcrumb-sep {
+  margin: 0 8px;
+  color: var(--gray-500);
+}
+
+.breadcrumb-current {
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+/* ---------- Alert boxes ---------- */
+.alert {
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.alert-warning {
+  background-color: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: #fde68a;
+}
+
+.alert-info {
+  background-color: rgba(34, 211, 238, 0.1);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  color: #a5f3fc;
+}
+
+.alert-success {
+  background-color: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  color: #bbf7d0;
+}
+
+.alert-critical {
+  background-color: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #fecaca;
+}
+
+/* ---------- Gradient text ---------- */
+.gradient-text {
+  background: linear-gradient(90deg, #22d3ee 0%, #818cf8 50%, #4ade80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Step number (for troubleshooting pages) ---------- */
+.step-number {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  flex-shrink: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .specs-table {
+    font-size: 13px;
+  }
+  .specs-table thead th,
+  .specs-table tbody td {
+    padding: 10px 12px;
+  }
+}
+
+/* ---------- Smooth scroll ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Custom scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--navy-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--navy-700);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--navy-800);
+}

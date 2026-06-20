@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJI Gimbal Error Codes - Motor Stuck, Overload, IMU Calibration | TechSpecsHub</title>
+  <meta name="description" content="Complete troubleshooting guide for DJI gimbal error codes: Gimbal Motor Stuck, Gimbal Overload, Gimbal IMU Calibration Fault, roll/pitch/yaw motor errors, and Gimbal Initialization Failed. DIY diagnostics for Mavic 3 Pro, Air 3, and Mini 4 Pro.">
+  <meta name="theme-color" content="#0a1628">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH MODAL -->
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">DJI Gimbal Error Codes</span>
+    </nav>
+  </section>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-orange-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-orange-500/20 text-orange-400 font-mono font-bold text-sm rounded-md border border-orange-500/30">GIMBAL</div>
+        <span class="badge badge-warning"><i data-lucide="plane" style="width:0.75rem;height:0.75rem"></i>Mavic / Air / Mini</span>
+        <span class="badge badge-info"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Beginner Friendly</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        DJI Gimbal Error Codes &mdash; <span class="gradient-text">Motor Stuck, Overload &amp; IMU Calibration</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        DJI gimbal errors are the #1 reported issue for Mavic 3 Pro, Air 3, and Mini 4 Pro owners. Most &ldquo;Gimbal Motor Stuck&rdquo; and &ldquo;Gimbal Overload&rdquo; warnings are not hardware failures &mdash; they're caused by gimbal damper misalignment, a loose camera ribbon cable, or gyro calibration drift after a crash or hard landing.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">15&ndash;30 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$60</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Ribbon / Damper</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~75%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMARY CARD -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What Actually Is a Gimbal Fault?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            A DJI gimbal is a 3-axis stabilized camera mount with three brushless motors (roll, pitch, yaw), a 3-axis gyro, a 3-axis accelerometer, and a ribbon-flex cable that carries both power and video to the camera sensor. The gimbal control board continuously reads each motor's back-EMF and accelerometer data to keep the camera level.
+          </p>
+          <p>
+            When the control board detects that a motor is producing <strong>too much current</strong> (stuck) or <strong>can't reach its target angle</strong> (overload) or that the IMU has drifted, it flags an error. In almost all cases the fix is not a new motor &mdash; it's one of:
+          </p>
+          <ul class="space-y-1 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; Re-calibrating the gimbal / IMU in DJI Assistant 2 (Mavic 3 / Air 3 / Mini 4 Pro).</span></li>
+            <li class="text-white font-semibold">&bull; Inspecting / re-seating the flat-flex camera ribbon cable (mini 4 pro and mavic 3 pro).</li>
+            <li class="text-white font-semibold">&bull; Replacing the gimbal damper balls when they have gone hard / aged.</li>
+            <li class="text-white font-semibold">&bull; Physically clearing a foreign object (sand, hair, film) from a motor's bearing area.</li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Before You Open It &mdash; Quick Checklist</h3>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Drone is on a perfectly flat surface?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Gimbal cover removed?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Drone firmware fully updated?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>No physical damage visible?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Battery is above 20% charge?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Try powering off and back on three times?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS SECTION -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Precision</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Phillips PH00 screwdriver</li>
+          <li>Phillips PH0 screwdriver</li>
+          <li>Torx T3 driver (some Mavic models)</li>
+          <li>Plastic spudger (non-conductive)</li>
+          <li>Tweezers (fine-tip)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-e-electric-400"><i data-lucide="spray-can" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Cleaning</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Compressed air (canned air)</li>
+          <li>Isopropyl alcohol (90%+)</li>
+          <li>Cotton swabs</li>
+          <li>Lens cleaning cloth</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-e-electric-400"><i data-lucide="smartphone" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Software</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>DJI Assistant 2 (Consumer version)</li>
+          <li>DJI Fly app (latest version)</li>
+          <li>DJI Assistant 2 calibration jig or perfectly flat surface</li>
+          <li>USB-C cable for connecting drone to computer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ERROR CODE DEEP DIVE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Common Error Codes &mdash; Step-by-Step Fixes</h2>
+
+    <div class="space-y-4">
+
+      <!-- 1. GIMBAL MOTOR STUCK -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">A</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Gimbal Motor Stuck &mdash; physical obstruction or ribbon cable</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The gimbal control board detects that a motor is drawing excess current or cannot rotate &mdash; usually because a foreign object is blocking travel, or because the flat-flex ribbon cable has shifted and is physically catching on a housing edge.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Diagnostic Procedure</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>With the drone powered off, visually inspect the three motors. Gently wiggle the camera by hand &mdash; roll, pitch, and yaw should all move freely with no binding.</li>
+              <li>Spray the motor gaps with compressed air (hold can upright, 6 inches away). Use the straw attachment to blow sand / dust from the motor gap.</li>
+              <li>Inspect the flat-flex ribbon cable: does it bend smoothly or has it got a creased / damaged section? Is it rubbing against housing? A ribbed / corrugated cable should be replaced.</li>
+              <li>Power on and attempt to run a gimbal calibration. If the error returns immediately, the specific motor that stalls is the problem. Re-inspect that motor's gap.</li>
+              <li>If still stuck, carefully open the gimbal housing. Use isopropyl alcohol on a cotton swab to clean the motor magnet gap. Blow dry with compressed air.</li>
+              <li>Re-seat the ribbon cable at both ends (camera end and main-board end).</li>
+            </ol>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">On the Mavic 3 Pro, the yaw motor is the one most-commonly stuck after a crash &mdash; the yaw bearing area accumulates sand and dust easily.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. GIMBAL OVERLOAD -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-orange-500/20 border border-orange-500/40 flex items-center justify-center font-mono font-bold text-orange-400">B</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Gimbal Overload &mdash; damper balls / balance issue</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The gimbal motor is being asked to produce torque outside its normal range. This is almost never a motor winding failure. It's caused by: (a) gimbal damper balls that have aged, become hard, or fallen out; (b) the camera / filter / ND-filter combination shifting the center-of-gravity; or (c) the gimbal calibration having drifted after a crash.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Fix Procedure</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>Remove any heavy camera filters and retry. If the error clears with no filter and returns with a heavy filter, you've confirmed a balance issue &mdash; use lighter filters.</li>
+              <li>Inspect all 4 gimbal damper balls (top-left, top-right, bottom-left, bottom-right) for cracking, loss of elasticity, or complete absence. Replace any suspect damper balls (DJI sells packs of them).</li>
+              <li>Check that the gimbal is properly "floated" &mdash; nothing should be touching either the camera or the gimbal mount (no cables, no tape, no housing edges).</li>
+              <li>Perform a gimbal calibration in DJI Assistant 2 (see section E below).</li>
+              <li>If the overload message still appears under heavy load (fast panning in Sport mode), consider replacing the gimbal motor assembly.</li>
+            </ol>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Important:</strong> Flying with a persistent Gimbal Overload warning, even if the video looks OK, can cause a sudden gimbal loss mid-flight and result in a crash. Land and fix before flying again.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. GIMBAL IMU CALIBRATION ERROR -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">C</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Gimbal IMU Calibration Error</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The gimbal has its own 6-axis IMU (gyro + accelerometer) separate from the drone's flight controller IMU. Over time, and especially after a hard landing, the gimbal IMU calibration drifts and produces errors. Drift appears as slow horizon drift in video or as explicit "Gimbal IMU" calibration errors on startup.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Correct Calibration Procedure</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>Put the drone on a perfectly flat, non-vibrating surface. Use a spirit level to confirm &mdash; a few degrees of tilt will fail the calibration.</li>
+              <li>Power on without propellers (drone arms folded out, but no props). Wait 30 seconds for warm-up.</li>
+              <li>Open DJI Assistant 2 (Consumer Drone version) and connect the drone via USB-C.</li>
+              <li>Select your drone, then open "Gimbal Calibration." Follow the on-screen prompts exactly &mdash; you'll be prompted to place the drone flat, then tilt it through a series of orientations.</li>
+              <li>If DJI Assistant 2 cannot find a gimbal to calibrate, this confirms a physical issue (ribbon cable / connector) &mdash; proceed to step D.</li>
+              <li>After calibration, perform a gimbal "fine tune" in the DJI Fly app (Gimbal settings &rarr; Advanced &rarr; Fine tune).</li>
+            </ol>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200 mt-3">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Calibration Table</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div>Perfectly flat surface required: <span class="text-electric-400">Yes</span></div>
+                <div>Propellers must be off: <span class="text-electric-400">Yes</span></div>
+                <div>Drone needs Internet / GPS: <span class="text-electric-400">No</span></div>
+                <div>Expected duration: <span class="text-electric-400">~2 minutes</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. ROLL / PITCH / YAW MOTOR ERRORS -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">D</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Roll / Pitch / Yaw Motor Errors</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">When the error message specifically names one motor axis (e.g., "Pitch motor abnormal"), you know which motor assembly is faulty &mdash; this is a huge time saver. The named motor is almost always the cause (not the driver board, not the IMU).</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Motor-Specific Fix Steps</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>Use a marker pen to mark the original position of the named motor cover. You'll need to re-assemble in the same orientation.</li>
+              <li>Remove the two tiny screws holding the motor cover. Gently lift off the cover. Don't lose the washers underneath.</li>
+              <li>Inspect the bearing area. If you see sand, dust, or a black grit, clean the motor with compressed air and isopropyl alcohol on a cotton swab.</li>
+              <li>Spin the motor by hand &mdash; you should feel smooth, silent rotation with no grit. If you feel "notches" the motor bearings are failing.</li>
+              <li>Inspect the flat-flex cable routing to the faulty motor. Any visible creasing at the flex suggests the cable needs replacement.</li>
+              <li>Re-seat the motor flex connector. A loose connector is the #2 cause of axis-specific errors after physical sand-obstruction.</li>
+              <li>If all of the above are clean but error persists, the motor winding has failed &mdash; replace the motor assembly (they are sold as a unit).</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. GIMBAL INITIALIZATION FAILED -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">E</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Gimbal Initialization Failed &mdash; complete startup sequence error</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If "Gimbal Initialization Failed" appears on every startup and the gimbal never even attempts to move, this is almost always a connection issue (ribbon cable / ZIF connector) or a failed gimbal driver board. It can also appear after a botched firmware update.</p>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>Power off the drone. Remove battery. Wait 60 seconds. Re-insert battery and power on &mdash; sometimes this alone clears a hung MCU.</li>
+              <li>Connect the drone to DJI Assistant 2 and re-flash the current firmware (same version). This is the most common fix for "Initialization Failed" after a firmware update.</li>
+              <li>If still failing, inspect the gimbal-to-mainboard ribbon cable. Open the gimbal housing, then re-seat both ZIF (zero-insertion-force) connectors on both ends.</li>
+              <li>Inspect the connector for bent or broken pins. A single bent pin will cause "Initialization Failed" on every power on.</li>
+              <li>If the gimbal driver board has visibly failed (burnt component, bulging cap), the gimbal assembly must be replaced as a unit.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BEFORE YOU SEND IT IN / AFTERMARKET PARTS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Before You Send It In &mdash; Aftermarket Parts List</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-3 text-electric-400 flex items-center gap-2"><i data-lucide="clipboard-check" style="width:1.25rem;height:1.25rem"></i>"Before You Send It In" Checklist</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>All three motors spin freely by hand with no grit or catch points?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Gimbal damper balls are in good condition &mdash; no cracks, no hardening, no missing balls?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Flat-flex ribbon cable is intact, no creasing or torn sections?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Drone has been gimbal-calibrated via DJI Assistant 2 on a perfectly flat surface?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Current firmware is the latest stable release from DJI?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>ND-filters removed and gimbal tested without them?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>ZIF connectors fully reseated at both ends of the cable?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Compressed air used to clear debris from all motor gaps and sensor area?</li>
+        </ul>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-3 text-e-electric-400 flex items-center gap-2"><i data-lucide="package" style="width:1.25rem;height:1.25rem"></i>Aftermarket Parts You Can Buy</h3>
+        <div class="overflow-x-auto">
+          <table class="specs-table w-full text-sm">
+            <thead>
+              <tr><th>Part</th><th>Model Fit</th><th>Approx. Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Gimbal damper balls (pack of 4)</td><td>Mavic 3 Pro, Air 3, Mini 4 Pro</td><td>$8&ndash;$15</td></tr>
+              <tr><td>Flat-flex ribbon cable (camera)</td><td>Mavic 3 Pro / Air 3</td><td>$15&ndash;$30</td></tr>
+              <tr><td>Roll / pitch / yaw motor assembly</td><td>Model-specific</td><td>$25&ndash;$60</td></tr>
+              <tr><td>Gimbal main board (driver board)</td><td>Model-specific</td><td>$60&ndash;$120</td></tr>
+              <tr><td>Full gimbal assembly (w/o camera)</td><td>Model-specific</td><td>$180&ndash;$350</td></tr>
+              <tr><td>Gimbal housing screws (set)</td><td>Universal small</td><td>$5</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO CALL A PROFESSIONAL -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-950/20 to-navy-900 border-yellow-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>When to Call a Professional / Send to DJI Service</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Camera sensor itself is damaged (scratch, cracked IR filter, sensor error).</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Drone has been in a crash that also bent the airframe &mdash; the gimbal alignment is a factory jig process.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Gimbal driver board has visible component damage (burnt, bulging caps).</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Drone is still under DJI warranty &mdash; opening the gimbal may void your warranty.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Gimbal IMU calibration fails 3 times in a row even after firmware reflash &mdash; sensor has likely failed.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You don't own a PH00 / precision toolkit &mdash; guessing at tiny screws will strip them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED CODES -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="p0a80-replace-hybrid-battery.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">P0A80</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Hybrid Battery Module Replace</h3>
+        <p class="text-sm text-gray-400">Same voltage-spread diagnostic tree &mdash; we use the same methodology for drone battery cell-level diagnostics as for hybrid packs.</p>
+      </a>
+      <a href="power-station-wont-turn-on.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">NO&nbsp;POWER</div>
+          <span class="badge badge-info">All brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Won't Turn On</h3>
+        <p class="text-sm text-gray-400">Same approach &mdash; systematically eliminate the easy causes (connector, MCU hang, firmware) before declaring hardware failure.</p>
+      </a>
+      <a href="p0a7f-hybrid-battery-deterioration.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">P0A7F</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Battery Imbalance Guide</h3>
+        <p class="text-sm text-gray-400">Same diagnostic pattern &mdash; identify the weak module, recondition or replace, then re-learn the ECU baseline.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Need the full error code database?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Every documented fault code for every DJI, EcoFlow, Jackery, Bluetti, and Toyota model we've tested. Browse, search, and print.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/drones.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Open Drone Specs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

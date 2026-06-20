@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portable Power Station FAQ - 25 Answers to Common Questions | TechSpecsHub</title>
+  <meta name="description" content="Answers to the 25 most-asked questions about portable power stations. Charging speed, run time, battery type, warranty, cold temperature performance, and repair guidance.">
+  <meta name="theme-color" content="#0a1628">
+
+  <meta property="og:title" content="Portable Power Station FAQ - 25 Answers to Common Questions">
+  <meta property="og:description" content="Battery chemistry, charging, output, sizing, maintenance, warranty, and environmental questions answered.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    h2 { scroll-margin-top: 100px; }
+    h3 { scroll-margin-top: 100px; }
+  </style>
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="../tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="../tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="outdoor-power.html">Outdoor Power Stations</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Portable Power Station FAQ</span>
+    </nav>
+  </div>
+
+  <section class="relative pt-6 pb-12">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-[400px] h-[400px] bg-electric-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex flex-wrap items-center justify-center gap-2 mb-6">
+        <span class="badge badge-info"><i data-lucide="help-circle" style="width:0.7rem;height:0.7rem"></i>Frequently Asked Questions</span>
+        <span class="badge badge-ok"><i data-lucide="check-circle-2" style="width:0.7rem;height:0.7rem"></i>25 Answers</span>
+        <span class="badge badge-info"><i data-lucide="zap" style="width:0.7rem;height:0.7rem"></i>Updated June 2026</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-[1.1] tracking-tight">
+        Portable Power Station <span class="gradient-text">FAQ</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+        The 25 most-asked questions we get. If you're deciding between models or troubleshooting an existing unit, start here.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-xl mb-5 flex items-center gap-2">
+        <i data-lucide="compass" style="width:1.2rem;height:1.2rem;color:#22d3ee"></i>
+        Jump to Section
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        <a href="#battery-chemistry" class="group p-4 rounded-xl bg-navy-800/40 border border-white/5 hover:border-electric-400/40 transition-all">
+          <i data-lucide="battery-charging" style="width:1.4rem;height:1.4rem;color:#22d3ee" class="mb-2"></i>
+          <div class="font-semibold text-sm text-white group-hover:text-electric-400 transition-colors">Battery &amp; Chemistry</div>
+          <div class="text-xs text-gray-500 mt-1">5 questions</div>
+        </a>
+        <a href="#charging" class="group p-4 rounded-xl bg-navy-800/40 border border-white/5 hover:border-electric-400/40 transition-all">
+          <i data-lucide="plug-zap" style="width:1.4rem;height:1.4rem;color:#22d3ee" class="mb-2"></i>
+          <div class="font-semibold text-sm text-white group-hover:text-electric-400 transition-colors">Charging</div>
+          <div class="text-xs text-gray-500 mt-1">4 questions</div>
+        </a>
+        <a href="#output-runtime" class="group p-4 rounded-xl bg-navy-800/40 border border-white/5 hover:border-electric-400/40 transition-all">
+          <i data-lucide="zap" style="width:1.4rem;height:1.4rem;color:#22d3ee" class="mb-2"></i>
+          <div class="font-semibold text-sm text-white group-hover:text-electric-400 transition-colors">Output &amp; Runtime</div>
+          <div class="text-xs text-gray-500 mt-1">5 questions</div>
+        </a>
+        <a href="#sizing-purchase" class="group p-4 rounded-xl bg-navy-800/40 border border-white/5 hover:border-electric-400/40 transition-all">
+          <i data-lucide="ruler" style="width:1.4rem;height:1.4rem;color:#22d3ee" class="mb-2"></i>
+          <div class="font-semibold text-sm text-white group-hover:text-electric-400 transition-colors">Sizing &amp; Purchase</div>
+          <div class="text-xs text-gray-500 mt-1">4 questions</div>
+        </a>
+        <a href="#maintenance-repair" class="group p-4 rounded-xl bg-navy-800/40 border border-white/5 hover:border-electric-400/40 transition-all">
+          <i data-lucide="wrench" style="width:1.4rem;height:1.4rem;color:#22d3ee" class="mb-2"></i>
+          <div class="font-semibold text-sm text-white group-hover:text-electric-400 transition-colors">Maintenance &amp; Repair</div>
+          <div class="text-xs text-gray-500 mt-1">4 questions</div>
+        </a>
+        <a href="#environmental" class="group p-4 rounded-xl bg-navy-800/40 border border-white/5 hover:border-electric-400/40 transition-all">
+          <i data-lucide="shield-check" style="width:1.4rem;height:1.4rem;color:#22d3ee" class="mb-2"></i>
+          <div class="font-semibold text-sm text-white group-hover:text-electric-400 transition-colors">Environmental &amp; Safety</div>
+          <div class="text-xs text-gray-500 mt-1">3 questions</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="battery-chemistry" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <span class="badge badge-info mb-2"><i data-lucide="battery-charging" style="width:0.7rem;height:0.7rem"></i>Section 1</span>
+        <h2 class="font-bold text-3xl md:text-4xl mb-2">Battery &amp; Chemistry</h2>
+        <p class="text-gray-400 text-sm">What the cells are made of, how long they last, and why it matters.</p>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q1</span>
+          <h3 class="font-bold text-lg text-white">LiFePO4 vs lithium-ion vs lead-acid &mdash; which battery type is actually better?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+          It depends on your use case, but <strong class="text-white">LiFePO4 (Lithium Iron Phosphate)</strong> has become the default for good reason. Here is how the three chemistries compare:
+        </p>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Property</th><th>LiFePO4</th><th>Lithium-ion (NMC/NCA)</th><th>Lead-acid (AGM/SLA)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cycle life (to 80% capacity)</td><td class="font-mono text-green-400">3,000 &ndash; 6,000</td><td class="font-mono text-yellow-400">500 &ndash; 1,200</td><td class="font-mono text-red-400">300 &ndash; 500</td></tr>
+              <tr><td>Depth of discharge (safe)</td><td class="font-mono text-green-400">80%</td><td class="font-mono text-yellow-400">50%</td><td class="font-mono text-red-400">50%</td></tr>
+              <tr><td>Self-discharge (per month)</td><td class="font-mono">2 &ndash; 3%</td><td class="font-mono">5 &ndash; 8%</td><td class="font-mono">3 &ndash; 5%</td></tr>
+              <tr><td>Temperature tolerance</td><td class="font-mono">&minus;20&deg;C to 60&deg;C</td><td class="font-mono">&minus;20&deg;C to 45&deg;C</td><td class="font-mono">&minus;10&deg;C to 40&deg;C</td></tr>
+              <tr><td>Weight (energy density)</td><td class="font-mono">~120 Wh/kg</td><td class="font-mono">~200 Wh/kg</td><td class="font-mono">~40 Wh/kg</td></tr>
+              <tr><td>Relative cost per Wh</td><td class="font-mono text-yellow-400">Medium</td><td class="font-mono text-yellow-400">Medium-high</td><td class="font-mono text-green-400">Low</td></tr>
+              <tr><td>Thermal runaway risk</td><td class="font-mono text-green-400">Very low</td><td class="font-mono text-yellow-400">Moderate</td><td class="font-mono text-green-400">Very low</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mt-4">
+          <strong class="text-white">Practical rule:</strong> If you're going to cycle the unit more than ~50 times total, LiFePO4's longer life makes it the best value. If you need the lightest possible unit for backpacking and cycle count will be low, lithium-ion (NMC) has higher energy density and is acceptable. Lead-acid is only worth considering for stationary, rarely-moved backup &mdash; and even then, LiFePO4 pricing has narrowed the gap.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q2</span>
+          <h3 class="font-bold text-lg text-white">How many years will a power station actually last?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">LiFePO4 units: 5 &ndash; 10 years</strong> in real-world use. A 3,000-cycle rating at 80% DoD means you can drain and recharge roughly every other day for 16 years before hitting 80% remaining capacity. In practice, partial charges, calendar aging, and temperature exposure shorten this. Expect a well-maintained LiFePO4 station to retain 80%+ capacity for 5 years of regular use, then gradually decline.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          <strong class="text-white">Lithium-ion (NMC/NCA) units: 2 &ndash; 5 years.</strong> The cycle count is lower and calendar aging is more aggressive. A unit that only gets used on camping weekends may still last 5 years. One used daily for home backup may degrade noticeably in 2&ndash;3 years.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          The single biggest factor is discharge depth. Keeping state-of-charge between 20% and 80% instead of cycling 0%&ndash;100% roughly doubles life expectancy on both chemistries.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q3</span>
+          <h3 class="font-bold text-lg text-white">Can I leave a power station plugged in indefinitely?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">Short answer: technically yes, but not ideal.</strong> Almost all modern units support pass-through charging (also called "UPS mode"), meaning you can draw AC output while simultaneously charging from the wall. Many have this built in as an intentional feature for home backup use.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          However, keeping a lithium-ion battery at <strong class="text-white">100% state-of-charge long-term accelerates calendar aging.</strong> The electrolyte degrades faster at the upper voltage range even if no current is flowing. If you keep a unit plugged in 24/7, you may see 15&ndash;25% capacity loss after 18 months, compared to 5&ndash;10% if stored at 50%.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          <strong class="text-white">Best practice for long-term storage:</strong> top up to 50&ndash;60% SOC, disconnect all loads, and re-top-up every 3 months. If you're using a unit as standby home backup, set it to the 80% charge-hold mode if available, or perform a deliberate discharge-charge cycle every 30&ndash;90 days to recalibrate the BMS.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q4</span>
+          <h3 class="font-bold text-lg text-white">What does cycle life actually mean &mdash; is a 4,000-cycle battery twice as good as a 2,000-cycle battery?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          A <strong class="text-white">"cycle"</strong> is one complete discharge from 100% to 0% and back to 100%. The cycle-life rating (e.g., 4,000 cycles) means the battery is expected to retain at least <strong class="text-white">80% of its original capacity</strong> after that many cycles, per the SAE J2807 standard or the manufacturer's equivalent testing protocol.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          <strong class="text-white">Yes, 4,000 cycles is roughly twice the usable life of 2,000 cycles.</strong> A 1,000 Wh unit rated for 4,000 cycles delivers roughly 4,000,000 Wh (4 MWh) of cumulative energy over its lifetime, versus ~2,000,000 Wh for the 2,000-cycle unit. This is why cycle life is at least as important as headline Wh capacity when comparing value.
+        </p>
+        <div class="alert alert-info mt-4">
+          <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0"></i>
+          <div class="text-sm">
+            <strong class="text-white">Important caveat:</strong> only compare cycle-life numbers if they are tested to the same standard. Some manufacturers claim 10,000+ "cycles" using proprietary or light-discharge testing that doesn't match SAE J2807. Always check the fine print for the testing protocol and remaining-capacity threshold.
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q5</span>
+          <h3 class="font-bold text-lg text-white">Do battery packs expire if unused?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">Yes.</strong> Calendar aging happens regardless of use. A battery sitting on a shelf loses a small amount of capacity every month due to electrolyte degradation and passive side reactions at the electrodes.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          LiFePO4 self-discharges at about <strong class="text-white">2&ndash;3% per month</strong>. Lithium-ion (NMC/NCA) self-discharges faster at <strong class="text-white">5&ndash;8% per month</strong>. Both chemistries degrade significantly faster above <strong class="text-white">35&deg;C / 95&deg;F</strong> and very slowly below 10&deg;C / 50&deg;F.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          A LiFePO4 battery stored correctly (50% SOC, cool dry place) may lose 10&ndash;20% capacity over 5 years of sitting idle. The same NMC battery may lose 30&ndash;40%. A battery that drops below ~2.5V per cell (due to extreme self-discharge without recharge) may be irreversibly damaged &mdash; this is why periodic top-up is required for long-term storage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="charging" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <span class="badge badge-info mb-2"><i data-lucide="plug-zap" style="width:0.7rem;height:0.7rem"></i>Section 2</span>
+        <h2 class="font-bold text-3xl md:text-4xl mb-2">Charging</h2>
+        <p class="text-gray-400 text-sm">Speed, sources, temperature, and what to do when charging is slower than advertised.</p>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q6</span>
+          <h3 class="font-bold text-lg text-white">Why is my power station charging so much slower than advertised?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Almost always because the circuit you're plugged into can't deliver the rated wattage. Manufacturer charging-speed specs assume a <strong class="text-white">dedicated 15A or 20A circuit</strong>. If you're on a shared kitchen circuit that also powers a fridge and microwave, the voltage drops slightly under load and the unit's BMS throttles back to compensate.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Other common culprits:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-2 pl-4 list-disc">
+          <li><strong class="text-white">Thin-gauge extension cords</strong> add resistance and can reduce actual charging speed by 20&ndash;40%. Use 12-gauge or 14-gauge cords for high-wattage charging, and keep them short.</li>
+          <li><strong class="text-white">Low battery temperature.</strong> LiFePO4 below 0&deg;C / 32&deg;F charges at reduced rate or not at all. Warm the unit indoors first.</li>
+          <li><strong class="text-white">BMS thermal throttling.</strong> If the unit's internal temperature is above 45&deg;C / 113&deg;F, it throttles charging current.</li>
+          <li><strong class="text-white">Battery near 100%.</strong> The final 10% charge (the CV, or constant-voltage, phase) is deliberately slower on all lithium chemistries. Advertised "0&ndash;100%" times often assume ideal conditions and skip this detail.</li>
+        </ul>
+        <div class="alert alert-info mt-4">
+          <i data-lucide="lightbulb" style="width:1rem;height:1rem;flex-shrink:0"></i>
+          <div class="text-sm">
+            <strong class="text-white">Quick diagnostic:</strong> If you suspect a slow circuit, test the same outlet with a known 1,500W space heater and measure the voltage drop. A drop of more than 5% indicates a weak or shared circuit that will never achieve the rated charge speed.
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q7</span>
+          <h3 class="font-bold text-lg text-white">Can I charge from solar AND AC at the same time?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">Yes, on all major brands.</strong> EcoFlow, Bluetti, Jackery, and Anker all support simultaneous charging from multiple sources. The total input is capped by the BMS &mdash; usually the AC max is the ceiling. Some units support up to 3 sources simultaneously (AC + solar + car/12V).
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Typical combined-charge scenarios:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-2 pl-4 list-disc">
+          <li><strong class="text-white">AC + solar:</strong> useful on cloudy days, or when you want the fastest possible top-up from both sources.</li>
+          <li><strong class="text-white">AC + car:</strong> useful while driving and parked near shore power.</li>
+          <li><strong class="text-white">Dual solar MPPT:</strong> high-end units accept two independent solar strings.</li>
+        </ul>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Note: adding a second source does not necessarily double the charge speed. Each unit has a total combined-input ceiling &mdash; check the spec sheet for "total input wattage" rather than per-port ratings.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q8</span>
+          <h3 class="font-bold text-lg text-white">Is it OK to charge my power station in a cold garage in winter?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">LiFePO4 batteries below 0&deg;C / 32&deg;F charge at a reduced rate or not at all</strong> &mdash; this is deliberate BMS protection, not a defect. Charging lithium cells below freezing without proper heating causes lithium plating on the anode, which permanently reduces capacity and can create internal short circuits.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Some premium units have <strong class="text-white">integrated battery heating</strong> (notably some Bluetti and EcoFlow models). Most do not. If your garage is below 40&deg;F / 5&deg;C, move the unit indoors to charge. Letting the unit sit indoors at room temperature for 30&ndash;60 minutes before plugging in is enough to warm the cells.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Note: discharging (powering devices) at low temperatures is less harmful than charging &mdash; it just reduces available capacity temporarily. The battery returns to normal behavior when warmed.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q9</span>
+          <h3 class="font-bold text-lg text-white">How do I know if my solar panel voltage is compatible with my power station's MPPT?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Check the <strong class="text-white">MPPT voltage range</strong> in the power station's spec sheet. Typical ranges:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-3 pl-4 list-disc">
+          <li>Large units (2,000 Wh+): <strong class="text-white font-mono">12V &ndash; 120V DC</strong> MPPT range</li>
+          <li>Mid-size units (500&ndash;1,500 Wh): <strong class="text-white font-mono">12V &ndash; 60V DC</strong> MPPT range</li>
+          <li>Small units (under 500 Wh): <strong class="text-white font-mono">12V &ndash; 30V DC</strong> MPPT range</li>
+        </ul>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Your <strong class="text-white">solar panel's open-circuit voltage (Voc)</strong> must fall inside this range. A panel with Voc = 42V works on a 12&ndash;60V MPPT input but not on a 12&ndash;30V input. When wiring panels in series, Voc adds &mdash; so two 42V panels in series = 84V, which exceeds the 60V limit on many mid-size stations but is fine on a 120V MPPT.
+        </p>
+        <div class="alert alert-info mt-4">
+          <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0"></i>
+          <div class="text-sm">
+            <strong class="text-white">Critical:</strong> Applying a panel with Voc well above the MPPT range <em>will</em> damage the charge controller. Matching Voc to the MPPT range is the most important compatibility check. Panel wattage matters for speed; panel voltage matters for survival.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="output-runtime" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <span class="badge badge-info mb-2"><i data-lucide="zap" style="width:0.7rem;height:0.7rem"></i>Section 3</span>
+        <h2 class="font-bold text-3xl md:text-4xl mb-2">Output &amp; Runtime</h2>
+        <p class="text-gray-400 text-sm">Why advertised wattage and run time don't always match real-world performance.</p>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q10</span>
+          <h3 class="font-bold text-lg text-white">What does surge output actually mean, and why does it matter?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">Surge output</strong> (also called "peak output" or "boost output") is the maximum wattage the inverter can deliver for a short burst, typically 0.5&ndash;3 seconds. It matters because <strong class="text-white">motor-driven devices draw 3&ndash;7&times; their steady wattage at startup.</strong>
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Common startup surge examples:
+        </p>
+        <div class="overflow-x-auto mt-3">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Device</th><th>Running Watts</th><th>Startup Surge Watts</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Refrigerator (18 cu ft)</td><td class="font-mono">150 &ndash; 200</td><td class="font-mono text-yellow-400">1,200 &ndash; 1,800</td></tr>
+              <tr><td>Well pump (&frac12; HP)</td><td class="font-mono">500 &ndash; 700</td><td class="font-mono text-yellow-400">2,500 &ndash; 3,500</td></tr>
+              <tr><td>Window AC (8,000 BTU)</td><td class="font-mono">800 &ndash; 1,100</td><td class="font-mono text-yellow-400">3,000 &ndash; 5,000</td></tr>
+              <tr><td>Microwave (1,000W)</td><td class="font-mono">1,000 &ndash; 1,300</td><td class="font-mono">1,300 &ndash; 1,700</td></tr>
+              <tr><td>LED lights (10&times; 15W)</td><td class="font-mono">150</td><td class="font-mono">~150</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          EcoFlow's <strong class="text-white">X-Boost</strong> and similar features on other brands artificially raise the surge tolerance &mdash; though they do so at the cost of waveform quality. Devices with sensitive electronics (medical gear, audio equipment) may not play well with boost-mode output.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q11</span>
+          <h3 class="font-bold text-lg text-white">Why does my 1,800W rated unit shut down when I plug in a 1,200W well pump?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          The <strong class="text-white">1,800W rating is continuous output</strong> &mdash; the wattage it can sustain indefinitely. But a &frac12; HP well pump may draw <strong class="text-white">2,800W+ for 1&ndash;2 seconds at startup</strong>. If your unit's surge rating is below that, it trips and shuts down.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          This is the single most common "my unit doesn't work" complaint we see, and it's almost always a sizing mistake rather than a defective unit. When shopping for motor-driven loads, <strong class="text-white">ignore the continuous rating and look at the surge rating.</strong>
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Solutions:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-2 pl-4 list-disc">
+          <li>Buy a unit with a surge rating at least 3&times; the motor's rated wattage.</li>
+          <li>Install a <strong class="text-white">soft-start kit</strong> on the pump motor (typically $30&ndash;$80), which spreads the inrush current over a few seconds and can cut peak draw by 50&ndash;70%.</li>
+          <li>Run one heavy motor load at a time &mdash; don't start the well pump and refrigerator simultaneously.</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q12</span>
+          <h3 class="font-bold text-lg text-white">How accurate are manufacturer runtime estimates?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Usually <strong class="text-white">optimistic by 20&ndash;30%</strong>. Manufacturers test at room temperature (~25&deg;C / 77&deg;F) with ideal steady-state resistive loads, no fan overhead, no inverter idle draw, and fresh new cells. Real-world runtime is almost always lower.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Expect real-world runtime to be approximately:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-2 pl-4 list-disc">
+          <li><strong class="text-white">80% of rated</strong> for steady resistive loads (heaters, incandescent lights)</li>
+          <li><strong class="text-white">60&ndash;70% of rated</strong> for motor-driven loads (fridges, pumps)</li>
+          <li><strong class="text-white">50% of rated</strong> at near-freezing temperatures</li>
+          <li><strong class="text-white">70% of rated</strong> on a 3-year-old battery with normal aging</li>
+        </ul>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Quick formula: <span class="font-mono text-electric-400">Runtime hours = Battery Wh &times; 0.85 &divide; Load W</span>. The 0.85 accounts for inverter efficiency (~90%) and battery aging. This is the number you should use for planning, not the manufacturer's marketing figure.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q13</span>
+          <h3 class="font-bold text-lg text-white">What's the difference between X-Boost and a higher-rated AC output?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">X-Boost</strong> (EcoFlow's trademark) and similar features on other brands allow the inverter to tolerate brief overdraw events up to the advertised surge rating. The inverter does this by allowing voltage to sag or by switching to a modified-sine-wave-like waveform during the overdraw. It's a software trick, not more copper inside.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          A unit with <strong class="text-white">genuinely higher continuous output</strong> (e.g., 4,000W continuous vs 1,800W) has bigger transistors, bigger heat sinks, and bigger AC wiring inside. It can sustain heavy loads indefinitely without waveform compromise.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Practical impact: X-Boost is excellent for handling startup surges on compressors and tools, or for brief high-draw events. If you plan to run a 2,000W resistive load continuously (e.g., a space heater), you want a 2,400W+ continuous-rated unit &mdash; not a 1,800W unit with X-Boost.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q14</span>
+          <h3 class="font-bold text-lg text-white">Can I daisy-chain or combine power stations for more output?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">Some brands support parallel units; most do not.</strong> EcoFlow and Bluetti in particular sell models with official parallel-combining capability. Jackery generally does not support parallel operation on consumer models.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Always use the manufacturer's official parallel cable and procedure. <strong class="text-white">Never attempt to parallel units that weren't designed for it</strong> &mdash; even identical models. Without voltage-matching electronics and a common ground reference, one unit will feed current into the other, damaging both inverters.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          If you need more total wattage than a single unit can deliver and your brand doesn't support parallel, the safe approach is to <strong class="text-white">split your loads across separate circuits</strong> &mdash; e.g., run the fridge on one unit and the well pump on another, rather than trying to combine them.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sizing-purchase" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <span class="badge badge-info mb-2"><i data-lucide="ruler" style="width:0.7rem;height:0.7rem"></i>Section 4</span>
+        <h2 class="font-bold text-3xl md:text-4xl mb-2">Sizing &amp; Purchase</h2>
+        <p class="text-gray-400 text-sm">How to pick the right size, what to compare, and what to avoid.</p>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q15</span>
+          <h3 class="font-bold text-lg text-white">How big of a power station do I actually need for camping vs home backup?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-4">Quick sizing rules of thumb:</p>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Use Case</th><th>Devices</th><th>Battery Size</th><th>AC Output</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong class="text-white">Casual camping (2&ndash;3 days)</strong></td><td>Phones, camera battery, LED lights, small cooler</td><td class="font-mono text-green-400">300 &ndash; 500 Wh</td><td class="font-mono">300 &ndash; 500W</td></tr>
+              <tr><td><strong class="text-white">Serious camping + fridge (3&ndash;5 days)</strong></td><td>12V fridge, phones, laptop, lights, drone</td><td class="font-mono text-green-400">500 &ndash; 1,000 Wh</td><td class="font-mono">500 &ndash; 1,000W</td></tr>
+              <tr><td><strong class="text-white">Small home backup (essential circuit)</strong></td><td>Refrigerator, modem/router, lights, phone charging</td><td class="font-mono text-yellow-400">1,000 &ndash; 2,000 Wh</td><td class="font-mono">1,800W+ with 3,000W+ surge</td></tr>
+              <tr><td><strong class="text-white">Whole-home multi-day backup</strong></td><td>Refrigerator, well pump, heater/AC, kitchen, lights, media</td><td class="font-mono text-yellow-400">3,000 &ndash; 12,000 Wh</td><td class="font-mono">4,000W+ with 6,000W+ surge</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Always size the <strong class="text-white">output wattage first</strong> (based on the largest single surge load you'll run), then size the battery for the number of hours of runtime you want. A big battery on a small inverter is a paperweight if the inverter can't start your fridge.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q16</span>
+          <h3 class="font-bold text-lg text-white">$/Wh is the only thing that matters, right?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">No.</strong> $/Wh is a useful starting comparison but ignores at least four factors that matter more long-term:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-3 pl-4 list-disc">
+          <li><strong class="text-white">Cycle life.</strong> A $0.50/Wh unit with 4,000-cycle warranty delivers more cumulative energy than a $0.30/Wh unit with 800 cycles.</li>
+          <li><strong class="text-white">Warranty length &amp; quality of support.</strong> A 5-year warranty vs 1-year warranty is a real financial difference.</li>
+          <li><strong class="text-white">Output quality.</strong> Pure sine wave + surge rating + USB-C PD ports vs cheap inverters with limited ports.</li>
+          <li><strong class="text-white">Charge speed.</strong> A unit that recharges in 1 hour is more valuable than one that takes 10 hours, especially in off-grid scenarios.</li>
+        </ul>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Better comparison metric: <span class="font-mono text-electric-400">$ / (Wh &times; cycle life)</span>. Normalize for both capacity and longevity, and check warranty length separately.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q17</span>
+          <h3 class="font-bold text-lg text-white">Should I buy the bundled solar panel package from the manufacturer?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">Usually yes for convenience.</strong> The bundled panels are guaranteed compatible: correct voltage range, correct connector (MC4 or proprietary), correctly sized for the MPPT, and physically sized to pack neatly with the unit.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Third-party panels are often <strong class="text-white">higher wattage per dollar</strong> &mdash; sometimes 25&ndash;40% cheaper per watt. But you must verify:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-2 pl-4 list-disc">
+          <li><strong class="text-white">Open-circuit voltage (Voc)</strong> must fall within the MPPT range.</li>
+          <li><strong class="text-white">Connector type</strong> (MC4 vs proprietary). Some brands use non-standard connectors that require an adapter cable.</li>
+          <li><strong class="text-white">Wattage per panel</strong> must not exceed the MPPT per-string limit.</li>
+        </ul>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          For most casual users, the bundled package is the lowest-friction choice. For users who want to oversize a permanent off-grid installation or who already own panels, third-party panels + adapter cable is usually the better value.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q18</span>
+          <h3 class="font-bold text-lg text-white">Are off-brand / Amazon-baseline power stations safe to buy?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Many are <strong class="text-white">electrically safe</strong> but have unverified spec claims, fake cell ratings, and no real support. Common problems: advertised wattage inflated 20&ndash;60%, actual battery capacity 30&ndash;50% below claimed, fake "LiFePO4" labels on units that are actually NMC or lower-quality cells, zero technical support when something breaks.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Battery fires in cheap lithium-ion units are <strong class="text-white">extremely rare but documented.</strong> LiFePO4 has inherently better thermal stability. If you buy no-name, at minimum verify it has a <strong class="text-white">UL, IEC, or CE listing</strong> for the battery pack and inverter. A unit with no independent safety certification is a risk in your home, garage, or RV.
+        </p>
+        <div class="alert alert-info mt-4">
+          <i data-lucide="shield-check" style="width:1rem;height:1rem;flex-shrink:0"></i>
+          <div class="text-sm">
+            <strong class="text-white">Editorial stance:</strong> for anything above 500 Wh, buy from an established brand with public engineering specs, genuine UL-listed cells, and a real support team. For small 100&ndash;300 Wh units used occasionally for phone charging, the risk is lower and no-name units can be acceptable value.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="maintenance-repair" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <span class="badge badge-info mb-2"><i data-lucide="wrench" style="width:0.7rem;height:0.7rem"></i>Section 5</span>
+        <h2 class="font-bold text-3xl md:text-4xl mb-2">Maintenance &amp; Repair</h2>
+        <p class="text-gray-400 text-sm">Storage, upkeep, and what you can realistically fix yourself.</p>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q19</span>
+          <h3 class="font-bold text-lg text-white">How do I properly store a power station for 6+ months?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-3">Step-by-step storage procedure for LiFePO4 and lithium-ion:</p>
+        <ol class="text-gray-300 text-sm leading-relaxed space-y-2 pl-4 list-decimal">
+          <li><strong class="text-white">Charge to 50&ndash;60% state of charge.</strong> Most units display SOC on the screen. 50% minimizes both anode and cathode stress &mdash; the sweet spot for long-term storage.</li>
+          <li><strong class="text-white">Disconnect all loads and cables.</strong> Even a small parasitic draw (e.g., an always-on 12V port) can drain the battery to damaging levels over months.</li>
+          <li><strong class="text-white">Store at 10&ndash;20&deg;C / 50&ndash;70&deg;F</strong> in a dry location. Avoid direct sun and temperatures above 35&deg;C / 95&deg;F. A climate-controlled closet or basement is ideal.</li>
+          <li><strong class="text-white">Set a reminder</strong> to check SOC every 3 months. Re-top to 50&ndash;60% if it has drifted below 30%.</li>
+          <li><strong class="text-white">Perform one complete charge-discharge cycle</strong> every 6 months to recalibrate the BMS. Plug in to AC, charge to 100%, then discharge through a load (a space heater, an inverter with a light bulb, etc.) down to ~20%, then recharge to 50% for storage.</li>
+          <li><strong class="text-white">Never store below 20% SOC.</strong> If the battery self-discharges to near-empty and sits there for weeks or months, the cells may never recover &mdash; especially lithium-ion.</li>
+        </ol>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q20</span>
+          <h3 class="font-bold text-lg text-white">Can I replace the battery cells myself if the unit fails out of warranty?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">Technically possible on most units</strong> &mdash; but not recommended unless you have electronics experience. You'll need: soldering tools or custom connectors, a replacement cell pack with matching voltage and chemistry, a way to balance cells at reassembly, and willingness to void any remaining warranty.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          <strong class="text-white">Risk if cells are mismatched:</strong> cells with different internal resistance or capacity will charge/discharge unevenly, causing overcharge on one side and overdischarge on the other. This is the #1 cause of DIY-repair battery failures.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Some brands (notably EcoFlow) sell <strong class="text-white">modular replacement battery packs</strong> for specific models. These are plug-and-play, guaranteed compatible, and the best option when available. Check manufacturer parts stores before attempting a cell-level repair.
+        </p>
+        <div class="alert alert-info mt-4">
+          <i data-lucide="flame" style="width:1rem;height:1rem;flex-shrink:0"></i>
+          <div class="text-sm">
+            <strong class="text-white">Safety warning:</strong> lithium-ion (NMC/NCA) cells that are physically damaged or have been over-discharged can catch fire during disassembly. LiFePO4 is much safer but still carries risk. Never pry, punctate, or apply heat to a swollen or damaged pack. Wear safety glasses and work in a well-ventilated area.
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q21</span>
+          <h3 class="font-bold text-lg text-white">My unit shows an error code &mdash; what now?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Cross-reference the code in the <a href="../error-code-db.html" class="text-electric-400 hover:text-electric-300 underline">error code database</a> or the manufacturer's manual. The most common errors fall into a few categories:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-3 pl-4 list-disc">
+          <li><strong class="text-white">Temperature errors</strong> (too hot or too cold): self-clear when temperature returns to the safe operating range. Move unit to a better environment, wait 30 minutes, try again.</li>
+          <li><strong class="text-white">Overload errors</strong>: remove the offending load, wait 60 seconds, power-cycle. If it happens repeatedly with a small load, the inverter may be failing.</li>
+          <li><strong class="text-white">BMS / cell errors</strong>: may indicate a cell imbalance or a failing cell. Perform one full charge-discharge cycle to rebalance. If the code persists, contact the manufacturer &mdash; this is usually a warranty issue.</li>
+          <li><strong class="text-white">Communication errors</strong> (BMS-to-inverter handshake fault): power off, hold power button for 10 seconds, reconnect. Update firmware if a newer version is available.</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q22</span>
+          <h3 class="font-bold text-lg text-white">What maintenance do power stations actually need?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">Virtually zero under normal use.</strong> Power stations are sealed electronic devices with no user-serviceable fluids, filters, or moving parts beyond the cooling fans. What you should do:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-3 pl-4 list-disc">
+          <li><strong class="text-white">Keep air intake vents clear of dust.</strong> A soft brush or low-pressure compressed air once a year is enough. High-pressure air can damage fan bearings.</li>
+          <li><strong class="text-white">Don't expose to direct sun for hours.</strong> Sunlight raises the case temperature 20&ndash;30&deg;C above ambient, which is the single biggest driver of battery aging.</li>
+          <li><strong class="text-white">Wipe battery contacts with a clean dry cloth</strong> if tarnished. Oxidized contacts add resistance and reduce efficiency.</li>
+          <li><strong class="text-white">Annually: one complete charge-discharge cycle</strong> to recalibrate the battery gauge and rebalance cells. This keeps the SOC reading accurate.</li>
+          <li><strong class="text-white">Update firmware</strong> when the manufacturer releases updates. This often resolves fan-noise, SOC-calibration, and charging-optimization issues.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="environmental" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <span class="badge badge-info mb-2"><i data-lucide="shield-check" style="width:0.7rem;height:0.7rem"></i>Section 6</span>
+        <h2 class="font-bold text-3xl md:text-4xl mb-2">Environmental &amp; Safety</h2>
+        <p class="text-gray-400 text-sm">Indoor use, rain tolerance, and fire safety.</p>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q23</span>
+          <h3 class="font-bold text-lg text-white">Is it safe to use portable power stations indoors?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">Yes, completely safe for indoor use</strong> &mdash; this is the single biggest advantage over gas generators. Portable power stations produce no exhaust, no carbon monoxide, no combustion byproducts, and need no ventilation. You can run one inside a bedroom, office, or kitchen with zero safety concerns from an emissions perspective.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          The main risk is <strong class="text-white">overloading the AC inverter</strong>, which causes it to shut off. Maintain at least 6 inches (15 cm) of clearance around the unit for ventilation, and don't stack things on top of it. Don't run high-wattage resistive loads (space heaters) unattended for long periods &mdash; the unit's thermal protection will shut it off if needed, but you're still creating heat in the room.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q24</span>
+          <h3 class="font-bold text-lg text-white">What about using them during a rainstorm?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Most units have an <strong class="text-white">IP rating</strong> (Ingress Protection) printed on the spec sheet. Common ratings:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-3 pl-4 list-disc">
+          <li><strong class="text-white">IP53</strong> &mdash; dust-protected, splash-resistant from up to 60&deg;. Safe for light drizzle and damp conditions but not direct rain.</li>
+          <li><strong class="text-white">IP54</strong> &mdash; dust-protected, water-splash from all directions. Tolerates moderate rain for short periods.</li>
+          <li><strong class="text-white">IP65</strong> &mdash; dust-tight, low-pressure water jet from all directions. Suitable for outdoor use in heavier rain (found on some purpose-built outdoor models).</li>
+          <li><strong class="text-white">No IP rating</strong> &mdash; keep dry. Any significant water exposure is likely to cause a short.</li>
+        </ul>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          <strong class="text-white">Water exposure above the IP rating will short and likely destroy the inverter.</strong> In a storm, keep the unit under cover (porch, awning, RV overhang) and ensure AC outlets face downward if exposed to damp air. Never submerge. Do not use with wet hands.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 md:p-8">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="flex-shrink-0 w-8 h-8 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold text-sm">Q25</span>
+          <h3 class="font-bold text-lg text-white">Do power stations catch fire?</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <strong class="text-white">Extremely rare with reputable brands using LiFePO4 chemistry.</strong> LiFePO4 has a higher thermal runaway temperature (~270&deg;C vs ~180&deg;C for NMC) and releases less energy when it does fail. A properly-manufactured, properly-used LiFePO4 pack has an excellent safety track record.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Older lithium-ion (NMC/NCA) batteries have higher thermal risk and are more sensitive to overcharging, physical damage, and manufacturing defects. No-name brands with unknown BMS quality are the highest-risk category.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mt-3">
+          Practical safety rules:
+        </p>
+        <ul class="text-gray-300 text-sm leading-relaxed space-y-2 mt-2 pl-4 list-disc">
+          <li>Always buy from established brands with <strong class="text-white">UL or IEC listing</strong> for the battery pack.</li>
+          <li>Never charge a unit that is visibly <strong class="text-white">damaged, swollen, or has liquid leaking</strong>.</li>
+          <li>Don't leave units in direct sun for hours in 35&deg;C+ weather.</li>
+          <li>Don't cover the unit while charging or under high load &mdash; ventilation is critical.</li>
+          <li>For long-term storage (more than 30 days), store at 50% SOC in a cool location, not in direct sunlight or a hot vehicle.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="glass-card p-8 md:p-10 bg-gradient-to-br from-electric-900/20 to-navy-900 text-center">
+      <i data-lucide="message-circle-question" style="width:2.5rem;height:2.5rem;color:#22d3ee" class="mx-auto mb-4"></i>
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Still Have a Question?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto leading-relaxed">
+        Didn't find what you're looking for? Our team cross-references manufacturer engineering docs, user reports, and independent testing for every answer we publish.
+      </p>
+      <a href="../contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-semibold rounded-lg transition-colors">
+        <i data-lucide="mail" style="width:1.1rem;height:1.1rem"></i>
+        Contact Our Editorial Team
+      </a>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-white/10 my-8">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+
+</body>
+</html>

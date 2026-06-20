@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone &amp; UAV Technical Specs - DJI Camera, Battery, Flight Parameters | TechSpecsHub</title>
+  <meta name="description" content="Complete technical specifications for DJI drones. Camera sensor data, flight time, transmission range, battery specs, motor parameters, and gimbal error codes for Mavic, Air, and Mini series.">
+  <meta name="theme-color" content="#0a1628">
+  <link rel="canonical" href="https://powerspecshub.com/pages/specs/drones.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#0a1628',900:'#0f1d32',800:'#162544',700:'#1e3259'},electric:{300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-electric-400 rounded-lg bg-white/5 transition-all">Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="../tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white"><i data-lucide="search" style="width:0.9rem;height:0.9rem"></i><span class="hidden sm:inline">Search</span></button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5"><i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i></button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/5 text-electric-400"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="../tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded flex-shrink-0"><i data-lucide="x" style="width:1rem;height:1rem"></i></button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Drones &amp; UAV</span></nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden pt-10 pb-16">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-electric-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-electric-600/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-electric-500/10 border border-electric-500/30 rounded-full text-xs font-semibold text-electric-400 mb-6 tracking-wide uppercase">
+        <i data-lucide="plane" style="width:0.85rem;height:0.85rem"></i>Category: Drones &amp; UAV
+      </div>
+      <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl mb-5 leading-[1.1] tracking-tight">
+        Drone &amp; UAV <span class="gradient-text">Technical Specifications</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Camera sensor specs, flight parameters, battery data, and gimbal error codes for every current DJI platform.
+      </p>
+      <div class="inline-grid grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10 text-sm">
+        <div class="bg-navy-950 px-5 sm:px-8 py-5 text-center"><div class="text-xl font-bold gradient-text font-display">6</div><div class="text-xs text-gray-500 mt-1 font-medium">Models Compared</div></div>
+        <div class="bg-navy-950 px-5 sm:px-8 py-5 text-center"><div class="text-xl font-bold gradient-text font-display">8+</div><div class="text-xs text-gray-500 mt-1 font-medium">Gimbal Error Codes</div></div>
+        <div class="bg-navy-950 px-5 sm:px-8 py-5 text-center"><div class="text-xl font-bold gradient-text font-display">June 2026</div><div class="text-xs text-gray-500 mt-1 font-medium">Data Updated</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRONE MODEL COMPARISON -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="glass-card p-6 md:p-8 overflow-hidden">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="layers" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i></div>
+        <h2 class="font-bold text-2xl md:text-3xl">DJI Model Comparison</h2>
+      </div>
+      <div class="overflow-x-auto rounded-xl border border-white/5">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Main Camera</th>
+              <th>Flight Time (min)</th>
+              <th>Transmission Range (km)</th>
+              <th>Battery Type</th>
+              <th>Battery Capacity (Wh)</th>
+              <th>Weight (g)</th>
+              <th>Max Speed (km/h)</th>
+              <th>Operating Temp (&deg;C)</th>
+              <th>Price (USD)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold text-white">DJI Mavic 3 Pro</td>
+              <td>1-inch CMOS Hasselblad 4/3 CMOS &amp; 70mm + 166mm tele</td>
+              <td class="font-mono">43</td>
+              <td class="font-mono">15</td>
+              <td>LiPo HV Intelligent Flight</td>
+              <td class="font-mono">65.52 Wh (15.4V)</td>
+              <td class="font-mono">958</td>
+              <td class="font-mono">75.6</td>
+              <td class="font-mono">-10 to 40</td>
+              <td class="font-mono text-yellow-400">$2,099</td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">DJI Air 3</td>
+              <td>Dual 1-inch CMOS wide + 70mm f/2.8 tele</td>
+              <td class="font-mono">46</td>
+              <td class="font-mono">20</td>
+              <td>LiPo HV Intelligent Flight</td>
+              <td class="font-mono">58.14 Wh (15.4V)</td>
+              <td class="font-mono">720</td>
+              <td class="font-mono">94.5</td>
+              <td class="font-mono">-10 to 40</td>
+              <td class="font-mono text-yellow-400">$1,099</td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">DJI Mini 4 Pro</td>
+              <td>1/1.3-inch CMOS, f/1.7, 48MP</td>
+              <td class="font-mono">34</td>
+              <td class="font-mono">20</td>
+              <td>Li-ion HV Intelligent Flight</td>
+              <td class="font-mono">30.24 Wh (7.38V)</td>
+              <td class="font-mono">249</td>
+              <td class="font-mono">57.6</td>
+              <td class="font-mono">-10 to 40</td>
+              <td class="font-mono text-green-400">$759</td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">DJI Mavic 3 Classic</td>
+              <td>4/3-inch CMOS Hasselblad L2D-20c</td>
+              <td class="font-mono">46</td>
+              <td class="font-mono">15</td>
+              <td>LiPo HV Intelligent Flight</td>
+              <td class="font-mono">65.52 Wh (15.4V)</td>
+              <td class="font-mono">895</td>
+              <td class="font-mono">75.6</td>
+              <td class="font-mono">-10 to 40</td>
+              <td class="font-mono text-yellow-400">$1,599</td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">DJI Avata 2</td>
+              <td>1/1.3-inch CMOS, 48MP, f/2.8</td>
+              <td class="font-mono">21</td>
+              <td class="font-mono">20</td>
+              <td>LiPo HV Intelligent Flight</td>
+              <td class="font-mono">44.28 Wh (14.76V)</td>
+              <td class="font-mono">410</td>
+              <td class="font-mono">60</td>
+              <td class="font-mono">-10 to 40</td>
+              <td class="font-mono text-yellow-400">$999</td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">DJI Mini 3 Pro</td>
+              <td>1/1.3-inch CMOS, f/1.7, 48MP</td>
+              <td class="font-mono">34</td>
+              <td class="font-mono">12</td>
+              <td>Li-ion HV Intelligent Flight</td>
+              <td class="font-mono">2453 mAh (7.38V)</td>
+              <td class="font-mono">249</td>
+              <td class="font-mono">57.6</td>
+              <td class="font-mono">-10 to 40</td>
+              <td class="font-mono text-green-400">$669</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BATTERY TECHNOLOGY -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="glass-card p-6 md:p-10">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="battery-charging" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i></div>
+        <h2 class="font-bold text-2xl md:text-3xl">DJI Battery Technology</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 bg-navy-900/60 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-electric-400">Intelligent Flight Battery (LiPo HV)</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">DJI's standard flight battery is a high-voltage lithium-polymer pack. The "HV" designation means the cell is charged to 4.35 V per cell (or 4.4 V on newer Mini series), compared with 4.20 V for a conventional LiPo. This incremental voltage gain is responsible for roughly 10% of the extra Wh per gram versus non-HV packs.</p>
+          <div class="space-y-2 text-sm font-mono">
+            <div class="flex justify-between"><span class="text-gray-500">Nominal voltage:</span><span class="text-green-400">3.70-3.85 V/cell</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Charge cycles:</span><span class="text-green-400">300-500 typical</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Self-discharge:</span><span class="text-gray-300">~65% to storage after 10 days</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Heating element:</span><span class="text-gray-300">Cold-weather variants only</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Cell pairing:</span><span class="text-gray-300">Required with newer DJI firmware</span></div>
+          </div>
+        </div>
+        <div class="p-6 bg-navy-900/60 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-electric-400">Battery Management &amp; Safety</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">Every DJI flight battery includes an on-board battery management unit that monitors individual cell voltage, temperature, and current. If cells drift out of balance by more than a few millivolts, the battery reports a warning and the flight controller refuses an autonomous flight mode.</p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><span class="text-electric-400 font-semibold">Storage self-discharge</span> &mdash; Batteries auto-discharge to ~60% after 10 days of inactivity to prevent long-term cell swelling.</li>
+            <li><span class="text-electric-400 font-semibold">Self-heating</span> &mdash; Cold-weather battery variants include a thin-film heating element that warms cells to 10&deg;C before flight.</li>
+            <li><span class="text-electric-400 font-semibold">Cell pairing</span> &mdash; Some newer DJI firmware models require battery "pairing" by serial number. Swapping batteries between drones triggers a firmware-level re-check.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Mini 4 Pro Pack</div>
+          <div class="font-mono text-xl text-electric-400">30.24 Wh</div>
+          <div class="text-xs text-gray-500 mt-1">7.38 V &middot; 249 g</div>
+        </div>
+        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Air 3 Pack</div>
+          <div class="font-mono text-xl text-electric-400">58.14 Wh</div>
+          <div class="text-xs text-gray-500 mt-1">15.4 V &middot; 720 g</div>
+        </div>
+        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Mavic 3 Pro Pack</div>
+          <div class="font-mono text-xl text-electric-400">65.52 Wh</div>
+          <div class="text-xs text-gray-500 mt-1">15.4 V &middot; 958 g</div>
+        </div>
+        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5 text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Avata 2 Pack</div>
+          <div class="font-mono text-xl text-electric-400">44.28 Wh</div>
+          <div class="text-xs text-gray-500 mt-1">14.76 V &middot; 410 g</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMERA & GIMBAL DETAILS -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="glass-card p-6 md:p-10">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="camera" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i></div>
+        <h2 class="font-bold text-2xl md:text-3xl">Camera &amp; Gimbal Technical Details</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+        <div class="p-6 bg-navy-900/60 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-electric-400">Hasselblad L2D-20c (Mavic 3 Series)</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">Co-engineered with Hasselblad, the L2D-20c is a 4/3-inch format CMOS sensor with 20 effective megapixels and a native Hasselblad color-science pipeline. The lens is a 24mm-equivalent f/2.8-f/11 aspherical with 8 physical blades for an electronic leaf shutter. ND filters (ND4, ND8, ND16, ND32, ND64) are user-swappable in seconds.</p>
+          <div class="space-y-1 text-sm font-mono">
+            <div class="flex justify-between"><span class="text-gray-500">Sensor size:</span><span>Four Thirds (17.3 x 13 mm)</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Effective pixels:</span><span>20 MP (5280 x 3956)</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">ISO range:</span><span>100-6400 (photo), 100-3200 (video)</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Video modes:</span><span>5.1K / 50 fps, 4K / 120 fps DCI</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Shutter speed:</span><span>8 s - 1/8000 s (electronic)</span></div>
+          </div>
+        </div>
+        <div class="p-6 bg-navy-900/60 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-electric-400">1-inch CMOS (Air 3 Wide)</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">The Air 3 features a dual-camera array. The wide-angle module is a 1-inch type CMOS sensor with an f/1.7 24mm-equivalent lens; the 70mm telephoto is also a 1-inch type CMOS with an f/2.8 lens. Both capture 48-megapixel stills in JPEG+DNG (raw). This is the first DJI consumer drone to carry two 1-inch class sensors.</p>
+          <div class="space-y-1 text-sm font-mono">
+            <div class="flex justify-between"><span class="text-gray-500">Sensor size:</span><span>1-inch type CMOS</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Effective pixels:</span><span>48 MP</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Lens:</span><span>f/1.7 wide + f/2.8 tele (70mm)</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Video:</span><span>4.4K / 60 fps &middot; 2.7K / 100 fps</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">HDR:</span><span>10-bit D-Log M &middot; HLG</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-6 bg-navy-900/60 rounded-xl border border-white/5">
+        <h3 class="font-bold text-lg mb-3 text-electric-400">Gimbal Mechanical Specs</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-sm">
+          <div>
+            <p class="font-semibold mb-2">3-Axis Stabilization</p>
+            <p class="text-gray-300 leading-relaxed">Pitch, roll, and yaw axes each independently stabilized by a brushless motor. Typical angular accuracy on the Mavic 3 gimbal is <span class="text-white font-mono">&plusmn;0.005&deg;</span>, which eliminates the jitter you'd see from mechanical camera mounting.</p>
+          </div>
+          <div>
+            <p class="font-semibold mb-2">Vibration Isolation</p>
+            <p class="text-gray-300 leading-relaxed">The gimbal mounts to the airframe via a multi-ball damping system (four silicone damping balls on Mavic 3, three-ball design on Air 3). This isolates camera sensor from high-frequency motor vibration &mdash; eliminating rolling-shutter artifacts.</p>
+          </div>
+          <div>
+            <p class="font-semibold mb-2">Calibration Requirements</p>
+            <p class="text-gray-300 leading-relaxed">Gimbals must be factory-calibrated for zero-tilt on a perfectly flat reference surface. User-level IMU calibration is required after any hard landing or if the gimbal reports an error. DJI Assistant 2 is required for full gimbal calibration on most models.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIMBAL ERROR CODE TABLE -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="glass-card p-6 md:p-10 border border-red-500/10">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-red-500/15 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="alert-circle" style="width:1.15rem;height:1.15rem;color:#f87171"></i></div>
+        <h2 class="font-bold text-2xl md:text-3xl">DJI Gimbal Error Code Reference</h2>
+      </div>
+      <p class="text-sm text-gray-400 mb-6">These faults are reported by the gimbal controller. They show up as in-app warnings on the DJI Fly / Go 4 apps, or as status codes in DJI Assistant 2. This list covers all current Mavic, Air, and Mini-series platforms.</p>
+
+      <div class="overflow-x-auto rounded-xl border border-white/5">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Error / Fault</th>
+              <th>Likely Cause</th>
+              <th>Repair Action</th>
+              <th>Severity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold text-white">Gimbal Motor Stuck</td>
+              <td>Physical obstruction &mdash; ribbon cable binding the gimbal, dirt in motor bearing, or an impact that bent the gimbal frame.</td>
+              <td>Power off. Visually inspect ribbon cable path. Clean motor housing with compressed air. If a crash is recent, check gimbal frame for subtle bending and replace if necessary.</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">Gimbal Overload</td>
+              <td>The gimbal motor is drawing more current than its firmware limit. Usually a damaged damping ball that is physically pushing on the gimbal assembly, or a weight imbalance from an aftermarket filter.</td>
+              <td>Inspect damping ball set. Replace all four balls as a matched set (don't mix old/new). Remove any non-OEM camera accessories that add mass.</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">Gimbal IMU Calibration Error</td>
+              <td>Gimbal IMU (inertial measurement unit) is reporting values outside factory tolerance. Can be caused by a hard landing, temperature drift, or a gyro failure.</td>
+              <td>Run gimbal + IMU calibration via DJI Assistant 2 on a flat, vibration-free surface (1&deg; level tolerance). If calibration fails repeatedly, the gimbal IMU module has likely failed and must be replaced.</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">Gimbal Pitch Motor Error</td>
+              <td>Pitch-axis motor is not responding to control signals. Motor winding failure, encoder error, or driver IC damage on the gimbal main board.</td>
+              <td>Check gimbal ribbon cable continuity at pitch-axis connector. Firmware refresh first &mdash; if no change, motor replacement is required. On Mavic 3, pitch motor is soldered &mdash; not field-repairable without specialized tools.</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">Gimbal Roll Motor Error</td>
+              <td>Roll-axis motor. Same root causes as pitch &mdash; motor winding, encoder, or driver.</td>
+              <td>Same troubleshooting. Firmware rollback is sometimes effective (DJI has released firmware updates that caused false roll-motor errors on early Mini 3 Pro units).</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">Gimbal Yaw Motor Error</td>
+              <td>Yaw-axis motor. Same failure modes. Note: yaw motor is the highest-current axis and tends to fail first if the drone has been crashed.</td>
+              <td>Same troubleshooting. If any gimbal motor has failed, consider replacing the full gimbal-camera assembly &mdash; individual axis motors share a common driver chip, so a failure in one often precedes failure in another.</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">"Gimbal Initialization Failed"</td>
+              <td>Generic gimbal startup fault. Can be firmware (firmware update did not complete; gimbal stuck in bootloader mode) or hardware (ribbon cable not seated after a teardown).</td>
+              <td>First step: full firmware refresh via DJI Assistant 2 (not OTA). Second step: physically reseat gimbal ribbon cable. Third step: check gimbal power rail (should be 15.4V on most Mavic models &mdash; if under 14V, flight controller is the problem, not the gimbal).</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold text-white">Gimbal Gyroscope Error</td>
+              <td>Gimbal gyroscope sensor is returning out-of-range values. Rarely a firmware issue &mdash; almost always a hardware fault after a crash.</td>
+              <td>Recalibrate. If that fails, gimbal mainboard replacement required. Gyroscope is an integrated IC on the gimbal board, not field-replaceable.</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 p-5 bg-navy-900/60 rounded-xl border border-white/5">
+        <p class="text-sm text-gray-300"><span class="text-electric-400 font-semibold">Note on firmware:</span> DJI has occasionally released firmware that triggers false gimbal errors on certain serial numbers. Before opening the drone, try downgrading one firmware version via DJI Assistant 2 and verify if the error persists. The community wiki at <span class="font-mono text-gray-400">dji-rev.com</span> tracks which firmware versions have gimbal-related regressions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DJI TRANSMISSION SYSTEMS -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="glass-card p-6 md:p-10">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="radio" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i></div>
+        <h2 class="font-bold text-2xl md:text-3xl">DJI Transmission Systems (O4 / O3+ / O3 / Wi-Fi 6)</h2>
+      </div>
+      <p class="text-gray-400 mb-6 text-sm">DJI OcuSync is the proprietary digital video downlink used in all current consumer and professional DJI drones. Each generation trades off maximum range against RF regulatory compliance &mdash; the "max" figures are the FCC ceiling and may not be achievable in your jurisdiction.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div class="p-6 bg-navy-900/60 rounded-xl border border-white/5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-lg text-electric-400">O4</h3>
+            <span class="badge badge-info">Latest</span>
+          </div>
+          <ul class="text-sm text-gray-300 space-y-2">
+            <li><span class="text-gray-500">Max range:</span> <span class="font-mono text-white">20 km (FCC)</span></li>
+            <li><span class="text-gray-500">Bands:</span> <span class="font-mono text-white">2.4 + 5.8 GHz</span></li>
+            <li><span class="text-gray-500">Live view:</span> <span class="font-mono text-white">1080p / 60 fps</span></li>
+            <li><span class="text-gray-500">Latency:</span> <span class="font-mono text-white">&lt;120 ms</span></li>
+            <li><span class="text-gray-500">Used on:</span> <span>Air 3, Mini 4 Pro, Avata 2</span></li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-navy-900/60 rounded-xl border border-white/5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-lg text-electric-400">O3+</h3>
+            <span class="badge badge-info">Pro</span>
+          </div>
+          <ul class="text-sm text-gray-300 space-y-2">
+            <li><span class="text-gray-500">Max range:</span> <span class="font-mono text-white">15 km (FCC)</span></li>
+            <li><span class="text-gray-500">Bands:</span> <span class="font-mono text-white">2.4 + 5.8 GHz</span></li>
+            <li><span class="text-gray-500">Live view:</span> <span class="font-mono text-white">1080p / 60 fps</span></li>
+            <li><span class="text-gray-500">Latency:</span> <span class="font-mono text-white">&lt;120 ms</span></li>
+            <li><span class="text-gray-500">Used on:</span> <span>Mavic 3 Pro, Mavic 3 Classic</span></li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-navy-900/60 rounded-xl border border-white/5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-lg text-electric-400">O3</h3>
+            <span class="badge badge-ok">Mid-tier</span>
+          </div>
+          <ul class="text-sm text-gray-300 space-y-2">
+            <li><span class="text-gray-500">Max range:</span> <span class="font-mono text-white">12 km (FCC)</span></li>
+            <li><span class="text-gray-500">Bands:</span> <span class="font-mono text-white">2.4 + 5.8 GHz</span></li>
+            <li><span class="text-gray-500">Live view:</span> <span class="font-mono text-white">1080p / 60 fps</span></li>
+            <li><span class="text-gray-500">Latency:</span> <span class="font-mono text-white">&lt;120 ms</span></li>
+            <li><span class="text-gray-500">Used on:</span> <span>Mini 3 Pro (original release)</span></li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-navy-900/60 rounded-xl border border-white/5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-lg text-electric-400">Wi-Fi 6</h3>
+            <span class="badge badge-ok">Entry-level</span>
+          </div>
+          <ul class="text-sm text-gray-300 space-y-2">
+            <li><span class="text-gray-500">Max range:</span> <span class="font-mono text-white">~500 m (typical)</span></li>
+            <li><span class="text-gray-500">Standard:</span> <span class="font-mono text-white">802.11ax</span></li>
+            <li><span class="text-gray-500">Live view:</span> <span class="font-mono text-white">720p / 30 fps</span></li>
+            <li><span class="text-gray-500">Latency:</span> <span class="font-mono text-white">200-350 ms</span></li>
+            <li><span class="text-gray-500">Used on:</span> <span>Budget/entry models, Tello</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLIGHT CONTROLLER WARNINGS -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="glass-card p-6 md:p-10">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="alert-triangle" style="width:1.15rem;height:1.15rem;color:#fbbf24"></i></div>
+        <h2 class="font-bold text-2xl md:text-3xl">Flight Controller Warnings &amp; Error Messages</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
+          <h3 class="font-semibold mb-2 text-yellow-400">Compass Error</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">Compass is reading outside the expected magnetic field range for its current location. Almost always caused by flying too close to metal structures (rebar in concrete, steel bridges, cars), or a calibration that didn't include a full rotation.</p>
+          <p class="text-sm text-gray-400 mt-3"><span class="text-electric-400 font-semibold">Fix:</span> Move at least 5 m away from any large metal object. Run a fresh compass calibration (figure-8 rotation in DJI Fly). If the warning persists after two consecutive re-calibrations, the compass module is likely damaged and must be replaced.</p>
+        </div>
+
+        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
+          <h3 class="font-semibold mb-2 text-yellow-400">IMU Error</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">Inertial measurement unit (gyro + accelerometer) is reporting drift or out-of-range values. IMUs on DJI platforms undergo a 6-point calibration at zero motion; any hard landing shifts the mechanical zero-point and forces re-calibration.</p>
+          <p class="text-sm text-gray-400 mt-3"><span class="text-electric-400 font-semibold">Fix:</span> Place drone on a known-flat surface (bubble level recommended &mdash; must be within 1&deg;). Run IMU calibration via DJI Assistant 2. Do not perform this in-app only &mdash; Assistant 2 runs a longer, more thorough test sequence.</p>
+        </div>
+
+        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
+          <h3 class="font-semibold mb-2 text-red-400">ESC Error</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">Electronic speed controller is not responding, or is reporting a motor-phase short. The flight controller will refuse to arm if any ESC reports an error. This is a pre-flight safety check &mdash; the drone is correctly refusing to take off.</p>
+          <p class="text-sm text-gray-400 mt-3"><span class="text-electric-400 font-semibold">Fix:</span> Inspect motor wiring and propeller hub. If visible burn mark on motor bell, replace motor. If no physical damage, reflash ESC firmware via DJI Assistant 2 (each ESC has its own firmware blob). If still failing, the ESC module on the main flight controller board has failed.</p>
+        </div>
+
+        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
+          <h3 class="font-semibold mb-2 text-yellow-400">Battery Communication Error</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">The flight controller is losing SMBus/I2C communication with the battery's internal management unit. Very common on drones flown in high-dust environments &mdash; the gold-plated battery contacts accumulate an insulating layer of dust.</p>
+          <p class="text-sm text-gray-400 mt-3"><span class="text-electric-400 font-semibold">Fix:</span> Clean battery contacts on both the drone and battery side with 99% isopropyl alcohol and a cotton swab. Do not use anything abrasive. If the warning persists, check the battery's firmware &mdash; DJI has released battery-only firmware updates that fix communication glitches.</p>
+        </div>
+
+        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
+          <h3 class="font-semibold mb-2 text-red-400">Battery Over-Discharge</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">One or more cells in the battery pack has dropped below 3.0 V (the safe discharge floor for DJI's LiPo HV chemistry). This is reported mid-flight and the drone will immediately enter auto-landing mode regardless of remaining "time-to-home" calculation.</p>
+          <p class="text-sm text-gray-400 mt-3"><span class="text-electric-400 font-semibold">Fix:</span> On the ground, connect the charger and verify cell voltage through the DJI app. If any cell is below 2.5 V, the battery is damaged and must not be flown again &mdash; the chemistry has begun irreversible degradation. Cells between 2.5 and 3.0 V may be recoverable with a slow "recondition" charge at 0.2C for two hours.</p>
+        </div>
+
+        <div class="p-5 bg-navy-900/60 rounded-xl border border-white/5">
+          <h3 class="font-semibold mb-2 text-red-400">Battery Temperature Too High</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">Battery pack internal temperature is above the safe-flight threshold &mdash; typically 65-70&deg;C depending on model. Usually caused by flying in direct summer sun, or using a battery that just finished a previous flight without adequate cooling time.</p>
+          <p class="text-sm text-gray-400 mt-3"><span class="text-electric-400 font-semibold">Fix:</span> Land immediately. Allow 15-20 minutes of passive cooling at ambient temperature before attempting another flight. In winter, ironically, over-temperature is rare &mdash; under-temperature (below -10&deg;C) is the more common thermal fault, and requires the cold-weather battery variant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED LINKS -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <h2 class="font-bold text-2xl md:text-3xl mb-6">Related Resources</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <a href="../error-code-db.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group bg-gradient-to-br from-navy-900 to-navy-800/60 border border-red-500/10">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-10 h-10 bg-red-500/15 rounded-lg flex items-center justify-center"><i data-lucide="alert-circle" style="width:1.15rem;height:1.15rem;color:#f87171"></i></div>
+          <i data-lucide="arrow-right" style="width:1rem;height:1rem;color:#6b7280"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400">Error Code Database</h3>
+        <p class="text-sm text-gray-400">Full database of fault codes for drones, power stations, hybrid vehicles and smart home devices.</p>
+      </a>
+      <a href="../brand-index.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-10 h-10 bg-electric-500/15 rounded-lg flex items-center justify-center"><i data-lucide="building-2" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i></div>
+          <i data-lucide="arrow-right" style="width:1rem;height:1rem;color:#6b7280"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400">Brand Index A-Z</h3>
+        <p class="text-sm text-gray-400">Every manufacturer covered on TechSpecsHub, organized alphabetically with links to their model pages.</p>
+      </a>
+      <a href="outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-10 h-10 bg-electric-500/15 rounded-lg flex items-center justify-center"><i data-lucide="battery-charging" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i></div>
+          <i data-lucide="arrow-right" style="width:1rem;height:1rem;color:#6b7280"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400">Outdoor Power Stations</h3>
+        <p class="text-sm text-gray-400">Complete technical specifications, error codes, and real-world test data for portable solar generators.</p>
+      </a>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i></div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="drones.html" class="text-electric-400 hover:text-electric-300">Drones &amp; UAV</a></li>
+            <li><a href="smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+            <li><a href="../tools/best-multimeters-2026.html" class="text-gray-400 hover:text-electric-400">Best Multimeters 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+            <li><a href="../privacy-policy.html" class="text-gray-400 hover:text-electric-400">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

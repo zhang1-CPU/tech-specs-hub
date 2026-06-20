@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Printer Technical Specs - Build Volume, Nozzle, Speed, and Firmware | TechSpecsHub</title>
+  <meta name="description" content="Technical specifications for popular FDM and resin 3D printers. Build volume, nozzle diameter, layer height, print speed, temperature limits, firmware versions, and common error code troubleshooting.">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="3D Printer Technical Specifications">
+  <meta property="og:description" content="FDM and resin printer specs. Build volumes, nozzle diameters, hot-end temperatures, bed temperatures, and firmware — the engineering data for choosing and tuning a printer.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    .table-scroll { overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(15, 29, 50, 0.4); }
+    h2 { scroll-margin-top: 100px; }
+    h3 { scroll-margin-top: 100px; }
+  </style>
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+
+          <!-- Categories dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <!-- Tools & Data dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="../tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <!-- Right: Search + Mobile toggle -->
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="../tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH MODAL -->
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Specs</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">3D Printers</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative pt-6 pb-16">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-[400px] h-[400px] bg-electric-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-electric-500/10 border border-electric-500/30 rounded-full text-xs font-semibold text-electric-400 mb-6 tracking-wide uppercase">
+        <i data-lucide="box" style="width:0.85rem;height:0.85rem"></i>
+        3D Printing Category &middot; Updated June 2026
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-[1.1] tracking-tight">
+        3D Printer <span class="gradient-text">Specifications</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+        FDM and resin printer specs. Build volumes, nozzle diameters, hot-end temperatures, bed temperatures, and firmware — the engineering data for choosing and tuning a printer.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-10">
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">7</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">FDM Models</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">4</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Resin Models</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">8+</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Fault Patterns</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">500</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">mm/s (Fastest)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FDM PRINTER COMPARISON TABLE -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <h2 class="font-bold text-2xl md:text-3xl mb-2">FDM Printer Comparison</h2>
+        <p class="text-gray-400 text-sm">Cartesian, CoreXY, and enclosed IDEX printers. Scroll horizontally on mobile.</p>
+      </div>
+      <span class="badge badge-info"><i data-lucide="check-circle" style="width:0.8rem;height:0.8rem"></i>OEM Verified</span>
+    </div>
+
+    <div class="table-scroll">
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Build Volume (mm)</th>
+            <th>Nozzle (mm options)</th>
+            <th>Layer Height (&mu;m)</th>
+            <th>Max Speed (mm/s)</th>
+            <th>Hot-End Temp (&deg;C)</th>
+            <th>Bed Temp (&deg;C)</th>
+            <th>Enclosed</th>
+            <th>Filament</th>
+            <th>Auto Level</th>
+            <th>Firmware</th>
+            <th>Price (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-semibold">Bambu Lab X1C Carbon</td>
+            <td class="font-mono">256 &times; 256 &times; 256</td>
+            <td class="font-mono">0.2 / 0.4 / 0.6 / 0.8 (hardened steel)</td>
+            <td class="font-mono">50 – 320</td>
+            <td class="font-mono">500 mm/s</td>
+            <td class="font-mono">300&deg;C</td>
+            <td class="font-mono">120&deg;C</td>
+            <td class="font-mono text-green-400">Yes</td>
+            <td>PLA, PETG, ABS, ASA, PA, PC, TPU</td>
+            <td class="font-mono text-green-400">Lidar &amp; Bed Scan</td>
+            <td>Closed-source (Bambu)</td>
+            <td class="font-mono">$1,199</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Prusa MK4</td>
+            <td class="font-mono">250 &times; 210 &times; 220</td>
+            <td class="font-mono">0.25 / 0.4 / 0.6 / 0.8 (brass, replaceable)</td>
+            <td class="font-mono">50 – 300</td>
+            <td class="font-mono">500 mm/s (Input Shaping)</td>
+            <td class="font-mono">300&deg;C</td>
+            <td class="font-mono">120&deg;C</td>
+            <td class="font-mono text-yellow-400">Optional enclosure</td>
+            <td>PLA, PETG, ABS, ASA, PA, TPU</td>
+            <td class="font-mono text-green-400">Load Cell / PINDA</td>
+            <td>Prusa Firmware (Marlin fork)</td>
+            <td class="font-mono">$1,099 (Kit: $799)</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Bambu Lab P1P</td>
+            <td class="font-mono">256 &times; 256 &times; 256</td>
+            <td class="font-mono">0.2 / 0.4 / 0.6 / 0.8 (hardened steel)</td>
+            <td class="font-mono">80 – 320</td>
+            <td class="font-mono">500 mm/s</td>
+            <td class="font-mono">300&deg;C</td>
+            <td class="font-mono">110&deg;C</td>
+            <td class="font-mono text-yellow-400">Partial/Aftermarket</td>
+            <td>PLA, PETG, ABS, ASA, PA, TPU</td>
+            <td class="font-mono text-green-400">Bed Scan (BLTouch-style)</td>
+            <td>Closed-source (Bambu)</td>
+            <td class="font-mono">$599</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Creality K1</td>
+            <td class="font-mono">220 &times; 220 &times; 240</td>
+            <td class="font-mono">0.4 / 0.6 / 0.8 (hardened steel)</td>
+            <td class="font-mono">80 – 320</td>
+            <td class="font-mono">600 mm/s (marketing; ~300 real)</td>
+            <td class="font-mono">300&deg;C</td>
+            <td class="font-mono">110&deg;C</td>
+            <td class="font-mono text-green-400">Yes</td>
+            <td>PLA, PETG, ABS, TPU</td>
+            <td class="font-mono text-green-400">CR-Touch / Klipper</td>
+            <td>Creality Klipper (fork)</td>
+            <td class="font-mono">$399</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Creality Ender 3 V3 KE</td>
+            <td class="font-mono">220 &times; 220 &times; 240</td>
+            <td class="font-mono">0.2 / 0.4 / 0.6 / 0.8</td>
+            <td class="font-mono">80 – 320</td>
+            <td class="font-mono">500 mm/s</td>
+            <td class="font-mono">300&deg;C</td>
+            <td class="font-mono">110&deg;C</td>
+            <td class="font-mono text-red-400">No</td>
+            <td>PLA, PETG, TPU (ABS poor w/o enclosure)</td>
+            <td class="font-mono text-green-400">CR-Touch</td>
+            <td>Creality Klipper</td>
+            <td class="font-mono">$299</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Prusa Mini+</td>
+            <td class="font-mono">180 &times; 180 &times; 180</td>
+            <td class="font-mono">0.25 / 0.4 / 0.6 (E3D V6-style)</td>
+            <td class="font-mono">50 – 300</td>
+            <td class="font-mono">200 mm/s</td>
+            <td class="font-mono">300&deg;C</td>
+            <td class="font-mono">110&deg;C</td>
+            <td class="font-mono text-red-400">No</td>
+            <td>PLA, PETG, ABS, ASA, TPU</td>
+            <td class="font-mono text-green-400">SuperPINDA</td>
+            <td>Prusa Firmware</td>
+            <td class="font-mono">$429 (Kit: $349)</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">AnkerMake M5</td>
+            <td class="font-mono">220 &times; 220 &times; 250</td>
+            <td class="font-mono">0.4 / 0.6 / 0.8 (hardened steel)</td>
+            <td class="font-mono">80 – 320</td>
+            <td class="font-mono">500 mm/s</td>
+            <td class="font-mono">300&deg;C</td>
+            <td class="font-mono">110&deg;C</td>
+            <td class="font-mono text-green-400">Yes</td>
+            <td>PLA, PETG, ABS, ASA, TPU</td>
+            <td class="font-mono text-green-400">PowerBoost / IR Sensor</td>
+            <td>Custom (Marlin-based)</td>
+            <td class="font-mono">$699</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Snapmaker Artisan</td>
+            <td class="font-mono">400 &times; 400 &times; 400</td>
+            <td class="font-mono">0.4 / 0.6 (dual-extrusion capable)</td>
+            <td class="font-mono">50 – 300</td>
+            <td class="font-mono">300 mm/s</td>
+            <td class="font-mono">320&deg;C</td>
+            <td class="font-mono">110&deg;C</td>
+            <td class="font-mono text-green-400">Yes + laser + CNC</td>
+            <td>PLA, PETG, ABS, ASA, PA, PC, TPU</td>
+            <td class="font-mono text-green-400">Auto-calibration</td>
+            <td>Snapmaker custom (Marlin)</td>
+            <td class="font-mono">$2,199</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- RESIN / SLA PRINTER COMPARISON TABLE -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <h2 class="font-bold text-2xl md:text-3xl mb-2">Resin / SLA Printer Comparison</h2>
+        <p class="text-gray-400 text-sm">LCD masked stereolithography (MSLA) printers. Resin fumes require ventilation; wear nitrile gloves when handling.</p>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Build Volume (mm)</th>
+            <th>XY Resolution (&mu;m)</th>
+            <th>Layer Height (&mu;m)</th>
+            <th>Print Speed (mm/hr typical)</th>
+            <th>LCD Screen Size</th>
+            <th>Light Source</th>
+            <th>Resin Compatibility</th>
+            <th>Price (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-semibold">Formlabs Form 4</td>
+            <td class="font-mono">200 &times; 200 &times; 300</td>
+            <td class="font-mono">25 (12k monochrome)</td>
+            <td class="font-mono">50 – 300</td>
+            <td class="font-mono">100 mm/hr / High Speed: 500</td>
+            <td class="font-mono">9-inch 12K monochrome LCD</td>
+            <td>UV LED array (405 nm)</td>
+            <td>Formlabs Standard, Tough, Draft, Flexible, Engineering</td>
+            <td class="font-mono">$1,999</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Phrozen Sonic Mighty 14K</td>
+            <td class="font-mono">220 &times; 123 &times; 235</td>
+            <td class="font-mono">22 (14K monochrome)</td>
+            <td class="font-mono">10 – 300</td>
+            <td class="font-mono">120 mm/hr (High Speed: 300)</td>
+            <td class="font-mono">14-inch 14K monochrome</td>
+            <td>Parallel UV LED Matrix (405 nm)</td>
+            <td>Any 405 nm resin — Standard, Water-Washable, ABS-like, Ceramic</td>
+            <td class="font-mono">$649</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Anycubic Photon Mono X 6Ks</td>
+            <td class="font-mono">196 &times; 122 &times; 200</td>
+            <td class="font-mono">34 (6K monochrome)</td>
+            <td class="font-mono">50 – 300</td>
+            <td class="font-mono">90 mm/hr</td>
+            <td class="font-mono">9.25-inch 6K monochrome</td>
+            <td>UV LED (405 nm)</td>
+            <td>Standard 405 nm resins</td>
+            <td class="font-mono">$399</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Elegoo Saturn 3 Ultra</td>
+            <td class="font-mono">218.8 &times; 122.9 &times; 260</td>
+            <td class="font-mono">30 (12K monochrome)</td>
+            <td class="font-mono">10 – 300</td>
+            <td class="font-mono">100 – 150 mm/hr</td>
+            <td class="font-mono">10-inch 12K monochrome</td>
+            <td>UV LED (405 nm)</td>
+            <td>Standard, Water-Washable, ABS-like resins</td>
+            <td class="font-mono">$549</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Creality Halot-Mage Pro</td>
+            <td class="font-mono">228 &times; 128 &times; 230</td>
+            <td class="font-mono">30 (8K monochrome)</td>
+            <td class="font-mono">50 – 300</td>
+            <td class="font-mono">80 mm/hr</td>
+            <td class="font-mono">10.3-inch 8K</td>
+            <td>Integral UV LED (405 nm)</td>
+            <td>Standard 405 nm resins</td>
+            <td class="font-mono">$349</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-info mt-6">
+      <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0"></i>
+      <div class="text-sm">
+        <strong>Note on Bambu Lab A1 Mini:</strong> The A1 Mini is a FDM printer, not resin. It has a 180 &times; 180 &times; 180 mm build volume, a 0.4 mm hardened-steel nozzle, and supports speeds up to 500 mm/s. Often confused as a resin printer due to its compact form factor — it is not.
+      </div>
+    </div>
+  </section>
+
+  <!-- FILAMENT COMPATIBILITY BY TEMPERATURE -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="glass-card p-8 md:p-10">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="flame" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-2xl md:text-3xl mb-2">Filament Compatibility by Temperature</h2>
+          <p class="text-gray-400 text-sm">Not all hot-ends are created equal. Brass nozzles degrade above 280&deg;C on abrasive materials; engineering polymers require all-metal hot-ends and enclosures.</p>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Filament</th>
+              <th>Hot-End Temp (&deg;C)</th>
+              <th>Bed Temp (&deg;C)</th>
+              <th>Enclosure Required</th>
+              <th>Nozzle Material</th>
+              <th>Typical Applications</th>
+              <th>Drying Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold">PLA</td>
+              <td class="font-mono">190 – 220</td>
+              <td class="font-mono">60</td>
+              <td class="text-gray-400">No</td>
+              <td>Brass (any)</td>
+              <td>General parts, prototyping, hobby</td>
+              <td class="text-gray-400">Optional (hygroscopic but mild)</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">PETG</td>
+              <td class="font-mono">220 – 250</td>
+              <td class="font-mono">70 – 80</td>
+              <td class="text-gray-400">No (beneficial)</td>
+              <td>Brass / hardened steel</td>
+              <td>Functional parts, food-safe containers, outdoor brackets</td>
+              <td class="font-mono text-yellow-400">Yes — strongly hygroscopic</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">ABS</td>
+              <td class="font-mono">230 – 260</td>
+              <td class="font-mono">100 – 110</td>
+              <td class="text-red-400 font-semibold">REQUIRED (prevents layer separation &amp; warping)</td>
+              <td>Brass</td>
+              <td>Industrial parts, enclosures, high-temperature applications</td>
+              <td class="font-mono text-yellow-400">Yes</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">ASA</td>
+              <td class="font-mono">230 – 260</td>
+              <td class="font-mono">100 – 110</td>
+              <td class="text-yellow-400">Recommended</td>
+              <td>Brass</td>
+              <td>Outdoor UV-stable parts — similar to ABS but weather-resistant</td>
+              <td class="font-mono text-yellow-400">Yes</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">TPU / TPE</td>
+              <td class="font-mono">210 – 230</td>
+              <td class="font-mono">60 – 80 (flex direct drive recommended)</td>
+              <td class="text-gray-400">No</td>
+              <td>Brass</td>
+              <td>Flexible mounts, gaskets, shock-absorbing parts, phone cases</td>
+              <td class="font-mono text-yellow-400">Yes (very hygroscopic)</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Nylon (PA)</td>
+              <td class="font-mono">240 – 270</td>
+              <td class="font-mono">90</td>
+              <td class="text-yellow-400">Recommended</td>
+              <td>Hardened steel (abrasive)</td>
+              <td>High-wear parts, gears, tool holders, mechanical assemblies</td>
+              <td class="font-mono text-yellow-400">Yes — extremely hygroscopic</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Polycarbonate (PC)</td>
+              <td class="font-mono">270 – 310</td>
+              <td class="font-mono">110</td>
+              <td class="text-red-400 font-semibold">REQUIRED — all-metal hot-end essential</td>
+              <td>Hardened steel (all-metal hot-end)</td>
+              <td>High-impact, translucent engineering-grade parts</td>
+              <td class="font-mono text-yellow-400">Yes</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">PEEK / PEKK</td>
+              <td class="font-mono">350 – 420</td>
+              <td class="font-mono">120 – 160 (chamber heated too)</td>
+              <td class="text-red-400 font-semibold">REQUIRED — industrial printer only</td>
+              <td>Specialized (high-temperature hardened)</td>
+              <td>Aerospace, medical implants, industrial tooling — FDA/ISO-grade forms available</td>
+              <td class="font-mono text-yellow-400">Yes, extensively</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOT-END TECHNOLOGY -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Hot-End Technology</h2>
+      <p class="text-gray-400 max-w-3xl mx-auto">The business end of your printer. Nozzle material, melt-zone design, and heater wattage determine maximum speed and polymer compatibility.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="disc" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Brass Nozzle</h3>
+        <p class="text-sm text-gray-400 mb-4">The industry standard. Excellent thermal conductivity, cheap, easy to machine. Wears rapidly on abrasive filaments (carbon-fiber, glow-in-the-dark, metal-filled).</p>
+        <ul class="space-y-1 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80"></i>PLA, PETG, ABS, TPU</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80"></i>Low cost (~$2-5)</li>
+          <li class="flex items-center gap-2"><i data-lucide="x" style="width:0.8rem;height:0.8rem;color:#f87171"></i>Wears on abrasive filaments</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="shield" style="width:1.3rem;height:1.3rem;color:#a78bfa"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Hardened Steel Nozzle</h3>
+        <p class="text-sm text-gray-400 mb-4">Required for carbon-fiber reinforced, glow-in-the-dark, metal-filled, or other abrasive composites. Bambu Lab ships hardened-steel nozzles standard on X1C and P1P. Lower thermal conductivity — run ~10&deg;C hotter.</p>
+        <ul class="space-y-1 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80"></i>Carbon-fiber, metal-fill, glow</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80"></i>Long lifespan</li>
+          <li class="flex items-center gap-2"><i data-lucide="alert-triangle" style="width:0.8rem;height:0.8rem;color:#fbbf24"></i>Slightly lower conductivity</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="zap" style="width:1.3rem;height:1.3rem;color:#fbbf24"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Volcano / CHT High-Flow</h3>
+        <p class="text-sm text-gray-400 mb-4">Larger melt zone (longer heat-break) enables substantially higher volumetric flow rate. CHT ("Clog-free High-Temperature") variants feature multiple internal melt channels. Key enabler of 300-500 mm/s printing speeds.</p>
+        <ul class="space-y-1 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80"></i>High volumetric output</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80"></i>Fast draft prints</li>
+          <li class="flex items-center gap-2"><i data-lucide="alert-triangle" style="width:0.8rem;height:0.8rem;color:#fbbf24"></i>Requires tuned retraction</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="rotate-ccw" style="width:1.3rem;height:1.3rem;color:#4ade80"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Quick-Change Systems</h3>
+        <p class="text-sm text-gray-400 mb-4">E3D Revo, Bambu Lab hardened-steel quick-change, and Prusa MK4 nozzle-exchanger. Zero-tool hot-swappable at print temperature. Enables mid-print nozzle changes on multi-material systems.</p>
+        <ul class="space-y-1 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80"></i>Zero-tool hot-swap</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80"></i>All-metal capable</li>
+          <li class="flex items-center gap-2"><i data-lucide="alert-triangle" style="width:0.8rem;height:0.8rem;color:#fbbf24"></i>Higher upfront cost</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BED SURFACE TECHNOLOGY -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Bed Surface Technology</h2>
+      <p class="text-gray-400 max-w-3xl mx-auto">First-layer adhesion is make-or-break. The right surface material, combined with correct bed temperature, eliminates warping and elephant-foot issues.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="layers" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">PEI Spring Steel Sheet</h3>
+        <p class="text-sm text-gray-400 mb-4">The current industry standard. Polyetherimide-coated spring steel sheet on a magnetic base. Flexible sheet allows easy part removal by bending once cool. Textured and smooth variants available.</p>
+        <p class="text-xs text-gray-500">Best for: PLA, PETG, ABS, ASA, TPU, Nylon</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="square" style="width:1.3rem;height:1.3rem;color:#a78bfa"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Glass (Borosilicate)</h3>
+        <p class="text-sm text-gray-400 mb-4">Traditional, cheap, smooth. PLA adhesion degrades over time and benefits from hairspray, glue stick, or ABS slurry as a release agent. Brittle and prone to thermal shock if heated unevenly.</p>
+        <p class="text-xs text-gray-500">Best for: PLA, PETG (with adhesion aid)</p>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="grip" style="width:1.3rem;height:1.3rem;color:#fbbf24"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">BuildTak / Textured Plates</h3>
+        <p class="text-sm text-gray-400 mb-4">Textured PEI or proprietary BuildTak surface. Excellent ABS adhesion and part release without additional aid. Some newer printers include magnetic beds with interchangeable textured/smooth plates.</p>
+        <p class="text-xs text-gray-500">Best for: ABS, ASA, draft prints</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRMWARE LANDSCAPE -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="glass-card p-8 md:p-10 bg-gradient-to-br from-purple-900/10 to-navy-900/40">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="w-11 h-11 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="microchip" style="width:1.3rem;height:1.3rem;color:#a78bfa"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-2xl md:text-3xl mb-2">Firmware Landscape</h2>
+          <p class="text-gray-400 text-sm">Klipper and Marlin dominate consumer printers. Firmware controls motion planning, input shaping, pressure advance, thermal safety, and more.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="bg-navy-900/60 p-5 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-white flex items-center gap-2"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>Klipper</h3>
+          <p class="text-sm text-gray-400 mb-3">Offloads motion planning to a Raspberry Pi (or similar host) over USB. Achieves 300-500 mm/s without quality loss on well-tuned machines thanks to Input Shaping. All major fast printers (Bambu, K1, etc.) run Klipper or Klipper-derived firmware.</p>
+          <ul class="space-y-1 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;margin-top:3px"></i>Fastest consumer motion planning</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;margin-top:3px"></i>Built-in Input Shaping &amp; Pressure Advance</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;margin-top:3px"></i>Excellent community documentation</li>
+            <li class="flex items-start gap-2"><i data-lucide="alert-triangle" style="width:0.8rem;height:0.8rem;color:#fbbf24;margin-top:3px"></i>Requires host computer (Pi)</li>
+          </ul>
+        </div>
+
+        <div class="bg-navy-900/60 p-5 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-white flex items-center gap-2"><i data-lucide="server" style="width:1rem;height:1rem;color:#4ade80"></i>Marlin</h3>
+          <p class="text-sm text-gray-400 mb-3">The historical industry standard. Runs entirely on the printer's MCU (8-bit or 32-bit). Widest printer support and the most tutorials/guides online. Speeds top out around 60-120 mm/s for comparable quality to Klipper.</p>
+          <ul class="space-y-1 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;margin-top:3px"></i>Runs on printer MCU — no host required</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;margin-top:3px"></i>Widest printer support</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;margin-top:3px"></i>Linear Advance equivalent feature</li>
+            <li class="flex items-start gap-2"><i data-lucide="alert-triangle" style="width:0.8rem;height:0.8rem;color:#fbbf24;margin-top:3px"></i>Slower — lacks input shaping acceleration</li>
+          </ul>
+        </div>
+
+        <div class="bg-navy-900/60 p-5 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-white flex items-center gap-2"><i data-lucide="box" style="width:1rem;height:1rem;color:#fbbf24"></i>RepRap Firmware (RRF)</h3>
+          <p class="text-sm text-gray-400 mb-3">Typically runs on Duet electronics boards. Advanced kinematics support (delta, CoreXY, IDEX). Used extensively on industrial and advanced hobby printers. Object-model-based configuration.</p>
+          <ul class="space-y-1 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;margin-top:3px"></i>Excellent kinematics support</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;margin-top:3px"></i>Industrial printer use</li>
+            <li class="flex items-start gap-2"><i data-lucide="alert-triangle" style="width:0.8rem;height:0.8rem;color:#fbbf24;margin-top:3px"></i>Smaller community</li>
+          </ul>
+        </div>
+
+        <div class="bg-navy-900/60 p-5 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-white flex items-center gap-2"><i data-lucide="lock" style="width:1rem;height:1rem;color:#f87171"></i>Prusa / Bambu Closed-Source</h3>
+          <p class="text-sm text-gray-400 mb-3">Prusa ships a Marlin fork (mostly open-source). Bambu Lab ships closed-source custom firmware with proprietary remote-print infrastructure and AI failure detection. Fastest automatic printing experience but a locked ecosystem.</p>
+          <ul class="space-y-1 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;margin-top:3px"></i>Best out-of-box experience</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;margin-top:3px"></i>Automatic bed meshing &amp; first-layer monitoring</li>
+            <li class="flex items-start gap-2"><i data-lucide="alert-triangle" style="width:0.8rem;height:0.8rem;color:#fbbf24;margin-top:3px"></i>Locked ecosystem / proprietary firmware</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMON 3D PRINTER ERROR CODES / FAULTS -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Common 3D Printer Error Codes &amp; Faults</h2>
+      <p class="text-gray-400 max-w-3xl mx-auto">The recurring problems every printer owner will face, organized from most dangerous to most annoying.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-5 bg-gradient-to-br from-red-950/20 to-navy-900/20">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-red-400 font-bold">Thermal Runaway</code>
+          <span class="badge badge-critical">Dangerous</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Hot-end or bed temperature not responding to heater output</h3>
+        <p class="text-sm text-gray-400 mb-3"><strong class="text-white">What it means:</strong> The firmware has detected that the target temperature is not being reached, or (more dangerously) the temperature keeps rising without being commanded. This is the printer's last line of defense against a catastrophic fire.</p>
+        <p class="text-sm text-gray-400 mb-3"><strong class="text-white">Root causes:</strong> Thermistor disconnected / loose connector; heater cartridge failure / loose; shorted MOSFET; PID calibration wildly off.</p>
+        <p class="text-sm text-gray-400"><strong class="text-white">Response:</strong> Printer MUST stop. Do not bypass this protection. Inspect wiring continuity at thermistor (multimeter resistance check) and heater cartridge. Replace damaged components.</p>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">Heating Failed</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Hot-end or bed not reaching target temp within timeout</h3>
+        <p class="text-sm text-gray-400 mb-3">Check wiring for loose connections at hot-end heater cartridge and bed heater pads. Verify heater resistance with a multimeter (nominal values are printed on the cartridge — typically 12V/40W or 24V/50W). A reading of open-loop (&infin;) means the cartridge has failed.</p>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">MINTEMP / MAXTEMP</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Thermistor reading outside safe range</h3>
+        <p class="text-sm text-gray-400 mb-3">Almost always a wiring issue. MINTEMP indicates a disconnected thermistor (reads -15 or below); MAXTEMP indicates a shorted thermistor or short cable. Check wiring routing and connectors. Inspect near hot-end where cables flex — fatigue failure is common.</p>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">Bed Leveling Failed</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">CR-Touch / BLTouch / inductive probe not triggering</h3>
+        <p class="text-sm text-gray-400 mb-3">Check probe Z-offset (may be too high or too low). Check for debris, dust, or cured filament on the probe tip. Verify wiring. For inductive probes, confirm that the build surface is metallic-compatible (PEI on steel = fine; glass alone = not detected). Recalibrate Z-offset after any nozzle change.</p>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">Filament Jam / Clog</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Nozzle clog or extruder skipping</h3>
+        <p class="text-sm text-gray-400 mb-3"><strong>Cold-pull procedure (recommended):</strong> Heat nozzle to ~15&deg;C above filament printing temp. Pull filament quickly by hand (or via LCD unload). The tip should be clean and conical. Repeat. Inspect the PTFE tube in the hot-end — if degraded or blackened, replace. Do not run abrasive filament through brass nozzles long-term.</p>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">Stepper Motor Skipping Steps</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Motor losing position during motion</h3>
+        <p class="text-sm text-gray-400 mb-3">Causes: motor driver current (Vref) too low; mechanical binding on linear rails / belts; print speed or acceleration too aggressive for the machine's mass. Solutions: increase Vref (carefully — too high destroys motors/drivers); lubricate rails; reduce speeds; verify belt tension.</p>
+      </div>
+
+      <div class="glass-card p-5 bg-gradient-to-br from-yellow-950/20 to-navy-900/20">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">First Layer Not Sticking</code>
+          <span class="badge badge-warning">&numero;1 Beginner Problem</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">The number one cause of abandoned prints</h3>
+        <p class="text-sm text-gray-400 mb-3">Nearly always one of: bed not level (re-do mesh leveling); Z-offset too high (nozzle too far from bed — filament droops instead of pressing); bed temperature incorrect (too cold for the filament); bed surface dirty (wipe with IPA before every print). Less commonly: nozzle too close causes "elephant foot" — nozzle scraping first layer.</p>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">Layer Separation / Delamination</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Layers pulling apart after print</h3>
+        <p class="text-sm text-gray-400 mb-3">Print temperature too low; part-cooling fan too aggressive; filament wet (drying required — PETG, nylon, TPU are hygroscopic). ABS and high-temperature engineering polymers REQUIRE an enclosure for reliable layer adhesion. Dry filament in a filament dryer before printing.</p>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">Stringing / Oozing</code>
+          <span class="badge badge-warning">Quality</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Filament strands between features</h3>
+        <p class="text-sm text-gray-400 mb-3">Retraction distance too low; travel speed too low; temperature too high. Run a retraction calibration test (stringing test print). For direct-drive: typical retraction is 1-3 mm. For Bowden: 4-7 mm. Ensure firmware Pressure Advance / Linear Advance is tuned.</p>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">Layer Shift / Skew</code>
+          <span class="badge badge-warning">Mechanical</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Printed geometry offset on one axis after a layer</h3>
+        <p class="text-sm text-gray-400 mb-3">Mechanical root cause. Check: loose belt tension (X and Y); binding or debris on linear rails; insufficient motor driver current; print hitting physical obstruction (part curling up and colliding with nozzle); accidental crash causing motor to lose steps. Retighten belts; lubricate rails; verify motor currents.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINT SPEED VS QUALITY TRADEOFF -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="glass-card p-8 md:p-10">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="gauge" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-2xl md:text-3xl mb-2">Print Speed vs. Quality Tradeoff</h2>
+          <p class="text-gray-400 text-sm">Input Shaping and Pressure Advance are the key technologies that allow fast printing without sacrificing quality.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="bg-navy-900/60 p-5 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-white">Input Shaping</h3>
+          <p class="text-sm text-gray-400 mb-3">Measures the printer's resonant frequencies (via an accelerometer or automated resonance test) and applies a cancellation signal to motion commands. Eliminates ringing/ghosting at high speeds. Enabled by default in Klipper; available in recent Marlin 2.1.x builds as "Input Shaping".</p>
+          <p class="text-xs text-gray-500">Necessary for: 200+ mm/s printing</p>
+        </div>
+
+        <div class="bg-navy-900/60 p-5 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-white">Pressure Advance / Linear Advance</h3>
+          <p class="text-sm text-gray-400 mb-3">Predicts and compensates for the pressure lag inside the extruder. Prevents over-extrusion at corners and under-extrusion after direction changes. Klipper calls it "Pressure Advance"; Marlin calls it "Linear Advance". Critical for dimensional accuracy at any speed.</p>
+          <p class="text-xs text-gray-500">Calibrate: pressure-advance test print / linear-advance test print</p>
+        </div>
+
+        <div class="bg-navy-900/60 p-5 rounded-xl border border-white/5">
+          <h3 class="font-bold text-lg mb-3 text-white">Real-World Speed Reference</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">High quality / detail</span><span class="font-mono">40 – 80 mm/s</span></div>
+            <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Standard / general</span><span class="font-mono">80 – 150 mm/s</span></div>
+            <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Klipper fast (good quality)</span><span class="font-mono">200 – 300 mm/s</span></div>
+            <div class="flex justify-between py-2"><span class="text-gray-400">Draft / speed mode</span><span class="font-mono text-yellow-400">300 – 500 mm/s</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINTER MAINTENANCE -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Printer Maintenance Schedule</h2>
+      <p class="text-gray-400 max-w-3xl mx-auto">Preventive maintenance beats reactive repair. These intervals assume ~10-20 hours of printing per week.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="droplet" style="width:1.3rem;height:1.3rem;color:#4ade80"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Every Print</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Clean bed surface with IPA</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Inspect filament for debris / tangles</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Verify bed temperature matches filament</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="wrench" style="width:1.3rem;height:1.3rem;color:#fbbf24"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Every 3-6 Months</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Lubricate linear rails / rods</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Check belt tension (X &amp; Y)</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Re-check Z-offset</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Re-level / re-mesh bed</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="refresh-cw" style="width:1.3rem;height:1.3rem;color:#a78bfa"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Every 300-500 Hours</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Replace nozzle (brass — earlier if using abrasive)</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Inspect &amp; replace PTFE tube</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Check hot-end heat-break for clogging</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="thermometer-sun" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Before Printing PETG / Nylon / TPU</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Dry hygroscopic filaments in a filament dryer</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>4-6 hours at 60-70&deg;C for nylon</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:0.8rem;height:0.8rem;color:#4ade80;flex-shrink:0;margin-top:3px"></i>Popping / sizzling during print = wet filament</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALIBRATION GUIDE -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="glass-card p-8 md:p-10 bg-gradient-to-br from-green-950/10 to-navy-900/40">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="w-11 h-11 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="settings-2" style="width:1.3rem;height:1.3rem;color:#4ade80"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-2xl md:text-3xl mb-2">Calibration Quick-Reference</h2>
+          <p class="text-gray-400 text-sm">The essential calibration prints every printer owner should run — in the order they should be run.</p>
+        </div>
+      </div>
+
+      <ol class="space-y-4 text-sm">
+        <li class="flex items-start gap-3 bg-navy-900/60 p-4 rounded-xl border border-white/5">
+          <span class="w-7 h-7 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold flex-shrink-0">1</span>
+          <div>
+            <h3 class="font-bold text-white mb-1">First-Layer Calibration (Z-offset)</h3>
+            <p class="text-gray-400">Print a thin single-layer square or a calibration pattern. Extrusion should press firmly into the bed without scraping. Z-offset too high = filament droops; too low = nozzle drags. Repeat after any nozzle change.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3 bg-navy-900/60 p-4 rounded-xl border border-white/5">
+          <span class="w-7 h-7 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold flex-shrink-0">2</span>
+          <div>
+            <h3 class="font-bold text-white mb-1">Temperature Tower</h3>
+            <p class="text-gray-400">Multi-temperature tower print. Determines optimal nozzle temperature for each filament brand &amp; color. Visually inspect which temperature band produces best layer quality with minimum stringing.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3 bg-navy-900/60 p-4 rounded-xl border border-white/5">
+          <span class="w-7 h-7 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold flex-shrink-0">3</span>
+          <div>
+            <h3 class="font-bold text-white mb-1">Extrusion Multiplier / Flow Rate Calibration</h3>
+            <p class="text-gray-400">Print a 2-perimeter cube. Measure wall thickness with calipers. Adjust extrusion multiplier until the measured wall thickness matches the theoretical (e.g. 2 &times; 0.45mm extrusion width). Critical for dimensional accuracy.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3 bg-navy-900/60 p-4 rounded-xl border border-white/5">
+          <span class="w-7 h-7 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold flex-shrink-0">4</span>
+          <div>
+            <h3 class="font-bold text-white mb-1">Retraction Test</h3>
+            <p class="text-gray-400">Two pillars / columns spaced horizontally. Adjust retraction distance and speed to minimize stringing between pillars. Direct-drive: 1-3 mm; Bowden: 4-7 mm.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3 bg-navy-900/60 p-4 rounded-xl border border-white/5">
+          <span class="w-7 h-7 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold flex-shrink-0">5</span>
+          <div>
+            <h3 class="font-bold text-white mb-1">Pressure Advance / Linear Advance</h3>
+            <p class="text-gray-400">Calibration tower with varying K-factor values. Find the value producing the sharpest corners without bulging or blobbing. Prevents over-extrusion at direction changes.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3 bg-navy-900/60 p-4 rounded-xl border border-white/5">
+          <span class="w-7 h-7 bg-electric-500/20 rounded-lg flex items-center justify-center text-electric-400 font-bold flex-shrink-0">6</span>
+          <div>
+            <h3 class="font-bold text-white mb-1">Input Shaping Resonance Test (Klipper)</h3>
+            <p class="text-gray-400">Runs automated accelerometer sweep on each axis. Produces a ringing frequency graph and recommended shaper parameters. Run after any major mechanical change (belt, rails, hot-end swap).</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-navy-950 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Categories</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+            <li><a href="ebike-micromobility.html" class="text-gray-400 hover:text-electric-400">E-Bike &amp; Micromobility</a></li>
+            <li><a href="3d-printers.html" class="text-gray-400 hover:text-electric-400">3D Printers</a></li>
+            <li><a href="navigation.html" class="text-gray-400 hover:text-electric-400">Navigation &amp; Marine</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+            <li><a href="../tools/best-multimeters-2026.html" class="text-gray-400 hover:text-electric-400">Best Multimeters 2026</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-white/10 my-8">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Index A-Z - Portable Power, Drones, Hybrid, Smart Home Brands | TechSpecsHub</title>
+  <meta name="description" content="All brands covered on TechSpecsHub. EcoFlow, Jackery, Bluetti, Anker, Goal Zero, Tesla, Toyota, DJI, Roborock, and more. Jump to brand-specific technical specifications and error codes.">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <!-- ========================================================
+       HEADER / NAV
+       ======================================================== -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+
+        <!-- Logo -->
+        <a href="../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+
+          <!-- Categories dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <!-- Tools & Data dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <!-- Right: Search + Mobile toggle -->
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       SEARCH MODAL
+       ======================================================== -->
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search brands, models, error codes..." autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       BREADCRUMB
+       ======================================================== -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Brand Index A&ndash;Z</span>
+    </nav>
+  </div>
+
+  <!-- ========================================================
+       HERO
+       ======================================================== -->
+  <section class="relative pt-6 pb-14">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-[400px] h-[400px] bg-electric-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="badge badge-info mb-5"><i data-lucide="building-2" style="width:0.7rem;height:0.7rem"></i>Brand Index</span>
+      <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-[1.1] tracking-tight">
+        Brand Index <span class="gradient-text">A&ndash;Z</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto leading-relaxed">
+        Every manufacturer whose devices we publish verified technical specs and error codes for.
+      </p>
+      <p class="text-sm text-gray-500">
+        <span class="font-mono text-electric-400">16 brands</span> &bull; <span class="font-mono text-electric-400">7 categories</span> &bull; continuously updated
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       BRAND GRID
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <h2 class="font-bold text-2xl md:text-3xl mb-2">All Brands</h2>
+        <p class="text-gray-400 text-sm">Jump to each brand's dedicated model pages and error code references.</p>
+      </div>
+      <span class="text-xs text-gray-500 uppercase tracking-wider">Sorted alphabetically</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Anker SOLIX -->
+      <a href="specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="zap" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>4 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Anker SOLIX</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Portable Power, Solar</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Bluetti -->
+      <a href="specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="battery" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>5 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Bluetti</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Portable Power, Home Backup</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- DJI -->
+      <a href="specs/drones.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="plane" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>8 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">DJI</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Drones, Aerial Imaging</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- EcoFlow -->
+      <a href="specs/ecoflow-delta-pro-3.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="battery-charging" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>7 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">EcoFlow</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Portable Power, Whole-home Backup</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Goal Zero -->
+      <a href="specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="sun" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>3 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Goal Zero</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Portable Power, Outdoor Solar</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Honda -->
+      <a href="specs/hybrid-cars.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="car" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>2 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Honda</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Hybrid Vehicles, Automotive</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Jackery -->
+      <a href="specs/jackery-explorer-2000-plus.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="plug-zap" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>6 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Jackery</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Portable Power, Solar Generators</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Kawasaki -->
+      <a href="#" class="glass-card p-6 block hover:border-electric-400/50 transition-all group opacity-80">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="gauge" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>2 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Kawasaki</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Motorcycle, Power Sports</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Klein Tools -->
+      <a href="#" class="glass-card p-6 block hover:border-electric-400/50 transition-all group opacity-80">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="wrench" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>3 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Klein Tools</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Hand Tools, Test Equipment</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- LG -->
+      <a href="specs/smart-home.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="tv" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>2 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">LG</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Appliances, Batteries</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Nissan -->
+      <a href="specs/hybrid-cars.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="battery-full" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>1 model</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Nissan</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">EV, Automotive &mdash; Leaf</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Renogy -->
+      <a href="specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="sun-medium" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>5 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Renogy</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Solar Panels, Charge Controllers</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Roborock -->
+      <a href="specs/smart-home.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="home" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>4 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Roborock</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Robot Vacuums, Smart Home</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Tesla -->
+      <a href="specs/hybrid-cars.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="rocket" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>2 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Tesla</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">EV, Battery Systems &mdash; Model 3/Y LFP</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Toyota -->
+      <a href="specs/hybrid-cars.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="fuel" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>6 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Toyota</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Hybrid Vehicles &mdash; Prius, Camry, RAV4</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+      <!-- Yamaha -->
+      <a href="#" class="glass-card p-6 block hover:border-electric-400/50 transition-all group opacity-80">
+        <div class="flex items-start justify-between mb-3">
+          <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center">
+            <i data-lucide="cog" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+          </div>
+          <span class="badge badge-info"><i data-lucide="layers" style="width:0.7rem;height:0.7rem"></i>2 models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Yamaha</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">Motorcycle, Power Sports</p>
+        <div class="text-xs text-gray-500 flex items-center gap-1">View models <i data-lucide="arrow-right" style="width:0.75rem;height:0.75rem"></i></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CATEGORY CROSS-REFERENCE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <span class="badge badge-info mb-4"><i data-lucide="folder-tree" style="width:0.7rem;height:0.7rem"></i>Categories</span>
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Browse by Device Category</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Narrow in by the kind of device you're researching specs or error codes for.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <a href="specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="battery-charging" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Outdoor Power Stations</h3>
+        <p class="text-sm text-gray-400 mb-3">EcoFlow, Jackery, Bluetti, Anker, Goal Zero, Renogy</p>
+        <div class="text-xs text-gray-500">Browse category &rarr;</div>
+      </a>
+
+      <a href="specs/hybrid-cars.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="car" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Hybrid &amp; EV Batteries</h3>
+        <p class="text-sm text-gray-400 mb-3">Toyota, Honda, Tesla, Nissan, Lexus</p>
+        <div class="text-xs text-gray-500">Browse category &rarr;</div>
+      </a>
+
+      <a href="specs/drones.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="plane" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Drones</h3>
+        <p class="text-sm text-gray-400 mb-3">DJI Mavic, Air, Mini, and Cinema lines</p>
+        <div class="text-xs text-gray-500">Browse category &rarr;</div>
+      </a>
+
+      <a href="specs/smart-home.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="home" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Smart Home</h3>
+        <p class="text-sm text-gray-400 mb-3">Roborock, LG, connected appliances &amp; robots</p>
+        <div class="text-xs text-gray-500">Browse category &rarr;</div>
+      </a>
+
+      <a href="specs/ebike-micromobility.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="bike" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">E-Bike &amp; Micro-mobility</h3>
+        <p class="text-sm text-gray-400 mb-3">Pedal-assist, scooters, batteries, motors</p>
+        <div class="text-xs text-gray-500">Browse category &rarr;</div>
+      </a>
+
+      <a href="specs/3d-printers.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="box" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">3D Printers</h3>
+        <p class="text-sm text-gray-400 mb-3">FDM, resin, and enclosed printers</p>
+        <div class="text-xs text-gray-500">Browse category &rarr;</div>
+      </a>
+
+      <a href="specs/navigation.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="compass" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Navigation &amp; Marine</h3>
+        <p class="text-sm text-gray-400 mb-3">Chartplotters, fishfinders, GPS radios</p>
+        <div class="text-xs text-gray-500">Browse category &rarr;</div>
+      </a>
+
+      <a href="tools/best-multimeters-2026.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="activity" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-1 group-hover:text-electric-400 transition-colors">Test Equipment &amp; Tools</h3>
+        <p class="text-sm text-gray-400 mb-3">Klein Tools, Fluke, multimeter buyer's guides</p>
+        <div class="text-xs text-gray-500">Browse category &rarr;</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       REQUEST A BRAND CTA
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="glass-card p-8 md:p-12 text-center bg-gradient-to-br from-electric-900/20 to-navy-900 border border-electric-400/20">
+      <div class="w-14 h-14 bg-electric-500/20 rounded-xl flex items-center justify-center mx-auto mb-5">
+        <i data-lucide="message-square-plus" style="width:1.75rem;height:1.75rem;color:#22d3ee"></i>
+      </div>
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Don't see your brand?</h2>
+      <p class="text-gray-400 max-w-xl mx-auto mb-6 leading-relaxed">
+        We're continuously adding new manufacturers. If a brand you work with isn't listed, send us a request and our team will prioritize adding their verified specs and error codes.
+      </p>
+      <a href="contact.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-semibold rounded-lg transition-colors">
+        <i data-lucide="mail" style="width:1rem;height:1rem"></i>
+        Request a Brand
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="border-t border-white/10 bg-navy-950 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+            <li><a href="specs/ebike-micromobility.html" class="text-gray-400 hover:text-electric-400">E-Bike &amp; Micromobility</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+            <li><a href="tools/best-multimeters-2026.html" class="text-gray-400 hover:text-electric-400">Best Multimeters 2026</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-white/10 my-8">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       MAIN.JS
+       ======================================================== -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+</html>

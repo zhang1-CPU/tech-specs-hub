@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P0A7F Repair Guide - HV Battery Pack Deterioration | TechSpecsHub</title>
+  <meta name="description" content="Diagnostic and remediation guide for OBD-II code P0A7F — hybrid battery module voltage imbalance. Module identification, forced cooling calibration, grid charge/discharge cycling, battery ECU reset, and relearn procedure for Toyota Prius and Lexus hybrid vehicles.">
+  <meta name="theme-color" content="#0a1628">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH MODAL -->
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">P0A7F &mdash; HV Battery Deterioration</span>
+    </nav>
+  </section>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-yellow-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-yellow-500/20 text-yellow-400 font-mono font-bold text-sm rounded-md border border-yellow-500/30">P0A7F</div>
+        <span class="badge badge-warning"><i data-lucide="thermometer" style="width:0.75rem;height:0.75rem"></i>Warning / Critical depending on SOH</span>
+        <span class="badge badge-info"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Intermediate difficulty</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        HV Battery Pack Module Voltage Imbalance &mdash; <span class="gradient-text">Early-Warning Diagnostic Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        P0A7F indicates the hybrid battery ECU has detected a significant difference in voltage between individual battery modules during charge/discharge cycles. It is the early-warning sign that your pack is starting to degrade &mdash; typically at <strong class="text-white">70&ndash;85% remaining capacity</strong>. This code is often correctable <em>without full pack replacement</em> if caught early.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">1&ndash;3 hrs</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>Reconditioning Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$100&ndash;$400</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="activity" style="width:0.9rem;height:0.9rem"></i>SOH Range</div>
+          <div class="font-mono font-bold text-xl text-yellow-400">70&ndash;85%</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="alert-triangle" style="width:0.9rem;height:0.9rem"></i>Voltage Spread</div>
+          <div class="font-mono font-bold text-xl text-red-400">&gt; 0.3V</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMARY CARD -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What is <span class="gradient-text">P0A7F</span>?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            P0A7F is not a full pack failure &mdash; it is a <strong class="text-white">balance fault</strong>. The HV ECU continuously samples every module's voltage during charge and discharge. It expects all modules in the series string to rise and fall together within a tight tolerance (typically <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">&plusmn; 0.15V</code>).
+          </p>
+          <p>
+            When one or two modules start to show <code class="font-mono text-yellow-400 bg-navy-900/80 px-1.5 py-0.5 rounded">&gt; 0.3V</code> spread from the pack average, the ECU logs P0A7F as an early warning. The module has lost amp-hour capacity &mdash; it is still &ldquo;working&rdquo; but cannot hold charge long enough to keep up with the rest of the pack during sustained discharge.
+          </p>
+          <p>
+            Depending on how early you catch this, P0A7F may be remediated through <strong class="text-white">forced recalibration</strong>, <strong class="text-white">grid charge/discharge cycling</strong>, or <strong class="text-white">targeted module reconditioning</strong>. Only if the imbalance persists after these steps, or if State-of-Health drops below 70%, should you escalate to P0A80-level module replacement.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Typical Presentation</h3>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Check-engine or hybrid light appears intermittently</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Mild fuel-economy drop (~3&ndash;8%)</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Often triggered after a long highway trip</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Pack temperatures may show &gt; 8&deg;C delta</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>SOH between 70% and 85% on Techstream</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY WARNING -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <div class="alert alert-warning">
+      <i data-lucide="shield-alert" style="width:1.25rem;height:1.25rem;flex-shrink:0;margin-top:0.1rem"></i>
+      <div>
+        <strong class="block mb-1 text-white">High-Voltage Safety during Diagnostics</strong>
+        <p class="text-sm leading-relaxed">Although P0A7F is an early-stage warning, the pack still operates at full voltage (201.6V&ndash;355V depending on vehicle). Any work that involves removing HV covers, bus bars, or touching orange-cased wiring requires <strong class="text-white">Class 0 1000V insulated gloves</strong>, a CAT III multimeter, and the standard 12V-disconnect / service-plug / 10-minute-wait procedure described in the P0A80 guide. Reading live voltages through the OBD-II scan tool alone is safe and does not require PPE.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS & EQUIPMENT -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Equipment</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="cpu" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Scan Tool</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Toyota Techstream (preferred)</li>
+          <li>Dr. Prius app + OBD-II BLE adapter</li>
+          <li>Aftermarket tool with hybrid battery module view</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="zap" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Electrical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Digital multimeter &mdash; CAT III 600V</li>
+          <li>Thermal gun / infrared thermometer</li>
+          <li>Battery load tester (6V range)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-green-400"><i data-lucide="refresh-cw" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Reconditioning</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Grid charger (constant-current ~0.5C)</li>
+          <li>Controlled discharger / resistor bank</li>
+          <li>Cell voltage logger (optional)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="hard-hat" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Class 0 insulated gloves (1000V)</li>
+          <li>Safety glasses</li>
+          <li>Fire extinguisher (Class ABC)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP-BY-STEP PROCEDURE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Step-by-Step Diagnostic &amp; Remediation</h2>
+
+    <div class="space-y-4">
+
+      <!-- STEP 1 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Read all module voltages with Techstream / Dr. Prius</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Put the vehicle in READY mode with HVAC off. Connect the scan tool and pull a <strong class="text-white">complete snapshot</strong> of every module's voltage. Record the values in a spreadsheet. Repeat the same read under a <em>sustained discharge</em> (headlights + rear defroster + blower on high for 60 seconds, in READY). The modules that show > 0.3V spread under load are the problematic ones.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Module Voltage Reference (NiMH, 7.2V nominal)</div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                <div><span class="text-green-400">7.0&ndash;7.4V</span> under load &rarr; healthy</div>
+                <div><span class="text-yellow-400">6.6&ndash;7.0V</span> under load &rarr; weakening</div>
+                <div><span class="text-red-400">&lt; 6.6V</span> under load &rarr; failed / replace</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Identify the high-spread modules (> 0.3V difference)</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">From your snapshot, calculate the pack average voltage, then list each module's deviation from average. Physically note which module numbers show the largest negative deviation (these are the weakest). Use a thermal gun to measure the surface temperature of each module &mdash; a weak module often runs <strong class="text-white">5&ndash;15&deg;C hotter</strong> than the pack average under sustained discharge.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Diagnostic Table</div>
+              <div class="overflow-x-auto">
+                <table class="specs-table w-full text-sm">
+                  <thead>
+                    <tr><th>Module #</th><th>Voltage (V)</th><th>Temp (&deg;C)</th><th>Deviation</th><th>Verdict</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td>7.28</td><td>38</td><td>&plusmn; 0.00</td><td class="text-green-400">OK</td></tr>
+                    <tr><td>14</td><td>6.72</td><td>51</td><td class="text-yellow-400">&minus; 0.56</td><td class="text-yellow-400">Recondition</td></tr>
+                    <tr><td>21</td><td>6.44</td><td>58</td><td class="text-red-400">&minus; 0.84</td><td class="text-red-400">Replace</td></tr>
+                    <tr><td>28</td><td>7.30</td><td>37</td><td>&plusmn; 0.02</td><td class="text-green-400">OK</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Perform forced cooling calibration via scan tool</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Before opening anything, use Techstream to run the <strong class="text-white">&ldquo;Battery Cooling Fan Forced Operation&rdquo;</strong> active test. Run all three fan speeds (Low / Medium / High) for 5 minutes each, then re-read module voltages. If your P0A7F was triggered by an airflow problem (cabin filter full of debris, intake blocked, slow fan bearing), this step alone can clear it.</p>
+            <div class="alert alert-info !mb-0">
+              <i data-lucide="wind" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">Inspect the battery cooling intake in the rear cabin side panel &mdash; pet hair and accumulated dust are the #1 cause of thermal-runaway-induced P0A7F on Prius vehicles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Grid charge / discharge cycle (if you have the equipment)</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">NiMH modules recover considerable capacity after a controlled slow charge / slow discharge cycle. Connect a constant-current grid charger to the pack at approximately <strong class="text-white">0.05C</strong> (~3.5A for a 70 Ah pack) for 12&ndash;24 hours, stopping when the highest module reaches <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">8.4V</code>. Then discharge to <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">6.0V</code> across the pack using a controlled discharger. Repeat 1&ndash;3 cycles.</p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">Never charge at high current (&gt; 0.1C) once individual modules approach full charge &mdash; the strongest modules will overcharge and vent gas. Always monitor the weakest module's voltage throughout and stop charging when it plateaus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Module reconditioning vs. replacement decision tree</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">After the forced cooling calibration and grid cycling, re-read the module voltages under the same sustained discharge load. Use this decision tree:</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200 space-y-3">
+              <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-500/20 border border-green-500/40 text-green-400 font-mono text-xs font-bold flex-shrink-0">A</span>
+                <p><strong>Spread &lt; 0.15V and SOH recovered above 85% &rarr; <span class="text-green-400">remediated</span></strong>. Clear codes and re-check at 1,000 miles. Consider the pack saved.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-yellow-500/20 border border-yellow-500/40 text-yellow-400 font-mono text-xs font-bold flex-shrink-0">B</span>
+                <p><strong>Spread 0.15&ndash;0.3V and SOH 75&ndash;85% &rarr; <span class="text-yellow-400">marginal</span></strong>. Recondition with another grid cycle. Inspect the weak modules at the next physical service. Plan for module swap in 6&ndash;12 months.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-500/20 border border-red-500/40 text-red-400 font-mono text-xs font-bold flex-shrink-0">C</span>
+                <p><strong>Spread &gt; 0.3V and SOH &lt; 75% &rarr; <span class="text-red-400">physical module replacement needed</span></strong>. Follow the <a href="p0a80-replace-hybrid-battery.html" class="text-electric-400 hover:underline">P0A80 module replacement procedure</a> for the identified weak modules.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 6 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Battery ECU reset and relearn drive</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Use the scan tool to perform the <strong class="text-white">&ldquo;Battery ECU Reset&rdquo;</strong> active command. This clears the ECU's internal SOH calculation, learned current-offset, and per-module voltage baselines. After reset, drive the vehicle for a minimum of <strong class="text-white">20 miles</strong> with a mix of city, highway, and uphill/downhill segments. The HV ECU will re-learn a fresh SOH value and re-calibrate its voltage spread tolerance.</p>
+            <div class="alert alert-success !mb-0">
+              <i data-lucide="check-circle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">Read SOH and module spread one more time after the relearn drive. If the re-read spread is under <code class="text-electric-400">0.15V</code>, you have successfully cleared P0A7F without module replacement. If it immediately returns to > 0.3V, proceed to the P0A80 guide.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHEN TO CALL A PROFESSIONAL -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-950/20 to-navy-900 border-yellow-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>When to Call a Professional</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Module spread stays above <strong>0.3V</strong> after grid charge/discharge &mdash; physical module replacement is the next step.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Any module reads <strong>&lt; 5.5V under open circuit</strong> after a full charge &mdash; internal short, do not attempt reconditioning.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="thermometer" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Pack temperature exceeds <strong>65&deg;C</strong> during normal driving or forced cooling test.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">SOH continues to drop faster than ~5% per 6 months after remediation &mdash; expect full pack replacement soon.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">U-codes appear (HV ECU internal communication) alongside P0A7F &mdash; the ECU itself may be failing.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">If you do not own a grid charger / controlled discharger &mdash; DIY reconditioning without the right tools is more likely to damage the pack.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED CODES -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Hybrid Battery Codes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="p0a80-replace-hybrid-battery.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">P0A80</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Replace Hybrid Battery Module</h3>
+        <p class="text-sm text-gray-400">The next stage after P0A7F &mdash; module health has dropped below the SOH threshold. Step-by-step physical replacement procedure.</p>
+      </a>
+      <a href="p0a7f-hybrid-battery-deterioration.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">P3000</div>
+          <span class="badge badge-info">System</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Hybrid Control System Fault</h3>
+        <p class="text-sm text-gray-400">Generic hybrid system malfunction code that frequently rides along with P0A7F. Clears automatically once the voltage spread returns to tolerance.</p>
+      </a>
+      <a href="p0a7f-hybrid-battery-deterioration.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">P0A93</div>
+          <span class="badge badge-warning">Thermal</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Inverter Cooling Performance</h3>
+        <p class="text-sm text-gray-400">Insufficient cooling flow to the inverter. Often pairs with P0A7F &mdash; always check cooling fans when investigating thermal faults.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for the module replacement procedure?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">If your P0A7F progressed to P0A80 and requires physical module replacement, open the step-by-step replacement guide. It includes torque values, bus bar inspection, and post-install ECU relearn.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="p0a80-replace-hybrid-battery.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Open Module Replacement Guide</a>
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

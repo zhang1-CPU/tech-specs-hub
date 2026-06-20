@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid &amp; EV Battery Specifications - Toyota, Tesla, Honda Battery Tech Specs | TechSpecsHub</title>
+  <meta name="description" content="Complete technical specifications for hybrid and electric vehicle battery packs. Toyota Prius NiMH module specs, Tesla LFP cell data, Tesla NCA battery parameters, Honda IMA battery dimensions, and OBD-II hybrid fault codes.">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hybrid &amp; EV Battery Specifications">
+  <meta property="og:description" content="Module-level specs, cell chemistry, and fault codes for every mainstream hybrid and EV battery pack.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-hybrid.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <!-- Custom page styles -->
+  <style>
+    .table-scroll { overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(15, 29, 50, 0.4); }
+    .chem-card:hover { border-color: rgba(34, 211, 238, 0.3); }
+    h2 { scroll-margin-top: 100px; }
+    h3 { scroll-margin-top: 100px; }
+  </style>
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <!-- ========================================================
+       HEADER / NAV
+       ======================================================== -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+
+          <!-- Categories dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <!-- Tools & Data dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="../tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <!-- Right: Search + Mobile toggle -->
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="../tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       SEARCH MODAL
+       ======================================================== -->
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       BREADCRUMB
+       ======================================================== -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Specs</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Hybrid &amp; EV Batteries</span>
+    </nav>
+  </div>
+
+  <!-- ========================================================
+       HERO
+       ======================================================== -->
+  <section class="relative pt-6 pb-16">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-[400px] h-[400px] bg-electric-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-electric-500/10 border border-electric-500/30 rounded-full text-xs font-semibold text-electric-400 mb-6 tracking-wide uppercase">
+        <i data-lucide="battery-charging" style="width:0.85rem;height:0.85rem"></i>
+        Battery Category &middot; Updated June 2026
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-[1.1] tracking-tight">
+        Hybrid &amp; EV <span class="gradient-text">Battery Specifications</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Module-level specs, cell chemistry, and fault codes for every mainstream hybrid and EV battery pack &mdash; from Toyota NiMH modules to Tesla LFP cell-level data.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-10">
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">9</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Models Covered</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">3</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Chemistries</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">7+</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Fault Codes</div>
+        </div>
+        <div class="glass-card p-5">
+          <div class="text-2xl font-bold text-electric-400 font-mono">28</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Prius Modules</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       QUICK COMPARISON TABLE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
+      <div>
+        <h2 class="font-bold text-2xl md:text-3xl mb-2">Quick Comparison: Battery Packs</h2>
+        <p class="text-gray-400 text-sm">Scroll horizontally on mobile. All data cross-checked against OEM service manuals and official battery datasheets.</p>
+      </div>
+      <span class="badge badge-info"><i data-lucide="check-circle" style="width:0.8rem;height:0.8rem"></i>OEM Verified</span>
+    </div>
+
+    <div class="table-scroll">
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>Vehicle</th>
+            <th>Battery Type</th>
+            <th>Capacity (kWh)</th>
+            <th>Nominal Voltage</th>
+            <th>Cell / Module Count</th>
+            <th>Chemistry</th>
+            <th>Cycle Life (to 80%)</th>
+            <th>Warranty</th>
+            <th>Curb Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-semibold">Toyota Prius Gen 2 <span class="text-xs text-gray-500 block font-normal">(2004-2009)</span></td>
+            <td>NiMH</td>
+            <td>6.5</td>
+            <td>201.6V</td>
+            <td>28 modules</td>
+            <td>NiMH</td>
+            <td>1,500-2,000 cycles</td>
+            <td>8yr / 100k mi</td>
+            <td>2,890 lbs</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Toyota Prius Gen 3 <span class="text-xs text-gray-500 block font-normal">(2010-2015)</span></td>
+            <td>NiMH</td>
+            <td>6.5</td>
+            <td>201.6V</td>
+            <td>28 modules</td>
+            <td>NiMH</td>
+            <td>1,500-2,500 cycles</td>
+            <td>8yr / 100k mi</td>
+            <td>3,042 lbs</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Toyota Prius Gen 4 <span class="text-xs text-gray-500 block font-normal">(2016-2022)</span></td>
+            <td>NiMH (Li-ion Prime)</td>
+            <td>6.5 (8.8 Prime)</td>
+            <td>207.2V</td>
+            <td>28 modules</td>
+            <td>NiMH</td>
+            <td>2,000-3,000 cycles</td>
+            <td>8yr / 100k mi</td>
+            <td>3,040 lbs</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Toyota Camry Hybrid</td>
+            <td>NiMH</td>
+            <td>6.5</td>
+            <td>244.8V</td>
+            <td>34 modules</td>
+            <td>NiMH</td>
+            <td>1,500-2,500 cycles</td>
+            <td>8yr / 100k mi</td>
+            <td>3,572 lbs</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Toyota RAV4 Hybrid</td>
+            <td>NiMH</td>
+            <td>6.5</td>
+            <td>244.8V</td>
+            <td>34 modules</td>
+            <td>NiMH</td>
+            <td>1,500-2,500 cycles</td>
+            <td>8yr / 100k mi</td>
+            <td>3,715 lbs</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Lexus CT200h</td>
+            <td>NiMH</td>
+            <td>6.5</td>
+            <td>201.6V</td>
+            <td>28 modules</td>
+            <td>NiMH</td>
+            <td>1,500-2,500 cycles</td>
+            <td>8yr / 100k mi</td>
+            <td>3,164 lbs</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Tesla Model 3 (LFP) <span class="badge badge-lfp ml-2" style="font-size:10px;padding:2px 6px"><i data-lucide="zap" style="width:0.6rem;height:0.6rem"></i>LFP</span></td>
+            <td>LFP</td>
+            <td>57.5</td>
+            <td>380V</td>
+            <td>2,976 cells (1P96S)</td>
+            <td>LiFePO<sub>4</sub></td>
+            <td>3,000-4,000 cycles</td>
+            <td>8yr / 100k mi</td>
+            <td>3,862 lbs</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Tesla Model Y (LFP) <span class="badge badge-lfp ml-2" style="font-size:10px;padding:2px 6px"><i data-lucide="zap" style="width:0.6rem;height:0.6rem"></i>LFP</span></td>
+            <td>LFP</td>
+            <td>57.5</td>
+            <td>380V</td>
+            <td>2,976 cells</td>
+            <td>LiFePO<sub>4</sub></td>
+            <td>3,000-4,000 cycles</td>
+            <td>8yr / 100k mi</td>
+            <td>4,016 lbs</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Honda Insight (Gen 2/3)</td>
+            <td>NiMH</td>
+            <td>5.75</td>
+            <td>158.4V</td>
+            <td>22 modules</td>
+            <td>NiMH</td>
+            <td>1,500-2,000 cycles</td>
+            <td>8yr / 80k mi</td>
+            <td>2,723 lbs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       BATTERY CHEMISTRY EXPLAINER
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Battery Chemistry Explained</h2>
+      <p class="text-gray-400 max-w-3xl mx-auto">Three chemistries dominate the hybrid &amp; EV landscape &mdash; each with distinct trade-offs in temperature tolerance, cycle life, and thermal stability.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="glass-card chem-card p-6 transition-all">
+        <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="battery-medium" style="width:1.3rem;height:1.3rem;color:#fbbf24"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">NiMH <span class="text-gray-400 font-normal text-sm">(Nickel-Metal Hydride)</span></h3>
+        <p class="text-sm text-gray-400 mb-4">The workhorse chemistry in Toyota and Toyota/Lexus hybrids. Proven reliability, proven in Toyota hybrids. The proven hybrid technology with lower energy density but excellent thermal runaway risk near zero.</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Temperature range</span><span class="font-mono">-30&deg;C to +60&deg;C</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Cycle life</span><span class="font-mono">1,500-3,000</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Self-discharge</span><span class="font-mono">~20%/month</span></div>
+          <div class="flex justify-between py-2"><span class="text-gray-400">Thermal runaway</span><span class="font-mono text-green-400">Very Low</span></div>
+        </div>
+      </div>
+
+      <div class="glass-card chem-card p-6 transition-all">
+        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="battery-charging" style="width:1.3rem;height:1.3rem;color:#a78bfa"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">Li-ion <span class="text-gray-400 font-normal text-sm">(NCA / NMC)</span></h3>
+        <p class="text-sm text-gray-400 mb-4">High energy density &mdash; Tesla's legacy chemistry. Higher voltage and lighter weight, but requires careful thermal management and BMS oversight.</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Temperature range</span><span class="font-mono">-20&deg;C to +45&deg;C</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Cycle life</span><span class="font-mono">1,500-2,500</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Self-discharge</span><span class="font-mono">~2-3%/month</span></div>
+          <div class="flex justify-between py-2"><span class="text-gray-400">Thermal runaway</span><span class="font-mono text-red-400">Medium-High</span></div>
+        </div>
+      </div>
+
+      <div class="glass-card chem-card p-6 transition-all">
+        <div class="w-12 h-12 bg-lime-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="zap" style="width:1.3rem;height:1.3rem;color:#84cc16"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-3">LFP <span class="text-gray-400 font-normal text-sm">(LiFePO<sub>4</sub>)</span></h3>
+        <p class="text-sm text-gray-400 mb-4">Tesla's standard-range chemistry (Gigafactory Shanghai). Exceptional cycle life &mdash; 3,000-4,000 full cycles &mdash; and inherent thermal stability, but lower energy density.</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Temperature range</span><span class="font-mono">-20&deg;C to +60&deg;C</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Cycle life</span><span class="font-mono">3,000-4,000</span></div>
+          <div class="flex justify-between py-2 border-b border-white/5"><span class="text-gray-400">Self-discharge</span><span class="font-mono">~2-3%/month</span></div>
+          <div class="flex justify-between py-2"><span class="text-gray-400">Thermal runaway</span><span class="font-mono text-green-400">Low</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       NOMINAL VOLTAGE AND MODULE ARRANGEMENT
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="glass-card p-8 md:p-10">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="layers" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-2xl md:text-3xl mb-2">Nominal Voltage &amp; Module Arrangement</h2>
+          <p class="text-gray-400 text-sm">How the Toyota hybrid battery pack is assembled &mdash; and why the module voltage numbers matter for diagnostics.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="space-y-4 text-sm text-gray-300 leading-relaxed">
+          <p>Every Toyota hybrid battery pack is built from identical <strong class="text-white">7.2V modules</strong>. Each module contains <strong class="text-white">6 individual NiMH cells wired in series</strong>, each producing approximately 1.2V nominal.</p>
+          <p>These modules are then wired in series to produce the pack's total nominal voltage. The higher the pack voltage, the more power the hybrid system can deliver &mdash; but the more modules you need to monitor.</p>
+          <div class="bg-navy-900/80 p-5 rounded-xl border border-white/5 font-mono text-center py-3">
+            <div class="text-xs text-gray-500 mb-2">Prius Gen 2 / 3 Pack Voltage</div>
+            <div class="text-electric-400 text-2xl font-bold">28 modules × 7.2V = 201.6V</div>
+          </div>
+          <p>The Camry and RAV4 Hybrid use a higher-voltage arrangement: <strong>34 modules</strong> at 7.2V each, producing a nominal pack voltage of <strong>244.8V</strong>. Prius Gen 4 steps up to 207.2V.</p>
+        </div>
+
+        <div class="bg-navy-900/50 p-6 rounded-xl border border-white/10">
+          <div class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider">Module Layout</div>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between p-3 bg-navy-800/40 rounded-lg"><span class="text-sm">Per module</span><span class="font-mono text-electric-400">7.2V / 6.5 Ah</span></div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/40 rounded-lg"><span class="text-sm">Cells per module</span><span class="font-mono text-electric-400">6 × 1.2V</span></div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/40 rounded-lg"><span class="text-sm">Prius pack modules</span><span class="font-mono text-electric-400">28 modules (series)</span></div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/40 rounded-lg"><span class="text-sm">Camry / RAV4 modules</span><span class="font-mono text-electric-400">34 modules</span></div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/40 rounded-lg"><span class="text-sm">Honda Insight modules</span><span class="font-mono text-electric-400">22 modules / 158.4V</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       TOYOTA PRIUS BATTERY MODULE SPECIFICATION TABLE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Toyota Prius Battery Module Specification</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Per-module technical data for the standard Toyota NiMH hybrid battery pack &mdash; the most-replaced hybrid battery on the road.</p>
+    </div>
+
+    <div class="glass-card p-6 md:p-8">
+      <table class="specs-table">
+        <tbody>
+          <tr>
+            <th>Module Voltage (Nominal)</th>
+            <td class="font-mono text-electric-400">7.2V</td>
+          </tr>
+          <tr>
+            <th>Module Capacity</th>
+            <td class="font-mono text-electric-400">6.5 Ah</td>
+          </tr>
+          <tr>
+            <th>Cells per Module</th>
+            <td class="font-mono text-electric-400">6 cells (series)</td>
+          </tr>
+          <tr>
+            <th>Total Modules per Pack</th>
+            <td class="font-mono text-electric-400">28 modules</td>
+          </tr>
+          <tr>
+            <th>Nominal Pack Voltage</th>
+            <td class="font-mono text-electric-400">201.6V</td>
+          </tr>
+          <tr>
+            <th>Pack Capacity</th>
+            <td class="font-mono text-electric-400">1.31 kWh (6.5 kWh full pack)</td>
+          </tr>
+          <tr>
+            <th>Cell Chemistry</th>
+            <td class="font-mono">NiMH (Nickel-Metal Hydride)</td>
+          </tr>
+          <tr>
+            <th>Cycle Life</th>
+            <td class="font-mono text-electric-400">1,500-2,500 cycles</td>
+          </tr>
+          <tr>
+            <th>Weight per Module</th>
+            <td class="font-mono text-electric-400">1.1 kg (2.43 lbs)</td>
+          </tr>
+          <tr>
+            <th>Temperature Range (Operating)</th>
+            <td class="font-mono text-electric-400">-30°C to 60°C</td>
+          </tr>
+          <tr>
+            <th>Charge Cutoff Voltage</th>
+            <td class="font-mono text-electric-400">8.4V</td>
+          </tr>
+          <tr>
+            <th>Discharge Cutoff Voltage</th>
+            <td class="font-mono text-electric-400">5.4V</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       TESLA LFP BATTERY SECTION
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="glass-card p-8 md:p-10 bg-gradient-to-br from-lime-900/20 to-navy-900">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="w-11 h-11 bg-lime-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+          <i data-lucide="zap" style="width:1.3rem;height:1.3rem;color:#84cc16"></i>
+        </div>
+        <div>
+          <span class="badge badge-lfp mb-2"><i data-lucide="battery" style="width:0.75rem;height:0.75rem"></i>LFP Chemistry</span>
+          <h2 class="font-bold text-2xl md:text-3xl mb-2">Tesla LFP Battery &mdash; Cell-Level Specifications</h2>
+          <p class="text-gray-400 text-sm">CATL-sourced prismatic LFP cells used in Gigafactory Shanghai production of standard-range Model 3 and Model Y.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="bg-navy-900/60 p-5 rounded-xl border border-white/5">
+          <table class="specs-table">
+            <tbody>
+              <tr><th>Cell Voltage (Nominal)</th><td class="font-mono text-electric-400">3.2V</td></tr>
+              <tr><th>Cell Capacity</th><td class="font-mono text-electric-400">106 Ah</td></tr>
+              <tr><th>Cell Chemistry</th><td class="font-mono">LiFePO<sub>4</sub> (LFP)</td></tr>
+              <tr><th>Cycle Life</th><td class="font-mono text-electric-400">3,000+ cycles</td></tr>
+              <tr><th>Energy Density</th><td class="font-mono text-electric-400">~160 Wh/kg</td></tr>
+              <tr><th>Cell Dimensions</th><td class="font-mono text-electric-400">173 × 72 × 207 mm (approx)</td></tr>
+              <tr><th>Pack Configuration</th><td class="font-mono">4680 structural pack</td></tr>
+              <tr><th>Pack Voltage (Nominal)</th><td class="font-mono text-electric-400">380V</td></tr>
+              <tr><th>Pack Capacity</th><td class="font-mono text-electric-400">57.5 kWh</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <h3 class="font-bold text-lg text-white">Why LFP?</h3>
+          <p>Tesla's shift to LFP for standard-range vehicles trades some energy density for dramatically better cycle life &mdash; 3,000+ full cycles vs ~1,500 for NCA &mdash; and eliminates cobalt from the supply chain.</p>
+          <p>The pack uses a <strong>4680 structural pack architecture</strong> with cells bonded directly into the pack structure, reducing mass and improving crash safety. The 1P96S configuration means 96 cells in series, producing the 380V nominal voltage.</p>
+          <div class="alert alert-info">
+            <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0"></i>
+            <div class="text-sm"><strong>Diagnostic note:</strong> Tesla's BMS reports individual cell voltages. Any cell showing >50mV deviation from the pack median indicates a faulty module requiring replacement.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FAULT CODE REFERENCE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">OBD-II Hybrid Battery Fault Codes</h2>
+      <p class="text-gray-400 max-w-3xl mx-auto">The most common diagnostic trouble codes (DTCs) related to hybrid battery packs &mdash; each linked to our full troubleshooting guides.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a href="../troubleshooting/p0a80-replace-hybrid-battery.html" class="glass-card p-5 hover:border-electric-400/30 transition-all block">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-red-400 font-bold">P0A80</code>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Replace Hybrid Battery Pack</h3>
+        <p class="text-sm text-gray-400 mb-3">Overall hybrid battery pack has reached end-of-life threshold. Internal resistance too high, capacity below 70%. Full pack replacement or module-by-module rebuild.</p>
+        <span class="text-xs text-electric-400 font-medium">View troubleshooting guide &rarr;</span>
+      </a>
+
+      <a href="../troubleshooting/p0a7f-hybrid-battery-deterioration.html" class="glass-card p-5 hover:border-electric-400/30 transition-all block">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">P0A7F</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">HV Battery Module Balance Fault</h3>
+        <p class="text-sm text-gray-400 mb-3">Individual module voltage spread exceeds tolerance. One or more modules weakening. Identify via voltage scan, rebalance or replace affected modules.</p>
+        <span class="text-xs text-electric-400 font-medium">View troubleshooting guide &rarr;</span>
+      </a>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">P0A7E</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Battery Current Sensor Circuit</h3>
+        <p class="text-sm text-gray-400 mb-3">Current sensor reading out of range &mdash; often a loose or corroded sensor connection at the battery ECU. Check harness and sensor calibration.</p>
+        <span class="text-xs text-gray-500">Technical reference</span>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">P0A94</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Battery Temperature Sensor Circuit</h3>
+        <p class="text-sm text-gray-400 mb-3">Battery pack temperature sensor fault. The battery ECU cannot read one or more temperature sensors. Check harness continuity and sensor resistance.</p>
+        <span class="text-xs text-gray-500">Technical reference</span>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-red-400 font-bold">P0A78</code>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">HV Battery System Malfunction</h3>
+        <p class="text-sm text-gray-400 mb-3">General battery system malfunction. Typically occurs with other codes &mdash; scan for additional DTCs to pinpoint root cause before proceeding with diagnostics.</p>
+        <span class="text-xs text-gray-500">Technical reference</span>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">P0A1F</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Drive Motor "A" Position Sensor Circuit</h3>
+        <p class="text-sm text-gray-400 mb-3">MG1 or MG2 position sensor signal fault. Often misaligned or damaged resolver. Replace sensor; check wiring to inverter &mdash; requires Techstream calibration.</p>
+        <span class="text-xs text-gray-500">Technical reference</span>
+      </div>
+
+      <div class="glass-card p-5">
+        <div class="flex items-center justify-between mb-3">
+          <code class="font-mono text-lg text-yellow-400 font-bold">P3000</code>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Battery Control System Malfunction</h3>
+        <p class="text-sm text-gray-400 mb-3">Battery ECU internal malfunction. Often accompanies other codes &mdash; check for loose main relay, corrosion, or faulty ECU communication.</p>
+        <span class="text-xs text-gray-500">Technical reference</span>
+      </div>
+
+      <a href="../error-code-db.html" class="glass-card p-5 hover:border-electric-400/30 transition-all block bg-gradient-to-br from-electric-900/30 to-navy-900/30">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-electric-400 font-bold text-sm">VIEW ALL CODES &rarr;</span>
+        </div>
+        <h3 class="font-bold text-base mb-2">Full Error Code Database</h3>
+        <p class="text-sm text-gray-400 mb-3">200+ hybrid, drone, and power station fault codes with actionable diagnostics.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       DIY TOOLS
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">DIY Tools for Hybrid Battery Diagnosis &amp; Repair</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">The right tools make the difference between a successful rebuild and a wasted weekend.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="glass-card p-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center mb-3">
+          <i data-lucide="activity" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-2">Digital Multimeter</h3>
+        <p class="text-sm text-gray-400 mb-3">CAT III rated, 1000V. Measure individual module voltages &mdash; your primary diagnostic tool for identifying weak modules.</p>
+        <span class="text-xs text-gray-500">Must be true-RMS</span>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center mb-3">
+          <i data-lucide="thermometer" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-2">Infrared Thermometer</h3>
+        <p class="text-sm text-gray-400 mb-3">Spot-check module temperatures under load. Hot modules = high internal resistance = failing.</p>
+        <span class="text-xs text-gray-500">-50 to +500°C range</span>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center mb-3">
+          <i data-lucide="circuit-board" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-2">Hybrid Battery Load Tester</h3>
+        <p class="text-sm text-gray-400 mb-3">Applies controlled discharge load and measures voltage sag per module. Identifies weak modules under real load.</p>
+        <span class="text-xs text-gray-500">Aftermarket units available</span>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center mb-3">
+          <i data-lucide="shield" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-2">Insulated Gloves &amp; Eye Protection</h3>
+        <p class="text-sm text-gray-400 mb-3">Class 0 rated (1000V). Working on 200+V hybrid packs is not a hobby &mdash; insulate and isolate.</p>
+        <span class="text-xs text-gray-500">1000V rated minimum</span>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center mb-3">
+          <i data-lucide="cpu" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-2">OBD-II Scan Tool (Techstream or equivalent)</h3>
+        <p class="text-sm text-gray-400 mb-3">Reads hybrid-specific PIDs &mdash; module voltages, temperatures, current, and state of charge in real time.</p>
+        <span class="text-xs text-gray-500">Supports enhanced diagnostics</span>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center mb-3">
+          <i data-lucide="wrench" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-2">10mm &amp; 12mm Socket Set</h3>
+        <p class="text-sm text-gray-400 mb-3">The most-used tools for disassembly. Toyota hybrid packs use these almost exclusively for module fasteners.</p>
+        <span class="text-xs text-gray-500">6-point preferred</span>
+      </div>
+
+      <div class="glass-card p-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center mb-3">
+          <i data-lucide="battery-charging" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold mb-2">Battery Module Charger</h3>
+        <p class="text-sm text-gray-400 mb-3">Individual 7.2V module charger for initial equalization after module replacement. Critical before reassembly.</p>
+        <span class="text-xs text-gray-500">Constant-current / constant-voltage</span>
+      </div>
+
+      <a href="../tools/best-multimeters-2026.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+        <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-3">
+          <i data-lucide="book-open" style="width:1.15rem;height:1.15rem;color:#fbbf24"></i>
+        </div>
+        <h3 class="font-bold mb-2">Buyer's Guide: Multimeters</h3>
+        <p class="text-sm text-gray-400 mb-3">What to look for in a CAT-rated multimeter for hybrid vehicle diagnostics &mdash; accuracy, resolution, and safety ratings explained.</p>
+        <span class="text-xs text-electric-400 font-medium">Read guide &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       RELATED PAGES / FOOTER
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-2xl md:text-3xl mb-2">Explore Related Specs &amp; Guides</h2>
+      <p class="text-gray-400">More technical data across the TechSpecsHub database.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <a href="outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="battery-charging" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Outdoor Power Stations</h3>
+        <p class="text-sm text-gray-400 mb-4">EcoFlow, Jackery, Bluetti &mdash; LiFePO<sub>4</sub> cell specs and error codes.</p>
+        <div class="text-xs text-gray-500">15+ models &rarr;</div>
+      </a>
+
+      <a href="budget-500w-power-station-comparison.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="scale" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Budget Power Station Comparison</h3>
+        <p class="text-sm text-gray-400 mb-4">Mid-range 500W-1500W portable generators &mdash; specs, real output, and price/Wh.</p>
+        <div class="text-xs text-gray-500">Buyer's guide &rarr;</div>
+      </a>
+
+      <a href="../error-code-db.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group bg-gradient-to-br from-red-950/20 to-navy-900">
+        <div class="w-11 h-11 bg-red-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="alert-circle" style="width:1.25rem;height:1.25rem;color:#f87171"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-red-400 transition-colors">Full Error Code Database</h3>
+        <p class="text-sm text-gray-400 mb-4">200+ fault codes across hybrids, drones, and power stations.</p>
+        <div class="text-xs text-gray-500">200+ codes &rarr;</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="border-t border-white/10 bg-navy-950 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+            <li><a href="ebike-micromobility.html" class="text-gray-400 hover:text-electric-400">E-Bike &amp; Micromobility</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+            <li><a href="../tools/best-multimeters-2026.html" class="text-gray-400 hover:text-electric-400">Best Multimeters 2026</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-white/10 my-8">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       MAIN.JS
+       ======================================================== -->
+  <script src="../../assets/js/main.js"></script>
+
+</body>
+</html>

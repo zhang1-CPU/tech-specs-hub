@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechSpecsHub &mdash; Technical Specs, Error Codes &amp; Repair Data</title>
+  <meta name="description" content="The definitive reference for portable power station specs, hybrid battery parameters, drone motor data, and fault code diagnostics. Verified against official OEM documentation.">
+  <meta name="theme-color" content="#0a1628">
+  <link rel="canonical" href="https://powerspecshub.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TechSpecsHub &mdash; Technical Specs, Error Codes &amp; Repair Data">
+  <meta property="og:description" content="Verified technical specifications, error codes, and troubleshooting guides for portable power stations, hybrid vehicles, drones, and smart home devices.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://powerspecshub.com/">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-home.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TechSpecsHub &mdash; Technical Specs, Error Codes &amp; Repair Data">
+  <meta name="twitter:description" content="Verified technical specifications and troubleshooting guides.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Google Analytics 4 (optional, configured below) -->
+  <!-- Remove if not needed -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ');
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TechSpecsHub",
+    "url": "https://powerspecshub.com/",
+    "description": "Technical specification database and fault-diagnosis reference for portable power stations, hybrid batteries, drones, and smart home devices.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://powerspecshub.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <!-- ========================================================
+       HEADER / NAV
+       ======================================================== -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+
+          <!-- Categories dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="pages/specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="pages/specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="pages/specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="pages/specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="pages/specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="pages/specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="pages/specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <!-- Tools & Data dropdown -->
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data
+              <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="pages/error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="pages/master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="pages/brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="pages/tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+
+          <a href="pages/about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <!-- Right: Search + Mobile toggle -->
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="pages/specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="pages/specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="pages/specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="pages/specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="pages/specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="pages/specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="pages/specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="pages/error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="pages/master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="pages/brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="pages/tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="pages/about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       SEARCH MODAL
+       ======================================================== -->
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       HERO
+       ======================================================== -->
+  <section class="relative overflow-hidden pt-20 pb-28">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-electric-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-electric-600/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-electric-500/10 border border-electric-500/30 rounded-full text-xs font-semibold text-electric-400 mb-8 tracking-wide uppercase">
+        <i data-lucide="shield-check" style="width:0.85rem;height:0.85rem"></i>
+        Verified Technical Data &middot; Updated June 2026
+      </div>
+
+      <h1 class="font-bold text-5xl md:text-6xl lg:text-7xl mb-6 leading-[1.08] tracking-tight">
+        Diagnose &amp; Spec<br>
+        <span class="gradient-text">Any Device, Fast.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+        The authoritative reference for portable power station specs, hybrid battery parameters, drone motor data, and fault code diagnostics &mdash; all sourced from official OEM documentation.
+      </p>
+
+      <!-- Search Box -->
+      <div class="max-w-2xl mx-auto mb-10">
+        <div class="relative">
+          <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" style="width:1.1rem;height:1.1rem;pointer-events:none"></i>
+          <input type="text" id="hero-search" placeholder="Enter model or error code &mdash; e.g., EcoFlow Delta Pro, P0A80&hellip;" class="w-full pl-12 pr-28 py-4 bg-navy-900 border border-white/10 hover:border-white/20 rounded-xl text-base text-white placeholder-gray-500 focus:outline-none focus:border-electric-400 transition-all">
+          <button onclick="document.getElementById('search-btn').click()" class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-2 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold text-sm rounded-lg transition-all">Search</button>
+        </div>
+        <p class="text-xs text-gray-500 mt-3">
+          Popular:
+          <a href="pages/troubleshooting/p0a80-replace-hybrid-battery.html" class="text-electric-400 hover:text-electric-300 mx-1">P0A80</a>&middot;
+          <a href="pages/specs/outdoor-power.html" class="text-electric-400 hover:text-electric-300 mx-1">EcoFlow Delta Pro</a>&middot;
+          <a href="pages/specs/hybrid-cars.html" class="text-electric-400 hover:text-electric-300 mx-1">Prius Battery</a>&middot;
+          <a href="pages/error-code-db.html" class="text-electric-400 hover:text-electric-300 mx-1">All Error Codes</a>
+        </p>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="inline-grid grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
+        <div class="bg-navy-950 px-6 sm:px-8 py-5 text-center">
+          <div class="text-2xl sm:text-3xl font-bold gradient-text font-display">200+</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Error Codes</div>
+        </div>
+        <div class="bg-navy-950 px-6 sm:px-8 py-5 text-center">
+          <div class="text-2xl sm:text-3xl font-bold gradient-text font-display">50+</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Device Models</div>
+        </div>
+        <div class="bg-navy-950 px-6 sm:px-8 py-5 text-center">
+          <div class="text-2xl sm:text-3xl font-bold gradient-text font-display">15+</div>
+          <div class="text-xs text-gray-500 mt-1 font-medium">Brands Covered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CATEGORY GRID
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-3">Browse by Device Category</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Every spec, every error code, every troubleshooting guide &mdash; organized by the device you're actually working on.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <a href="pages/specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="battery-charging" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Outdoor Power Stations</h3>
+        <p class="text-sm text-gray-400 mb-4">Portable solar generators from EcoFlow, Jackery, Bluetti, Anker, Goal Zero and more.</p>
+        <div class="text-xs text-gray-500">15+ models &rarr;</div>
+      </a>
+
+      <a href="pages/specs/hybrid-cars.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="car" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Hybrid &amp; EV Batteries</h3>
+        <p class="text-sm text-gray-400 mb-4">Toyota Prius, Camry, RAV4, Tesla LFP, Honda Insight &mdash; module specs and fault codes.</p>
+        <div class="text-xs text-gray-500">8+ models &rarr;</div>
+      </a>
+
+      <a href="pages/specs/drones.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="plane" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drones &amp; UAV</h3>
+        <p class="text-sm text-gray-400 mb-4">DJI Mavic, Air, Mini series. Camera specs, flight parameters, gimbal error codes.</p>
+        <div class="text-xs text-gray-500">12+ models &rarr;</div>
+      </a>
+
+      <a href="pages/specs/smart-home.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="home" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Smart Home Devices</h3>
+        <p class="text-sm text-gray-400 mb-4">Robot vacuums, smart displays, Wi-Fi routers &mdash; specs and common firmware issues.</p>
+        <div class="text-xs text-gray-500">10+ models &rarr;</div>
+      </a>
+
+      <a href="pages/specs/ebike-micromobility.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="bike" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E-Bike &amp; Micromobility</h3>
+        <p class="text-sm text-gray-400 mb-4">Battery capacity, motor wattage, controller parameters for popular e-bikes and scooters.</p>
+        <div class="text-xs text-gray-500">8+ models &rarr;</div>
+      </a>
+
+      <a href="pages/specs/3d-printers.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="box" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">3D Printers</h3>
+        <p class="text-sm text-gray-400 mb-4">Build volume, print speed, nozzle temperature specs for FDM and resin printers.</p>
+        <div class="text-xs text-gray-500">6+ models &rarr;</div>
+      </a>
+
+      <a href="pages/specs/navigation.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="w-11 h-11 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="compass" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Navigation &amp; Marine</h3>
+        <p class="text-sm text-gray-400 mb-4">GPS accuracy, marine radio specs, chartplotter comparison, sonar transducer data.</p>
+        <div class="text-xs text-gray-500">5+ models &rarr;</div>
+      </a>
+
+      <a href="pages/error-code-db.html" class="glass-card p-6 block hover:border-red-400/30 transition-all group bg-gradient-to-br from-red-950/20 to-navy-900">
+        <div class="w-11 h-11 bg-red-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="alert-circle" style="width:1.25rem;height:1.25rem;color:#f87171"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-red-400 transition-colors">Error Code Database</h3>
+        <p class="text-sm text-gray-400 mb-4">200+ fault codes for hybrids, power stations, drones, and smart home devices.</p>
+        <div class="text-xs text-gray-500">200+ codes &rarr;</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       TROUBLESHOOTING HIGHLIGHTS
+       ======================================================== -->
+  <section class="bg-gradient-to-b from-navy-900/50 to-transparent py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
+        <div>
+          <h2 class="font-bold text-3xl md:text-4xl mb-2">Top Troubleshooting Guides</h2>
+          <p class="text-gray-400">The most-searched-for issues this month. Step-by-step diagnostics you can actually follow.</p>
+        </div>
+        <a href="pages/error-code-db.html" class="text-electric-400 hover:text-electric-300 text-sm font-medium flex items-center gap-1">
+          View all error codes <i data-lucide="arrow-right" style="width:0.875rem;height:0.875rem"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <a href="pages/troubleshooting/p0a80-replace-hybrid-battery.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+          <div class="flex items-start gap-3 mb-4">
+            <div class="px-2.5 py-1 bg-red-500/20 text-red-400 text-xs font-mono font-semibold rounded-md">P0A80</div>
+            <span class="badge badge-critical">Critical</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Replace Hybrid Battery Pack</h3>
+          <p class="text-sm text-gray-400 mb-4">Toyota Prius, Camry Hybrid, Highlander HV. Cell degradation below threshold. Includes DIY module replacement procedure, cost breakdown, and after-install battery reconditioning.</p>
+          <div class="text-xs text-gray-500">Toyota / Lexus &rarr;</div>
+        </a>
+
+        <a href="pages/troubleshooting/p0a7f-hybrid-battery-deterioration.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+          <div class="flex items-start gap-3 mb-4">
+            <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 text-xs font-mono font-semibold rounded-md">P0A7F</div>
+            <span class="badge badge-warning">Warning</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">HV Battery Module Balance Fault</h3>
+          <p class="text-sm text-gray-400 mb-4">Individual module voltage spread exceeds tolerance. How to identify weak modules, rebalance the pack, and decide between reconditioning and full replacement.</p>
+          <div class="text-xs text-gray-500">Toyota / Lexus &rarr;</div>
+        </a>
+
+        <a href="pages/troubleshooting/power-station-wont-turn-on.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+          <div class="flex items-start gap-3 mb-4">
+            <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 text-xs font-mono font-semibold rounded-md">GENERAL</div>
+            <span class="badge badge-info">Common</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Power Station Won't Turn On</h3>
+          <p class="text-sm text-gray-400 mb-4">Universal troubleshooting tree for portable power stations. Battery reset procedures, firmware recovery, inverter fault diagnosis, and when to contact warranty support.</p>
+          <div class="text-xs text-gray-500">All brands &rarr;</div>
+        </a>
+
+        <a href="pages/troubleshooting/dji-gimbal-error-codes.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+          <div class="flex items-start gap-3 mb-4">
+            <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 text-xs font-mono font-semibold rounded-md">GIMBAL</div>
+            <span class="badge badge-warning">Warning</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">DJI Gimbal Error Codes</h3>
+          <p class="text-sm text-gray-400 mb-4">"Gimbal Motor Stuck," "Gimbal Overload," "Gimbal IMU Calibration" &mdash; all the common DJI gimbal faults with actual fixes that work on Mavic and Air series.</p>
+          <div class="text-xs text-gray-500">DJI &rarr;</div>
+        </a>
+
+        <a href="pages/specs/off-grid-solar-system-sizing-guide.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+          <div class="flex items-start gap-3 mb-4">
+            <div class="px-2.5 py-1 bg-green-500/20 text-green-400 text-xs font-mono font-semibold rounded-md">GUIDE</div>
+            <span class="badge badge-ok">Deep</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Off-Grid Solar System Sizing</h3>
+          <p class="text-sm text-gray-400 mb-4">The actual math behind sizing a solar + battery system for off-grid living. Watt-hour load calculation, panel wattage, MPPT controller sizing, and cable gauge tables.</p>
+          <div class="text-xs text-gray-500">Calculations &rarr;</div>
+        </a>
+
+        <a href="pages/tools/best-multimeters-2026.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all">
+          <div class="flex items-start gap-3 mb-4">
+            <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 text-xs font-mono font-semibold rounded-md">TOOL</div>
+            <span class="badge badge-ok">2026</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Best Multimeters 2026</h3>
+          <p class="text-sm text-gray-400 mb-4">CAT rating explained, accuracy comparison table, and what to actually look for when buying a multimeter for electronics, automotive, or solar work.</p>
+          <div class="text-xs text-gray-500">Buyer's guide &rarr;</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FEATURED SPEC PAGE
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="glass-card overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+        <div class="p-8 lg:p-12">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-electric-500/10 border border-electric-500/30 rounded-full text-xs font-semibold text-electric-400 mb-5">
+            <i data-lucide="star" style="width:0.75rem;height:0.75rem"></i>
+            Featured Deep Dive
+          </div>
+          <h2 class="font-bold text-3xl md:text-4xl mb-4">EcoFlow Delta Pro 3 <span class="gradient-text">Full Spec Sheet</span></h2>
+          <p class="text-gray-400 mb-6 leading-relaxed">
+            Everything we know about the Delta Pro 3: 4,096 Wh LFP battery, 4,000W continuous inverter, 1,600W MPPT solar input. Including the less-advertised specs &mdash; idle drain, charge efficiency curve, cell cycle degradation data, and the complete error code list.
+          </p>
+          <div class="grid grid-cols-3 gap-px bg-white/10 rounded-xl overflow-hidden mb-6 text-sm">
+            <div class="bg-navy-900 p-4">
+              <div class="font-mono text-2xl font-bold text-electric-400">4,096 Wh</div>
+              <div class="text-xs text-gray-500 mt-1">Capacity (LFP)</div>
+            </div>
+            <div class="bg-navy-900 p-4">
+              <div class="font-mono text-2xl font-bold text-electric-400">4,000 W</div>
+              <div class="text-xs text-gray-500 mt-1">Continuous Output</div>
+            </div>
+            <div class="bg-navy-900 p-4">
+              <div class="font-mono text-2xl font-bold text-electric-400">3,000+</div>
+              <div class="text-xs text-gray-500 mt-1">Cycles to 80%</div>
+            </div>
+          </div>
+          <a href="pages/specs/ecoflow-delta-pro-3.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-electric-500 hover:bg-electric-400 text-navy-950 font-semibold text-sm rounded-lg transition-all">
+            Read full spec page <i data-lucide="arrow-right" style="width:0.875rem;height:0.875rem"></i>
+          </a>
+        </div>
+
+        <div class="p-8 lg:p-12 bg-navy-900/50">
+          <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+            <i data-lucide="alert-triangle" style="width:1rem;height:1rem;color:#f87171"></i>
+            Quick Error Code Reference
+          </h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center justify-between p-3 bg-navy-800/50 rounded-lg">
+              <div><code class="font-mono text-red-400">E0</code> &nbsp;AC Over-temperature</div>
+              <span class="badge badge-critical">Critical</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/50 rounded-lg">
+              <div><code class="font-mono text-yellow-400">E3</code> &nbsp;AC Overload (X-Boost)</div>
+              <span class="badge badge-warning">Warning</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/50 rounded-lg">
+              <div><code class="font-mono text-yellow-400">E4</code> &nbsp;Input Over-current</div>
+              <span class="badge badge-warning">Warning</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/50 rounded-lg">
+              <div><code class="font-mono text-blue-400">E5</code> &nbsp;Communication Error</div>
+              <span class="badge badge-info">Info</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/50 rounded-lg">
+              <div><code class="font-mono text-red-400">E6</code> &nbsp;Battery Cell Failure</div>
+              <span class="badge badge-critical">Critical</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-navy-800/50 rounded-lg">
+              <div><code class="font-mono text-yellow-400">E7</code> &nbsp;Fan Blocked</div>
+              <span class="badge badge-warning">Warning</span>
+            </div>
+          </div>
+          <a href="pages/specs/ecoflow-delta-pro-3.html" class="block mt-5 text-sm text-electric-400 hover:text-electric-300 font-medium">See full troubleshooting guide &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       WHY TRUST US
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-3">Why TechSpecsHub?</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Most spec sites just republish marketing copy. Here's how we're different.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="glass-card p-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="shield-check" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">OEM-Verified Data</h3>
+        <p class="text-sm text-gray-400">Every spec is cross-checked against official manufacturer documentation, service manuals, and datasheets. We link to sources.</p>
+      </div>
+      <div class="glass-card p-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="file-search" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Actionable Troubleshooting</h3>
+        <p class="text-sm text-gray-400">Error codes with actual steps &mdash; not just "contact support." Voltage ranges, part numbers, and tool lists for every diagnostic.</p>
+      </div>
+      <div class="glass-card p-6">
+        <div class="w-10 h-10 bg-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+          <i data-lucide="flask-conical" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Real-World Test Data</h3>
+        <p class="text-sm text-gray-400">We measure idle drain, charge efficiency, and real output &mdash; the specs manufacturers don't print on the box.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CTA
+       ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="glass-card p-10 md:p-14 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Looking for a spec that's not here?</h2>
+      <p class="text-gray-400 mb-6 max-w-xl mx-auto">Our editorial queue is driven entirely by user requests. If you can't find the spec or error code you're looking for, let us know and we'll prioritize it.</p>
+      <a href="pages/contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all">
+        Request a device spec <i data-lucide="arrow-right" style="width:1rem;height:1rem"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="border-t border-white/10 bg-navy-950 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="pages/specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="pages/specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="pages/specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="pages/specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+            <li><a href="pages/specs/ebike-micromobility.html" class="text-gray-400 hover:text-electric-400">E-Bike &amp; Micromobility</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="pages/error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="pages/master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="pages/brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+            <li><a href="pages/tools/best-multimeters-2026.html" class="text-gray-400 hover:text-electric-400">Best Multimeters 2026</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="pages/about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="pages/contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+            <li><a href="pages/privacy-policy.html" class="text-gray-400 hover:text-electric-400">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-white/10 my-8">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       MAIN.JS
+       ======================================================== -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
