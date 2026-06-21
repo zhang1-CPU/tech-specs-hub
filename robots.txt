@@ -1,5 +1,5 @@
 # TechSpecsHub robots.txt
-# https://zhang1-cpu.github.io/tech-specs-hub/
+# https://powerspecshub.com/
 
 User-agent: *
 Allow: /
@@ -17,6 +17,6 @@ Disallow: /
 User-agent: anthropic-ai
 Disallow: /
 
-Sitemap: https://zhang1-cpu.github.io/tech-specs-hub/sitemap.xml
+Sitemap: https://powerspecshub.com/sitemap.xml
 
 Crawl-delay: 1
