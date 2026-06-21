@@ -6,6 +6,16 @@
   <title>TechSpecsHub &mdash; Technical Specs, Error Codes &amp; Repair Data</title>
   <meta name="description" content="The definitive reference for portable power station specs, hybrid battery parameters, drone motor data, and fault code diagnostics. Verified against official OEM documentation.">
   <meta name="theme-color" content="#0a1628">
+  <!-- Critical Inline CSS: renders instantly, prevents white flash while Tailwind defers -->
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <!-- Resource Preload Hints: tells browser to start DNS/TLS/load EARLY -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
   <link rel="canonical" href="https://powerspecshub.com/">
 
   <!-- Open Graph -->
@@ -28,7 +38,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -47,7 +57,7 @@
   </script>
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -606,7 +616,7 @@
   <!-- ========================================================
        MAIN.JS
        ======================================================== -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
 </body>
 </html>

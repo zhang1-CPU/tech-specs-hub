@@ -6,6 +6,16 @@
   <title>Error Code Database &mdash; Hybrid, Power Station, Drone, Smart Home Fault Codes</title>
   <meta name="description" content="A searchable database of fault and error codes for hybrid vehicles, portable power stations, drones, and smart home devices. Includes severity, typical cause, and recommended action.">
   <meta name="theme-color" content="#0a1628">
+  <!-- Critical Inline CSS: renders instantly, prevents white flash while Tailwind defers -->
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <!-- Resource Preload Hints: tells browser to start DNS/TLS/load EARLY -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://powerspecshub.com/pages/error-code-db.html">
 
@@ -44,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -62,7 +72,7 @@
     }
   </script>
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
@@ -720,6 +730,6 @@
       }
     })();
   </script>
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/main.js" defer></script>
 </body>
 </html>
