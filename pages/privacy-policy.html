@@ -6,7 +6,7 @@
   <title>Privacy Policy &mdash; TechSpecsHub</title>
   <meta name="description" content="Privacy Policy for TechSpecsHub: what data is collected, cookies, third-party services, GDPR opt-out, and contact info.">
   <meta name="theme-color" content="#0a1628">
-  <!-- Critical Inline CSS: renders instantly, prevents white flash while Tailwind defers -->
+  <!-- Critical Inline CSS: pre-render base styles so first paint is not broken -->
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
   <!-- Resource Preload Hints: tells browser to start DNS/TLS/load EARLY -->
@@ -54,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {

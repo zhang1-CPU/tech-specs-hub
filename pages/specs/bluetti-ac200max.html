@@ -6,7 +6,7 @@
   <title>BLUETTI AC200Max Full Spec Sheet — 2,048Wh, 2,200W | TechSpecsHub</title>
   <meta name="description" content="Complete BLUETTI AC200Max specifications: 2,048 Wh LiFePO4 battery, 2,200W inverter, 900W solar input, expansion ports, and error code reference.">
   <meta name="theme-color" content="#0a1628">
-  <!-- Critical Inline CSS: renders instantly, prevents white flash while Tailwind defers -->
+  <!-- Critical Inline CSS: pre-render base styles so first paint is not broken -->
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
   <!-- Resource Preload Hints: tells browser to start DNS/TLS/load EARLY -->
@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -88,3 +88,99 @@
 
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
+  <!-- ========================================================
+       HEADER / NAV
+       ======================================================== -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+
+        <!-- Logo -->
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" class="w-5 h-5 text-navy-950" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <a href="../../pages/specs/outdoor-power.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Power</a>
+          <a href="../../pages/specs/hybrid-cars.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Hybrid</a>
+          <a href="../../pages/specs/drones.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Drones</a>
+          <a href="../../pages/error-code-db.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Error Codes</a>
+          <a href="../../pages/master-specs.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Specs</a>
+          <a href="../../pages/about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <a href="../../pages/specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all">Outdoor Power</a>
+        <a href="../../pages/specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all">Hybrid &amp; EV</a>
+        <a href="../../pages/specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all">Drones</a>
+        <a href="../../pages/error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all">Error Codes</a>
+        <a href="../../pages/master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all">Master Specs</a>
+        <a href="../../pages/about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all">About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       CONTENT SECTION
+       ======================================================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center py-16">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-electric-500/10 rounded-2xl mb-6">
+        <i data-lucide="file-text" style="width:2rem;height:2rem;color:#22d3ee"></i>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">Detailed content coming soon</h1>
+      <p class="text-gray-400 max-w-xl mx-auto mb-8">This page is being expanded with full specifications, error code references, and troubleshooting guides. In the meantime, explore our existing content below.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="../../pages/master-specs.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-electric-500 hover:bg-electric-400 text-navy-950 font-semibold rounded-lg transition-all">
+          <i data-lucide="table-2" style="width:1rem;height:1rem"></i>
+          Browse Master Specs
+        </a>
+        <a href="../../pages/error-code-db.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white font-medium rounded-lg border border-white/10 transition-all">
+          <i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>
+          Error Code Database
+        </a>
+        <a href="../../index.html" class="inline-flex items-center gap-2 px-5 py-2.5 text-gray-300 hover:text-white font-medium rounded-lg transition-all">
+          <i data-lucide="home" style="width:1rem;height:1rem"></i>
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       MAIN.JS
+       ======================================================== -->
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>
+
