@@ -15,8 +15,29 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="../assets/css/main.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"TechSpecsHub Error Code Database","description":"Fault codes for hybrid vehicles, portable power stations, drones, and smart home devices","url":"https://powerspecshub.com/pages/error-code-db.html","publisher":{"@type":"Organization","name":"TechSpecsHub","url":"https://powerspecshub.com"}}</script>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://powerspecshub.com/pages/error-code-db.html">
+    <meta property="og:title" content="Error Code Database | TechSpecsHub">
+  <meta property="og:description" content="Searchable database of fault codes for hybrid cars, drones, and power stations. P0A80, MOTOR_HOT, CHG_SLOW and more with diagnostic steps.">
+  <meta property="og:url" content="https://powerspecshub.com/pages/error-code-db.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://powerspecshub.com/assets/og-image.jpg">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Error Code Database | TechSpecsHub">
+  <meta name="twitter:description" content="Searchable database of fault codes for hybrid cars, drones, and power stations. P0A80, MOTOR_HOT, CHG_SLOW and more with diagnostic steps.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/og-image.jpg">
 </head>
 <body class="bg-navy-950 text-white min-h-screen">
+  <nav aria-label="Breadcrumb" class="bg-navy-900/50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <ol class="flex items-center gap-1.5 text-sm text-gray-300" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li><span class="text-gray-500"><a href="/" class="hover:text-electric-400 transition-colors">Home</a></span></li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><meta itemprop="position" content="2"><span class="text-gray-500"><span class="text-gray-500">/</span><span class="text-gray-400">Error Code Database</span></span></li>
+      </ol>
+    </div>
+  </nav>
 
   <!-- ===== HEADER ===== -->
   <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/80 ">
@@ -708,5 +729,82 @@
   </footer>
 
   <script src="../assets/js/main.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Error Code Database",
+      "item": "https://powerspecshub.com/pages/error-code-db.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does the P0A80 error code mean on a Toyota Prius?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "P0A80 indicates 'Replace Hybrid Battery Pack' on Toyota Prius models. The HV ECU has detected that the hybrid battery pack has degraded below its operational threshold. Common causes include individual module voltage deviation exceeding 0.3V from the pack average, internal resistance above 25 milliohms per module, or capacity loss exceeding 30% of nominal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I fix the MOTOR_HOT error on a DJI drone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MOTOR_HOT indicates the motor ESC has triggered thermal protection. Land immediately and power cycle. If persistent: (1) Inspect propellers for chips, cracks, or balance issues. (2) Check motor bearings for roughness. (3) Verify ESC firmware matches motor KV. (4) Test windings with a multimeter (all three phases should show 0.1-0.5 ohm). (5) Replace motor or ESC if winding resistance is open or shorted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my EcoFlow Delta Pro charging slowly after 2 years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Slow charging on an aging EcoFlow LFP station is normal capacity fade, not a fault. LFP cells lose 2-3% capacity per year. Verify with: (1) Settings > AC charging speed should be on 'Max' not 'Custom'. (2) Charge at ambient 15-35 deg C; cold packs throttle. (3) Check BMS with EcoFlow app for cell voltage deviation. If one cell is >50mV below others, contact warranty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the cycle life of an LFP battery vs NMC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LFP (LiFePO4) cells typically deliver 3,000-6,500 cycles to 80% capacity, while NMC (Nickel Manganese Cobalt) cells deliver 500-1,500 cycles. LFP operates safely at higher temperatures and is non-thermal-runaway. NMC has higher energy density (Wh/kg) but shorter life. For daily cycling, LFP is more cost-effective despite higher upfront cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I check internal resistance of a hybrid battery module?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use a milliohm meter or a quality multimeter with milliohm mode (Fluke 87V recommended). Disconnect the module from the pack. Apply a 1A test current via the meter's test leads. Healthy Gen 3/4 Prius NiMH modules read 4-15 milliohms. Replace modules above 25 milliohms. Always wear Class 0 HV gloves and verify the system is de-energized."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What tools are required to diagnose drone motor issues?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Essential diagnostic tools: (1) Digital multimeter with continuity mode - test motor windings (3 phases should read balanced 0.1-0.5 ohm). (2) Propeller balancer - detect imbalance causing vibration. (3) Infrared thermometer - identify hot motors/ESCs under load. (4) Oscilloscope (advanced) - view ESC PWM signal integrity. (5) FC configurator software (Betaflight, INAV) - verify ESC protocol and motor direction."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>

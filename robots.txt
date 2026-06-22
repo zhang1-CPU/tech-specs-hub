@@ -1,21 +1,16 @@
 # robots.txt for TechSpecsHub
 # https://powerspecshub.com/
 
+# Allow all major search engines to crawl the entire site
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://powerspecshub.com/sitemap-index.xml
-
-# Crawl-delay for polite crawling
-Crawl-delay: 1
-
-# Block common bot scrapers from accessing sensitive paths
+# Block internal/development paths
 Disallow: /api/
 Disallow: /admin/
 Disallow: /*.json$
 
-# Allow all major search engines
+# Specific bot rules
 User-agent: Googlebot
 Allow: /
 
@@ -34,7 +29,7 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Block bad bots
+# Block bad/scraper bots
 User-agent: AhrefsBot
 Disallow: /
 
@@ -43,3 +38,7 @@ Disallow: /
 
 User-agent: MJ12bot
 Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://powerspecshub.com/sitemap.xml
+Sitemap: https://powerspecshub.com/sitemap-index.xml
