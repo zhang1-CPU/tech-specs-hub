@@ -1,0 +1,1051 @@
+[
+  {
+    "filename": "p0a7f-hybrid-battery-deterioration.html",
+    "code": "P0A7F",
+    "title": "P0A7F Hybrid Battery Deterioration Fix Guide | TechSpecsHub",
+    "meta_description": "Learn how to diagnose and fix P0A7F hybrid battery deterioration. Step-by-step repair guide with costs, tools, and safety tips for Toyota, Honda, and Lexus hybrids.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/p0a7f-hybrid-battery-deterioration.html",
+    "h1": "P0A7F — Hybrid Battery Deterioration | TechSpecsHub",
+    "severity": "Critical",
+    "difficulty": "Advanced",
+    "repair_time": "4-6 hours",
+    "diy_cost": "$200-800",
+    "dealer_cost": "$1,500-3,500",
+    "device_type": "Hybrid Vehicle",
+    "what_is": "The P0A7F trouble code indicates that the hybrid battery pack has degraded beyond acceptable performance thresholds. This code is commonly triggered in Toyota Prius, Camry Hybrid, Honda Accord Hybrid, and Lexus CT200h vehicles. The power management control module (PCM) monitors battery block voltages and state-of-health metrics. When internal resistance rises or capacity drops below manufacturer limits, P0A7F sets and often illuminates the check-engine and master-warning lights. Battery deterioration is a natural aging process accelerated by extreme temperatures, deep discharges, and high mileage. Early detection allows for cell-level rebalancing or replacement, which is far more economical than full pack replacement. In many cases, individual weak modules cause the entire pack to underperform, and identifying these modules with a scan tool or Techstream software is the first step toward remediation.",
+    "symptoms": [
+      "Check engine light and red triangle warning illuminated",
+      "Significant drop in fuel economy (10-30% reduction)",
+      "Reduced electric-only driving range",
+      "Battery charge level fluctuates rapidly",
+      "Engine runs more frequently to supplement weak battery"
+    ],
+    "tools": [
+      "OBD-II scanner with hybrid battery live data",
+      "Toyota Techstream or equivalent OEM software",
+      "Insulated gloves rated for high voltage (Class 0, 1,000V)",
+      "Digital multimeter with HV-safe leads",
+      "Torque wrench and socket set",
+      "Battery block cooling fan cleaning kit"
+    ],
+    "steps": [
+      "Park on level ground, engage parking brake, and power off the vehicle. Wait at least 10 minutes for high-voltage capacitors to discharge.",
+      "Connect an OBD-II scanner and verify P0A7F is present. Record freeze-frame data including battery block voltages.",
+      "Open the rear cargo area and remove the hybrid battery service plug. Wear insulated gloves and use a non-conductive tool.",
+      "Remove the battery pack cover and inspect for corrosion, leaks, or physical swelling on modules.",
+      "Use a multimeter to measure each battery block voltage. Identify blocks with voltage deviation greater than 0.3V from the pack average.",
+      "If only 1-3 modules are weak, consider replacing individual modules with matched used or new units. (Based on common architecture; verify with your specific model manual)",
+      "If multiple blocks are degraded, evaluate full pack replacement or third-party remanufactured options.",
+      "Reassemble the battery pack, reinstall the service plug, and clear the code with your scanner.",
+      "Perform a road test and monitor battery balance through live data to confirm the repair."
+    ],
+    "professional_when": "If voltage deviation exceeds 0.5V across multiple blocks, if the battery case is swollen or leaking, or if you lack high-voltage safety training, contact a certified hybrid technician. Dealer-level diagnostics with OEM software may also be required for firmware updates.",
+    "related": [
+      {"text": "P3000 Battery Control Malfunction", "href": "p3000-battery-control-malfunction.html"},
+      {"text": "P3004 HV Battery Module Fault", "href": "p3004-hv-battery-module-fault.html"},
+      {"text": "P3009 Battery Cooling Fault", "href": "p3009-battery-cooling-fault.html"},
+      {"text": "C1259 HV System Disable", "href": "c1259-hv-system-disable.html"},
+      {"text": "Hybrid Battery Cooling Fan Noise", "href": "hybrid-battery-cooling-fan-noise.html"}
+    ],
+    "faq": [
+      {"q": "Can I drive with P0A7F?", "a": "Short trips are possible, but prolonged driving may cause further degradation and trigger limp mode. Schedule repair promptly."},
+      {"q": "How long does a hybrid battery last?", "a": "Most OEM packs last 8-15 years or 100,000-200,000 miles depending on climate and usage."},
+      {"q": "Is cell replacement cheaper than a full pack?", "a": "Yes. Individual module replacement typically costs $200-800 versus $1,500-3,500 for a full dealer pack."},
+      {"q": "Will clearing the code fix the problem?", "a": "No. P0A7F reflects physical battery deterioration and will return until the underlying capacity issue is addressed."}
+    ],
+    "cost_table": true,
+    "safety_warnings": ["Always remove the high-voltage service plug and wait 10 minutes before touching battery terminals."]
+  },
+  {
+    "filename": "p3000-battery-control-malfunction.html",
+    "code": "P3000",
+    "title": "P3000 Battery Control Malfunction Repair Guide | TechSpecsHub",
+    "meta_description": "Fix P3000 battery control malfunction with our detailed guide. Learn symptoms, tools, step-by-step repair, and cost comparisons for hybrid and electric vehicles.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/p3000-battery-control-malfunction.html",
+    "h1": "P3000 — Battery Control Malfunction | TechSpecsHub",
+    "severity": "Warning",
+    "difficulty": "Intermediate",
+    "repair_time": "2-4 hours",
+    "diy_cost": "$100-400",
+    "dealer_cost": "$800-2,000",
+    "device_type": "Hybrid Vehicle",
+    "what_is": "P3000 is a manufacturer-specific code indicating a malfunction within the battery control system. Unlike generic powertrain codes, P3000 points to communication or logic errors in the battery management system (BMS), hybrid control ECU, or related sensors. It often appears alongside more specific subcodes that pinpoint the exact failure. Common causes include corroded CAN bus connectors, failed battery current sensors, software glitches, or internal BMS faults. Because the BMS governs charging, discharging, and thermal management, a P3000 fault can reduce efficiency, limit power output, or prevent the vehicle from entering ready mode. Accurate diagnosis requires reading subcodes and inspecting the wiring harness between the battery pack and the hybrid control ECU.",
+    "symptoms": [
+      "Check engine light with hybrid system warning",
+      "Vehicle fails to enter READY mode intermittently",
+      "Erratic state-of-charge readings",
+      "Reduced regenerative braking",
+      "Diagnostic tool shows P3000 with additional subcodes"
+    ],
+    "tools": [
+      "OBD-II scanner capable of reading manufacturer subcodes",
+      "Digital multimeter",
+      "CAN bus wiring diagram for your vehicle",
+      "Contact cleaner and dielectric grease",
+      "Laptop with OEM diagnostic software"
+    ],
+    "steps": [
+      "Connect a scanner and document all stored codes and subcodes. Do not clear codes until diagnostics are complete.",
+      "Inspect the 12V auxiliary battery. Low voltage can cause BMS communication errors and false P3000 codes.",
+      "Locate the battery management system connectors and inspect for corrosion, bent pins, or moisture ingress.",
+      "Clean connectors with electrical contact cleaner and apply dielectric grease before reseating.",
+      "Check CAN bus continuity and termination resistance per the factory wiring diagram. (Based on common architecture; verify with your specific model manual)",
+      "If wiring is intact, update or reflash the hybrid control ECU software using OEM tools if an update is available.",
+      "If the code persists after software update and wiring repairs, consider replacing the battery current sensor or BMS module.",
+      "Clear codes, cycle the ignition, and verify READY mode engages normally."
+    ],
+    "professional_when": "If subcodes indicate an internal BMS fault, if CAN bus repairs require harness replacement, or if ECU reprogramming is needed, seek a dealer or hybrid specialist.",
+    "related": [
+      {"text": "P0A7F Hybrid Battery Deterioration", "href": "p0a7f-hybrid-battery-deterioration.html"},
+      {"text": "P3004 HV Battery Module Fault", "href": "p3004-hv-battery-module-fault.html"},
+      {"text": "P3009 Battery Cooling Fault", "href": "p3009-battery-cooling-fault.html"},
+      {"text": "C1259 HV System Disable", "href": "c1259-hv-system-disable.html"}
+    ],
+    "faq": [
+      {"q": "Is P3000 always a serious problem?", "a": "Not necessarily. It can be triggered by minor communication glitches, but it should be diagnosed promptly to avoid drivability issues."},
+      {"q": "Can a weak 12V battery cause P3000?", "a": "Yes. Low auxiliary voltage disrupts ECU communication and is a common root cause."},
+      {"q": "Do I need dealer software to fix P3000?", "a": "Subcode reading is possible with advanced aftermarket scanners, but ECU updates typically require OEM software."}
+    ],
+    "cost_table": true,
+    "safety_warnings": ["Disconnect the 12V battery before probing high-voltage connectors to avoid accidental arcs."]
+  },
+  {
+    "filename": "p3004-hv-battery-module-fault.html",
+    "code": "P3004",
+    "title": "P3004 HV Battery Module Fault Repair Guide | TechSpecsHub",
+    "meta_description": "Diagnose and repair P3004 HV battery module fault. Expert troubleshooting for hybrid high-voltage battery modules with step-by-step instructions and safety tips.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/p3004-hv-battery-module-fault.html",
+    "h1": "P3004 — HV Battery Module Fault | TechSpecsHub",
+    "severity": "Critical",
+    "difficulty": "Advanced",
+    "repair_time": "4-6 hours",
+    "diy_cost": "$300-900",
+    "dealer_cost": "$2,000-4,500",
+    "device_type": "Hybrid Vehicle",
+    "what_is": "P3004 indicates a specific fault within a high-voltage battery module, typically detected by the battery management system monitoring individual cell or block voltages, temperatures, or balancing circuits. This code is critical because a failed module can cause uneven charging, overheating, and in extreme cases thermal runaway. It appears in Toyota, Lexus, Honda, and Ford hybrid systems. Causes include internal cell shorting, broken cell interconnects, failed temperature sensors, or corrosion at module terminals. Diagnosis involves isolating the affected module through live data and physical inspection. Due to high-voltage risks, repairs must follow strict safety protocols including service plug removal, capacitor discharge wait times, and use of insulated tools.",
+    "symptoms": [
+      "Red hybrid warning triangle and check engine light",
+      "Immediate power reduction or limp mode",
+      "Battery temperature warnings",
+      "Uneven battery block voltages in live data",
+      "Burning or chemical odor from battery compartment"
+    ],
+    "tools": [
+      "OBD-II scanner with live battery block data",
+      "High-voltage insulated gloves and face shield",
+      "Digital multimeter with HV leads",
+      "Module extraction tools",
+      "Torque wrench",
+      "Thermal camera (optional but recommended)"
+    ],
+    "steps": [
+      "Power off the vehicle, remove the key, and wait 10 minutes. Remove the HV service plug from the battery pack.",
+      "Scan for codes and identify which battery block or module is flagged by the BMS.",
+      "Remove the battery pack cover and visually inspect the flagged module for swelling, leaks, or burnt terminals.",
+      "Measure the voltage of the flagged module and compare it to adjacent modules. A significant deviation confirms failure.",
+      "If the module is replaceable, remove it using manufacturer-specified procedures and install a matched replacement. (Based on common architecture; verify with your specific model manual)",
+      "Inspect the bus bars and nuts for corrosion; clean or replace as needed.",
+      "Reassemble the pack, reinstall the service plug, and clear fault codes.",
+      "Perform a slow charge-discharge cycle and monitor temperatures and voltages for stability."
+    ],
+    "professional_when": "If thermal damage is visible, if multiple modules are failing, or if you do not have high-voltage training, this repair should be performed by a certified technician.",
+    "related": [
+      {"text": "P0A7F Hybrid Battery Deterioration", "href": "p0a7f-hybrid-battery-deterioration.html"},
+      {"text": "P3000 Battery Control Malfunction", "href": "p3000-battery-control-malfunction.html"},
+      {"text": "P3009 Battery Cooling Fault", "href": "p3009-battery-cooling-fault.html"},
+      {"text": "C1259 HV System Disable", "href": "c1259-hv-system-disable.html"}
+    ],
+    "faq": [
+      {"q": "Can I replace just one module?", "a": "Yes, if the rest of the pack is healthy. Use a module with similar age and capacity to avoid imbalance."},
+      {"q": "What causes a module to fail?", "a": "Age, heat, deep cycling, and manufacturing defects are common causes."},
+      {"q": "Is P3004 dangerous?", "a": "It can be. A faulty module may overheat. Park the vehicle outdoors and avoid charging until repaired."},
+      {"q": "How do I match a replacement module?", "a": "Match voltage, capacity, and part number. Some rebuilders sell matched sets."}
+    ],
+    "cost_table": true,
+    "safety_warnings": ["Never open a high-voltage battery without proper training and PPE. A failed module can pose shock and fire hazards."]
+  },
+  {
+    "filename": "p3009-battery-cooling-fault.html",
+    "code": "P3009",
+    "title": "P3009 Battery Cooling Fault Troubleshooting | TechSpecsHub",
+    "meta_description": "Resolve P3009 battery cooling fault with our step-by-step guide. Fix hybrid battery cooling fan issues, clear blocked vents, and prevent overheating.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/p3009-battery-cooling-fault.html",
+    "h1": "P3009 — Battery Cooling Fault | TechSpecsHub",
+    "severity": "Warning",
+    "difficulty": "Intermediate",
+    "repair_time": "1-3 hours",
+    "diy_cost": "$50-200",
+    "dealer_cost": "$400-1,200",
+    "device_type": "Hybrid Vehicle",
+    "what_is": "P3009 signals a problem with the hybrid battery cooling system. The battery management system monitors intake air temperature, fan speed, and duct airflow to keep high-voltage modules within a safe temperature range. When airflow is insufficient—due to a clogged cabin air filter, blocked intake ducts, failed cooling fan, or faulty temperature sensor—P3009 sets and the vehicle may limit power to protect the battery. This code is especially common in vehicles where the battery draws cooling air from the passenger cabin, such as the Toyota Prius. Dust, pet hair, and debris accumulate over time and restrict airflow. In some cases the cooling fan motor wears out or develops bearing noise, reducing RPM below the threshold expected by the BMS.",
+    "symptoms": [
+      "Check engine light with P3009 stored",
+      "Battery temperature higher than normal in live data",
+      "Reduced power or forced engine running to cool battery",
+      "Unusual fan noise or no fan noise at all",
+      "Musty or dusty smell from rear seat vents"
+    ],
+    "tools": [
+      "OBD-II scanner",
+      "Screwdrivers and trim removal tools",
+      "Shop vacuum with hose attachments",
+      "Replacement cabin air filter",
+      "Multimeter for fan motor testing"
+    ],
+    "steps": [
+      "Scan for codes and review battery temperature sensor data to confirm elevated readings.",
+      "Locate the battery cooling air intake, usually behind the rear seat or in the cargo area side panel.",
+      "Remove the intake duct and inspect for leaves, dust, and debris. Clean thoroughly with a vacuum.",
+      "Remove and inspect the cabin air filter. If dirty, replace it with an OEM or high-quality aftermarket filter.",
+      "Test the cooling fan motor by applying 12V directly (polarity-correct) and listening for smooth operation. (Based on common architecture; verify with your specific model manual)",
+      "If the fan does not spin smoothly or draws excessive current, replace the cooling fan assembly.",
+      "Inspect the temperature sensor connector for corrosion and test resistance against factory specs.",
+      "Reassemble all ducts and filters, clear the code, and monitor battery temperature during a test drive."
+    ],
+    "professional_when": "If the fan tests good but the code persists, there may be a wiring fault or BMS calibration issue requiring dealer diagnostics.",
+    "related": [
+      {"text": "P0A7F Hybrid Battery Deterioration", "href": "p0a7f-hybrid-battery-deterioration.html"},
+      {"text": "P3000 Battery Control Malfunction", "href": "p3000-battery-control-malfunction.html"},
+      {"text": "P3004 HV Battery Module Fault", "href": "p3004-hv-battery-module-fault.html"},
+      {"text": "Hybrid Battery Cooling Fan Noise", "href": "hybrid-battery-cooling-fan-noise.html"}
+    ],
+    "faq": [
+      {"q": "Can I drive with P3009?", "a": "Yes for short distances, but avoid heavy loads and hot weather until airflow is restored."},
+      {"q": "How often should I clean the battery cooling intake?", "a": "Inspect annually and clean as needed; replace the cabin filter every 15,000-30,000 miles."},
+      {"q": "Why does the fan run constantly?", "a": "Continuous fan operation often indicates the BMS is compensating for restricted airflow or elevated temperatures."}
+    ],
+    "cost_table": true,
+    "safety_warnings": ["Ensure the vehicle is powered off before reaching into ducting near high-voltage components."]
+  },
+  {
+    "filename": "c1259-hv-system-disable.html",
+    "code": "C1259",
+    "title": "C1259 HV System Disable Troubleshooting Guide | TechSpecsHub",
+    "meta_description": "Fix C1259 HV system disable code with our expert guide. Learn why your hybrid disabled high voltage, how to reset it, and when to seek professional help.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/c1259-hv-system-disable.html",
+    "h1": "C1259 — HV System Disable | TechSpecsHub",
+    "severity": "Critical",
+    "difficulty": "Advanced",
+    "repair_time": "3-5 hours",
+    "diy_cost": "$150-500",
+    "dealer_cost": "$1,000-2,500",
+    "device_type": "Hybrid Vehicle",
+    "what_is": "C1259 is a chassis code indicating that the high-voltage system has been disabled by the vehicle's safety interlock logic. This is a protective measure triggered when the system detects a fault that could compromise occupant safety or component integrity. Common triggers include airbag deployment signals, open high-voltage interlock loop (HVIL), service plug removal detection, insulation resistance faults, or severe battery management errors. Because the HV system is disabled, the vehicle will not enter READY mode and cannot be driven using electric power. Diagnosing C1259 requires understanding the HVIL circuit path, which runs through the service plug, battery connectors, junction block, and inverter. A break anywhere in this loop causes the system to shut down. Additionally, some manufacturers require a specific reset procedure after repairs are completed.",
+    "symptoms": [
+      "Vehicle will not enter READY mode",
+      "Red hybrid system warning and check engine light",
+      "No response from the electric motor",
+      "Scan tool shows C1259 and possibly related HVIL codes",
+      "Recent collision, service work, or battery disconnect"
+    ],
+    "tools": [
+      "OBD-II scanner with ABS/chassis code support",
+      "High-voltage safety gloves and tools",
+      "Wiring diagram for HVIL circuit",
+      "Multimeter for continuity testing",
+      "Service plug and interlock connector diagrams"
+    ],
+    "steps": [
+      "Scan all modules for codes. Document chassis, powertrain, and battery management codes together.",
+      "Check for recent collision or service history. Airbag deployment often locks out the HV system.",
+      "Inspect the HV service plug. Ensure it is fully seated and the interlock pin is not damaged.",
+      "Trace the HVIL loop using a wiring diagram. Test continuity through each connector in the path. (Based on common architecture; verify with your specific model manual)",
+      "If an interlock connector is loose or corroded, clean and reseat it. Replace damaged connectors.",
+      "Test insulation resistance between HV lines and chassis ground if an insulation fault is suspected.",
+      "After physical repairs, follow the manufacturer-specific HV system reset procedure.",
+      "Clear all codes, cycle the ignition, and confirm READY mode returns without warnings."
+    ],
+    "professional_when": "If the vehicle was in a collision, if airbag codes are present, or if insulation resistance is below spec, professional repair is mandatory for safety and liability reasons.",
+    "related": [
+      {"text": "P0A7F Hybrid Battery Deterioration", "href": "p0a7f-hybrid-battery-deterioration.html"},
+      {"text": "P3000 Battery Control Malfunction", "href": "p3000-battery-control-malfunction.html"},
+      {"text": "P3004 HV Battery Module Fault", "href": "p3004-hv-battery-module-fault.html"},
+      {"text": "P3009 Battery Cooling Fault", "href": "p3009-battery-cooling-fault.html"}
+    ],
+    "faq": [
+      {"q": "Can I reset C1259 myself?", "a": "Only if the root cause is a loose connector. Many vehicles require dealer-level reset after HVIL faults."},
+      {"q": "Does C1259 mean my battery is bad?", "a": "Not necessarily. It means the system disabled HV for safety; the battery may be fine."},
+      {"q": "Will disconnecting the 12V battery clear C1259?", "a": "Usually no. The code is stored in multiple modules and tied to safety interlock status."}
+    ],
+    "cost_table": true,
+    "safety_warnings": ["Do not attempt to bypass the HVIL circuit. Doing so disables critical safety protections and may cause severe injury."]
+  },
+  {
+    "filename": "e1-overload-ecoflow-jackery-blutti-anker.html",
+    "code": "E1 Overload",
+    "title": "E1 Overload Error Fix for EcoFlow, Jackery, Bluetti, Anker | TechSpecsHub",
+    "meta_description": "Quickly fix E1 overload errors on EcoFlow, Jackery, Bluetti, and Anker power stations. Step-by-step reset guide, wattage tips, and prevention strategies.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/e1-overload-ecoflow-jackery-blutti-anker.html",
+    "h1": "E1 Overload — Power Station | TechSpecsHub",
+    "severity": "Critical",
+    "difficulty": "Beginner",
+    "repair_time": "10-30 minutes",
+    "diy_cost": "$0",
+    "dealer_cost": "$0-100",
+    "device_type": "Power Station",
+    "what_is": "The E1 Overload error is one of the most common faults reported on portable power stations from brands like EcoFlow, Jackery, Bluetti, and Anker. It occurs when the combined wattage of connected devices exceeds the inverter's continuous output rating. Most consumer power stations range from 300W to 3,600W continuous output. Surge loads from refrigerators, power tools, and motor-driven appliances can also trigger E1 even if their running wattage is within spec, because the initial inrush current briefly exceeds the inverter limit. The error is protective: it shuts down AC output to prevent overheating and damage. Understanding your device's wattage limits and how surge ratings differ from continuous ratings is key to preventing and resolving E1 errors.",
+    "symptoms": [
+      "AC output shuts off and E1 appears on screen",
+      "Audible alarm beep from the unit",
+      "Connected appliances lose power instantly",
+      "Error clears after reducing load and resetting",
+      "May occur intermittently with high-surge appliances"
+    ],
+    "tools": [
+      "Wattage meter or kill-a-watt device",
+      "Device manuals or nameplates for wattage ratings",
+      "Power station remote app (if supported)"
+    ],
+    "steps": [
+      "Unplug all devices from the power station's AC outlets immediately when E1 appears.",
+      "Check the continuous and surge wattage ratings printed on your power station or in its manual.",
+      "Use a wattage meter to measure the actual draw of each appliance you plan to connect.",
+      "Reconnect devices one at a time, ensuring the total running wattage stays below 80% of the continuous rating.",
+      "For high-surge devices like refrigerators, consider a soft-start device or connect them to a higher-capacity unit.",
+      "Reset the power station by holding the AC power button for 3-5 seconds or using the app reset function. (Based on common architecture; verify with your specific model manual)",
+      "If E1 returns with no load, the inverter may have a fault; contact manufacturer support."
+    ],
+    "professional_when": "If E1 triggers with no load connected, or if the inverter smells burnt or makes abnormal noises, the unit may need factory service or replacement under warranty.",
+    "related": [
+      {"text": "E2 High Temperature Power Station", "href": "e2-high-temperature-power-station.html"},
+      {"text": "E3 AC Overload Power Station", "href": "e3-ac-overload-power-station.html"},
+      {"text": "E6 Battery Fault Power Station", "href": "e6-battery-fault-power-station.html"},
+      {"text": "E7 Fan Blocked Power Station", "href": "e7-fan-blocked-power-station.html"},
+      {"text": "Solar Input Not Working", "href": "power-station-solar-input-not-working.html"}
+    ],
+    "faq": [
+      {"q": "Why does E1 happen even when my device says 500W and my station is 1000W?", "a": "Many devices have surge currents 2-3x their rated wattage at startup. The inverter sees the surge, not the average."},
+      {"q": "Can I bypass the overload protection?", "a": "No. The protection is hardware-based and essential for safety. Overloading risks fire and inverter damage."},
+      {"q": "Does E1 damage my power station?", "a": "No. E1 is a protective shutdown. Repeated overloads may stress components over time, so avoid frequent triggers."}
+    ],
+    "cost_table": false,
+    "safety_warnings": ["Never attempt to override overload protection. Overloading lithium inverters can cause overheating and fire."]
+  },
+  {
+    "filename": "e2-high-temperature-power-station.html",
+    "code": "E2 High Temp",
+    "title": "E2 High Temperature Error Fix for Power Stations | TechSpecsHub",
+    "meta_description": "Solve E2 high temperature errors on portable power stations. Learn cooling tips, safe operating temperatures, and how to prevent thermal shutdowns outdoors.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/e2-high-temperature-power-station.html",
+    "h1": "E2 High Temp — Power Station | TechSpecsHub",
+    "severity": "Warning",
+    "difficulty": "Beginner",
+    "repair_time": "15-60 minutes",
+    "diy_cost": "$0",
+    "dealer_cost": "$0-150",
+    "device_type": "Power Station",
+    "what_is": "The E2 High Temperature error occurs when internal sensors detect that the battery pack, inverter, or charging circuitry has exceeded safe operating temperatures. Portable power stations use lithium-ion or LiFePO4 cells that degrade rapidly above 45-60 degrees Celsius depending on chemistry. To preserve battery life and prevent thermal runaway, the battery management system (BMS) reduces output or shuts down the unit entirely when thresholds are crossed. E2 is most common during simultaneous high-wattage discharging and charging, operation in direct sunlight, or use in enclosed spaces with poor ventilation. Some units also trigger E2 when the ambient temperature is simply too high for the passive or active cooling design to keep up.",
+    "symptoms": [
+      "Screen displays E2 or temperature icon",
+      "AC or DC output shuts down",
+      "Cooling fan runs at maximum speed if equipped",
+      "Unit feels hot to the touch",
+      "Error clears after cooling period"
+    ],
+    "tools": [
+      "Infrared thermometer (optional)",
+      "Shade or cover for outdoor use",
+      "Small fan for additional ventilation"
+    ],
+    "steps": [
+      "Immediately reduce or remove all loads from the power station when E2 appears.",
+      "Move the unit to a cool, shaded, well-ventilated area away from direct sunlight.",
+      "If the unit has a cooling fan, ensure the intake and exhaust vents are not blocked.",
+      "Allow the unit to cool for at least 15-30 minutes before attempting to use it again.",
+      "Check firmware updates via the manufacturer's app; some updates refine thermal management thresholds.",
+      "Avoid simultaneous high-wattage charging and discharging, which generates the most heat.",
+      "If E2 occurs frequently in normal conditions, inspect vents for dust buildup and clean with compressed air. (Based on common architecture; verify with your specific model manual)",
+      "If cleaning and ventilation do not resolve the issue, the internal temperature sensor or BMS may be faulty."
+    ],
+    "professional_when": "If E2 appears at room temperature with no load, or if the unit does not cool down normally, contact the manufacturer for warranty service.",
+    "related": [
+      {"text": "E1 Overload Power Station", "href": "e1-overload-ecoflow-jackery-blutti-anker.html"},
+      {"text": "E3 AC Overload Power Station", "href": "e3-ac-overload-power-station.html"},
+      {"text": "E6 Battery Fault Power Station", "href": "e6-battery-fault-power-station.html"},
+      {"text": "E7 Fan Blocked Power Station", "href": "e7-fan-blocked-power-station.html"}
+    ],
+    "faq": [
+      {"q": "Can I use my power station in hot weather?", "a": "Yes, but keep it shaded and allow airflow. Avoid continuous high loads above 35C ambient."},
+      {"q": "Does E2 damage the battery?", "a": "The shutdown protects the battery, but frequent high-temperature events reduce long-term lifespan."},
+      {"q": "Why does E2 happen while charging?", "a": "Charging generates heat. Fast charging in warm environments often triggers thermal limits."}
+    ],
+    "cost_table": false,
+    "safety_warnings": ["Do not submerge or spray water on a hot power station to cool it. Thermal shock and electrical hazards may result."]
+  },
+  {
+    "filename": "e3-ac-overload-power-station.html",
+    "code": "E3 AC Overload",
+    "title": "E3 AC Overload Error Fix for Portable Power Stations | TechSpecsHub",
+    "meta_description": "Fix E3 AC overload errors on power stations fast. Learn the difference between E1 and E3, reduce loads, reset your unit, and protect your inverter.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/e3-ac-overload-power-station.html",
+    "h1": "E3 AC Overload — Power Station | TechSpecsHub",
+    "severity": "Warning",
+    "difficulty": "Beginner",
+    "repair_time": "10-30 minutes",
+    "diy_cost": "$0",
+    "dealer_cost": "$0-100",
+    "device_type": "Power Station",
+    "what_is": "E3 AC Overload is similar to E1 but is specific to the AC inverter output on some power station brands. While E1 may indicate a general system overload, E3 is often triggered when the AC side specifically exceeds its rated capacity. Some manufacturers use E3 to distinguish between AC port overload and DC or total system overload. The root cause is the same: connected appliances draw more watts than the AC inverter can supply continuously. Resolving E3 involves identifying which AC outlet or appliance caused the trip, reducing the load, and resetting the inverter. It is important to distinguish between resistive loads like heaters and inductive loads like motors, which have high inrush currents that can fool simple wattage calculations.",
+    "symptoms": [
+      "E3 displayed on LCD or app",
+      "AC outlets lose power while USB/DC may remain active",
+      "Beeping alarm from the unit",
+      "Error repeats if the same appliance is reconnected",
+      "Unit may feel warm near the inverter section"
+    ],
+    "tools": [
+      "Wattage meter",
+      "Appliance nameplate or manual",
+      "Manufacturer app for load monitoring"
+    ],
+    "steps": [
+      "Disconnect all AC appliances from the power station.",
+      "Identify the continuous and surge ratings for your specific AC inverter.",
+      "Measure each appliance's running and startup wattage using a meter.",
+      "Reconnect appliances one by one, starting with the lowest wattage, while monitoring total load.",
+      "Avoid running multiple high-wattage devices simultaneously on the same AC circuit.",
+      "Reset the AC inverter by turning the AC output off and on, or via the app. (Based on common architecture; verify with your specific model manual)",
+      "If E3 occurs with no load, the inverter current sensor may be faulty; contact support."
+    ],
+    "professional_when": "If E3 triggers with zero AC load, or if the inverter smells burnt, seek manufacturer service. Internal inverter damage is not user-serviceable.",
+    "related": [
+      {"text": "E1 Overload Power Station", "href": "e1-overload-ecoflow-jackery-blutti-anker.html"},
+      {"text": "E2 High Temperature Power Station", "href": "e2-high-temperature-power-station.html"},
+      {"text": "E6 Battery Fault Power Station", "href": "e6-battery-fault-power-station.html"},
+      {"text": "E7 Fan Blocked Power Station", "href": "e7-fan-blocked-power-station.html"}
+    ],
+    "faq": [
+      {"q": "What is the difference between E1 and E3?", "a": "E1 is often a general overload, while E3 is AC-specific on some brands. Check your manual for exact definitions."},
+      {"q": "Can I run a microwave on a power station?", "a": "Only if the microwave's running wattage is well below the inverter's continuous rating and surge capacity."},
+      {"q": "Why does my power station show E3 at half capacity?", "a": "Some units split AC output across multiple circuits. A single port may have a lower limit than total inverter capacity."}
+    ],
+    "cost_table": false,
+    "safety_warnings": ["Do not daisy-chain power strips to add more outlets. Overloading the inverter risks fire and voids warranties."]
+  },
+  {
+    "filename": "e6-battery-fault-power-station.html",
+    "code": "E6 Battery Fault",
+    "title": "E6 Battery Fault Repair Guide for Power Stations | TechSpecsHub",
+    "meta_description": "Diagnose and fix E6 battery fault errors on portable power stations. Learn BMS reset steps, cell balancing, and when to claim warranty replacement.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/e6-battery-fault-power-station.html",
+    "h1": "E6 Battery Fault — Power Station | TechSpecsHub",
+    "severity": "Critical",
+    "difficulty": "Intermediate",
+    "repair_time": "30-90 minutes",
+    "diy_cost": "$0-300",
+    "dealer_cost": "$100-500",
+    "device_type": "Power Station",
+    "what_is": "E6 Battery Fault indicates that the battery management system has detected an abnormal condition within the battery pack that prevents safe operation. This may include cell voltage imbalance, internal short detection, excessive self-discharge, temperature sensor failure, or charge/discharge current anomalies. Unlike temporary overload or temperature errors, E6 often requires intervention to restore pack health or replace faulty components. Causes range from deep discharging during storage, manufacturing defects, physical damage, or age-related degradation. Some power stations allow BMS resets through button combinations or app commands, while others lock out permanently until serviced. Because lithium battery faults can precede thermal events, E6 should be treated seriously and the unit should not be charged unattended.",
+    "symptoms": [
+      "E6 displayed and all output disabled",
+      "Unit does not charge or charges very slowly",
+      "Rapid battery percentage drops or jumps",
+      "Swelling or warmth from the battery compartment",
+      "App shows cell imbalance or sensor error"
+    ],
+    "tools": [
+      "Manufacturer app for diagnostics",
+      "Multimeter for external voltage check (if accessible)",
+      "Torx or hex drivers for disassembly (if out of warranty)",
+      "Fire-safe charging surface like concrete or metal"
+    ],
+    "steps": [
+      "Stop using the unit immediately and place it on a non-flammable surface away from combustibles.",
+      "Check the manufacturer's app for detailed fault information such as cell voltages or sensor status.",
+      "Attempt a BMS reset using the recommended button sequence or app function. (Based on common architecture; verify with your specific model manual)",
+      "If reset fails, drain the unit completely by leaving a small load connected, then perform a full charge cycle to trigger balancing.",
+      "If the unit is out of warranty and you have technical experience, open the case and measure individual cell group voltages.",
+      "If one cell group is significantly lower, a hobby charger or active balancer may restore balance.",
+      "If physical swelling, leakage, or burnt smell is present, do not attempt repair. Dispose of the unit per local lithium battery regulations.",
+      "Contact the manufacturer for warranty replacement if the unit is within coverage and no physical damage exists."
+    ],
+    "professional_when": "If the battery is swollen, smells burnt, or if the BMS reset and balancing do not clear E6, professional battery service or replacement is the safest option.",
+    "related": [
+      {"text": "E1 Overload Power Station", "href": "e1-overload-ecoflow-jackery-blutti-anker.html"},
+      {"text": "E2 High Temperature Power Station", "href": "e2-high-temperature-power-station.html"},
+      {"text": "E3 AC Overload Power Station", "href": "e3-ac-overload-power-station.html"},
+      {"text": "E7 Fan Blocked Power Station", "href": "e7-fan-blocked-power-station.html"}
+    ],
+    "faq": [
+      {"q": "Is E6 always a battery replacement?", "a": "Not always. Some cases resolve with BMS reset or balancing, but persistent E6 often indicates cell failure."},
+      {"q": "Can I still charge with E6?", "a": "Only if the manufacturer app explicitly allows it. Otherwise, charging a faulted pack is a fire risk."},
+      {"q": "How do I prevent E6?", "a": "Avoid deep discharge, store at 50% charge in cool conditions, and use the manufacturer-approved charger."}
+    ],
+    "cost_table": true,
+    "safety_warnings": ["Never charge a power station showing E6 unattended. Place it away from flammable materials until the fault is resolved."]
+  },
+  {
+    "filename": "e7-fan-blocked-power-station.html",
+    "code": "E7 Fan Blocked",
+    "title": "E7 Fan Blocked Error Fix for Power Stations | TechSpecsHub",
+    "meta_description": "Clear E7 fan blocked errors on EcoFlow, Jackery, and similar power stations. Step-by-step cleaning guide, vent maintenance, and prevention tips.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/e7-fan-blocked-power-station.html",
+    "h1": "E7 Fan Blocked — Power Station | TechSpecsHub",
+    "severity": "Common",
+    "difficulty": "Beginner",
+    "repair_time": "15-45 minutes",
+    "diy_cost": "$0-20",
+    "dealer_cost": "$50-200",
+    "device_type": "Power Station",
+    "what_is": "E7 Fan Blocked is a diagnostic code indicating that the cooling fan is not spinning at the expected RPM or that airflow through the unit is obstructed. Power stations with active cooling use temperature-controlled fans to dissipate heat from the inverter and battery pack. When dust, pet hair, or debris accumulates on the fan blades or intake vents, the fan may stall or draw excessive current, triggering the E7 fault. In some designs, a small tachometer sensor monitors fan speed and reports anomalies to the BMS. E7 is usually benign if addressed quickly, but prolonged operation with blocked cooling can lead to overheating and more serious errors like E2 or E6. Regular cleaning of vents and fan housings is the best prevention.",
+    "symptoms": [
+      "E7 displayed on screen or app",
+      "Fan noise is absent or irregular when unit is under load",
+      "Unit feels warmer than usual during charging or discharging",
+      "Dust visible on intake or exhaust grilles",
+      "Error may clear temporarily if the unit is shaken or tapped"
+    ],
+    "tools": [
+      "Phillips screwdriver",
+      "Compressed air canister",
+      "Soft brush or cotton swabs",
+      "Vacuum with small nozzle"
+    ],
+    "steps": [
+      "Power off the unit and disconnect all loads and charging cables.",
+      "Inspect the exterior intake and exhaust vents for visible dust, lint, or debris.",
+      "Use a vacuum with a narrow attachment to remove loose debris from the outside.",
+      "If the fan is accessible after removing a panel, carefully unscrew and open the housing. (Based on common architecture; verify with your specific model manual)",
+      "Blow out dust from the fan blades and heatsink fins using short bursts of compressed air.",
+      "Gently clean stubborn buildup with a soft brush or swab. Avoid bending fan blades.",
+      "Reassemble the housing, ensuring no cables obstruct the fan path.",
+      "Power on the unit and place it under moderate load to confirm the fan spins smoothly and E7 does not return."
+    ],
+    "professional_when": "If the fan does not spin after cleaning, the motor or tachometer sensor may be faulty. Replacement fans are sometimes available from the manufacturer.",
+    "related": [
+      {"text": "E1 Overload Power Station", "href": "e1-overload-ecoflow-jackery-blutti-anker.html"},
+      {"text": "E2 High Temperature Power Station", "href": "e2-high-temperature-power-station.html"},
+      {"text": "E3 AC Overload Power Station", "href": "e3-ac-overload-power-station.html"},
+      {"text": "E6 Battery Fault Power Station", "href": "e6-battery-fault-power-station.html"}
+    ],
+    "faq": [
+      {"q": "Can I use the power station with E7?", "a": "Briefly for light loads, but avoid high-wattage use until airflow is restored."},
+      {"q": "How often should I clean the fan?", "a": "Every 3-6 months in dusty environments; annually for normal indoor use."},
+      {"q": "What if my unit has no visible fan?", "a": "Some units use passive cooling. E7 on those models may indicate a sensor error rather than a physical blockage."}
+    ],
+    "cost_table": false,
+    "safety_warnings": ["Do not insert tools into vents while the unit is powered on. Fan blades can start unexpectedly and cause injury."]
+  },
+  {
+    "filename": "gimbal-motor-overload-dji.html",
+    "code": "Gimbal Motor Overload",
+    "title": "Gimbal Motor Overload Error Fix for DJI Drones | TechSpecsHub",
+    "meta_description": "Fix DJI gimbal motor overload errors with our detailed guide. Learn calibration, physical inspection, and safe reset procedures for Mini, Air, and Mavic series.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/gimbal-motor-overload-dji.html",
+    "h1": "Gimbal Motor Overload — DJI Drone | TechSpecsHub",
+    "severity": "Warning",
+    "difficulty": "Intermediate",
+    "repair_time": "20-60 minutes",
+    "diy_cost": "$0-50",
+    "dealer_cost": "$80-250",
+    "device_type": "Drone",
+    "what_is": "The Gimbal Motor Overload error on DJI drones occurs when the gimbal control system detects excessive current draw or resistance in one of the three brushless motors responsible for pitch, roll, and yaw stabilization. This usually means the gimbal is physically obstructed, a motor is failing, or the IMU calibration is corrupted. Common physical causes include bent gimbal arms, debris in the mechanism, missing dampeners, or a cracked ribbon cable causing intermittent shorts. Software causes include outdated firmware, incorrect calibration parameters, or rapid temperature changes affecting sensor drift. Because the gimbal is a precision electromechanical system, forcing it manually can strip gears or damage motors. A methodical approach starting with visual inspection and software reset is recommended before considering hardware replacement.",
+    "symptoms": [
+      "App displays 'Gimbal Motor Overload' on startup",
+      "Gimbal vibrates or jerks instead of moving smoothly",
+      "Gimbal hangs at an odd angle and does not initialize",
+      "Abnormal motor heat after brief operation",
+      "Video footage is jerky or horizon is tilted"
+    ],
+    "tools": [
+      "DJI Fly or DJI GO 4 app",
+      "Small Phillips and Torx screwdrivers",
+      "Compressed air",
+      "Isopropyl alcohol and cotton swabs",
+      "Replacement gimbal dampeners (if damaged)"
+    ],
+    "steps": [
+      "Power on the drone and observe the gimbal startup sequence. Note which axis seems stuck or vibrating.",
+      "Power off and visually inspect the gimbal for physical damage, bent arms, or foreign objects like sand or grass.",
+      "Gently remove debris with compressed air. Do not force the gimbal to move by hand.",
+      "Check the ribbon cable for creases, tears, or loose connections. (Based on common architecture; verify with your specific model manual)",
+      "If no physical damage is found, perform an IMU calibration in the app on a perfectly level surface.",
+      "After IMU calibration, run the gimbal auto-calibration routine in the app.",
+      "Update the drone and remote controller firmware to the latest version.",
+      "If the error persists after calibration and firmware update, the motor or ESC board may need replacement."
+    ],
+    "professional_when": "If the gimbal arm is bent, the ribbon cable is torn, or motor replacement is needed, DJI authorized service is recommended to preserve warranty and alignment.",
+    "related": [
+      {"text": "Gimbal IMU Calibration DJI", "href": "gimbal-imu-calibration-dji.html"},
+      {"text": "Vision System Error DJI", "href": "vision-system-error-dji.html"},
+      {"text": "Compass Error Drone", "href": "compass-error-drone.html"},
+      {"text": "Battery Temperature Error Drone", "href": "battery-temperature-error-drone.html"}
+    ],
+    "faq": [
+      {"q": "Can I fly with a gimbal motor overload?", "a": "You can fly, but stabilization and video quality will be poor. It may also worsen mechanical damage."},
+      {"q": "Does DJI cover gimbal motor overload under warranty?", "a": "If there is no crash or water damage, yes. Physical impact damage is typically excluded."},
+      {"q": "Why did the error appear after a firmware update?", "a": "Occasionally firmware resets calibration data. Re-calibrating the gimbal and IMU usually resolves this."}
+    ],
+    "cost_table": true,
+    "safety_warnings": ["Never power on the drone while the gimbal clamp is installed. Doing so burns out motors within seconds."]
+  },
+  {
+    "filename": "gimbal-imu-calibration-dji.html",
+    "code": "Gimbal IMU Calibration",
+    "title": "Gimbal IMU Calibration Guide for DJI Drones | TechSpecsHub",
+    "meta_description": "Learn how to calibrate DJI gimbal IMU correctly. Step-by-step for Mini, Air, Mavic, and Phantom. Fix tilted horizon and jerky footage with proper calibration.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/gimbal-imu-calibration-dji.html",
+    "h1": "Gimbal IMU Calibration — DJI Drone | TechSpecsHub",
+    "severity": "Common",
+    "difficulty": "Beginner",
+    "repair_time": "15-30 minutes",
+    "diy_cost": "$0",
+    "dealer_cost": "$0-80",
+    "device_type": "Drone",
+    "what_is": "Gimbal IMU calibration is the process of teaching the drone's inertial measurement unit where level and neutral orientations are. The IMU combines accelerometer and gyroscope data to stabilize the camera and maintain horizon level. Over time, sensor drift, temperature changes, hard landings, or firmware updates can cause the IMU to develop offset errors. Symptoms include a tilted horizon, slow horizon drift during hover, or the gimbal failing to hold position. Calibration is a software procedure performed through the DJI app and requires a perfectly flat, vibration-free surface. It is one of the safest and most effective first steps when experiencing gimbal behavior issues, and it costs nothing but a few minutes of time.",
+    "symptoms": [
+      "Horizon is visibly tilted in photos and video",
+      "Gimbal slowly drifts left or right during hover",
+      "Gimbal does not return to center when double-tapping the app",
+      "Calibration prompt appears in the app",
+      "Jerky corrections after yaw inputs"
+    ],
+    "tools": [
+      "DJI Fly or DJI GO 4 app",
+      "Flat, level surface like a table or tile floor",
+      "Fully charged drone battery"
+    ],
+    "steps": [
+      "Ensure the drone battery and remote controller are fully charged to prevent interruption.",
+      "Power on the drone and remote, and connect to the app.",
+      "Navigate to Settings > Control > Gimbal Calibration or IMU Calibration depending on your model.",
+      "Place the drone on a perfectly flat, vibration-free surface. Avoid carpets or soft mats.",
+      "Remove the gimbal protector/clamp so the gimbal can move freely during calibration.",
+      "Start the calibration and do not touch or move the drone until the app confirms completion.",
+      "If the app reports calibration failure, power cycle the drone and try a different surface.",
+      "After successful calibration, verify by slowly panning the drone and checking horizon level in the app."
+    ],
+    "professional_when": "If calibration fails repeatedly on multiple surfaces, the IMU hardware may be defective and require DJI service.",
+    "related": [
+      {"text": "Gimbal Motor Overload DJI", "href": "gimbal-motor-overload-dji.html"},
+      {"text": "Vision System Error DJI", "href": "vision-system-error-dji.html"},
+      {"text": "Compass Error Drone", "href": "compass-error-drone.html"},
+      {"text": "Battery Temperature Error Drone", "href": "battery-temperature-error-drone.html"}
+    ],
+    "faq": [
+      {"q": "How often should I calibrate the gimbal IMU?", "a": "Only when you notice drift or after hard landings and firmware updates. Over-calibration is unnecessary."},
+      {"q": "Can I calibrate on grass?", "a": "No. Soft or uneven surfaces introduce errors. Use a hard, level floor or table."},
+      {"q": "Why does my horizon still tilt after calibration?", "a": "Check that the gimbal roll axis is not physically damaged. Persistent tilt may require mechanical adjustment."}
+    ],
+    "cost_table": false,
+    "safety_warnings": ["Do not attempt to calibrate while holding the drone in your hand. Movement during calibration corrupts sensor data."]
+  },
+  {
+    "filename": "vision-system-error-dji.html",
+    "code": "Vision System Error",
+    "title": "Vision System Error Fix for DJI Drones | TechSpecsHub",
+    "meta_description": "Troubleshoot DJI vision system errors with our guide. Clean sensors, recalibrate vision systems, and restore obstacle avoidance on Mini, Air, and Mavic drones.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/vision-system-error-dji.html",
+    "h1": "Vision System Error — DJI Drone | TechSpecsHub",
+    "severity": "Warning",
+    "difficulty": "Intermediate",
+    "repair_time": "20-45 minutes",
+    "diy_cost": "$0",
+    "dealer_cost": "$50-200",
+    "device_type": "Drone",
+    "what_is": "The Vision System Error on DJI drones indicates that one or more visual positioning or obstacle avoidance sensors are not functioning correctly. DJI drones use downward, forward, backward, and sometimes lateral vision sensors to maintain position during hover, enable precision landing, and avoid obstacles. These sensors include cameras and infrared time-of-flight modules. Errors can be caused by dirty lenses, scratched sensor covers, poor lighting, reflective surfaces, firmware bugs, or hardware failure. Because the vision system is integral to flight safety, this error often restricts flight modes or disables obstacle avoidance until resolved. Cleaning and recalibration resolve most cases; hardware replacement is rare but necessary if the sensor module is damaged.",
+    "symptoms": [
+      "App displays 'Vision System Error' or specific sensor errors",
+      "Obstacle avoidance is disabled in settings",
+      "Drone drifts during hover indoors or at low altitude",
+      "Precision landing fails or landing is unstable",
+      "Error appears only in low light or over reflective surfaces"
+    ],
+    "tools": [
+      "DJI Fly or DJI GO 4 app",
+      "Microfiber cloth and lens cleaner",
+      "Cotton swabs and isopropyl alcohol",
+      "Bright, even lighting for calibration",
+      "Patterned floor or calibration mat (for downward sensors)"
+    ],
+    "steps": [
+      "Power on the drone and check the app for specific sensor errors (forward, backward, downward, etc.).",
+      "Inspect all vision sensor lenses and covers for dirt, fingerprints, scratches, or cracks.",
+      "Clean gently with a microfiber cloth and lens cleaner. Avoid abrasive materials.",
+      "For stubborn residue, use a cotton swab lightly dampened with isopropyl alcohol.",
+      "Navigate to the vision system calibration section in the app. (Based on common architecture; verify with your specific model manual)",
+      "Follow the on-screen prompts to calibrate each sensor. This usually involves pointing the drone at specific patterns or textures.",
+      "If calibration fails, try a different environment with bright, diffuse lighting and textured surfaces.",
+      "Update firmware and test flight in an open area to confirm obstacle avoidance and positioning are restored."
+    ],
+    "professional_when": "If sensors are cracked, calibration fails in multiple environments, or the error persists after firmware updates, contact DJI support for sensor module replacement.",
+    "related": [
+      {"text": "Gimbal Motor Overload DJI", "href": "gimbal-motor-overload-dji.html"},
+      {"text": "Gimbal IMU Calibration DJI", "href": "gimbal-imu-calibration-dji.html"},
+      {"text": "Compass Error Drone", "href": "compass-error-drone.html"},
+      {"text": "Battery Temperature Error Drone", "href": "battery-temperature-error-drone.html"}
+    ],
+    "faq": [
+      {"q": "Can I fly with a vision system error?", "a": "Yes in most cases, but obstacle avoidance and precision landing will be disabled. Fly cautiously."},
+      {"q": "Why does the error only happen indoors?", "a": "Downward sensors rely on texture and light. Glossy floors and dim rooms confuse the system."},
+      {"q": "Do ND filters cause vision errors?", "a": "ND filters cover the camera lens, not vision sensors. They do not affect obstacle avoidance."}
+    ],
+    "cost_table": false,
+    "safety_warnings": ["Do not fly in complex environments if obstacle avoidance is disabled. Maintain visual line of sight at all times."]
+  },
+  {
+    "filename": "compass-error-drone.html",
+    "code": "Compass Error",
+    "title": "Compass Error Fix for DJI and Consumer Drones | TechSpecsHub",
+    "meta_description": "Fix drone compass errors fast. Learn calibration techniques, interference sources, and how to resolve magnetic field warnings on DJI, Autel, and FPV drones.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/compass-error-drone.html",
+    "h1": "Compass Error — Drone | TechSpecsHub",
+    "severity": "Common",
+    "difficulty": "Beginner",
+    "repair_time": "10-20 minutes",
+    "diy_cost": "$0",
+    "dealer_cost": "$0-50",
+    "device_type": "Drone",
+    "what_is": "A Compass Error occurs when the drone's magnetometer detects abnormal magnetic fields or inconsistent heading data. The compass works alongside the IMU to determine orientation and is critical for stable flight and return-to-home accuracy. Errors are typically caused by flying near large metal structures, power lines, reinforced concrete, or carrying magnetic accessories. In some cases, the compass itself may be miscalibrated or failing. Most drones will refuse to take off if a compass error is active, while others may switch to ATTI mode and drift. Calibration is a simple procedure that involves rotating the drone along its axes to map the local magnetic field. It should be performed away from vehicles, buildings, and metal objects.",
+    "symptoms": [
+      "App shows 'Compass Error' or 'Magnetic Interference'",
+      "Drone refuses to arm or enter GPS mode",
+      "Drone yaws or drifts without stick input",
+      "Return-to-home trajectory is inaccurate",
+      "Calibration prompt appears repeatedly"
+    ],
+    "tools": [
+      "DJI Fly / DJI GO 4 / manufacturer app",
+      "Open area away from metal and electronics"
+    ],
+    "steps": [
+      "Move at least 50 meters away from cars, buildings, power lines, and reinforced concrete.",
+      "Power on the drone and remote, connect to the app.",
+      "Navigate to Settings > Safety > Compass Calibration.",
+      "Hold the drone horizontally and rotate it 360 degrees until the app beeps or lights turn green.",
+      "Tilt the drone vertically (nose down) and rotate 360 degrees again until confirmation.",
+      "If calibration fails, move to a different location and check for magnetic accessories attached to the drone.",
+      "After calibration, verify the compass heading in the app matches real-world orientation.",
+      "If errors persist in multiple locations, the compass module may need replacement."
+    ],
+    "professional_when": "If calibration fails in multiple open areas and no magnetic accessories are attached, the internal compass module may be defective.",
+    "related": [
+      {"text": "Gimbal Motor Overload DJI", "href": "gimbal-motor-overload-dji.html"},
+      {"text": "Gimbal IMU Calibration DJI", "href": "gimbal-imu-calibration-dji.html"},
+      {"text": "Vision System Error DJI", "href": "vision-system-error-dji.html"},
+      {"text": "Battery Temperature Error Drone", "href": "battery-temperature-error-drone.html"}
+    ],
+    "faq": [
+      {"q": "Do I need to calibrate before every flight?", "a": "No. Calibrate when moving to a new region, after hard impacts, or when the app prompts you."},
+      {"q": "Can a phone case cause compass errors?", "a": "Yes, if the case contains magnets or metal. Remove it from the drone or use a non-magnetic mount."},
+      {"q": "Why does my drone spin in circles?", "a": "Severe compass interference causes yaw drift. Land immediately and recalibrate in a safe area."}
+    ],
+    "cost_table": false,
+    "safety_warnings": ["Never calibrate the compass indoors or near vehicles. Incorrect calibration leads to flyaways and crashes."]
+  },
+  {
+    "filename": "battery-temperature-error-drone.html",
+    "code": "Battery Temperature Error",
+    "title": "Drone Battery Temperature Error Fix Guide | TechSpecsHub",
+    "meta_description": "Fix drone battery temperature errors on DJI and other brands. Learn safe charging, storage temperatures, and how to prevent thermal shutdowns during flight.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/battery-temperature-error-drone.html",
+    "h1": "Battery Temperature Error — Drone | TechSpecsHub",
+    "severity": "Warning",
+    "difficulty": "Beginner",
+    "repair_time": "10-30 minutes",
+    "diy_cost": "$0",
+    "dealer_cost": "$0-100",
+    "device_type": "Drone",
+    "what_is": "The Battery Temperature Error on drones indicates that the intelligent flight battery's internal temperature is outside the safe range for operation or charging. Lithium-polymer (LiPo) and lithium-ion drone batteries have narrow safe windows—typically 0C to 40C for discharging and 5C to 45C for charging. Flying in cold weather reduces chemical activity and voltage output, triggering low-temperature warnings. Flying or charging in hot conditions risks thermal runaway. The battery management system inside DJI and other smart batteries monitors cell temperature via thermistors and communicates limits to the aircraft. Repeated temperature errors can degrade cell life and in extreme cases cause swelling or venting. Proper storage, pre-flight conditioning, and mindful charging habits prevent most temperature-related issues.",
+    "symptoms": [
+      "App shows 'Battery Temperature Too Low' or 'Too High'",
+      "Drone refuses to take off or land immediately",
+      "Battery LED flashes red or yellow rapidly",
+      "Charging stops shortly after starting",
+      "Battery feels very cold or warm to the touch"
+    ],
+    "tools": [
+      "Insulated battery bag or case",
+      "Portable hand warmer (for cold weather)",
+      "Shade or cooling pack (for hot weather)",
+      "Infrared thermometer (optional)"
+    ],
+    "steps": [
+      "Check the ambient temperature and compare it to the battery's rated operating range in the manual.",
+      "If the battery is too cold, place it in a warm pocket or use a hand warmer outside the battery casing for 10-15 minutes.",
+      "If the battery is too hot, move it to shade and allow it to cool for 15-30 minutes before flight or charging.",
+      "Inspect the battery for swelling, punctures, or discolored cells. Do not use damaged batteries.",
+      "Update the drone and battery firmware via the app; some updates refine temperature thresholds.",
+      "Store batteries at room temperature (20C-25C) and 40-60% charge when not in use for extended periods.",
+      "If temperature errors occur at normal ambient conditions, the internal thermistor may be faulty. (Based on common architecture; verify with your specific model manual)",
+      "Contact the manufacturer for battery replacement if the error persists across multiple charge cycles."
+    ],
+    "professional_when": "If the battery swells, smells unusual, or shows temperature errors at room temperature, discontinue use and seek a replacement.",
+    "related": [
+      {"text": "Gimbal Motor Overload DJI", "href": "gimbal-motor-overload-dji.html"},
+      {"text": "Gimbal IMU Calibration DJI", "href": "gimbal-imu-calibration-dji.html"},
+      {"text": "Vision System Error DJI", "href": "vision-system-error-dji.html"},
+      {"text": "Compass Error Drone", "href": "compass-error-drone.html"}
+    ],
+    "faq": [
+      {"q": "Can I fly in winter?", "a": "Yes, but warm batteries to at least 15C before takeoff. Cold batteries sag voltage and reduce flight time."},
+      {"q": "Why does my battery get hot while charging?", "a": "Fast charging generates heat. Use standard charge rates and charge in a ventilated area."},
+      {"q": "Is it safe to store batteries in the fridge?", "a": "Only if sealed in an airtight bag to prevent condensation. Room temperature storage is simpler and safer."}
+    ],
+    "cost_table": false,
+    "safety_warnings": ["Never charge a battery that is swollen or hot to the touch. LiPo fires are difficult to extinguish."]
+  },
+  {
+    "filename": "power-station-solar-input-not-working.html",
+    "code": "Solar Input Not Working",
+    "title": "Power Station Solar Input Not Working Troubleshooting | TechSpecsHub",
+    "meta_description": "Troubleshoot power station solar input issues. Check panels, MC4 connectors, charge controllers, and settings with our step-by-step repair guide.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/power-station-solar-input-not-working.html",
+    "h1": "Solar Input Not Working — Power Station | TechSpecsHub",
+    "severity": "Common",
+    "difficulty": "Beginner",
+    "repair_time": "20-60 minutes",
+    "diy_cost": "$0-100",
+    "dealer_cost": "$50-300",
+    "device_type": "Power Station",
+    "what_is": "When a power station's solar input is not working, the unit fails to charge from photovoltaic panels despite proper sunlight and connections. This issue can stem from the solar panels, cabling, connectors, the power station's internal MPPT or PWM charge controller, or user settings. Common causes include reversed polarity, insufficient panel voltage, dirty panels, loose MC4 connectors, activated car-charge priority modes, or firmware bugs that disable solar input. Some power stations require a minimum input voltage to wake the charge controller, so undersized or shaded panels may not register. Diagnosing solar input problems involves isolating each component: verifying panel output independently, testing cables for continuity, inspecting connectors for corrosion, and checking the power station's input settings through its display or app.",
+    "symptoms": [
+      "No wattage shown on solar input display",
+      "Solar icon missing or grayed out in app",
+      "Panels produce voltage but power station does not charge",
+      "Intermittent charging that cuts in and out",
+      "Error message related to input voltage or polarity"
+    ],
+    "tools": [
+      "Multimeter",
+      "MC4 connector tool",
+      "Soft brush for panel cleaning",
+      "Spare MC4 cables",
+      "Manufacturer app"
+    ],
+    "steps": [
+      "Check the power station's solar input voltage range in the manual and confirm your panel's open-circuit voltage is within spec.",
+      "Inspect solar panels for dirt, shading, or physical damage. Clean with water and a soft brush if needed.",
+      "Use a multimeter to measure panel voltage at the MC4 connectors under direct sunlight.",
+      "Inspect MC4 connectors for moisture, corrosion, or loose locking clips. Re-seat or replace if necessary.",
+      "Check the power station settings to ensure solar input is enabled and not overridden by car or AC priority modes. (Based on common architecture; verify with your specific model manual)",
+      "Test with a different solar panel or cable to isolate whether the issue is with the station or the array.",
+      "If voltage is present but no charging occurs, power cycle the station and check for firmware updates.",
+      "If all external components test good and the issue persists, the internal charge controller may be faulty."
+    ],
+    "professional_when": "If the internal charge controller or input port is suspected to be faulty, manufacturer service or warranty replacement is usually required.",
+    "related": [
+      {"text": "E1 Overload Power Station", "href": "e1-overload-ecoflow-jackery-blutti-anker.html"},
+      {"text": "E2 High Temperature Power Station", "href": "e2-high-temperature-power-station.html"},
+      {"text": "E6 Battery Fault Power Station", "href": "e6-battery-fault-power-station.html"},
+      {"text": "E7 Fan Blocked Power Station", "href": "e7-fan-blocked-power-station.html"}
+    ],
+    "faq": [
+      {"q": "Can I use any solar panel with my power station?", "a": "Only if the panel's voltage and connector type match the station's input specs. Excess voltage can damage the controller."},
+      {"q": "Why does solar input work only at midday?", "a": "Low morning or evening sun may not produce enough voltage to exceed the charge controller's wake threshold."},
+      {"q": "Does cloud cover stop charging completely?", "a": "Not always, but wattage drops significantly. Heavy overcast may fall below the minimum required input."}
+    ],
+    "cost_table": true,
+    "safety_warnings": ["Never connect solar panels with voltage exceeding the power station's maximum input rating. Overvoltage can destroy the charge controller."]
+  },
+  {
+    "filename": "hybrid-battery-cooling-fan-noise.html",
+    "code": "Cooling Fan Noise",
+    "title": "Hybrid Battery Cooling Fan Noise Fix Guide | TechSpecsHub",
+    "meta_description": "Fix loud hybrid battery cooling fan noise. Learn to clean, lubricate, or replace the fan in Toyota Prius, Camry, and other hybrids with our DIY guide.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/hybrid-battery-cooling-fan-noise.html",
+    "h1": "Cooling Fan Noise — Hybrid Battery | TechSpecsHub",
+    "severity": "Common",
+    "difficulty": "Beginner",
+    "repair_time": "30-90 minutes",
+    "diy_cost": "$30-150",
+    "dealer_cost": "$200-600",
+    "device_type": "Hybrid Vehicle",
+    "what_is": "A loud or abnormal noise from the hybrid battery cooling fan is a common complaint in vehicles like the Toyota Prius, Camry Hybrid, and Lexus CT200h. The cooling fan draws cabin air through the battery pack to maintain optimal module temperatures. Over time, dust, pet hair, and debris accumulate on the fan blades and blower motor, causing imbalance, vibration, and bearing wear. The result is a buzzing, whining, or rattling sound that is especially noticeable when the fan runs at high speed. In some cases, the noise is accompanied by reduced airflow and elevated battery temperatures. Addressing the issue early prevents overheating and extends battery life. The repair typically involves cleaning or replacing the fan assembly, which is accessible from the rear seat or cargo area on most models.",
+    "symptoms": [
+      "Loud buzzing or whining from rear seat area",
+      "Fan noise increases with battery load or warm weather",
+      "Reduced airflow from battery cooling vents",
+      "Elevated battery temperatures in diagnostic data",
+      "Rattling sound that changes with fan speed"
+    ],
+    "tools": [
+      "Trim removal tools",
+      "Phillips screwdriver",
+      "Shop vacuum",
+      "Replacement fan assembly (if needed)",
+      "Cabin air filter"
+    ],
+    "steps": [
+      "Power off the vehicle and remove the key.",
+      "Locate the battery cooling fan, usually behind the rear seat or under the cargo floor panel.",
+      "Remove the access panel using trim tools and expose the fan housing.",
+      "Disconnect the fan electrical connector.",
+      "Remove the fan assembly and inspect blades for dust buildup, hair, or physical damage.",
+      "Clean the fan blades and housing thoroughly with a vacuum and soft brush.",
+      "Spin the fan by hand. If it grinds or wobbles, replace the assembly rather than lubricating, as most are sealed units.",
+      "Reinstall the fan, reconnect the wiring, replace the cabin filter, and test operation at various speeds."
+    ],
+    "professional_when": "If the noise persists after cleaning and replacing the fan, there may be duct obstruction or a failing blower motor controller requiring dealer diagnostics.",
+    "related": [
+      {"text": "P0A7F Hybrid Battery Deterioration", "href": "p0a7f-hybrid-battery-deterioration.html"},
+      {"text": "P3009 Battery Cooling Fault", "href": "p3009-battery-cooling-fault.html"},
+      {"text": "P3000 Battery Control Malfunction", "href": "p3000-battery-control-malfunction.html"},
+      {"text": "P3004 HV Battery Module Fault", "href": "p3004-hv-battery-module-fault.html"}
+    ],
+    "faq": [
+      {"q": "Is fan noise a sign of battery failure?", "a": "Not directly, but poor cooling accelerates battery aging. Fixing the fan protects long-term battery health."},
+      {"q": "Can I lubricate the fan bearings?", "a": "Most hybrid cooling fans use sealed bearings. Replacement is more reliable than lubrication."},
+      {"q": "How much does a replacement fan cost?", "a": "Aftermarket fans range from $30-100; OEM fans are $100-200 plus labor if dealer-installed."}
+    ],
+    "cost_table": true,
+    "safety_warnings": ["Ensure the vehicle is powered off before working near the battery compartment. The service plug should remain installed unless servicing the pack itself."]
+  },
+  {
+    "filename": "drone-wont-connect-controller.html",
+    "code": "Drone Won't Connect",
+    "title": "Drone Won't Connect to Controller Fix Guide | TechSpecsHub",
+    "meta_description": "Fix drone-to-controller connection issues on DJI, Autel, and FPV drones. Learn pairing, firmware updates, and signal troubleshooting steps.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/drone-wont-connect-controller.html",
+    "h1": "Drone Won't Connect — Controller | TechSpecsHub",
+    "severity": "Common",
+    "difficulty": "Beginner",
+    "repair_time": "15-45 minutes",
+    "diy_cost": "$0",
+    "dealer_cost": "$0-150",
+    "device_type": "Drone",
+    "what_is": "When a drone fails to connect to its remote controller, the aircraft cannot receive pilot inputs or transmit telemetry and video feed. This issue can occur during initial setup, after firmware updates, or spontaneously during routine use. Causes include unpaired devices, firmware mismatches between drone and controller, low battery on either end, interference from other radio sources, or hardware faults in the radio modules. Most modern drones use proprietary transmission protocols such as DJI OcuSync or Lightbridge, which require correct linking procedures. Troubleshooting follows a logical sequence: verifying power levels, checking app status messages, re-linking the controller, updating firmware, and isolating environmental interference. In rare cases, the controller's USB port or mobile device connection may be the actual point of failure rather than the radio link.",
+    "symptoms": [
+      "App shows 'Aircraft Disconnected' or 'No Signal'",
+      "Controller beeps continuously",
+      "No video feed or telemetry data",
+      "LED indicators on drone or controller flash abnormally",
+      "Connection drops intermittently at short range"
+    ],
+    "tools": [
+      "Manufacturer app",
+      "USB cable for firmware updates",
+      "Fully charged drone and controller batteries",
+      "Paperclip or pin for physical link button"
+    ],
+    "steps": [
+      "Ensure both the drone and controller batteries are above 50% charge. Low power prevents linking on many models.",
+      "Power on the controller first, then the drone. Wait 30-60 seconds for automatic linking.",
+      "If automatic linking fails, use the app to initiate manual linking or press the link button on the aircraft. (Based on common architecture; verify with your specific model manual)",
+      "Check the app for firmware mismatch warnings and update both drone and controller to the latest version.",
+      "If using a phone or tablet, try a different USB cable or port. Faulty cables are a common cause of app disconnection.",
+      "Move away from Wi-Fi routers, power lines, and large metal structures that may cause radio interference.",
+      "If the issue is range-related, check antenna orientation and avoid flying behind obstacles.",
+      "If none of the above works, factory reset the controller and re-link from scratch, or contact manufacturer support."
+    ],
+    "professional_when": "If the controller or drone radio module is suspected to be faulty, or if the aircraft was in a crash, professional repair or replacement may be needed.",
+    "related": [
+      {"text": "Gimbal Motor Overload DJI", "href": "gimbal-motor-overload-dji.html"},
+      {"text": "Vision System Error DJI", "href": "vision-system-error-dji.html"},
+      {"text": "Compass Error Drone", "href": "compass-error-drone.html"},
+      {"text": "Battery Temperature Error Drone", "href": "battery-temperature-error-drone.html"}
+    ],
+    "faq": [
+      {"q": "Why does my drone disconnect at 100 meters?", "a": "Antenna orientation, interference, or outdated firmware are common causes. Ensure antennas are perpendicular to the aircraft."},
+      {"q": "Can I fly without the controller connected to the app?", "a": "You can fly with stick inputs, but no video feed or telemetry. This is risky and not recommended."},
+      {"q": "Does a factory reset delete flight logs?", "a": "Controller resets usually do not delete aircraft flight logs stored in the app or on the drone."}
+    ],
+    "cost_table": false,
+    "safety_warnings": ["Do not attempt to fly with an unreliable controller link. Loss of signal can trigger uncontrolled behavior or flyaways."]
+  },
+  {
+    "filename": "smart-home-device-offline.html",
+    "code": "Smart Home Device Offline",
+    "title": "Smart Home Device Offline Troubleshooting Guide | TechSpecsHub",
+    "meta_description": "Get your smart home devices back online. Fix Wi-Fi, Zigbee, Z-Wave, and hub connectivity issues with our step-by-step troubleshooting guide.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/smart-home-device-offline.html",
+    "h1": "Smart Home Device Offline — Connectivity | TechSpecsHub",
+    "severity": "Common",
+    "difficulty": "Beginner",
+    "repair_time": "10-30 minutes",
+    "diy_cost": "$0",
+    "dealer_cost": "$0-100",
+    "device_type": "Smart Home",
+    "what_is": "A smart home device showing as offline means it has lost communication with its controlling hub, cloud service, or local network. This is one of the most common issues in connected homes and can affect Wi-Fi cameras, smart plugs, thermostats, lights, locks, and sensors. The root cause is usually network-related: router reboots, Wi-Fi password changes, IP address conflicts, or weak signal strength. Less commonly, the device itself has crashed, its firmware is outdated, or cloud servers are experiencing outages. Zigbee and Z-Wave devices may go offline due to mesh network disruptions if a repeater device is unplugged. Troubleshooting follows a hierarchy: verify the local network, check power to the device, restart the device, re-authenticate if credentials changed, and finally factory reset and re-enroll if necessary.",
+    "symptoms": [
+      "Device shows 'Offline' in the app",
+      "Voice assistant reports the device is not responding",
+      "Automations involving the device fail",
+      "Device LED shows red or no light",
+      "Other devices on the same network work normally"
+    ],
+    "tools": [
+      "Smartphone with manufacturer app",
+      "Router admin access",
+      "Paperclip for reset button",
+      "Wi-Fi analyzer app (optional)"
+    ],
+    "steps": [
+      "Check if other devices and the internet are working. If the whole network is down, reboot the router first.",
+      "Verify the offline device has power. Some plugs and switches have LEDs that indicate power status.",
+      "Power cycle the device by unplugging it for 10 seconds or using its reset procedure.",
+      "Check the app for firmware updates and install if available.",
+      "If the Wi-Fi password was recently changed, reconfigure the device's network settings. (Based on common architecture; verify with your specific model manual)",
+      "For Zigbee/Z-Wave devices, ensure repeater devices like smart plugs are powered and within range.",
+      "Check router settings for MAC filtering, guest network isolation, or IP conflicts that may block the device.",
+      "If all else fails, factory reset the device and re-add it to the app and automations."
+    ],
+    "professional_when": "If multiple devices repeatedly go offline despite strong signal and correct settings, the router or hub may need replacement or professional network configuration.",
+    "related": [
+      {"text": "Drone Won't Connect Controller", "href": "drone-wont-connect-controller.html"},
+      {"text": "Power Station Solar Input Not Working", "href": "power-station-solar-input-not-working.html"},
+      {"text": "3D Printer Thermal Runaway", "href": "3d-printer-thermal-runaway.html"},
+      {"text": "Hybrid Battery Cooling Fan Noise", "href": "hybrid-battery-cooling-fan-noise.html"}
+    ],
+    "faq": [
+      {"q": "Why does my smart plug keep going offline?", "a": "Weak Wi-Fi signal, router reboots, and power fluctuations are the most common causes."},
+      {"q": "Do I need to re-create automations after a reset?", "a": "Usually yes. Factory reset removes the device from the platform, and automations must be rebuilt."},
+      {"q": "Can a 5 GHz network cause issues?", "a": "Many smart home devices only support 2.4 GHz. Ensure your phone is on the 2.4 GHz band during setup."}
+    ],
+    "cost_table": false,
+    "safety_warnings": ["When factory resetting smart locks or security devices, ensure you have physical access and backup keys to avoid lockouts."]
+  },
+  {
+    "filename": "3d-printer-thermal-runaway.html",
+    "code": "Thermal Runaway",
+    "title": "3D Printer Thermal Runaway Fix and Prevention Guide | TechSpecsHub",
+    "meta_description": "Fix and prevent 3D printer thermal runaway errors. Learn heater cartridge, thermistor, and firmware checks for Marlin, Klipper, and proprietary printers.",
+    "canonical": "https://techspecshub.com/pages/troubleshooting/3d-printer-thermal-runaway.html",
+    "h1": "Thermal Runaway — 3D Printer | TechSpecsHub",
+    "severity": "Critical",
+    "difficulty": "Intermediate",
+    "repair_time": "30-120 minutes",
+    "diy_cost": "$20-100",
+    "dealer_cost": "$100-400",
+    "device_type": "3D Printer",
+    "what_is": "Thermal Runaway is a critical safety error in 3D printing where the firmware detects that the hotend or heated bed temperature is not responding correctly to heater commands. If the actual temperature deviates from the target for too long, the firmware halts the printer to prevent uncontrolled heating that could ignite nearby materials. Common causes include a loose or failing thermistor, a degraded heater cartridge, poor thermal contact between the heater block and thermistor, or drafts cooling the hotend faster than the heater can compensate. In rare cases, firmware bugs or incorrect PID tuning trigger false thermal runaway errors. Because this error exists to prevent fires, it should never be disabled. Instead, the underlying mechanical or electrical issue must be identified and repaired. Regular maintenance of the hotend assembly and keeping firmware up to date are the best preventive measures.",
+    "symptoms": [
+      "Printer halts and displays 'Thermal Runaway' or 'Heating Failed'",
+      "Hotend or bed temperature graph shows erratic drops or spikes",
+      "Heater LED stays on but temperature does not rise",
+      "Burning smell or smoke from the hotend area",
+      "Error occurs during prints or while preheating"
+    ],
+    "tools": [
+      "Hex keys and wrenches for hotend disassembly",
+      "Multimeter for thermistor and heater resistance",
+      "Replacement thermistor and heater cartridge",
+      "Thermal paste or boron nitride paste",
+      "Computer with firmware flashing tools"
+    ],
+    "steps": [
+      "Power off the printer and allow the hotend to cool completely before inspection.",
+      "Visually inspect the thermistor and heater cartridge wires for breaks, burns, or loose connections.",
+      "Remove the hotend shroud and check that the thermistor is securely seated in the heater block.",
+      "Use a multimeter to measure thermistor resistance at room temperature and compare to manufacturer specs.",
+      "Measure heater cartridge resistance. A significant deviation from spec indicates failure. (Based on common architecture; verify with your specific model manual)",
+      "If the thermistor or heater is faulty, replace it and apply thermal paste to ensure good heat transfer.",
+      "Reassemble the hotend, power on, and run a PID autotune routine through the firmware or host software.",
+      "Preheat the hotend and bed while monitoring temperatures. If stable, start a test print and observe for the first 30 minutes."
+    ],
+    "professional_when": "If the error persists after replacing thermistor and heater, or if the mainboard is suspected to have a faulty MOSFET or ADC circuit, seek professional repair.",
+    "related": [
+      {"text": "Smart Home Device Offline", "href": "smart-home-device-offline.html"},
+      {"text": "Power Station Solar Input Not Working", "href": "power-station-solar-input-not-working.html"},
+      {"text": "Hybrid Battery Cooling Fan Noise", "href": "hybrid-battery-cooling-fan-noise.html"},
+      {"text": "Drone Won't Connect Controller", "href": "drone-wont-connect-controller.html"}
+    ],
+    "faq": [
+      {"q": "Can I disable thermal runaway protection?", "a": "Absolutely not. Doing so removes a critical safety feature and creates a serious fire hazard."},
+      {"q": "Why does thermal runaway happen after a nozzle change?", "a": "The thermistor or heater may have been loosened during maintenance. Re-seat and tighten gently."},
+      {"q": "Does firmware affect thermal runaway sensitivity?", "a": "Yes. Older firmware may have less robust detection. Always run the latest stable release."}
+    ],
+    "cost_table": true,
+    "safety_warnings": ["Never leave a 3D printer with thermal runaway errors unattended. Uncontrolled heating can ignite filament and surrounding materials."]
+  }
+]

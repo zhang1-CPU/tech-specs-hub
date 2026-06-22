@@ -231,12 +231,44 @@
                 <td><span class="text-gray-600 text-sm">Clear/Monitor</span></td>
               </tr>
               <tr>
-                <td><code class="font-mono text-yellow-400 text-sm">P3000</code></td>
+                <td><a href="troubleshooting/p0a7f-hybrid-battery-deterioration.html" class="font-mono text-electric-400 text-sm hover:underline">P0A7F</a></td>
+                <td>HV Battery Pack Deterioration ?module balance fault</td>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td class="text-gray-600 text-sm">Prius 2010?022, Lexus CT200h, ES300h</td>
+                <td class="text-gray-600 text-sm">Individual module voltage spread &gt; 0.3 V under load</td>
+                <td><a href="troubleshooting/p0a7f-hybrid-battery-deterioration.html" class="text-electric-400 text-sm hover:underline">View Fix</a></td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/p3000-battery-control-malfunction.html" class="font-mono text-yellow-400 text-sm hover:underline">P3000</a></td>
                 <td>Battery Control System Malfunction ?general HV fault flag</td>
                 <td><span class="badge badge-warning">Warning</span></td>
                 <td class="text-gray-600 text-sm">Prius 2004+, Auris Hybrid, Yaris Hybrid</td>
                 <td class="text-gray-600 text-sm">Usually accompanies another P0A code; diagnose primary code first</td>
-                <td><span class="text-gray-600 text-sm">Secondary</span></td>
+                <td><a href="troubleshooting/p3000-battery-control-malfunction.html" class="text-electric-400 text-sm hover:underline">View Fix</a></td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/p3004-hv-battery-module-fault.html" class="font-mono text-electric-400 text-sm hover:underline">P3004</a></td>
+                <td>HV Battery Module Fault ?cell string voltage out of range</td>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td class="text-gray-600 text-sm">Prius 2010+, Lexus hybrids</td>
+                <td class="text-gray-600 text-sm">Module internal short or open cell</td>
+                <td><a href="troubleshooting/p3004-hv-battery-module-fault.html" class="text-electric-400 text-sm hover:underline">View Fix</a></td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/p3009-battery-cooling-fault.html" class="font-mono text-electric-400 text-sm hover:underline">P3009</a></td>
+                <td>Battery Cooling System Fault ?fan or duct blockage</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td class="text-gray-600 text-sm">Prius 2010+, Camry Hybrid</td>
+                <td class="text-gray-600 text-sm">Clogged intake filter, failed cooling fan</td>
+                <td><a href="troubleshooting/p3009-battery-cooling-fault.html" class="text-electric-400 text-sm hover:underline">View Fix</a></td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/c1259-hv-system-disable.html" class="font-mono text-electric-400 text-sm hover:underline">C1259</a></td>
+                <td>HV System Disabled ?ABS/VSC interlock active</td>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td class="text-gray-600 text-sm">Toyota/Lexus hybrids</td>
+                <td class="text-gray-600 text-sm">HV interlock triggered by brake/ABS fault</td>
+                <td><a href="troubleshooting/c1259-hv-system-disable.html" class="text-electric-400 text-sm hover:underline">View Fix</a></td>
               </tr>
               <tr>
                 <td><code class="font-mono text-electric-400 text-sm">P0BD5</code></td>
@@ -285,6 +317,41 @@
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td><a href="troubleshooting/e1-overload-ecoflow-jackery-blutti-anker.html" class="font-mono text-red-400 text-sm hover:underline">E1</a></td>
+                <td>Overload Error ?total load exceeds rated AC/DC capacity</td>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td class="text-gray-600 text-sm">EcoFlow Delta, Jackery Explorer, Bluetti AC, Anker SOLIX</td>
+                <td class="text-gray-600 text-sm">Reduce load below rated wattage; power cycle unit</td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/e2-high-temperature-power-station.html" class="font-mono text-red-400 text-sm hover:underline">E2</a></td>
+                <td>High Temperature Error ?internal temp exceeds safe threshold</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td class="text-gray-600 text-sm">EcoFlow Delta, Jackery Explorer, Bluetti AC, Anker SOLIX</td>
+                <td class="text-gray-600 text-sm">Move to shade, ensure ventilation; BMS auto-resumes when cooled</td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/e3-ac-overload-power-station.html" class="font-mono text-red-400 text-sm hover:underline">E3</a></td>
+                <td>AC Overload Error ?AC port load exceeds inverter rating</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td class="text-gray-600 text-sm">EcoFlow Delta, Jackery Explorer, Bluetti AC, Anker SOLIX</td>
+                <td class="text-gray-600 text-sm">Disconnect AC loads, reduce wattage, restart AC output</td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/e6-battery-fault-power-station.html" class="font-mono text-red-400 text-sm hover:underline">E6</a></td>
+                <td>Battery Fault ?BMS detected cell/string anomaly</td>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td class="text-gray-600 text-sm">EcoFlow Delta, Jackery Explorer, Bluetti AC, Anker SOLIX</td>
+                <td class="text-gray-600 text-sm">Power cycle; if persistent, contact manufacturer RMA</td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/e7-fan-blocked-power-station.html" class="font-mono text-red-400 text-sm hover:underline">E7</a></td>
+                <td>Fan Blocked Error ?cooling fan stalled or obstructed</td>
+                <td><span class="badge badge-common">Common</span></td>
+                <td class="text-gray-600 text-sm">EcoFlow Delta, Jackery Explorer, Bluetti AC, Anker SOLIX</td>
+                <td class="text-gray-600 text-sm">Clear debris from vents, verify fan spins freely</td>
+              </tr>
               <tr>
                 <td><code class="font-mono text-red-400 text-sm">E01 / ERR001</code></td>
                 <td>Battery Over-Temperature ?cell temp &gt; 45 °C during charge</td>
@@ -480,6 +547,41 @@
                 <td class="text-gray-600 text-sm">Do not fly. Charge to 100%, discharge fully 2× to rebalance. Persistent error = replace battery. Dispose LiPo per hazmat regulations.</td>
               </tr>
               <tr>
+                <td><a href="troubleshooting/gimbal-motor-overload-dji.html" class="font-mono text-yellow-400 text-sm hover:underline">Gimbal Motor Overload</a></td>
+                <td>Gimbal motor current exceeds safe threshold ?obstruction or imbalance</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td class="text-gray-600 text-sm">Mavic 3, Air 3, Mini 4 Pro</td>
+                <td class="text-gray-600 text-sm">Remove gimbal clamp, inspect for debris, calibrate in DJI app</td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/gimbal-imu-calibration-dji.html" class="font-mono text-yellow-400 text-sm hover:underline">Gimbal IMU Calibration</a></td>
+                <td>Gimbal IMU offset out of range ?level/gyro drift detected</td>
+                <td><span class="badge badge-common">Common</span></td>
+                <td class="text-gray-600 text-sm">Mavic 3, Air 3, Mini 4 Pro</td>
+                <td class="text-gray-600 text-sm">Place on level surface, run gimbal auto-calibration</td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/vision-system-error-dji.html" class="font-mono text-yellow-400 text-sm hover:underline">Vision System Error</a></td>
+                <td>Downward/forward vision sensor fault ?positioning failure</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td class="text-gray-600 text-sm">Mavic 3, Air 3, Mini 4 Pro</td>
+                <td class="text-gray-600 text-sm">Clean lenses, calibrate vision sensors in DJI app</td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/compass-error-drone.html" class="font-mono text-yellow-400 text-sm hover:underline">Compass Error</a></td>
+                <td>Compass Calibration Required ?magnetic interference detected</td>
+                <td><span class="badge badge-common">Common</span></td>
+                <td class="text-gray-600 text-sm">Mavic 3, Mini 3 Pro, Air 2S, Phantom 4, Autel EVO</td>
+                <td class="text-gray-600 text-sm">Move away from metal structures. Perform compass calibration in DJI Fly app.</td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/battery-temperature-error-drone.html" class="font-mono text-yellow-400 text-sm hover:underline">Battery Temperature Error</a></td>
+                <td>LiPo temperature outside safe flight range</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td class="text-gray-600 text-sm">All DJI Intelligent Batteries, Autel EVO</td>
+                <td class="text-gray-600 text-sm">Warm battery to 15?0 °C before flight; avoid direct sun</td>
+              </tr>
+              <tr>
                 <td><code class="font-mono text-yellow-400 text-sm">COMPASS_ERR</code></td>
                 <td>Compass Calibration Required ?magnetic interference detected</td>
                 <td><span class="badge badge-warning">Warning</span></td>
@@ -537,6 +639,69 @@
                 <td><span class="badge badge-warning">Warning</span></td>
                 <td class="text-gray-600 text-sm">EVO II series, EVO Nano+</td>
                 <td class="text-gray-600 text-sm">Optimal: 15?0 °C. Cold: warm battery in pocket to 15 °C before flight. Hot: shade battery between flights.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- GENERAL TROUBLESHOOTING -->
+      <section data-panel="error-cat" data-panel-id="general">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 bg-orange-500/15 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="wrench" style="width:1.1rem;height:1.1rem;color:#fb923c"></i>
+          </div>
+          <div>
+            <h2 class="font-display font-bold text-xl">General Troubleshooting Guides</h2>
+            <p class="text-gray-500 text-sm">Cross-category repair guides for power stations, drones, smart home, and 3D printers</p>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl overflow-hidden mb-8">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th style="width:180px">Issue / Guide</th>
+                <th>Description</th>
+                <th style="width:100px">Severity</th>
+                <th>Affected Devices</th>
+                <th style="width:90px">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="troubleshooting/power-station-solar-input-not-working.html" class="font-mono text-orange-400 text-sm hover:underline">Solar Input Not Working</a></td>
+                <td>Power station not accepting solar charge ?MPPT or wiring fault</td>
+                <td><span class="badge badge-common">Common</span></td>
+                <td class="text-gray-600 text-sm">EcoFlow Delta, Jackery Explorer, Bluetti AC, Anker SOLIX</td>
+                <td><a href="troubleshooting/power-station-solar-input-not-working.html" class="text-electric-400 text-sm hover:underline">View Fix</a></td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/hybrid-battery-cooling-fan-noise.html" class="font-mono text-orange-400 text-sm hover:underline">Cooling Fan Noise</a></td>
+                <td>Hybrid battery cooling fan loud or grinding ?bearing or debris</td>
+                <td><span class="badge badge-common">Common</span></td>
+                <td class="text-gray-600 text-sm">Prius 2010+, Camry Hybrid, Highlander Hybrid</td>
+                <td><a href="troubleshooting/hybrid-battery-cooling-fan-noise.html" class="text-electric-400 text-sm hover:underline">View Fix</a></td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/drone-wont-connect-controller.html" class="font-mono text-orange-400 text-sm hover:underline">Drone Won't Connect</a></td>
+                <td>Drone fails to pair with remote controller or app</td>
+                <td><span class="badge badge-common">Common</span></td>
+                <td class="text-gray-600 text-sm">DJI Mavic/Mini/Air, Autel EVO</td>
+                <td><a href="troubleshooting/drone-wont-connect-controller.html" class="text-electric-400 text-sm hover:underline">View Fix</a></td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/smart-home-device-offline.html" class="font-mono text-orange-400 text-sm hover:underline">Smart Home Offline</a></td>
+                <td>Smart device shows offline in app ?Wi-Fi or power issue</td>
+                <td><span class="badge badge-common">Common</span></td>
+                <td class="text-gray-600 text-sm">Roborock, Yale, generic Zigbee/Z-Wave</td>
+                <td><a href="troubleshooting/smart-home-device-offline.html" class="text-electric-400 text-sm hover:underline">View Fix</a></td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/3d-printer-thermal-runaway.html" class="font-mono text-orange-400 text-sm hover:underline">3D Printer Thermal Runaway</a></td>
+                <td>Hotend or bed heating out of control ?safety shutdown triggered</td>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td class="text-gray-600 text-sm">Ender 3, Prusa i3, Bambu Lab, Voron</td>
+                <td><a href="troubleshooting/3d-printer-thermal-runaway.html" class="text-electric-400 text-sm hover:underline">View Fix</a></td>
               </tr>
             </tbody>
           </table>
