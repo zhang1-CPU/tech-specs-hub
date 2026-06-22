@@ -1,87 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Outdoor Power Station Specs | EcoFlow, Jackery</title>
-  <meta name="description" content="Complete specifications for portable power stations: EcoFlow Delta Pro 3, Jackery Explorer 2000 Plus, Bluetti AC200MAX. Compare cycle life, capacity, charging speed, and battery chemistry. Official OEM data verified.">
-  <link rel="canonical" href="https://powerspecshub.com/pages/specs/outdoor-power.html">
-  <link rel="icon"
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#00d4ff', 500:'#00b8e6', 600:'#0099cc' }
-          },
-          fontFamily: { display:['Space Grotesk','system-ui','sans-serif'], mono:['JetBrains Mono','monospace'] }
-        }
-      }
-    }
-  </script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="../../assets/css/main.css">
-  <link rel="canonical" href="https://powerspecshub.com/pages/specs/outdoor-power.html">
-    <meta property="og:title" content="Outdoor Power Station Specs | TechSpecsHub">
-  <meta property="og:description" content="Comprehensive outdoor power station specifications from EcoFlow, Jackery, Bluetti, Anker. Compare capacity, output, cycle life, and battery chemistry.">
-  <meta property="og:url" content="https://powerspecshub.com/pages/specs/outdoor-power.html">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="https://powerspecshub.com/assets/og-image.jpg">
-  <meta property="og:site_name" content="TechSpecsHub">
-  <meta property="og:locale" content="en_US">
-    <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Outdoor Power Station Specs | TechSpecsHub">
-  <meta name="twitter:description" content="Comprehensive outdoor power station specifications from EcoFlow, Jackery, Bluetti, Anker. Compare capacity, output, cycle life, and battery chemistry.">
-  <meta name="twitter:image" content="https://powerspecshub.com/assets/og-image.jpg">
-</head>
-<body class="bg-navy-950 text-white min-h-screen">
-  <nav aria-label="Breadcrumb" class="bg-navy-900/50 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <ol class="flex items-center gap-1.5 text-sm text-gray-300" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li><span class="text-gray-500"><a href="/" class="hover:text-electric-400 transition-colors">Home</a></span></li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><meta itemprop="position" content="2"><span class="text-gray-500"><span class="text-gray-500">/</span><a href="/pages/specs/" class="hover:text-electric-400 transition-colors">Specs</a></span></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><meta itemprop="position" content="3"><span class="text-gray-500"><span class="text-gray-500">/</span><span class="text-gray-400">Outdoor Power</span></span></li>
-      </ol>
-    </div>
-  </nav>
+#!/usr/bin/env python3
+"""
+TechSpecsHub 内容生成脚本
+为 5 个核心页面生成原创技术内容
+"""
+import re
+import os
 
-  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 gap-4">
-        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center">
-            <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
-          </div>
-          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
-        </a>
-        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
-          <a href="outdoor-power.html" class="px-3 py-2 text-electric-400 bg-white/10 rounded-lg">Outdoor Power</a>
-          <a href="hybrid-cars.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">Hybrid & EV</a>
-          <a href="../error-code-db.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">Error Codes</a>
-          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">About</a>
-        </nav>
-        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white">
-          <i data-lucide="menu" style="width:1.1rem;height:1.1rem"></i>
-        </button>
-      </div>
-    </div>
-  </header>
+# ============================================================
+# 通用修复：清理每个文件
+# ============================================================
+def fix_head_and_remove_banner(filepath, canonical_url):
+    """修复 head 标签（合并被分割的 canonical），移除 noindex 和 Coming Soon 横幅"""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
 
-  <div class="bg-navy-900/50 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <nav class="breadcrumb">
-        <a href="/">Home</a>
-        <span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span>
-        <span class="breadcrumb-current">Outdoor Power Stations</span>
-      </nav>
-    </div>
-  </div>
+    original = content
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    # 修复被破坏的 canonical 标签
+    content = re.sub(
+        r'<link rel="canonical"\s*\n\s*<link rel="icon"[^>]+>',
+        f'<link rel="canonical" href="{canonical_url}">\n  <link rel="icon"',
+        content
+    )
+
+    # 移除 noindex 标签（这些页面现在有完整内容）
+    content = re.sub(r'\s*<meta name="robots" content="noindex, nofollow">', '', content)
+
+    # 移除 Coming Soon 横幅
+    content = re.sub(
+        r'\s*<div class="coming-soon-banner[^"]*"[^>]*>.*?</div>',
+        '',
+        content,
+        flags=re.DOTALL
+    )
+
+    if content != original:
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(content)
+        return True
+    return False
+
+
+# ============================================================
+# 任务 1: 户外电源站分类页内容
+# ============================================================
+OUTDOOR_POWER_CONTENT = '''<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
     <!-- Page Header -->
     <div class="mb-10">
@@ -165,152 +128,6 @@
       <h3 class="font-display font-semibold text-xl text-electric-400 mb-3">Weight (kg / lbs)</h3>
       <p class="text-gray-300 mb-4">
         Weight scales roughly with capacity: 1kWh units average 11 to 13 kg, 2kWh units 19 to 24 kg, 4kWh units 35 to 50 kg. Beyond 50 kg, the unit is no longer truly portable and is better suited to semi-permanent installation. Note that some manufacturers specify weight without accessories (cables, AC adapter); the figures in the table below are the manufacturer's published shipping weight.
-      </p>
-    </section>
-
-
-    <!-- Section 2.5: Spec Comparison Detail -->
-    <section class="mb-12">
-      <h2 class="font-display font-bold text-3xl mb-4">Detailed Specification Matrix</h2>
-      <p class="text-gray-300 mb-6">
-        The expanded matrix below includes warranty, certification, and operating conditions for each model. Use this table when comparing specific features not covered in the main comparison.
-      </p>
-
-      <div class="overflow-x-auto">
-        <table class="spec-table w-full">
-          <thead>
-            <tr>
-              <th>Model</th>
-              <th>Chemistry</th>
-              <th>Cycle Life</th>
-              <th>Operating Temp</th>
-              <th>Recharge Time (AC)</th>
-              <th>UPS Mode</th>
-              <th>Warranty</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="font-mono">EcoFlow Delta Pro 3</td>
-              <td>LFP</td>
-              <td>6,500</td>
-              <td>-10 to 45°C</td>
-              <td>70 min (0-80%)</td>
-              <td>Yes (&lt;20ms)</td>
-              <td>5 years</td>
-            </tr>
-            <tr>
-              <td class="font-mono">Jackery Explorer 2000 Plus</td>
-              <td>LFP</td>
-              <td>4,000</td>
-              <td>-10 to 45°C</td>
-              <td>102 min (0-100%)</td>
-              <td>No</td>
-              <td>5 years</td>
-            </tr>
-            <tr>
-              <td class="font-mono">Anker SOLIX F3800</td>
-              <td>LFP</td>
-              <td>3,000</td>
-              <td>-20 to 45°C</td>
-              <td>90 min (0-100%)</td>
-              <td>Yes (&lt;20ms)</td>
-              <td>5 years</td>
-            </tr>
-            <tr>
-              <td class="font-mono">Bluetti AC200L</td>
-              <td>LFP</td>
-              <td>3,000</td>
-              <td>-20 to 40°C</td>
-              <td>95 min (0-100%)</td>
-              <td>Yes (&lt;20ms)</td>
-              <td>5 years</td>
-            </tr>
-            <tr>
-              <td class="font-mono">EcoFlow River 2 Pro</td>
-              <td>LFP</td>
-              <td>3,000</td>
-              <td>-10 to 45°C</td>
-              <td>70 min (0-100%)</td>
-              <td>Yes (&lt;20ms)</td>
-              <td>5 years</td>
-            </tr>
-            <tr>
-              <td class="font-mono">Goal Zero Yeti 1500X</td>
-              <td>LFP</td>
-              <td>4,000</td>
-              <td>0 to 40°C</td>
-              <td>110 min (0-100%)</td>
-              <td>No</td>
-              <td>2 years</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="text-xs text-gray-500 mt-3">
-        Source: OEM specifications, June 2026. UPS mode switchover time measured in TechSpecsHub lab.
-      </p>
-    </section>
-
-    <!-- Section 2.6: Battery Cell Chemistry Comparison -->
-    <section class="mb-12">
-      <h2 class="font-display font-bold text-3xl mb-4">Battery Cell Chemistry Comparison</h2>
-      <p class="text-gray-300 mb-6">
-        Three lithium chemistries dominate the portable power station market. Each offers different trade-offs between energy density, cycle life, safety, and cost.
-      </p>
-
-      <div class="overflow-x-auto">
-        <table class="spec-table w-full">
-          <thead>
-            <tr>
-              <th>Chemistry</th>
-              <th>Energy Density</th>
-              <th>Cycle Life</th>
-              <th>Thermal Runaway</th>
-              <th>Cost per kWh</th>
-              <th>Common Applications</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="font-mono">LFP (LiFePO4)</td>
-              <td>90-160 Wh/kg</td>
-              <td>3,000-6,500</td>
-              <td>&gt;250°C</td>
-              <td>$140-200</td>
-              <td>Solar storage, EVs, power stations</td>
-            </tr>
-            <tr>
-              <td class="font-mono">NMC (Ni-Mn-Co)</td>
-              <td>150-220 Wh/kg</td>
-              <td>500-1,500</td>
-              <td>&gt;150°C</td>
-              <td>$120-180</td>
-              <td>EVs, laptops, older power stations</td>
-            </tr>
-            <tr>
-              <td class="font-mono">NCA (Ni-Co-Al)</td>
-              <td>200-260 Wh/kg</td>
-              <td>500-1,000</td>
-              <td>&gt;150°C</td>
-              <td>$130-190</td>
-              <td>Tesla vehicles, aerospace</td>
-            </tr>
-            <tr>
-              <td class="font-mono">LTO (Li4Ti5O12)</td>
-              <td>50-80 Wh/kg</td>
-              <td>10,000-20,000</td>
-              <td>&gt;300°C</td>
-              <td>$400-600</td>
-              <td>Grid storage, heavy equipment</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="text-xs text-gray-500 mt-3">
-        Source: Battery University BU-205, OEM cell datasheets, June 2026. Costs are 2026 wholesale averages.
       </p>
     </section>
 
@@ -621,53 +438,45 @@
       </p>
     </section>
 
-  </main>
+  </main>'''
 
-  <footer class="bg-navy-900 border-t border-white/10 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <a href="/" class="flex items-center gap-2">
-          <div class="w-6 h-6 bg-electric-400 rounded-lg flex items-center justify-center">
-            <i data-lucide="cpu" style="width:0.75rem;height:0.75rem;color:#0a1628"></i>
-          </div>
-          <span class="font-bold">TechSpecs<span class="gradient-text">Hub</span></span>
-        </a>
-        <div class="flex flex-wrap gap-5 text-xs text-gray-500">
-          <a href="../about.html" class="hover:text-electric-400">About</a>
-          <a href="../privacy-policy.html" class="hover:text-electric-400">Privacy Policy</a>
-          <span>2026 TechSpecsHub</span>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-  <script src="../../assets/js/main.js"></script>
+# ============================================================
+# Main execution
+# ============================================================
+if __name__ == "__main__":
+    print("="*80)
+    print("  TechSpecsHub 内容生成")
+    print("="*80)
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://powerspecshub.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Specs",
-      "item": "https://powerspecshub.com/pages/specs/outdoor-power.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Outdoor Power",
-      "item": "https://powerspecshub.com/pages/specs/outdoor-power.html"
-    }
-  ]
-}
-</script>
-</body>
-</html>
+    # 任务 1: 户外电源站分类页
+    print("\n任务 1: 户外电源站分类页")
+    fix_head_and_remove_banner(
+        'pages/specs/outdoor-power.html',
+        'https://powerspecshub.com/pages/specs/outdoor-power.html'
+    )
+
+    # 读取现有文件，提取 head 和 footer，替换中间 body
+    with open('pages/specs/outdoor-power.html', 'r', encoding='utf-8') as f:
+        full = f.read()
+
+    # 找到 <main> 和 </main> 之间的内容并替换
+    new_content = re.sub(
+        r'<main[^>]*>.*?</main>',
+        OUTDOOR_POWER_CONTENT.strip(),
+        full,
+        count=1,
+        flags=re.DOTALL
+    )
+
+    if new_content != full:
+        with open('pages/specs/outdoor-power.html', 'w', encoding='utf-8') as f:
+            f.write(new_content)
+
+        # 计算字数
+        text = re.sub(r'<[^>]+>', ' ', new_content)
+        text = re.sub(r'\s+', ' ', text).strip()
+        word_count = len(text.split())
+        print(f"  ✓ pages/specs/outdoor-power.html ({word_count} words)")
+    else:
+        print("  ⚠️ 未能替换 main 标签")

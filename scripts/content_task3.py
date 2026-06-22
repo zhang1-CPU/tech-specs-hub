@@ -1,109 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hybrid & EV Battery Specs | Toyota</title>
-  <meta name="description" content="Complete technical specifications for hybrid and EV battery systems. Toyota Prius, RAV4 Prime, bZ4X, Honda CR-V Hybrid, Ford Escape PHEV. OBD-II fault codes and repair data.">
-  <link rel="canonical" href="https://powerspecshub.com/pages/specs/hybrid-cars.html">
-  <link rel="icon"
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#0a1628',900:'#0f1d32',800:'#162544',700:'#1e3259'},electric:{300:'#67e8f9',400:'#00d4ff',500:'#00b8e6',600:'#0099cc'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  <link rel="stylesheet" href="../../assets/css/main.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"Hybrid & EV Battery Specifications","description":"Technical specifications for Toyota, Honda and Ford hybrid/EV battery systems","url":"https://powerspecshub.com/pages/specs/hybrid-cars.html","publisher":{"@type":"Organization","name":"TechSpecsHub","url":"https://powerspecshub.com"}}</script>
-  <link rel="canonical" href="https://powerspecshub.com/pages/specs/hybrid-cars.html">
-    <meta property="og:title" content="Hybrid & EV Battery Specs | TechSpecsHub">
-  <meta property="og:description" content="Hybrid and EV battery specifications for Toyota, Honda, Ford, Tesla. Internal resistance standards, cell voltages, and P0A80 fault code diagnosis.">
-  <meta property="og:url" content="https://powerspecshub.com/pages/specs/hybrid-cars.html">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="https://powerspecshub.com/assets/og-image.jpg">
-  <meta property="og:site_name" content="TechSpecsHub">
-  <meta property="og:locale" content="en_US">
-    <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hybrid & EV Battery Specs | TechSpecsHub">
-  <meta name="twitter:description" content="Hybrid and EV battery specifications for Toyota, Honda, Ford, Tesla. Internal resistance standards, cell voltages, and P0A80 fault code diagnosis.">
-  <meta name="twitter:image" content="https://powerspecshub.com/assets/og-image.jpg">
-</head>
-<body class="bg-navy-950 text-white min-h-screen">
-  <nav aria-label="Breadcrumb" class="bg-navy-900/50 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <ol class="flex items-center gap-1.5 text-sm text-gray-300" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li><span class="text-gray-500"><a href="/" class="hover:text-electric-400 transition-colors">Home</a></span></li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><meta itemprop="position" content="2"><span class="text-gray-500"><span class="text-gray-500">/</span><a href="/pages/specs/" class="hover:text-electric-400 transition-colors">Specs</a></span></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><meta itemprop="position" content="3"><span class="text-gray-500"><span class="text-gray-500">/</span><span class="text-gray-400">Hybrid Cars</span></span></li>
-      </ol>
-    </div>
-  </nav>
+#!/usr/bin/env python3
+"""
+Task 3: Hybrid Battery Specs (3000-4000 words)
+"""
+import re
+import os
 
-  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/80 ">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 gap-4">
-        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i></div>
-          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
-        </a>
-        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
-          <div class="relative nav-dropdown-trigger">
-            <button class="flex items-center gap-1 px-3 py-2 bg-white/50 text-white rounded-lg">Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
-            <div class="nav-dropdown">
-              <p class="nav-dropdown-section-label">Device Categories</p>
-              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Outdoor Power Stations</a>
-              <a href="hybrid-cars.html" class="text-electric-400"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Hybrid &amp; EV Batteries</a>
-              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Drones &amp; UAV</a>
-              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Smart Home Devices</a>
-            </div>
-          </div>
-          <div class="relative nav-dropdown-trigger">
-            <button class="flex items-center gap-1 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50">Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i></button>
-            <div class="nav-dropdown">
-              <p class="nav-dropdown-section-label">Data Resources</p>
-              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i> Error Code Database</a>
-              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Master Specs Comparison</a>
-              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#00b8e6;flex-shrink:0"></i> Brand Index A–Z</a>
-            </div>
-          </div>
-          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">About</a>
-          <a href="../contact.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/50 transition-all">Contact</a>
-        </nav>
-        <div class="flex items-center gap-2">
-          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/50 hover:bg-white/100 border border-white/100 rounded-lg transition-all text-sm text-gray-600 hover:text-white">
-            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
-            <span class="hidden sm:inline">Search specs</span>
-            <kbd class="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/80 rounded text-xs text-gray-500 font-mono">⌘K</kbd>
-          </button>
-          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-white rounded-lg hover:bg-white/50"><i data-lucide="menu" style="width:1.1rem;height:1.1rem"></i></button>
-        </div>
-      </div>
-    </div>
-    <div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-t border-white/80 ">
-      <div class="max-w-7xl mx-auto px-4 py-4 space-y-1 text-sm">
-        <a href="/" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="home" style="width:1rem;height:1rem;color:#00b8e6"></i> Home</a>
-        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#00b8e6"></i> Outdoor Power</a>
-        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/50 text-electric-400"><i data-lucide="car" style="width:1rem;height:1rem;color:#00b8e6"></i> Hybrid &amp; EV</a>
-        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="plane" style="width:1rem;height:1rem;color:#00b8e6"></i> Drones</a>
-        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i> Error Codes</a>
-        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/50 text-gray-300"><i data-lucide="info" style="width:1rem;height:1rem;color:#00b8e6"></i> About</a>
-      </div>
-    </div>
-  </header>
 
-  <div id="search-modal" class="hidden"><div id="search-backdrop"></div><div class="modal-inner"><div class="modal-box"><div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/100"><i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#4b5563;flex-shrink:0"></i><input id="search-input-field" type="text" placeholder="Search models, error codes, specs? autocomplete="off"><button id="search-close-btn" class="p-1 text-gray-500 hover:text-white rounded"><i data-lucide="x" style="width:1rem;height:1rem"></i></button></div><div id="search-results-list" class="p-2"></div></div></div></div>
-
-  <div class="bg-navy-900/50 border-b border-white/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <nav class="breadcrumb">
-        <a href="/">Home</a>
-        <span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span>
-        <span class="breadcrumb-current">Hybrid &amp; EV Batteries</span>
-      </nav>
-    </div>
-  </div>
-
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+HYBRID_BATTERY_CONTENT = '''<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
     <!-- Page Header -->
     <div class="mb-10">
@@ -647,103 +550,56 @@
       </p>
     </section>
 
-  </main>
+  </main>'''
 
-  <footer class="bg-navy-900 border-t border-white/80  mt-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
-        <div class="col-span-2">
-          <a href="/" class="flex items-center gap-2 mb-3">
-            <div class="w-7 h-7 bg-electric-400 rounded-lg flex items-center justify-center"><i data-lucide="cpu" style="width:0.9rem;height:0.9rem;color:#0a1628"></i></div>
-            <span class="font-display font-bold text-base">TechSpecs<span class="gradient-text">Hub</span></span>
-          </a>
-          <p class="text-gray-500 text-sm leading-relaxed mb-3">The technical parameter and fault diagnosis reference for consumer electronics, EVs, and power devices.</p>
-          <p class="text-gray-600 text-xs">TechSpecsHub participates in the Amazon Associates Program. Affiliate links may appear on product pages.</p>
-        </div>
-        <div>
-          <p class="footer-col-title">Categories</p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li><a href="outdoor-power.html" class="hover:text-electric-400 transition-colors">Outdoor Power</a></li>
-            <li><a href="hybrid-cars.html" class="text-electric-400">Hybrid &amp; EV</a></li>
-            <li><a href="drones.html" class="hover:text-electric-400 transition-colors">Drones &amp; UAV</a></li>
-            <li><a href="smart-home.html" class="hover:text-electric-400 transition-colors">Smart Home</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-col-title">Data Tools</p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li><a href="../error-code-db.html" class="hover:text-electric-400 transition-colors">Error Code DB</a></li>
-            <li><a href="../master-specs.html" class="hover:text-electric-400 transition-colors">Master Specs</a></li>
-            <li><a href="../brand-index.html" class="hover:text-electric-400 transition-colors">Brand Index A–Z</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-col-title">Company</p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li><a href="../about.html" class="hover:text-electric-400 transition-colors">About</a></li>
-            <li><a href="../contact.html" class="hover:text-electric-400 transition-colors">Contact</a></li>
-            <li><a href="../privacy-policy.html" class="hover:text-electric-400 transition-colors">Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-t border-white/60 pt-6">
-        <span class="text-gray-600 text-xs">© 2026 TechSpecsHub. HV battery work involves lethal voltages. Always consult qualified hybrid technicians for safety-critical repairs.</span>
-      </div>
-    </div>
-  </footer>
 
-  <script>
-    function calculateSOH() {
-      const currentRange = parseFloat(document.getElementById('current-range').value);
-      const factoryRange = parseFloat(document.getElementById('factory-range').value);
-      const resultDiv = document.getElementById('soh-result');
-      const valueSpan = document.getElementById('soh-value');
-      
-      if (isNaN(currentRange) || isNaN(factoryRange) || factoryRange === 0) {
-        alert('Please enter valid numbers');
-        return;
-      }
-      
-      const soh = (currentRange / factoryRange) * 100;
-      valueSpan.textContent = soh.toFixed(1) + '%';
-      resultDiv.classList.remove('hidden');
-      
-      if (soh > 90) {
-        valueSpan.className = 'text-2xl font-bold text-green-400';
-      } else if (soh > 80) {
-        valueSpan.className = 'text-2xl font-bold text-yellow-400';
-      } else {
-        valueSpan.className = 'text-2xl font-bold text-red-400';
-      }
-    }
-  </script>
-  <script src="../../assets/js/main.js"></script>
+def fix_head_and_remove_banner(filepath, canonical_url):
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://powerspecshub.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Specs",
-      "item": "https://powerspecshub.com/pages/specs/hybrid-cars.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Hybrid Cars",
-      "item": "https://powerspecshub.com/pages/specs/hybrid-cars.html"
-    }
-  ]
-}
-</script>
-</body>
-</html>
+    content = re.sub(
+        r'<link rel="canonical"\s*\n\s*<link rel="icon"[^>]+>',
+        f'<link rel="canonical" href="{canonical_url}">\n  <link rel="icon"',
+        content
+    )
+    content = re.sub(r'\s*<meta name="robots" content="noindex, nofollow">', '', content)
+    content = re.sub(
+        r'\s*<div class="coming-soon-banner[^"]*"[^>]*>.*?</div>',
+        '',
+        content,
+        flags=re.DOTALL
+    )
+
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+
+if __name__ == "__main__":
+    print("="*80)
+    print("  Task 3: Hybrid Battery Specs")
+    print("="*80)
+
+    fix_head_and_remove_banner(
+        'pages/specs/hybrid-cars.html',
+        'https://powerspecshub.com/pages/specs/hybrid-cars.html'
+    )
+
+    with open('pages/specs/hybrid-cars.html', 'r', encoding='utf-8') as f:
+        full = f.read()
+
+    new_content = re.sub(
+        r'<main[^>]*>.*?</main>',
+        HYBRID_BATTERY_CONTENT.strip(),
+        full,
+        count=1,
+        flags=re.DOTALL
+    )
+
+    if new_content != full:
+        with open('pages/specs/hybrid-cars.html', 'w', encoding='utf-8') as f:
+            f.write(new_content)
+
+        text = re.sub(r'<[^>]+>', ' ', new_content)
+        text = re.sub(r'\s+', ' ', text).strip()
+        word_count = len(text.split())
+        print(f"  ✓ pages/specs/hybrid-cars.html ({word_count} words)")

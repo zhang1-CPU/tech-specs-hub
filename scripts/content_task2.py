@@ -1,89 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoFlow Delta Pro 3 Specs</title>
-  <meta name="description" content="Complete EcoFlow Delta Pro 3 specifications, battery cycle life, charging specs, error codes (E0-E99), and troubleshooting guide. Official EcoFlow data verified for 2026.">
-  <link rel="canonical" href="https://powerspecshub.com/pages/specs/ecoflow-delta-pro-3.html">
-  <link rel="icon"
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#00d4ff', 500:'#00b8e6', 600:'#0099cc' }
-          },
-          fontFamily: { display:['Space Grotesk','system-ui','sans-serif'], mono:['JetBrains Mono','monospace'] }
-        }
-      }
-    }
-  </script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="../../assets/css/main.css">
-  <link rel="canonical" href="https://powerspecshub.com/pages/specs/ecoflow-delta-pro-3.html">
-    <meta property="og:title" content="EcoFlow Delta Pro 3 Specs | TechSpecsHub">
-  <meta property="og:description" content="EcoFlow Delta Pro 3 complete specifications: 4096Wh capacity, 4000W output, LFP battery, 6500+ cycles. OEM-verified data and error codes.">
-  <meta property="og:url" content="https://powerspecshub.com/pages/specs/ecoflow-delta-pro-3.html">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="https://powerspecshub.com/assets/og-image.jpg">
-  <meta property="og:site_name" content="TechSpecsHub">
-  <meta property="og:locale" content="en_US">
-    <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="EcoFlow Delta Pro 3 Specs | TechSpecsHub">
-  <meta name="twitter:description" content="EcoFlow Delta Pro 3 complete specifications: 4096Wh capacity, 4000W output, LFP battery, 6500+ cycles. OEM-verified data and error codes.">
-  <meta name="twitter:image" content="https://powerspecshub.com/assets/og-image.jpg">
-</head>
-<body class="bg-navy-950 text-white min-h-screen">
-  <nav aria-label="Breadcrumb" class="bg-navy-900/50 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <ol class="flex items-center gap-1.5 text-sm text-gray-300" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li><span class="text-gray-500"><a href="/" class="hover:text-electric-400 transition-colors">Home</a></span></li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><meta itemprop="position" content="2"><span class="text-gray-500"><span class="text-gray-500">/</span><a href="/pages/specs/" class="hover:text-electric-400 transition-colors">Specs</a></span></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><meta itemprop="position" content="3"><span class="text-gray-500"><span class="text-gray-500">/</span><span class="text-gray-400">EcoFlow Delta Pro 3</span></span></li>
-      </ol>
-    </div>
-  </nav>
+#!/usr/bin/env python3
+"""
+TechSpecsHub 任务 2: EcoFlow Delta Pro 3 深度规格页
+目标字数: 4000-5000 字
+"""
+import re
+import os
 
-  <header class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 gap-4">
-        <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-          <div class="w-8 h-8 bg-electric-400 rounded-lg flex items-center justify-center">
-            <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
-          </div>
-          <span class="font-display font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
-        </a>
-        <nav class="hidden lg:flex items-center gap-0.5 text-sm font-medium">
-          <a href="outdoor-power.html" class="px-3 py-2 text-electric-400 bg-white/10 rounded-lg">Outdoor Power</a>
-          <a href="hybrid-cars.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">Hybrid & EV</a>
-          <a href="../error-code-db.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">Error Codes</a>
-          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/10">About</a>
-        </nav>
-        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white">
-          <i data-lucide="menu" style="width:1.1rem;height:1.1rem"></i>
-        </button>
-      </div>
-    </div>
-  </header>
 
-  <div class="bg-navy-900/50 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <nav class="breadcrumb">
-        <a href="/">Home</a>
-        <span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span>
-        <a href="outdoor-power.html">Outdoor Power</a>
-        <span class="breadcrumb-sep"><i data-lucide="chevron-right" style="width:0.875rem;height:0.875rem;display:inline"></i></span>
-        <span class="breadcrumb-current">EcoFlow Delta Pro 3</span>
-      </nav>
-    </div>
-  </div>
-
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+# ============================================================
+# EcoFlow Delta Pro 3 完整内容
+# ============================================================
+ECOFLOW_DP3_CONTENT = '''<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
     <!-- Page Header -->
     <div class="mb-10">
@@ -373,73 +300,6 @@
       </p>
       <p class="text-gray-300">
         The unit includes 2x USB-C PD (100W each), 4x USB-A (12W each), 1x 12V car port (120W), 1x Anderson Powerpole (12V/30A, 360W), 4x NEMA 5-20R AC outlets, and 1x NEMA TT-30R (120V/30A) outlet. All ports are labeled with maximum wattage and voltage. The unit ships with an AC charging cable, car charging cable, and user manual. Solar panels are sold separately.
-      </p>
-    </section>
-
-
-    <!-- Section 6.5: Safety and Certifications -->
-    <section class="mb-12">
-      <h2 class="font-display font-bold text-3xl mb-4">Certifications and Compliance</h2>
-      <p class="text-gray-300 mb-6">
-        The Delta Pro 3 carries the following safety and EMC certifications, verified by EcoFlow in the product compliance report dated March 2024.
-      </p>
-
-      <div class="overflow-x-auto">
-        <table class="spec-table w-full">
-          <thead>
-            <tr>
-              <th>Certification</th>
-              <th>Scope</th>
-              <th>Region</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="font-mono">UL 9540</td>
-              <td>Energy storage system safety</td>
-              <td>United States, Canada</td>
-            </tr>
-            <tr>
-              <td class="font-mono">UL 1973</td>
-              <td>Battery cell safety</td>
-              <td>United States, Canada</td>
-            </tr>
-            <tr>
-              <td class="font-mono">FCC Part 15 Class B</td>
-              <td>EMC emissions (residential)</td>
-              <td>United States</td>
-            </tr>
-            <tr>
-              <td class="font-mono">CE Mark</td>
-              <td>EU safety, health, environmental</td>
-              <td>European Union</td>
-            </tr>
-            <tr>
-              <td class="font-mono">RCM</td>
-              <td>Australian electrical safety</td>
-              <td>Australia, New Zealand</td>
-            </tr>
-            <tr>
-              <td class="font-mono">PSE</td>
-              <td>Japanese electrical safety</td>
-              <td>Japan</td>
-            </tr>
-            <tr>
-              <td class="font-mono">KC</td>
-              <td>Korean EMC and safety</td>
-              <td>South Korea</td>
-            </tr>
-            <tr>
-              <td class="font-mono">UN 38.3</td>
-              <td>Lithium battery transport</td>
-              <td>Global (IATA, IMO, DOT)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="text-xs text-gray-500 mt-3">
-        Source: EcoFlow Delta Pro 3 product compliance report, March 2024. Certifications current as of June 2026.
       </p>
     </section>
 
@@ -795,53 +655,75 @@
       </p>
     </section>
 
-  </main>
+  </main>'''
 
-  <footer class="bg-navy-900 border-t border-white/10 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <a href="/" class="flex items-center gap-2">
-          <div class="w-6 h-6 bg-electric-400 rounded-lg flex items-center justify-center">
-            <i data-lucide="cpu" style="width:0.75rem;height:0.75rem;color:#0a1628"></i>
-          </div>
-          <span class="font-bold">TechSpecs<span class="gradient-text">Hub</span></span>
-        </a>
-        <div class="flex flex-wrap gap-5 text-xs text-gray-500">
-          <a href="../about.html" class="hover:text-electric-400">About</a>
-          <a href="../privacy-policy.html" class="hover:text-electric-400">Privacy Policy</a>
-          <span>2026 TechSpecsHub</span>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-  <script src="../../assets/js/main.js"></script>
+# ============================================================
+# 通用修复函数
+# ============================================================
+def fix_head_and_remove_banner(filepath, canonical_url):
+    """修复 head 标签，移除 noindex 和 Coming Soon 横幅"""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://powerspecshub.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Specs",
-      "item": "https://powerspecshub.com/pages/specs/ecoflow-delta-pro-3.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "EcoFlow Delta Pro 3",
-      "item": "https://powerspecshub.com/pages/specs/ecoflow-delta-pro-3.html"
-    }
-  ]
-}
-</script>
-</body>
-</html>
+    original = content
+
+    # 修复被破坏的 canonical 标签
+    content = re.sub(
+        r'<link rel="canonical"\s*\n\s*<link rel="icon"[^>]+>',
+        f'<link rel="canonical" href="{canonical_url}">\n  <link rel="icon"',
+        content
+    )
+
+    # 移除 noindex 标签
+    content = re.sub(r'\s*<meta name="robots" content="noindex, nofollow">', '', content)
+
+    # 移除 Coming Soon 横幅
+    content = re.sub(
+        r'\s*<div class="coming-soon-banner[^"]*"[^>]*>.*?</div>',
+        '',
+        content,
+        flags=re.DOTALL
+    )
+
+    if content != original:
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(content)
+        return True
+    return False
+
+
+# ============================================================
+# Main
+# ============================================================
+if __name__ == "__main__":
+    print("="*80)
+    print("  Task 2: EcoFlow Delta Pro 3")
+    print("="*80)
+
+    fix_head_and_remove_banner(
+        'pages/specs/ecoflow-delta-pro-3.html',
+        'https://powerspecshub.com/pages/specs/ecoflow-delta-pro-3.html'
+    )
+
+    with open('pages/specs/ecoflow-delta-pro-3.html', 'r', encoding='utf-8') as f:
+        full = f.read()
+
+    new_content = re.sub(
+        r'<main[^>]*>.*?</main>',
+        ECOFLOW_DP3_CONTENT.strip(),
+        full,
+        count=1,
+        flags=re.DOTALL
+    )
+
+    if new_content != full:
+        with open('pages/specs/ecoflow-delta-pro-3.html', 'w', encoding='utf-8') as f:
+            f.write(new_content)
+
+        text = re.sub(r'<[^>]+>', ' ', new_content)
+        text = re.sub(r'\s+', ' ', text).strip()
+        word_count = len(text.split())
+        print(f"  ✓ pages/specs/ecoflow-delta-pro-3.html ({word_count} words)")
+    else:
+        print("  ⚠️ 未能替换 main 标签")
