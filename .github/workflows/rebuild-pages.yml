@@ -5,15 +5,30 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Pages rebuild
-        uses: actions/checkout@v4
-      - name: Force Pages rebuild
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Verify files
         run: |
-          echo "Files updated: $(git log --oneline -1)"
-          echo "Pushing empty commit to trigger Pages..."
-          git commit --allow-empty -m "Trigger GitHub Pages rebuild"
-          git push
+          echo "Latest commit: $(git log --oneline -1)"
+          echo "Files in repository:"
+          ls -la pages/troubleshooting/ | head -10
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
