@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB Ports Not Working — Power Station Output Troubleshooting Guide | TechSpecsHub</title>
+  <meta name="description" content="Diagnose and fix portable power station USB ports not working. Single port vs all ports failure, USB-A vs USB-C PD differences, port protection IC failure, PD protocol negotiation, and cable quality diagnosis.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/power-station-usb-not-working.html">
+
+  <meta property="og:title" content="USB Ports Not Working — Power Station Output Troubleshooting Guide | TechSpecsHub">
+  <meta property="og:description" content="Diagnose and fix portable power station USB ports not working. Single port vs all ports failure, USB-A vs USB-C PD differences, port protection IC failure, PD protocol negotiation, and cable quality diagnosis.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/power-station-usb-not-working.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-22T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-22T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="USB Ports Not Working — Power Station Output Troubleshooting Guide | TechSpecsHub">
+  <meta name="twitter:description" content="Diagnose and fix portable power station USB ports not working. Single port vs all ports failure, USB-A vs USB-C PD differences, port protection IC failure, PD protocol negotiation, and cable quality diagnosis.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "USB Ports Not Working — Power Station Output Troubleshooting Guide | TechSpecsHub",
+    "description": "Diagnose and fix portable power station USB ports not working. Single port vs all ports failure, USB-A vs USB-C PD differences, port protection IC failure, PD protocol negotiation, and cable quality diagnosis.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/power-station-usb-not-working.html",
+    "datePublished": "2026-06-22",
+    "dateModified": "2026-06-22",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">USB Ports Not Working</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-electric-500/20 text-electric-400 font-mono font-bold text-sm rounded-md border border-electric-500/30">USB OUTPUT</div>
+        <span class="badge badge-info"><i data-lucide="layers" style="width:0.75rem;height:0.75rem"></i>All Brands</span>
+        <span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Common Issue</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        USB Ports Not Working &mdash; <span class="gradient-text">Output Troubleshooting &amp; Repair Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        USB port failures on portable power stations range from simple cable incompatibilities to failed protection ICs and PD protocol negotiation problems. The key to fast diagnosis is distinguishing between single-port failures (usually port-specific hardware), all-USB failure (power rail or controller issue), and USB-C PD negotiation failures (the most misunderstood USB problem). This guide covers diagnosis, fixes, and when to RMA.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">10&ndash;30 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$20</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Bad Cable</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~75%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>USB Port Failure Categories</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            USB port problems on power stations fall into three distinct categories, each with different causes and solutions. Correctly identifying which category you are dealing with is 90% of the fix. The diagnostic tree below walks through each type systematically.
+          </p>
+          <ul class="space-y-2 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; <strong>Single-port failure:</strong> Only one USB port (A or C) is affected. Other ports work fine. Typically caused by a failed USB port protection IC specific to that port, physical damage to the port connector, or a dry joint (solder connection) on the circuit board.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>All-USB failure:</strong> All USB ports (both USB-A and USB-C) stop working simultaneously while AC outlets still function. This points to a shared power rail failure, USB controller IC failure, or firmware issue on the management board.</li>
+            <li class="text-white font-semibold">&bull; <strong>USB-C PD negotiation failure:</strong> USB-C ports appear dead or will not charge a specific device (commonly laptops, Nintendo Switch, or tablets). The port works for data but not for high-wattage charging. This is almost always a USB Power Delivery protocol handshake issue, not a hardware failure.</li>
+          </ul>
+          <p class="text-gray-400 text-sm">
+            This guide walks through each failure type from easiest-to-hardest diagnosis, with brand-specific notes for EcoFlow Delta, Jackery Explorer, and Bluetti AC series.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Quick Symptom Check</h3>
+          <p class="text-sm text-gray-200 mb-3">Identify your failure type:</p>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Is it one port or all USB ports?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does USB-A work but USB-C does not?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the device request charging but not receive it?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the port work with a different cable?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Is the unit's display showing any error indicators?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="zap" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Testing</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>USB power meter (display voltage, amperage, watts)</li>
+          <li>USB-C cable with e-marker chip (known good)</li>
+          <li>USB-A to USB-A cable (for testing USB-A ports)</li>
+          <li>Multiple devices to test (phone, laptop, tablet)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Mechanical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Phillips screwdriver (PH0 &amp; PH1)</li>
+          <li>Plastic pry tool</li>
+          <li>Magnifying glass or jeweler's loupe</li>
+          <li>Contact cleaner (for dirty USB ports)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="shield" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Anti-static wrist strap (when opening case)</li>
+          <li>Safety glasses</li>
+          <li>ESD-safe work surface</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Single port vs all ports diagnosis</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The first question to answer is whether one port is affected or all USB ports. This single observation narrows the cause dramatically and determines everything else you do.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="help-circle" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Test method:</strong> Plug the same device (phone or USB meter) into every USB port on the unit one at a time. Note which ports work and which do not.</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Single port dead:</strong> Likely a port-specific hardware issue &mdash; protection IC, connector, or solder joint. Proceed to Step 04.</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>All USB dead:</strong> Shared power rail or controller failure. Proceed to Step 03.</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>USB-A works, USB-C dead:</strong> Likely PD negotiation issue or USB-C specific hardware problem. Proceed to Step 05.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">USB specification differences (USB-A vs USB-C)</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Understanding the electrical specifications of each USB type on your power station is critical. Many "USB not working" complaints are actually users expecting USB-A to deliver USB-C power delivery wattages.</p>
+            <div class="overflow-x-auto">
+              <table class="specs-table w-full text-sm">
+                <thead>
+                  <tr><th>Port Type</th><th>Max Current</th><th>Max Power</th><th>Voltage</th><th>PD Support</th><th>Common Use</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>USB-A (Standard)</strong></td><td>2.4A (QC2.0)</td><td>12W</td><td>5V fixed</td><td>No</td><td>Phones, small devices</td></tr>
+                  <tr><td><strong>USB-A (QC3.0)</strong></td><td>3A</td><td>18W</td><td>3.6&ndash;12V</td><td>No</td><td>Fast-charge phones</td></tr>
+                  <tr><td><strong>USB-C (15W)</strong></td><td>3A</td><td>15W</td><td>5V fixed</td><td>No</td><td>Phones, tablets</td></tr>
+                  <tr><td><strong>USB-C PD 45W</strong></td><td>3A</td><td>45W</td><td>5/9/15/20V</td><td>Yes</td><td>Laptops, tablets</td></tr>
+                  <tr><td><strong>USB-C PD 100W</strong></td><td>5A</td><td>100W</td><td>5/9/15/20V</td><td>Yes</td><td>Gaming laptops, workstations</td></tr>
+                  <tr><td><strong>USB-C PD 140W+</strong></td><td>5A</td><td>140W+</td><td>5&ndash;48V</td><td>PPS</td><td>MacBook Pro, high-power laptops</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="alert alert-info !mb-0 mt-4">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Why your laptop won't charge from USB-A:</strong> USB-A ports max out at 12W (5V, 2.4A). A laptop requiring 45W+ will not charge from USB-A regardless of how long you wait. You need USB-C PD. This is a specification limitation, not a defect.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Port protection IC failure diagnosis</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Each USB port on a power station typically has its own dedicated protection IC. These ICs handle overcurrent protection (OCP), overvoltage protection (OVP), and short-circuit protection. When a protection IC fails, it typically disconnects the port from the power rail entirely, making the port appear dead.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200 mb-4">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">Protection IC Failure Symptoms</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="x-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Port is completely dead:</strong> No voltage on the port at all when measured with a multimeter.</li>
+                <li class="flex items-start gap-2"><i data-lucide="zap-off" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Port trips immediately:</strong> A device connects but disconnects within 1&ndash;2 seconds repeatedly.</li>
+                <li class="flex items-start gap-2"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Port runs hot:</strong> The USB port connector or surrounding area gets noticeably hot to the touch.</li>
+                <li class="flex items-start gap-2"><i data-lucide="alert-triangle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Port smells burnt:</strong> A burned smell from the port area indicates catastrophic IC failure.</li>
+              </ul>
+            </div>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>When protection ICs fail:</strong> Common causes include inserting a damaged cable with a short between VBUS and Ground, using a USB-C cable that exceeds the port's current rating, or a power surge on the USB bus. The IC sacrifices itself to protect the rest of the system. Replacing the IC requires micro-soldering skills and is generally not a DIY repair.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">USB-C PD protocol negotiation troubleshooting</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">USB-C Power Delivery is a handshake protocol between the power source (the power station) and the device being charged. If the handshake fails, the port may output 5V at low current but not engage higher voltages and wattages. This is the most commonly misdiagnosed USB-C issue.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200 mb-4">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">PD Negotiation Process (6 Steps)</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Step 1:</strong> Device and power station establish a USB-C connection at 5V default.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Step 2:</strong> Device sends a Source Capabilities message listing supported voltage/current pairs.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Step 3:</strong> Power station evaluates if it can supply the requested profile.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Step 4:</strong> Power station sends a Request message for a specific voltage/current.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Step 5:</strong> Power station transitions to the new voltage on the VBUS line.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Step 6:</strong> Device begins drawing power at the negotiated rate.</li>
+              </ul>
+            </div>
+            <div class="alert alert-info !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>PD troubleshooting tips:</strong> Use a USB-C PD tester/meter to see if the handshake is occurring. If the meter shows 5V but no higher voltage, the negotiation failed. Try a different cable &mdash; USB-C cables with e-marker chips are required for PD above 3A. A cable without e-marker may limit the negotiation to 5V/3A (15W).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Cable quality vs port damage diagnosis</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Before concluding that a USB port is damaged, eliminate cable failures. A surprising number of "USB port not working" complaints are actually failed cables. USB-C cables in particular vary enormously in quality, and many cheap cables do not support full PD wattages.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200 mb-4">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">Cable Diagnosis Checklist</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="cable" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Try a known-good cable:</strong> Use a cable that you have verified works with another PD charger.</li>
+                <li class="flex items-start gap-2"><i data-lucide="tag" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Check for e-marker:</strong> USB-C cables supporting 5A or 100W+ must have an e-marker chip. Budget cables often lack this.</li>
+                <li class="flex items-start gap-2"><i data-lucide="ruler" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Check cable length:</strong> USB-C PD is limited by cable length. Cables over 2m (6.5ft) may drop voltage significantly at high currents.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Test with USB power meter:</strong> A USB meter between the cable and device shows actual voltage and amperage.</li>
+              </ul>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="specs-table w-full text-sm">
+                <thead>
+                  <tr><th>Cable Type</th><th>Max Current</th><th>Max Power</th><th>E-Marker Required</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>USB-C 2.0 (no logo)</strong></td><td>3A</td><td>60W</td><td>No</td></tr>
+                  <tr><td><strong>USB-C 3.1 Gen 2</strong></td><td>5A</td><td>100W</td><td>Yes</td></tr>
+                  <tr><td><strong>USB-C 240W (EPR)</strong></td><td>5A</td><td>240W</td><td>Yes (48V)</td></tr>
+                  <tr><td><strong>USB-A to USB-C (cheap)</strong></td><td>2.4A</td><td>12W</td><td>N/A</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Inspect physical USB port condition</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Physical inspection of the USB port can reveal issues that no electrical test will catch. Look carefully at the port interior with a flashlight for bent pins, debris, or corrosion.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="search" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Bent CC pins (USB-C):</strong> The two CC (Configuration Channel) pins in USB-C are small and fragile. Bent CC pins will prevent PD negotiation entirely. Straighten gently with a plastic tool.</li>
+              <li class="flex items-start gap-2"><i data-lucide="trash-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Debris in port:</strong> Pocket lint is the most common USB-C problem. Use a wooden or plastic toothpick (never metal) to gently remove debris. Compressed air helps.</li>
+              <li class="flex items-start gap-2"><i data-lucide="droplets" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Corrosion / liquid damage:</strong> If the port was exposed to liquid, corrosion on the pins will prevent good contact. Clean with isopropyl alcohol (90%+) and a soft brush.</li>
+              <li class="flex items-start gap-2"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Loose port connector:</strong> If the USB port wobbles when you insert a cable, the through-hole solder joints on the circuit board may have cracked from repeated insertion force.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">When to file an RMA (serious failure)</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If these conditions are present, stop using the unit and contact the manufacturer for warranty service:</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-3"><i data-lucide="alert-octagon" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>All USB ports are completely dead while AC outlets still function &mdash; main controller board failure.</li>
+              <li class="flex items-start gap-3"><i data-lucide="flame" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>USB port is hot to the touch, smells burned, or shows discoloration &mdash; immediate safety concern, stop using the port.</li>
+              <li class="flex items-start gap-3"><i data-lucide="zap" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>USB port trips a breaker or fuse in the power station when any device is connected &mdash; short circuit in the port or protection IC.</li>
+              <li class="flex items-start gap-3"><i data-lucide="shield-off" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>Port was damaged by inserting an incompatible connector (barrel jack, Lightning, etc.) &mdash; physical damage not covered by warranty.</li>
+              <li class="flex items-start gap-3"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>Unit is under warranty and shows BMS errors related to the USB controller &mdash; do not attempt DIY repair, it voids warranty.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Brand-Specific Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="zap" style="width:1.2rem;height:1.2rem"></i>EcoFlow Delta Series</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">EcoFlow Delta 2 and Delta Pro 3 use a dual-controller USB architecture: one chip handles USB-A ports and one handles USB-C PD ports. If only the USB-A ports fail on a Delta 2, the USB-C PD should still work (and vice versa). The Delta Pro 3 has a known issue with the USB-C PD 100W ports on some firmware versions &mdash; updating via the EcoFlow app often resolves PD negotiation failures. The Delta 2 maxes out at 15W on USB-A (no QuickCharge) but supports 100W USB-C PD.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="sun" style="width:1.2rem;height:1.2rem"></i>Jackery Explorer Series</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Jackery Explorer 2000 Pro has a quirks with its USB-C ports: the ports are labeled "USB-C PD" but the 30W port only delivers 30W, not the 100W that many USB-C laptops expect. Many users report "not charging" messages on MacBooks when using the 30W port &mdash; this is a specification mismatch, not a defect. The 100W USB-C port on the Explorer 2000 Pro is clearly labeled. Jackery uses standard USB-A QC3.0 on most models, which charges most Android phones at full speed.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-red-400 flex items-center gap-2"><i data-lucide="flame" style="width:1.2rem;height:1.2rem"></i>Bluetti AC Series</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Bluetti AC200Max has separate USB-A and USB-C PD circuits. The USB-A ports share a 30W total budget (three ports, max 2.4A each but current-limited to 30W total). The AC180's USB-C PD port can deliver 100W but requires a cable rated for 100W &mdash; Bluetti includes a 100W USB-C cable with the unit, but third-party cables without e-marker will limit to 20V/3A (60W). Bluetti units have a "DC Output" toggle in the settings menu that must be turned on for USB ports to work &mdash; a commonly overlooked setting.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="shield" style="width:1.2rem;height:1.2rem"></i>Anker PowerHouse Series</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Anker 757 PowerHouse uses a smart display system for USB ports &mdash; the display shows actual output wattage for each port type. If the USB-C PD port shows 0W despite a connected device, the cable is the issue (Anker 757 requires e-marker cables for PD). Anker's 535 and 521 models have only USB-A ports (no USB-C), which surprises some users expecting USB-C charging. Anker uses Anker's proprietary "PowerIQ 3.0" on USB-A ports, which is compatible with QC2.0/3.0 and Apple 2.4A protocols.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-electric-950/20 to-navy-900 border-electric-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="alert-triangle" style="width:1.25rem;height:1.25rem;color:#f87171"></i>Safety Warnings</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Never insert a barrel jack, DC plug, or any non-USB connector into a USB port. Doing so can cause a short circuit, permanent damage, and fire. USB-A ports are physically keyed to prevent this, but USB-C's reversible design is not keyed against non-USB connectors.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">A hot USB port is a warning sign. Discontinue use immediately and unplug all devices. Heat at the port is usually a sign of a short circuit or failed protection IC. Continued use can cause fire.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="cable" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Use only high-quality USB cables from reputable brands. Cheap, unbranded USB-C cables may not have proper internal wiring or e-marker chips, creating a fire hazard when drawing high currents.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield-off" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Do not use damaged USB cables. Cables with exposed wiring, melted insulation, or damaged connectors should be discarded immediately. Damaged cables can cause short circuits and fire.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="droplets" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Keep USB ports dry. Water in a USB port can cause a short circuit when a device is inserted. If the port gets wet, dry it thoroughly with compressed air before use.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="battery-warning" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">If a device is charging from your power station and the battery level goes down instead of up, the USB port is not delivering power correctly. This indicates a negotiation failure or insufficient wattage &mdash; check specs before assuming port failure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="power-station-wont-turn-on.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">NO&nbsp;POWER</div>
+          <span class="badge badge-info">Universal</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Won't Turn On</h3>
+        <p class="text-sm text-gray-400">Complete diagnostic tree for power stations that won't power on &mdash; BMS reset, firmware recovery, and RMA criteria.</p>
+      </a>
+      <a href="power-station-keeps-turning-off.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">AUTO-SHUTOFF</div>
+          <span class="badge badge-warning">Common</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Keeps Turning Off</h3>
+        <p class="text-sm text-gray-400">ECO mode, overload protection, temperature shutdown, and deep discharge recovery for power stations.</p>
+      </a>
+      <a href="power-station-overheating.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">THERMAL</div>
+          <span class="badge badge-critical">Safety Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Overheating / Thermal Shutdown</h3>
+        <p class="text-sm text-gray-400">Fan replacement, thermal paste reapplication, vent cleaning, and thermal runaway prevention for power stations.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for a specific model's error codes?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Open the full error code database &mdash; every fault code from every major portable power station we've documented, along with symptom, cause, and DIY fix.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/outdoor-power.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Open Power Station Specs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

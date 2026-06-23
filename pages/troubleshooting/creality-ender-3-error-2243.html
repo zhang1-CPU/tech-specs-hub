@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creality Ender 3 Error 2243 — Coordinate Exception Troubleshooting Guide | TechSpecsHub</title>
+  <meta name="description" content="Complete diagnostic guide for Creality Ender 3 Error 2243 coordinate exception. Slicing software diagnosis, wrong model selection fixes, G-code issues, SD card problems, and firmware vs slicer compatibility for Ender 3 printers.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/creality-ender-3-error-2243.html">
+
+  <meta property="og:title" content="Creality Ender 3 Error 2243 — Coordinate Exception Troubleshooting Guide | TechSpecsHub">
+  <meta property="og:description" content="Complete diagnostic guide for Creality Ender 3 Error 2243 coordinate exception. Slicing software diagnosis, wrong model selection fixes, G-code issues, and firmware vs slicer compatibility for Ender 3 printers.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/creality-ender-3-error-2243.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Creality Ender 3 Error 2243 — Coordinate Exception Troubleshooting Guide | TechSpecsHub">
+  <meta name="twitter:description" content="Complete diagnostic guide for Creality Ender 3 Error 2243 coordinate exception. Slicing software diagnosis, wrong model selection fixes, G-code issues, and firmware vs slicer compatibility for Ender 3 printers.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Creality Ender 3 Error 2243 — Coordinate Exception Troubleshooting Guide | TechSpecsHub",
+    "description": "Complete diagnostic guide for Creality Ender 3 Error 2243 coordinate exception. Slicing software diagnosis, wrong model selection fixes, G-code issues, and firmware vs slicer compatibility for Ender 3 printers.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/creality-ender-3-error-2243.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools & Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Creality Ender 3 Error 2243</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-orange-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-orange-500/20 text-orange-400 font-mono font-bold text-sm rounded-md border border-orange-500/30">ERROR 2243</div>
+        <span class="badge badge-info"><i data-lucide="layers" style="width:0.75rem;height:0.75rem"></i>Creality Ender 3</span>
+        <span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Slicing Error</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Creality Ender 3 Error 2243 &mdash; <span class="gradient-text">Coordinate Exception Fix Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Error 2243 on the Creality Ender 3 indicates a coordinate exception, almost always caused by mismatched settings between your slicer software and the printer firmware. This guide covers slicing software diagnosis, wrong model selection fixes, third-party G-code troubleshooting, recommended slicer settings, SD card issues, and firmware versus slicer compatibility for all Ender 3 variants including the Ender 3, Ender 3 Pro, Ender 3 V2, and Ender 3 S1.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">15&ndash;45 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="target" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Wrong Slicer Settings</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~90%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What Usually Goes Wrong?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            Error 2243 on the Ender 3 is a coordinate exception triggered when the printer receives movement commands that fall outside its physical build volume or conflict with its defined coordinate system. This is almost never a hardware fault. The root cause is almost always in the slicer settings or the G-code being sent to the printer. Understanding what each slicer setting does and how it maps to the Ender 3 firmware will resolve the vast majority of Error 2243 cases.
+          </p>
+          <ul class="space-y-2 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; <strong>Wrong printer model selected in slicer:</strong> the most common cause. Selecting a larger or smaller printer profile produces coordinates that exceed Ender 3's 220 x 220 x 250mm bed.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Third-party G-code not generated for Ender 3:</strong> pre-downloaded prints or G-code from other printers may have absolute positioning or bed sizes incompatible with Creality machines.</li>
+            <li class="text-white font-semibold">&bull; <strong>Incorrect home offset or bed leveling values:</strong> custom firmware with modified home offsets can push coordinates out of range.</li>
+            <li class="text-white font-semibold">&bull; <strong>SD card file corruption or formatting issues:</strong> a damaged or incorrectly formatted SD card can cause file read errors that manifest as coordinate exceptions.</li>
+          </ul>
+          <p class="text-gray-400 text-sm">
+            Work through these steps in order. Most Error 2243 issues are resolved by simply regenerating the G-code with the correct Ender 3 printer profile selected.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Quick Symptom Check</h3>
+          <p class="text-sm text-gray-200 mb-3">Answer these before proceeding:</p>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did you recently change your slicer software or update it?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did you download this G-code file from somewhere else?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the error occur immediately when the print starts?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did you change any firmware settings recently?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>What slicer are you using: Cura, PrusaSlicer, Simplify3D, or other?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools & Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="monitor" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Software</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Cura, PrusaSlicer, or other slicer installed</li>
+          <li>Access to printer manufacturer's firmware notes</li>
+          <li>SD card formatter (SD Memory Card Formatter by SD Association)</li>
+          <li>Text editor for G-code inspection (VS Code, Notepad++)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="sd-card" style="width:1rem;height:1rem"></i><h3 class="font-semibold">SD Card</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Known-good SD card (8GB or 16GB recommended)</li>
+          <li>FAT32 formatted (required for Ender 3)</li>
+          <li>SD card reader for your computer</li>
+          <li>Backup and re-format if corruption suspected</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="settings" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Printer Settings</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Ender 3 build volume: 220 x 220 x 250mm</li>
+          <li>Origin at bed center or front-left depending on firmware</li>
+          <li>Nozzle diameter: 0.4mm (standard)</li>
+          <li>Max print speed reference from manufacturer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Verify the printer model selected in your slicer</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The single most common cause of Error 2243 is selecting the wrong printer model in your slicer software. If you accidentally selected a printer with a larger build volume (such as an Ender 5 with 300x300 bed or a CR-10 with 300x300x400), the slicer will generate G-code with coordinates that fall outside the Ender 3's 220 x 220 x 250mm boundaries.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Correct Ender 3 Printer Profile Settings</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div>Build volume: <span class="text-electric-400">220 x 220 x 250 mm</span></div>
+                <div>G-code flavor: <span class="text-electric-400">Marlin (or Creality S3R for S1)</span></div>
+                <div>Nozzle diameter: <span class="text-electric-400">0.4 mm</span></div>
+                <div>Start G-code: <span class="text-electric-400">Includes G28 homing</span></div>
+                <div>End G-code: <span class="text-electric-400">Includes G28 or G29 if enabled</span></div>
+                <div>Positioning: <span class="text-electric-400">Relative or Absolute per firmware</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check the G-code file origin and regeneration test</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the print file was downloaded from Thingiverse, Printables, Cults3D, or any other third-party site, the G-code was likely generated for a different printer. Even if the model looks like it would fit on an Ender 3, the coordinates and start/end sequences may be incompatible. Always re-slice downloaded STL files using your own slicer with the correct Ender 3 profile.</p>
+            <div class="alert alert-info !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>G-code inspection:</strong> Open the .gcode file in a text editor and look at the first 20 lines. Check for G0 and G1 movement commands with X coordinates greater than 220, Y coordinates greater than 220, or Z coordinates greater than 250. Also check if the start code references a different bed size in comments or parameters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Inspect G-code positioning mode (absolute vs relative)</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Different slicers and firmware versions handle positioning differently. Creality Ender 3 firmware typically uses absolute positioning by default, but some slicers generate relative positioning (G91 mode). If your G-code mixes positioning modes incorrectly or the printer receives commands in the wrong mode, coordinate exceptions can occur. Check your start G-code for G90 (absolute) or G91 (relative) and ensure it matches your slicer output.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">G-Code Positioning Reference</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-electric-400">G90:</strong> Absolute positioning &mdash; all coordinates are relative to origin (home position)</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-electric-400">G91:</strong> Relative positioning &mdash; each move is relative to current position</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-yellow-400">Marlin default:</strong> G90 (absolute) on Ender 3</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-red-400">Mix-up symptom:</strong> Print head moves in wrong direction or distance during first layer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Reformat SD card and test with known-good file</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">SD card corruption can cause files to be read incorrectly, resulting in malformed G-code that triggers coordinate exceptions. Use the official SD Memory Card Formatter tool (available from sdcard.org) to format the card with FAT32 filesystem. After formatting, copy only a single known-good G-code file to the card and test if the error persists. Avoid using large capacity cards (64GB+) as some Ender 3 models have limited compatibility.</p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>SD card compatibility:</strong> Ender 3 standard firmware supports SD cards up to 32GB formatted as FAT32. Cards formatted as exFAT or NTFS will not work. Ender 3 S1 Plus may have different limits &mdash; check your specific model's documentation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check slicer bed origin and home offset settings</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The Ender 3 homes to the front-left corner by default (MIN endstops). If your slicer is configured for center-origin bed positioning or has custom home offset values (M206 command), the sliced coordinates may not align with the printer's actual home position. Verify that your slicer's "Build plate origin" matches your firmware home position. Some slicers allow origin at center of bed &mdash; this can cause coordinate shifts on Ender 3.</p>
+            <div class="overflow-x-auto">
+              <table class="specs-table w-full text-sm">
+                <thead>
+                  <tr><th>Slicer Setting</th><th>Ender 3 Recommended</th><th>Common Error</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Bed origin</strong></td><td>Front-left (X0 Y0)</td><td>Center origin causing X-Y offset</td></tr>
+                  <tr><td><strong>Z-homing</strong></td><td>Center or front-left</td><td>Misaligned first layer</td></tr>
+                  <td><strong>Home offset (M206)</strong></td><td>Default 0,0,0 unless modified</td><td>Coordinates pushed out of range</td></tr>
+                  <tr><td><strong>Print center</strong></td><td>110, 110 for 220x220 bed</td><td>Model offset from center</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Review third-party slicer compatibility settings</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If you are using Simplify3D, Kisslicer, IdeaMaker, or any slicer other than Cura or PrusaSlicer, the printer profile definitions may be outdated or incorrect. These slicers maintain their own printer definition databases and may not have the correct Ender 3 bed size, filament diameter, or G-code flavor settings. Check the slicer's configuration wizard or machine settings panel and ensure all dimensions and G-code flavor settings are correct.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Recommended Ender 3 Slicer Settings</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-electric-400">Filament diameter:</strong> 1.75mm (measure your actual filament with calipers)</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-electric-400">Nozzle diameter:</strong> 0.4mm default (0.2mm or 0.8mm if changed)</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-electric-400">G-code flavor:</strong> Marlin for standard Ender 3, Creality S3R for Ender 3 S1</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-yellow-400">Start G-code:</strong> Must include G28 (home all axes) before print moves begin</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-yellow-400">Layer height:</strong> 0.12mm to 0.28mm typical for 0.4mm nozzle</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Verify firmware vs slicer compatibility and restore defaults</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If you have recently flashed custom firmware (Marlin, Klipper, or TH3D Unified Firmware), the coordinate system behavior may have changed. Some custom firmware configurations change the home offset behavior, enable software endstops differently, or alter the bed size definitions. If you suspect firmware changes caused Error 2243, reflash the firmware or compare your Configuration.h settings against the known-good defaults for your Ender 3 model.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-3"><i data-lucide="cpu" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Marlin Configuration.h:</strong> Check <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">X_BED_SIZE</code>, <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">Y_BED_SIZE</code>, <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">Z_MAX_POS</code> match 220, 220, 250.</li>
+              <li class="flex items-start gap-3"><i data-lucide="alert-octagon" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Software endstops:</strong> Custom firmware may have disabled or changed software endstop behavior. Verify <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">MIN_SOFTWARE_ENDSTOPS</code> or <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">MAX_SOFTWARE_ENDSTOPS</code> settings.</li>
+              <li class="flex items-start gap-3"><i data-lucide="shield" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Restore firmware:</strong> If all else fails, reflash the factory Creality firmware or reinstall the known-good slicer profile and regenerate the G-code from scratch.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Firmware-Specific Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>Creality Stock Firmware</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Creality's stock firmware for Ender 3 uses absolute positioning with G90 as default. The bed size is defined as 220x220 and the printer will reject any G-code with coordinates outside this range. If you receive Error 2243 on stock firmware, the G-code is almost certainly generated for a different printer or the slicer printer profile is wrong. Re-slice with the correct Ender 3 profile.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-purple-400 flex items-center gap-2"><i data-lucide="code" style="width:1.2rem;height:1.2rem"></i>Marlin Firmware</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Marlin firmware on Ender 3 allows more configuration flexibility but also requires correct Configuration.h bed size definitions. If you have compiled your own Marlin build, verify the bed dimensions match your physical printer. Marlin also supports software endstops that will prevent moves beyond defined boundaries &mdash; this is a safety feature that can trigger coordinate errors if misconfigured.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="settings" style="width:1.2rem;height:1.2rem"></i>Klipper on Ender 3</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Running Klipper on Ender 3 requires correct [probe] and [stepper_x/y/z] definitions in the printer.cfg file. The max_velocity and max_z_velocity settings must match your printer's mechanical limits. If you are getting coordinate exceptions after switching to Klipper, verify the min/max position values in your Klipper config match 0-220 for X, 0-220 for Y, and 0-250 for Z.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="zap" style="width:1.2rem;height:1.2rem"></i>TH3D / Other Custom Firmware</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Third-party firmware like TH3D Unified Firmware includes pre-configured profiles for Ender 3 variants. These firmware builds often include auto-leveling compensation and custom home offsets. If Error 2243 appeared after flashing a custom firmware, check the firmware's documentation for any changed default behavior related to coordinate system or bed size definitions. Some TH3D builds include G29 auto-leveling in the start code &mdash; this requires the probe to deploy properly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-orange-950/20 to-navy-900 border-orange-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>When to Call a Professional or Replace Parts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Error 2243 occurs on EVERY G-code file including files you just re-sliced with correct settings &mdash; firmware corruption likely, reflash firmware.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Printer moves to wrong coordinates even with freshly sliced G-code &mdash; stepper driver or mainboard failure may be misdiagnosed as coordinate error.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="sd-card" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">SD card slot is physically damaged or SD card not detected at all &mdash; mainboard SD card reader replacement needed.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">If the printer is under warranty and you suspect firmware or mainboard issues, contact Creality support before attempting firmware reflash.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="3d-printer-thermal-runaway.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">THERMAL</div>
+          <span class="badge badge-critical">Safety</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Thermal Runaway Error</h3>
+        <p class="text-sm text-gray-400">Thermistor testing, heater cartridge replacement, PID tuning, and thermal protection settings for FDM printers.</p>
+      </a>
+      <a href="creality-ender-3-error-2564.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">ERR 2564</div>
+          <span class="badge badge-warning">Heating</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Ender 3 Nozzle Not Heating / Error 2564</h3>
+        <p class="text-sm text-gray-400">Thermosensitive detection malfunction, heater cartridge resistance testing, and hotend assembly troubleshooting.</p>
+      </a>
+      <a href="creality-ender-3-cr-touch-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">CR-TOUCH</div>
+          <span class="badge badge-info">Leveling</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Ender 3 CR-Touch / BLTouch Error</h3>
+        <p class="text-sm text-gray-400">CR-Touch self-test abnormality, probe pin troubleshooting, ribbon cable issues, and manual leveling fallback.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for more 3D printer troubleshooting?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Browse our full collection of 3D printer guides and specifications. From entry-level budget machines to high-end industrial printers, we cover the common failure modes and how to fix them.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/3d-printers.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="box" style="width:1rem;height:1rem"></i>3D Printer Specs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

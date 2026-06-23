@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E30 Communication Error / Display Not Responding &mdash; Diagnostic Guide | TechSpecsHub</title>
+  <meta name="description" content="E30 display-controller communication error on e-bikes. Learn why 80% of E30 errors are loose connectors, cable harness inspection, display connector pinouts for common brands, firmware updates, and display vs controller replacement.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/ebike-e30-communication-error.html">
+
+  <meta property="og:title" content="E30 Communication Error / Display Not Responding &mdash; Diagnostic Guide | TechSpecsHub">
+  <meta property="og:description" content="E30 display-controller communication error on e-bikes. Learn why 80% of E30 errors are loose connectors, cable harness inspection, display connector pinouts for common brands, firmware updates, and display vs controller replacement.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/ebike-e30-communication-error.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="E30 Communication Error / Display Not Responding &mdash; Diagnostic Guide | TechSpecsHub">
+  <meta name="twitter:description" content="E30 display-controller communication error on e-bikes. Learn why 80% of E30 errors are loose connectors, cable harness inspection, display connector pinouts for common brands, firmware updates, and display vs controller replacement.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "E30 Communication Error / Display Not Responding &mdash; Diagnostic Guide | TechSpecsHub",
+    "description": "E30 display-controller communication error on e-bikes. Learn why 80% of E30 errors are loose connectors, cable harness inspection, display connector pinouts for common brands, firmware updates, and display vs controller replacement.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/ebike-e30-communication-error.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">E30 Communication Error</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-electric-500/20 text-electric-400 font-mono font-bold text-sm rounded-md border border-electric-500/30">E30 ERROR</div>
+        <span class="badge badge-info"><i data-lucide="bike" style="width:0.75rem;height:0.75rem"></i>All E-Bike Brands</span>
+        <span class="badge badge-warning"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Beginner</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        E30 Communication Error &mdash; <span class="gradient-text">Display &amp; Controller Connection Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        E30 means the display unit and the controller have lost communication with each other. In approximately 80% of E30 cases, the problem is a loose, corroded, or misaligned connector somewhere in the wiring harness between the display and the controller. This guide covers the full diagnostic path from simple connector reseating to firmware updates and hardware replacement.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">10&ndash;30 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$60</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Loose Connector</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~80%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What Does E30 Mean?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            E30 is a communication protocol fault. The display and controller communicate via a serial UART data link at low voltage (typically 5V or 3.3V depending on the system). When the controller stops receiving valid data packets from the display for more than 2-3 seconds, it assumes the display is disconnected or faulty and displays E30 as a safety measure &mdash; cutting motor output to prevent uncontrolled acceleration.
+          </p>
+          <ul class="space-y-2 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; <strong>Loose connector (80% of cases):</strong> the inline connector between the display harness and the controller harness has worked loose from road vibration, or the locking tab on the connector has broken.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Corroded pins:</strong> water and road salt have oxidized the connector pins, increasing resistance and corrupting the serial data signal.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Broken wire inside harness:</strong> the cable has been flexed repeatedly at the same point (typically at the head tube or handlebar area) until the internal conductors fractured.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Display firmware corruption:</strong> the display's internal software has crashed or corrupted, causing it to stop transmitting even though the hardware is otherwise functional.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Controller communication circuit failure:</strong> the UART transceiver chip on the controller board has failed, so it can no longer receive display data even if the display and wiring are perfect.</span></li>
+          </ul>
+          <p class="text-gray-400 text-sm">
+            The good news about E30 is that it is overwhelmingly a connectivity problem, not a hardware failure. Always start with the simplest fix &mdash; reseating every connector in the display-to-controller path &mdash; before assuming a component is dead.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Quick Symptom Check</h3>
+          <p class="text-sm text-gray-200 mb-3">Answer these before proceeding:</p>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the display power on but show E30 immediately?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does E30 appear intermittently during riding?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does wiggling the display cable at the handlebar change the display behavior?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did E30 start after rain riding or pressure washing?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Is the display physically cracked or damaged?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="zap" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Electrical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Digital multimeter (for voltage and continuity checks)</li>
+          <li>Electrical contact cleaner (DeoxIT or CRC QD)</li>
+          <li>Small straight-edge (for checking connector pin alignment)</li>
+          <li>Isopropyl alcohol 90%+ for cleaning pins</li>
+          <li>Small needle-nose pliers (for connector inspection)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Mechanical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Phillips and flat-head screwdrivers (display removal)</li>
+          <li>Hex key set (2mm-5mm for display mount and handlebar)</li>
+          <li>Zip ties (for harness re-securing)</li>
+          <li>Heat-shrink tubing (3mm and 5mm) for wire repairs</li>
+          <li>Electrical tape for temporary harness protection</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="flame" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Remove battery before accessing display connectors</li>
+          <li>Do not use water-based cleaners near electrical connectors</li>
+          <li>Allow connectors to fully dry before reconnecting</li>
+          <li>Keep all screws organized during disassembly</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">7-Step Diagnostic &amp; Repair Procedure</h2>
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Power cycle and reseat all connectors first</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">This step resolves approximately 50% of all E30 cases. The connector may have simply worked loose from vibration, and a full reseat with contact cleaner is all that is needed.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="power" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Turn the bike off. Remove the battery. Wait 30 seconds.</li>
+              <li class="flex items-start gap-2"><i data-lucide="unlock" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Locate the display connector (usually under the handlebar display mount or at the head tube) and the controller connector (typically near the battery mount or along the downtube).</li>
+              <li class="flex items-start gap-2"><i data-lucide="plug" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Disconnect both ends of the display-controller harness. Spray contact cleaner into both sides of each connector. Let it evaporate for 30 seconds.</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Reconnect firmly until you hear or feel the locking tab click into place. Reinstall battery and turn on the bike.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Inspect the full cable harness for damage</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The display cable runs from the handlebar down the head tube to the controller. This cable endures constant flexing from handlebar steering and is the most vulnerable run of wire on the bike.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="eye" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Remove the display from the handlebar mount. Follow the cable down the stem or head tube. Look for chafing, cuts, crushed sections, or areas where the outer jacket has been worn through.</li>
+              <li class="flex items-start gap-2"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Flex the cable gently at every bend point &mdash; especially at the head tube entry and exit points. If the display flickers or E30 appears when you flex the cable at a specific point, you have found the break.</li>
+              <li class="flex items-start gap-2"><i data-lucide="alert-triangle" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Check the cable where it exits the display housing &mdash; this is a common fracture point because the cable is rigidly clamped at the display but flexible everywhere else, creating a stress concentration.</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>If you find a damaged section, it can be repaired by cutting out the damaged portion and splicing the wires back together, matching colors. Use heat-shrink tubing for a durable repair.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check display connector pinout and signal voltages</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Different brands use different connector pinouts and voltage standards. Verifying the correct voltage at the display connector tells you whether the controller is providing power to the display and whether the data signal line is active.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">Display Connector Pinout Reference by Brand</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Bafang (LCD3, LCD5, 500C):</strong> Pin 1 = Battery+ (unlock signal), Pin 2 = 5V supply, Pin 3 = GND, Pin 4 = TX (display to controller), Pin 5 = RX (controller to display). Use a multimeter to check 5V between Pin 2 and Pin 3 with the bike powered on.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>KT controllers (LCD3, LCD5):</strong> Standard 5-pin connector. Pin assignments vary by display model &mdash; consult the controller manual. Most KT displays use 5V TTL serial on pins 4 and 5.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>SUTTO / Generic PAS displays:</strong> Often use a 3-wire connector (Power, Ground, Signal). The signal is typically a PWM or UART output. Measure for 5V between power and ground pins.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Bosch Purion / Nyon / Kiox:</strong> Proprietary CAN-bus connector. These displays use a sealed multi-pin connector that is not field-serviceable. E30 on Bosch systems typically requires dealer-level diagnostics.</li>
+              </ul>
+            </div>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Voltage check:</strong> with the battery connected and the bike powered on, measure DC voltage between the 5V pin and ground at the display connector. If you see 0V or less than 4.5V, the controller is not providing power to the display &mdash; check the controller harness connector for the same voltage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test the display independently if possible</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If you have access to a second display of the same model, or if your display can be swapped to another bike, you can quickly determine whether the fault is in the display or the wiring.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="monitor" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>If you have a spare display, connect it to the same harness. If the spare display works without E30, the original display has failed.</li>
+              <li class="flex items-start gap-2"><i data-lucide="unplug" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>If you can connect your display to another bike's controller (same brand/model), try it there. If E30 persists on the other bike, the display is likely failed.</li>
+              <li class="flex items-start gap-2"><i data-lucide="alert-triangle" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Physical display damage (cracked screen, water inside, swollen buttons) is a clear indicator that the display needs replacement even if the internal circuitry looks intact.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Try a firmware update for the display</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Display firmware corruption is an underappreciated cause of E30. Like any computer, the display's internal software can crash, and a firmware update can revive a display that appears completely dead or shows persistent E30 despite good connections.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Firmware Update Process</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><strong>Bafang displays:</strong> Download the Bafang LCD tool software from Bafang's official service portal. Connect the display to a PC via the programming cable. Use the software to read the current firmware version and flash the latest version from Bafang's website.</li>
+                <li><strong>KT displays:</strong> KT provides firmware update tools on their technical support site. The update process requires a USB-KT cable and the KT Tool software. Follow the on-screen prompts to flash the display firmware.</li>
+                <li><strong>Generic displays:</strong> Check with the kit manufacturer or retailer for firmware files. Many generic LCD displays from Chinese manufacturers use standard UART bootloaders that accept firmware updates via a simple serial connection.</li>
+              </ul>
+            </div>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Important:</strong> only flash firmware designed for your exact display model number. Flashing incorrect firmware can permanently brick the display. Document your current firmware version before updating.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check the controller side of the communication circuit</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the display and wiring both test good but E30 persists, the problem is on the controller side. The controller's UART transceiver is the final piece of the communication link.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="cpu" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Locate the controller's display communication connector. This is typically a small 4-6 pin connector separate from the larger motor and battery connectors.</li>
+              <li class="flex items-start gap-2"><i data-lucide="zap" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Measure the supply voltage at the controller's display connector pins. There should be 5V present on the power pin when the battery is connected and the bike is powered on.</li>
+              <li class="flex items-start gap-2"><i data-lucide="x-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>If 5V is missing at the controller connector but present at the display connector, there is a break in the wire between the two. If 5V is missing at both, the controller has failed internally.</li>
+              <li class="flex items-start gap-2"><i data-lucide="activity" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Controller replacement should be considered if the controller fails to provide 5V to the display harness and all wiring checks have passed.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Decide: replace display or replace controller</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">After completing all the diagnostic steps above, you should know whether the fault is in the display, the wiring, or the controller. Use this decision guide to choose the correct replacement path.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-3"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Display powers on but shows E30:</strong> display is receiving power but cannot communicate. Replace the display if wiring and controller check good.</li>
+              <li class="flex items-start gap-3"><i data-lucide="x-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Display is physically damaged:</strong> cracked screen, water intrusion, burnt components visible &mdash; replace the display regardless of other test results.</li>
+              <li class="flex items-start gap-3"><i data-lucide="x-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Controller provides no 5V at display connector:</strong> controller communication circuitry is failed. Replace the controller.</li>
+              <li class="flex items-start gap-3"><i data-lucide="activity" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Aftermarket swaps:</strong> when replacing a controller or display on an aftermarket kit system, ensure the replacement is compatible with the remaining components. KT controller replacements must match the same firmware version or display communication may not work.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Brand-Specific E30 Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>Bafang (BBS, M-Series)</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Bafang displays (LCD3, LCD5, 500C) communicate via standard UART at 9600 baud. E30 on Bafang systems is commonly caused by the display cable being pinched at the head tube or by water entering the LCD connector at the display base. Bafang offers replacement display cables separately from the display unit. Always update to the latest Bafang firmware before concluding the display is faulty.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>SUTTO / Generic Kits</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">SUTTO and generic e-bike kits typically use simpler display designs with 3-wire or 5-wire connectors. The most common E30 cause on these systems is the inline connector between the display harness and the controller harness coming loose. These systems rarely have user-updateable firmware. If the connector reseat does not fix E30, replacing the display or controller is the typical solution.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>Bosch / Brose / Specialized</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Brand e-bike systems (Bosch Purion, Kiox, Nyon; Brose Display; Specialized Mission Control) use proprietary CAN-bus or encrypted serial protocols. E30 on these systems cannot be diagnosed or repaired in the field without manufacturer-level diagnostic software. If reseating the connector does not clear E30 on a branded system, the bike must be taken to an authorized dealer for firmware update or component replacement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-950/20 to-navy-900 border-yellow-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="shield" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>Safety Warnings for E30 Events</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>Do not ride the bike if the display is completely dead</strong> and E30 is shown &mdash; without a functioning display, you cannot read battery level, PAS mode, or error codes. Unexpected battery cutoff at speed can cause a fall.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>E30 combined with an unresponsive throttle</strong> means the controller has no valid input source. Some controllers enter a failsafe mode that disables motor output entirely in this state. This is a safety feature, not a defect.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#4ade80;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>Preventive harness management:</strong> use zip ties to secure the display cable to the handlebar and frame at regular intervals. This prevents the cable from swinging into the spokes, being caught by the front wheel, or flexing at stress points.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="info" style="width:1.1rem;height:1.1rem;color:#22d3ee;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>Waterproofing tip:</strong> after any diagnosis involving connector exposure, apply a small amount of dielectric grease to the connector pins before reassembling. This prevents future water intrusion and E30 faults from corrosion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="ebike-motor-not-working.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">MOTOR</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E-Bike Motor Not Working</h3>
+        <p class="text-sm text-gray-400">Comprehensive motor diagnosis covering all motor types, hall sensor testing, throttle vs PAS, and controller fault isolation.</p>
+      </a>
+      <a href="ebike-e07-motor-fault.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">E07</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E07 Motor Fault / Hall Sensor</h3>
+        <p class="text-sm text-gray-400">The most common e-bike error code. Hall sensor testing, phase wire resistance checks, and motor vs controller replacement guide.</p>
+      </a>
+      <a href="ebike-e10-motor-overheating.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">E10</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E10 Motor Overheating</h3>
+        <p class="text-sm text-gray-400">Thermal protection faults, temperature thresholds, cooling procedures, and when overheating signals motor replacement.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for a specific error code?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Open the full error code database &mdash; every fault code from every major e-bike system we have documented, along with symptom, cause, and DIY fix.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/ebike-micromobility.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="bike" style="width:1rem;height:1rem"></i>E-Bike Specs Comparison</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

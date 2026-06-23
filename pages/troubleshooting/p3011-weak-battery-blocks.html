@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P3011-P3027 Repair Guide — Weak Battery Blocks (Toyota Prius) | TechSpecsHub</title>
+  <meta name="description" content="Step-by-step P3011-P3027 diagnostic for Toyota Prius. Block number mapping to physical modules, block-to-block voltage variance testing, individual module replacement, bus bar corrosion diagnosis.">
+  <meta name="theme-color" content="#0a1628">
+  <!-- Critical Inline CSS: pre-render base styles so first paint is not broken -->
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <!-- Resource Preload Hints: tells browser to start DNS/TLS/load EARLY -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/p3011-weak-battery-blocks.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="P3011-P3027 Repair Guide — Weak Battery Blocks (Toyota Prius) | TechSpecsHub">
+  <meta property="og:description" content="Step-by-step P3011-P3027 diagnostic for Toyota Prius. Block number mapping to physical modules, block-to-block voltage variance testing, individual module replacement, bus bar corrosion diagnosis.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/p3011-weak-battery-blocks.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-20T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-20T00:00:00Z">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="P3011-P3027 Repair Guide — Weak Battery Blocks (Toyota Prius) | TechSpecsHub">
+  <meta name="twitter:description" content="Step-by-step P3011-P3027 diagnostic for Toyota Prius. Block number mapping to physical modules, block-to-block voltage variance testing, individual module replacement, bus bar corrosion diagnosis.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "P3011-P3027 Repair Guide — Weak Battery Blocks (Toyota Prius) | TechSpecsHub",
+    "description": "Step-by-step P3011-P3027 diagnostic for Toyota Prius. Block number mapping to physical modules, block-to-block voltage variance testing, individual module replacement, bus bar corrosion diagnosis.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/p3011-weak-battery-blocks.html",
+    "datePublished": "2026-06-20",
+    "dateModified": "2026-06-20",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH MODAL -->
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">P3011-P3027 &mdash; Weak Battery Blocks</span>
+    </nav>
+  </section>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-orange-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-orange-500/20 text-orange-400 font-mono font-bold text-sm rounded-md border border-orange-500/30">P3011-P3027</div>
+        <span class="badge badge-warning"><i data-lucide="alert-triangle" style="width:0.75rem;height:0.75rem"></i>Module-Specific Fault</span>
+        <span class="badge badge-warning"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Advanced Difficulty</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Weak Battery Blocks (Toyota Prius) &mdash; <span class="gradient-text">Block-Level Diagnosis &amp; Replacement</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        P3011 through P3027 are Toyota-specific codes indicating weak or failing individual battery modules (blocks) within the hybrid battery pack. Each code corresponds to a specific block number, allowing precise identification of which physical module is failing. Most common on Gen 2 Prius (2004&ndash;2009) with 28-module packs, though similar fault logic applies to Gen 3 and other Toyota hybrids.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Repair Time</div>
+          <div class="font-mono font-bold text-xl text-white">2&ndash;5 hrs</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$200&ndash;$600</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="battery-full" style="width:0.9rem;height:0.9rem"></i>Modules / Gen 2</div>
+          <div class="font-mono font-bold text-xl text-yellow-400">28 blocks</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="gauge" style="width:0.9rem;height:0.9rem"></i>Healthy Variance</div>
+          <div class="font-mono font-bold text-xl text-green-400">&lt; 0.3V</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMARY CARD -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Understanding <span class="gradient-text">P3011-P3027</span></h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            The P3011&ndash;P3027 fault code range specifically identifies individual battery blocks by number. P3011 indicates Block 1 (the first physical module), P3012 indicates Block 2, and so on through P3027 for Block 17. Note that the Prius Gen 2 has 28 physical modules, but Toyota's block numbering system uses only 17 block addresses &mdash; each block in the fault logic represents a group of one or more physical modules with shared voltage sense circuitry.
+          </p>
+          <p>
+            The relationship between block numbers and physical modules is critical for diagnosis. In Gen 2 Prius, the pack is arranged with modules numbered physically from front-left (#1) to rear-right (#28). The HV ECU monitors voltage at 17 specific sense points, grouping modules into blocks for diagnostic purposes. When a specific block's voltage falls below the acceptable threshold, the corresponding P30XX code is set.
+          </p>
+          <p>
+            A healthy pack will show block-to-block voltage variance of <strong class="text-white">less than 0.3V</strong> under load. When any single block exceeds this variance, the affected P30XX code is triggered. Unlike P0A7F (generalized imbalance) or P0A80 (SOH threshold), P3011-P3027 codes pinpoint the exact block requiring attention, enabling targeted module replacement rather than full pack replacement.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Block-to-Module Mapping (Gen 2)</h3>
+          <ul class="space-y-1.5 text-sm text-gray-200 font-mono">
+            <li><span class="text-orange-400">P3011</span> &rarr; Block 1 (modules 1&ndash;2)</li>
+            <li><span class="text-orange-400">P3012</span> &rarr; Block 2 (modules 3&ndash;4)</li>
+            <li><span class="text-orange-400">P3013</span> &rarr; Block 3 (modules 5&ndash;6)</li>
+            <li><span class="text-orange-400">P3014</span> &rarr; Block 4 (modules 7&ndash;8)</li>
+            <li><span class="text-orange-400">P3015</span> &rarr; Block 5 (modules 9&ndash;10)</li>
+            <li><span class="text-orange-400">...</span> &rarr; ...</li>
+            <li><span class="text-orange-400">P3027</span> &rarr; Block 17 (modules 33&ndash;34)</li>
+          </ul>
+          <p class="text-xs text-gray-500 mt-3">Blocks 1&ndash;14 = left bank (14 modules)<br>Blocks 15&ndash;17 = right bank (14 modules)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY WARNING -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <div class="alert alert-critical">
+      <i data-lucide="alert-triangle" style="width:1.25rem;height:1.25rem;flex-shrink:0;margin-top:0.1rem"></i>
+      <div>
+        <strong class="block mb-1 text-white">High Voltage Danger &mdash; 201.6V DC / up to 400V DC</strong>
+        <p class="text-sm leading-relaxed">Hybrid battery packs carry lethal voltage. Before any physical module access, <strong class="text-white">always</strong>: (1) Disconnect 12V auxiliary battery negative terminal first, (2) Remove the HV service plug (safety interlock), (3) Wait <strong class="text-white">10 minutes minimum</strong> for inverter capacitors to discharge. Wear Class 0 insulated gloves rated for 1000V. Never work alone on high-voltage systems. If you are not comfortable with HV safety protocols, do not attempt DIY module replacement &mdash; consult a certified hybrid technician.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS & SAFETY EQUIPMENT -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Safety Equipment</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="hard-hat" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety (MANDATORY)</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Class 0 insulated gloves (1000V rated) &mdash; MANDATORY</li>
+          <li>Safety glasses + face shield</li>
+          <li>1000V insulated hand tools</li>
+          <li>Fire extinguisher (Class ABC) within reach</li>
+          <li>HV safety barrier tape for workspace</li>
+          <li>Second person present &mdash; NEVER work alone on HV</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="cpu" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Diagnostic</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>OBD-II scan tool with Toyota hybrid data (Techstream preferred, Dr. Prius acceptable)</li>
+          <li>Digital multimeter &mdash; CAT III 600V minimum</li>
+          <li>Battery load tester or apply load via 12V accessories</li>
+          <li>Infrared thermometer for thermal checking</li>
+          <li>Thermal camera (optional, for hot-spot detection)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="wrench" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Module Replacement</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>10mm socket + ratchet</li>
+          <li>12mm socket + ratchet</li>
+          <li>Torque wrench (10&ndash;80 Nm range)</li>
+          <li>Wire brush (brass or nylon for bus bars)</li>
+          <li>Isopropyl alcohol 90%+</li>
+          <li>Dielectric grease</li>
+          <li>Battery lift cart or safe jack with blocks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP-BY-STEP DIAGNOSTIC PROCEDURE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">7-Step Diagnostic &amp; Replacement Procedure</h2>
+
+    <div class="space-y-4">
+
+      <!-- STEP 1 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Pull codes and identify affected blocks</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Connect an OBD-II scan tool capable of reading Toyota hybrid battery data. Record all P3011-P3027 codes, any accompanying P0A7F or P0A80 codes, and freeze frame data. Note the specific block number(s) triggering each code &mdash; this tells you exactly which physical module(s) to target. Multiple codes may indicate widespread degradation.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Block mapping reminder</div>
+              <p>P3011-P3014 = left-front blocks, P3015-P3017 = left-rear blocks, P3020-P3027 = right bank blocks. A code like P3011 alone indicates module 1 or 2 is weak; P3011 + P3012 together suggests the fault spans the first four modules.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Perform block-to-block voltage variance test under load</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">With the vehicle in READY mode and scan tool displaying individual block/module voltages, apply a sustained load (fan on high, headlights on, rear defroster on) for 60 seconds. Record all block voltages. Calculate the variance: highest block minus lowest block. A healthy pack shows <strong class="text-green-400">less than 0.3V difference</strong> between all blocks. Any block showing more than 0.5V below the highest block is a confirmed failure candidate.</p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">The load test is essential. A module may read 7.8V at rest but collapse to 6.0V under load. Always test under load conditions to identify weak modules that pass no-load voltage checks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Map block codes to physical module locations</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">On the Gen 2 Prius pack, modules are arranged in two mirrored rows of 14 modules each. The front-left module is #1 (Block 1 / P3011), front-right is #15 (Block 15 / P3020). Numbering continues back: module #2 is adjacent to #1, module #16 is adjacent to #15, and so on through module #28 at the rear-right. Use the block code to identify the affected pair, then narrow down to the specific weak module using voltage readings.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Physical layout (Gen 2 Prius)</div>
+              <p><strong class="text-white">Left bank (modules 1&ndash;14):</strong> Front-left = #1, rear-left = #14<br><strong class="text-white">Right bank (modules 15&ndash;28):</strong> Front-right = #15, rear-right = #28<br>Blocks 1&ndash;14 share the left sense circuit; Blocks 15&ndash;17 cover the right bank via different sense taps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">14-module vs 28-module pack differences</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Gen 2 and Gen 3 Prius both use 28-module packs for a total of 201.6V. However, some Toyota hybrids (earlier Camry Hybrid, some Highlander Hybrid configurations) use 34-module packs at 244.8V. The P3011-P3027 block numbering applies specifically to the 28-module architecture. If your vehicle has a 14-module pack (some early hybrid applications), the fault logic is different &mdash; consult model-specific documentation.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Pack variants</div>
+              <p><strong class="text-white">Gen 2/3 Prius:</strong> 28 modules &times; 7.2V = 201.6V (P3011-P3027 applicable)<br><strong class="text-white">Early Camry Hybrid:</strong> 34 modules &times; 7.2V = 244.8V (different block mapping)<br><strong class="text-white">Highlander Hybrid:</strong> 34 modules &times; 7.2V = 244.8V (different block mapping)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Isolate HV system &mdash; full safety protocol</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">This step cannot be skipped or abbreviated. Turn ignition OFF and remove key/fob from vehicle. Disconnect 12V auxiliary battery negative terminal first (black clamp), then positive. Wait 2 minutes. Put on Class 0 insulated gloves. Locate and remove the HV service plug (orange handle, typically on top of the battery pack). Set timer for <strong class="text-white">10 minutes minimum</strong>. Do not touch any orange-cased components until timer expires. After 10 minutes, verify with CAT III multimeter that pack voltage is below 3V before proceeding.</p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="alert-octagon" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">The HV service plug is the primary safety interlock, but capacitors can retain lethal charge for minutes after removal. Always verify with a multimeter. The HV ECU may store codes even with the service plug removed &mdash; this is normal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 6 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Inspect and clean bus bar connections</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Access the battery pack and inspect all bus bars connecting the modules. Look for green or white corrosion buildup on bus bar surfaces and module terminals. Corroded bus bars increase contact resistance, causing voltage drop and localized heating &mdash; accelerating nearby module degradation. Clean corrosion with a brass wire brush and isopropyl alcohol. If bus bars show pitting, black arcing marks, or melted plastic, replace them rather than reusing.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Bus bar diagnosis</div>
+              <p><strong class="text-green-400">Good:</strong> Bright metal surface, no corrosion, secure torque<br><strong class="text-yellow-400">Cleanable:</strong> Light green/white corrosion, no pitting<br><strong class="text-red-400">Replace:</strong> Black pits, melted edges, discolored plastic insulators</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 7 -->
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Individual module replacement &mdash; match Ah rating</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Remove the bus bars from the weak module(s) identified by voltage testing. Note the original orientation and position of each bus bar &mdash; they must return to the same locations. Install replacement module(s) with matching Ah rating (typically 6.0 Ah or 6.5 Ah for Gen 2/3 Prius &mdash; verify against original pack label). Torque bus bar nuts to specification: main power bus bars <code class="text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">53 N&middot;m</code>, sense wire attachments <code class="text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">10 N&middot;m</code>. Apply dielectric grease to bus bar contact surfaces before reassembly.</p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="flame" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">Do not mix modules with different Ah ratings. A 6.0 Ah module paired with 6.5 Ah modules will create a new imbalance. Pre-charge replacement modules to match the resting voltage of existing good modules (~7.8V&ndash;8.0V open circuit) before installation to minimize initial ECU flags.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BRAND/MODEL NOTES -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Brand &amp; Model-Specific Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-2xl">&#x1F697;</span>
+          <h3 class="font-bold text-lg">Toyota Prius Gen 2 (2004&ndash;2009)</h3>
+        </div>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>28 modules, 201.6V nominal, 17 block addresses</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>P3011-P3027 block numbering directly applicable</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Most documented DIY resources available</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>HV ECU relearn required after replacement</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Module height: 43mm OEM specification</li>
+        </ul>
+      </div>
+      <div class="glass-card p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-2xl">&#x1F697;</span>
+          <h3 class="font-bold text-lg">Toyota Prius Gen 3 (2010&ndash;2015)</h3>
+        </div>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>28 modules, 201.6V nominal, same block logic as Gen 2</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Improved thermal management reduces hot-spot formation</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Slightly different module connector design</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>P3011-P3027 codes still apply but may trigger at different thresholds</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Parts cross-compatible with Gen 2</li>
+        </ul>
+      </div>
+      <div class="glass-card p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-2xl">&#x1F697;</span>
+          <h3 class="font-bold text-lg">Toyota Prius Gen 4 (2016+)</h3>
+        </div>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Li-ion battery pack option (not NiMH) &mdash; different diagnostics</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>P3011-P3027 codes do NOT apply to Li-ion packs</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Li-ion packs are not user-serviceable for module replacement</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Full pack replacement required for Li-ion pack failures</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>P0A80 and P0AFA still used for pack-level diagnosis</li>
+        </ul>
+      </div>
+      <div class="glass-card p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-2xl">&#x1F697;</span>
+          <h3 class="font-bold text-lg">Toyota Camry Hybrid / Highlander HV</h3>
+        </div>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Early models: 34-module NiMH pack (244.8V)</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>P3011-P3027 block logic NOT directly applicable</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Module replacement more labor-intensive (pack location)</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Consult model-specific service manual for block mapping</li>
+          <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Consider professional service due to pack weight and access complexity</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO CALL A PROFESSIONAL -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-red-950/20 to-navy-900 border-red-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#f87171"></i>When to Call a Professional</h2>
+      <p class="text-gray-400 mb-5">DIY module replacement is appropriate only when you have proper HV safety training and equipment. Seek professional help if:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield-off" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You do <strong>not own Class 0 insulated gloves</strong> and a CAT III multimeter. HV work without proper PPE is life-threatening.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">More than <strong>5 modules</strong> are flagged across multiple blocks &mdash; consider full pack replacement or professional rebuild.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Bus bars show <strong>melted plastic, black arcing pits, or severe corrosion</strong> &mdash; these indicate high-current faults that may have damaged the pack structural integrity.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield-check" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Vehicle is under <strong>hybrid battery warranty</strong> &mdash; DIY disassembly may void warranty. Dealer or authorized hybrid shop must service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED CODES -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Hybrid Battery Codes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="p0a7f-hybrid-battery-deterioration.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">P0A7F</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">HV Battery Pack Deterioration</h3>
+        <p class="text-sm text-gray-400">Generalized module voltage spread warning. Often precedes P3011-P3027 codes as individual blocks begin to fail.</p>
+      </a>
+      <a href="p0afa-hybrid-battery-voltage-low.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">P0AFA</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">System Voltage Low</h3>
+        <p class="text-sm text-gray-400">Overall pack voltage below threshold. P0AFA often appears alongside multiple P3011-P3027 codes when several blocks have failed.</p>
+      </a>
+      <a href="p0a80-replace-hybrid-battery.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">P0A80</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Hybrid Battery Pack Replacement</h3>
+        <p class="text-sm text-gray-400">State-of-Health below threshold. Full pack replacement procedure with complete HV safety protocol and ECU relearn.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Need module part numbers or block-specific torque specs?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Open the master specification sheet for your generation. Includes OEM part numbers by block position, bus bar torque values, temperature sensor calibration data, and battery recycling drop-off locations.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../specs/hybrid-cars.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Open Hybrid Battery Spec Sheet</a>
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creality Ender 3 Error 2564 — Nozzle Not Heating Troubleshooting Guide | TechSpecsHub</title>
+  <meta name="description" content="Complete diagnostic guide for Creality Ender 3 Error 2564 nozzle not heating. Thermosensitive detection malfunction, heater cartridge resistance testing, thermistor reference table, connector inspection, and hotend assembly troubleshooting for Ender 3 printers.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/creality-ender-3-error-2564.html">
+
+  <meta property="og:title" content="Creality Ender 3 Error 2564 — Nozzle Not Heating Troubleshooting Guide | TechSpecsHub">
+  <meta property="og:description" content="Complete diagnostic guide for Creality Ender 3 Error 2564 nozzle not heating. Heater cartridge resistance testing, thermistor reference table, and hotend assembly troubleshooting for Ender 3 printers.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/creality-ender-3-error-2564.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Creality Ender 3 Error 2564 — Nozzle Not Heating Troubleshooting Guide | TechSpecsHub">
+  <meta name="twitter:description" content="Complete diagnostic guide for Creality Ender 3 Error 2564 nozzle not heating. Heater cartridge resistance testing, thermistor reference table, and hotend assembly troubleshooting for Ender 3 printers.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Creality Ender 3 Error 2564 — Nozzle Not Heating Troubleshooting Guide | TechSpecsHub",
+    "description": "Complete diagnostic guide for Creality Ender 3 Error 2564 nozzle not heating. Thermosensitive detection malfunction, heater cartridge resistance testing, thermistor reference table, and hotend assembly troubleshooting for Ender 3 printers.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/creality-ender-3-error-2564.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools & Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Creality Ender 3 Error 2564</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-orange-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-orange-500/20 text-orange-400 font-mono font-bold text-sm rounded-md border border-orange-500/30">ERROR 2564</div>
+        <span class="badge badge-info"><i data-lucide="layers" style="width:0.75rem;height:0.75rem"></i>Creality Ender 3</span>
+        <span class="badge badge-warning"><i data-lucide="thermometer" style="width:0.75rem;height:0.75rem"></i>Heating Fault</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Creality Ender 3 Error 2564 &mdash; <span class="gradient-text">Nozzle Not Heating Fix Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Error 2564 on the Creality Ender 3 indicates the firmware has detected a thermosensitive element failure, commonly referred to as a heating failure. This guide covers systematic diagnosis of the heating system including thermosensitive detection malfunction, heater cartridge resistance testing with reference values, thermistor resistance reference table, connector and wiring inspection, hotend assembly troubleshooting, and guidance on when to replace the heater cartridge versus the thermistor. Compatible with Ender 3, Ender 3 Pro, Ender 3 V2, Ender 3 S1, and Ender 3 S1 Plus.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">20&ndash;60 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$5&ndash;$25</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="target" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Heater Cartridge</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~80%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What Usually Goes Wrong?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            Error 2564 triggers when the firmware commands the hotend heater to turn on but does not detect the expected temperature rise within a set time window. The Creality firmware monitors both the heater cartridge (heating element) and the thermistor (temperature sensor). If the thermistor reports no temperature change after the heater is energized, or if the temperature reading is abnormal, the firmware assumes a fault and cuts power to prevent thermal runaway. The fault can originate from either the heating element itself or the temperature feedback loop.
+          </p>
+          <ul class="space-y-2 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; <strong>Heater cartridge failure:</strong> the heating coil inside the cartridge has burned out, creating an open circuit &mdash; the most common cause of no heat.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Thermistor malfunction:</strong> the temperature sensor has failed, reading 0 ohms (shorted) or infinite ohms (open), causing the firmware to detect a fault even if heating is occurring.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Loose or corroded connectors:</strong> the 2-pin connector at the hotend or the mainboard header has a poor connection, preventing current from reaching the cartridge.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>MOSFET failure:</strong> the switching transistor that controls the heater on the mainboard has failed, cutting power to the heater circuit entirely.</span></li>
+          </ul>
+          <p class="text-gray-400 text-sm">
+            Work through these steps in order to systematically isolate the faulty component. Always power off the printer before accessing electrical connections.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Quick Symptom Check</h3>
+          <p class="text-sm text-gray-200 mb-3">Answer these before proceeding:</p>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the hotend temperature display show 0&deg;C or room temperature?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the temperature jump erratically or show 1000&deg;C?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did you recently change the nozzle, heat break, or hotend?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did the error occur suddenly or gradually over many prints?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Is the printer powered by 12V or 24V supply?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools & Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="zap" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Electrical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Digital multimeter (resistance and continuity mode)</li>
+          <li>Replacement heater cartridge (24V 40W or 12V 40W depending on model)</li>
+          <li>Replacement NTC 100K thermistor (B3950 or B57560G)</li>
+          <li>Replacement 2-pin connector terminals (optional for repair)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Mechanical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Allen key set (1.5mm, 2mm for heat block set screws)</li>
+          <li>Heat-resistant gloves (for hot component handling)</li>
+          <li>Thermal paste or thermal compound (for thermistor seating)</li>
+          <li>Small brush (for cleaning heat block threads)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="flame" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Power off and unplug printer before electrical diagnosis</li>
+          <li>Allow hotend to cool completely before disassembly</li>
+          <li>Heat-resistant gloves when working near heat block</li>
+          <li>Never operate printer with damaged wiring exposed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test heater cartridge resistance with a multimeter</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The heater cartridge is the most likely culprit when the nozzle fails to heat. Power off the printer completely, then disconnect the heater cartridge wires from the mainboard. Set your multimeter to resistance mode (200 ohm range) and measure across the two heater cartridge terminals. A functioning 24V 40W heater cartridge should read approximately 14.4 ohms (&plusmn;10%). A 12V 40W cartridge reads approximately 3.6 ohms. If you read infinite ohms (open circuit), the cartridge is burned out and must be replaced.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Expected Heater Cartridge Resistance</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div><strong class="text-electric-400">24V 40W cartridge:</strong> ~14.4 ohms (&plusmn;10%)</div>
+                <div><strong class="text-electric-400">12V 40W cartridge:</strong> ~3.6 ohms (&plusmn;10%)</div>
+                <div><strong class="text-yellow-400">24V 30W cartridge:</strong> ~19.2 ohms (if equipped)</div>
+                <div><strong class="text-red-400">Open circuit:</strong> Infinite ohms = replace cartridge</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test thermistor resistance at room temperature</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the heater cartridge tests good, the thermistor is the next most likely failure. The Ender 3 uses an NTC (Negative Temperature Coefficient) 100K ohm thermistor with a B-value of 3950. At 25&deg;C room temperature, it should read approximately 100,000 ohms (100K). If you read 0 ohms (shorted), infinite ohms (open circuit), or a value far outside the 100K range, the thermistor must be replaced. Use the reference table below to verify your reading matches the expected resistance at the measured ambient temperature.</p>
+            <div class="overflow-x-auto">
+              <table class="specs-table w-full text-sm">
+                <thead>
+                  <tr><th>Temperature (&deg;C)</th><th>Expected Resistance (ohms)</th><th>Temperature (&deg;C)</th><th>Expected Resistance (ohms)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>0</td><td>~326,000</td><td>40</td><td>~52,000</td></tr>
+                  <tr><td>10</td><td>~179,000</td><td>50</td><td>~34,000</td></tr>
+                  <tr><td>20</td><td>~125,000</td><td>60</td><td>~26,000</td></tr>
+                  <tr><td>25</td><td>~100,000</td><td>80</td><td>~13,000</td></tr>
+                  <tr><td>30</td><td>~82,000</td><td>100</td><td>~7,000</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Inspect all connectors and wiring end-to-end</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Wiring and connector failures are common on the Ender 3 due to repeated X-axis flexing that stresses the wires near the hotend. Inspect the full circuit path: from the mainboard heater output connector, through the cable chain, to the 2-pin connector at the hotend. Check that the Dupont-style pins are not backed out of their housings, that there is no corrosion or oxidation on the metal terminals, and that the wires are not broken inside the insulation. A continuity test with a multimeter along each wire can identify intermittent breaks that are not visible.</p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Common failure points:</strong> the 2-pin JST connector at the hotend (wires can pull out), the mainboard header pins (loose crimps), and the point where wires enter the heat block (repeated bending causes conductor breakage inside insulation). Gently tug each wire at both ends &mdash; a loose connection will reveal itself.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Verify heater cartridge physical installation in heat block</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">A heater cartridge that is not fully seated in the heat block will have poor thermal contact, causing slow or inadequate heating. The cartridge should slide completely into the heat block hole and be retained by a small set screw. If the cartridge protrudes or rattles, remove it, clean any debris from the hole, and reinsert it fully before tightening the set screw. Apply a small amount of thermal paste to the cartridge tip before insertion to improve thermal conductivity to the block.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Heater Cartridge Installation Checklist</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Cartridge fully inserted into heat block bore</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Set screw tightened against cartridge body (not wires)</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>No gaps between cartridge and heat block</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Apply thermal paste to cartridge tip before insertion</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Wires secured and not touching heat block directly</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test MOSFET switching on the mainboard</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the heater cartridge and thermistor both test good and the wiring is intact, the MOSFET (Metal-Oxide Semiconductor Field-Effect Transistor) that switches the heater circuit may have failed. The MOSFET is the component on the mainboard that responds to the firmware command to energize the heater. A failed MOSFET will either not switch at all (open) or fail shorted (which is dangerous &mdash; heater stays on constantly). To test this without specialized equipment, you can measure for voltage at the heater output connector when the printer commands heating. If no voltage is present but the cartridge and wiring check out, the MOSFET likely needs replacement.</p>
+            <div class="alert alert-info !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>MOSFET failure symptom:</strong> if the heater stays on continuously even after turning off the printer (with power cable still connected), the MOSFET has failed shorted. This is a serious fire hazard &mdash; unplug immediately and do not use the printer until the MOSFET or mainboard is replaced.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Re-seat thermistor and check thermal contact</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the thermistor reads correct resistance but the firmware still reports a fault, the thermistor may not be making proper thermal contact with the heat block. An improperly seated thermistor will read ambient air temperature rather than block temperature, causing the firmware to detect that heating is not occurring. Remove the thermistor from its bore in the heat block, clean the bore with a small brush or needle, and reinsert the thermistor firmly. Apply a tiny amount of thermal compound if available. For screw-in type thermistors, ensure PTFE tape is applied to the threads to prevent shorting against the metal block.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Thermistor vs Heater Cartridge Decision Guide</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-green-400">Replace HEATER CARTRIDGE if:</strong> resistance is infinite (open) or far below spec</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-green-400">Replace THERMISTOR if:</strong> resistance is 0 ohms, infinite, or far from 100K at room temp</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-yellow-400">Replace BOTH if:</strong> wiring has been exposed to high heat damage or melted</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-red-400">Replace MAINBOARD if:</strong> MOSFET has failed shorted or ADC input is damaged</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Re-run PID tuning after any heater or thermistor replacement</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">After replacing the heater cartridge or thermistor, you must re-run PID (Proportional-Integral-Derivative) tuning to calibrate the firmware's heating algorithm to your specific hotend configuration. The new components will have slightly different thermal characteristics, and without retuning, you may experience temperature overshoot, oscillation, or longer heat-up times. Use the appropriate firmware command for your firmware type and save the results to EEPROM.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-3"><i data-lucide="cpu" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Marlin:</strong> <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">M303 E0 S200 C8</code> then <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">M500</code> to save</li>
+              <li class="flex items-start gap-3"><i data-lucide="code" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Klipper:</strong> <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">PID_CALIBRATE HEATER=extruder TARGET=200</code> then <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">SAVE_CONFIG</code></li>
+              <li class="flex items-start gap-3"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Verify:</strong> after PID tuning, monitor temperature for 5 minutes to confirm stable holding within &plusmn;2&deg;C of target</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Firmware-Specific Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>Creality Stock Firmware</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Creality's stock firmware uses simple bang-bang control for the hotend heater rather than PID on some models. The firmware monitors temperature at regular intervals and energizes the heater when temperature drops below the target minus a hysteresis value. Error 2564 triggers when the temperature does not rise within the expected window. On stock firmware, the heating algorithm is not configurable &mdash; replacing faulty components is the primary fix.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-purple-400 flex items-center gap-2"><i data-lucide="code" style="width:1.2rem;height:1.2rem"></i>Marlin Firmware</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Marlin uses PID control for more stable temperature management. If you have flashed Marlin and are getting Error 2564, first run PID autotune (M303) to calibrate the PID values to your specific hotend. After any heater cartridge or thermistor replacement, the thermal characteristics change and the PID values must be updated. Verify your thermistor type is correctly defined in Configuration.h &mdash; wrong thermistor table selection causes incorrect temperature readings.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="settings" style="width:1.2rem;height:1.2rem"></i>Klipper Firmware</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Klipper uses a model-based heating control that monitors the thermal mass and heating rate. If Klipper reports a heater fault, run PID_CALIBRATE to retrain the model. The control algorithm in Klipper is more sensitive to accurate sensor readings, so a faulty thermistor will trigger errors faster than on Marlin. Check your Klipper printer.cfg for the correct <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">sensor_type</code> and <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">pullup_resistor</code> values.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="zap" style="width:1.2rem;height:1.2rem"></i>Voltage Warning</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">The Ender 3 family includes both 12V and 24V models. Using a 12V heater cartridge on a 24V printer will result in insufficient heating (cartridge will produce only 1/4 of rated power). Using a 24V cartridge on a 12V printer will overheat and burn out the cartridge almost immediately. Always verify your printer's voltage before ordering replacement parts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-red-950/20 to-navy-900 border-red-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>When to Call a Professional or Replace Parts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Heater cartridge shows infinite resistance &mdash; replace with correct voltage and wattage cartridge.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Heater stays on constantly even when printer is supposedly off &mdash; MOSFET has failed shorted, unplug immediately.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Thermistor reads 0 ohms or fluctuates wildly &mdash; replace with NTC 100K B3950 thermistor.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Mainboard shows visible burn marks or emits smoke &mdash; do not operate, replace mainboard.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">If printer is under warranty and heating system shows fault, contact Creality support before self-repair.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="3d-printer-thermal-runaway.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">THERMAL</div>
+          <span class="badge badge-critical">Safety</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Thermal Runaway Error</h3>
+        <p class="text-sm text-gray-400">Comprehensive guide to thermal runaway protection, PID tuning, and firmware thermal settings.</p>
+      </a>
+      <a href="creality-ender-3-error-2243.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">ERR 2243</div>
+          <span class="badge badge-warning">Slicing</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Ender 3 Coordinate Exception / Error 2243</h3>
+        <p class="text-sm text-gray-400">Slicing software diagnosis, wrong model selection fixes, and G-code compatibility issues.</p>
+      </a>
+      <a href="creality-ender-3-cr-touch-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">CR-TOUCH</div>
+          <span class="badge badge-info">Leveling</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Ender 3 CR-Touch / BLTouch Error</h3>
+        <p class="text-sm text-gray-400">CR-Touch self-test abnormality, probe pin troubleshooting, and manual leveling fallback.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for more 3D printer troubleshooting?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Browse our full collection of 3D printer guides and specifications. From entry-level budget machines to high-end industrial printers, we cover the common failure modes and how to fix them.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/3d-printers.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="box" style="width:1rem;height:1rem"></i>3D Printer Specs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

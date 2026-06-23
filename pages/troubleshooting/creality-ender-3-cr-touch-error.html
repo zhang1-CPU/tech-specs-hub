@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creality Ender 3 CR-Touch / BLTouch Error — Troubleshooting Guide | TechSpecsHub</title>
+  <meta name="description" content="Complete diagnostic guide for Creality Ender 3 CR-Touch and BLTouch errors. Self-test abnormality diagnosis, probe pin troubleshooting, ribbon cable issues, mounting alignment, manual leveling fallback, and firmware update for CR-Touch support on Ender 3 printers.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/creality-ender-3-cr-touch-error.html">
+
+  <meta property="og:title" content="Creality Ender 3 CR-Touch / BLTouch Error — Troubleshooting Guide | TechSpecsHub">
+  <meta property="og:description" content="Complete diagnostic guide for Creality Ender 3 CR-Touch and BLTouch errors. Probe pin troubleshooting, ribbon cable issues, and firmware update for CR-Touch support on Ender 3 printers.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/creality-ender-3-cr-touch-error.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Creality Ender 3 CR-Touch / BLTouch Error — Troubleshooting Guide | TechSpecsHub">
+  <meta name="twitter:description" content="Complete diagnostic guide for Creality Ender 3 CR-Touch and BLTouch errors. Probe pin troubleshooting, ribbon cable issues, and firmware update for CR-Touch support on Ender 3 printers.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Creality Ender 3 CR-Touch / BLTouch Error — Troubleshooting Guide | TechSpecsHub",
+    "description": "Complete diagnostic guide for Creality Ender 3 CR-Touch and BLTouch errors. Self-test abnormality diagnosis, probe pin troubleshooting, ribbon cable issues, and firmware update for CR-Touch support on Ender 3 printers.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/creality-ender-3-cr-touch-error.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools & Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Ender 3 CR-Touch / BLTouch Error</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-blue-500/20 text-blue-400 font-mono font-bold text-sm rounded-md border border-blue-500/30">CR-TOUCH</div>
+        <span class="badge badge-info"><i data-lucide="layers" style="width:0.75rem;height:0.75rem"></i>Creality Ender 3</span>
+        <span class="badge badge-warning"><i data-lucide="move-3d" style="width:0.75rem;height:0.75rem"></i>Auto Leveling</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Ender 3 CR-Touch / BLTouch Error &mdash; <span class="gradient-text">Probe Troubleshooting Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        CR-Touch and BLTouch are auto-bed leveling probes used on modified Creality Ender 3 printers to automatically measure and compensate for bed unevenness. This guide covers CR-Touch self-test abnormality diagnosis, probe pin stuck or damaged troubleshooting, 5-pin ribbon cable connection issues, CR-Touch mounting and alignment, manual leveling fallback procedures, and firmware updates required for CR-Touch support. Compatible with Ender 3 with CR-Touch kit, Ender 3 Pro with BLTouch, Ender 3 V2, Ender 3 S1, and Ender 3 S1 Plus.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">30&ndash;90 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$45</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="target" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Cable Connection</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~85%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What Usually Goes Wrong?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            CR-Touch and BLTouch are precision electromechanical probes that use a spring-loaded pin and an electromagnetic solenoid to deploy and retract a sensing pin. The probe performs a self-test on power-up by deploying and retracting the pin automatically. If the pin fails to deploy, fails to retract, or the sensor does not detect the pin position correctly, the firmware will display an error and halt operation. Unlike simple limit switches, these probes have internal electronics and require specific firmware support. Most failures are related to the cables, connectors, or physical obstructions preventing pin movement rather than internal probe electronics failure.
+          </p>
+          <ul class="space-y-2 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; <strong>Ribbon cable connection failure:</strong> the 5-pin cable between the probe and mainboard can become loose, oxidized, or damaged &mdash; the #1 cause of probe errors.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Probe pin obstruction:</strong> the spring-loaded pin can become jammed by debris, filament splatter, or if the probe is mounted too close to the nozzle.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Firmware not configured for probe:</strong> if the firmware does not have BLTouch/CR-Touch support enabled, the probe signals will be misinterpreted.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Incorrect probe mounting height:</strong> the probe pin must be within a specific height range relative to the nozzle tip for proper triggering.</span></li>
+          </ul>
+          <p class="text-gray-400 text-sm">
+            Work through these steps in order. Most CR-Touch/BLTouch errors are resolved by reseating the ribbon cable or clearing debris from the probe pin mechanism.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Quick Symptom Check</h3>
+          <p class="text-sm text-gray-200 mb-3">Answer these before proceeding:</p>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the probe pin deploy at power-on during self-test?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the red LED on the probe illuminate or blink?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did you recently change the nozzle or hotend assembly?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Is this a new CR-Touch installation or did it work before?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>What firmware version is currently installed?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools & Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="zap" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Electrical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Digital multimeter (for continuity testing)</li>
+          <li>Replacement 5-pin probe cable (if damaged)</li>
+          <li>Isopropyl alcohol 90%+ (for cleaning contacts)</li>
+          <li>Electrical tape (for cable strain relief)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Mechanical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Allen key set (1.5mm, 2mm for probe mount)</li>
+          <li>Small Phillips screwdriver</li>
+          <li>Needle or dental pick (for clearing debris from probe)</li>
+          <li>Compressed air duster (for cleaning probe mechanism)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="settings" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Firmware</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-3 00">
+          <li>SD card with CR-Touch/BLTouch compatible firmware</li>
+          <li>Creality official firmware or Marlin with probe config</li>
+          <li>USB cable for firmware flashing (if applicable)</li>
+          <li>Z-offset configuration access via display or G-code</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Verify probe self-test behavior at power-on</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">When you power on the Ender 3 with CR-Touch or BLTouch installed, the probe should automatically deploy its pin 3-5 times in a self-test sequence. Watch carefully to see if the pin deploys downward, retracts up, and repeats. If the pin does not move at all, check the red LED on the probe body: a solid red LED indicates power is reaching the probe. A blinking red LED indicates a fault condition inside the probe. No LED at all means the probe is not receiving power &mdash; check the cable connection first.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">CR-Touch / BLTouch LED Indicators</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div><strong class="text-green-400">Red LED on solid:</strong> Power OK, probe ready</div>
+                <div><strong class="text-red-400">Red LED blinking:</strong> Self-test failed, probe fault</div>
+                <div><strong class="text-yellow-400">Red LED off:</strong> No power, check cable connection</div>
+                <div><strong class="text-blue-400">Yellow LED:</strong> Probe is deployed and triggered (touching bed)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Reseat the 5-pin probe cable at both ends</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The 5-pin ribbon cable connecting the CR-Touch/BLTouch to the mainboard is the most common failure point. Unplug the cable at both the probe body and the mainboard header. Inspect the metal pins for oxidation, bent pins, or pushed-out contacts. Clean the contacts gently with isopropyl alcohol and a soft cloth. Reinsert the cable firmly, ensuring it is fully seated in the connector. On the mainboard end, the cable must be inserted in the correct orientation &mdash; the colored wires typically face toward the board or toward the probe depending on the pinout. Reverse-plugging the cable will not damage the probe but will cause incorrect operation.</p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Cable orientation:</strong> the 5-pin cable has a keying notch that must align with the connector. Do not force the cable. If it does not insert easily, check the orientation. Never plug or unplug the probe cable while the printer is powered on &mdash; always power off first.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Inspect and clear probe pin mechanism</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The spring-loaded probe pin can become jammed by small debris, dried filament residue, or if the probe body has accumulated plastic buildup from printing. Power off the printer, then manually push the probe pin up and down with a finger to check if it moves freely. If the pin is stuck, use a needle or dental pick to carefully clear any debris from around the pin bore. Do not use excessive force. Apply a very small amount of machine oil or silicone lubricant to the pin guide surfaces if needed. Blow out the probe body with compressed air to remove any loose particles.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Probe Pin Clearance Requirements</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Pin must move freely up and down without binding</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>No filament residue on pin body or inside bore</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Probe body not touching or hitting nozzle at any X/Y position</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Minimum 2mm clearance between probe body and nozzle at lowest Z position</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check probe mounting height and alignment</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The CR-Touch or BLTouch probe must be mounted at the correct height relative to the nozzle tip. When the probe pin is fully retracted (up position), the tip of the probe pin should be 1-3mm below the nozzle tip at the point where the probe is directly over the leveling points on the bed. If the probe is mounted too high, the pin will not make contact with the bed. If mounted too low, the pin may not deploy fully or may be pressed against the bed preventing retraction. Loosen the probe mount screws, adjust the height by rotating the probe body, then retighten while holding the position.</p>
+            <div class="alert alert-info !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Mounting bracket note:</strong> Creality provides a specific mounting bracket for Ender 3 CR-Touch kits. Ensure the bracket is mounted to the X-axis gantry in the correct orientation and that the probe is centered over the hotend with adequate clearance at all positions on the bed. Some third-party brackets may have different mounting hole spacing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test cable continuity with multimeter</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If reseating the cable did not resolve the issue, the cable itself may be damaged internally. The ribbon cable inside the 5-pin connector is thin and can break from repeated flexing as the X-axis moves. With the cable unplugged from both ends, use a multimeter in continuity mode to test each of the 5 wires from one end to the other. Any wire that shows no continuity (open circuit) must be replaced. Also check for shorts between adjacent wires. If the cable shows continuity at the connector ends but intermittent operation, the break may be inside the insulation and the cable should be replaced.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">5-Pin Probe Cable Continuity Check</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-electric-400">Pin 1 (GND):</strong> continuity from probe pin 1 to mainboard pin 1</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-electric-400">Pin 2 (Z-MIN):</strong> signal pin &mdash; continuity check</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-electric-400">Pin 3 (5V):</strong> power supply from board</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-electric-400">Pin 4 (SERVO):</strong> deploy/retract control signal</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong class="text-yellow-400">Pin 5 (GND):</strong> second ground (some configurations)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Verify firmware has CR-Touch / BLTouch support enabled</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the probe hardware tests good but the printer still shows an error, the firmware may not be configured for the probe. Creality stock firmware on Ender 3 does not support CR-Touch or BLTouch out of the box &mdash; you must flash firmware that specifically includes probe support. Creality provides dedicated firmware for Ender 3 models with CR-Touch installed. Alternatively, Marlin firmware with BLTouch support can be compiled with the correct Configuration.h settings for your specific Ender 3 variant.</p>
+            <div class="overflow-x-auto">
+              <table class="specs-table w-full text-sm">
+                <thead>
+                  <tr><th>Firmware</th><th>Probe Support</th><th>Source</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Creality Stock</strong></td><td>Requires specific CR-Touch firmware</td><td>Creality official website</td></tr>
+                  <tr><td><strong>Marlin 2.x</strong></td><td>BLTOUCH enabled in Configuration.h</td><td>marlinfirmware.org</td></tr>
+                  <tr><td><strong>TH3D Unified</strong></td><td>BLTouch/CR-Touch preset profiles</td><td>TH3D Studio</td></tr>
+                  <tr><td><strong>Klipper</strong></td><td>[probe] section in printer.cfg</td><td>github.com/Klipper3d</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Perform manual bed leveling fallback procedure</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the CR-Touch/BLTouch probe cannot be fixed immediately and you need to continue printing, you can temporarily disable the probe and use manual bed leveling. In Marlin, send G-code M211 S0 to disable software endstops, then use G29 (if enabled) or manually level the four corners using paper test and BABYSTEP_ZPROBEING. In Creality stock firmware without probe support, you can use the existing tramming screws at bed corners and disable the auto-leveling G-code from your slicer start script. Remember to re-enable software endstops with M211 S1 after manual leveling.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-3"><i data-lucide="alert-octagon" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Manual leveling steps:</strong> Home axes (G28), move to front-left corner, adjust bed screw until paper friction feels correct, repeat for all four corners, verify center point.</li>
+              <li class="flex items-start gap-3"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>G-code for manual probe disable:</strong> <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">M421 Q</code> clears probe mesh, <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">M211 S0</code> disables endstops temporarily.</li>
+              <li class="flex items-start gap-3"><i data-lucide="shield" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Safety note:</strong> manual leveling removes bed mesh compensation. First layer adhesion may suffer and you may need to adjust Z-offset manually for each print.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Firmware-Specific Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>Creality CR-Touch Firmware</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Creality provides dedicated firmware files for Ender 3 models with CR-Touch already installed. These firmware versions have the probe pins pre-configured for the specific mainboard variant. Download the correct firmware from the official Creality website matching your exact Ender 3 model (Ender 3, Ender 3 Pro, Ender 3 V2, or Ender 3 S1) and mainboard revision. Flashing the wrong firmware file can result in probe non-operation or damage to the mainboard.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-purple-400 flex items-center gap-2"><i data-lucide="code" style="width:1.2rem;height:1.2rem"></i>Marlin Firmware</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">In Marlin Configuration.h, you must enable <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">BLTOUCH</code> and define the probe pin with <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">Z_MIN_PROBE_PIN</code>. The deployment and retraction commands are defined by <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">BLTOUCHDeploy</code> and <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">BLTOUCHMode</code> commands. After flashing, run <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">M502</code> to reset to defaults and <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">M500</code> to save.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="settings" style="width:1.2rem;height:1.2rem"></i>Klipper Firmware</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">In Klipper, the CR-Touch and BLTouch are configured using the [bltouch] section in printer.cfg. You must define the <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">sensor_pin</code> and <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">control_pin</code>. Klipper supports both 3.3V and 5V probes. Run <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">PROBE_CALIBRATE</code> to find the probe offset and <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">BED_MESH_CALIBRATE</code> to generate the bed mesh.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="zap" style="width:1.2rem;height:1.2rem"></i>Z-Offset Configuration</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">After getting the probe operational, you must set the Z-offset (the distance between the probe trigger point and the nozzle touch point on the bed). In Marlin, use <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">M851 Z0</code> followed by <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">G28</code> and <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">G29</code>, thenbabystep or use <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">M851</code> to set the measured offset. In Klipper, use <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">PROBE_CALIBRATE</code> and follow the guided procedure to set the Z-offset accurately.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-blue-950/20 to-navy-900 border-blue-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>When to Call a Professional or Replace Parts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Probe pin does not deploy at all and LED is off &mdash; cable or mainboard probe header damaged.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Probe LED blinks continuously during self-test &mdash; internal probe electronics fault, replace probe.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Probe pin deploys but never retracts &mdash; probe mechanism jam or solenoid failure, replace probe.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Ribbon cable tests show open circuit on multiple wires &mdash; replace the 5-pin probe cable.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">If the printer is under warranty and CR-Touch installation was factory-original, contact Creality support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="3d-printer-thermal-runaway.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">THERMAL</div>
+          <span class="badge badge-critical">Safety</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Thermal Runaway Error</h3>
+        <p class="text-sm text-gray-400">Comprehensive guide to thermal runaway, heater cartridge testing, and PID tuning for FDM printers.</p>
+      </a>
+      <a href="creality-ender-3-error-2243.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">ERR 2243</div>
+          <span class="badge badge-warning">Slicing</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Ender 3 Coordinate Exception / Error 2243</h3>
+        <p class="text-sm text-gray-400">Slicing software diagnosis, wrong printer model selection fixes, and G-code compatibility issues.</p>
+      </a>
+      <a href="creality-ender-3-error-2564.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">ERR 2564</div>
+          <span class="badge badge-warning">Heating</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Ender 3 Nozzle Not Heating / Error 2564</h3>
+        <p class="text-sm text-gray-400">Heater cartridge resistance testing, thermistor reference table, and hotend assembly troubleshooting.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for more 3D printer troubleshooting?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Browse our full collection of 3D printer guides and specifications. From entry-level budget machines to high-end industrial printers, we cover the common failure modes and how to fix them.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/3d-printers.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="box" style="width:1rem;height:1rem"></i>3D Printer Specs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

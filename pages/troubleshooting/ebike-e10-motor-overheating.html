@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E10 Motor Overheating / Thermal Protection &mdash; Cooling & Recovery Guide | TechSpecsHub</title>
+  <meta name="description" content="E10 motor overheating warning on e-bikes. Learn temperature thresholds for hub motors, proper cooling procedures, motor vent cleaning, current limiting vs motor failure, and when overheating means replacement.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/ebike-e10-motor-overheating.html">
+
+  <meta property="og:title" content="E10 Motor Overheating / Thermal Protection &mdash; Cooling & Recovery Guide | TechSpecsHub">
+  <meta property="og:description" content="E10 motor overheating warning on e-bikes. Learn temperature thresholds for hub motors, proper cooling procedures, motor vent cleaning, current limiting vs motor failure, and when overheating means replacement.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/ebike-e10-motor-overheating.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="E10 Motor Overheating / Thermal Protection &mdash; Cooling & Recovery Guide | TechSpecsHub">
+  <meta name="twitter:description" content="E10 motor overheating warning on e-bikes. Learn temperature thresholds for hub motors, proper cooling procedures, motor vent cleaning, current limiting vs motor failure, and when overheating means replacement.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "E10 Motor Overheating / Thermal Protection &mdash; Cooling & Recovery Guide | TechSpecsHub",
+    "description": "E10 motor overheating warning on e-bikes. Learn temperature thresholds for hub motors, proper cooling procedures, motor vent cleaning, current limiting vs motor failure, and when overheating means replacement.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/ebike-e10-motor-overheating.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">E10 Motor Overheating</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-yellow-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-yellow-500/20 text-yellow-400 font-mono font-bold text-sm rounded-md border border-yellow-500/30">E10 WARNING</div>
+        <span class="badge badge-info"><i data-lucide="bike" style="width:0.75rem;height:0.75rem"></i>All E-Bike Brands</span>
+        <span class="badge badge-warning"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Beginner</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        E10 Motor Overheating &mdash; <span class="gradient-text">Thermal Protection &amp; Recovery Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        E10 is a thermal protection warning, not a fault code. When the motor temperature exceeds safe operating thresholds, the controller reduces power output and eventually cuts motor drive entirely to prevent permanent damage. This guide explains why e-bike motors overheat, temperature limits for different motor types, proper cooling procedures, and how to distinguish normal thermal limiting from impending motor failure.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Cooling Time</div>
+          <div class="font-mono font-bold text-xl text-white">15&ndash;45 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="thermometer" style="width:0.9rem;height:0.9rem"></i>Max Hub Temp</div>
+          <div class="font-mono font-bold text-xl text-yellow-400">80&ndash;100&deg;C</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Sustained High Load</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>Needs Service</div>
+          <div class="font-mono font-bold text-xl text-orange-400">~20%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="flame" style="width:1.25rem;height:1.25rem;color:#f97316"></i>Why Do E-Bike Motors Overheat?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            E-bike motors generate heat proportional to the electrical power they handle. Every ampere flowing through the motor windings produces heat via resistive (I&sup2;R) losses, and this heat accumulates when the rate of heat generation exceeds the rate at which the motor can dissipate it through its housing and airflow. Understanding the root causes helps you prevent E10 from becoming a frequent interruption.
+          </p>
+          <ul class="space-y-2 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; <strong>Sustained high PAS level:</strong> riding at PAS 4 or 5 continuously forces the controller to deliver high current to the motor. On steep or long climbs, this can push a 500W motor to behave like an 800W motor thermally, even if the motor is rated for 500W.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Hill climbing under heavy load:</strong> the motor must produce maximum torque to climb grades above 8-10%. The high current draw required for hill climbing is the most common trigger for E10 on any e-bike system.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Low speed / high torque conditions:</strong> at very low speeds, the motor cooling fan (if equipped) provides minimal airflow, and the controller cannot use the natural back-EMF of higher speeds to limit current efficiently.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>High ambient temperature:</strong> riding in summer heat above 30&deg;C (86&deg;F) significantly reduces the motor's ability to shed heat to the surrounding air. A motor that runs fine at 20&deg;C can hit E10 at 35&deg;C ambient.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Clogged motor vents or no active cooling:</strong> gear-driven hub motors depend on a small cooling fan or open vents to circulate air. Dust, debris, and mud can block these vents, raising internal temperatures by 15-25&deg;C.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Motor winding degradation:</strong> as motor windings age, their insulation breaks down and resistance increases, producing more heat for the same power output. A motor that recently started running hotter than before may be showing signs of winding deterioration.</span></li>
+          </ul>
+          <p class="text-gray-400 text-sm">
+            E10 is most common on rear hub motors because they bear the rider's pedaling load in addition to propulsion, and because the rear wheel is partially blocked from airflow by the frame and pannier racks.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Did E10 Appear During:</h3>
+          <p class="text-sm text-gray-200 mb-3">This helps narrow the cause:</p>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>A long, steep hill climb on PAS 5?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Riding in hot weather (above 30&deg;C / 86&deg;F)?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>After riding through deep water or heavy rain?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>The motor felt hot to the touch (above 60&deg;C)?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>E10 appears every ride under normal conditions?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Temperature Thresholds for E-Bike Motors</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-green-400"><i data-lucide="thermometer-snowflake" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Normal Operating Range</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Hub motors: 40&deg;C &ndash; 70&deg;C (104&deg;F &ndash; 158&deg;F)</li>
+          <li>Motor housing warm but not painful to touch</li>
+          <li>No power reduction, smooth operation</li>
+          <li>Thermal headroom available before E10 triggers</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="thermometer" style="width:1rem;height:1rem"></i><h3 class="font-semibold">E10 Warning Zone</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Hub motors: 80&deg;C &ndash; 95&deg;C (176&deg;F &ndash; 203&deg;F)</li>
+          <li>Motor too hot to keep hand on continuously</li>
+          <li>Controller reduces current (noticeable power drop)</li>
+          <li>E10 displayed; motor drive intermittent</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="thermometer-sun" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Critical / Damage Zone</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Hub motors: above 100&deg;C (212&deg;F)</li>
+          <li>Motor housing causes burn on contact</li>
+          <li>Controller cuts motor output completely</li>
+          <li>Hall sensor adhesive can soften; magnet strength reduced permanently above 120&deg;C</li>
+        </ul>
+      </div>
+    </div>
+    <div class="glass-card p-6 mt-4">
+      <div class="flex items-start gap-3">
+        <i data-lucide="info" style="width:1.1rem;height:1.1rem;color:#22d3ee;flex-shrink:0;margin-top:0.15rem"></i>
+        <p class="text-sm text-gray-200"><strong>How to estimate motor temperature without a probe:</strong> If you can keep your hand on the motor housing for more than 5 seconds without discomfort, it is below approximately 50&deg;C. If you can only keep your hand on it for 1-2 seconds, it is likely above 70&deg;C. If you cannot touch it at all, it is above 85&deg;C and likely in E10 territory.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">7-Step Diagnostic &amp; Recovery Procedure</h2>
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Stop riding immediately when E10 appears</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">E10 is the controller protecting the motor from thermal damage. Continuing to ride when the motor is in E10 mode can cause permanent degradation of the magnet strength, hall sensor adhesive failure, or winding insulation breakdown.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="alert-triangle" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Do not twist the throttle or use PAS while E10 is displayed &mdash; the controller is actively limiting current and overriding your input is a sign the protection is working.</li>
+              <li class="flex items-start gap-2"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>If you are mid-climb, reduce your PAS level to 1 and spin an easier cadence while you coast to a safe stopping point. The motor may still provide light assist during thermal limiting.</li>
+              <li class="flex items-start gap-2"><i data-lucide="circle" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Place the bike in shade and allow it to cool with the battery removed. A hot battery next to a hot motor traps heat in both units.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Allow proper cooling &mdash; do not rush recovery</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Natural air cooling is the safest recovery method. Forced cooling (water, ice, refrigerators) can cause thermal shock and condensation inside the motor, which leads to corrosion and future E10 faults from water ingress.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Cooling Time Reference</div>
+              <ul class="space-y-1.5 text-sm text-gray-300">
+                <li><strong>Light E10 warning (power reduced):</strong> 15-20 minutes of shade cooling typically allows recovery</li>
+                <li><strong>Full E10 cutout (motor stopped):</strong> 30-45 minutes minimum before attempting restart</li>
+                <li><strong>Motor too hot to touch:</strong> at least 45-60 minutes &mdash; the internal temperature lags behind the housing temperature</li>
+                <li><strong>After full thermal cutout:</strong> inspect for visible damage before riding further</li>
+              </ul>
+            </div>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Never pour water on a hot motor:</strong> thermal shock can crack the motor housing, damage bearing seals, and force water past the shaft seal into the motor internals. Use air cooling only.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Inspect and clean motor cooling vents</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Clogged cooling vents are a major contributor to repeat E10 faults. Dust, mud, and debris accumulate in the motor's vent slots or cooling fan intake and dramatically reduce cooling efficiency.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="eye" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Inspect the motor housing for vent slots, fan openings, or any honeycomb pattern openings. These are the heat dissipation points.</li>
+              <li class="flex items-start gap-2"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Use a dry brush, wooden toothpick, or compressed air at low pressure to clear debris from vent channels. Do not use metal tools that can damage the vent mesh.</li>
+              <li class="flex items-start gap-2"><i data-lucide="droplets" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>On motors with an internal cooling fan (identifiable by a small fan connector or the sound of a fan at startup), verify the fan spins freely and the fan blade is not obstructed.</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Clean the area around the motor axle cable exit point &mdash; this is where cables enter the motor and where debris commonly accumulates.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check for blocked airflow around the motor</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The motor relies on ambient airflow over its housing to shed heat. Anything that blocks this airflow &mdash; fenders, racks, panniers, frame designs &mdash; raises the effective operating temperature.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="wind" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Rear hub motors covered by full fenders run 5-10&deg;C hotter than uncovered motors in the same conditions.</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Pannier bags positioned close to the rear hub motor block convection cooling. Reposition bags or use frame-mounted racks instead.</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Ensure the motor is not pressed tight against the frame dropout with no air gap &mdash; some dropout designs restrict airflow to the motor side.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Understand controller current limiting vs motor failure</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">E10 has two distinct stages with different symptoms. Understanding which stage you are in determines whether the system is working correctly or indicating a problem.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Stage 1 vs Stage 2 Thermal Limiting</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><strong>Stage 1 (Normal):</strong> motor power gradually reduces as temperature rises &mdash; you feel a progressive power fade, not a sudden cut. The motor still spins. E10 may flash on the display. This is <em>expected behavior</em> under heavy load and does not indicate a fault.</li>
+                <li><strong>Stage 2 (Protection):</strong> motor drive cuts out entirely, E10 is solid on the display. Motor and controller are both too hot. This is the thermal cutoff. The system will not restart until temperatures drop below the recovery threshold.</li>
+                <li><strong>Fault pattern:</strong> E10 appearing under <em>light</em> load on flat terrain at low PAS levels &mdash; this indicates a problem beyond simple thermal management and should be investigated for motor or controller issues.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Adjust riding habits to prevent repeat E10 faults</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If E10 is a recurring issue on every ride, the solution is usually behavioral, not mechanical. Small changes to how you use PAS levels can dramatically reduce thermal events.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="pedal" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Use lower PAS on climbs:</strong> PAS 4-5 on a 10%+ grade draws maximum current. Switching to PAS 2-3 and pedaling harder reduces motor heat while maintaining similar overall speed.</li>
+              <li class="flex items-start gap-2"><i data-lucide="activity" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong> cadence matters:</strong> spinning at 70-90 RPM reduces motor load more than grinding at 50 RPM at the same speed. High cadence = lower motor current = less heat.</li>
+              <li class="flex items-start gap-2"><i data-lucide="sun" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Avoid midday riding in summer:</strong> schedule rides for early morning or evening in hot weather when ambient temperatures are 5-10&deg;C lower.</li>
+              <li class="flex items-start gap-2"><i data-lucide="pause" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Take breaks on long climbs:</strong> stopping for 2-3 minutes every 10-15 minutes of climbing allows the motor to shed heat before it accumulates to E10 levels.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">When overheating indicates impending motor replacement</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">E10 under normal riding conditions &mdash; not just on extreme climbs &mdash; can be an early warning of motor degradation. Here is how to tell if repeated E10 is pointing to motor failure.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-3"><i data-lucide="x-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>E10 appears on flat ground at PAS 2 in mild weather:</strong> a motor running this hot under light load has abnormally high resistance or bearing drag.</li>
+              <li class="flex items-start gap-3"><i data-lucide="x-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Motor is hot even when the bike has not been ridden:</strong> a motor that generates significant heat while stationary suggests a shorted winding or controller outputting current without a valid command.</li>
+              <li class="flex items-start gap-3"><i data-lucide="x-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>E10 appears after the motor got wet:</strong> water inside the motor can cause intermittent short circuits that generate heat, and corrosion will progressively worsen performance.</li>
+              <li class="flex items-start gap-3"><i data-lucide="activity" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Motor run time decreasing over months:</strong> if you notice E10 triggers progressively earlier in your rides over several months, the motor's thermal performance is degrading &mdash; plan for replacement.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Brand-Specific E10 Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>Bafang (BBS, M-Series)</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Bafang mid-drives are particularly prone to E10 during extended climbs because the motor sits near the bottom bracket and receives less direct airflow. Bafang controllers have configurable thermal protection thresholds via the programming cable &mdash; reducing the "over-temp protection" current limit by 10-15% can reduce E10 frequency without damaging the motor.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>SUTTO / Generic Hub Motors</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Budget hub motor kits with SUTTO controllers typically trigger E10 at conservative thresholds (often 80&deg;C motor temp) because the motor thermal protection is built into the controller firmware. These systems generally do not have user-adjustable thermal parameters. On these bikes, managing riding style and cooling is the primary solution.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>Bosch / Brose / Yamaha</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Brand mid-drives have internal temperature sensors and sophisticated thermal management. E10 on a Bosch or Brose system under normal riding conditions is rare and typically indicates either a failed internal temperature sensor or a controller issue &mdash; not just heat. These should be diagnosed at an authorized service center.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-950/20 to-navy-900 border-yellow-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="shield" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>Safety Warnings for E10 Events</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>Never wrap a hot motor in insulation</strong> after a ride &mdash; this traps residual heat and can push internal temperatures above critical thresholds even after you stop riding. Allow the motor to cool in open air.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>E10 combined with a burning smell</strong> is a serious warning sign. If the motor smells like burning insulation or plastic, stop immediately and do not ride the bike until it has been inspected. Continuing to ride risks a motor seizing mid-ride.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>A motor that cuts out predictably</strong> at the same point on every ride is functioning correctly &mdash; the thermal protection is doing its job. Ride within the system's limits or consider a motor with higher thermal headroom for your use case.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#4ade80;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>Installing a motor with higher thermal ratings</strong> (e.g., upgrading from a 500W to a 1000W motor in the same housing) does not necessarily prevent E10 &mdash; the controller current limit and motor thermal design both matter independently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="ebike-motor-not-working.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">MOTOR</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E-Bike Motor Not Working</h3>
+        <p class="text-sm text-gray-400">Comprehensive motor diagnosis covering all motor types, hall sensor testing, throttle vs PAS, and controller fault isolation.</p>
+      </a>
+      <a href="ebike-e07-motor-fault.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">E07</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E07 Motor Fault / Hall Sensor</h3>
+        <p class="text-sm text-gray-400">The most common e-bike error code. Hall sensor testing, phase wire resistance checks, and motor vs controller replacement guide.</p>
+      </a>
+      <a href="ebike-e30-communication-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">E30</div>
+          <span class="badge badge-info">Info</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E30 Communication Error</h3>
+        <p class="text-sm text-gray-400">Display-controller communication faults, loose connector fixes, cable harness inspection, and display pinout guide.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for a specific error code?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Open the full error code database &mdash; every fault code from every major e-bike system we have documented, along with symptom, cause, and DIY fix.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/ebike-micromobility.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="bike" style="width:1rem;height:1rem"></i>E-Bike Specs Comparison</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

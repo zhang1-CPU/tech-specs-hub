@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E07 Motor Fault / Hall Sensor Error &mdash; Complete Diagnostic Guide | TechSpecsHub</title>
+  <meta name="description" content="E07 is the most common e-bike error code. Learn what E07 means, how to test hall sensors with a multimeter, check motor phase resistance, and decide when to replace motor vs controller.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/ebike-e07-motor-fault.html">
+
+  <meta property="og:title" content="E07 Motor Fault / Hall Sensor Error &mdash; Complete Diagnostic Guide | TechSpecsHub">
+  <meta property="og:description" content="E07 is the most common e-bike error code. Learn what E07 means, how to test hall sensors with a multimeter, check motor phase resistance, and decide when to replace motor vs controller.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/ebike-e07-motor-fault.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="E07 Motor Fault / Hall Sensor Error &mdash; Complete Diagnostic Guide | TechSpecsHub">
+  <meta name="twitter:description" content="E07 is the most common e-bike error code. Learn what E07 means, how to test hall sensors with a multimeter, check motor phase resistance, and decide when to replace motor vs controller.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "E07 Motor Fault / Hall Sensor Error &mdash; Complete Diagnostic Guide | TechSpecsHub",
+    "description": "E07 is the most common e-bike error code. Learn what E07 means, how to test hall sensors with a multimeter, check motor phase resistance, and decide when to replace motor vs controller.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/ebike-e07-motor-fault.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">E07 Motor Fault / Hall Sensor Error</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-red-500/20 text-red-400 font-mono font-bold text-sm rounded-md border border-red-500/30">E07 ERROR</div>
+        <span class="badge badge-info"><i data-lucide="bike" style="width:0.75rem;height:0.75rem"></i>All E-Bike Brands</span>
+        <span class="badge badge-warning"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Intermediate</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        E07 Motor Fault &mdash; <span class="gradient-text">Hall Sensor Error Complete Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        E07 is the single most common error code reported on e-bikes across all brands. It means the controller has lost communication with one or more hall effect sensors inside the motor. This guide covers what triggers E07, how to test hall sensors with a multimeter, phase wire resistance checks, and a clear decision framework for motor replacement versus controller replacement.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">25&ndash;60 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$120</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Hall Sensor Failure</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~55%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What Does E07 Actually Mean?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            E07 is a hall sensor communication fault. The controller sends a 5V reference voltage and ground to three hall effect sensors inside the motor. Each sensor outputs a digital pulse as the motor magnets pass by. When the controller reads an invalid signal pattern from any hall sensor for more than a few seconds, it throws E07 and disables motor output as a protective measure.
+          </p>
+          <ul class="space-y-2 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; <strong>Hall sensor dead:</strong> one of the three hall sensors inside the hub motor has failed and outputs 0V or 5V constantly instead of pulsing &mdash; the most common E07 trigger.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Hall sensor wire break:</strong> the signal wire between the hall sensor and controller is severed or has a high-resistance connection, so the controller sees an open circuit.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Connector corrosion:</strong> water and road salt have oxidized the motor-side or controller-side hall connector pins, increasing resistance and corrupting the 5V signal.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Controller failure:</strong> less commonly, the controller itself has failed and is not generating the 5V supply for the hall sensors, or the hall input circuitry on the controller board is damaged.</span></li>
+          </ul>
+          <p class="text-gray-400 text-sm">
+            E07 typically appears after rain riding, pressure washing, winter storage, or after the bike has been ridden hard for extended periods. The error is rare on sealed mid-drive systems and most common on budget hub motor bikes with exposed connectors at the axle.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Quick Symptom Check</h3>
+          <p class="text-sm text-gray-200 mb-3">Answer these before proceeding:</p>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the display show E07 immediately when you turn on the bike?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the motor stutter, jerk, or run rough when it does spin?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did the bike get wet from rain, puddles, or pressure washing recently?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Is E07 intermittent &mdash; appears after riding for 10+ minutes?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does wiggling the motor axle connector make E07 appear or disappear?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="zap" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Electrical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Digital multimeter (CAT III 600V rated)</li>
+          <li>1.5V AA battery (for bench-testing hall sensors)</li>
+          <li>Alligator clip jumper wires (22-18 AWG)</li>
+          <li>Electrical contact cleaner (DeoxIT or CRC QD)</li>
+          <li>Small flat-head and Phillips screwdrivers</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Mechanical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Metric hex key set (2mm to 8mm)</li>
+          <li>Adjustable wrench or cone wrenches</li>
+          <li>Plastic spudger (non-conductive, for connectors)</li>
+          <li>Isopropyl alcohol 90%+ and lint-free wipes</li>
+          <li>Dielectric grease (for waterproofing connectors)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="flame" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Remove battery before any electrical testing</li>
+          <li>Insulated gloves for systems above 36V</li>
+          <li>Bike stand or flip the bike upside down</li>
+          <li>Never probe connectors with battery powered multimeter on current mode</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; 6-Step E07 Resolution Process</h2>
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Verify E07 and check basic connections</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Before any disassembly, confirm the error code and rule out trivial causes. Roughly 15% of E07 reports resolve at this stage.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Turn the bike off, wait 30 seconds, then turn it back on. Some controllers latch E07 until a power cycle clears it temporarily.</li>
+              <li class="flex items-start gap-2"><i data-lucide="unlock" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Remove and re-seat the battery pack. Check the discharge connector for corrosion, bent pins, or looseness.</li>
+              <li class="flex items-start gap-2"><i data-lucide="droplet" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Inspect the large motor connector at the axle and the smaller hall sensor connector. Look for water residue, green corrosion, or pushed-back pins.</li>
+              <li class="flex items-start gap-2"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>If you recently pressure washed the bike, allow all connectors to fully dry for 24-48 hours before testing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test throttle and PAS response to isolate the fault domain</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the motor attempts to run at all, even poorly, the controller and motor windings are mostly working. The fault is in the hall sensor feedback loop.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">How to Test</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <div class="font-semibold text-white mb-1">Throttle Response:</div>
+                  <p class="text-gray-300">With the rear wheel lifted, twist the throttle. Does the motor spin at all, even roughly? Any response means the controller can drive the motor phases &mdash; the hall sensors are the missing link.</p>
+                </div>
+                <div>
+                  <div class="font-semibold text-white mb-1">PAS Response:</div>
+                  <p class="text-gray-300">Set PAS to level 3. Rotate the crank by hand. Does the motor engage after half a revolution? If it stutters in a rhythmic pattern, that is a classic hall sensor symptom.</p>
+                </div>
+              </div>
+            </div>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>If no response at all:</strong> the issue could be in the controller output stage, not the hall sensors. Proceed to step 4 to check phase resistance. <strong>If it stutters rhythmically:</strong> hall sensors are the prime suspect &mdash; proceed to step 3.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test hall sensors with a multimeter (0V and 5V alternating method)</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">This is the definitive hall sensor test. With the battery connected and the bike powered on, you will back-probe the hall sensor connector at the controller side and watch the voltage toggle as you spin the wheel.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">Standard Hall Sensor Wire Colors (5-wire harness)</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Red wire:</strong> 5V DC supply from controller to all three hall sensors</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Black wire:</strong> Common ground (GND) shared by all three sensors</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Blue wire:</strong> Hall 1 signal output (H1)</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Green wire:</strong> Hall 2 signal output (H2)</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Yellow wire:</strong> Hall 3 signal output (H3)</li>
+              </ul>
+            </div>
+            <p class="text-gray-300 mt-4 mb-3">Set multimeter to DC Voltage (20V range). Carefully back-probe each signal wire against ground (black probe on ground, red probe on signal). With the bike turned on, slowly rotate the wheel by hand. A working hall sensor will alternate between approximately 0V and 4.5-5V in a steady square-wave pattern as the motor magnets pass the sensor.</p>
+            <div class="alert alert-critical mt-4 !mb-0">
+              <i data-lucide="alert-octagon" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Expected reading:</strong> each signal wire should toggle between 0V and ~5V as you rotate the wheel slowly. If any sensor reads 0V constantly, 5V constantly, or fluctuates unpredictably, that sensor is failed. If all three read 5V constantly, check the 5V supply first &mdash; the controller may not be powering the sensors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check motor phase wire resistance and balance</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Before concluding the motor is dead, verify the three motor phase windings are intact. This test also rules out a motor winding short that would make hall sensor testing irrelevant.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="zap" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Phase-to-phase (A-B, B-C, C-A):</strong> with battery removed, measure resistance between the three thick phase wires at the motor connector. All three readings must be within 5% of each other. A 500W 36V hub motor typically reads 0.5-2 ohms per phase.</li>
+              <li class="flex items-start gap-2"><i data-lucide="zap" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Phase-to-ground:</strong> measure from each phase wire to the motor axle (earth ground). Any continuity (anything other than infinite ohms) indicates winding insulation failure.</li>
+              <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Good signs:</strong> all three phase readings are balanced and no continuity to ground &mdash; the motor windings are intact.</li>
+              <li class="flex items-start gap-2"><i data-lucide="x-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Bad signs:</strong> phase imbalance greater than 20%, or any phase reading zero ohms (shorted) or infinite (open winding).</li>
+            </ul>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Why this matters:</strong> if the motor windings are shorted, replacing the hall sensors will not fix the problem. A motor with shorted windings will eventually destroy the controller. Do not skip this step.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test individual hall sensor with AA battery (bench test)</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If you have identified a potentially bad hall sensor but want to confirm before sourcing a replacement, you can bench-test the sensor outside the motor using a 1.5V AA battery. This test works whether the sensor is still installed or already removed.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Bench Test Procedure</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li>Identify the three pins on the hall sensor: VCC (5V), GND, and Signal</li>
+                <li>Connect the red AA battery wire to VCC and black to GND (or use the 5V from your multimeter battery compartment)</li>
+                <li>Connect the multimeter (DC mV or volts) between Signal and GND</li>
+                <li>Bring a small magnet close to the hall sensor face and move it away</li>
+                <li>A working sensor will show a voltage change (low when magnet present, high when absent, or vice versa depending on sensor polarity)</li>
+                <li>A dead sensor will show no change regardless of magnet position</li>
+              </ul>
+            </div>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Replacement hall sensors:</strong> standard Allegro A3144 or A3141 hall effect sensors cost under $1 each. You will need three, and they must be inserted in the correct orientation inside the motor. Note the original orientation before removing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Decide: replace motor or replace controller</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Once you have identified the failed component, use this decision framework to choose the most cost-effective repair path.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-3"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Hall sensors failed, windings good:</strong> replace the hall sensors inside the motor &mdash; cost $1-15 for parts, requires motor disassembly but saves the motor.</li>
+              <li class="flex items-start gap-3"><i data-lucide="x-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Hall sensors good, windings failed:</strong> motor replacement required &mdash; a motor with shorted windings cannot be safely repaired in the field.</li>
+              <li class="flex items-start gap-3"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Hall sensors and windings both good, but E07 persists:</strong> the controller hall input circuit is damaged &mdash; replace the controller.</li>
+              <li class="flex items-start gap-3"><i data-lucide="activity" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Sensorless mode workaround:</strong> many KT controllers and Bafang BBS02/HD can run without hall sensors. If hall replacement is not feasible, enable sensorless mode as a permanent workaround.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Brand-Specific E07 Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>Bafang (BBS01/02/HD, M400, M600)</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Bafang mid-drive and hub systems use a 5-wire hall harness with standard colors. E07 on Bafang systems typically appears after water ingress at the motor cable exit point. Bafang offers replacement hall sensors in packs of 10. Use the Bafang programming cable to enable sensorless mode as a workaround if hall replacement is not immediately possible.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>SUTTO / KT Controllers</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">SUTTO systems and most KT-based hub motor kits use the same standard 5-pin hall connector. E07 is extremely common on these budget systems because the axle-side connector is not fully waterproof. Always inspect and treat the motor axle connector with dielectric grease on SUTTO and KT systems after any water exposure.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>Generic / Aftermarket Hub Motors</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Generic 36V-48V hub motors (common on e-bike conversion kits) use the same hall sensor and phase wire conventions as brand systems. The repair approach is identical. Source hall sensors by the Allegro A3144 part number. Aftermarket motors often have lower-quality hall sensors from the factory &mdash; upgrading to higher-quality sensors can improve motor smoothness.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-950/20 to-navy-900 border-yellow-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="shield" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>DIY vs Professional Repair Decision Guide</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="wrench" style="width:1.1rem;height:1.1rem;color:#4ade80;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>DIY appropriate if:</strong> you can use a multimeter, you are comfortable removing the motor wheel, you can identify wire colors, and the motor windings test good. Hall sensor replacement is a beginner-intermediate mechanical task.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="building-2" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>Professional required if:</strong> the motor windings are shorted, you do not have a multimeter, the bike is under warranty, or it is a sealed mid-drive (Bosch, Brose, Yamaha) where motor opening requires factory tools.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>Controller replacement:</strong> swap-in replacement controllers are widely available for KT and generic systems. Match the voltage (36V or 48V), current limit (15A, 20A, 25A), and motor connector pinout before purchasing.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>Sealed mid-drive warning:</strong> Bosch, Brose, Yamaha, and Specialized motors are not field-serviceable for hall sensor replacement. These require factory diagnosis and repair. Attempting to open them yourself will void the warranty and may cause further damage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="ebike-motor-not-working.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">MOTOR</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E-Bike Motor Not Working</h3>
+        <p class="text-sm text-gray-400">Comprehensive motor diagnosis covering all motor types, throttle vs PAS testing, and controller fault isolation.</p>
+      </a>
+      <a href="ebike-e10-motor-overheating.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">E10</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E10 Motor Overheating</h3>
+        <p class="text-sm text-gray-400">Thermal protection faults, temperature thresholds, cooling procedures, and when overheating signals motor replacement.</p>
+      </a>
+      <a href="ebike-e30-communication-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">E30</div>
+          <span class="badge badge-info">Info</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E30 Communication Error</h3>
+        <p class="text-sm text-gray-400">Display-controller communication faults, loose connector fixes, cable harness inspection, and display replacement guide.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for a specific error code?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Open the full error code database &mdash; every fault code from every major e-bike system we have documented, along with symptom, cause, and DIY fix.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/ebike-micromobility.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="bike" style="width:1rem;height:1rem"></i>E-Bike Specs Comparison</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>
