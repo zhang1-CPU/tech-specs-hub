@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P0A9D Repair Guide — Hybrid Inverter System Fault | TechSpecsHub</title>
+  <meta name="description" content="Step-by-step P0A9D diagnostic and repair for hybrid inverter faults. High-voltage safety, inverter cooling, capacitor discharge, replace vs rebuild, Gen 2 vs Gen 3 Prius differences.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/p0a9d-hybrid-inverter-fault.html">
+
+  <meta property="og:title" content="P0A9D Repair Guide — Hybrid Inverter System Fault | TechSpecsHub">
+  <meta property="og:description" content="Step-by-step P0A9D diagnostic and repair for hybrid inverter faults. High-voltage safety, inverter cooling, capacitor discharge, replace vs rebuild, Gen 2 vs Gen 3 Prius differences.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/p0a9d-hybrid-inverter-fault.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="P0A9D Repair Guide — Hybrid Inverter System Fault | TechSpecsHub">
+  <meta name="twitter:description" content="Step-by-step P0A9D diagnostic and repair for hybrid inverter faults. High-voltage safety, inverter cooling, capacitor discharge, replace vs rebuild, Gen 2 vs Gen 3 Prius differences.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "P0A9D Repair Guide — Hybrid Inverter System Fault | TechSpecsHub",
+    "description": "Step-by-step P0A9D diagnostic and repair for hybrid inverter faults. High-voltage safety, inverter cooling, capacitor discharge, replace vs rebuild, Gen 2 vs Gen 3 Prius differences.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/p0a9d-hybrid-inverter-fault.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">P0A9D &mdash; Inverter System Fault</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-red-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-red-500/20 text-red-400 font-mono font-bold text-sm rounded-md border border-red-500/30">P0A9D</div>
+        <span class="badge badge-critical"><i data-lucide="zap" style="width:0.75rem;height:0.75rem"></i>High Voltage</span>
+        <span class="badge badge-warning"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Expert Difficulty</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Inverter System Fault &mdash; <span class="gradient-text">HV Inverter Diagnosis, Cooling &amp; Capacitor Safety</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        OBD-II diagnostic trouble code indicating a malfunction in the hybrid inverter/converter system. The inverter assembly converts high-voltage DC from the battery pack into three-phase AC to drive the electric motor (MG1 and MG2 on Toyota hybrids). P0A9D is a system-level code that can be triggered by internal IGBT failures, capacitor degradation, cooling system faults, or control board issues, or current sensor anomalies. On Toyota Prius, this is one of the most serious hybrid codes &mdash; proper high-voltage safety procedure is non-negotiable.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Repair Time</div>
+          <div class="font-mono font-bold text-xl text-white">4&ndash;10 hrs</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>Rebuild Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$600&ndash;$1,200</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="building" style="width:0.9rem;height:0.9rem"></i>Dealer Replacement</div>
+          <div class="font-mono font-bold text-xl text-red-400">$3,000&ndash;$6,500</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="thermometer" style="width:0.9rem;height:0.9rem"></i>Common on Prius</div>
+          <div class="font-mono font-bold text-xl text-yellow-400">Gen 2 &amp; Gen 3</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What is <span class="gradient-text">P0A9D</span>?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            P0A9D is a generic OBD-II code for "Hybrid Drive Motor Inverter System Performance." It is set when the Hybrid Vehicle ECU detects an internal fault within the inverter assembly or its control system. The inverter is the heart of the hybrid powertrain &mdash; it takes the ~201.6V DC from the NiMH battery pack (or up to 650V on some modern hybrids) and converts it to three-phase AC to spin the electric traction motor, and vice versa during regenerative braking.
+          </p>
+          <p>
+            Inside the inverter assembly you'll find IGBTs (Insulated Gate Bipolar Transistors) that switch high current at high frequency, a large high-voltage DC-link capacitor that smooths voltage ripple, gate drive circuits that control the IGBTs, current sensors that monitor phase currents, and a dedicated control board that communicates with the HV ECU over CAN bus. Failure of any of these components can trigger P0A9D.
+          </p>
+          <p>
+            On Gen 2 Prius (2004&ndash;2009), the most common inverter failure mode is IGBT failure from heat fatigue after 150,000+ miles &mdash; the transistors weaken and eventually short phase. On Gen 3 Prius (2010&ndash;2015), the inverter was revised with better cooling but still sees failure of the boost converter section and the internal current sensor drift issues. Both generations are mounted inverter and transaxle-integrated design that shares coolant circuit with engine cooling system.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Common Symptoms</h3>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Hybrid System warning light on</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Vehicle may not go into READY mode</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Limp mode / no electric assist</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Loud buzzing / whining from engine bay</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Poor fuel economy</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Inverter coolant leak or overheating</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <div class="alert alert-critical">
+      <i data-lucide="alert-triangle" style="width:1.25rem;height:1.25rem;flex-shrink:0;margin-top:0.1rem"></i>
+      <div>
+        <strong class="block mb-1 text-white">Lethal Voltage Warning &mdash; Inverter Capacitors Hold Deadly Charge</strong>
+        <p class="text-sm leading-relaxed">The inverter contains large DC-link capacitors that can remain charged to full pack voltage (201.6V+ Prius, higher on later models) even after the HV service plug is removed. Always disconnect the 12V battery, remove the service plug, and wait a <strong class="text-white">minimum of 10 minutes</strong> before touching any inverter component. Verify capacitor voltage with a CAT III multimeter rated for 1000V and confirm it is below 3V before proceeding. Wear Class 0 insulated gloves. Never work alone. Capacitor discharge must be done with a proper high-voltage discharge tool &mdash; never short capacitor terminals directly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Safety Equipment</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="hard-hat" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Class 0 insulated gloves (1000V rated)</li>
+          <li>Insulated face shield</li>
+          <li>Insulated tools (1000V)</li>
+          <li>HV capacitor discharge tool</li>
+          <li>Fire extinguisher (Class ABC)</li>
+          <li>Electrical safety sign / barrier tape</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="cpu" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Diagnostic</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>OEM-level scan tool (Techstream)</li>
+          <li>Digital multimeter &mdash; CAT III 1000V</li>
+          <li>Clamp-on ammeter (HV DC)</li>
+          <li>Infrared thermometer</li>
+          <li>Oscilloscope (optional)</li>
+          <li>Coolant pressure tester</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="wrench" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Mechanical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>10mm, 12mm, 14mm sockets</li>
+          <li>Torque wrench (5&ndash;80 Nm)</li>
+          <li>Coolant drain pan</li>
+          <li>HV inverter coolant (special)</li>
+          <li>Sealant / gasket maker</li>
+          <li>Shop towels + isopropyl alcohol</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Step-by-Step Diagnostic &amp; Repair Procedure</h2>
+
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Scan for all codes &amp; read inverter live data</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Connect an OEM-level scan tool (Techstream or equivalent) and pull all codes from the HV ECU, the Engine ECU, and the Inverter ECU. Note all companion codes &mdash; P0A9D is often accompanied by more specific codes (P0A9A, P0A93, P0A94, P0A95) that pinpoint the fault: IGBT short/open, current sensor fault, boost converter issue. Read live inverter data: DC link voltage, phase currents, inverter temperature, and boost converter output voltage.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Key data points</div>
+              <p>DC link voltage should match pack voltage (~201.6V nominal on Gen 2, boosted to 500V on Gen 3 boost converter output). If DC link voltage drops to zero or is erratic, suspect capacitor or IGBT fault. If one phase current reads 0 while others read normal, that phase IGBT has failed open. If inverter temp reads impossibly high (> 100°C) cooling problem.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Inspect the inverter cooling system</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Before condemning the inverter, rule out cooling system first &mdash; many P0A9D codes are caused by inverter overheating. Check inverter coolant level in the reservoir (usually separate from engine coolant on most hybrids). Look for leaks around the inverter inlet/outlet hoses, the coolant pump, and the inverter heat exchanger. Use an infrared thermometer to measure inverter case temperature after a drive. If it's above <code class="text-electric-400">85&deg;C</code> under normal driving, you have cooling problem.</p>
+            <div class="alert alert-info !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">Gen 2 Prius uses a dedicated inverter cooling circuit with its own electric water pump and radiator. The pump is a known failure point &mdash; if it stops, the inverter overheats fast. Gen 3 integrates inverter cooling engine coolant circuit through a heat exchanger.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">HV safety lockout &amp; capacitor discharge procedure</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If physical inverter testing, follow this exact sequence: (1) Turn ignition OFF, remove key/fob. (2) Disconnect 12V battery negative terminal. (3) Remove HV service plug from battery pack. (4) Set timer for <strong class="text-white">10 minutes minimum</strong>. (5) Put on Class 0 gloves and face shield. (6) After 10 minutes, verify DC link voltage with CAT III 1000V multimeter across the HV terminals on the inverter &mdash; must be below 3V. (7) If still above 3V, use a proper HV discharge tool (high-wattage resistor in an insulated handle) to discharge the capacitors slowly. Never short terminals directly.</p>
+            <div class="alert alert-critical !mb-0">
+              <i data-lucide="zap" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">Directly shorting a 200V+ capacitor generates explosive arc that can vaporize metal, cause severe burns, and be fatal. A proper discharge uses properly rated resistor discharge tool (typically 10k&ndash;100k ohms, 50W+), and you still wait several minutes for the voltage to bleed down.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test IGBTs for short or open circuit</h3>
+            <p class="text-gray-300 leading-relaxed">With the capacitors fully discharged and verified below 3V, access the IGBT terminals inside the inverter (requires removing the inverter cover and the internal bus bars). Set your multimeter to diode test mode. Test each IGBT by placing the positive lead on the collector and negative on emitter (forward bias), then reverse. A good IGBT shows ~0.7V forward voltage drop forward and open circuit in reverse. A shorted IGBT shows near 0V in both directions. An open IGBT shows open in both directions. Test all six IGBTs (three phases) and both boost converter IGBTs.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Gen 2 vs Gen 3 differences</div>
+              <p>Gen 2 (2004-2009): Inverter is on top transaxle. IGBT modules bolt directly to heat sink. Six discrete IGBTs. Boost converter separate. Gen 3 (2010-2015): Inverter is more compact, uses intelligent power module (IPM) integrates all IGBTs and gate drivers in one package. Boost converter built-in boost up to 650V. Gen 3 IPMs are generally more reliable but more expensive to replace when they fail.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check DC-link capacitor &amp; current sensors</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Test DC link capacitor is the large metal-film or electrolytic capacitor bank inside the inverter that smooths the high-voltage DC bus. With caps read ESR equivalent series resistance) with an LCR meter or by monitoring DC link ripple on oscilloscope). High ESR causes excessive voltage ripple under load, which stresses the IGBTs and can trigger P0A9D. Also test the phase current sensors &mdash; compare phase current sensor output voltage at standstill, they should all read near zero with no current flow. A drifting sensor can cause the ECU to think there' an internal fault.</p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="alert-circle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">On Gen 3 Prius, the current sensors inside the IPM are known to drift over time, causing P0A9D with no actual IGBT failure. The sensor drift can often be recalibrated Techstream, or the IPM the IPM has to be replaced.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Decide: rebuild, remanufactured, or new replacement</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Once failed component identified, you options: (1) <strong>Rebuild</strong> the existing inverter by replacing failed IGBTs, capacitors, and sensors &mdash; cheapest but requires electronics skills and equipment; typical cost $600-$1,200 DIY. (2) <strong>Remanufactured</strong> inverter from a specialty rebuilder &mdash; comes with warranty, drop-in replacement, $1,500&ndash;$2,500. (3) <strong>New OEM</strong> from dealer &mdash; most expensive $3,000&ndash;$6,000+, but comes full factory warranty. For most DIYers, a reputable remanufactured unit offers the best balance of cost and reliability.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Rebuild vs. replace decision guide</div>
+              <p>Rebuild if: only one or two IGBTs failed, cooling system was the root cause (fixed), and you have soldering skills. Replace with reman if: multiple components have failed, the control board has issues, or you don't electronics repair experience. Go new OEM: vehicle under extended warranty, or you want maximum peace of mind for a high-mileage vehicle you plan to keep long-term.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Install, refill coolant, bleed air, test drive</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Install the replacement or rebuilt inverter assembly using a new gasket/seal. Torque all fasteners to OEM specs (inverter-to-transaxle bolts typically <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">25 N&middot;m</code>; HV terminals <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">10 N&middot;m</code>). Refill the inverter cooling system with the correct coolant (Toyota uses a special long-life coolant for the inverter circuit on Gen 2; standard Toyota pink on Gen 3). Bleed air from the system properly &mdash; trapped air causes hot spots. Reconnect HV service plug, reconnect 12V battery. Start READY mode. Clear all codes. Test drive 30+ minutes, monitoring inverter temperatures and phase currents for balance.</p>
+            <div class="alert alert-success !mb-0">
+              <i data-lucide="check-circle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">A successful repair shows all three phase currents balanced within 5% of each other under load, inverter temperature stable below 75°C even during sustained hill climbs, boost converter output voltage stable at target value, and no recurrence of P0A9D or companion codes after 100+ miles of mixed driving.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-red-950/20 to-navy-900 border-red-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#f87171"></i>When to Call a Professional</h2>
+      <p class="text-gray-400 mb-5">Inverter work is the most advanced-level hybrid repair. Do not attempt if any of the following apply:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200"><strong>IGBT/IPM failure and you don't have experience high-voltage electronics repair experience and proper tools.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You do not own <strong>Class 0 gloves, CAT III 1000V multimeter, and a proper HV discharge tool.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">There is <strong>inverter coolant leak</strong> mixed with transmission fluid &mdash; indicates internal heat exchanger failure, transaxle teardown.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield-off" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You have <strong>never worked on high-voltage systems before</strong> &mdash; this is not the place to learn.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="wrench" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The vehicle will go READY mode and <strong>loses power while driving</strong> &mdash; tow it to a shop, don't risk getting stranded.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="package" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The vehicle is still under <strong>hybrid warranty</strong> (8 years / 100,000 miles &mdash; dealer will replace under warranty).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Hybrid Battery Codes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="p0a80-replace-hybrid-battery.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">P0A80</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Replace Hybrid Battery Pack</h3>
+        <p class="text-sm text-gray-400">Battery SOH below 70% threshold. Inverter faults can cause battery stress and accelerate degradation.</p>
+      </a>
+      <a href="p3000-hybrid-battery-control-module.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">P3000</div>
+          <span class="badge badge-info">System</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Hybrid Control Module</h3>
+        <p class="text-sm text-gray-400">HV ECU communication fault. Can appear alongside inverter codes if the CAN bus is affected.</p>
+      </a>
+      <a href="p0ac4-hybrid-battery-temperature-sensor.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">P0AC4</div>
+          <span class="badge badge-warning">Thermal</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Temperature Sensor Circuit</h3>
+        <p class="text-sm text-gray-400">Battery temperature sensor fault. Thermal management is critical for both battery and inverter reliability.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Need inverter part numbers or coolant specifications?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Open the master specification sheet for your generation. Includes OEM inverter part numbers, IGBT cross-references, coolant type specifications, torque values, and recommended rebuilders.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../specs/hybrid-cars.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Open Hybrid Battery Spec Sheet</a>
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

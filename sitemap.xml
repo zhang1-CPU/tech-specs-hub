@@ -128,30 +128,160 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Troubleshooting Guides -->
+  <!-- Troubleshooting Guides - Hybrid Batteries -->
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/p0a80-replace-hybrid-battery.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/p0a7f-hybrid-battery-deterioration.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/p3000-hybrid-battery-control-module.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/p0a7b-hybrid-battery-voltage-sensor.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/p0ac4-hybrid-battery-temperature-sensor.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/p0a9d-hybrid-inverter-fault.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Troubleshooting Guides - Power Stations -->
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/power-station-wont-turn-on.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/power-station-solar-input-not-working.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/power-station-overheating.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/power-station-not-charging.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/power-station-bms-error.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Troubleshooting Guides - Drones -->
+  <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/dji-gimbal-error-codes.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/dji-imu-calibration-error.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/dji-compass-error.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/dji-vision-positioning-error.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/dji-battery-not-charging.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Troubleshooting Guides - 3D Printers -->
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/3d-printer-thermal-runaway.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/3d-printer-bed-leveling-problems.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/3d-printer-filament-jam.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/3d-printer-layer-shifting.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Troubleshooting Guides - E-Bikes -->
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/ebike-motor-not-working.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/ebike-bms-communication-error.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Troubleshooting Guides - Smart Home -->
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/smart-home-device-offline.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/troubleshooting/smart-speaker-not-responding.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 
   <!-- Tools & Buyer's Guides -->

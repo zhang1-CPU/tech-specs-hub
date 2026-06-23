@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Home Device Offline &mdash; Wi-Fi Troubleshooting Guide | TechSpecsHub</title>
+  <meta name="description" content="Fix smart home devices that keep going offline. 2.4GHz vs 5GHz Wi-Fi problems, router compatibility, DHCP issues, factory reset procedures, and mesh network interference diagnosis.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/smart-home-device-offline.html">
+
+  <meta property="og:title" content="Smart Home Device Offline &mdash; Wi-Fi Troubleshooting Guide | TechSpecsHub">
+  <meta property="og:description" content="Fix smart home devices that keep going offline. 2.4GHz vs 5GHz Wi-Fi problems, router compatibility, DHCP issues, factory reset procedures, and mesh network interference diagnosis.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/smart-home-device-offline.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-22T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-22T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Smart Home Device Offline &mdash; Wi-Fi Troubleshooting Guide | TechSpecsHub">
+  <meta name="twitter:description" content="Fix smart home devices that keep going offline. 2.4GHz vs 5GHz Wi-Fi problems, router compatibility, DHCP issues, factory reset procedures, and mesh network interference diagnosis.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Smart Home Device Offline &mdash; Wi-Fi Troubleshooting Guide | TechSpecsHub",
+    "description": "Fix smart home devices that keep going offline. 2.4GHz vs 5GHz Wi-Fi problems, router compatibility, DHCP issues, factory reset procedures, and mesh network interference diagnosis.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/smart-home-device-offline.html",
+    "datePublished": "2026-06-22",
+    "dateModified": "2026-06-22",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Smart Home Device Offline</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-orange-500/20 text-orange-400 font-mono font-bold text-sm rounded-md border border-orange-500/30">OFFLINE</div>
+        <span class="badge badge-info"><i data-lucide="home" style="width:0.75rem;height:0.75rem"></i>All Smart Home Brands</span>
+        <span class="badge badge-warning"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Beginner Friendly</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Smart Home Device Offline &mdash; <span class="gradient-text">Wi-Fi &amp; Network Troubleshooting</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        When your smart bulb, smart plug, thermostat, or camera shows as "offline" in its app, the root cause is almost never the device itself. Most connectivity problems trace back to 2.4GHz vs 5GHz band confusion, router settings, DHCP lease issues, mesh network handoff problems, or simple signal strength. This guide walks through a systematic network diagnostic approach that works for Alexa, Google Home, Apple HomeKit, Samsung SmartThings, and every other smart home ecosystem.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">15&ndash;60 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$30</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">2.4GHz Wi-Fi Issue</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~70%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What Usually Goes Wrong?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            Smart home IoT devices are among the most finicky Wi-Fi clients in your home. They use low-cost radio chips, have tiny antennas, and almost exclusively rely on the 2.4GHz band. When they drop offline, the problem usually lives in your router configuration, not the device.
+          </p>
+          <ul class="space-y-2 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; <strong>2.4GHz vs 5GHz Band Steer:</strong> modern routers use band steering to push devices to 5GHz, but most smart home devices only support 2.4GHz. If the router refuses to let the device connect on 2.4GHz, setup fails or the device drops.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>DHCP Lease / IP Conflict:</strong> the router's DHCP server assigns an IP address that conflicts with another device, or the lease expires and the device cannot renew it &mdash; causes intermittent dropouts.</li>
+            <li class="text-white font-semibold">&bull; <strong>Weak Signal / Interference:</strong> 2.4GHz penetrates walls well but is crowded by neighbors, microwaves, baby monitors, and Bluetooth devices. Signal-to-noise ratio is often the real problem.</li>
+            <li class="text-white font-semibold">&bull; <strong>Mesh Network Handoff:</strong> in mesh Wi-Fi systems, the device may roam between nodes and fail to re-authenticate properly, or it may latch onto a far-away node instead of the closest one.</li>
+          </ul>
+          <p class="text-gray-400 text-sm">
+            This guide works from the simplest quick-fixes to advanced router configuration changes. Start at step 1 and stop when you find the fix.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Quick Symptom Check</h3>
+          <p class="text-sm text-gray-200 mb-3">Answer these before proceeding:</p>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Is the device brand new and failing setup, or was it working and then dropped offline?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Do other Wi-Fi devices in the same room work fine?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the device have a status light, and if so, what color is it flashing?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did you recently change your Wi-Fi password, replace your router, or add a mesh node?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the device come back online briefly after you reboot the router, then drop again?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="wifi" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Network Tools</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Smartphone (iOS or Android) with Wi-Fi analyzer app</li>
+          <li>Laptop or tablet connected to the same network</li>
+          <li>Access to your router's admin panel (IP + password)</li>
+          <li>Ethernet cable (optional, for direct router access)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">General</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Paperclip or SIM eject tool (for reset buttons)</li>
+          <li>Your Wi-Fi network name (SSID) and password</li>
+          <li>Device app installed on your phone</li>
+          <li>Outlet tester (to rule out power issues)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="shield" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety &amp; Access</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Physical access to the device and router</li>
+          <li>Know your router admin credentials</li>
+          <li>Step ladder (if device is high up / ceiling mounted)</li>
+          <li>Patience &mdash; some IoT devices take 2-3 minutes to reconnect</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Start with power cycling everything</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The classic "turn it off and on again" fixes roughly 40% of smart home offline issues. Smart device Wi-Fi radios and router DHCP leases can get into hung states that only a full power cycle clears.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="power" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Unplug the smart device from power for 30 full seconds, then plug it back in. Some devices have batteries (cameras, sensors) &mdash; remove and reinsert the battery or power cycle via the app first.</li>
+              <li class="flex items-start gap-2"><i data-lucide="router" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Reboot your Wi-Fi router and modem. Unplug both from power, wait 60 seconds, plug in the modem first, wait 2 minutes for it to sync, then plug in the router. Wait another 2-3 minutes before testing.</li>
+              <li class="flex items-start gap-2"><i data-lucide="smartphone" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Force-close the device's app on your phone and re-open it. Sometimes it is just the app showing stale "offline" status when the device is actually fine.</li>
+              <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Test if other smart home devices on the same network are working. If everything is offline, the problem is your router or internet connection, not the individual device.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check 2.4GHz vs 5GHz Wi-Fi compatibility</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">This is the single most common reason smart home devices fail to connect or drop offline. The overwhelming majority of smart bulbs, plugs, sensors, and cameras are 2.4GHz-only devices. If your router is aggressively steering all clients to 5GHz, or if both bands share the same SSID and the device cannot pick 2.4GHz, you will have problems.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">How to Verify and Fix</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Install a Wi-Fi analyzer app on your phone (NetSpot, Wi-Fi Analyzer, or Airport Utility on iOS). Scan and confirm both 2.4GHz and 5GHz networks are visible and broadcasting.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Log into your router admin panel. Find the Wi-Fi settings. If you have a single SSID for both bands, try temporarily renaming the 5GHz network to something different (e.g., add "-5G" to the name).</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Disable "band steering" or "smart connect" or "preferred band" features temporarily. These features push devices to 5GHz and often confuse 2.4GHz-only IoT devices.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>On your phone, temporarily forget the 5GHz network so you are definitely connected to 2.4GHz, then try setting up the smart device again.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>After setup is complete, you can usually re-enable band steering and go back to a shared SSID &mdash; the device will remain on 2.4GHz since it cannot see the 5GHz radio.</li>
+              </ul>
+            </div>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Why this happens:</strong> smart home setup processes typically require your phone to be on the same Wi-Fi network as the device. If your phone is on 5GHz and the device is trying to use 2.4GHz (with the same SSID), the setup protocol fails because they are not actually on the same network channel, even though the SSID name is identical.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check Wi-Fi signal strength and interference</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Even if your phone has great Wi-Fi in a room, a smart home device with a tiny internal antenna and low-cost radio chip may struggle. 2.4GHz signal is susceptible to interference from microwaves, cordless phones, baby monitors, neighboring Wi-Fi networks, and even Bluetooth devices.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="wifi" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Use a Wi-Fi analyzer app to check the 2.4GHz signal strength at the device location. Aim for at least -60 dBm (higher is better, e.g., -50 dBm is great, -70 dBm is weak, -80 dBm is unusable for IoT).</li>
+              <li class="flex items-start gap-2"><i data-lucide="activity" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Check for channel congestion. On 2.4GHz, only channels 1, 6, and 11 are non-overlapping. Use the analyzer to see which channel your router is on and which channels your neighbors are using. Pick the least crowded of 1/6/11.</li>
+              <li class="flex items-start gap-2"><i data-lucide="microwave" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Identify potential interference sources near the device or router: microwave ovens (while running), cordless phone bases, baby monitors, Bluetooth speakers, wireless security cameras, and even LED dimmer switches can all disrupt 2.4GHz Wi-Fi.</li>
+              <li class="flex items-start gap-2"><i data-lucide="move" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Reposition the router or the device. Even moving a smart plug from one outlet to another on the same wall can make a difference. Router antenna orientation matters too &mdash; position antennas at a 45-degree angle for best wall penetration.</li>
+            </ul>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Microwave test:</strong> if your device drops offline only when you microwave food, you have found the culprit. 2.4GHz Wi-Fi and microwave ovens operate on the same frequency band. Move the router or the device further away from the kitchen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Fix DHCP and IP address issues</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">DHCP (Dynamic Host Configuration Protocol) is the router feature that assigns IP addresses to every device on your network. If the DHCP pool is full, if there is an IP address conflict, or if the lease time is too short, smart devices can drop offline unexpectedly.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">DHCP Troubleshooting Steps</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Log into your router admin panel and find the DHCP settings. Check the DHCP pool range (e.g., 192.168.1.100 to 192.168.1.200). If you have a lot of devices, you may be hitting the limit.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Look at the "connected devices" or "DHCP clients" list. Is your smart device listed? Does it have an IP address assigned? If it shows an IP of 0.0.0.0 or 169.254.x.x, DHCP is failing.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Check for IP conflicts. Some routers have a "conflicting IP" warning. If two devices have the same IP, both will have intermittent connectivity issues.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Set a static IP (or DHCP reservation) for the problematic device. Find the device's MAC address in the connected devices list, then create a DHCP reservation so it always gets the same IP address. This is one of the most effective fixes for intermittent dropouts.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Increase DHCP lease time. If the lease is set to 1 hour or less, devices have to re-negotiate constantly. Set it to 24 hours (1440 minutes) or longer for IoT devices.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Mesh Wi-Fi and roaming issues</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If you have a mesh Wi-Fi system (Eero, Nest Wifi, Orbi, Deco, etc.), a new class of problems emerges: roaming between nodes, band steering within the mesh, and devices "sticking" to a far-away node instead of connecting to the closest one.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="network" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Check which node the device is connected to. Most mesh systems let you see per-node client lists. If the device is connected to a distant node instead of the closest one, you have a roaming issue.</li>
+              <li class="flex items-start gap-2"><i data-lucide="network" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Try disabling "fast roaming" or "802.11r" on your mesh system. While this feature is great for phones and laptops that move around, it can cause connectivity drops for static IoT devices that do not actually roam.</li>
+              <li class="flex items-start gap-2"><i data-lucide="network" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>On some mesh systems (Eero in particular), you can set a device to "prefer" a specific node. Use this feature for stationary smart home devices to lock them to the nearest node.</li>
+              <li class="flex items-start gap-2"><i data-lucide="network" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>If you have a tri-band mesh system with a dedicated backhaul, make sure the device is connecting to the user-facing 2.4GHz radio, not the backhaul radio.</li>
+              <li class="flex items-start gap-2"><i data-lucide="network" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>As a last resort, try creating a separate guest network on the 2.4GHz band only and connect your smart devices to that. This completely isolates them from the mesh's band steering and roaming logic.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Router compatibility and advanced settings</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Some modern router features are simply incompatible with budget smart home Wi-Fi chips. If you have a new Wi-Fi 6 (802.11ax) or Wi-Fi 6E router, there are several settings you may need to adjust for IoT compatibility.</p>
+            <div class="overflow-x-auto">
+              <table class="specs-table w-full text-sm">
+                <thead>
+                  <tr><th>Setting</th><th>Problem it causes</th><th>Fix</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Wi-Fi 6 / AX mode</strong> on 2.4GHz</td><td>Older 2.4GHz-only IoT devices may not connect or may drop frequently</td><td>Mix mode (b/g/n/ax) is usually OK, but if issues persist, try setting 2.4GHz to N-only or G/N mixed</td></tr>
+                  <tr><td><strong>WPA3 security</strong></td><td>Most smart home devices only support WPA2; WPA3 causes connection failures</td><td>Set to WPA2/WPA3 mixed mode, or WPA2 only if available as a separate option</td></tr>
+                  <tr><td><strong>PMF (Protected Management Frames)</strong></td><td>Required by WPA3; older devices cannot handle it and drop offline</td><td>Set PMF to "optional" or "disabled" on the 2.4GHz network</td></tr>
+                  <tr><td><strong>AP Isolation / Client Isolation</strong></td><td>Setup fails because phone cannot communicate with the device on the same network</td><td>Disable AP isolation (this is usually on guest networks by default)</td></tr>
+                  <tr><td><strong>IPv6 only</strong> or dual-stack with broken IPv4</td><td>Virtually all smart home devices use IPv4 only</td><td>Ensure IPv4 is enabled and working on your network</td></tr>
+                  <tr><td><strong>DTIM interval</strong> set too high</td><td>Battery-powered IoT devices sleep and miss beacons, causing disconnects</td><td>Set DTIM to 1 or 2 (default is usually 1 or 3; avoid values above 3 for IoT-heavy networks)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Factory reset and re-pair the device</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If you have tried everything and the device still will not stay online, the device's Wi-Fi configuration may be corrupted. A factory reset clears all saved settings and puts the device back into setup mode. This is the nuclear option but resolves most remaining issues.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">How to Factory Reset Common Devices</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="lightbulb" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Smart bulbs:</strong> turn the power on-off-on-off-on (3 times on, 2 times off) in quick succession. The bulb will flash to indicate reset. Exact pattern varies by brand &mdash; Philips Hue uses a dimmer switch, TP-Link Kasa uses power cycling, LIFX uses the app.</li>
+                <li class="flex items-start gap-2"><i data-lucide="plug-zap" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Smart plugs:</strong> press and hold the power button for 10-15 seconds until the LED flashes rapidly. Release and wait for it to enter setup mode (usually slow blinking).</li>
+                <li class="flex items-start gap-2"><i data-lucide="camera" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Smart cameras:</strong> use a paperclip to press the reset button on the back/bottom for 5-10 seconds. The camera will chime or the status light will change color.</li>
+                <li class="flex items-start gap-2"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Thermostats:</strong> go into the device settings menu and find "reset" or "factory reset." Some have a physical reset button behind the faceplate.</li>
+                <li class="flex items-start gap-2"><i data-lucide="speaker" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Smart speakers:</strong> see our dedicated smart speaker troubleshooting guide for brand-specific reset procedures.</li>
+              </ul>
+            </div>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Before resetting:</strong> write down any custom settings, automations, or scenes the device is part of. You will need to set everything up again from scratch. Also, make sure you know the Wi-Fi password and have access to the account the device is registered to.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Platform-Specific Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-cyan-400 flex items-center gap-2"><i data-lucide="mic" style="width:1.2rem;height:1.2rem"></i>Amazon Alexa / Echo</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Alexa devices (Echo, Dot, Show) are usually quite good at Wi-Fi, but the smart devices that connect through Alexa often have issues. If a device shows offline in the Alexa app but works in its own app, the problem is the skill integration, not Wi-Fi. Try disabling and re-enabling the skill, or unlinking and re-linking the device account.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-red-400 flex items-center gap-2"><i data-lucide="home" style="width:1.2rem;height:1.2rem"></i>Google Home / Nest</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Google Home/Nest speakers and displays have a known issue with mesh Wi-Fi networks where they sometimes fail to roam correctly. If you have Nest Wifi mesh, try running a "mesh test" in the Google Home app to check node connectivity. Factory resetting the problematic speaker and setting it up again often resolves it.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-gray-300 flex items-center gap-2"><i data-lucide="apple" style="width:1.2rem;height:1.2rem"></i>Apple HomeKit</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">HomeKit devices can show as offline if your home hub (Apple TV, HomePod, or iPad) is not working correctly. Check that your home hub is powered on, updated, and on the same network. HomeKit uses iCloud for remote access, so make sure your Apple ID is signed in correctly on all devices. Thread-enabled devices have fewer Wi-Fi issues since they use the Thread mesh protocol.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-blue-400 flex items-center gap-2"><i data-lucide="smartphone" style="width:1.2rem;height:1.2rem"></i>Samsung SmartThings</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">SmartThings has had various hub connectivity issues over the years. If devices show offline, first check if the SmartThings hub itself is online (solid green light). Zigbee and Z-Wave devices going offline are usually range or mesh issues, not Wi-Fi. Add a Zigbee repeater or move devices closer to the hub.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-950/20 to-navy-900 border-yellow-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>When to Call for Professional Help</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You have tried all steps in this guide and the device still will not connect &mdash; it may be a defective unit and needs warranty replacement.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="router" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You are not comfortable logging into your router or changing network settings &mdash; hire a local smart home installer or IT professional.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Your entire smart home ecosystem keeps dropping and you suspect structural Wi-Fi issues in your home &mdash; a site survey and proper access point placement is needed.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You need to run Ethernet cables through walls or install ceiling-mounted access points for better coverage &mdash; this is low-voltage electrical work.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The device is under warranty and you have confirmed it is a hardware fault &mdash; contact the manufacturer for RMA/replacement instead of trying to fix it yourself.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You have security concerns about IoT devices on your network and want to set up a properly segmented IoT VLAN &mdash; this requires advanced networking knowledge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="smart-speaker-not-responding.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">VOICE</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Smart Speaker Not Responding</h3>
+        <p class="text-sm text-gray-400">Microphone calibration, wake word sensitivity, factory reset, and Alexa/Google/Siri specific fixes.</p>
+      </a>
+      <a href="../specs/smart-home.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">SPECS</div>
+          <span class="badge badge-info">Reference</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Smart Home Device Specs</h3>
+        <p class="text-sm text-gray-400">Compare smart speakers, hubs, cameras, and sensors across all major smart home ecosystems.</p>
+      </a>
+      <a href="dji-gimbal-error-codes.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">DRONE</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Gimbal Error Codes</h3>
+        <p class="text-sm text-gray-400">Drone and gimbal troubleshooting for camera stabilization and flight controller errors.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for a specific device's error codes?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Open the full error code database &mdash; every fault code from every major smart home and consumer electronics device we have documented, along with symptom, cause, and DIY fix.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/smart-home.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="home" style="width:1rem;height:1rem"></i>Smart Home Specs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

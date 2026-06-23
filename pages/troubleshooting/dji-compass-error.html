@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJI Compass Error — Calibration, Interference Sources & GPS Redundancy | TechSpecsHub</title>
+  <meta name="description" content="Fix DJI compass calibration errors and compass interference warnings. Learn to identify interference sources, proper rotation calibration procedure, compass module replacement, and how GPS+compass redundancy works.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/dji-compass-error.html">
+
+  <meta property="og:title" content="DJI Compass Error — Calibration, Interference Sources & GPS Redundancy | TechSpecsHub">
+  <meta property="og:description" content="Fix DJI compass calibration errors and compass interference warnings. Learn to identify interference sources, proper rotation calibration procedure, compass module replacement, and how GPS+compass redundancy works.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/dji-compass-error.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DJI Compass Error — Calibration, Interference Sources & GPS Redundancy | TechSpecsHub">
+  <meta name="twitter:description" content="Fix DJI compass calibration errors and compass interference warnings. Learn to identify interference sources, proper rotation calibration procedure, compass module replacement, and how GPS+compass redundancy works.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "DJI Compass Error — Calibration, Interference Sources & GPS Redundancy | TechSpecsHub",
+    "description": "Fix DJI compass calibration errors and compass interference warnings. Learn to identify interference sources, proper rotation calibration procedure, compass module replacement, and how GPS+compass redundancy works.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/dji-compass-error.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">DJI Compass Calibration Error</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-blue-500/20 text-blue-400 font-mono font-bold text-sm rounded-md border border-blue-500/30">COMPASS</div>
+        <span class="badge badge-warning"><i data-lucide="plane" style="width:0.75rem;height:0.75rem"></i>Mavic / Air / Mini</span>
+        <span class="badge badge-info"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Beginner Friendly</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        DJI Compass Error &mdash; <span class="gradient-text">Calibration, Interference &amp; GPS Redundancy</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        "Compass Calibration Required" and "Compass Interference" are the most feared DJI warnings because they can ground your flight or, worse, cause flyaways if ignored. The compass provides heading data that the flight controller fuses with GPS and IMU data to maintain position and navigate. Most compass errors are caused by magnetic interference from nearby metal objects, not a faulty compass module.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">10&ndash;30 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$70</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Magnetic Interference</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~85%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>How the Compass Works & Why It Fails</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            DJI drones use a 3-axis magnetometer (electronic compass) to measure the Earth's magnetic field and determine the drone's heading (yaw orientation). The flight controller combines compass heading with GPS position data and IMU attitude data to enable position hold, waypoint navigation, and Return-to-Home (RTH). Without a working compass, the drone cannot reliably know which direction it's facing.
+          </p>
+          <p>
+            Magnetometers are extremely sensitive to any nearby magnetic field or ferrous metal. A steel-framed building, a car, even a set of keys in your pocket can distort the local magnetic field enough to confuse the compass. DJI drones continuously monitor compass health and will warn you if interference is detected or if the compass data doesn't match what the GPS and IMU are saying.
+          </p>
+          <ul class="space-y-1 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; Magnetic interference is the #1 cause &mdash; always move away from metal objects first.</span></li>
+            <li class="text-white font-semibold">&bull; Calibration drift occurs when you travel long distances (magnetic declination changes).</span></li>
+            <li class="text-white font-semibold">&bull; Physical damage from crashes can shift the compass module or damage the sensor.</span></li>
+            <li class="text-white font-semibold">&bull; GPS+compass redundancy means the drone can often fly with a degraded compass using GPS course data.</span></li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Before You Calibrate &mdash; Quick Checks</h3>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Are you at least 10 feet (3m) from any metal objects?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>No cars, buildings, fences, or power lines nearby?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>No metal objects in your pockets (keys, phone, watch)?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Drone firmware updated to latest version?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Drone is NOT sitting on a metal table or surface?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Tried restarting drone and moving to a different location?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>No aftermarket accessories mounted near the compass?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Tools</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Phillips PH00 screwdriver</li>
+          <li>Plastic spudger (non-conductive)</li>
+          <li>Tweezers (anti-static, fine-tip)</li>
+          <li>Isopropyl alcohol (90%+)</li>
+          <li>Cotton swabs (lint-free)</li>
+          <li>Multimeter (optional, for continuity tests)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="map-pin" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Calibration Location</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Open field or park, minimum 30ft (10m) from buildings</li>
+          <li>At least 50ft (15m) from cars, fences, and metal structures</li>
+          <li>Away from power lines and electrical equipment</li>
+          <li>Clear of underground pipes and rebar (concrete)</li>
+          <li>No reinforced concrete under the calibration area</li>
+          <li>Good GPS satellite visibility (open sky)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="smartphone" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Software</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>DJI Fly app (latest version)</li>
+          <li>DJI Go 4 app (older models)</li>
+          <li>DJI Assistant 2 (Consumer Drone version)</li>
+          <li>USB-C or Micro-USB cable</li>
+          <li>Internet connection (for firmware)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Common Compass Errors &mdash; Step-by-Step Fixes</h2>
+
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">A</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Compass Interference Warning &mdash; Identify and Eliminate Sources</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">"Compass Interference" or "Strong Magnetic Interference" warnings appear when the magnetometer detects an abnormal magnetic field. This is the most common compass error and is almost never caused by a faulty compass. You are simply too close to something that distorts the Earth's magnetic field.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">How to Identify Interference Sources</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>Walk 20&ndash;30 feet (6&ndash;10 meters) in any direction. If the warning goes away, you found the interference source (it was whatever you just walked away from).</li>
+              <li>Check for obvious sources: cars, trucks, metal fences, steel-framed buildings, manhole covers, reinforced concrete, power lines, solar panels.</li>
+              <li>Check yourself: remove keys, metal watch, phone from your pockets. Hold the drone away from your body during calibration.</li>
+              <li>Check the drone: any aftermarket accessories? LED light strips, camera filters with metal rings, GPS trackers, or battery straps with metal buckles can cause interference.</li>
+              <li>Look down: underground metal pipes, buried utility lines, and rebar in concrete can all cause compass errors even when there's nothing visible above ground.</li>
+              <li>Indoor calibration never works. Always calibrate outdoors in an open area.</li>
+            </ol>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Pro tip:</strong> If you consistently get compass errors at your favorite flying spot, it's probably due to something underground (rebar, pipes). Find a different location — trying to calibrate in a bad spot wastes time and can result in a bad calibration that causes flyaways.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">B</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Proper Compass Calibration Procedure &mdash; The Rotation Pattern</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">"Compass Calibration Required" means the stored compass calibration data no longer matches the current magnetic environment. This happens when you travel hundreds of miles, after a firmware update, or when the drone detects that the compass has drifted. Calibrating is easy but must be done correctly — a bad calibration is worse than no calibration.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Correct Calibration Steps (DJI Fly / DJI Go 4)</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>Find a suitable location: open field, away from all metal objects, power lines, and buildings. Stand on grass or dirt if possible (not concrete).</li>
+              <li>Power on the drone and remote controller. Wait for the drone to fully boot up.</li>
+              <li>In the app, go to: Settings &rarr; Safety &rarr; Compass &rarr; Calibrate Compass.</li>
+              <li>The app will show you the calibration interface. Tap "Start."</li>
+              <li><strong>Step 1 (Horizontal rotation):</strong> Hold the drone horizontally at eye level, with the camera facing forward. Slowly rotate the drone 360 degrees around the vertical axis. Take about 8&ndash;10 seconds per full rotation. The app will beep or show a checkmark when this step is done.</li>
+              <li><strong>Step 2 (Vertical rotation):</strong> Hold the drone vertically with the nose pointing straight down. Slowly rotate the drone 360 degrees around the forward axis. Again, take 8&ndash;10 seconds per rotation.</li>
+              <li>Wait for the "Calibration Successful" message. If calibration fails, move to a different location and try again.</li>
+            </ol>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200 mt-3">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Calibration Best Practices</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div>Rotate slowly (8&ndash;10 sec per rotation): <span class="text-electric-400">Yes, critical for accuracy</span></div>
+                <div>Hold drone away from your body: <span class="text-electric-400">Yes, at least 12 inches</span></div>
+                <div>Propellers must be off: <span class="text-electric-400">No, but recommended for safety</span></div>
+                <div>Expected duration: <span class="text-electric-400">1&ndash;2 minutes</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">C</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Compass Calibration Fails Repeatedly</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If compass calibration fails every time, don't keep trying in the same spot. There is either a strong interference source you haven't found, or (less commonly) the compass module itself has a problem. Work through this systematic elimination process.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Troubleshooting Failed Calibrations</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Move to a completely different location.</strong> Drive at least 0.5 miles (1 km) away. If calibration succeeds at the new location, the original spot has high magnetic interference — never fly there.</li>
+              <li>Inspect the drone for any added metal accessories. Remove LED strips, GPS trackers, metal camera filters, and any aftermarket mounts. Retry calibration.</li>
+              <li>Check the compass module location (usually in a leg or arm tip, marked with a "C" or compass icon). Is there a loose screw, damage, or visible corrosion?</li>
+              <li>Perform a factory reset of the drone settings in DJI Assistant 2, then re-attempt calibration.</li>
+              <li>Refresh the drone firmware via DJI Assistant 2. Sometimes the calibration parameters stored in memory get corrupted.</li>
+              <li>Try calibrating with the drone placed on a non-metallic stand (wooden or plastic box) to get it further from the ground.</li>
+              <li>If calibration consistently fails at the same rotation step (always step 2, for example), this suggests a faulty axis on the magnetometer — proceed to hardware inspection.</li>
+            </ol>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Danger:</strong> Never fly with a "Calibration Failed" or "Compass Error" warning. A bad or failed compass can cause the drone to fly in the wrong direction or enter an uncontrollable spin. Land immediately if you get a compass error mid-flight.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-orange-500/20 border border-orange-500/40 flex items-center justify-center font-mono font-bold text-orange-400">D</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">GPS + Compass Redundancy &mdash; How the Drone Copes</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">DJI drones have multiple redundant navigation systems. The primary heading reference is the compass, but if the compass fails or shows suspicious data, the flight controller can fall back to GPS-derived course data and IMU gyro data to maintain control. This is why you might see "Attitude Mode" instead of "GPS Mode" when there's a compass problem.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Understanding the Redundancy System</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Normal mode (P-mode / GPS mode):</strong> Compass provides heading, GPS provides position, IMU provides attitude. All three are fused for maximum stability.</li>
+              <li><strong>Compass degraded:</strong> If the compass data is inconsistent but not completely failed, the drone may still allow flight but with reduced position hold accuracy. You may see a "Compass Error" warning but still be able to fly — use caution.</li>
+              <li><strong>Attitude mode (ATTI):</strong> Without reliable compass AND GPS, the drone enters Attitude Mode. In this mode, the drone can hover and maintain attitude using the IMU and barometer, but it will drift with wind. You still have full control, but position hold is disabled.</li>
+              <li><strong>IMU + GPS backup heading:</strong> Modern DJI drones (Mavic 3, Air 3, Mini 4 Pro) can derive heading from GPS course data when the drone is moving. This provides a backup heading reference, but it only works when the drone has forward velocity — it won't help when hovering.</li>
+              <li><strong>Dual compass models:</strong> Some higher-end DJI drones (Mavic 2 Enterprise, Matrice series) have dual compass modules for redundancy. If one fails, the other takes over seamlessly.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">E</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Compass Module Replacement &mdash; When and How</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">True compass hardware failure is uncommon, but it can happen after a hard crash, water damage, or simply from age. If you've eliminated all interference sources, refreshed firmware, and tried calibrating in multiple locations without success, the compass module itself may be faulty.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Signs of a Failed Compass Module</h4>
+            <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside mb-3">
+              <li>Calibration fails consistently at the exact same step every time.</li>
+              <li>Compass heading is obviously wrong (drone shows facing north when it's clearly facing east).</li>
+              <li>Heading jumps wildly or spins continuously on the app map.</li>
+              <li>Compass shows "Abnormal" status in sensor check even after successful calibration.</li>
+              <li>Physical damage visible on the compass module (cracked, bent, corroded).</li>
+            </ul>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Replacement Procedure (General)</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>Identify the compass location: usually in the tip of one landing gear leg or in the end of an arm. Look for a "C" marking.</li>
+              <li>Power off the drone and remove the battery. Wait 2 minutes for discharge.</li>
+              <li>Remove the screws holding the compass cover or the landing gear leg.</li>
+              <li>Gently pull out the compass module. It will be connected by a thin flex cable.</li>
+              <li>Disconnect the flex cable connector (use a plastic spudger to lift the ZIF lock).</li>
+              <li>Install the new compass module. Make sure the connector is fully seated and locked.</li>
+              <li>Reassemble the drone, then perform a full compass calibration in a suitable outdoor location.</li>
+              <li>After calibration, verify compass health in the app: Settings &rarr; Safety &rarr; Compass &rarr; Check.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-3 text-electric-400 flex items-center gap-2"><i data-lucide="clipboard-check" style="width:1.25rem;height:1.25rem"></i>"Before You Send It In" Checklist</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Tried calibrating in at least 3 different locations?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>All metal accessories removed from the drone?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>No metal objects on your person during calibration?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Firmware refreshed / re-flashed to latest version?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Compass module physically inspected for damage?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Compass connector re-seated and cleaned?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Factory reset performed on drone settings?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Rotating slowly enough during calibration?</li>
+        </ul>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-3 text-electric-400 flex items-center gap-2"><i data-lucide="package" style="width:1.25rem;height:1.25rem"></i>Replacement Parts &amp; Costs</h3>
+        <div class="overflow-x-auto">
+          <table class="specs-table w-full text-sm">
+            <thead>
+              <tr><th>Part</th><th>Model Fit</th><th>Approx. Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Compass module (leg-mounted)</td><td>Mini 2/3/4, Air 2/3</td><td>$15&ndash;$40</td></tr>
+              <tr><td>Compass module (arm-mounted)</td><td>Mavic 2/3, Mavic Pro</td><td>$25&ndash;$60</td></tr>
+              <tr><td>Landing gear leg (with compass)</td><td>Mavic 3, Air 3</td><td>$30&ndash;$70</td></tr>
+              <tr><td>GPS + compass module combo</td><td>Mavic 2, Phantom 4</td><td>$50&ndash;$100</td></tr>
+              <tr><td>Flight controller (integrated compass)</td><td>Some Mini models</td><td>$120&ndash;$250</td></tr>
+              <tr><td>DJI Service Center compass repair</td><td>All models</td><td>$80&ndash;$180</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-red-950/20 to-navy-900 border-red-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#f87171"></i>When to Call a Professional / Send to DJI Service</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Compass calibration fails consistently at the same step in multiple locations &mdash; sensor likely dead.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Drone has been in a crash that also bent an arm or landing gear &mdash; compass alignment is critical.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Compass module is integrated into the flight controller and you're not comfortable with PCB-level work.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Drone is under DJI Care or warranty &mdash; opening the drone voids your coverage.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You've experienced a flyaway or near-flyaway due to compass issues &mdash; don't risk it again.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You can't identify the compass module or find a replacement part for your specific model.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="dji-imu-calibration-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">IMU</div>
+          <span class="badge badge-warning">All series</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI IMU Calibration Error</h3>
+        <p class="text-sm text-gray-400">IMU and compass work together for attitude estimation. Attitude mode errors often involve both systems.</p>
+      </a>
+      <a href="dji-gimbal-error-codes.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">GIMBAL</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Gimbal Error Codes</h3>
+        <p class="text-sm text-gray-400">Gimbal and compass are independent systems, but both rely on IMU fusion for proper operation.</p>
+      </a>
+      <a href="dji-vision-positioning-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-cyan-500/20 text-cyan-400 font-mono font-semibold text-sm rounded-md border border-cyan-500/30">VISION</div>
+          <span class="badge badge-info">All series</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Vision Positioning System Error</h3>
+        <p class="text-sm text-gray-400">Vision positioning provides another layer of navigation redundancy &mdash; useful when GPS and compass both struggle.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Need the full error code database?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Every documented fault code for every DJI, EcoFlow, Jackery, Bluetti, and Toyota model we've tested. Browse, search, and print.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/drones.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Open Drone Specs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

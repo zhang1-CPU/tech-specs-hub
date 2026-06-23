@@ -193,6 +193,14 @@
         <i data-lucide="home" style="width:1rem;height:1rem"></i>
         Smart Home
       </button>
+      <button data-tab="3dprinters" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white font-medium text-sm transition-all">
+        <i data-lucide="box" style="width:1rem;height:1rem"></i>
+        3D Printers
+      </button>
+      <button data-tab="ebikes" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white font-medium text-sm transition-all">
+        <i data-lucide="bike" style="width:1rem;height:1rem"></i>
+        E-Bikes
+      </button>
     </div>
     <p class="text-sm text-gray-500">Click a category to jump to its table &darr;</p>
   </section>
@@ -208,7 +216,7 @@
           </h2>
           <p class="text-gray-400 text-sm">Common OBD-II and manufacturer-specific hybrid fault codes. Covers Toyota, Lexus, Ford, and similar systems.</p>
         </div>
-        <span class="badge badge-info">6 codes</span>
+        <span class="badge badge-info">9 codes</span>
       </div>
       <div class="overflow-x-auto">
         <table class="specs-table">
@@ -223,21 +231,42 @@
           </thead>
           <tbody>
             <tr>
-              <td><code class="font-mono text-electric-300">P0A7F</code></td>
+              <td><a href="troubleshooting/p0a7f-hybrid-battery-pack-performance.html"><code class="font-mono text-electric-300">P0A7F</code></a></td>
               <td>Hybrid Battery Pack "A" Performance</td>
               <td><span class="badge badge-warning">Warning</span></td>
               <td>Degraded cells causing module voltage spread beyond tolerance.</td>
               <td>Measure individual module voltages. Replace weakest modules or recondition pack.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-electric-300">P0A80</code></td>
+              <td><a href="troubleshooting/p0a80-replace-hybrid-battery-pack.html"><code class="font-mono text-electric-300">P0A80</code></a></td>
               <td>Replace Hybrid Battery Pack</td>
               <td><span class="badge badge-critical">Critical</span></td>
               <td>Overall pack capacity has dropped below the manufacturer's replacement threshold.</td>
               <td>Plan full pack replacement. Check module-to-module variance first to confirm.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-electric-300">P3000</code></td>
+              <td><a href="troubleshooting/p0a7b-hybrid-battery-voltage-sensor.html"><code class="font-mono text-electric-300">P0A7B</code></a></td>
+              <td>Hybrid Battery Voltage Sensor "B" Circuit</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Faulty voltage sensor, damaged wiring harness, or loose connector on battery module.</td>
+              <td>Inspect sensor connector. Measure sensor output voltage. Replace sensor if out of spec.</td>
+            </tr>
+            <tr>
+              <td><a href="troubleshooting/p0a9d-hybrid-inverter-fault.html"><code class="font-mono text-electric-300">P0A9D</code></a></td>
+              <td>Hybrid Inverter / Converter Performance</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Inverter IGBT failure, over-temperature shutdown, or internal short in HV converter.</td>
+              <td>Check inverter coolant flow and temperature. Scan for sub-codes. Replace inverter if confirmed.</td>
+            </tr>
+            <tr>
+              <td><a href="troubleshooting/p0ac4-hybrid-battery-temperature-sensor.html"><code class="font-mono text-electric-300">P0AC4</code></a></td>
+              <td>Hybrid Battery Pack Temperature Sensor "C" Circuit</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Failed thermistor, damaged wiring, or corroded connector on battery pack temp sensor.</td>
+              <td>Measure sensor resistance at operating temperature. Replace sensor or repair wiring.</td>
+            </tr>
+            <tr>
+              <td><a href="troubleshooting/p3000-hybrid-battery-control-module.html"><code class="font-mono text-electric-300">P3000</code></a></td>
               <td>Hybrid Battery Control System Malfunction</td>
               <td><span class="badge badge-critical">Critical</span></td>
               <td>Battery ECU internal fault or corrupted calibration.</td>
@@ -281,7 +310,7 @@
           </h2>
           <p class="text-gray-400 text-sm">EcoFlow-style error codes. Codes with similar meanings on Jackery, Bluetti, and Anker models are usually named identically or differ only by a numeric prefix.</p>
         </div>
-        <span class="badge badge-info">8 codes</span>
+        <span class="badge badge-info">12 codes</span>
       </div>
       <div class="overflow-x-auto">
         <table class="specs-table">
@@ -296,14 +325,14 @@
           </thead>
           <tbody>
             <tr>
-              <td><code class="font-mono text-electric-300">E0</code></td>
+              <td><a href="troubleshooting/power-station-overheating.html"><code class="font-mono text-electric-300">E0</code></a></td>
               <td>AC Over-Temperature</td>
               <td><span class="badge badge-critical">Critical</span></td>
               <td>Inverter heat sink above threshold. Heavy sustained load, blocked ventilation, or failed fan.</td>
               <td>Reduce load. Power off. Clear ventilation openings. Allow 30 min to cool. If returns, service.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-electric-300">E1</code></td>
+              <td><a href="troubleshooting/power-station-overheating.html"><code class="font-mono text-electric-300">E1</code></a></td>
               <td>DC Over-Temperature</td>
               <td><span class="badge badge-critical">Critical</span></td>
               <td>Battery cells or charge controller overheating. Often triggered by fast charging in hot weather.</td>
@@ -331,14 +360,14 @@
               <td>Reduce solar array wattage. Check panel open-circuit voltage is within the MPPT's Voc range.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-electric-300">E5</code></td>
+              <td><a href="troubleshooting/power-station-bms-error.html"><code class="font-mono text-electric-300">E5</code></a></td>
               <td>Communication Error</td>
               <td><span class="badge badge-info">Info</span></td>
               <td>Internal bus between BMS and main MCU has lost sync, or an expansion battery is not responding.</td>
               <td>Power cycle the unit. Reseat expansion battery connectors. If returns, check for firmware update.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-electric-300">E6</code></td>
+              <td><a href="troubleshooting/power-station-bms-error.html"><code class="font-mono text-electric-300">E6</code></a></td>
               <td>Battery Cell Failure</td>
               <td><span class="badge badge-critical">Critical</span></td>
               <td>One or more cells reporting voltage significantly outside the pack's normal range.</td>
@@ -350,6 +379,34 @@
               <td><span class="badge badge-warning">Warning</span></td>
               <td>Inverter cooling fan unable to spin. Dust, debris, or mechanical failure.</td>
               <td>Power off and unplug. Visually inspect fan. Blow out debris with compressed air (low pressure).</td>
+            </tr>
+            <tr>
+              <td><a href="troubleshooting/power-station-solar-input-not-working.html"><code class="font-mono text-electric-300">E8</code></a></td>
+              <td>Solar Input Issue</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>No solar charging detected. Open circuit, reverse polarity, or panels outside MPPT voltage range.</td>
+              <td>Check panel connections. Verify Voc is within MPPT range. Check for blown inline fuse.</td>
+            </tr>
+            <tr>
+              <td><a href="troubleshooting/power-station-not-charging.html"><code class="font-mono text-electric-300">E9</code></a></td>
+              <td>AC Charging Issue</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Wall charging not working. Faulty adapter, loose DC input jack, or failed charging circuit.</td>
+              <td>Test wall outlet. Try different adapter/cable. Check DC input port for damage.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">E10</code></td>
+              <td>Battery Under-Voltage</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Pack voltage below safe threshold. Often from long-term storage without top-off charge.</td>
+              <td>Attempt low-current recovery charge. If BMS won't allow, replace battery pack.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">E11</code></td>
+              <td>Inverter No Output</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>AC outlets not producing power even though unit is on. Inverter relay or MOSFET failure.</td>
+              <td>Check AC output breaker. Reset unit. If no output, service inverter module.</td>
             </tr>
           </tbody>
         </table>
@@ -368,7 +425,7 @@
           </h2>
           <p class="text-gray-400 text-sm">Most common gimbal, IMU, compass, ESC, and battery faults reported by DJI and similar drones.</p>
         </div>
-        <span class="badge badge-info">8 codes</span>
+        <span class="badge badge-info">12 codes</span>
       </div>
       <div class="overflow-x-auto">
         <table class="specs-table">
@@ -397,14 +454,14 @@
               <td>Remove any filter/add-on and retest. Verify gimbal payload is within spec.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-electric-300">IMU CALIBRATION ERROR</code></td>
+              <td><a href="troubleshooting/dji-imu-calibration-error.html"><code class="font-mono text-electric-300">IMU CALIBRATION ERROR</code></a></td>
               <td>IMU calibration failed</td>
               <td><span class="badge badge-info">Info</span></td>
               <td>Drone not on a perfectly level surface, or vibration during calibration. Sometimes a failing IMU.</td>
               <td>Place drone on a known-level surface. Retry calibration. If it fails repeatedly, service IMU.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-electric-300">COMPASS ERROR</code></td>
+              <td><a href="troubleshooting/dji-compass-error.html"><code class="font-mono text-electric-300">COMPASS ERROR</code></a></td>
               <td>Compass reading unreliable or outside tolerance</td>
               <td><span class="badge badge-warning">Warning</span></td>
               <td>Magnetic interference (metal, power lines, motors), loose compass module, or failed calibration.</td>
@@ -418,7 +475,7 @@
               <td>Land immediately. Inspect motor and ESC for damage. Replace matched ESC/motor pair.</td>
             </tr>
             <tr>
-              <td><code class="font-mono text-electric-300">BATTERY COMMUNICATION ERROR</code></td>
+              <td><a href="troubleshooting/dji-battery-not-charging.html"><code class="font-mono text-electric-300">BATTERY COMMUNICATION ERROR</code></a></td>
               <td>Flight controller lost battery telemetry</td>
               <td><span class="badge badge-warning">Warning</span></td>
               <td>Dirty or corroded battery pins, third-party battery without proper serial interface.</td>
@@ -438,6 +495,34 @@
               <td>High-ambient flight, aggressive maneuvers, or direct sun on battery.</td>
               <td>Land. Let battery cool to room temperature before charging or re-flight.</td>
             </tr>
+            <tr>
+              <td><a href="troubleshooting/dji-vision-positioning-error.html"><code class="font-mono text-electric-300">VISION POSITIONING ERROR</code></a></td>
+              <td>Vision positioning system unavailable</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Dirty or obstructed downward-facing camera, low-light conditions, or reflective surface below.</td>
+              <td>Clean vision sensor lenses. Fly in well-lit area. Avoid flying over water or glass.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">GPS SIGNAL WEAK</code></td>
+              <td>GPS satellites not sufficient for positioning</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Indoor flight, urban canyon, heavy cloud cover, or GPS module malfunction.</td>
+              <td>Move to open area. Wait for GPS lock before takeoff. Check GPS antenna connection.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">RC CONNECTION LOST</code></td>
+              <td>Remote controller signal lost</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Out of range, interference, low RC battery, or damaged antenna.</td>
+              <td>Stay within rated range. Point antennas toward drone. Return-to-home will activate automatically.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">GIMBAL CALIBRATION ERROR</code></td>
+              <td>Gimbal calibration failed</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Drone not level during calibration, or gimbal mechanical issue.</td>
+              <td>Place drone on level surface. Retry calibration. Check gimbal for physical damage.</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -455,7 +540,7 @@
           </h2>
           <p class="text-gray-400 text-sm">Robot vacuums (Roomba, Roborock generic faults), Nest thermostats, and Ecobee sensor errors.</p>
         </div>
-        <span class="badge badge-info">13 codes</span>
+        <span class="badge badge-info">15 codes</span>
       </div>
 
       <!-- Robot Vacuums -->
@@ -621,6 +706,256 @@
             </tbody>
           </table>
         </div>
+      </div>
+
+      <!-- General Smart Home -->
+      <div class="mt-8">
+        <h3 class="font-bold text-lg mb-3 text-gray-200">General Smart Home</h3>
+        <div class="overflow-x-auto">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Typical Cause</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="troubleshooting/smart-home-device-offline.html"><code class="font-mono text-electric-300">DEVICE OFFLINE</code></a></td>
+                <td>Device Offline / Wi-Fi Issues</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td>Wi-Fi signal too weak, router issue, wrong credentials, or device firmware problem.</td>
+                <td>Check Wi-Fi signal. Restart router and device. Re-enter Wi-Fi credentials. Update firmware.</td>
+              </tr>
+              <tr>
+                <td><a href="troubleshooting/smart-speaker-not-responding.html"><code class="font-mono text-electric-300">SPEAKER OFFLINE</code></a></td>
+                <td>Smart Speaker Not Responding</td>
+                <td><span class="badge badge-warning">Warning</span></td>
+                <td>Wi-Fi disconnect, microphone muted, firmware glitch, or power supply issue.</td>
+                <td>Check microphone is enabled. Restart speaker. Verify Wi-Fi connection. Factory reset if needed.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D PRINTERS -->
+  <section id="tab-3dprinters" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 code-section" style="display:none">
+    <div class="glass-card p-6 md:p-8">
+      <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
+        <div>
+          <h2 class="font-bold text-2xl mb-2 flex items-center gap-2">
+            <i data-lucide="box" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+            3D Printers
+          </h2>
+          <p class="text-gray-400 text-sm">Common FDM 3D printer errors and print quality issues. Applicable to Creality, Prusa, Bambu Lab, AnkerMake, and similar printers.</p>
+        </div>
+        <span class="badge badge-info">12 codes</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Description</th>
+              <th>Severity</th>
+              <th>Typical Cause</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="troubleshooting/3d-printer-thermal-runaway.html"><code class="font-mono text-electric-300">THERMAL RUNAWAY</code></a></td>
+              <td>Thermal Runaway Protection Triggered</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Thermistor disconnected, loose, or faulty. Heater cartridge not reaching target temp.</td>
+              <td>Power off immediately. Check thermistor wiring and connection. Replace if damaged.</td>
+            </tr>
+            <tr>
+              <td><a href="troubleshooting/3d-printer-bed-leveling-problems.html"><code class="font-mono text-electric-300">BED LEVEL</code></a></td>
+              <td>Bed Leveling / First Layer Issues</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Uneven bed, incorrect Z-offset, or dirty build surface.</td>
+              <td>Re-level bed or run auto-bed-leveling. Adjust Z-offset. Clean build plate with isopropyl alcohol.</td>
+            </tr>
+            <tr>
+              <td><a href="troubleshooting/3d-printer-filament-jam.html"><code class="font-mono text-electric-300">FILAMENT JAM</code></a></td>
+              <td>Filament Jam / Clogged Nozzle</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Filament grinding in extruder, heat creep, or debris in nozzle.</td>
+              <td>Unload filament. Clear nozzle with cold pull or needle. Check extruder tension.</td>
+            </tr>
+            <tr>
+              <td><a href="troubleshooting/3d-printer-layer-shifting.html"><code class="font-mono text-electric-300">LAYER SHIFT</code></a></td>
+              <td>Layer Shifting / Misalignment</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Loose belt tension, stepper motor current too low, or obstruction on axes.</td>
+              <td>Check belt tension. Lubricate rails/rods. Verify stepper motor current.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">UNDER EXTRUSION</code></td>
+              <td>Under-Extrusion</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Clogged nozzle, worn extruder gear, or incorrect E-steps.</td>
+              <td>Clean nozzle. Check extruder gear for wear. Calibrate E-steps.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">OVER EXTRUSION</code></td>
+              <td>Over-Extrusion</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Flow rate too high, incorrect filament diameter setting, or high nozzle temp.</td>
+              <td>Reduce flow rate. Verify filament diameter in slicer. Calibrate E-steps.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">STRINGING</code></td>
+              <td>Stringing / Oozing</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Retraction distance/speed too low, high temp, or travel speed too slow.</td>
+              <td>Increase retraction. Lower nozzle temp slightly. Increase travel speed.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">WARPING</code></td>
+              <td>Warping / Curling</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Bed temp too low, poor bed adhesion, or cool drafts near printer.</td>
+              <td>Increase bed temp. Use brim/raft. Enclose printer or use draft shield.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">Z BANDING</code></td>
+              <td>Z-Axis Banding / Ribbing</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Z-rod bent, Z-step layer height mismatch, or loose Z-coupler.</td>
+              <td>Check Z-rod straightness. Tighten couplers. Verify layer height is multiple of full step.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">HEATER FAULT</code></td>
+              <td>Nozzle Heating Failed</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Heater cartridge burned out, broken wire, or MOSFET failure.</td>
+              <td>Check heater cartridge resistance. Inspect wiring. Replace heater or MOSFET if needed.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">STEPPER SKIP</code></td>
+              <td>Stepper Motor Skipping Steps</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Motor current too low, print speed too high, or mechanical binding.</td>
+              <td>Increase stepper current. Reduce print speed. Check for binding on axes.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">BLTOUCH ERROR</code></td>
+              <td>BLTouch / ABL Sensor Error</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>BLTouch pin stuck, wiring issue, or incorrect probe offset.</td>
+              <td>Check probe pin movement. Verify wiring. Re-measure and set Z-offset.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- E-BIKES -->
+  <section id="tab-ebikes" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 code-section" style="display:none">
+    <div class="glass-card p-6 md:p-8">
+      <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
+        <div>
+          <h2 class="font-bold text-2xl mb-2 flex items-center gap-2">
+            <i data-lucide="bike" style="width:1.3rem;height:1.3rem;color:#22d3ee"></i>
+            E-Bikes
+          </h2>
+          <p class="text-gray-400 text-sm">Common e-bike fault codes for hub motors, mid-drives, BMS, and controllers. Applicable to Bosch, Shimano, Bafang, and similar systems.</p>
+        </div>
+        <span class="badge badge-info">10 codes</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Description</th>
+              <th>Severity</th>
+              <th>Typical Cause</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="troubleshooting/ebike-motor-not-working.html"><code class="font-mono text-electric-300">MOTOR HALL</code></a></td>
+              <td>Motor Not Working / Hall Sensor Error</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Failed hall sensor in motor, damaged motor wire harness, or loose connector.</td>
+              <td>Check motor connector and wiring. Test hall sensor output. Replace motor if sensor is bad.</td>
+            </tr>
+            <tr>
+              <td><a href="troubleshooting/ebike-bms-communication-error.html"><code class="font-mono text-electric-300">BMS COMM</code></a></td>
+              <td>BMS Communication Error</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Battery BMS not responding to controller. Loose discharge connector or BMS fault.</td>
+              <td>Reseat battery connector. Check for bent pins. If persistent, test battery on charger.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">THROTTLE</code></td>
+              <td>Throttle Not Responding</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Faulty throttle, broken wire, or out-of-range voltage signal.</td>
+              <td>Check throttle connector. Test throttle output voltage. Replace throttle if defective.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">PAS ERROR</code></td>
+              <td>Pedal Assist Not Working</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Damaged PAS sensor, misaligned magnet ring, or loose cadence sensor.</td>
+              <td>Check PAS sensor alignment. Inspect magnet ring for damage. Adjust sensor gap.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">BATT LOW</code></td>
+              <td>Battery Not Charging / Low Voltage</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Faulty charger, damaged charge port, or BMS shutoff due to low cell voltage.</td>
+              <td>Test charger output voltage. Check charge port for damage. Try different charger.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">CTRL TEMP</code></td>
+              <td>Controller Over-Temperature</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td>Continuous high-current draw, hot weather, or blocked controller heat sink.</td>
+              <td>Stop riding and let controller cool. Reduce assist level. Check for blocked ventilation.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">BRAKE SENS</code></td>
+              <td>Brake Sensor Error</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Brake lever sensor stuck or misadjusted, causing constant motor cut-off.</td>
+              <td>Check brake levers return fully. Test brake sensor. Adjust or replace sensor.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">DISPLAY</code></td>
+              <td>Display / LCD Not Working</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Loose display cable, faulty display unit, or no power from controller.</td>
+              <td>Check display connector and cable. Test for voltage at display plug. Replace display.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">SPEED LIM</code></td>
+              <td>Speed Limiter Issue</td>
+              <td><span class="badge badge-info">Info</span></td>
+              <td>Speed sensor not reading correctly, or controller speed limit misconfigured.</td>
+              <td>Check speed sensor alignment on wheel. Verify controller settings and wheel size.</td>
+            </tr>
+            <tr>
+              <td><code class="font-mono text-electric-300">WHEEL SPD</code></td>
+              <td>Wheel Speed Sensor Error</td>
+              <td><span class="badge badge-warning">Warning</span></td>
+              <td>Speed sensor too far from magnet, damaged wire, or missing magnet on spoke.</td>
+              <td>Adjust sensor gap to 1-3mm. Check magnet is present. Inspect wiring.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>

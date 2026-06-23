@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P0AC4 Repair Guide — Hybrid Battery Temperature Sensor Circuit | TechSpecsHub</title>
+  <meta name="description" content="Step-by-step P0AC4 diagnostic and repair for hybrid battery overheating, fan control module failure, sensor calibration, thermistor testing, and cooling system inspection.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/p0ac4-hybrid-battery-temperature-sensor.html">
+
+  <meta property="og:title" content="P0AC4 Repair Guide — Hybrid Battery Temperature Sensor Circuit | TechSpecsHub">
+  <meta property="og:description" content="Step-by-step P0AC4 diagnostic and repair for hybrid battery overheating, fan control module failure, sensor calibration, thermistor testing, and cooling system inspection.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/p0ac4-hybrid-battery-temperature-sensor.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="P0AC4 Repair Guide — Hybrid Battery Temperature Sensor Circuit | TechSpecsHub">
+  <meta name="twitter:description" content="Step-by-step P0AC4 diagnostic and repair for hybrid battery overheating, fan control module failure, sensor calibration, thermistor testing, and cooling system inspection.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "P0AC4 Repair Guide — Hybrid Battery Temperature Sensor Circuit | TechSpecsHub",
+    "description": "Step-by-step P0AC4 diagnostic and repair for hybrid battery overheating, fan control module failure, sensor calibration, thermistor testing, and cooling system inspection.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/p0ac4-hybrid-battery-temperature-sensor.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">P0AC4 &mdash; Temperature Sensor Circuit</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-red-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-red-500/20 text-red-400 font-mono font-bold text-sm rounded-md border border-red-500/30">P0AC4</div>
+        <span class="badge badge-critical"><i data-lucide="thermometer" style="width:0.75rem;height:0.75rem"></i>Thermal Fault</span>
+        <span class="badge badge-warning"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Intermediate Difficulty</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Battery Temperature Sensor Circuit &mdash; <span class="gradient-text">Overheating Diagnosis &amp; Cooling System Repair</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        OBD-II diagnostic code indicating a fault in the hybrid battery temperature sensor circuit. The Battery ECU monitors pack temperature via multiple NTC (Negative Temperature Coefficient) thermistors embedded in the module stack. When the sensor signal falls outside the expected range &mdash; either too high, too low, or erratic &mdash; P0AC4 is stored. Left untreated, this can lead to battery overheating, accelerated degradation, and in rare cases thermal runaway.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Repair Time</div>
+          <div class="font-mono font-bold text-xl text-white">1.5&ndash;4 hrs</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Sensor Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$15&ndash;$60</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="building" style="width:0.9rem;height:0.9rem"></i>Dealer Cost</div>
+          <div class="font-mono font-bold text-xl text-red-400">$400&ndash;$1,200</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="thermometer" style="width:0.9rem;height:0.9rem"></i>Temp Limit</div>
+          <div class="font-mono font-bold text-xl text-yellow-400">&gt; 65&deg;C</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What is <span class="gradient-text">P0AC4</span>?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            P0AC4 is a generic OBD-II code for "Hybrid Battery Pack Temperature Sensor A Circuit." It is set by the Battery ECU when the signal from one of the primary pack temperature thermistors is implausibly high, implausibly low, or shows a rate of change that is physically impossible for the battery pack to experience.
+          </p>
+          <p>
+            Toyota hybrid systems use multiple NTC thermistors (typically 3&ndash;5 depending on generation) placed at strategic locations within the battery pack: one near the intake air vent, one in the middle of the module stack, and one near the exhaust side. These sensors feed real-time temperature data to the Battery ECU, which uses it to control the battery cooling fan speed, adjust charge/discharge limits, and trigger over-temperature protection.
+          </p>
+          <p>
+            On Gen 2 Prius (2004&ndash;2009), the most common cause of P0AC4 is a failed intake air temperature sensor located near the battery fan intake duct. The sensor sits in the air stream and is exposed to cabin dust, moisture, and temperature cycling. Over time, the thermistor can drift out of calibration or develop an open/short circuit. Gen 3 Prius (2010&ndash;2015) improved sensor placement but still sees failures from the fan control module relay sticking on or off.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Common Symptoms</h3>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Hybrid System warning light illuminated</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Cooling fan runs constantly on high speed</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Cooling fan never turns on (risk of overheat)</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Reduced hybrid performance on hot days</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Erratic temperature readings on scan tool</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Whistling or squealing from rear fan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <div class="alert alert-critical">
+      <i data-lucide="alert-triangle" style="width:1.25rem;height:1.25rem;flex-shrink:0;margin-top:0.1rem"></i>
+      <div>
+        <strong class="block mb-1 text-white">Battery Overheating Risk &mdash; Thermal Damage Can Be Permanent</strong>
+        <p class="text-sm leading-relaxed">If P0AC4 is accompanied by a cooling fan that does not run, the battery pack can overheat during aggressive driving or hot weather. NiMH batteries permanently lose capacity when exposed to temperatures above <strong class="text-white">65&deg;C (149&deg;F)</strong>. If the pack smells hot or you notice reduced performance, pull over and let the battery cool before driving further. Always follow HV safety procedures: disconnect 12V, remove service plug, wait 10 minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Safety Equipment</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="hard-hat" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Class 0 insulated gloves (1000V rated)</li>
+          <li>Safety glasses / face shield</li>
+          <li>Heat-resistant gloves (for hot components)</li>
+          <li>Fire extinguisher (Class ABC)</li>
+          <li>Electrical safety sign</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="cpu" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Diagnostic</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>OBD-II scan tool with live temp data (Dr. Prius / Techstream)</li>
+          <li>Digital multimeter &mdash; CAT III 600V</li>
+          <li>Digital thermometer / temperature probe</li>
+          <li>Thermistor resistance reference chart</li>
+          <li>12V test light (for fan motor testing)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="wrench" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Mechanical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>10mm socket + ratchet</li>
+          <li>Trim panel removal tools</li>
+          <li>Vacuum cleaner (for fan duct cleaning)</li>
+          <li>Compressed air (for cooling fins)</li>
+          <li>Replacement thermistor (10k NTC type)</li>
+          <li>Dielectric grease</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Step-by-Step Diagnostic &amp; Repair Procedure</h2>
+
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Read live temperature data &amp; identify faulty sensor</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Connect a hybrid-capable scan tool and access live battery temperature data. With the vehicle cold-soaked (engine off for 4+ hours), all temperature sensors should read within 1&ndash;2&deg;C of each other and close to ambient temperature. A sensor reading <code class="text-electric-400">&minus;40&deg;C</code> or <code class="text-yellow-400">200&deg;C+</code> indicates an open or short circuit. A sensor that reads 5&deg;C+ different from others after a drive indicates a drifting or mis-calibrated thermistor.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Sensor locations (Prius Gen 2/3)</div>
+              <p>Sensor 1 (TH1): Intake air side, near fan inlet. Sensor 2 (TH2): Middle of pack, between modules 14 and 15. Sensor 3 (TH3): Exhaust side, near outlet duct. P0AC4 typically refers to Sensor 1 or the primary intake sensor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Inspect the cooling fan &amp; air intake ducts</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Before diving into sensor testing, verify that the battery cooling system can actually move air. Locate the battery cooling fan intake vent (usually in the rear passenger side trim, near the C-pillar on Prius). Check the intake screen for lint, pet hair, leaves, and debris. Turn the vehicle to READY mode and command the cooling fan on with the scan tool (or by heating up the battery with a long drive). Listen for the fan in the rear cargo area. Check the exhaust vent for airflow.</p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="wind" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">A clogged intake filter is the #1 cause of battery overheating and P0AC4 on Prius. The intake screen can pack full of dust and pet hair over 3&ndash;5 years, reducing airflow by 50%+ and causing the pack to run 15&ndash;25&deg;C hotter than normal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test the thermistor with a multimeter &amp; temperature probe</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Put on Class 0 gloves. Disconnect the 12V battery and remove the HV service plug. Wait 10 minutes. Locate the temperature sensor connector near the Battery ECU or on the pack enclosure. Disconnect the sensor connector and measure the resistance across the two thermistor pins with your multimeter set to ohms. Also measure the actual ambient temperature with a digital thermometer. Compare the resistance reading to the manufacturer's thermistor chart.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Toyota NTC thermistor reference (approximate)</div>
+              <p>At 0&deg;C (32&deg;F): ~29 k&ohm;. At 25&deg;C (77&deg;F): ~10 k&ohm;. At 50&deg;C (122&deg;F): ~3.6 k&ohm;. At 80&deg;C (176&deg;F): ~1.2 k&ohm;. If your reading is infinite (open circuit) or 0 ohms (short circuit), the sensor has failed. If it is off by more than 20% from expected, it has drifted out of calibration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check the sensor wiring &amp; connector condition</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the thermistor resistance checks out good when disconnected but the code returns when connected, the fault is in the wiring harness or the Battery ECU input. Visually inspect the sensor wiring harness from the thermistor all the way to the Battery ECU connector. Look for chafed insulation, pinched wires, or corrosion in the connector pins. Measure the resistance of each wire end-to-end &mdash; both should be less than <code class="text-electric-400">1 ohm</code>. Also check for 5V reference voltage at the ECU side connector with the ignition on.</p>
+            <div class="alert alert-info !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">The Battery ECU provides a 5V reference voltage through a pull-up resistor inside the module. If you measure 5V on one pin and 0V on the other with the sensor disconnected, the ECU side is good and the sensor is the problem. If you don't see 5V, the fault is in the ECU or its power supply.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test the fan control module &amp; fan motor</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the temperature sensor is reporting correctly but the battery still overheats and triggers P0AC4, the cooling fan or its control module may be faulty. Locate the battery cooling fan in the rear cargo area (on top of or next to the battery pack). Disconnect the fan motor connector. Use a fused 12V jumper wire to directly power the fan motor from the 12V auxiliary battery. If the fan spins freely and quietly, the motor is good &mdash; the problem is in the fan control module or the ECU command. If it doesn't spin or makes noise, the fan motor needs replacement.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Fan control module (Gen 2 Prius)</div>
+              <p>On 2004&ndash;2009 Prius, the fan speed is controlled by a dedicated fan control module (transistor / power amplifier) mounted near the fan. This module takes a PWM signal from the Battery ECU and switches high current to the fan motor. The module is a known failure point &mdash; symptoms include fan only working on one speed, or not working at all.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Replace the faulty thermistor &amp; clean cooling system</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Once you have identified the faulty component (thermistor, wiring, fan module, or fan motor), proceed with replacement. For thermistor replacement on Prius, the intake air sensor is usually accessible from the fan duct without full pack disassembly. Gently pull the old sensor out of its rubber grommet, disconnect the connector, and install the new thermistor. While you're in there, vacuum all dust and debris from the intake duct, fan blades, and exhaust vent. Clean the intake screen thoroughly.</p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="thermometer-sun" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">Ensure the replacement thermistor has the correct 25&deg;C resistance rating (typically 10 k&ohm; for Toyota) and the correct Beta value (usually around 3435K). Using the wrong thermistor will cause inaccurate temperature readings and may trigger the same code again.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Reassemble, clear codes, and perform thermal test drive</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Reinstall all trim panels and connectors. Reinstall the HV service plug and reconnect the 12V battery. Start the vehicle in READY mode. Clear all DTCs with the scan tool. Monitor live temperature data while you go for a 20&ndash;30 minute test drive in warm conditions or with the heater on (to raise cabin temperature). Verify that all temperature sensors track together and that the cooling fan activates at the correct temperature (typically around <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">35&ndash;40&deg;C</code> pack temperature).</p>
+            <div class="alert alert-success !mb-0">
+              <i data-lucide="check-circle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm">A successful repair shows all temperature sensors tracking within <code class="text-yellow-400">1&ndash;2&deg;C</code> of each other, the cooling fan cycling on and off normally, pack temperature staying below 50&deg;C under normal driving, and no recurrence of P0AC4 after at least 50 miles of mixed driving.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-red-950/20 to-navy-900 border-red-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#f87171"></i>When to Call a Professional</h2>
+      <p class="text-gray-400 mb-5">P0AC4 has many potential root causes. Seek professional help if any of the following apply:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The battery pack is <strong>actually overheating</strong> (temps above 65&deg;C) and you cannot quickly determine why &mdash; continued driving risks permanent battery damage.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The fault is <strong>inside the Battery ECU</strong> (no 5V reference, sensor input circuit failure) &mdash; ECU replacement may require dealer-level programming.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You smell a <strong>burning or hot plastic odor</strong> from the rear battery area &mdash; this could indicate a more serious thermal event in progress.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield-off" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You do <strong>not</strong> own 1000V-rated insulated gloves, a CAT III multimeter, and a hybrid-capable scan tool with temperature data.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="wind" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Cooling fan replacement requires <strong>removing the full battery pack</strong> on your model (some Lexus and Ford hybrids have fan assemblies mounted deep inside the pack).</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="package" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The vehicle is still under the <strong>hybrid battery warranty</strong> (8 years / 100,000 miles &mdash; do not void it with DIY disassembly).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Hybrid Battery Codes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="p0a80-replace-hybrid-battery.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">P0A80</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Replace Hybrid Battery Pack</h3>
+        <p class="text-sm text-gray-400">Battery SOH below 70% threshold. Chronic overheating from a failed cooling system is a leading cause of accelerated battery degradation.</p>
+      </a>
+      <a href="p0a7b-hybrid-battery-voltage-sensor.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">P0A7B</div>
+          <span class="badge badge-warning">Sensor</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Voltage Sensor Circuit Low</h3>
+        <p class="text-sm text-gray-400">Individual module voltage sensor fault. Similar sensor-circuit diagnosis approach &mdash; but for voltage taps instead of thermistors.</p>
+      </a>
+      <a href="p0a9d-hybrid-inverter-fault.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">P0A9D</div>
+          <span class="badge badge-critical">Inverter</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Inverter System Fault</h3>
+        <p class="text-sm text-gray-400">Inverter / converter system malfunction. Inverter cooling problems can also trigger temperature-related codes and reduce hybrid performance.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Need thermistor specs or cooling fan part numbers?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Open the master specification sheet for your generation. Includes NTC thermistor resistance charts, OEM fan motor part numbers, cooling system airflow specifications, and step-by-step fan module replacement procedures.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../specs/hybrid-cars.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Open Hybrid Battery Spec Sheet</a>
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

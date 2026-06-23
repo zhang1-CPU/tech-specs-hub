@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Bike BMS Communication Error &mdash; Battery Troubleshooting Guide | TechSpecsHub</title>
+  <meta name="description" content="Diagnose e-bike BMS communication errors with UART testing, battery cell voltage checks, balancing procedures, common firmware issues, and BMS replacement guidance.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/ebike-bms-communication-error.html">
+
+  <meta property="og:title" content="E-Bike BMS Communication Error &mdash; Battery Troubleshooting Guide | TechSpecsHub">
+  <meta property="og:description" content="Diagnose e-bike BMS communication errors with UART testing, battery cell voltage checks, balancing procedures, common firmware issues, and BMS replacement guidance.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/ebike-bms-communication-error.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-22T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-22T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="E-Bike BMS Communication Error &mdash; Battery Troubleshooting Guide | TechSpecsHub">
+  <meta name="twitter:description" content="Diagnose e-bike BMS communication errors with UART testing, battery cell voltage checks, balancing procedures, common firmware issues, and BMS replacement guidance.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "E-Bike BMS Communication Error &mdash; Battery Troubleshooting Guide | TechSpecsHub",
+    "description": "Diagnose e-bike BMS communication errors with UART testing, battery cell voltage checks, balancing procedures, common firmware issues, and BMS replacement guidance.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/ebike-bms-communication-error.html",
+    "datePublished": "2026-06-22",
+    "dateModified": "2026-06-22",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">E-Bike BMS Communication Error</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-red-500/20 text-red-400 font-mono font-bold text-sm rounded-md border border-red-500/30">BMS&nbsp;ERR</div>
+        <span class="badge badge-info"><i data-lucide="battery" style="width:0.75rem;height:0.75rem"></i>Battery System</span>
+        <span class="badge badge-warning"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Intermediate</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        E-Bike BMS Communication Error &mdash; <span class="gradient-text">Battery &amp; BMS Diagnostic Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        When your e-bike display shows a battery error, communication fault, or refuses to read state of charge, the problem usually lives in the BMS (Battery Management System) &mdash; not the cells themselves. A BMS communication error means the display or controller cannot talk to the BMS chip inside the battery pack. This guide walks through UART testing, cell voltage measurement, balancing procedures, and firmware troubleshooting for Li-ion and LiFePO4 e-bike packs.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">30&ndash;120 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$120</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Loose Comm Wire</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~35%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What Usually Goes Wrong?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            Every modern e-bike battery pack contains a BMS board that monitors cell voltages, temperatures, and current, and communicates this data to the display and controller over a serial protocol (typically UART at 9600 or 115200 baud). When this communication link breaks, the display shows an error or no battery data at all.
+          </p>
+          <ul class="space-y-2 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; <strong>Communication Wire / Connector:</strong> the TX/RX data wire between the BMS and the display/controller is loose, corroded, or broken &mdash; the single most common cause.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>BMS Firmware Crash / Lockup:</strong> the BMS microcontroller has frozen after an undervoltage event, a short circuit, or a firmware glitch &mdash; often recoverable with a hard reset.</li>
+            <li class="text-white font-semibold">&bull; <strong>Cell Imbalance / Under-Voltage:</strong> one or more cells have dropped below the minimum voltage threshold, causing the BMS to shut down communication as a protective measure.</li>
+            <li class="text-white font-semibold">&bull; <strong>Dead BMS Board:</strong> the BMS itself has failed &mdash; usually from water damage, a failed MOSFET, or a blown fuse on the BMS PCB.</li>
+          </ul>
+          <p class="text-gray-400 text-sm">
+            Work through this guide from simplest to hardest. Many communication errors are resolved with a connector re-seat or BMS reset, long before you need to open the pack.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Quick Symptom Check</h3>
+          <p class="text-sm text-gray-200 mb-3">Answer these before proceeding:</p>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the display show a specific error code (E01, E02, BMS, or battery icon with X)?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the battery still output voltage to the motor, or is everything dead?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did the battery recently get dropped, wet, or fully discharged?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Is the battery case swollen, warm to touch, or making any noise?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the charge port still accept a charge, or does the charger immediately show green?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="zap" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Electrical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Digital multimeter (CAT III 600V)</li>
+          <li>USB-to-TTL adapter (CH340G or CP2102, 3.3V)</li>
+          <li>Alligator clip jumper wires (22-18 AWG)</li>
+          <li>Electrical contact cleaner spray</li>
+          <li>Li-ion balance charger (optional, for deep discharge recovery)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Mechanical</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Phillips-head screwdriver (PH0 &amp; PH1)</li>
+          <li>Torx T8, T10 driver (for battery case)</li>
+          <li>Plastic spudger (non-conductive)</li>
+          <li>Isopropyl alcohol 90%+ and cotton swabs</li>
+          <li>Dielectric grease for waterproof connectors</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="flame" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Class 0 insulated gloves (1000V) for pack disassembly</li>
+          <li>Class ABC fire extinguisher (Li-ion battery rated)</li>
+          <li>Safety glasses</li>
+          <li>Non-conductive work surface (rubber mat)</li>
+          <li>Fire-safe container (ceramic pot or sand bucket)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Verify the battery is actually outputting voltage</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Before chasing a communication fault, confirm the battery itself is producing power. If the main output is also dead, you are looking at a BMS protection shutdown, not just a communication issue.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Set multimeter to DC volts and measure across the main discharge terminals on the battery pack or the charge port.</li>
+              <li class="flex items-start gap-2"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>A 36V (10S) Li-ion pack should read 36V-42V. A 48V (13S) pack should read 48V-54.6V. A 52V (14S) pack should read 52V-58.8V.</li>
+              <li class="flex items-start gap-2"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>If you see 0V or significantly below nominal, the BMS has likely shut down the output due to under-voltage, over-current, or short-circuit protection.</li>
+              <li class="flex items-start gap-2"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>If voltage is present but display shows a comm error, the problem is isolated to the communication path (TX/RX wires, connector, or BMS UART transceiver).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Inspect and re-seat all battery connectors</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The communication signal between BMS and display runs at 3.3V or 5V logic levels &mdash; low enough that even a tiny amount of corrosion or a loose pin can break the connection. Clean and re-seat every connector in the battery-to-display path.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="plug" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Remove the battery from the bike. Inspect the discharge connector and the charging connector for bent pins, corrosion, or debris.</li>
+              <li class="flex items-start gap-2"><i data-lucide="plug" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>On the bike side, follow the battery wiring harness to the controller and display. Disconnect and re-connect every multi-pin connector along the way.</li>
+              <li class="flex items-start gap-2"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Spray contact cleaner into both sides of each connector, let it sit for 30 seconds, and re-connect. Wipe excess cleaner with a cotton swab.</li>
+              <li class="flex items-start gap-2"><i data-lucide="droplets" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Apply a tiny amount of dielectric grease to the pin side of waterproof connectors to prevent future corrosion &mdash; do not use on high-current power pins.</li>
+            </ul>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Common gotcha:</strong> on many e-bikes, the communication wire runs through a separate small pin in the discharge connector. The large power pins might be perfectly clean but a single tiny data pin can be corroded and invisible to the naked eye. Always clean all pins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Perform a BMS hard reset</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">BMS microcontrollers can lock up after fault events just like any other computer. A hard reset clears the fault state and reboots the BMS. The exact procedure varies by brand and pack design, but here are the most common methods.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">BMS Reset Methods</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <div class="font-semibold text-white mb-1">Method 1 &mdash; Charge Port Wake-up:</div>
+                  <p class="text-gray-300">Plug the charger into the battery and the wall for 10-30 seconds, then unplug. Some BMS units wake from sleep only when they see charge voltage on the charge port.</p>
+                </div>
+                <div>
+                  <div class="font-semibold text-white mb-1">Method 2 &mdash; Long Discharge Reset:</div>
+                  <p class="text-gray-300">If the pack has a power button, hold it for 15-30 seconds. On packs with an LED button, hold until all LEDs flash then release.</p>
+                </div>
+                <div>
+                  <div class="font-semibold text-white mb-1">Method 3 &mdash; Full Discharge/Charge Cycle:</div>
+                  <p class="text-gray-300">Connect a small load (12V light bulb) across the discharge terminals for 10 seconds to drain any residual charge, then immediately connect the charger.</p>
+                </div>
+                <div>
+                  <div class="font-semibold text-white mb-1">Method 4 &mdash; Temperature Recovery:</div>
+                  <p class="text-gray-300">If the battery was stored below freezing, bring it to room temperature (20-25&deg;C) for at least 2 hours before attempting to charge or use it.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Open the pack and check individual cell voltages</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the pack outputs 0V or very low voltage and the reset steps did not work, you need to open the battery case and measure individual cell group voltages. A single cell group that has dropped below ~2.5V can cause the entire BMS to shut down.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">How to Measure Cell Groups</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Remove the battery case screws (usually on the bottom or along the seam). Use a plastic spudger to gently pry the case halves apart &mdash; do not use a metal screwdriver near the cells.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Locate the balance connector on the BMS board &mdash; this is the multi-pin connector with one wire per cell group plus ground.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Set your multimeter to DC volts. Place the black probe on the B- (ground) pin of the balance connector. Touch the red probe to each balance pin in sequence.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Record each cell group voltage. For Li-ion NMC, healthy range is 3.0V-4.2V per cell group. For LiFePO4, healthy range is 2.5V-3.65V per cell group.</li>
+              </ul>
+            </div>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>What to look for:</strong> all cell groups should be within 0.05V (50mV) of each other. If one cell group is significantly lower than the rest, that group is weak or has a bad cell. If all groups are below the minimum threshold, the entire pack is deeply discharged and needs a low-current recovery charge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Test UART communication with a USB-to-TTL adapter</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the pack has voltage but there is still a communication error, you can verify the BMS is actually transmitting data using a USB-to-TTL (UART) adapter. This lets you see the raw serial data the BMS is sending and confirm whether the problem is the BMS, the wiring, or the display.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">UART Testing Procedure</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Identify the BMS communication pins: TX (transmit), RX (receive), and GND (ground). These are typically on a separate 3-5 pin connector from the main power wires.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Connect USB-to-TTL GND to BMS GND. Connect USB-to-TTL RX to BMS TX. (Do not connect VCC unless the BMS is unpowered &mdash; usually the BMS runs from the pack.)</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Plug the USB adapter into your computer. Open a serial terminal program (PuTTY, SerialTool, or Arduino Serial Monitor).</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Try common baud rates: 9600, 19200, 38400, 57600, and 115200. Most e-bike BMS units use 9600 or 115200 baud, 8 data bits, no parity, 1 stop bit (8N1).</li>
+              </ul>
+            </div>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Voltage level warning:</strong> most e-bike BMS UART runs at 3.3V logic, but some older units use 5V. Make sure your USB-to-TTL adapter is set to the correct voltage before connecting, or you may damage the BMS transceiver chip. If you are not sure, start with 3.3V.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Cell balancing procedure</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If individual cell group voltages are out of balance (difference > 50mV), the BMS may refuse to communicate or may shut down charging to protect the highest cell. Balancing brings all cell groups to the same voltage level.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Balancing Methods</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Top-balancing via BMS:</strong> charge the pack fully and leave the charger connected for 2-4 hours after it shows full. The BMS balance resistors will slowly bleed down the highest cells. This only works if the BMS is functional and the imbalance is moderate.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Bottom-balancing with load:</strong> discharge the pack through a low-current load (1-2A) until the BMS cuts off. Let it rest 30 minutes, then charge normally. This works when the imbalance is on the low side.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Manual balance charger:</strong> use a hobby LiPo/Li-ion balance charger (like iMax B6 or Junsi iCharger) connected to the balance leads. Charge each cell group individually to the same voltage (e.g., 4.20V for Li-ion NMC).</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Resistor discharge of high cells:</strong> if only one cell group is high, use a 100-ohm 1W resistor to carefully discharge just that group down to match the others. Monitor voltage frequently and do not over-discharge.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">When to replace the BMS or the whole pack</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If you have completed all diagnostic steps and identified a confirmed hardware failure, here is how to decide whether to replace just the BMS, rebuild the pack, or replace the entire battery.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-3"><i data-lucide="alert-octagon" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>Any cell group reads below 2.0V (Li-ion) or 1.5V (LiFePO4) &mdash; that cell group is likely permanently damaged and will not hold a charge.</li>
+              <li class="flex items-start gap-3"><i data-lucide="flame" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>Visible swelling, bulging, or deformation of any cell in the pack &mdash; stop all work and dispose of the battery at a certified Li-ion recycling center.</li>
+              <li class="flex items-start gap-3"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>Any cell group gets hot (above 50&deg;C) during charging or discharging, or the pack has a burnt electrical smell &mdash; internal short circuit is likely.</li>
+              <li class="flex items-start gap-3"><i data-lucide="message-square-warning" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>BMS produces no serial data output on UART even with known-good wiring and correct baud rate &mdash; the BMS microcontroller or transceiver is dead.</li>
+              <li class="flex items-start gap-3"><i data-lucide="trash-2" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>Pack capacity has dropped below 70% of rated capacity and multiple cell groups are weak &mdash; the pack has reached end of life and should be replaced or rebuilt.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">BMS Protocol &amp; Brand Notes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="cpu" style="width:1.2rem;height:1.2rem"></i>BMS Protocol Types</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Different BMS manufacturers use different communication protocols. The most common in e-bikes are: UART serial (most common &mdash; simple TX/RX, proprietary frame format), CAN bus (used on higher-end Bosch/Brose/Yamaha systems), SMBus/I2C (common on laptop-style smart battery packs), and Bluetooth/BLE (used in "smart" app-connected packs).</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="box" style="width:1.2rem;height:1.2rem"></i>Aftermarket BMS Replacement</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">If you need to replace a BMS on a generic pack, make sure to match: number of cells in series (S count), continuous and peak current rating (MOSFET rating), chemistry (Li-ion NMC vs LiFePO4 &mdash; critical, because the voltage thresholds are different), and communication protocol (UART, CAN, etc.). Popular BMS brands: Daly, BMSBattery, Bestech, JBD (Jiabaida), and ANT.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-red-400 flex items-center gap-2"><i data-lucide="zap" style="width:1.2rem;height:1.2rem"></i>Common BMS Firmware Issues</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Many BMS communication problems are firmware-related. Common issues: BMS stops sending data after a fault event (needs power cycle), incorrect baud rate or protocol mismatch after a firmware update, state-of-charge (SOC) calculation drift causing erratic readings, and temperature sensor misreading causing false overtemperature faults.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="battery-charging" style="width:1.2rem;height:1.2rem"></i>BMS Pinout Reference (Generic)</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Most e-bike BMS boards follow a similar pinout pattern: B- (battery negative / pack ground), B+ (battery positive), P- (discharge negative output), C- (charge negative), B1, B2, B3... (cell group sense / balance pins &mdash; count = S count), TX (UART transmit), RX (UART receive), and T (thermistor / temperature sensor input).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-950/20 to-navy-900 border-yellow-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>When to Call a Professional</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Swollen, bulging, or damaged cells &mdash; do not attempt to open the pack. Place in a fire-safe container and take to a battery recycling center.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Branded battery packs (Bosch PowerPack, Specialized SL, etc.) under warranty &mdash; opening the case voids the warranty. Contact your dealer.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">If you have never worked with lithium batteries before and are not confident reading voltages or identifying cell chemistries.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">If you need to spot-weld or replace individual cells &mdash; this requires specialized tools and experience to do safely.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The battery got hot enough to melt plastic or produce smoke &mdash; there is internal damage. Do not charge it. Dispose of safely.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">If the pack is still under the original manufacturer warranty &mdash; DIY disassembly voids coverage on virtually all brands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="ebike-motor-not-working.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">HALL</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E-Bike Motor Not Working</h3>
+        <p class="text-sm text-gray-400">Hall sensor testing, phase wire checks, throttle vs PAS diagnosis, and brushless motor fault finding.</p>
+      </a>
+      <a href="power-station-wont-turn-on.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">NO POWER</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Won't Turn On</h3>
+        <p class="text-sm text-gray-400">Many of the same BMS and battery diagnostic principles apply to portable power stations.</p>
+      </a>
+      <a href="../specs/ebike-micromobility.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">SPECS</div>
+          <span class="badge badge-info">Reference</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">E-Bike &amp; Micromobility Specs</h3>
+        <p class="text-sm text-gray-400">Compare battery capacity, motor power, and range specifications across popular e-bike systems.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for a specific error code?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Open the full error code database &mdash; every fault code from every major e-bike and battery system we have documented, along with symptom, cause, and DIY fix.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/ebike-micromobility.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="bike" style="width:1rem;height:1rem"></i>E-Bike Specs Comparison</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

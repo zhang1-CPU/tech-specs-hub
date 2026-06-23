@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Speaker Not Responding &mdash; Voice Assistant Troubleshooting Guide | TechSpecsHub</title>
+  <meta name="description" content="Fix smart speakers that won't respond to wake words. Microphone array calibration, Alexa/Google Home/Siri specific fixes, internet diagnosis, factory reset, and Bluetooth pairing issues.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/smart-speaker-not-responding.html">
+
+  <meta property="og:title" content="Smart Speaker Not Responding &mdash; Voice Assistant Troubleshooting Guide | TechSpecsHub">
+  <meta property="og:description" content="Fix smart speakers that won't respond to wake words. Microphone array calibration, Alexa/Google Home/Siri specific fixes, internet diagnosis, factory reset, and Bluetooth pairing issues.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/smart-speaker-not-responding.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-22T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-22T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Smart Speaker Not Responding &mdash; Voice Assistant Troubleshooting Guide | TechSpecsHub">
+  <meta name="twitter:description" content="Fix smart speakers that won't respond to wake words. Microphone array calibration, Alexa/Google Home/Siri specific fixes, internet diagnosis, factory reset, and Bluetooth pairing issues.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Smart Speaker Not Responding &mdash; Voice Assistant Troubleshooting Guide | TechSpecsHub",
+    "description": "Fix smart speakers that won't respond to wake words. Microphone array calibration, Alexa/Google Home/Siri specific fixes, internet diagnosis, factory reset, and Bluetooth pairing issues.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/smart-speaker-not-responding.html",
+    "datePublished": "2026-06-22",
+    "dateModified": "2026-06-22",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Smart Speaker Not Responding</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-red-500/20 text-red-400 font-mono font-bold text-sm rounded-md border border-red-500/30">VOICE&nbsp;ERR</div>
+        <span class="badge badge-info"><i data-lucide="speaker" style="width:0.75rem;height:0.75rem"></i>All Smart Speakers</span>
+        <span class="badge badge-warning"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Beginner Friendly</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Smart Speaker Not Responding &mdash; <span class="gradient-text">Voice Assistant Diagnostic Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        When your Amazon Echo, Google Nest, Apple HomePod, or other smart speaker stops responding to wake words, the problem is usually not a broken speaker. Most unresponsiveness traces back to a stuck microphone array, misconfigured wake word sensitivity, a Wi-Fi or internet connectivity issue, or a software glitch. This guide walks through systematic diagnosis for all major voice assistant platforms, including microphone testing, internet connectivity checks, Bluetooth pairing problems, and factory reset procedures.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">10&ndash;45 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$20</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Wi-Fi / Internet</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~75%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>What Usually Goes Wrong?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            Smart speakers are essentially always-listening microphones connected to a cloud-based voice service. The wake word detection happens on-device, but the actual understanding and response comes from the cloud. When a speaker stops responding, the break can be anywhere along this chain: microphone, local processing, Wi-Fi, internet, or the voice service itself.
+          </p>
+          <ul class="space-y-2 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; <strong>Wi-Fi / Internet Connectivity:</strong> the speaker has lost its Wi-Fi connection or cannot reach the voice assistant's cloud servers &mdash; the single most common cause.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Microphone Muted or Obstructed:</strong> someone pressed the microphone mute button, or the mic ports are clogged with dust, pet hair, or food debris.</li>
+            <li class="text-white font-semibold">&bull; <strong>Wake Word Sensitivity / False Rejection:</strong> the wake word detection sensitivity is set too low, or background noise is causing the on-device detector to miss the wake word.</li>
+            <li class="text-white font-semibold">&bull; <strong>Software / Firmware Glitch:</strong> the speaker's operating system has locked up, often after a botched firmware update or after running continuously for months without a reboot.</li>
+          </ul>
+          <p class="text-gray-400 text-sm">
+            Work through this guide from quickest checks to more involved fixes. Start at step 1 and stop when your speaker starts responding again.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Quick Symptom Check</h3>
+          <p class="text-sm text-gray-200 mb-3">Answer these before proceeding:</p>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does the status light ring/bar show anything when you say the wake word?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Can you play music or audio to the speaker from your phone via Bluetooth or the app?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Do other Wi-Fi devices in the same room work fine?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did you recently change your Wi-Fi password, replace your router, or move the speaker?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Is the microphone mute button lit up or showing a red indicator?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="wifi" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Network</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Smartphone with the speaker's app installed</li>
+          <li>Your Wi-Fi network name and password</li>
+          <li>Access to your router admin panel (optional)</li>
+          <li>Another device on the same Wi-Fi network (for comparison)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">General</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Soft, clean cloth (microfiber preferred)</li>
+          <li>Cotton swabs (for cleaning mic ports)</li>
+          <li>Compressed air (optional, for dust removal)</li>
+          <li>Paperclip or SIM tool (for reset buttons on some models)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="mic" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Testing</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Quiet room (to rule out background noise)</li>
+          <li>Another smart speaker (for comparison, if available)</li>
+          <li>Bluetooth-enabled phone or tablet</li>
+          <li>Patience &mdash; voice recognition can be finicky</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check the microphone mute button and status lights</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">This sounds obvious, but it is the #1 reason smart speakers "stop responding" &mdash; someone accidentally hit the microphone mute button. Every smart speaker has a physical mic mute button, and when it is engaged, the speaker will not listen for the wake word at all.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="mic-off" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>Look for a red light, red ring, or red microphone icon on the speaker. On Echo devices, a solid red ring means the mic is muted. On Google Nest, the microphone mute toggle shows a red light. On HomePod, the top display shows a microphone-with-slash icon.</li>
+              <li class="flex items-start gap-2"><i data-lucide="mic" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Press the microphone button once to toggle it back on. Wait 5 seconds, then try the wake word again.</li>
+              <li class="flex items-start gap-2"><i data-lucide="volume-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Also check the volume level &mdash; if the speaker is set to 0% volume, you will not hear a response even if it is working. Press the volume up button a few times, then try a command like "what time is it?"</li>
+              <li class="flex items-start gap-2"><i data-lucide="activity" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Check the status light behavior. On Echo: spinning cyan means booting up, solid blue with cyan flash means it heard the wake word, pulsing yellow means a message/notification, spinning orange means Wi-Fi setup mode, red means mic off. On Google Home: spinning white means thinking, pulsing white means listening, orange means setup mode.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Reboot the speaker and check Wi-Fi connectivity</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">A simple reboot fixes more than 50% of smart speaker issues. Smart speakers run a full operating system (usually a Linux variant) and can develop memory leaks, stuck processes, or network glitches after running for weeks or months without a restart.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="power" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Unplug the speaker from the power outlet. Wait 30 full seconds (this is important &mdash; capacitors need time to discharge). Plug it back in.</li>
+              <li class="flex items-start gap-2"><i data-lucide="power" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Wait 2-3 minutes for it to fully boot up and reconnect to Wi-Fi. The status light will usually indicate when it is ready.</li>
+              <li class="flex items-start gap-2"><i data-lucide="wifi" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Open the speaker's companion app on your phone and check if the speaker shows as "online" or "connected." If it shows as offline, the problem is network connectivity &mdash; proceed to step 3.</li>
+              <li class="flex items-start gap-2"><i data-lucide="smartphone" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Try sending a test command from the app (e.g., "play music" or "announce something"). If the app can control the speaker but voice commands do not work, the microphone or wake word detection is the issue &mdash; skip to step 4.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Diagnose Wi-Fi and internet connection issues</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the speaker shows as offline, or if it responds "I'm having trouble understanding right now" or "there was a problem," the issue is likely your Wi-Fi connection or internet access. Smart speakers require a stable internet connection to process voice commands.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">Network Diagnosis Steps</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Check if other devices on the same Wi-Fi network can access the internet. Open a website or an app that requires internet on your phone while connected to Wi-Fi.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Reboot your router and modem. Unplug both, wait 60 seconds, plug in the modem first (wait 2 minutes for sync), then plug in the router (wait another 2 minutes).</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Move the speaker closer to the router &mdash; temporarily place it within 10 feet to test. If it works when close, you have a signal strength or interference problem.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Verify the speaker is on the 2.4GHz band (most smart speakers prefer 2.4GHz for better range). If your router uses the same SSID for both bands, see our smart home offline guide for band separation tips.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Check if your router has MAC address filtering, AP isolation, or a guest network active. Smart speakers need to be on the main network with full access.</li>
+              </ul>
+            </div>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>"I'm having trouble" vs no response:</strong> if the speaker lights up when you say the wake word but then gives an error message, the microphone is working and the problem is upstream (Wi-Fi, internet, or the voice service). If the speaker does not light up at all when you say the wake word, the problem is local (microphone, wake word detection, or mute).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Clean the microphone ports and check for obstructions</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Smart speakers have an array of 2-8 microphones, usually located on the top or around the edge. These tiny mic ports can get clogged with dust, pet hair, food crumbs, or kitchen grease, drastically reducing sensitivity. If the speaker used to work fine and gradually got worse, dirty mics are a likely culprit.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="wind" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Use a soft, dry microfiber cloth to gently wipe the top surface and microphone ports. Do not press hard &mdash; you can push debris further in.</li>
+              <li class="flex items-start gap-2"><i data-lucide="wind" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Use short bursts of compressed air (held 6-12 inches away) to blow dust out of the mic ports. Hold the can upright to avoid spraying liquid propellant.</li>
+              <li class="flex items-start gap-2"><i data-lucide="wind" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>For stubborn debris, use a dry, clean cotton swab to gently clean around each mic port. Do not insert the swab into the port &mdash; you can damage the microphone element.</li>
+              <li class="flex items-start gap-2"><i data-lucide="wind" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Remove any case, skin, or cover from the speaker. Some third-party covers block the microphone ports or muffle the sound, causing wake word detection to fail.</li>
+              <li class="flex items-start gap-2"><i data-lucide="wind" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Check that nothing is sitting on top of the speaker (books, papers, remotes) and that the speaker is not inside a cabinet or enclosed space that would muffle your voice.</li>
+            </ul>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Never use liquid cleaners:</strong> do not spray water, cleaning products, or alcohol directly on the speaker. Liquid can seep into the mic ports and damage the electronics. If you need to clean sticky residue, dampen a cloth slightly and wring it out completely before wiping.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Adjust wake word sensitivity and voice training</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">All major voice assistants let you adjust wake word sensitivity and train the system to recognize your specific voice. If the speaker sometimes responds and sometimes does not, or if it misses you from across the room, these settings can make a big difference.</p>
+            <div class="overflow-x-auto">
+              <table class="specs-table w-full text-sm">
+                <thead>
+                  <tr><th>Platform</th><th>Wake Word Sensitivity</th><th>Voice Training / ID</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Amazon Alexa</strong></td><td>Alexa app &rarr; Devices &rarr; Echo & Alexa &rarr; your device &rarr; Settings (gear icon) &rarr; Wake Word Sensitivity. Options: Low, Medium, High. Higher = more sensitive but more false triggers.</td><td>Alexa app &rarr; More &rarr; Settings &rarr; Your Profile &rarr; Add your voice. Follow the voice training prompts.</td></tr>
+                  <tr><td><strong>Google Assistant</strong></td><td>Google Home app &rarr; Settings &rarr; Google Assistant &rarr; Hey Google sensitivity. Slider from "most sensitive" to "least sensitive." Also: "Voice match" settings.</td><td>Google Home app &rarr; Settings &rarr; Google Assistant &rarr; Voice Match &rarr; Teach your Assistant your voice again.</td></tr>
+                  <tr><td><strong>Apple Siri / HomePod</strong></td><td>Home app &rarr; HomePod settings &rarr; Listen for "Hey Siri." Toggle off and on. No explicit sensitivity slider, but voice training is implicit.</td><td>On iPhone: Settings &rarr; Siri & Search &rarr; "Hey Siri" &rarr; toggle off and on, then re-train. Voice data syncs to HomePod via iCloud.</td></tr>
+                  <tr><td><strong>Samsung Bixby</strong></td><td>Bixby app &rarr; Settings &rarr; Voice wake-up &rarr; Sensitivity. Slider adjustment available.</td><td>Bixby app &rarr; Settings &rarr; Voice wake-up &rarr; Improve wake-up accuracy. Record the wake word in different environments.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Background noise test:</strong> if the speaker works fine in a quiet room but misses wake words when the TV is on, music is playing, or people are talking, the issue is signal-to-noise ratio. Increase the wake word sensitivity, move the speaker further from noise sources, or train the voice model in the actual environment where you use it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Fix Bluetooth pairing and audio issues</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If the speaker works fine for voice commands but has trouble with Bluetooth audio (pairing fails, audio stutters, music cuts out), the Bluetooth radio or connection is the problem. Bluetooth operates on the 2.4GHz band and can interfere with Wi-Fi.</p>
+            <ul class="space-y-2 text-sm text-gray-200">
+              <li class="flex items-start gap-2"><i data-lucide="bluetooth" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Turn Bluetooth off and on again on both the speaker and your phone/device. On most smart speakers, you can say "pair Bluetooth" or press the Bluetooth button.</li>
+              <li class="flex items-start gap-2"><i data-lucide="bluetooth" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Forget the speaker from your phone's Bluetooth settings, then re-pair from scratch. Sometimes the pairing profile gets corrupted.</li>
+              <li class="flex items-start gap-2"><i data-lucide="bluetooth" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Move the Bluetooth source (phone, tablet, laptop) closer to the speaker. Bluetooth range is typically 30 feet line-of-sight, but walls and other obstacles reduce this significantly.</li>
+              <li class="flex items-start gap-2"><i data-lucide="bluetooth" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Reduce 2.4GHz Wi-Fi interference. If your router is set to a crowded 2.4GHz channel or is very close to the speaker, Wi-Fi and Bluetooth can interfere. Try changing your router's 2.4GHz channel to 1, 6, or 11.</li>
+              <li class="flex items-start gap-2"><i data-lucide="bluetooth" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Check if the speaker is connected to a different Bluetooth device. Most smart speakers can only connect to one Bluetooth device at a time. Say "disconnect Bluetooth" or use the app to disconnect.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Factory reset (last resort)</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If you have tried everything and the speaker still will not respond to voice commands, a factory reset is the last resort. This will erase all settings, Wi-Fi credentials, and personal data from the speaker, restoring it to out-of-box condition. You will need to set it up from scratch.</p>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
+              <div class="font-mono text-xs text-gray-500 mb-3 uppercase tracking-wide">Factory Reset by Brand</div>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-start gap-2"><i data-lucide="circle-dot" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Amazon Echo (all generations):</strong> Press and hold the Action button (the circle/dot button, or microphone mute + volume down on some models) for 25 seconds until the light ring turns orange, then turns off and on again. Wait for it to enter setup mode.</li>
+                <li class="flex items-start gap-2"><i data-lucide="circle-dot" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Google Nest / Home:</strong> Press and hold the factory reset button on the back/bottom of the device (you may need a paperclip) for about 15 seconds. You will hear a chime confirming the reset is starting. Continue holding until you hear the reset sound.</li>
+                <li class="flex items-start gap-2"><i data-lucide="circle-dot" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Apple HomePod / HomePod mini:</strong> Unplug HomePod, wait 10 seconds, then plug it back in. Wait 10 seconds more, then touch and hold the top of HomePod with your finger. The spinning white light will turn red, and Siri will say it is about to reset. Keep holding until you hear three beeps.</li>
+                <li class="flex items-start gap-2"><i data-lucide="circle-dot" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Samsung Galaxy Home / SmartThings Speaker:</strong> Press and hold the Volume Up + Volume Down + Play/Pause buttons simultaneously for about 10 seconds until the status indicator changes. Alternatively, use the SmartThings app: Device settings &rarr; More options &rarr; Factory reset.</li>
+              </ul>
+            </div>
+            <div class="alert alert-critical mt-4 !mb-0">
+              <i data-lucide="alert-octagon" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Before resetting:</strong> make sure you know the Wi-Fi password, have access to the account linked to the speaker, and remember any custom settings ( alarms, routines, music services). You will lose everything stored locally on the device and will need to re-setup from scratch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Platform-Specific Deep Dive</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-cyan-400 flex items-center gap-2"><i data-lucide="mic" style="width:1.2rem;height:1.2rem"></i>Amazon Alexa / Echo</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Echo devices use a 7-microphone array with beamforming and noise cancellation. Common Alexa-specific issues: "Alexa is having trouble understanding" usually means a DNS or internet routing issue (try changing DNS to 8.8.8.8). "Sorry, something went wrong" is often a cloud-side issue &mdash; check the Alexa Service Status page. Echo Show/Spot display issues are usually resolved by checking the camera/mic privacy slider.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-red-400 flex items-center gap-2"><i data-lucide="home" style="width:1.2rem;height:1.2rem"></i>Google Nest / Home</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Google Nest speakers use 3-6 microphones depending on the model. Common Google-specific issues: "Something went wrong, try again in a few seconds" can be a Google service outage (check the Google Workspace Status Dashboard) or a local network issue. Nest devices sometimes have issues with mesh Wi-Fi systems &mdash; try disabling IPv6 on your network if you have intermittent response problems.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-gray-300 flex items-center gap-2"><i data-lucide="apple" style="width:1.2rem;height:1.2rem"></i>Apple HomePod / Siri</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">HomePod and HomePod mini use a 6-microphone array with acoustic echo cancellation. Common Apple-specific issues: make sure your iPhone/iPad and HomePod are on the same Wi-Fi network and signed into the same Apple ID with two-factor authentication. HomePod relies heavily on iCloud for Siri processing &mdash; if iCloud is having issues, Siri on HomePod may fail. HomePod mini Thread radio can sometimes interfere with Wi-Fi on crowded channels.</p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-blue-400 flex items-center gap-2"><i data-lucide="smartphone" style="width:1.2rem;height:1.2rem"></i>Samsung / Bixby / SmartThings</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">Samsung smart speakers and Bixby have improved significantly but still have more false rejections than Alexa or Google. If you have both Bixby and Alexa on a Samsung speaker, make sure only one wake word is active &mdash; having both can cause conflicts. SmartThings integration issues are usually due to the SmartThings hub being offline, not the speaker itself.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-950/20 to-navy-900 border-yellow-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>When to Call for Support</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You have tried every step in this guide including a factory reset, and the speaker still will not respond to voice commands &mdash; it may have a hardware defect.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="volume-x" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The speaker produces no sound at all (no chime, no music, no voice response) even after a factory reset &mdash; the speaker driver or amplifier may be dead.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The status light shows an error pattern you cannot identify, or it is stuck on a single color and never boots up &mdash; possible boot loop or hardware failure.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The speaker got wet, was dropped, or has visible physical damage &mdash; internal components may be damaged and need professional repair or replacement.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">The speaker is under warranty and you have confirmed it is a hardware fault &mdash; contact the manufacturer for RMA/warranty replacement.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You have security or privacy concerns about voice recordings, data, or account access &mdash; contact the platform's support team directly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="smart-home-device-offline.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">OFFLINE</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Smart Home Device Offline</h3>
+        <p class="text-sm text-gray-400">2.4GHz vs 5GHz Wi-Fi, router compatibility, DHCP issues, mesh network interference, and IoT network troubleshooting.</p>
+      </a>
+      <a href="../specs/smart-home.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">SPECS</div>
+          <span class="badge badge-info">Reference</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Smart Home Device Specs</h3>
+        <p class="text-sm text-gray-400">Compare smart speakers, displays, hubs, cameras, and sensors across all major smart home ecosystems.</p>
+      </a>
+      <a href="dji-gimbal-error-codes.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">GIMBAL</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Gimbal Error Codes</h3>
+        <p class="text-sm text-gray-400">Drone and gimbal troubleshooting for camera stabilization and flight controller errors.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Looking for a specific error code?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Open the full error code database &mdash; every fault code from every major smart speaker, smart home, and consumer electronics device we have documented, along with symptom, cause, and DIY fix.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/smart-home.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="home" style="width:1rem;height:1rem"></i>Smart Home Specs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

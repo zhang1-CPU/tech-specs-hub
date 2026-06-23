@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJI Vision Positioning System Error — Downward Sensor Calibration & Obstacle Avoidance Fixes | TechSpecsHub</title>
+  <meta name="description" content="Fix DJI Vision Positioning System errors, downward sensor issues, and obstacle avoidance problems. Learn sensor calibration, firmware fixes, environmental factors, and proper cleaning procedure.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/dji-vision-positioning-error.html">
+
+  <meta property="og:title" content="DJI Vision Positioning System Error — Downward Sensor Calibration & Obstacle Avoidance Fixes | TechSpecsHub">
+  <meta property="og:description" content="Fix DJI Vision Positioning System errors, downward sensor issues, and obstacle avoidance problems. Learn sensor calibration, firmware fixes, environmental factors, and proper cleaning procedure.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/dji-vision-positioning-error.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DJI Vision Positioning System Error — Downward Sensor Calibration & Obstacle Avoidance Fixes | TechSpecsHub">
+  <meta name="twitter:description" content="Fix DJI Vision Positioning System errors, downward sensor issues, and obstacle avoidance problems. Learn sensor calibration, firmware fixes, environmental factors, and proper cleaning procedure.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "DJI Vision Positioning System Error — Downward Sensor Calibration & Obstacle Avoidance Fixes | TechSpecsHub",
+    "description": "Fix DJI Vision Positioning System errors, downward sensor issues, and obstacle avoidance problems. Learn sensor calibration, firmware fixes, environmental factors, and proper cleaning procedure.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/dji-vision-positioning-error.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">DJI Vision Positioning Error</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-cyan-500/20 text-cyan-400 font-mono font-bold text-sm rounded-md border border-cyan-500/30">VISION</div>
+        <span class="badge badge-warning"><i data-lucide="plane" style="width:0.75rem;height:0.75rem"></i>Mavic / Air / Mini</span>
+        <span class="badge badge-info"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Beginner Friendly</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        DJI Vision Positioning Error &mdash; <span class="gradient-text">Downward Sensor, Obstacle Avoidance &amp; Calibration</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        "Vision Positioning System Unavailable" and "Forward Vision Sensor Error" warnings appear when the drone's camera-based navigation system can't see clearly or has calibration drift. The vision system uses downward-facing cameras and sometimes forward/backward/side cameras for precise hovering, terrain tracking, and obstacle avoidance. Most vision system errors are not hardware failures — they're caused by dirty lenses, low light conditions, or flying over featureless surfaces.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">10&ndash;40 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$90</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Dirty Lens / Low Light</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~85%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>How the Vision Positioning System Works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            DJI's Vision Positioning System (VPS) uses one or more downward-facing cameras paired with ultrasonic sensors to measure height above ground and detect ground texture patterns. By continuously analyzing these patterns, the drone can maintain a precise hover position even without GPS. Higher-end models add forward, backward, left, right, and upward vision sensors for omnidirectional obstacle avoidance.
+          </p>
+          <p>
+            The system works by comparing consecutive images to detect optical flow — the apparent motion of ground features. If the drone sees the ground moving left, it moves right to compensate. This works extremely well over textured surfaces in good light, but fails completely over featureless surfaces like smooth water or in total darkness.
+          </p>
+          <ul class="space-y-1 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; Downward vision + ultrasonic: basic position hold and terrain follow (all models).</span></li>
+            <li class="text-white font-semibold">&bull; Forward vision: obstacle avoidance and ActiveTrack (Mavic Air, Mavic 2/3, Mini 3/4 Pro).</li>
+            <li class="text-white font-semibold">&bull; Backward + side vision: omnidirectional obstacle avoidance (Mavic 3, Air 3, Mini 4 Pro).</li>
+            <li class="text-white font-semibold">&bull; Upward vision: ceiling detection for indoor flight (some models).</li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Before You Troubleshoot &mdash; Quick Checks</h3>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Are all vision sensor lenses clean?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Are you flying over a textured surface (grass, concrete, carpet)?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Good lighting conditions (not dark, not direct sun glare)?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Drone firmware fully updated?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Restarted drone and app?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>No physical damage to sensor windows?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="eye" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Cleaning Supplies</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Lens cleaning solution (for camera lenses)</li>
+          <li>Microfiber lens cleaning cloth (lint-free)</li>
+          <li>Lens cleaning tissue paper</li>
+          <li>Compressed air (canned air, with straw)</li>
+          <li>Isopropyl alcohol (90%+)</li>
+          <li>Cotton swabs (lint-free)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Tools</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Phillips PH00 screwdriver</li>
+          <li>Plastic spudger (non-conductive)</li>
+          <li>Tweezers (anti-static)</li>
+          <li>Work mat (ESD-safe, if available)</li>
+          <li>Small parts organizer (for screws)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="smartphone" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Software &amp; Setup</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>DJI Fly app (latest version)</li>
+          <li>DJI Assistant 2 (Consumer Drone version)</li>
+          <li>USB-C or Micro-USB cable</li>
+          <li>Well-lit room with textured floor</li>
+          <li>Calibration target (printed checkerboard, if needed)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Common Vision System Errors &mdash; Step-by-Step Fixes</h2>
+
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">A</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Vision Positioning Unavailable &mdash; Environmental Factors</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">"Vision Positioning System Unavailable" is the most common vision-related warning. In the majority of cases, there's nothing wrong with the drone — you're simply flying in conditions where the vision system can't work properly. The vision system needs sufficient light and visual texture to operate.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Environmental Factors That Break Vision Positioning</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Low light / darkness:</strong> The downward vision camera needs at least ~10 lux of ambient light (equivalent to a dimly lit room). Below that, the system cannot detect texture and shuts off automatically. This is normal — not a malfunction.</li>
+              <li><strong>Featureless / reflective surfaces:</strong> Flying over smooth water, polished floors, white walls, or snow gives the vision system nothing to track. Without visible texture, optical flow calculation fails. The drone may drift or descend unexpectedly.</li>
+              <li><strong>Direct sunlight / glare:</strong> Strong direct sunlight entering the vision sensor can overexpose the image, washing out all detail. This commonly happens when the drone is low and facing the sun.</li>
+              <li><strong>High altitude:</strong> Vision positioning works best below 20-30 feet (6-10 meters). At higher altitudes, ground features become too small to track accurately, and GPS takes over as the primary positioning method.</li>
+              <li><strong>Fast movement:</strong> Very fast lateral movement (especially in Sport mode) can cause motion blur in the vision camera, temporarily disabling vision positioning until you slow down.</li>
+            </ol>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Indoor flight tip:</strong> For indoor flying, ensure the floor has a visible pattern (tiles, carpet, or even a printed mat). Use overhead lights for even illumination. Avoid flying over polished concrete or shiny floors — the vision system will struggle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">B</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Cleaning the Vision Sensors &mdash; Proper Procedure</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Dirty vision sensor lenses are the #1 cause of persistent vision system errors that aren't environmental. A thin layer of dust, water spots, or fingerprint oil on the downward-facing camera window is enough to degrade image quality and prevent the vision system from working. Regular cleaning is essential, especially if you fly in dusty or sandy environments.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Correct Sensor Cleaning Steps</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>Power off the drone and remove the battery. Wait 1 minute before cleaning.</li>
+              <li>Use <strong>compressed air</strong> to blow loose dust from all sensor windows. Hold the can upright and 4-6 inches away. Use short bursts. This prevents scratching from dust particles during wiping.</li>
+              <li>Fold a <strong>microfiber lens cloth</strong> into a small pad. Gently wipe each sensor window in a circular motion, working from the center outward. Use only light pressure.</li>
+              <li>If there are stubborn spots (water marks, fingerprint oil), dampen the corner of the microfiber cloth with <strong>lens cleaning solution</strong> or isopropyl alcohol. Do NOT spray liquid directly onto the sensor — always apply to the cloth first.</li>
+              <li>Use the dry part of the cloth to buff away any streaks.</li>
+              <li>Inspect each sensor at an angle under light. Any remaining spots? Repeat the process.</li>
+              <li>For hard-to-reach sensor windows (like side-facing sensors), use a <strong>lint-free cotton swab</strong> dampened with isopropyl alcohol, followed by a dry swab.</li>
+            </ol>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Never use:</strong> Paper towels, facial tissue, your shirt, or household glass cleaners. Paper products scratch lens coatings. Household cleaners may contain ammonia that damages anti-reflective coatings on the sensor windows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">C</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Downward Sensor Calibration &mdash; Vision System Calibration</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If cleaning doesn't fix the problem and you've ruled out environmental factors, the vision system calibration may have drifted. This can happen after a crash, a hard landing, or if the drone body flexes over time. The vision system needs to know precisely where the cameras are relative to the drone's body to do accurate optical flow calculations.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Vision System Calibration via DJI Assistant 2</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>Download and install the latest DJI Assistant 2 (Consumer Drones version) from DJI's website.</li>
+              <li>Connect the drone to your computer with the USB cable. Power on the drone.</li>
+              <li>Open DJI Assistant 2 and select your drone model.</li>
+              <li>In the left menu, click "Calibration" and then select "Vision Sensor Calibration."</li>
+              <li>Follow the on-screen setup instructions. You will need:</li>
+              <ul class="ml-6 list-disc text-sm text-gray-300 space-y-1">
+                <li>A well-lit room with a textured floor</li>
+                <li>Space to move the drone around during calibration</li>
+                <li>The drone placed on a flat surface at the starting position</li>
+              </ul>
+              <li>Click "Start Calibration." The software will guide you through a series of movements: tilting the drone, moving it forward/backward/sideways, and rotating it.</li>
+              <li>Move slowly and steadily. Keep the drone at the indicated height above the floor.</li>
+              <li>When calibration completes, you'll see a "Calibration Successful" message. Restart the drone.</li>
+              <li>Test the vision system by hovering indoors at low altitude (3-5 feet) and verifying stable position hold.</li>
+            </ol>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200 mt-3">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Calibration Requirements</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div>Textured floor surface: <span class="text-electric-400">Required</span></div>
+                <div>Good lighting: <span class="text-electric-400">Required</span></div>
+                <div>Propellers must be off: <span class="text-electric-400">Yes (safety)</span></div>
+                <div>Expected duration: <span class="text-electric-400">5&ndash;10 min</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">D</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Obstacle Avoidance Not Working &mdash; Forward / Side Sensors</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">If your drone has obstacle avoidance but it's not detecting obstacles or gives "Forward Vision Sensor Error" warnings, the issue could be dirty lenses, calibration drift, firmware bugs, or simply environmental conditions. Obstacle avoidance relies on stereo vision (two cameras to calculate depth), so both lenses must be clean and properly calibrated.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Obstacle Avoidance Troubleshooting Steps</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Verify obstacle avoidance is enabled:</strong> In DJI Fly, go to Settings &rarr; Safety &rarr; Obstacle Avoidance and ensure it's set to "ON" (not "OFF" or "Warning Only"). Some modes (like Sport mode) disable obstacle avoidance by design.</li>
+              <li><strong>Clean the forward/side/upward sensor windows:</strong> Use the same cleaning procedure as the downward sensors (see Section B). Obstacle avoidance sensors are particularly sensitive to smudges because they rely on stereo matching.</li>
+              <li><strong>Check environmental conditions:</strong> Obstacle avoidance struggles with: transparent objects (glass), low-contrast objects (white wall in bright light), fast-moving objects, and very small objects. This is normal behavior.</li>
+              <li><strong>Update firmware:</strong> DJI frequently improves obstacle avoidance algorithms via firmware updates. Make sure both the drone and remote are on the latest firmware.</li>
+              <li><strong>Re-calibrate vision sensors:</strong> Follow the vision system calibration procedure in DJI Assistant 2 (Section C above). Obstacle avoidance uses the same calibration data.</li>
+              <li><strong>Check for misalignment:</strong> If the drone has been in a crash, inspect the sensor modules. A misaligned sensor (even by 1mm) will break stereo vision and prevent obstacle detection.</li>
+            </ol>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>APAS (Advanced Pilot Assistance Systems):</strong> If your drone has APAS (Mavic 2/3, Air 2/3, Mini 3/4 Pro), it actively routes around obstacles. If APAS isn't working despite being enabled, it's almost always due to sensor calibration or lens issues. APAS requires all obstacle sensors to be functioning correctly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-orange-500/20 border border-orange-500/40 flex items-center justify-center font-mono font-bold text-orange-400">E</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Firmware Update Fixes &mdash; Vision System Bugs</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Vision system errors sometimes appear after a firmware update, or are fixed by a firmware update. The vision system runs complex computer vision algorithms that are constantly being refined by DJI. If you're experiencing persistent vision errors that aren't explained by dirt or environment, firmware may be the culprit.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Firmware Troubleshooting Procedure</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Check for updates:</strong> In the DJI Fly app, go to Profile &rarr; Settings &rarr; About, or connect to DJI Assistant 2 to check for available firmware updates.</li>
+              <li><strong>Update to latest version:</strong> If an update is available, install it. Make sure both the drone and remote controller batteries are above 50% before starting.</li>
+              <li><strong>Refresh current firmware:</strong> If you're already on the latest version but started having issues after updating, try "refreshing" the firmware in DJI Assistant 2. This re-installs the same version and can fix corrupted files from a bad flash.</li>
+              <li><strong>Downgrade (if possible):</strong> If the vision error appeared immediately after a new firmware release, check DJI forums to see if other users are reporting similar issues. If a known bug exists, and DJI still allows downgrading, you may want to go back to the previous stable version temporarily.</li>
+              <li><strong>Re-calibrate after firmware update:</strong> Always re-run the vision sensor calibration after any firmware update. New firmware may use different calibration parameters.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">F</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Vision Sensor Hardware Failure &mdash; When to Replace</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">True vision sensor hardware failure is relatively rare, but it can happen after a crash, water exposure, or from a manufacturing defect. If you've cleaned the sensors, calibrated, updated firmware, and tested in good conditions over textured surfaces with no improvement, the sensor module itself may be faulty.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Signs of Hardware Failure</h4>
+            <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside mb-3">
+              <li>Vision system error persists in good lighting over a clearly textured surface.</li>
+              <li>Sensor shows a completely black or white image in the DJI Assistant 2 sensor view.</li>
+              <li>Visible physical damage: cracked sensor window, bent module, or water damage inside.</li>
+              <li>Calibration fails consistently at the same step.</li>
+              <li>One sensor in a stereo pair shows dramatically different brightness or focus.</li>
+            </ul>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Replacement Considerations</h4>
+            <p class="text-sm text-gray-300 mb-2">Vision sensor replacement varies by model. On some drones (Mini series, Air series), the downward vision sensors are on a small PCB that's replaceable. On higher-end models (Mavic 3), the vision system modules are more integrated. Forward/side obstacle avoidance sensors are often sold as complete module assemblies.</p>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Note:</strong> After replacing any vision sensor, a full vision system calibration in DJI Assistant 2 is mandatory. The new sensor position will be slightly different from the original, and the drone must learn the new geometry.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-3 text-electric-400 flex items-center gap-2"><i data-lucide="clipboard-check" style="width:1.25rem;height:1.25rem"></i>"Before You Send It In" Checklist</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>All vision sensor windows cleaned with proper lens cloth?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Tested in good lighting conditions over a textured surface?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Obstacle avoidance verified as enabled in settings?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Firmware updated to latest stable version?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Vision sensor calibration performed via DJI Assistant 2?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Not flying over water, snow, or other featureless surfaces?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Drone restarted and app re-connected?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Physical inspection shows no cracked sensor windows?</li>
+        </ul>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-3 text-electric-400 flex items-center gap-2"><i data-lucide="package" style="width:1.25rem;height:1.25rem"></i>Replacement Parts &amp; Costs</h3>
+        <div class="overflow-x-auto">
+          <table class="specs-table w-full text-sm">
+            <thead>
+              <tr><th>Part</th><th>Model Fit</th><th>Approx. Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Downward vision sensor module</td><td>Mini 2/3/4, Air 2/3</td><td>$20&ndash;$50</td></tr>
+              <tr><td>Forward vision sensor module</td><td>Mavic 3, Air 3, Mini 4 Pro</td><td>$40&ndash;$80</td></tr>
+              <tr><td>Side vision sensor (pair)</td><td>Mavic 2/3, Air 3</td><td>$50&ndash;$100</td></tr>
+              <tr><td>Upward vision sensor</td><td>Mavic 3 Pro, Air 3</td><td>$30&ndash;$60</td></tr>
+              <tr><td>Vision system flex cable</td><td>Model-specific</td><td>$10&ndash;$25</td></tr>
+              <tr><td>DJI Service Center vision repair</td><td>All models</td><td>$100&ndash;$250</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-red-950/20 to-navy-900 border-red-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#f87171"></i>When to Call a Professional / Send to DJI Service</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Vision sensor calibration fails repeatedly even in ideal conditions — sensor may be dead or misaligned.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Drone has been in a crash that damaged the sensor housing or body — proper alignment requires factory jigs.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Visible water damage or corrosion inside the sensor modules — water often damages multiple components.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Drone is under DJI Care or warranty — opening the drone voids your coverage.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Obstacle avoidance has failed and resulted in a crash — get professional diagnosis before flying again.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You can't identify which sensor is faulty or can't find replacement parts for your model.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="dji-gimbal-error-codes.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">GIMBAL</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Gimbal Error Codes</h3>
+        <p class="text-sm text-gray-400">The main camera and gimbal share some processing with the vision system. If both are acting up, there may be a common cause.</p>
+      </a>
+      <a href="dji-compass-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">COMPASS</div>
+          <span class="badge badge-info">All series</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Compass Calibration Error</h3>
+        <p class="text-sm text-gray-400">Vision positioning and compass/GPS work together for navigation. If vision fails but GPS works, you still have position hold.</p>
+      </a>
+      <a href="dji-imu-calibration-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">IMU</div>
+          <span class="badge badge-warning">All series</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI IMU Calibration Error</h3>
+        <p class="text-sm text-gray-400">The IMU and vision system both contribute to attitude estimation. Drift or instability can come from either system.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Need the full error code database?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Every documented fault code for every DJI, EcoFlow, Jackery, Bluetti, and Toyota model we've tested. Browse, search, and print.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/drones.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Open Drone Specs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

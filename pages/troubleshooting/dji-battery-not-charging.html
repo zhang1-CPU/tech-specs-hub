@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJI Drone Battery Not Charging — Deep Discharge Recovery & Battery Health | TechSpecsHub</title>
+  <meta name="description" content="Fix DJI drone battery not charging issues. Learn deep discharge recovery, battery firmware updates, contact cleaning, cell balancing, health checks in DJI app, and when to retire a battery.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/troubleshooting/dji-battery-not-charging.html">
+
+  <meta property="og:title" content="DJI Drone Battery Not Charging — Deep Discharge Recovery & Battery Health | TechSpecsHub">
+  <meta property="og:description" content="Fix DJI drone battery not charging issues. Learn deep discharge recovery, battery firmware updates, contact cleaning, cell balancing, health checks in DJI app, and when to retire a battery.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/troubleshooting/dji-battery-not-charging.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-23T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-23T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DJI Drone Battery Not Charging — Deep Discharge Recovery & Battery Health | TechSpecsHub">
+  <meta name="twitter:description" content="Fix DJI drone battery not charging issues. Learn deep discharge recovery, battery firmware updates, contact cleaning, cell balancing, health checks in DJI app, and when to retire a battery.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "DJI Drone Battery Not Charging — Deep Discharge Recovery & Battery Health | TechSpecsHub",
+    "description": "Fix DJI drone battery not charging issues. Learn deep discharge recovery, battery firmware updates, contact cleaning, cell balancing, health checks in DJI app, and when to retire a battery.",
+    "url": "https://powerspecshub.com/pages/troubleshooting/dji-battery-not-charging.html",
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "mainEntity": {
+      "@type": "WebSite",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../error-code-db.html">Error Code Database</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Drone Battery Not Charging</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-green-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-green-500/20 text-green-400 font-mono font-bold text-sm rounded-md border border-green-500/30">BATTERY</div>
+        <span class="badge badge-warning"><i data-lucide="plane" style="width:0.75rem;height:0.75rem"></i>Mavic / Air / Mini</span>
+        <span class="badge badge-info"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Beginner Friendly</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        DJI Battery Not Charging &mdash; <span class="gradient-text">Deep Discharge Recovery, Health &amp; Balancing</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        "Battery Not Charging" and "Battery Error" are among the most frustrating DJI drone problems, especially when you have a flight planned. DJI intelligent flight batteries have built-in protection circuits that can put the battery into sleep mode or hibernation to prevent damage from deep discharge. Most charging issues are not dead batteries — they're batteries in protection mode that need a wake-up procedure, dirty contacts, or a firmware mismatch.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">15&ndash;60 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$25</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Likely Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Deep Discharge / Dirt</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~65%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="help-circle" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>How DJI Intelligent Batteries Work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
+          <p>
+            DJI intelligent flight batteries are more than just LiPo cells — each battery contains a built-in Battery Management System (BMS) with a microcontroller, charge/discharge protection circuits, cell balancing, temperature sensors, and even a small display (on some models). The BMS communicates with the drone and the charger to ensure safe operation and maximize battery lifespan.
+          </p>
+          <p>
+            When a battery is deeply discharged (voltage drops below a safe threshold), the BMS puts it into "sleep mode" or "hibernation" to prevent further discharge that could permanently damage the cells. The battery will refuse to charge normally until it's woken up. Similarly, if the BMS detects an imbalance between cells, an over-temperature condition, or a communication error, it will show a battery error and may prevent charging or flight.
+          </p>
+          <ul class="space-y-1 pl-1 text-gray-300">
+            <li><span class="text-white font-semibold">&bull; Deep discharge protection is the #1 cause of "not charging" &mdash; battery is asleep, not dead.</span></li>
+            <li class="text-white font-semibold">&bull; Dirty or corroded charge contacts prevent communication between charger and BMS.</li>
+            <li class="text-white font-semibold">&bull; Battery firmware must match drone firmware &mdash; mismatches cause errors.</li>
+            <li class="text-white font-semibold">&bull; LiPo cells degrade over time &mdash; expect reduced capacity after 200-300 charge cycles.</li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Before You Troubleshoot &mdash; Quick Checks</h3>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Charger is plugged into a working outlet?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Battery at room temperature (not hot or freezing)?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Battery contacts clean and free of corrosion?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Using the official DJI charger (not third-party)?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Battery not physically damaged (swollen, cracked)?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Tried a different battery in the same charger?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="brush" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Cleaning Supplies</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Isopropyl alcohol (90%+ concentration)</li>
+          <li>Cotton swabs (lint-free)</li>
+          <li>Microfiber cloth</li>
+          <li>Toothbrush (soft-bristle, old/clean)</li>
+          <li>White vinegar (for corrosion, optional)</li>
+          <li>Baking soda (for corrosion neutralization)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="wrench" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Tools</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Multimeter (for voltage testing)</li>
+          <li>Phillips PH00 screwdriver</li>
+          <li>Plastic spudger</li>
+          <li>Work mat (heat-resistant)</li>
+          <li>Kapton tape (for insulation)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-5">
+        <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="battery-charging" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Charging Equipment</h3></div>
+        <ul class="space-y-1.5 text-sm text-gray-300">
+          <li>Official DJI battery charger</li>
+          <li>Official DJI charging hub (if available)</li>
+          <li>USB-C cable / QC 3.0 adapter (for Mini series)</li>
+          <li>LiPo balance charger (advanced users only)</li>
+          <li>LiPo safe bag (for safety during recovery)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Battery Charging Problems &mdash; Step-by-Step Fixes</h2>
+
+    <div class="space-y-4">
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">A</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Battery Won't Charge At All &mdash; Deep Discharge Recovery</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The most common scenario: the battery was stored for too long and self-discharged below the safe minimum voltage. The BMS puts the battery into sleep mode to protect the cells from further discharge. In this state, the battery shows no lights when you press the power button, and the charger does nothing when you plug it in. The good news: about 70% of these batteries can be recovered.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Step-by-Step Recovery Procedure</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Confirm it's deeply discharged:</strong> Press the battery power button. If no LEDs light up at all, it's either completely dead or in deep discharge sleep. If you have a multimeter, measure the voltage across the main charge contacts — anything below 3V per cell (e.g., below 9V for a 3S battery, below 12V for a 4S battery) confirms deep discharge.</li>
+              <li><strong>Bring to room temperature:</strong> If the battery was in a cold environment, let it warm up to room temperature (20&ndash;25&deg;C / 68&ndash;77&deg;F) for at least 2 hours. Never attempt to charge a freezing-cold LiPo battery.</li>
+              <li><strong>Trickle charge method (DJI charger):</strong> Plug the battery into the official DJI charger and leave it. Some DJI chargers will slowly "pre-charge" a deeply discharged battery at very low current to bring it up to the minimum voltage. This can take 30&ndash;60 minutes before you see any sign of life. Leave it plugged in for at least 2 hours before giving up.</li>
+              <li><strong>Alternate method — brief charge pulses:</strong> If the charger doesn't start automatically, try rapidly inserting and removing the battery from the charger 5-10 times. This can sometimes "wake up" the BMS by giving it small power pulses.</li>
+              <li><strong>Drone power method:</strong> Insert the battery into the drone and power on the drone (press battery button once, then hold for 2 seconds). If the drone powers on even briefly, leave it on for 30 seconds, then plug in the charger while the battery is still "awake."</li>
+              <li><strong>USB-C method (Mini series):</strong> For batteries with USB-C charging (Mini 2/3/4), try charging via the USB-C port on the battery itself instead of the charging hub. The USB-C circuit may wake the battery when the main charge circuit won't.</li>
+              <li><strong>If recovery works:</strong> Once the battery starts charging normally, let it charge to 100%, then discharge it to about 30-40% in the drone, then fully charge again. This helps re-calibrate the battery's capacity gauge.</li>
+            </ol>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Safety warning:</strong> Always perform deep discharge recovery with the battery in a LiPo safe bag or on a non-flammable surface. A damaged LiPo battery can swell, leak, or catch fire. If the battery gets hot, swells, or smells strange during recovery, disconnect immediately and dispose of properly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">B</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Cleaning Battery & Charger Contacts</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Dirty or corroded battery contacts are a surprisingly common cause of charging issues. The battery communicates with the charger through the contact pins — if there's dirt, oxidation, or corrosion on those pins, communication fails and the charger won't start the charge cycle. This is especially common if you fly near salt water, in dusty environments, or if the battery has been stored in high humidity.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Proper Contact Cleaning Procedure</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Safety first:</strong> Make sure the battery is not currently charging. Remove it from the charger and drone. Work in a well-ventilated area.</li>
+              <li><strong>Inspect the contacts:</strong> Look at both the battery contacts and the charger contacts. Normal contacts should be shiny gold or silver. If they look dull, dark, or have visible green/white corrosion, they need cleaning.</li>
+              <li><strong>Dry clean first:</strong> Use a clean, dry toothbrush (soft bristles) to gently scrub the contact pins. This removes loose dust and dirt. Blow away debris with compressed air if available.</li>
+              <li><strong>Isopropyl alcohol cleaning:</strong> Dampen a cotton swab with isopropyl alcohol (90% or higher). Squeeze out excess — you want damp, not dripping. Gently scrub each contact pin. Use a fresh swab as needed.</li>
+              <li><strong>For light corrosion:</strong> A pencil eraser (the soft pink kind) can gently rub off light oxidation on flat contact pads. Use a small piece of eraser on the tip of a screwdriver to reach recessed pins. Brush away eraser dust afterward.</li>
+              <li><strong>For heavy corrosion:</strong> If there's visible green or white corrosion, dab the contact with a cotton swab dipped in white vinegar, then immediately neutralize with a baking soda paste (baking soda + water), then clean with isopropyl alcohol. This is a last resort — heavy corrosion often means the battery has been damaged.</li>
+              <li><strong>Dry completely:</strong> Let the contacts air dry for at least 10 minutes before attempting to charge. Never charge a damp battery.</li>
+              <li><strong>Clean both sides:</strong> Don't forget to clean the contacts in the charger AND in the drone's battery compartment.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">C</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Battery Firmware Update &mdash; Fixes Communication Errors</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">"Battery Error" or "Battery Communication Error" messages that appear in the DJI app are sometimes caused by outdated battery firmware. The battery has its own firmware that must be compatible with the drone's firmware. When you update the drone's firmware, the battery firmware should update automatically — but sometimes it doesn't, resulting in communication errors.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Battery Firmware Update Procedure</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Install the battery in the drone:</strong> Insert the problematic battery into the drone. Make sure the drone is powered off.</li>
+              <li><strong>Connect to DJI Assistant 2:</strong> Plug the drone into your computer via USB cable. Power on the drone. Open DJI Assistant 2 (Consumer Drones version).</li>
+              <li><strong>Check for updates:</strong> Select your drone model, then go to "Firmware Update." The software will check for both drone firmware and battery firmware updates.</li>
+              <li><strong>Update if available:</strong> If a battery firmware update is listed, click "Update." The update will be transferred to the battery through the drone.</li>
+              <li><strong>Wait for completion:</strong> Battery firmware updates usually take 2-5 minutes. The battery may restart during the process. Do NOT disconnect or power off during the update.</li>
+              <li><strong>App-based update (alternate):</strong> You can also update battery firmware through the DJI Fly app. Connect to the drone with the battery installed, go to Settings &rarr; About, and look for battery firmware update options.</li>
+              <li><strong>Multiple batteries:</strong> If you have multiple batteries, install each one and check for updates. It's common for different batteries to have different firmware versions.</li>
+              <li><strong>After update:</strong> Do a full charge/discharge cycle on the battery to re-calibrate the smart battery's capacity tracking.</li>
+            </ol>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Note:</strong> If a battery has been deeply discharged and recovered, its firmware may have been corrupted or reset. Always check for and install battery firmware updates after a deep discharge recovery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">D</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Cell Balancing &mdash; Fixing "Battery Cell Imbalance" Errors</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">DJI intelligent batteries use multiple LiPo cells wired in series (3S = 3 cells, 4S = 4 cells). For proper performance, all cells must have roughly the same voltage. If one cell is significantly higher or lower than the others, the BMS will flag a "Cell Imbalance" error and may prevent flight or charging. Minor imbalances are normal and can be fixed with a balance charge.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Checking &amp; Fixing Cell Imbalance</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Check cell voltages:</strong> In the DJI Fly app, go to Settings &rarr; Battery &rarr; Advanced &rarr; Battery Details. You'll see the voltage of each individual cell. They should all be within about 0.05V of each other. A difference of more than 0.1V is problematic.</li>
+              <li><strong>Basic balancing (DJI charger):</strong> Simply leaving the battery on the charger after it reaches 100% can help. DJI chargers perform balance charging — they continue to top up lower cells even after the battery shows full. Leave the battery on charge for at least 1-2 hours after the "full" indicator comes on.</li>
+              <li><strong>Storage mode balancing:</strong> If your charger has a Storage mode (or if you can discharge the battery to ~60%), charge-discharge cycles can help balance cells. Charge fully, then discharge to storage voltage (about 3.8V per cell, or ~60%), then charge again. Repeat 2-3 times.</li>
+              <li><strong>Full discharge/recharge cycle:</strong> Fly the drone until the battery reaches 10-15% (don't go below 10% — that causes more damage). Then do a full uninterrupted charge to 100%, and leave it on the charger for an additional 2 hours. This often resolves minor imbalances.</li>
+              <li><strong>Advanced: Balance charger (experts only):</strong> If you have a dedicated LiPo balance charger and are comfortable opening the battery case, you can directly balance the cells. This voids your warranty and can be dangerous if done wrong. Only attempt if you know what you're doing.</li>
+              <li><strong>Persistent imbalance:</strong> If the same cell is always low and won't balance no matter what you do, that cell is failing. The battery should be retired — continuing to use a battery with a failing cell is dangerous.</li>
+            </ol>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200 mt-3">
+              <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Cell Voltage Reference</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div>Normal cell voltage (full): <span class="text-electric-400">~4.20V</span></div>
+                <div>Storage voltage (60%): <span class="text-electric-400">~3.80V</span></div>
+                <div>Minimum safe voltage: <span class="text-electric-400">~3.30V</span></div>
+                <div>Acceptable cell spread: <span class="text-electric-400">&lt; 0.05V</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-orange-500/20 border border-orange-500/40 flex items-center justify-center font-mono font-bold text-orange-400">E</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Battery Health Check in DJI App &mdash; Assessing Condition</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The DJI Fly and DJI Go 4 apps include a battery health feature that shows the overall condition of your intelligent battery. This is your best tool for deciding whether a battery is still safe to use or should be retired. The app reports charge cycles, overall health percentage, and sometimes individual cell status.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">How to Check Battery Health</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Install the battery:</strong> Insert the battery you want to check into the drone and power on.</li>
+              <li><strong>Connect to the app:</strong> Open DJI Fly (or DJI Go 4) and connect to the drone.</li>
+              <li><strong>Navigate to battery info:</strong> In DJI Fly: Tap the battery icon on the top right &rarr; Battery Settings &rarr; Advanced &rarr; Battery Details.</li>
+              <li><strong>Understand the metrics:</strong></li>
+              <ul class="ml-6 list-disc text-sm text-gray-300 space-y-1">
+                <li><strong>Charge Cycles:</strong> Number of full charge/discharge cycles. DJI rates most batteries for ~200 cycles before reaching 80% capacity.</li>
+                <li><strong>Battery Health / Capacity:</strong> The current maximum capacity as a percentage of the original rated capacity. 95%+ is excellent, 85-95% is good, below 80% means the battery is significantly degraded.</li>
+                <li><strong>Cell Voltages:</strong> Individual cell voltages should be closely matched (within 0.05V).</li>
+                <li><strong>Temperature:</strong> Should be within normal operating range (15-40&deg;C when idle).</li>
+              </ul>
+              <li><strong>Sniff test (literal):</strong> If the battery smells sweet or chemically, that's electrolyte vapor — the battery is failing. Do not charge or use it.</li>
+              <li><strong>Physical inspection:</strong> Check for swelling (the battery will feel "puffy" or not sit flat), cracks, punctures, or corrosion around the contacts.</li>
+            </ol>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Pro tip:</strong> For the most accurate battery health reading, do a full charge, then fly the battery down to about 20%, then recharge fully. The BMS learns the true capacity by tracking full cycles. Batteries that sit at 100% for long periods can have inaccurate health readings.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">F</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">When to Retire a Battery &mdash; End-of-Life Signs</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">LiPo batteries don't last forever. DJI intelligent batteries are designed for approximately 200 charge cycles before they drop below 80% of their original capacity. Beyond that point, performance drops and safety risks increase. Knowing when to retire a battery is critical for flight safety — a battery failure mid-flight causes an immediate crash.</p>
+
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Retire the Battery If Any of These Are True</h4>
+            <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside mb-3">
+              <li><strong>Capacity below 80%:</strong> If the app shows battery health below 80%, the battery has lost a significant amount of capacity. Flight times will be noticeably shorter, and the voltage can drop unexpectedly under load.</li>
+              <li><strong>Persistent cell imbalance:</strong> If one cell is consistently more than 0.1V lower than the others and won't balance, that cell is failing. It can suddenly drop voltage during flight, causing a crash.</li>
+              <li><strong>Swelling / puffiness:</strong> Any visible swelling means the battery is producing gas from internal chemical breakdown. This is a major safety hazard. Stop using immediately. Do not puncture.</li>
+              <li><strong>Over 300 charge cycles:</strong> Even if the app shows decent health, a battery with 300+ cycles is approaching end of life. Internal resistance increases, and performance under load degrades.</li>
+              <li><strong>Sudden voltage drops:</strong> If the battery percentage drops rapidly (e.g., from 50% to 20% in 30 seconds), internal resistance is too high. The battery can't deliver current reliably.</li>
+              <li><strong>Physical damage:</strong> Cracks, punctures, dents, or corrosion are all reasons to retire a battery. Physical damage can cause internal short circuits.</li>
+              <li><strong>Strange smells or heat:</strong> If the battery smells sweet, chemical, or burnt, or if it gets unusually hot during charging or flight, it's failing. Discontinue use immediately.</li>
+              <li><strong>Charging fails repeatedly:</strong> If the battery refuses to take a charge even after trying all recovery methods, it's dead. Do not attempt to force-charge it.</li>
+            </ul>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Safe Disposal</h4>
+            <p class="text-sm text-gray-300">LiPo batteries must be disposed of properly. Do NOT throw them in the trash. Take them to a battery recycling center, a household hazardous waste facility, or an electronics store that accepts LiPo batteries. Before disposal, fully discharge the battery to 0V (using a LiPo discharger or by placing in salt water for 1-2 weeks) to prevent fire risk in transport.</p>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Critical safety note:</strong> Never fly with a suspect battery to "get one more flight out of it." The cost of a new battery ($60-$200) is nothing compared to the cost of replacing a crashed drone ($500-$5000+). When in doubt, retire the battery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-3 text-electric-400 flex items-center gap-2"><i data-lucide="clipboard-check" style="width:1.25rem;height:1.25rem"></i>"Before You Buy a New Battery" Checklist</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Tried deep discharge recovery (left on charge 2+ hours)?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Cleaned battery and charger contacts with isopropyl alcohol?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Tried a different charger / charging cable?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Tried a different battery in the same charger (ruled out charger failure)?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Checked and updated battery firmware via drone / DJI Assistant 2?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Battery at room temperature (not too cold or too hot)?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Performed multiple charge/discharge cycles for balancing?</li>
+          <li class="flex items-start gap-2"><i data-lucide="check-circle-2" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Confirmed battery is not swollen, cracked, or otherwise damaged?</li>
+        </ul>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-3 text-electric-400 flex items-center gap-2"><i data-lucide="package" style="width:1.25rem;height:1.25rem"></i>Replacement Battery Costs</h3>
+        <div class="overflow-x-auto">
+          <table class="specs-table w-full text-sm">
+            <thead>
+              <tr><th>Battery Model</th><th>Drone Compatibility</th><th>Approx. Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Intelligent Flight Battery (Mini 4 Pro)</td><td>Mini 4 Pro, Mini 3 Pro</td><td>$69&ndash;$85</td></tr>
+              <tr><td>Intelligent Flight Battery (Air 3)</td><td>Air 3</td><td>$119&ndash;$139</td></tr>
+              <tr><td>Intelligent Flight Battery (Mavic 3)</td><td>Mavic 3, Mavic 3 Classic</td><td>$179&ndash;$219</td></tr>
+              <tr><td>Intelligent Flight Battery (Mini 2)</td><td>Mini 2, Mini 2 SE</td><td>$49&ndash;$65</td></tr>
+              <tr><td>Charging Hub (various)</td><td>Model-specific</td><td>$39&ndash;$79</td></tr>
+              <tr><td>65W / 100W Charger</td><td>USB-C models</td><td>$29&ndash;$59</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-red-950/20 to-navy-900 border-red-500/20">
+      <h2 class="font-bold text-2xl mb-3 flex items-center gap-2"><i data-lucide="phone" style="width:1.25rem;height:1.25rem;color:#f87171"></i>When to Call a Professional / DJI Support</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Battery is swollen, leaking, or smells strange — these are safety hazards, don't attempt further troubleshooting.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Battery is under warranty and showing less than expected capacity — DJI may replace it under the battery warranty.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Drone itself won't recognize any battery — the issue may be in the drone's power board, not the battery.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Battery was purchased within the last 6 months and already shows significant degradation — may be a defective unit.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">Charger seems dead — you've tested multiple batteries and none charge in it. Charger may be faulty (check warranty).</p>
+        </div>
+        <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
+          <p class="text-sm text-gray-200">You're not comfortable working with LiPo batteries — safety should always come first. Get professional help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Troubleshooting Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="p0a80-replace-hybrid-battery.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">P0A80</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Hybrid Battery Module Replace</h3>
+        <p class="text-sm text-gray-400">Same cell-balancing and capacity-degradation principles apply — we use the same Li-ion diagnostic methodology across devices.</p>
+      </a>
+      <a href="power-station-wont-turn-on.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">NO&nbsp;POWER</div>
+          <span class="badge badge-info">All brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Won't Turn On</h3>
+        <p class="text-sm text-gray-400">Same BMS deep-discharge recovery approach — large LiFePO4 stations have the same sleep-mode behavior as drone batteries.</p>
+      </a>
+      <a href="p0a7f-hybrid-battery-deterioration.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">P0A7F</div>
+          <span class="badge badge-warning">Warning</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Battery Imbalance Guide</h3>
+        <p class="text-sm text-gray-400">Same cell-imbalance diagnostic pattern — identify the weak cell, attempt reconditioning, then replace if needed.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">Need the full error code database?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Every documented fault code for every DJI, EcoFlow, Jackery, Bluetti, and Toyota model we've tested. Browse, search, and print.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="database" style="width:1rem;height:1rem"></i>Browse All Error Codes</a>
+        <a href="../specs/drones.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Open Drone Specs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>
