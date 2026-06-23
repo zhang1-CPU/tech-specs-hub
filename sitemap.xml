@@ -15,15 +15,15 @@
   <!-- Power Station Specs -->
   <url>
     <loc>https://powerspecshub.com/pages/specs/outdoor-power.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/ecoflow-delta-pro-3.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/bluetti-ac200max.html</loc>
@@ -59,25 +59,31 @@
   <!-- Hybrid & EV Battery Specs -->
   <url>
     <loc>https://powerspecshub.com/pages/specs/hybrid-cars.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
   <!-- Drones -->
   <url>
     <loc>https://powerspecshub.com/pages/specs/drones.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/dji-mini-5-pro.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
   </url>
 
   <!-- Smart Home -->
   <url>
     <loc>https://powerspecshub.com/pages/specs/smart-home.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
 
   <!-- Navigation & Marine -->
