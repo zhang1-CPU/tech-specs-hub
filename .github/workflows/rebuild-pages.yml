@@ -1,0 +1,19 @@
+name: Rebuild GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Pages rebuild
+        uses: actions/checkout@v4
+      - name: Force Pages rebuild
+        run: |
+          echo "Files updated: $(git log --oneline -1)"
+          echo "Pushing empty commit to trigger Pages..."
+          git commit --allow-empty -m "Trigger GitHub Pages rebuild"
+          git push
