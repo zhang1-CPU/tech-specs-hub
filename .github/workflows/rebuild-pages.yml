@@ -1,4 +1,4 @@
-name: Rebuild GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,29 +6,31 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Verify files
-        run: |
-          echo "Latest commit: $(git log --oneline -1)"
-          echo "Files in repository:"
-          ls -la pages/troubleshooting/ | head -10
+          persist-credentials: false
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
