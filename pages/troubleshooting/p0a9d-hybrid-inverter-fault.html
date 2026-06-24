@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "P0A9D Repair Guide — Hybrid Inverter System Fault | TechSpecsHub",
     "description": "Step-by-step P0A9D diagnostic and repair for hybrid inverter faults. High-voltage safety, inverter cooling, capacitor discharge, replace vs rebuild, Gen 2 vs Gen 3 Prius differences.",
     "url": "https://powerspecshub.com/pages/troubleshooting/p0a9d-hybrid-inverter-fault.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "HV Safety First", "text": "Always discharge the HV capacitor and verify zero volts before opening the inverter. Wear appropriate PPE."},
+      {"@type": "HowToStep", "name": "IGBT Inspection", "text": "Check the insulated gate bipolar transistors for signs of burnout, cracks, or thermal damage."},
+      {"@type": "HowToStep", "name": "Capacitor Check", "text": "Inspect the DC link capacitor for swelling, leakage, or capacitance loss."},
+      {"@type": "HowToStep", "name": "Cooling System Inspection", "text": "Check inverter coolant level, flow, and pump operation. Overheating can trigger inverter faults."},
+      {"@type": "HowToStep", "name": "Current Sensor Testing", "text": "Test the current sensors that monitor inverter output for proper resistance values."},
+      {"@type": "HowToStep", "name": "Control Board Evaluation", "text": "If all components check out, the control board inside the inverter may need replacement."}
+    ]
   }
   </script>
 

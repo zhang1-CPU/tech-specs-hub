@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "DJI Drone Battery Not Charging — Deep Discharge Recovery & Battery Health | TechSpecsHub",
     "description": "Fix DJI drone battery not charging issues. Learn deep discharge recovery, battery firmware updates, contact cleaning, cell balancing, health checks in DJI app, and when to retire a battery.",
     "url": "https://powerspecshub.com/pages/troubleshooting/dji-battery-not-charging.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Deep Discharge Recovery", "text": "Connect the battery to the official charger and leave it for an extended period. DJI batteries can enter a deep discharge state after long storage."},
+      {"@type": "HowToStep", "name": "Clean Battery and Charger Contacts", "text": "Use a soft, dry cloth or isopropyl alcohol to clean the metal contacts on both the battery and charger."},
+      {"@type": "HowToStep", "name": "Battery Firmware Update", "text": "Check the DJI Fly app or DJI Assistant 2 for available firmware updates for your battery model and install them."},
+      {"@type": "HowToStep", "name": "Cell Balancing", "text": "Allow the battery to complete full charge/discharge cycles to help balance cell voltages naturally."},
+      {"@type": "HowToStep", "name": "Battery Health Check", "text": "Check the battery health percentage in the DJI Fly app. Batteries below 60-70% capacity may need replacement."},
+      {"@type": "HowToStep", "name": "When to Retire the Battery", "text": "If the battery swelling, won't hold charge above 50%, or shows hardware damage, discontinue use and dispose properly."}
+    ]
   }
   </script>
 

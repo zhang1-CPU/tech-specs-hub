@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,31 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "P0A7B Repair Guide — Battery Voltage Sensor Circuit Low | TechSpecsHub",
     "description": "Step-by-step P0A7B diagnostic and sensor replacement for Toyota Prius. Voltage sensor location, multimeter testing, wiring diagrams, replacement cost, and common Prius failure points.",
     "url": "https://powerspecshub.com/pages/troubleshooting/p0a7b-hybrid-battery-voltage-sensor.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Confirm the Code and Read Live Data", "text": "Use an OBD2 scanner to confirm P0A7B and check live voltage readings from the hybrid battery sensor module."},
+      {"@type": "HowToStep", "name": "Identify Weak or Failing Modules", "text": "Compare cell voltages across the battery pack. A voltage sensor reading low usually indicates a specific weak module."},
+      {"@type": "HowToStep", "name": "Battery Pack Removal", "text": "Follow proper HV safety procedures. Disconnect the 12V battery first, then the hybrid battery service plug."},
+      {"@type": "HowToStep", "name": "Module Replacement", "text": "Replace the identified weak module with a used or refurbished unit. Ensure the replacement matches your pack's specifications."}
+    ]
   }
   </script>
 

@@ -18,5 +18,3 @@ User-agent: anthropic-ai
 Disallow: /
 
 Sitemap: https://powerspecshub.com/sitemap.xml
-
-Crawl-delay: 1

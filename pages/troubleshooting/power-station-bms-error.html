@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,31 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "Power Station BMS Error (E5/E6) — Cell Imbalance & Balancing Guide | TechSpecsHub",
     "description": "Diagnose BMS communication errors (E5/E6) on portable power stations. Cell imbalance diagnosis, how to read cell voltages, balancing procedure, when to replace cells vs rebalance, and high-voltage safety.",
     "url": "https://powerspecshub.com/pages/troubleshooting/power-station-bms-error.html",
     "datePublished": "2026-06-22",
     "dateModified": "2026-06-22",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "BMS Reset Procedure", "text": "Try a factory reset via the device menu or by holding the power button for 10-15 seconds."},
+      {"@type": "HowToStep", "name": "Cell Voltage Measurement", "text": "Open the BMS access panel and measure individual cell voltages to identify the imbalanced cells."},
+      {"@type": "HowToStep", "name": "Balancing Procedure", "text": "Use a balanced charger or perform controlled charge/discharge cycles to equalize cell voltages."},
+      {"@type": "HowToStep", "name": "Firmware Update", "text": "Check manufacturer for BMS firmware updates that may resolve communication or balancing issues."}
+    ]
   }
   </script>
 

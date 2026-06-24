@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,32 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "E-Bike Motor Not Working &mdash; Hall Sensor Error Diagnostic Guide | TechSpecsHub",
+    "@type": ["Article", "HowTo"],
+    "headline": "E-Bike Motor Not Working — Hall Sensor Error Diagnostic Guide | TechSpecsHub",
     "description": "Step-by-step diagnosis for hub motor failures, hall sensor testing with multimeter, controller phase wire checks, throttle vs PAS comparison, and brushless motor fault finding.",
     "url": "https://powerspecshub.com/pages/troubleshooting/ebike-motor-not-working.html",
     "datePublished": "2026-06-22",
     "dateModified": "2026-06-22",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Start with Simplest Checks", "text": "Confirm the battery is charged and locked in place. Verify the display shows power and any error codes."},
+      {"@type": "HowToStep", "name": "Hall Sensor Diagnosis", "text": "Use a multimeter to test hall sensor continuity. On most brushless motors, the three hall wires should show consistent resistance."},
+      {"@type": "HowToStep", "name": "Phase Wire and Connector Inspection", "text": "Check the motor phase wires for damage, melted insulation, or loose connectors at the controller."},
+      {"@type": "HowToStep", "name": "Throttle and PAS Fault Check", "text": "Test the throttle by manually checking its 1-4V output signal. Verify PAS sensor is triggering as you pedal."},
+      {"@type": "HowToStep", "name": "Controller Diagnosis", "text": "If motor and sensors check out, the controller may be failing. Look for burn marks, swelling capacitors, or error codes."}
+    ]
   }
   </script>
 

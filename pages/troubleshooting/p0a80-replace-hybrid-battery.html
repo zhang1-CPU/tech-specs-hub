@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -67,22 +67,31 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "P0A80 Repair Guide — Hybrid Battery Pack Replacement | TechSpecsHub",
     "description": "Step-by-step P0A80 diagnostic and module replacement procedure for Toyota Prius, Camry Hybrid, Highlander HV. HV safety, module identification, bus bar inspection, ECU relearn.",
     "url": "https://powerspecshub.com/pages/troubleshooting/p0a80-replace-hybrid-battery.html",
     "datePublished": "2026-06-20",
     "dateModified": "2026-06-20",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Confirm Code and Read Live Module Voltages", "text": "Use an OBD2 scanner to confirm P0A80 and check individual module voltages to identify which module is failing."},
+      {"@type": "HowToStep", "name": "Identify Weak Modules", "text": "Compare voltage readings across all modules. The weakest module will have the lowest voltage under load."},
+      {"@type": "HowToStep", "name": "Battery Pack Removal", "text": "Follow proper HV safety procedures. Always disconnect the 12V battery before working on the hybrid system."},
+      {"@type": "HowToStep", "name": "Module Replacement", "text": "Replace the failing module with a matching used or refurbished module. Ensure bus bars are torqued to specification."}
+    ]
   }
   </script>
 

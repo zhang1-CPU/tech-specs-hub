@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,31 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "P3000 Repair Guide — Hybrid Battery Control Module Fault | TechSpecsHub",
     "description": "Step-by-step P3000 diagnostic and repair procedure for Toyota Prius, Camry Hybrid, and Lexus HS 250h. HV ECU communication issues, wiring harness testing, module replacement, and DTC scan tool usage.",
     "url": "https://powerspecshub.com/pages/troubleshooting/p3000-hybrid-battery-control-module.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "CAN Bus Communication Check", "text": "Verify CAN bus communication between the hybrid battery ECU and the main vehicle computer."},
+      {"@type": "HowToStep", "name": "Water Intrusion Inspection", "text": "Check for signs of water damage or corrosion on the battery control module connectors and circuit board."},
+      {"@type": "HowToStep", "name": "HV ECU Wiring Harness Testing", "text": "Test the wiring harness connections between the battery control module and hybrid system components."},
+      {"@type": "HowToStep", "name": "Control Module Replacement", "text": "If all wiring and communication checks pass, replace the hybrid battery control module and perform ECU relearn."}
+    ]
   }
   </script>
 

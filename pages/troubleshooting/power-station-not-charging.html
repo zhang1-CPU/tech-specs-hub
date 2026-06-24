@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "Power Station Not Charging (AC) — 6-Step Troubleshooting Guide | TechSpecsHub",
     "description": "Diagnose AC charging failures on portable power stations. Charger failure, charge port issues, BMS charge disable, firmware bugs, and 6-step troubleshooting from cable check to BMS reset.",
     "url": "https://powerspecshub.com/pages/troubleshooting/power-station-not-charging.html",
     "datePublished": "2026-06-22",
     "dateModified": "2026-06-22",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Verify Wall Outlet and Cable", "text": "Test the outlet with another device and use a known-good cable to rule out basic connection issues."},
+      {"@type": "HowToStep", "name": "AC Adapter Test", "text": "Check the AC adapter output voltage with a multimeter to confirm it is delivering the correct charging voltage."},
+      {"@type": "HowToStep", "name": "Charge Port Inspection", "text": "Inspect the charge port for debris, bent pins, or corrosion. Try a different charge port if available."},
+      {"@type": "HowToStep", "name": "BMS Charge Inhibit Check", "text": "Check if the BMS is blocking charging due to over-temperature, over-voltage, or cell protection mode."},
+      {"@type": "HowToStep", "name": "Charge Controller Diagnosis", "text": "Access the internal charge controller board and check for burn marks, swollen capacitors, or failed semiconductors."},
+      {"@type": "HowToStep", "name": "Battery Replacement Assessment", "text": "If cells show significantly different voltages or the unit is old, the battery pack may need replacement."}
+    ]
   }
   </script>
 

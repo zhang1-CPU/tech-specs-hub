@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "3D Printer Bed Leveling Problems — First Layer Troubleshooting Guide | TechSpecsHub",
     "description": "Complete guide to 3D printer bed leveling and first layer problems. BLTouch calibration, mesh bed leveling, manual leveling, Z-offset adjustment, PEI sheet maintenance, and warping fixes.",
     "url": "https://powerspecshub.com/pages/troubleshooting/3d-printer-bed-leveling-problems.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Clean Build Surface", "text": "Remove any residue, debris, or old filament from the build plate. Use isopropyl alcohol for regular maintenance, or acetone for stubborn ABS residue on glass."},
+      {"@type": "HowToStep", "name": "Manual Bed Leveling Paper Test", "text": "Perform the paper test at all four corners and center of the bed. The paper should drag slightly with consistent resistance at each point."},
+      {"@type": "HowToStep", "name": "Calibrate Z-Offset", "text": "Adjust the Z-offset so the first layer is slightly compressed but not squished. Print a calibration square to verify adhesion and spacing."},
+      {"@type": "HowToStep", "name": "BLTouch/Probe Calibration", "text": "If equipped with auto-leveling, run the BLTouch or probe calibration routine. Verify the probe triggers correctly and the mesh is generated without errors."},
+      {"@type": "HowToStep", "name": "Run Mesh Bed Leveling", "text": "Execute mesh bed leveling to create a height map of your bed. Load the mesh in your slicer to compensate for any remaining unevenness."},
+      {"@type": "HowToStep", "name": "Verify Bed Temperature and First Layer Settings", "text": "Confirm the bed temperature matches your filament's recommended settings. Check that first layer height, speed, and material settings are correct for your setup."}
+    ]
   }
   </script>
 

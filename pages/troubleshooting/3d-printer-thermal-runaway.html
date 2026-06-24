@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,34 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "3D Printer Thermal Runaway Error — Heating Fault Troubleshooting Guide | TechSpecsHub",
     "description": "Complete diagnostic guide for 3D printer thermal runaway errors and heating faults. Thermistor testing, heater cartridge replacement, PID tuning, and Marlin/Klipper thermal protection settings.",
     "url": "https://powerspecshub.com/pages/troubleshooting/3d-printer-thermal-runaway.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Identify the Heater and Error Message", "text": "Note which heater triggered the fault (hotend or bed) and the exact error message to narrow down the failing component."},
+      {"@type": "HowToStep", "name": "Test Thermistor with Multimeter", "text": "Measure thermistor resistance at room temperature and compare to datasheet values. A reading of 0 ohms or infinity indicates failure."},
+      {"@type": "HowToStep", "name": "Verify Heater Cartridge Resistance", "text": "Check heater cartridge resistance (typically 4-6 ohms for 12V, 12-14 ohms for 24V). No continuity means the cartridge is burned out."},
+      {"@type": "HowToStep", "name": "Inspect Wiring and Connectors", "text": "Check all wiring for breaks, melted insulation, or loose connectors. Wiggle wires while monitoring resistance to find intermittent faults."},
+      {"@type": "HowToStep", "name": "Re-seat Thermistor and Check Thermal Contact", "text": "Remove and reinsert the thermistor, ensuring it sits flush against the heater block. Apply thermal paste for better heat transfer."},
+      {"@type": "HowToStep", "name": "Re-tune PID Values", "text": "Use the PID auto-tune command in your firmware to recalculate heating values for your specific printer setup."},
+      {"@type": "HowToStep", "name": "Check Firmware Thermal Protection Settings", "text": "Verify thermal runaway protection is enabled in Marlin/Klipper config. Increase allowed temperature variance if sensor is noisy."}
+    ]
   }
   </script>
 

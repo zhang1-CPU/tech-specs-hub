@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,32 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "Power Station Overheating — Thermal Shutdown Troubleshooting Guide | TechSpecsHub",
     "description": "Diagnose and fix portable power station overheating and thermal shutdown. Causes, diagnostic steps, fan replacement guide, thermal paste reapplication, and when to RMA.",
     "url": "https://powerspecshub.com/pages/troubleshooting/power-station-overheating.html",
     "datePublished": "2026-06-22",
     "dateModified": "2026-06-22",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Check for Blocked Vents", "text": "Ensure the power station has adequate ventilation. Clear any dust, debris, or objects blocking the cooling vents."},
+      {"@type": "HowToStep", "name": "Cooling Fan Failure Diagnosis", "text": "Power on and listen for fan operation. If the fan is not spinning, check for debris blockage or fan motor failure."},
+      {"@type": "HowToStep", "name": "Thermal Paste Reapplication", "text": "If comfortable opening the unit, clean and reapply thermal paste between the battery cells and heat sink."},
+      {"@type": "HowToStep", "name": "Ambient Temperature Consideration", "text": "Avoid operating the power station in direct sunlight or high ambient temperatures above 40°C."},
+      {"@type": "HowToStep", "name": "Overloading Check", "text": "Reduce the load to below the continuous output rating. Overloading generates excess heat."}
+    ]
   }
   </script>
 

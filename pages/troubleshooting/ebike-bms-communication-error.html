@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "E-Bike BMS Communication Error &mdash; Battery Troubleshooting Guide | TechSpecsHub",
+    "@type": ["Article", "HowTo"],
+    "headline": "E-Bike BMS Communication Error — Battery Troubleshooting Guide | TechSpecsHub",
     "description": "Diagnose e-bike BMS communication errors with UART testing, battery cell voltage checks, balancing procedures, common firmware issues, and BMS replacement guidance.",
     "url": "https://powerspecshub.com/pages/troubleshooting/ebike-bms-communication-error.html",
     "datePublished": "2026-06-22",
     "dateModified": "2026-06-22",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Verify Battery Voltage Output", "text": "Measure battery pack voltage with a multimeter to confirm the battery has charge and the cells are not fully depleted."},
+      {"@type": "HowToStep", "name": "Test Communication Wire and Connector", "text": "Check the BMS communication cable for damage. Ensure the connector is clean and firmly seated."},
+      {"@type": "HowToStep", "name": "BMS Firmware Reset", "text": "Some BMS systems have a reset button or can be reset by disconnecting the battery for several minutes."},
+      {"@type": "HowToStep", "name": "Cell Voltage Measurement", "text": "Open the BMS data port and measure individual cell voltages to identify any cells that are significantly imbalanced."},
+      {"@type": "HowToStep", "name": "Balancing Procedures", "text": "Use a balanced charger or perform a full discharge/charge cycle to equalize cell voltages across the pack."},
+      {"@type": "HowToStep", "name": "BMS Board Replacement", "text": "If the BMS is unresponsive and all connections are good, the BMS circuit board may need replacement."}
+    ]
   }
   </script>
 

@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Smart Speaker Not Responding &mdash; Voice Assistant Troubleshooting Guide | TechSpecsHub",
+    "@type": ["Article", "HowTo"],
+    "headline": "Smart Speaker Not Responding — Voice Assistant Troubleshooting Guide | TechSpecsHub",
     "description": "Fix smart speakers that won't respond to wake words. Microphone array calibration, Alexa/Google Home/Siri specific fixes, internet diagnosis, factory reset, and Bluetooth pairing issues.",
     "url": "https://powerspecshub.com/pages/troubleshooting/smart-speaker-not-responding.html",
     "datePublished": "2026-06-22",
     "dateModified": "2026-06-22",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Check Microphone Mute Button and Status Lights", "text": "Verify the microphone is not muted and the status lights indicate the device is ready to listen."},
+      {"@type": "HowToStep", "name": "Wi-Fi and Internet Connectivity", "text": "Confirm the speaker is connected to Wi-Fi and the internet connection is stable. Restart the router if needed."},
+      {"@type": "HowToStep", "name": "Microphone Array Testing", "text": "Use the manufacturer app to test the microphone array and check if individual microphones are functioning."},
+      {"@type": "HowToStep", "name": "Wake Word Sensitivity Adjustment", "text": "In the app settings, adjust the wake word sensitivity or try a different wake word if ambient noise is an issue."},
+      {"@type": "HowToStep", "name": "Bluetooth Interference Check", "text": "Move away from other Bluetooth devices or Wi-Fi routers that may be causing interference."},
+      {"@type": "HowToStep", "name": "Factory Reset", "text": "If all troubleshooting fails, perform a factory reset via the manufacturer app or hardware button combination."}
+    ]
   }
   </script>
 

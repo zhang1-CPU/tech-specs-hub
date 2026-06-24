@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,32 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "Power Station Solar Input Not Working — MPPT Troubleshooting Guide | TechSpecsHub",
     "description": "Diagnose solar charging failures on portable power stations. MPPT faults, panel voltage requirements, connector issues, shading problems, and brand-specific fixes for EcoFlow, Jackery, and Bluetti.",
     "url": "https://powerspecshub.com/pages/troubleshooting/power-station-solar-input-not-working.html",
     "datePublished": "2026-06-22",
     "dateModified": "2026-06-22",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Basic Solar Checks", "text": "Confirm the solar panel is in direct sunlight, not shaded, and the solar input is enabled on the power station."},
+      {"@type": "HowToStep", "name": "Panel Voltage Measurement", "text": "Measure the open circuit voltage of your solar panel with a multimeter to verify it meets the MPPT requirements."},
+      {"@type": "HowToStep", "name": "MC4 Connector Inspection", "text": "Check MC4 connectors for corrosion, damage, or loose connections. Ensure the positive and negative are not reversed."},
+      {"@type": "HowToStep", "name": "MPPT Settings Review", "text": "Verify the power station MPPT settings match your panel configuration (voltage and current limits)."},
+      {"@type": "HowToStep", "name": "Panel Replacement Assessment", "text": "If voltage is correct but no charging occurs, the charge controller MPPT circuit may have failed."}
+    ]
   }
   </script>
 

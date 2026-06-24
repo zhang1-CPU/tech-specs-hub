@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -67,22 +67,57 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "QAPage",
-    "headline": "Portable Power Station FAQ — Battery Chemistry, Charging, Runtime, Maintenance | TechSpecsHub",
-    "description": "Answers to the most common questions about portable power stations. LFP vs NMC, charge time factors, runtime calculations, storage tips, and warranty explained.",
-    "url": "https://powerspecshub.com/pages/specs/portable-power-station-faq.html",
-    "datePublished": "2026-06-20",
-    "dateModified": "2026-06-20",
-    "publisher": {
-      "@type": "Organization",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between LFP and NMC battery chemistry?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "LFP (Lithium Iron Phosphate) batteries offer longer cycle life (3,000+ cycles to 80%), better thermal stability, and are safer for indoor use. NMC (Nickel Manganese Cobalt) batteries have higher energy density but fewer cycles (500-1,000) and require more careful thermal management."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to fully charge a portable power station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Charge time depends on the battery capacity and input wattage. A 2,000Wh power station with a 500W input takes approximately 4 hours. With a 1,500W input, charge time drops to about 1.5 hours. Solar input varies widely based on panel wattage and sunlight conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate how long a power station will run my device?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Divide the power station's usable capacity (Wh) by your device's wattage. For example, a 1,000W device on a 2,048Wh power station runs approximately 2 hours. Account for inverter inefficiency (typically 85-95%) and avoid fully discharging lead-acid batteries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the BMS error code mean on my power station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A BMS (Battery Management System) error indicates the internal protection circuit has triggered. Common causes include over-voltage during charging, under-voltage during discharge, short circuit detection, or cell imbalance. Consult our error code database for your specific brand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use a power station while it's charging?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most modern power stations support pass-through charging, allowing you to use the unit while it charges. However, this generates additional heat and may reduce battery lifespan. For critical devices, keep the power station on a stable surface with adequate ventilation during pass-through use."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should I store my portable power station long-term?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For LFP batteries, store at 50% charge in a cool, dry place (15-25°C). Check and recharge to 50% every 3-6 months. For NMC, avoid full discharges and store at 40-50% charge. Extreme temperatures degrade all battery chemistries."
+        }
+      }
+    ]
   }
   </script>
 

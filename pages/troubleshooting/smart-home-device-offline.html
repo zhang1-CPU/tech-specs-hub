@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Smart Home Device Offline &mdash; Wi-Fi Troubleshooting Guide | TechSpecsHub",
+    "@type": ["Article", "HowTo"],
+    "headline": "Smart Home Device Offline — Wi-Fi Troubleshooting Guide | TechSpecsHub",
     "description": "Fix smart home devices that keep going offline. 2.4GHz vs 5GHz Wi-Fi problems, router compatibility, DHCP issues, factory reset procedures, and mesh network interference diagnosis.",
     "url": "https://powerspecshub.com/pages/troubleshooting/smart-home-device-offline.html",
     "datePublished": "2026-06-22",
     "dateModified": "2026-06-22",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Power Cycle Everything", "text": "Unplug the device and router for 30 seconds, then power them back on. This resolves most temporary connectivity issues."},
+      {"@type": "HowToStep", "name": "Check 2.4GHz vs 5GHz Wi-Fi", "text": "Most smart home devices only support 2.4GHz. Check your router settings and ensure the device is connecting to the correct band."},
+      {"@type": "HowToStep", "name": "DHCP and IP Conflict Check", "text": "Ensure your router has DHCP enabled and there are no IP conflicts. Assign a static IP if the device keeps dropping."},
+      {"@type": "HowToStep", "name": "Wi-Fi Signal Strength", "text": "Check the signal strength at the device location. Consider a Wi-Fi extender or moving the router closer."},
+      {"@type": "HowToStep", "name": "Router Configuration Review", "text": "Check for MAC filtering, AP isolation, or firewall rules that may be blocking the device."},
+      {"@type": "HowToStep", "name": "Factory Reset or Device Replacement", "text": "If all else fails, perform a factory reset on the device. If issues persist, the device hardware may be faulty."}
+    ]
   }
   </script>
 

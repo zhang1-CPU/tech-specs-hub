@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "DJI Vision Positioning System Error — Downward Sensor Calibration & Obstacle Avoidance Fixes | TechSpecsHub",
     "description": "Fix DJI Vision Positioning System errors, downward sensor issues, and obstacle avoidance problems. Learn sensor calibration, firmware fixes, environmental factors, and proper cleaning procedure.",
     "url": "https://powerspecshub.com/pages/troubleshooting/dji-vision-positioning-error.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Vision Positioning Unavailable - Environmental Factors", "text": "Vision positioning requires adequate lighting and a patterned surface. It does not work over water, snow, or featureless surfaces."},
+      {"@type": "HowToStep", "name": "Clean Vision Sensors", "text": "Use a soft, dry microfiber cloth to gently clean the downward-facing cameras and sensors. Avoid liquids or abrasive materials."},
+      {"@type": "HowToStep", "name": "Downward Sensor Calibration", "text": "Run vision sensor calibration via DJI Fly app or DJI Assistant 2 if the sensors are not providing distance readings."},
+      {"@type": "HowToStep", "name": "Obstacle Avoidance Not Working", "text": "Check that obstacle avoidance is enabled in settings. Side sensors only work in certain flight modes and speeds."},
+      {"@type": "HowToStep", "name": "Firmware Update", "text": "Ensure both drone and remote firmware are up to date. Use DJI Assistant 2 for a clean firmware reinstall."},
+      {"@type": "HowToStep", "name": "Hardware Failure", "text": "If sensors are physically damaged or get no reading after calibration, the vision positioning module may need replacement."}
+    ]
   }
   </script>
 

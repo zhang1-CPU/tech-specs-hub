@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,34 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "3D Printer Filament Jam — Clogged Nozzle Troubleshooting Guide | TechSpecsHub",
     "description": "Complete guide to 3D printer filament jams and clogged nozzles. Cold pull method, nozzle cleaning, Bowden tube removal, heat break clogs, wet filament issues, and extruder gear wear diagnosis.",
     "url": "https://powerspecshub.com/pages/troubleshooting/3d-printer-filament-jam.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Locate the Jam Position", "text": "Heat the nozzle to printing temperature and try to push filament through manually. Note where the resistance occurs to identify the jam location."},
+      {"@type": "HowToStep", "name": "Cold Pull/Atomic Pull", "text": "Heat to printing temp, let cool to ~90°C for PLA or ~100°C for PETG, then pull the filament out. Repeat 3-5 times to clear debris."},
+      {"@type": "HowToStep", "name": "Nozzle Needle Cleaning", "text": "Use the provided nozzle cleaning needle to clear the orifice while hot. Insert and rotate to dislodge any accumulated filament."},
+      {"@type": "HowToStep", "name": "Bowden Tube Inspection", "text": "Remove the Bowden tube from the extruder and check for moisture, burns, or deformities. Replace if the tube is damaged or has play in the fitting."},
+      {"@type": "HowToStep", "name": "Remove and Soak Nozzle", "text": "Remove the nozzle and soak in acetone or specialized nozzle cleaning solution for several hours to dissolve stubborn ABS or other residue."},
+      {"@type": "HowToStep", "name": "Heat Break Clog Diagnosis", "text": "If jams persist, the heat break may be clogged. Disassemble the heat break area and clean with compressed air or a small brush."},
+      {"@type": "HowToStep", "name": "Check Extruder Gear and Filament", "text": "Inspect the extruder gear teeth for wear or debris. Check that the filament is dry and stored properly with desiccant."}
+    ]
   }
   </script>
 

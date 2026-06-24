@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -67,22 +67,31 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "DJI Gimbal Error Codes — Motor Stuck, Overload, IMU Calibration Fixes | TechSpecsHub",
     "description": "All common DJI gimbal error codes with working fixes. Covers Gimbal Motor Stuck, Gimbal Overload, and Gimbal IMU Calibration for Mavic and Air series drones.",
     "url": "https://powerspecshub.com/pages/troubleshooting/dji-gimbal-error-codes.html",
     "datePublished": "2026-06-20",
     "dateModified": "2026-06-20",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Gimbal Motor Stuck - Physical Obstruction", "text": "Power off and inspect the gimbal for physical obstructions. Check ribbon cables for damage or improper seating."},
+      {"@type": "HowToStep", "name": "Gimbal Overload - Damper and Balance Issue", "text": "Check the damper balls for wear. Ensure camera is balanced - an unbalanced load triggers overload protection."},
+      {"@type": "HowToStep", "name": "Gimbal IMU Calibration Error", "text": "Place the drone on a level surface and run IMU calibration via DJI Fly app or DJI Assistant 2 software."},
+      {"@type": "HowToStep", "name": "Roll, Pitch, or Yaw Motor Errors", "text": "For persistent motor errors, the gimbal may need factory reset, firmware update, or professional repair."}
+    ]
   }
   </script>
 

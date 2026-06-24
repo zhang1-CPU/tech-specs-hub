@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -67,22 +67,31 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "P0A7F HV Battery Module Balance Fault — Diagnosis & Repair | TechSpecsHub",
     "description": "How to diagnose and fix P0A7F — module voltage spread exceeding tolerance. Identify weak modules, rebalance the pack, and decide between reconditioning and full replacement.",
     "url": "https://powerspecshub.com/pages/troubleshooting/p0a7f-hybrid-battery-deterioration.html",
     "datePublished": "2026-06-20",
     "dateModified": "2026-06-20",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Forced Recalibration Procedure", "text": "Fully discharge the battery to near empty, then fully charge to 100%. This can reset the BMS state machine."},
+      {"@type": "HowToStep", "name": "Grid Charge and Discharge Cycling", "text": "Use a grid charger or cycle the battery multiple times to equalize cell voltages across the pack."},
+      {"@type": "HowToStep", "name": "Targeted Module Reconditioning", "text": "Identify the weakest modules and apply targeted charging/discharging to bring them back into balance."},
+      {"@type": "HowToStep", "name": "Module Replacement Decision", "text": "If modules are degraded beyond recovery, replace individual modules or the entire pack depending on cost."}
+    ]
   }
   </script>
 

@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -67,22 +67,31 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "Power Station Won't Turn On — Universal Troubleshooting Guide | TechSpecsHub",
     "description": "Universal diagnostic tree for portable power stations that won't power on. Battery reset, firmware recovery, inverter fault diagnosis, and warranty contact procedures.",
     "url": "https://powerspecshub.com/pages/troubleshooting/power-station-wont-turn-on.html",
     "datePublished": "2026-06-20",
     "dateModified": "2026-06-20",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "BMS Deep Sleep Wake", "text": "Some power stations enter deep sleep after prolonged storage. Hold the power button for 10-15 seconds or leave connected to charger."},
+      {"@type": "HowToStep", "name": "Connector Check", "text": "Verify all external connections are removed. Some units won't turn on if a short or fault is detected on outputs."},
+      {"@type": "HowToStep", "name": "Firmware Reset", "text": "Try a firmware reset via manufacturer app or hold specific button combinations as described in your user manual."},
+      {"@type": "HowToStep", "name": "Cell Failure Assessment", "text": "If the unit has been deeply discharged for a long time, individual cells may have failed and the battery pack may need replacement."}
+    ]
   }
   </script>
 

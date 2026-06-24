@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,34 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "3D Printer Layer Shifting — Misalignment Troubleshooting Guide | TechSpecsHub",
     "description": "Complete guide to 3D printer layer shifting and misalignment. Belt tension adjustment, stepper motor current settings, V-slot wheel lubrication, linear rail maintenance, and print speed/acceleration tuning.",
     "url": "https://powerspecshub.com/pages/troubleshooting/3d-printer-layer-shifting.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Inspect Belts for Tension and Wear", "text": "Check all belts for proper tension by pressing them. They should deflect about 1cm when pressed. Look for cracks, missing teeth, or signs of wear."},
+      {"@type": "HowToStep", "name": "Check for Motion System Binding", "text": "Manually move the gantry and print head along the rails to feel for any binding, grinding, or irregular resistance."},
+      {"@type": "HowToStep", "name": "Service V-Slot Wheels", "text": "Clean and lubricate V-slot wheels with a small amount of machine oil. Check that all mounting screws are tight and wheels spin freely."},
+      {"@type": "HowToStep", "name": "Maintain Linear Rails", "text": "Clean linear rails with isopropyl alcohol and apply appropriate lubricant. Ensure the carriage moves smoothly without wobble."},
+      {"@type": "HowToStep", "name": "Verify Stepper Motor Current Settings", "text": "Check that stepper motor currents are set correctly in your firmware. Low current causes missed steps under load."},
+      {"@type": "HowToStep", "name": "Tune Print Speed, Acceleration, and Jerk", "text": "Reduce print speed by 20-30% and lower acceleration and jerk values in your slicer to reduce mechanical stress."},
+      {"@type": "HowToStep", "name": "Check Gantry and Frame Alignment", "text": "Verify the gantry is level and the frame is square. Loose frame bolts or misaligned pulleys can cause shifting."}
+    ]
   }
   </script>
 

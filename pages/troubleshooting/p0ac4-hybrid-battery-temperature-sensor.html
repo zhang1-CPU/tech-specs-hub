@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,31 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "P0AC4 Repair Guide — Hybrid Battery Temperature Sensor Circuit | TechSpecsHub",
     "description": "Step-by-step P0AC4 diagnostic and repair for hybrid battery overheating, fan control module failure, sensor calibration, thermistor testing, and cooling system inspection.",
     "url": "https://powerspecshub.com/pages/troubleshooting/p0ac4-hybrid-battery-temperature-sensor.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Intake Air Temperature Sensor Check", "text": "Test the air intake temperature sensor for correct resistance values compared to ambient temperature."},
+      {"@type": "HowToStep", "name": "Module Thermistor Testing", "text": "Measure resistance across individual module thermistors and compare to specifications."},
+      {"@type": "HowToStep", "name": "Fan Control Module Inspection", "text": "Check the battery fan control module for proper voltage supply and ground connections."},
+      {"@type": "HowToStep", "name": "Cooling System Verification", "text": "Verify coolant flow through the hybrid battery cooling circuit. Check pump operation and coolant level."}
+    ]
   }
   </script>
 

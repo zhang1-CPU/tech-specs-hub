@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -59,22 +59,34 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": ["Article", "HowTo"],
     "headline": "DJI IMU Calibration Error — IMU Abnormal, Vibration & Drift Fixes | TechSpecsHub",
     "description": "Complete guide to fixing DJI IMU calibration errors and IMU abnormal warnings. Covers Mavic, Air, and Mini series with step-by-step calibration, vibration diagnostics, and cold vs warm IMU explained.",
     "url": "https://powerspecshub.com/pages/troubleshooting/dji-imu-calibration-error.html",
     "datePublished": "2026-06-23",
     "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     },
-    "mainEntity": {
-      "@type": "WebSite",
-      "name": "TechSpecsHub",
-      "url": "https://powerspecshub.com/"
-    }
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    },
+    "howToStep": [
+      {"@type": "HowToStep", "name": "Verify Temperature and IMU State", "text": "Allow the IMU to reach operating temperature. Cold IMUs may show errors until warmed up. Fly only after DJI app shows ready status."},
+      {"@type": "HowToStep", "name": "Basic IMU Calibration via DJI Fly App", "text": "Place drone on a flat, level surface and run IMU calibration from the DJI Fly app settings menu."},
+      {"@type": "HowToStep", "name": "Advanced IMU Calibration via DJI Assistant 2", "text": "For persistent issues, use DJI Assistant 2 software to perform a full IMU calibration with the latest firmware."},
+      {"@type": "HowToStep", "name": "Check for Vibration Sources", "text": "Inspect propellers for cracks, arms for looseness, and ensure the camera/gimbal is securely mounted."},
+      {"@type": "HowToStep", "name": "Firmware Update", "text": "Update drone and remote controller to latest firmware via DJI Assistant 2 or DJI Fly app."},
+      {"@type": "HowToStep", "name": "Physical Inspection", "text": "Check for visible damage, loose screws near the IMU module, or signs of water damage on the circuit board."},
+      {"@type": "HowToStep", "name": "IMU Module Replacement", "text": "If all else fails, the IMU module may need professional replacement. Contact DJI support for out-of-warranty repair options."}
+    ]
   }
   </script>
 
