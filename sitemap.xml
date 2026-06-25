@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://powerspecshub.com/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -15,84 +15,86 @@
   <!-- Core Category Pages -->
   <url>
     <loc>https://powerspecshub.com/pages/specs/outdoor-power.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/hybrid-cars.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/drones.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/smart-home.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/ebike-micromobility.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/3d-printers.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/navigation.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
+
+  <!-- Product Specs - Outdoor Power -->
   <url>
     <loc>https://powerspecshub.com/pages/specs/ecoflow-delta-pro-3.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/bluetti-ac200max.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/jackery-explorer-2000-plus.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/budget-500w-power-station-comparison.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/off-grid-solar-system-sizing-guide.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/specs/portable-power-station-faq.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- Long-Tail Tutorial Pages - Outdoor Power (high intent, low competition) -->
+  <!-- Long-Tail Tutorial Pages - Outdoor Power -->
   <url>
     <loc>https://powerspecshub.com/pages/specs/portable-power-station-output-not-working.html</loc>
     <lastmod>2026-06-25</lastmod>
@@ -172,29 +174,15 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Hybrid & EV Battery Specs -->
-  <url>
-    <loc>https://powerspecshub.com/pages/specs/hybrid-cars.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <!-- Drones -->
-  <url>
-    <loc>https://powerspecshub.com/pages/specs/drones.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
+  <!-- Product Specs - Drones -->
   <url>
     <loc>https://powerspecshub.com/pages/specs/dji-mini-5-pro.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
-  <!-- Long-Tail Tutorial Pages - Drones (high intent, low competition) -->
+  <!-- Long-Tail Tutorial Pages - Drones -->
   <url>
     <loc>https://powerspecshub.com/pages/specs/dji-drone-wont-turn-on.html</loc>
     <lastmod>2026-06-25</lastmod>
@@ -268,66 +256,10 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Smart Home -->
-  <url>
-    <loc>https://powerspecshub.com/pages/specs/smart-home.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Navigation & Marine -->
-  <url>
-    <loc>https://powerspecshub.com/pages/specs/navigation.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- E-Bike & Micromobility -->
-  <url>
-    <loc>https://powerspecshub.com/pages/specs/ebike-micromobility.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- 3D Printers -->
-  <url>
-    <loc>https://powerspecshub.com/pages/specs/3d-printers.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- Error Code Database -->
-  <url>
-    <loc>https://powerspecshub.com/pages/error-code-db.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- Master Specs -->
-  <url>
-    <loc>https://powerspecshub.com/pages/master-specs.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Brand Index -->
-  <url>
-    <loc>https://powerspecshub.com/pages/brand-index.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- Tools & Buyer's Guides -->
+  <!-- Tools & Calculators -->
   <url>
     <loc>https://powerspecshub.com/pages/tools/best-multimeters-2026.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -380,60 +312,64 @@
     <priority>0.90</priority>
   </url>
 
-  <!-- FAQ Pages -->
+  <!-- Error Code Database -->
   <url>
-    <loc>https://powerspecshub.com/pages/specs/portable-power-station-faq.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <loc>https://powerspecshub.com/pages/error-code-db.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
+
+  <!-- Master Specs -->
   <url>
-    <loc>https://powerspecshub.com/pages/specs/off-grid-solar-system-sizing-guide.html</loc>
-    <lastmod>2026-06-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://powerspecshub.com/pages/specs/budget-500w-power-station-comparison.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://powerspecshub.com/pages/master-specs.html</loc>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Troubleshooting Guides - Hybrid Batteries (high priority - search traffic) -->
+  <!-- Brand Index -->
+  <url>
+    <loc>https://powerspecshub.com/pages/brand-index.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Troubleshooting Guides - Hybrid Batteries -->
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/p0a80-replace-hybrid-battery.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/p0a7f-hybrid-battery-deterioration.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/p3000-hybrid-battery-control-module.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/p0a7b-hybrid-battery-voltage-sensor.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/p0ac4-hybrid-battery-temperature-sensor.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/p0a9d-hybrid-inverter-fault.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -441,31 +377,31 @@
   <!-- Troubleshooting Guides - Power Stations -->
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/power-station-wont-turn-on.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/power-station-solar-input-not-working.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/power-station-overheating.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/power-station-not-charging.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/power-station-bms-error.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -473,31 +409,31 @@
   <!-- Troubleshooting Guides - Drones -->
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/dji-gimbal-error-codes.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/dji-imu-calibration-error.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/dji-compass-error.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/dji-vision-positioning-error.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/dji-battery-not-charging.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -505,25 +441,25 @@
   <!-- Troubleshooting Guides - 3D Printers -->
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/3d-printer-thermal-runaway.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/3d-printer-bed-leveling-problems.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/3d-printer-filament-jam.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/3d-printer-layer-shifting.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
@@ -531,13 +467,13 @@
   <!-- Troubleshooting Guides - E-Bikes -->
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/ebike-motor-not-working.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/ebike-bms-communication-error.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
@@ -545,13 +481,13 @@
   <!-- Troubleshooting Guides - Smart Home -->
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/smart-home-device-offline.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/troubleshooting/smart-speaker-not-responding.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
@@ -559,19 +495,19 @@
   <!-- About & Contact -->
   <url>
     <loc>https://powerspecshub.com/pages/about.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.50</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/contact.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
   <url>
     <loc>https://powerspecshub.com/pages/privacy-policy.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
