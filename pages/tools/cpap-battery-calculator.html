@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPAP Battery Calculator — How Long Will a Power Station Run CPAP? (2026) | TechSpecsHub</title>
+  <meta name="description" content="Calculate exactly how long a portable power station will run your CPAP machine. Free calculator includes ResMed, Philips Respironics, humidifier, heated tube, pressure settings, and DC vs AC efficiency comparison.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/tools/cpap-battery-calculator.html">
+
+  <meta property="og:title" content="CPAP Battery Calculator — How Long Will a Power Station Run CPAP? (2026)">
+  <meta property="og:description" content="Free CPAP battery life calculator. ResMed, Philips Respironics, humidifier, heated tube, and DC vs AC efficiency comparison. Plan your camping and travel CPAP power needs.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/tools/cpap-battery-calculator.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CPAP Battery Calculator — How Long Will It Last?">
+  <meta name="twitter:description" content="Free CPAP battery calculator. Calculate runtime for any power station, includes ResMed & Philips Respironics, humidifier, heated tube, DC vs AC.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    .calc-input {
+      background: rgba(15, 29, 50, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      width: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+    .calc-input:focus {
+      outline: none;
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+    }
+    .calc-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      outline: none;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #22d3ee;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+      transition: transform 0.15s ease;
+    }
+    .calc-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    .cpap-model-btn {
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .cpap-model-btn:hover {
+      background: rgba(34, 211, 238, 0.08);
+      border-color: rgba(34, 211, 238, 0.3);
+      transform: translateY(-1px);
+    }
+    .cpap-model-btn.active {
+      background: rgba(34, 211, 238, 0.12);
+      border-color: #22d3ee;
+    }
+    .toggle-btn {
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-size: 0.875rem;
+    }
+    .toggle-btn.active {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: #22d3ee;
+      color: #22d3ee;
+    }
+    .result-card {
+      background: linear-gradient(145deg, rgba(30, 50, 89, 0.6), rgba(22, 37, 68, 0.8));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .result-card .result-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #a78bfa 0%, #22d3ee 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .result-card .result-label {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CPAP Battery Calculator — How Long Will a Power Station Run CPAP? (2026)",
+    "description": "Free CPAP battery life calculator with ResMed, Philips Respironics, humidifier, heated tube, and DC vs AC efficiency comparison. Plan your camping and travel CPAP power needs.",
+    "url": "https://powerspecshub.com/pages/tools/cpap-battery-calculator.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long will a portable power station run a CPAP machine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Runtime depends on your CPAP model, pressure setting, and whether you use humidifier and heated tube. A typical setup (ResMed AirSense 10, pressure 10, no humidifier, 8 hours) uses about 180–250Wh per night, so a 500Wh power station gives roughly 2 nights. With humidifier and heated tube, consumption roughly doubles (350–500Wh/night), so a 1000Wh station gives 2 nights. Using DC power instead of AC increases runtime by 15–25% by skipping the inverter efficiency loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What size power station do I need for CPAP camping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For CPAP camping, we recommend at least a 500Wh power station (gives 1–2 nights depending on settings). For 2–3 nights comfortably, go with 1000–1500Wh. For longer trips (4+ nights), add solar panels (100–200W) so you can recharge during the day. Always get a station with a pure sine wave inverter (required for CPAP) and consider using the DC output with a DC-DC converter for maximum efficiency and runtime."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a CPAP need pure sine wave power?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — CPAP machines (especially newer models with advanced features like heated humidifiers and AutoSet algorithms) require pure sine wave power for proper operation. Modified sine wave can cause noise, overheating, and even damage the motor or electronics. All quality portable power stations use pure sine wave inverters, but budget generators and cheap inverters may not. Always check for \"pure sine wave\" on the spec sheet before buying."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does humidifier use more power? How much?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — the humidifier is the biggest power consumer on a CPAP machine, often using more power than the motor itself. A humidifier typically adds 20–50W of continuous draw, roughly doubling total power consumption. Using a heated tube adds another 10–20W. For maximum battery life when camping, turn off the humidifier or use it on the lowest setting. Using a heated humidifier can cut your runtime in half compared to dry-only operation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I connect CPAP to a power station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You have two options: 1) AC plug (most common): simply plug your CPAP's AC adapter into the power station's wall outlet. Easy and universal, but slightly less efficient. 2) DC power (most efficient): use a DC-DC converter cable designed for your CPAP model that plugs into the 12V car port or DC barrel jack on the power station. This is 15–25% more efficient because it skips the DC-to-AC inversion. You can buy official DC cables from your CPAP manufacturer or third-party ones on Amazon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use a CPAP with a power station while camping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely — portable power stations are the #1 choice for CPAP camping because they are silent, produce no fumes (unlike gas generators), and can be safely used inside a tent or RV. Just make sure to: get a station with pure sine wave output, size it for at least 2 nights (3 with a safety buffer), consider using DC power for 15–25% more runtime, and turn off humidifier/heated tube if you need to conserve power. Many people use 500–1000Wh stations for weekend CPAP camping trips."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does pressure setting affect CPAP power use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Higher pressure settings use more power, but the effect is relatively modest compared to humidifier use. Going from 5 cm H2O to 20 cm H2O increases motor power draw by roughly 30–50% (from about 20W to 30–35W on a typical machine). AutoSet machines may use slightly more on average than fixed-pressure if they frequently ramp up. The big power difference comes from accessories: humidifier, heated tube, and mask heating — these can double or triple total consumption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between DC and AC power for CPAP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CPAP machines internally run on low-voltage DC. When you plug into a wall (AC), the power brick converts AC to DC — and when you use a power station's AC outlet, the station converts its DC battery to AC, then your brick converts it back to DC. That double conversion wastes 15–25% of energy. Using a DC-DC cable directly from the station's 12V output skips both conversions and gives you 15–25% more runtime. DC operation also produces less heat and is slightly quieter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much power does ResMed AirSense 10 / 11 use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ResMed AirSense 10: roughly 20–30W base (motor only, no humidifier, typical pressure ~10 cm H2O), 50–80W with humidifier on medium, 60–100W with humidifier + heated tube. Per night (8 hours): about 160–240Wh dry, 400–640Wh with humidifier + tube. AirSense 11 is slightly more efficient due to newer motor design — about 10–15% less power overall. Actual numbers vary based on your pressure setting, breathing pattern, leak rate, and humidifier level."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can solar panels charge a CPAP battery during the day?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — this is a great solution for longer camping trips. A 100W solar panel produces roughly 300–500Wh per day (at 4–6 hours of good sun with 70% real efficiency), which is enough to fully recharge a 500Wh station in 1–2 days and keep your CPAP going indefinitely. For reliable off-grid CPAP, we recommend a 500–1000Wh station + 100–200W of solar panels. This setup lets you camp as long as you want without worrying about running out of power for your therapy."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://powerspecshub.com/pages/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "CPAP Battery Calculator"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Calculators &amp; Tools</p>
+              <a href="power-station-runtime-calculator.html"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Runtime Calculator</a>
+              <a href="solar-panel-needs-calculator.html"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Solar Panel Calculator</a>
+              <a href="appliance-wattage-calculator.html"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Appliance Wattage Calculator</a>
+              <a href="camping-power-calculator.html"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Camping Power Calculator</a>
+              <a href="cpap-battery-calculator.html"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>CPAP Battery Calculator</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <p class="nav-dropdown-section-label mt-2">Calculators</p>
+        <a href="power-station-runtime-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee"></i>Runtime Calculator</a>
+        <a href="solar-panel-needs-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee"></i>Solar Panel Calculator</a>
+        <a href="appliance-wattage-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>Appliance Wattage Calculator</a>
+        <a href="camping-power-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee"></i>Camping Power Calculator</a>
+        <a href="cpap-battery-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee"></i>CPAP Battery Calculator</a>
+        <a href="best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="#">Tools</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">CPAP Battery Calculator</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-blue-500/20 text-blue-400 font-mono font-bold text-sm rounded-md border border-blue-500/30">CALCULATOR</div>
+        <span class="badge badge-info"><i data-lucide="wind" style="width:0.75rem;height:0.75rem"></i>CPAP</span>
+        <span class="badge badge-info"><i data-lucide="battery" style="width:0.75rem;height:0.75rem"></i>Battery Life</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        CPAP Battery Calculator &mdash; <span class="gradient-text">How Long Will It Last?</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Calculate exactly how long a portable power station will run your CPAP machine. Select your machine model, pressure setting, humidifier and heated tube usage, and battery capacity. Includes DC vs AC efficiency comparison and camping recommendations.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>CPAP Models</div>
+          <div class="font-bold text-xl text-white">8+</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="droplets" style="width:0.9rem;height:0.9rem"></i>Humidifier</div>
+          <div class="font-bold text-xl text-cyan-400">Included</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="thermometer" style="width:0.9rem;height:0.9rem"></i>Heated Tube</div>
+          <div class="font-bold text-xl text-orange-400">Option</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="plug" style="width:0.9rem;height:0.9rem"></i>DC vs AC</div>
+          <div class="font-bold text-xl text-green-400">Compare</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-6 flex items-center gap-2"><i data-lucide="wind" style="width:1.25rem;height:1.25rem;color:#60a5fa"></i>CPAP Battery Calculator</h2>
+
+      <div class="space-y-6">
+        <!-- CPAP Model -->
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-3">CPAP Machine Model</label>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <button class="cpap-model-btn active" onclick="setModel('airsense10')" id="btn-airsense10">
+              <div class="font-semibold text-xs">ResMed AirSense 10</div>
+              <div class="text-[10px] text-gray-500 mt-1">~25–80W</div>
+            </button>
+            <button class="cpap-model-btn" onclick="setModel('airsense11')" id="btn-airsense11">
+              <div class="font-semibold text-xs">ResMed AirSense 11</div>
+              <div class="text-[10px] text-gray-500 mt-1">~22–70W</div>
+            </button>
+            <button class="cpap-model-btn" onclick="setModel('dreamstation')" id="btn-dreamstation">
+              <div class="font-semibold text-xs">Philips DreamStation</div>
+              <div class="text-[10px] text-gray-500 mt-1">~25–75W</div>
+            </button>
+            <button class="cpap-model-btn" onclick="setModel('custom')" id="btn-custom">
+              <div class="font-semibold text-xs">Custom / Other</div>
+              <div class="text-[10px] text-gray-500 mt-1">Set watts below</div>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Pressure Setting (cm H<sub>2</sub>O)</label>
+            <input type="number" id="pressure" class="calc-input" value="10" min="4" max="25" step="1">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>4</span>
+              <input type="range" id="pressureSlider" class="calc-slider flex-1" min="4" max="25" step="1" value="10">
+              <span>25</span>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Custom Motor Wattage (W)</label>
+            <input type="number" id="customWatts" class="calc-input" value="25" min="10" max="100" step="1">
+            <p class="text-xs text-gray-500 mt-2">Only for "Custom / Other" model or if you know your exact draw.</p>
+          </div>
+        </div>
+
+        <!-- Toggles -->
+        <div class="grid md:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Humidifier</label>
+            <div class="flex gap-2">
+              <button class="toggle-btn flex-1" onclick="setHumidifier('off')" id="hum-off">Off</button>
+              <button class="toggle-btn" onclick="setHumidifier('low')" id="hum-low">Low</button>
+              <button class="toggle-btn active" onclick="setHumidifier('med')" id="hum-med">Med</button>
+              <button class="toggle-btn" onclick="setHumidifier('high')" id="hum-high">High</button>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Heated Tube</label>
+            <div class="flex gap-2">
+              <button class="toggle-btn flex-1 active" onclick="setHeatedTube(false)" id="tube-off">No</button>
+              <button class="toggle-btn flex-1" onclick="setHeatedTube(true)" id="tube-on">Yes</button>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Power Type</label>
+            <div class="flex gap-2">
+              <button class="toggle-btn flex-1" onclick="setPowerType('ac')" id="pow-ac">AC Wall</button>
+              <button class="toggle-btn flex-1 active" onclick="setPowerType('dc')" id="pow-dc">DC Direct</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Battery Capacity (Wh)</label>
+            <input type="number" id="batteryWh" class="calc-input" value="1000" min="100" max="10000" step="100">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>100</span>
+              <input type="range" id="batterySlider" class="calc-slider flex-1" min="100" max="5000" step="100" value="1000">
+              <span>5000</span>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Hours Per Night</label>
+            <input type="number" id="hoursNight" class="calc-input" value="8" min="4" max="12" step="0.5">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>4</span>
+              <input type="range" id="hoursSlider" class="calc-slider flex-1" min="4" max="12" step="0.5" value="8">
+              <span>12</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="grid lg:grid-cols-5 gap-4 pt-4 border-t border-white/10">
+          <div class="result-card lg:col-span-2">
+            <div class="result-value" id="runtimeHours">0</div>
+            <div class="result-label">Total Runtime (Hours)</div>
+          </div>
+          <div class="result-card">
+            <div class="result-value text-2xl" id="nightsCount">0</div>
+            <div class="result-label">Nights of Use</div>
+          </div>
+          <div class="result-card">
+            <div class="result-value text-2xl" id="perNightWh">0</div>
+            <div class="result-label">Wh Per Night</div>
+          </div>
+          <div class="result-card">
+            <div class="result-value text-2xl" id="avgWatts">0</div>
+            <div class="result-label">Avg Watts</div>
+          </div>
+        </div>
+
+        <!-- AC vs DC comparison -->
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+            <i data-lucide="arrow-left-right" style="width:1rem;height:1rem;color:#a78bfa"></i>
+            DC vs AC Efficiency Comparison
+          </h4>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-green-500/5 border border-green-500/20 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center">
+                  <i data-lucide="plug-zap" style="width:1rem;height:1rem;color:#22c55e"></i>
+                </div>
+                <div>
+                  <div class="font-semibold text-sm text-white">DC Power (Direct)</div>
+                  <div class="text-xs text-gray-500">More efficient, longer runtime</div>
+                </div>
+              </div>
+              <div class="space-y-1 text-sm">
+                <div class="flex justify-between"><span class="text-gray-400">Runtime:</span><span class="font-mono text-green-400" id="dcRuntime">—</span></div>
+                <div class="flex justify-between"><span class="text-gray-400">Nights:</span><span class="font-mono text-green-400" id="dcNights">—</span></div>
+                <div class="flex justify-between"><span class="text-gray-400">Per night:</span><span class="font-mono text-gray-300" id="dcPerNight">—</span></div>
+              </div>
+            </div>
+            <div class="bg-yellow-500/5 border border-yellow-500/20 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                  <i data-lucide="power" style="width:1rem;height:1rem;color:#eab308"></i>
+                </div>
+                <div>
+                  <div class="font-semibold text-sm text-white">AC Power (Wall Outlet)</div>
+                  <div class="text-xs text-gray-500">Universal, but less efficient</div>
+                </div>
+              </div>
+              <div class="space-y-1 text-sm">
+                <div class="flex justify-between"><span class="text-gray-400">Runtime:</span><span class="font-mono text-yellow-400" id="acRuntime">—</span></div>
+                <div class="flex justify-between"><span class="text-gray-400">Nights:</span><span class="font-mono text-yellow-400" id="acNights">—</span></div>
+                <div class="flex justify-between"><span class="text-gray-400">Per night:</span><span class="font-mono text-gray-300" id="acPerNight">—</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500 mt-3">
+            DC operation typically adds 15–25% more runtime by skipping two power conversions. Use a DC-DC cable designed for your CPAP model.
+          </p>
+        </div>
+
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+            <i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#a78bfa"></i>
+            Recommendation
+          </h4>
+          <p class="text-sm text-gray-300 leading-relaxed" id="recommendation">
+            Calculate to see personalized CPAP battery recommendations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CPAP WATTAGE BY BRAND -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">CPAP Wattage by Brand &amp; Model</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Understanding CPAP power consumption is critical for planning camping and travel. Below are typical power draw figures for popular CPAP, APAP, and BiPAP machines. These are approximate averages — actual consumption varies based on pressure setting, leak rate, breathing pattern, and accessory usage.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Model</th><th>Motor Only</th><th>+ Humidifier</th><th>+ Heated Tube</th><th>Per Night (8h, dry)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ResMed AirSense 10 (AutoSet)</strong></td>
+              <td>20–30W</td>
+              <td>50–80W</td>
+              <td>60–100W</td>
+              <td>160–240 Wh</td>
+            </tr>
+            <tr>
+              <td><strong>ResMed AirSense 11 (AutoSet)</strong></td>
+              <td>18–28W</td>
+              <td>45–70W</td>
+              <td>55–90W</td>
+              <td>144–224 Wh</td>
+            </tr>
+            <tr>
+              <td><strong>ResMed AirMini (Travel)</strong></td>
+              <td>15–25W</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>120–200 Wh</td>
+            </tr>
+            <tr>
+              <td><strong>Philips Respironics DreamStation</strong></td>
+              <td>20–30W</td>
+              <td>50–75W</td>
+              <td>60–90W</td>
+              <td>160–240 Wh</td>
+            </tr>
+            <tr>
+              <td><strong>Philips Respironics DreamStation 2</strong></td>
+              <td>18–28W</td>
+              <td>45–65W</td>
+              <td>55–80W</td>
+              <td>144–224 Wh</td>
+            </tr>
+            <tr>
+              <td><strong>Philips Respironics System One</strong></td>
+              <td>25–35W</td>
+              <td>55–85W</td>
+              <td>65–100W</td>
+              <td>200–280 Wh</td>
+            </tr>
+            <tr>
+              <td><strong>Fisher &amp; Paykel SleepStyle</strong></td>
+              <td>22–32W</td>
+              <td>55–80W</td>
+              <td>65–95W</td>
+              <td>176–256 Wh</td>
+            </tr>
+            <tr>
+              <td><strong>3B Medical Luna II</strong></td>
+              <td>20–30W</td>
+              <td>50–75W</td>
+              <td>N/A</td>
+              <td>160–240 Wh</td>
+            </tr>
+            <tr>
+              <td><strong>ResMed AirCurve 10 (BiPAP)</strong></td>
+              <td>30–45W</td>
+              <td>60–100W</td>
+              <td>70–120W</td>
+              <td>240–360 Wh</td>
+            </tr>
+            <tr>
+              <td><strong>ResMed Astral (Ventilator)</strong></td>
+              <td>35–60W</td>
+              <td>70–110W</td>
+              <td>N/A</td>
+              <td>280–480 Wh</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert alert-info mt-4 !mb-0">
+        <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Important:</strong> These numbers are averages based on a typical pressure setting of 8–12 cm H<sub>2</sub>O. Higher pressures, significant mask leaks, or BiPAP/ST modes can increase consumption by 20–50%. For medical devices, always test your specific setup at home before relying on it for camping or travel. Never disable features essential to your therapy just to save power.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DC vs AC section -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">DC vs AC Power for CPAP: What is the Difference?</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-bold text-xl mb-3 text-white">AC Power (Wall Outlet)</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            AC power is what you get from a standard wall outlet. When you plug your CPAP into a portable power station's AC outlet, here is what happens:
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><span>Easy and universal — just plug in your existing power brick</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><span>Works with all CPAP machines and accessories</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="x" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><span>Double power conversion: DC (battery) → AC (inverter) → DC (CPAP brick)</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="x" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><span>15–25% energy wasted as heat in conversions</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="x" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><span>Requires pure sine wave inverter for CPAP safety</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-xl mb-3 text-white">DC Power (Direct Connection)</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            DC power means connecting your CPAP directly to the battery voltage (12V or 24V) using a special DC-DC cable — no inverter involved.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><span>15–25% more runtime from the same battery</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><span>Less heat generated, slightly quieter operation</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><span>No pure sine wave requirement (no inverter needed)</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="x" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><span>Need a model-specific DC cable ($20–$80)</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="x" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><span>Some features may not work with DC on certain models</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="alert alert-success mt-6 !mb-0">
+        <i data-lucide="zap" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Bottom line:</strong> For maximum CPAP runtime on a portable power station, always use DC power with a proper DC-DC cable if your machine supports it. The 15–25% runtime gain is significant — it can mean the difference between making it through a 3-night trip or running out on night 2. Most major CPAP manufacturers sell official DC cables, and there are many third-party options available.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips for CPAP Camping -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">8 Tips for CPAP Camping &amp; Travel</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-blue-400">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Always Have a Backup Plan</h4>
+            <p class="text-sm text-gray-400">CPAP is medical equipment — never rely on a single power source. Bring a backup battery or power bank, know the nearest location with power, and consider a small travel CPAP as a spare. Your health is worth the redundancy.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-blue-400">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Test Your Setup at Home First</h4>
+            <p class="text-sm text-gray-400">Before your trip, do a full test run at home on battery power for at least one full night. Verify runtime, check for any error codes, make sure all accessories work, and confirm you know how to connect everything. Do not discover problems at the campsite.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-blue-400">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Use DC Power for Maximum Runtime</h4>
+            <p class="text-sm text-gray-400">Invest in a good DC-DC cable for your CPAP model. The 15–25% extra runtime is worth far more than the cost of the cable. Make sure the cable is rated for your machine's voltage (12V or 24V) and has the correct connector.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-blue-400">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Add Solar for Extended Trips</h4>
+            <p class="text-sm text-gray-400">For trips longer than 2–3 nights, portable solar panels are a game-changer. A 100W panel can recharge a 500Wh station in 1–2 days, letting you camp indefinitely. Foldable panels are easy to pack and set up.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-blue-400">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Turn Off Humidifier if Power is Tight</h4>
+            <p class="text-sm text-gray-400">The humidifier uses almost as much power as the motor itself. If you need to stretch battery life, turn the humidifier down or off (use a nasal spray instead for dryness). Only do this if you can tolerate it — never sacrifice therapy effectiveness.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-blue-400">6</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Disable ECO / Auto-Shutoff for CPAP</h4>
+            <p class="text-sm text-gray-400">Many power stations have ECO mode that shuts off power when the draw is very low. CPAP machines draw very little during exhale and might trigger the ECO shutoff. Always disable ECO mode on your station when using it for CPAP.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-blue-400">7</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Keep Your Battery Warm in Cold Weather</h4>
+            <p class="text-sm text-gray-400">Lithium batteries lose 20–40% of their capacity below freezing. If camping in cold weather, keep your power station inside your sleeping bag or an insulated bag, or at least inside the tent. Never leave it outside in freezing temperatures.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-blue-400">8</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Use a Battery That Meets FAA Rules</h4>
+            <p class="text-sm text-gray-400">If flying to your destination, make sure your battery meets airline rules (under 100Wh for carry-on without approval, 100–160Wh with airline approval). Spare lithium batteries cannot go in checked luggage — always carry them on the plane with you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about CPAP batteries and portable power stations.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How long will a portable power station run a CPAP machine?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Runtime depends on your CPAP model, pressure setting, and whether you use humidifier and heated tube. A typical setup (ResMed AirSense 10, pressure 10, no humidifier, 8 hours) uses about 180–250Wh per night, so a 500Wh power station gives roughly 2 nights. With humidifier and heated tube, consumption roughly doubles (350–500Wh per night), so a 1000Wh station gives about 2 nights. Using DC power instead of AC increases runtime by 15–25% by skipping the inverter efficiency loss.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What size power station do I need for CPAP camping?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          For CPAP camping, we recommend at least a 500Wh power station (gives 1–2 nights depending on settings). For 2–3 nights comfortably with some margin for safety, go with 1000–1500Wh. For longer trips (4+ nights), add solar panels (100–200W) so you can recharge during the day. Always get a station with a pure sine wave inverter (required for safe CPAP operation) and consider using the DC output with a DC-DC converter for maximum efficiency and runtime.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Does a CPAP need pure sine wave power?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes — CPAP machines (especially newer models with advanced features like heated humidifiers, AutoSet algorithms, and data logging) require pure sine wave power for proper and safe operation. Modified sine wave can cause motor noise, overheating, incorrect pressure delivery, and even damage the motor or electronics over time. All quality portable power stations use pure sine wave inverters, but budget generators and cheap inverters may not. Always check for "pure sine wave" on the spec sheet before buying for CPAP use.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Does the humidifier use more power? How much?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes — the heated humidifier is typically the biggest power consumer on a CPAP machine, often using more power than the motor itself. A humidifier typically adds 20–50W of continuous draw, roughly doubling total power consumption compared to dry-only operation. Using a heated tube adds another 10–20W on top of that. For maximum battery life when camping, turn off the humidifier or use it on the lowest setting you can tolerate. Using a heated humidifier can cut your runtime in half compared to dry operation.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I connect CPAP to a power station?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          You have two options: 1) AC plug (most common and universal): simply plug your CPAP's AC adapter brick into the power station's wall outlet. Easy, works with any machine, but slightly less efficient. 2) DC power (most efficient): use a DC-DC converter cable designed for your specific CPAP model that plugs into the 12V car port or DC barrel jack on the power station. This is 15–25% more efficient because it skips the DC-to-AC inversion. You can buy official DC cables from your CPAP manufacturer or third-party ones on Amazon — just make sure the voltage and connector match your machine.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I use a CPAP with a power station while camping?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Absolutely — portable power stations are the #1 choice for CPAP camping because they are completely silent, produce no fumes or exhaust (unlike gas generators), and can be safely used inside a tent or RV. Just make sure to: get a station with pure sine wave output, size it for at least 2 nights (3 with a safety buffer), consider using DC power for 15–25% more runtime, and turn off humidifier or heated tube if you need to conserve power. Many people use 500–1000Wh stations for weekend CPAP camping trips with great results.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How does pressure setting affect CPAP power use?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Higher pressure settings use more power, but the effect is relatively modest compared to humidifier use. Going from 5 cm H<sub>2</sub>O to 20 cm H<sub>2</sub>O increases motor power draw by roughly 30–50% (from about 20W to 30–35W on a typical machine). AutoSet machines may use slightly more on average than fixed-pressure machines if they frequently ramp up to higher pressures during the night. The big power difference comes from accessories: humidifier, heated tube, and mask heating — these can double or triple total consumption.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is the difference between DC and AC power for CPAP?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          CPAP machines internally run on low-voltage DC (typically 12V or 24V). When you plug into a wall outlet (AC), the power brick converts AC to DC. When you use a power station's AC outlet, the station first converts its DC battery to AC, then your CPAP brick converts it back to DC. That double conversion wastes 15–25% of energy as heat. Using a DC-DC cable directly from the station's 12V output skips both conversions and gives you 15–25% more runtime from the same battery. DC operation also produces less heat and is slightly quieter.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How much power does ResMed AirSense 10 / 11 use?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          ResMed AirSense 10: roughly 20–30W base (motor only, no humidifier, typical pressure ~10 cm H<sub>2</sub>O), 50–80W with humidifier on medium, 60–100W with humidifier + heated tube. Per night (8 hours): about 160–240Wh dry, 400–640Wh with humidifier + heated tube. AirSense 11 is slightly more efficient due to its newer motor design — about 10–15% less power overall for equivalent settings. Actual numbers vary based on your specific pressure setting, breathing pattern, mask leak rate, and humidifier heating level.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can solar panels charge a CPAP battery during the day?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes — this is a great solution for longer camping trips. A 100W solar panel produces roughly 300–500Wh per day (at 4–6 hours of good sun with 70% real-world efficiency), which is enough to fully recharge a 500Wh station in 1–2 days and keep your CPAP going indefinitely. For reliable off-grid CPAP, we recommend a 500–1000Wh power station + 100–200W of solar panels. This setup lets you camp as long as you want without worrying about running out of power for your therapy, as long as you get reasonable sunlight.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Calculators &amp; Guides</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="power-station-runtime-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Runtime</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Runtime Calculator</h3>
+        <p class="text-sm text-gray-400">Calculate exact runtime for any device combination. Add all your camping gear for a complete picture.</p>
+      </a>
+      <a href="solar-panel-needs-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Solar</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Solar Panel Needs Calculator</h3>
+        <p class="text-sm text-gray-400">Calculate solar panel size to keep your CPAP battery charged indefinitely while camping off-grid.</p>
+      </a>
+      <a href="camping-power-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Camping</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Camping Power Calculator</h3>
+        <p class="text-sm text-gray-400">Full camping power calculator including CPAP plus all your other gear, trip duration, and solar needs.</p>
+      </a>
+      <a href="../specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">COMPARE</div>
+          <span class="badge badge-info">All Brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Comparison</h3>
+        <p class="text-sm text-gray-400">Compare portable power stations side by side. Filter by capacity, output, and features for CPAP use.</p>
+      </a>
+      <a href="appliance-wattage-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">CALCULATOR</div>
+          <span class="badge badge-info">50+ Appliances</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Appliance Wattage Calculator</h3>
+        <p class="text-sm text-gray-400">Comprehensive wattage reference for 50+ devices. Build your complete power budget.</p>
+      </a>
+      <a href="../specs/portable-power-station-eco-mode.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">GUIDE</div>
+          <span class="badge badge-info">Important</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">ECO Mode Guide</h3>
+        <p class="text-sm text-gray-400">Learn why you should disable ECO mode for CPAP use — it could shut off your machine at night.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentModel = 'airsense10';
+    let humidifier = 'med';
+    let heatedTube = false;
+    let powerType = 'dc';
+
+    const modelBaseWatts = {
+      airsense10: 25,
+      airsense11: 22,
+      dreamstation: 25,
+      custom: null
+    };
+
+    function setModel(model) {
+      currentModel = model;
+      document.querySelectorAll('.cpap-model-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + model).classList.add('active');
+      calculateCPAP();
+    }
+
+    function setHumidifier(level) {
+      humidifier = level;
+      ['off', 'low', 'med', 'high'].forEach(l => {
+        document.getElementById('hum-' + l).classList.toggle('active', l === level);
+      });
+      calculateCPAP();
+    }
+
+    function setHeatedTube(val) {
+      heatedTube = val;
+      document.getElementById('tube-off').classList.toggle('active', !val);
+      document.getElementById('tube-on').classList.toggle('active', val);
+      calculateCPAP();
+    }
+
+    function setPowerType(type) {
+      powerType = type;
+      document.getElementById('pow-ac').classList.toggle('active', type === 'ac');
+      document.getElementById('pow-dc').classList.toggle('active', type === 'dc');
+      calculateCPAP();
+    }
+
+    function calculateCPAP() {
+      const pressure = parseFloat(document.getElementById('pressure').value) || 10;
+      const customW = parseFloat(document.getElementById('customWatts').value) || 25;
+      const batteryWh = parseFloat(document.getElementById('batteryWh').value) || 1000;
+      const hoursNight = parseFloat(document.getElementById('hoursNight').value) || 8;
+
+      let baseMotorWatts;
+      if (currentModel === 'custom') {
+        baseMotorWatts = customW;
+      } else {
+        baseMotorWatts = modelBaseWatts[currentModel];
+        const pressureFactor = 0.03;
+        baseMotorWatts = baseMotorWatts * (1 + (pressure - 10) * pressureFactor);
+      }
+
+      let humidWatts = 0;
+      if (humidifier === 'low') humidWatts = 15;
+      else if (humidifier === 'med') humidWatts = 30;
+      else if (humidifier === 'high') humidWatts = 45;
+
+      let tubeWatts = heatedTube ? 15 : 0;
+
+      const totalWattsDC = baseMotorWatts + humidWatts + tubeWatts;
+      const totalWattsAC = totalWattsDC / 0.85;
+
+      const dcEfficiency = 0.95;
+      const acEfficiency = 0.85 * 0.9;
+
+      const usableWh = batteryWh * 0.9;
+
+      const dcRuntimeHours = (usableWh * dcEfficiency) / totalWattsDC;
+      const acRuntimeHours = (usableWh * acEfficiency) / totalWattsAC;
+
+      const dcPerNightWh = totalWattsDC * hoursNight / dcEfficiency;
+      const acPerNightWh = totalWattsAC * hoursNight / acEfficiency;
+
+      const dcNights = dcRuntimeHours / hoursNight;
+      const acNights = acRuntimeHours / hoursNight;
+
+      let runtimeHours, nightsCount, perNightWh, avgWatts;
+      if (powerType === 'dc') {
+        runtimeHours = dcRuntimeHours;
+        nightsCount = dcNights;
+        perNightWh = dcPerNightWh;
+        avgWatts = totalWattsDC;
+      } else {
+        runtimeHours = acRuntimeHours;
+        nightsCount = acNights;
+        perNightWh = acPerNightWh;
+        avgWatts = totalWattsAC;
+      }
+
+      document.getElementById('runtimeHours').textContent = runtimeHours.toFixed(1);
+      document.getElementById('nightsCount').textContent = nightsCount.toFixed(1);
+      document.getElementById('perNightWh').textContent = Math.round(perNightWh);
+      document.getElementById('avgWatts').textContent = Math.round(avgWatts);
+
+      document.getElementById('dcRuntime').textContent = dcRuntimeHours.toFixed(1) + ' h';
+      document.getElementById('dcNights').textContent = dcNights.toFixed(1) + ' nights';
+      document.getElementById('dcPerNight').textContent = Math.round(dcPerNightWh) + ' Wh';
+      document.getElementById('acRuntime').textContent = acRuntimeHours.toFixed(1) + ' h';
+      document.getElementById('acNights').textContent = acNights.toFixed(1) + ' nights';
+      document.getElementById('acPerNight').textContent = Math.round(acPerNightWh) + ' Wh';
+
+      let rec = '';
+      const recWh = Math.round(dcPerNightWh * 2 * 1.2);
+      if (batteryWh < dcPerNightWh) {
+        rec = 'Warning: Your battery may not last a full night with these settings. We recommend upgrading to at least a ' + Math.round(dcPerNightWh * 1.5) + 'Wh power station for reliable overnight use. For CPAP, always have a safety margin — never cut it close with medical equipment.';
+      } else if (dcNights < 2) {
+        rec = 'Your battery will last about ' + dcNights.toFixed(1) + ' night(s) on DC power. Good for a single night, but we recommend at least a ' + recWh + 'Wh station for 2-night trips with a safety buffer. Add a 100W solar panel for longer camping stays. For medical peace of mind, always carry a backup power source.';
+      } else if (dcNights < 4) {
+        rec = 'Your battery will last about ' + dcNights.toFixed(1) + ' nights on DC power — solid for a weekend CPAP camping trip. For trips longer than ' + Math.floor(dcNights) + ' nights, consider adding 100–200W of solar panels to recharge during the day. Remember to disable ECO mode on your power station to prevent unexpected shutoffs at night.';
+      } else {
+        rec = 'Excellent! Your battery will last about ' + dcNights.toFixed(1) + ' nights on DC power — enough for a full week of CPAP camping. This is a great setup. For even longer trips or peace of mind, add 100–200W of portable solar and you can camp off-grid indefinitely. Always test your setup at home for at least one night before your trip.';
+      }
+      document.getElementById('recommendation').textContent = rec;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const pressureSlider = document.getElementById('pressureSlider');
+      const pressureInput = document.getElementById('pressure');
+      const batterySlider = document.getElementById('batterySlider');
+      const batteryInput = document.getElementById('batteryWh');
+      const hoursSlider = document.getElementById('hoursSlider');
+      const hoursInput = document.getElementById('hoursNight');
+
+      pressureSlider.addEventListener('input', function() {
+        pressureInput.value = this.value;
+        calculateCPAP();
+      });
+      pressureInput.addEventListener('input', function() {
+        pressureSlider.value = Math.min(Math.max(this.value, 4), 25);
+        calculateCPAP();
+      });
+      batterySlider.addEventListener('input', function() {
+        batteryInput.value = this.value;
+        calculateCPAP();
+      });
+      batteryInput.addEventListener('input', function() {
+        batterySlider.value = Math.min(Math.max(this.value, 100), 5000);
+        calculateCPAP();
+      });
+      hoursSlider.addEventListener('input', function() {
+        hoursInput.value = this.value;
+        calculateCPAP();
+      });
+      hoursInput.addEventListener('input', function() {
+        hoursSlider.value = Math.min(Math.max(this.value, 4), 12);
+        calculateCPAP();
+      });
+
+      calculateCPAP();
+    });
+  </script>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>

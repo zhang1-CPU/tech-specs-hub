@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appliance Wattage Calculator — Power Consumption Estimator (2026) | TechSpecsHub</title>
+  <meta name="description" content="Calculate total power consumption of all your appliances and devices. Free interactive wattage calculator with 50+ common appliances, surge wattage info, and recommended power station size.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/tools/appliance-wattage-calculator.html">
+
+  <meta property="og:title" content="Appliance Wattage Calculator — Power Consumption Estimator (2026)">
+  <meta property="og:description" content="Free interactive wattage calculator with 50+ common appliances. Add up your total power consumption and find the right size portable power station.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/tools/appliance-wattage-calculator.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Appliance Wattage Calculator — Power Consumption Estimator">
+  <meta name="twitter:description" content="50+ common appliances with typical wattage. Calculate total power consumption and get recommended power station size.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    .calc-input {
+      background: rgba(15, 29, 50, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 10px 12px;
+      color: #fff;
+      width: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+    .calc-input:focus {
+      outline: none;
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+    }
+    .appliance-row {
+      background: rgba(15, 29, 50, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: grid;
+      grid-template-columns: 1fr 80px 80px;
+      gap: 10px;
+      align-items: center;
+      transition: all 0.15s ease;
+    }
+    .appliance-row:hover {
+      background: rgba(15, 29, 50, 0.7);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .appliance-row.active {
+      background: rgba(34, 211, 238, 0.08);
+      border-color: rgba(34, 211, 238, 0.3);
+    }
+    .appliance-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+    .appliance-watts {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+    .result-card {
+      background: linear-gradient(145deg, rgba(30, 50, 89, 0.6), rgba(22, 37, 68, 0.8));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .result-card .result-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #4ade80 0%, #22d3ee 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .result-card .result-label {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+    .category-tab {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      background: transparent;
+      border: 1px solid transparent;
+      color: #9ca3af;
+    }
+    .category-tab:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: #e5e7eb;
+    }
+    .category-tab.active {
+      background: rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.3);
+      color: #22d3ee;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Appliance Wattage Calculator — Power Consumption Estimator (2026)",
+    "description": "Free interactive wattage calculator with 50+ common appliances and electronics. Calculate total power consumption and find the right size portable power station for your needs.",
+    "url": "https://powerspecshub.com/pages/tools/appliance-wattage-calculator.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate how many watts my appliances use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calculate total appliance wattage, add up the running wattage of each device you want to power. You can find wattage on the device's label, in the manual, or by using a watt meter. For our calculator, simply select appliances from our 50+ preset list and adjust quantities and daily usage hours. The calculator automatically sums total watts, daily watt-hours, and recommends a power station size with a 20% safety buffer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between running watts and starting/surge watts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Running watts (or rated watts) is the continuous power a device uses while operating normally. Starting watts (or surge watts) is the extra power needed briefly when a device with a motor or compressor first turns on. Devices like refrigerators, air conditioners, and well pumps can draw 2–5x their running wattage for 1–3 seconds at startup. Your power station must handle both — the continuous output rating must cover running watts, and the peak/surge rating must cover startup surges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many watts does a typical house use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average US home uses about 10,700 kWh per year, or roughly 900 kWh per month — that is about 1,200W average continuous draw. However, this varies hugely depending on home size, climate, and appliances. During a power outage, most people only run essential loads: fridge, lights, phone charging, maybe a TV — typically 300–800W total. Portable power stations can handle essential loads; whole-home backup requires a much larger system (5,000W+)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What uses the most electricity in a home?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The biggest electricity users in most homes are: heating and air conditioning (40–60% of total use), water heater (15–20%), refrigerator (5–10%), washer/dryer (5–10%), and lighting (5–10%). For portable power station use during outages, the fridge is usually the biggest continuous load (100–200W average). Electric space heaters, AC units, and ovens draw so much power (1000–5000W) that they are impractical for portable stations — use propane or gas alternatives instead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate are appliance wattage labels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Appliance labels typically list the maximum wattage, not average. Many devices use significantly less than their labeled wattage in normal use. For example, a fridge labeled 200W might only use 60–80W average because the compressor cycles on and off. A laptop labeled 90W might use only 20–30W when browsing. For the most accurate measurement, use a plug-in watt meter (a Kill-A-Watt or similar) to measure real consumption over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many watts do I need for emergency backup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For basic emergency backup (phones, lights, radio, laptop): 200–500W continuous, 300–1000Wh capacity. For essentials including a fridge: 800–1500W continuous, 1500–3000Wh capacity. For more comfort (add TV, microwave, small medical devices): 2000–3000W continuous, 3000–6000Wh capacity. Use our calculator above to add up your specific devices and get a personalized recommendation with a safety buffer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do LED lights really save that much power?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — LED bulbs use 75–85% less energy than incandescent bulbs and last 15–25 times longer. A 10W LED produces the same light as a 60W incandescent. If you have 20 light bulbs in your home, switching from incandescent to LED saves about 1,000W of draw — enough to run most refrigerators. For camping or backup power, LED lighting is essential for maximizing runtime on a portable power station."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I reduce my power consumption?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Top ways to reduce power consumption: switch to LED lighting, use energy-efficient appliances, unplug vampire loads (devices on standby), use DC instead of AC when possible, set refrigerators to 37–40°F (3–4°C), use a programmable thermostat, air-seal your home, and use natural light during the day. Even small reductions add up — cutting 100W of continuous use saves 2.4 kWh per day, which is significant on a portable power station."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What size power station do I need for a refrigerator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typical full-size refrigerator uses 100–200W average running, with 500–800W starting surge. To run a fridge for 24 hours, you need roughly 2,400–4,800Wh of battery capacity with inverter efficiency losses factored in. We recommend at least a 2,000Wh power station for one day of fridge use, or 4,000Wh+ for two days. For longer outages, add solar panels to recharge during the day. Always verify your specific fridge's actual draw with a watt meter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are phantom/vampire loads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Phantom loads (also called vampire power or standby power) are the small amounts of electricity devices use even when they are 'off' or in standby mode. Common culprits include TVs, game consoles, cable boxes, phone chargers, microwave displays, and anything with a remote control or LED clock. These typically draw 1–15W each and can add up to 50–100W of continuous waste. ECO mode on power stations helps by automatically shutting off outputs with very low load."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://powerspecshub.com/pages/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Appliance Wattage Calculator"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Calculators &amp; Tools</p>
+              <a href="power-station-runtime-calculator.html"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Runtime Calculator</a>
+              <a href="solar-panel-needs-calculator.html"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Solar Panel Calculator</a>
+              <a href="appliance-wattage-calculator.html"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Appliance Wattage Calculator</a>
+              <a href="camping-power-calculator.html"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Camping Power Calculator</a>
+              <a href="cpap-battery-calculator.html"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>CPAP Battery Calculator</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <p class="nav-dropdown-section-label mt-2">Calculators</p>
+        <a href="power-station-runtime-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee"></i>Runtime Calculator</a>
+        <a href="solar-panel-needs-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee"></i>Solar Panel Calculator</a>
+        <a href="appliance-wattage-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>Appliance Wattage Calculator</a>
+        <a href="camping-power-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee"></i>Camping Power Calculator</a>
+        <a href="cpap-battery-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee"></i>CPAP Battery Calculator</a>
+        <a href="best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="#">Tools</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Appliance Wattage Calculator</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-green-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-green-500/20 text-green-400 font-mono font-bold text-sm rounded-md border border-green-500/30">CALCULATOR</div>
+        <span class="badge badge-info"><i data-lucide="zap" style="width:0.75rem;height:0.75rem"></i>50+ Appliances</span>
+        <span class="badge badge-info"><i data-lucide="battery-charging" style="width:0.75rem;height:0.75rem"></i>Sizing Guide</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Appliance Wattage Calculator &mdash; <span class="gradient-text">Power Consumption Estimator</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Add up all your appliances and devices to find your total power consumption. Browse 50+ common appliances with real-world wattage ratings, adjust quantities and usage hours, and get personalized power station size recommendations with safety buffer built in.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="list" style="width:0.9rem;height:0.9rem"></i>Appliances</div>
+          <div class="font-mono font-bold text-xl text-white">50+</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Surge Info</div>
+          <div class="font-bold text-xl text-yellow-400">Included</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="shield" style="width:0.9rem;height:0.9rem"></i>Safety Buffer</div>
+          <div class="font-mono font-bold text-xl text-green-400">20%</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Daily Wh</div>
+          <div class="font-mono font-bold text-xl text-electric-400">Auto</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-6 flex items-center gap-2"><i data-lucide="calculator" style="width:1.25rem;height:1.25rem;color:#4ade80"></i>Wattage Calculator</h2>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Appliance Selector -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex flex-wrap gap-2 mb-2">
+            <button class="category-tab active" data-category="all">All</button>
+            <button class="category-tab" data-category="kitchen">Kitchen</button>
+            <button class="category-tab" data-category="electronics">Electronics</button>
+            <button class="category-tab" data-category="lighting">Lighting</button>
+            <button class="category-tab" data-category="hvac">HVAC</button>
+            <button class="category-tab" data-category="camping">Camping</button>
+            <button class="category-tab" data-category="medical">Medical</button>
+          </div>
+
+          <div id="applianceList" class="space-y-2 max-h-[500px] overflow-y-auto pr-2">
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="space-y-4">
+          <div class="result-card">
+            <div class="result-value" id="totalWatts">0</div>
+            <div class="result-label">Total Running Watts</div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-2xl" id="totalSurge">0</div>
+              <div class="result-label">Peak Surge (W)</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-2xl" id="dailyWh">0</div>
+              <div class="result-label">Daily Wh</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-2xl" id="numDevices">0</div>
+              <div class="result-label">Devices Selected</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-2xl" id="recommendedWh">0</div>
+              <div class="result-label">Recommended Wh</div>
+            </div>
+          </div>
+
+          <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i data-lucide="battery" style="width:1rem;height:1rem;color:#4ade80"></i>
+              Recommended Station Size
+            </h4>
+            <p class="text-sm text-gray-300 leading-relaxed" id="recommendation">
+              Select appliances to see your recommended power station size.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-green-950/30 to-electric-950/30 border border-green-500/20 rounded-xl p-5">
+            <h4 class="font-semibold text-green-400 mb-2 flex items-center gap-2">
+              <i data-lucide="info" style="width:1rem;height:1rem"></i>
+              How It Works
+            </h4>
+            <p class="text-sm text-gray-300">
+              Daily Wh = Running Watts × Hours Per Day. Recommended size includes 20% safety buffer and 85% inverter efficiency.
+            </p>
+          </div>
+
+          <button onclick="clearAll()" class="w-full py-2.5 bg-navy-800 hover:bg-navy-700 text-gray-300 hover:text-white rounded-lg text-sm font-medium transition-all border border-white/10">
+            Clear All Selections
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">How to Use This Calculator</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="space-y-5">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Browse or Search Appliances</h4>
+            <p class="text-sm text-gray-400">Scroll through our list of 50+ common appliances or use the category tabs to narrow down by type: kitchen, electronics, lighting, HVAC, camping gear, or medical devices. Each appliance shows both running wattage (continuous use) and starting/surge wattage (brief startup spike for motor-driven devices).</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Add Quantity and Daily Hours</h4>
+            <p class="text-sm text-gray-400">For each appliance you want to power, set the quantity (how many of that device you have) and the number of hours per day you expect to use it. Some appliances (like fridges) run 24 hours a day but cycle on and off — we use average wattage that already accounts for cycling, so you can still set 24 hours.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Check Total Watts and Daily Consumption</h4>
+            <p class="text-sm text-gray-400">As you add devices, watch the totals update instantly. Total running watts tells you the continuous draw — your power station needs at least this much continuous output. Peak surge watts is the maximum draw at startup — your station needs a peak/surge rating that covers this. Daily watt-hours tells you how much total energy you use per day.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Get Your Recommended Power Station Size</h4>
+            <p class="text-sm text-gray-400">Based on your total daily consumption, the calculator recommends a battery size with a 20% safety buffer and 85% inverter efficiency factored in. This gives you a realistic target when shopping for a portable power station. If your total exceeds what a single station can provide, you may need a larger unit or multiple units in parallel.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Fine-Tune for Accuracy</h4>
+            <p class="text-sm text-gray-400">Our wattage numbers are averages — your actual devices may differ. For the most accurate results, measure each device with a plug-in watt meter (like a Kill-A-Watt). This is especially important for fridges, well pumps, and other motor-driven devices where actual consumption varies widely by model and age.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUNNING VS SURGE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Running Watts vs Starting (Surge) Watts</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Understanding the difference between running watts and starting watts is crucial for choosing the right portable power station. Get this wrong, and your station might not even turn on your device — or worse, it could trip a breaker or damage the inverter.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-5">
+        <div class="bg-navy-900/60 border border-electric-500/30 rounded-xl p-5">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="activity" style="width:1rem;height:1rem"></i>
+            Running Watts (Rated Watts)
+          </h4>
+          <p class="text-sm text-gray-400 mb-3">
+            The continuous power a device needs to operate normally once it is running. This is the number you use to calculate runtime and daily energy consumption.
+          </p>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Also called: rated watts, continuous watts, operating watts</li>
+            <li>• Used for runtime and daily consumption math</li>
+            <li>• Must be below your station's continuous output rating</li>
+            <li>• Usually printed on the device label</li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/60 border border-yellow-500/30 rounded-xl p-5">
+          <h4 class="font-semibold text-yellow-400 mb-2 flex items-center gap-2">
+            <i data-lucide="zap" style="width:1rem;height:1rem"></i>
+            Starting Watts (Surge Watts)
+          </h4>
+          <p class="text-sm text-gray-400 mb-3">
+            The extra power needed for 1–3 seconds when a motor or compressor first starts up. Can be 2–5x higher than running watts. Your station's peak rating must cover this.
+          </p>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Also called: surge watts, peak watts, startup watts</li>
+            <li>• Only lasts 1–3 seconds</li>
+            <li>• Must be below your station's peak/surge rating</li>
+            <li>• Rarely printed on labels (you may need to measure)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="font-bold text-xl mb-3 text-white">Which Devices Have Surge Watts?</h3>
+      <div class="overflow-x-auto mb-5">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Device Type</th><th>Running Watts</th><th>Surge Watts</th><th>Surge Multiple</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Refrigerator (full-size)</td><td>100–200W</td><td>500–800W</td><td>3–5×</td></tr>
+            <tr><td>12V car cooler</td><td>40–80W</td><td>80–150W</td><td>2–3×</td></tr>
+            <tr><td>Air conditioner (window)</td><td>500–1200W</td><td>1500–3000W</td><td>3–4×</td></tr>
+            <tr><td>Well pump</td><td>500–1000W</td><td>1500–3000W</td><td>3–4×</td></tr>
+            <tr><td>Vacuum cleaner</td><td>500–1500W</td><td>1000–3000W</td><td>2–3×</td></tr>
+            <tr><td>Space heater</td><td>750–1500W</td><td>800–1600W</td><td>1.1× (minimal)</td></tr>
+            <tr><td>Microwave</td><td>600–1500W</td><td>700–1700W</td><td>1.1× (minimal)</td></tr>
+            <tr><td>LED light bulb</td><td>5–15W</td><td>6–18W</td><td>1.1× (negligible)</td></tr>
+            <tr><td>Laptop / phone charger</td><td>20–100W</td><td>25–120W</td><td>1.2× (small)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-warning !mb-0">
+        <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Important:</strong> If you run multiple motor-driven devices, their surges do not all happen at the same time unless you turn them all on simultaneously. For most people, the single largest surge (usually the fridge) is what matters. If you are concerned, turn on devices one at a time — wait 5–10 seconds between turning on motor-driven devices so each surge happens separately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POWER SAVING TIPS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">How to Reduce Power Consumption</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        The easiest way to make your portable power station last longer is to use less power in the first place. Here are proven strategies for cutting your energy use without sacrificing comfort.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="lightbulb" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Switch to LED Lighting</h4>
+            <p class="text-sm text-gray-400">LED bulbs use 75–85% less energy than incandescents and last 25 times longer. A 10W LED = 60W incandescent brightness. For camping, string lights and LED lanterns are incredibly efficient.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="snowflake" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Optimize Fridge Temperature</h4>
+            <p class="text-sm text-gray-400">Set your fridge to 37–40°F (3–4°C) and freezer to 0–5°F (-18 to -15°C). Every degree colder uses more energy. Keep the fridge full — it stays cold longer and the compressor runs less. Limit how often you open the door.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="plug-zap" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Eliminate Phantom Loads</h4>
+            <p class="text-sm text-gray-400">Unplug devices when not in use — TVs, game consoles, chargers, and anything with a standby light or clock draws 1–15W even when "off." Use power strips to easily cut power to groups of devices. ECO mode on your power station also helps.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="battery-charging" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Use DC Instead of AC</h4>
+            <p class="text-sm text-gray-400">Whenever possible, use DC output (USB, 12V car port) instead of AC. Skipping the DC-to-AC inverter conversion saves 10–15% of energy. Many devices have 12V versions — car coolers, LED lights, CPAP machines, even some laptops.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Use Natural Light During the Day</h4>
+            <p class="text-sm text-gray-400">Open curtains and blinds instead of turning on lights during the day. Position your workspace near windows. For camping, plan activities that need light during daylight hours and save battery-powered lights for evening.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="thermometer" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Dress for the Temperature</h4>
+            <p class="text-sm text-gray-400">Instead of using electric heat or AC, add or remove layers. Use blankets, sleeping bags, or propane heaters for warmth. Use fans and ventilation instead of AC. Heating and cooling are the biggest energy hogs by far.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="lightbulb" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Pro tip:</strong> Even small reductions add up fast. Cutting 100W of continuous use saves 2.4 kWh per day — that is 20% of a 12 kWh battery. The biggest wins are: replacing incandescent lights with LEDs, optimizing fridge settings, and eliminating phantom/standby loads. Start with the biggest users and work your way down.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about appliance wattage and power consumption.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I calculate how many watts my appliances use?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          To calculate total appliance wattage, add up the running wattage of each device you want to power. You can find wattage on the device's label, in the manual, or by using a plug-in watt meter. For our calculator, simply select appliances from our 50+ preset list and adjust quantities and daily usage hours. The calculator automatically sums total watts, daily watt-hours, peak surge watts, and recommends a power station size with a 20% safety buffer and 85% inverter efficiency factored in.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is the difference between running watts and starting/surge watts?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Running watts (or rated watts) is the continuous power a device uses while operating normally. Starting watts (or surge watts) is the extra power needed briefly when a device with a motor or compressor first turns on. Devices like refrigerators, air conditioners, and well pumps can draw 2–5x their running wattage for 1–3 seconds at startup. Your power station must handle both — the continuous output rating must cover running watts, and the peak/surge rating must cover startup surges. Resistive devices like heaters and light bulbs have negligible surge.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How many watts does a typical house use?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          The average US home uses about 10,700 kWh per year, or roughly 900 kWh per month — that is about 1,200W average continuous draw. However, this varies hugely depending on home size, climate, number of occupants, and appliance types. During a power outage, most people only run essential loads: fridge, lights, phone charging, maybe a TV — typically 300–800W total. Portable power stations can handle essential loads; whole-home backup with heating/cooling requires a much larger system (5,000W+ continuous and 10–30 kWh of battery).
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What uses the most electricity in a home?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          The biggest electricity users in most homes are: heating and air conditioning (40–60% of total use), water heater (15–20%), refrigerator (5–10%), washer/dryer (5–10%), and lighting (5–10%). For portable power station use during outages, the fridge is usually the biggest continuous load (100–200W average). Electric space heaters, AC units, and ovens draw so much power (1000–5000W) that they are generally impractical for portable stations — use propane or gas alternatives instead for cooking and heating.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How accurate are appliance wattage labels?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Appliance labels typically list the maximum wattage, not the average real-world consumption. Many devices use significantly less than their labeled wattage in normal use. For example, a fridge labeled 200W might only use 60–80W average because the compressor cycles on and off. A laptop labeled 90W might use only 20–30W when browsing the internet. For the most accurate measurement, use a plug-in watt meter (a Kill-A-Watt or similar device) to measure real consumption over 24 hours.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How many watts do I need for emergency backup?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          For basic emergency backup (phones, lights, radio, laptop): 200–500W continuous, 300–1000Wh capacity. For essentials including a full-size fridge: 800–1500W continuous, 1500–3000Wh capacity (about one day of fridge use). For more comfort (add TV, microwave, small medical devices, multiple fridges): 2000–3000W continuous, 3000–6000Wh capacity. Use our calculator above to add up your specific devices and get a personalized recommendation with a safety buffer.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Do LED lights really save that much power?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes — LED bulbs use 75–85% less energy than incandescent bulbs and last 15–25 times longer. A 10W LED produces the same light as a 60W incandescent. If you have 20 light bulbs in your home, switching from incandescent to LED saves about 1,000W of draw — enough to run most refrigerators. For camping or backup power, LED lighting is essential for maximizing runtime on a portable power station. LEDs also produce less heat, which means less load on cooling in warm weather.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How can I reduce my power consumption?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Top ways to reduce power consumption: switch to LED lighting, use energy-efficient appliances, unplug vampire loads (devices on standby), use DC instead of AC when possible, set refrigerators to 37–40°F (3–4°C), use a programmable thermostat, air-seal your home, use natural light during the day, and cook with propane/gas instead of electric. Even small reductions add up — cutting 100W of continuous use saves 2.4 kWh per day, which is significant on a portable power station. Start with the biggest energy users and work your way down.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What size power station do I need for a refrigerator?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          A typical full-size refrigerator uses 100–200W average running, with 500–800W starting surge. To run a fridge for 24 hours, you need roughly 2,400–4,800Wh of battery capacity with inverter efficiency losses factored in. We recommend at least a 2,000Wh power station for one day of fridge use, or 4,000Wh+ for two days. For longer outages, add 200–400W of solar panels to recharge during the day. Always verify your specific fridge's actual draw with a watt meter — energy star models use significantly less than older units.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What are phantom/vampire loads?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Phantom loads (also called vampire power or standby power) are the small amounts of electricity devices use even when they are "off" or in standby mode. Common culprits include TVs, game consoles, cable boxes, phone chargers, microwave displays, and anything with a remote control or LED clock display. These typically draw 1–15W each and can add up to 50–100W of continuous waste across a whole house. ECO mode on power stations helps by automatically shutting off outputs with very low load, but the best solution is to unplug devices or use smart power strips.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Calculators &amp; Guides</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="power-station-runtime-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Runtime</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Runtime Calculator</h3>
+        <p class="text-sm text-gray-400">Calculate how long your power station will run specific devices. Great for detailed single-device analysis.</p>
+      </a>
+      <a href="solar-panel-needs-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Solar</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Solar Panel Needs Calculator</h3>
+        <p class="text-sm text-gray-400">Figure out how many solar panels you need based on your total daily consumption from this calculator.</p>
+      </a>
+      <a href="camping-power-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Camping</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Camping Power Calculator</h3>
+        <p class="text-sm text-gray-400">Plan camping power needs by trip type — car camping, backpacking, RV, and glamping setups.</p>
+      </a>
+      <a href="cpap-battery-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Medical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">CPAP Battery Calculator</h3>
+        <p class="text-sm text-gray-400">Specialized calculator for CPAP runtime — includes pressure settings, humidifier, and heated tube adjustments.</p>
+      </a>
+      <a href="../specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">COMPARE</div>
+          <span class="badge badge-info">All Brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Comparison</h3>
+        <p class="text-sm text-gray-400">Compare all major portable power station models side by side — capacity, output, surge rating, and solar input.</p>
+      </a>
+      <a href="../specs/portable-power-station-eco-mode.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">GUIDE</div>
+          <span class="badge badge-info">Battery Saving</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">ECO Mode Guide</h3>
+        <p class="text-sm text-gray-400">Learn how ECO mode eliminates vampire drain and extends your battery life by 5–20%.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const appliances = [
+      { name: 'LED Light Bulb (10W)', watts: 10, surge: 12, hours: 4, category: 'lighting' },
+      { name: 'LED String Lights', watts: 20, surge: 22, hours: 6, category: 'lighting' },
+      { name: 'LED Lantern', watts: 5, surge: 6, hours: 4, category: 'lighting' },
+      { name: 'Fluorescent Light (20W)', watts: 20, surge: 25, hours: 4, category: 'lighting' },
+      { name: 'Incandescent Bulb (60W)', watts: 60, surge: 65, hours: 4, category: 'lighting' },
+      { name: 'Dimmable LED (15W)', watts: 15, surge: 18, hours: 4, category: 'lighting' },
+      { name: 'Outdoor Flood Light', watts: 50, surge: 60, hours: 8, category: 'lighting' },
+
+      { name: 'Refrigerator (Full-size)', watts: 150, surge: 700, hours: 24, category: 'kitchen' },
+      { name: 'Mini Fridge', watts: 80, surge: 300, hours: 24, category: 'kitchen' },
+      { name: '12V Car Cooler', watts: 60, surge: 120, hours: 24, category: 'kitchen' },
+      { name: 'Freezer (Chest)', watts: 120, surge: 600, hours: 24, category: 'kitchen' },
+      { name: 'Microwave (700W)', watts: 700, surge: 800, hours: 0.5, category: 'kitchen' },
+      { name: 'Microwave (1000W)', watts: 1000, surge: 1200, hours: 0.5, category: 'kitchen' },
+      { name: 'Toaster', watts: 900, surge: 1000, hours: 0.2, category: 'kitchen' },
+      { name: 'Coffee Maker (Drip)', watts: 800, surge: 900, hours: 0.5, category: 'kitchen' },
+      { name: 'Single-Serve Pod Coffee', watts: 1200, surge: 1300, hours: 0.2, category: 'kitchen' },
+      { name: 'Blender', watts: 300, surge: 500, hours: 0.2, category: 'kitchen' },
+      { name: 'Electric Kettle', watts: 1500, surge: 1600, hours: 0.2, category: 'kitchen' },
+      { name: 'Slow Cooker', watts: 200, surge: 220, hours: 6, category: 'kitchen' },
+      { name: 'Toaster Oven', watts: 1200, surge: 1400, hours: 0.5, category: 'kitchen' },
+      { name: 'Can Opener (Electric)', watts: 100, surge: 150, hours: 0.1, category: 'kitchen' },
+      { name: 'Dishwasher', watts: 1200, surge: 1800, hours: 1, category: 'kitchen' },
+      { name: 'Ice Maker (Portable)', watts: 150, surge: 400, hours: 2, category: 'kitchen' },
+
+      { name: 'Smartphone Charging', watts: 10, surge: 15, hours: 2, category: 'electronics' },
+      { name: 'Tablet Charging', watts: 20, surge: 25, hours: 2, category: 'electronics' },
+      { name: 'Laptop (45W)', watts: 45, surge: 60, hours: 4, category: 'electronics' },
+      { name: 'Laptop (Gaming)', watts: 120, surge: 150, hours: 3, category: 'electronics' },
+      { name: '32" LED TV', watts: 80, surge: 90, hours: 3, category: 'electronics' },
+      { name: '55" 4K TV', watts: 120, surge: 140, hours: 3, category: 'electronics' },
+      { name: '65" OLED TV', watts: 180, surge: 200, hours: 3, category: 'electronics' },
+      { name: 'Streaming Device', watts: 10, surge: 12, hours: 3, category: 'electronics' },
+      { name: 'Wi-Fi Router', watts: 10, surge: 15, hours: 24, category: 'electronics' },
+      { name: 'Cable / Satellite Box', watts: 25, surge: 30, hours: 24, category: 'electronics' },
+      { name: 'Game Console (PS5/Xbox)', watts: 150, surge: 180, hours: 2, category: 'electronics' },
+      { name: 'Bluetooth Speaker', watts: 10, surge: 12, hours: 4, category: 'electronics' },
+      { name: 'Camera Battery Charger', watts: 20, surge: 25, hours: 2, category: 'electronics' },
+      { name: 'Drone Battery Charger', watts: 60, surge: 80, hours: 1.5, category: 'electronics' },
+      { name: 'Power Tool Charger', watts: 80, surge: 100, hours: 2, category: 'electronics' },
+      { name: 'Electric Toothbrush', watts: 5, surge: 6, hours: 0.2, category: 'electronics' },
+      { name: 'Hair Dryer', watts: 1500, surge: 1600, hours: 0.3, category: 'electronics' },
+      { name: 'Electric Shaver', watts: 15, surge: 20, hours: 0.1, category: 'electronics' },
+
+      { name: 'Space Heater (1500W)', watts: 1500, surge: 1600, hours: 4, category: 'hvac' },
+      { name: 'Space Heater (750W)', watts: 750, surge: 800, hours: 4, category: 'hvac' },
+      { name: 'Window AC (5000 BTU)', watts: 500, surge: 1500, hours: 6, category: 'hvac' },
+      { name: 'Portable AC (8000 BTU)', watts: 800, surge: 2000, hours: 6, category: 'hvac' },
+      { name: 'Ceiling Fan', watts: 50, surge: 80, hours: 8, category: 'hvac' },
+      { name: 'Box Fan', watts: 70, surge: 100, hours: 8, category: 'hvac' },
+      { name: 'Portable Fan (12V)', watts: 20, surge: 30, hours: 8, category: 'hvac' },
+      { name: 'Air Purifier', watts: 40, surge: 50, hours: 12, category: 'hvac' },
+      { name: 'Dehumidifier', watts: 300, surge: 500, hours: 8, category: 'hvac' },
+      { name: 'Humidifier', watts: 100, surge: 150, hours: 8, category: 'hvac' },
+
+      { name: 'Camping LED Lantern', watts: 5, surge: 6, hours: 6, category: 'camping' },
+      { name: 'Camping String Lights', watts: 15, surge: 18, hours: 6, category: 'camping' },
+      { name: '12V Portable Fridge', watts: 50, surge: 100, hours: 24, category: 'camping' },
+      { name: 'Electric Cooler (Thermoelectric)', watts: 40, surge: 50, hours: 24, category: 'camping' },
+      { name: 'Camping Fan', watts: 10, surge: 15, hours: 8, category: 'camping' },
+      { name: 'Portable Blender', watts: 200, surge: 300, hours: 0.2, category: 'camping' },
+      { name: 'Electric Grill (Small)', watts: 1200, surge: 1400, hours: 0.5, category: 'camping' },
+      { name: 'Air Mattress Pump', watts: 100, surge: 200, hours: 0.1, category: 'camping' },
+      { name: 'Portable Projector', watts: 100, surge: 120, hours: 2, category: 'camping' },
+
+      { name: 'CPAP Machine (Basic)', watts: 30, surge: 40, hours: 8, category: 'medical' },
+      { name: 'CPAP with Humidifier', watts: 50, surge: 65, hours: 8, category: 'medical' },
+      { name: 'CPAP with Heated Tube', watts: 70, surge: 85, hours: 8, category: 'medical' },
+      { name: 'BiPAP Machine', watts: 60, surge: 80, hours: 8, category: 'medical' },
+      { name: 'Oxygen Concentrator', watts: 400, surge: 500, hours: 24, category: 'medical' },
+      { name: 'Nebulizer', watts: 200, surge: 250, hours: 1, category: 'medical' },
+      { name: 'Heated Blanket', watts: 100, surge: 120, hours: 6, category: 'medical' },
+      { name: 'Hospital Bed', watts: 80, surge: 150, hours: 24, category: 'medical' },
+    ];
+
+    let selected = {};
+
+    function renderAppliances(category = 'all') {
+      const list = document.getElementById('applianceList');
+      const filtered = category === 'all' ? appliances : appliances.filter(a => a.category === category);
+
+      list.innerHTML = filtered.map((app, idx) => {
+        const realIdx = appliances.indexOf(app);
+        const isActive = selected[realIdx];
+        const qty = selected[realIdx]?.qty || 1;
+        const hours = selected[realIdx]?.hours || app.hours;
+
+        return `
+          <div class="appliance-row ${isActive ? 'active' : ''}" data-idx="${realIdx}">
+            <div>
+              <div class="appliance-name">${app.name}</div>
+              <div class="appliance-watts">${app.watts}W run · ${app.surge}W surge</div>
+            </div>
+            <input type="number" class="calc-input !py-1 !px-2 !text-xs" value="${qty}" min="0" max="20" step="1"
+                   onchange="setQty(${realIdx}, this.value)" onclick="event.stopPropagation()">
+            <input type="number" class="calc-input !py-1 !px-2 !text-xs" value="${hours}" min="0" max="24" step="0.5"
+                   onchange="setHours(${realIdx}, this.value)" onclick="event.stopPropagation()">
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setQty(idx, val) {
+      const qty = parseInt(val) || 0;
+      if (qty <= 0) {
+        delete selected[idx];
+      } else {
+        if (!selected[idx]) selected[idx] = { qty, hours: appliances[idx].hours };
+        else selected[idx].qty = qty;
+      }
+      calculateTotals();
+      renderAppliances(currentCategory);
+    }
+
+    function setHours(idx, val) {
+      const hours = parseFloat(val) || 0;
+      if (!selected[idx]) selected[idx] = { qty: 1, hours };
+      else selected[idx].hours = hours;
+      calculateTotals();
+    }
+
+    let currentCategory = 'all';
+
+    function calculateTotals() {
+      let totalWatts = 0;
+      let totalSurge = 0;
+      let dailyWh = 0;
+      let numDevices = 0;
+
+      Object.keys(selected).forEach(idx => {
+        const app = appliances[idx];
+        const qty = selected[idx].qty;
+        const hours = selected[idx].hours;
+        totalWatts += app.watts * qty;
+        totalSurge += app.surge * qty;
+        dailyWh += app.watts * qty * hours;
+        numDevices += qty;
+      });
+
+      const recommendedWh = Math.round((dailyWh / 0.85) * 1.2);
+
+      document.getElementById('totalWatts').textContent = Math.round(totalWatts);
+      document.getElementById('totalSurge').textContent = Math.round(totalSurge);
+      document.getElementById('dailyWh').textContent = Math.round(dailyWh);
+      document.getElementById('numDevices').textContent = numDevices;
+      document.getElementById('recommendedWh').textContent = recommendedWh;
+
+      let rec = '';
+      if (numDevices === 0) {
+        rec = 'Select appliances to see your recommended power station size.';
+      } else if (recommendedWh <= 500) {
+        rec = 'A small 300–500Wh power station (like the Jackery Explorer 300 or Anker 521) should cover your needs. Great for phones, lights, and small electronics.';
+      } else if (recommendedWh <= 1500) {
+        rec = 'A mid-range 1000–1500Wh station (like the Bluetti EB3A or EcoFlow River 2 Max) works well. Handles lights, laptops, a small fridge, and occasional microwave use.';
+      } else if (recommendedWh <= 3000) {
+        rec = 'Look at 2000–3000Wh stations like the EcoFlow Delta 2 or Jackery Explorer 2000 Plus. Enough for a full-size fridge and essential loads for 1–2 days.';
+      } else if (recommendedWh <= 6000) {
+        rec = 'You need a large capacity station like the EcoFlow Delta Pro 3 or Bluetti AC500. These can run a fridge, multiple devices, and medical equipment. Consider adding solar panels.';
+      } else {
+        rec = 'Your needs exceed a single portable power station. Consider a whole-home battery system or multiple units in parallel. Solar panels are highly recommended for extended use.';
+      }
+      document.getElementById('recommendation').textContent = rec;
+    }
+
+    function clearAll() {
+      selected = {};
+      calculateTotals();
+      renderAppliances(currentCategory);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderAppliances();
+
+      document.querySelectorAll('.category-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+          document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          currentCategory = this.dataset.category;
+          renderAppliances(currentCategory);
+        });
+      });
+
+      calculateTotals();
+    });
+  </script>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>

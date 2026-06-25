@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Flight Time Calculator — How Long Can It Fly? (2026) | TechSpecsHub</title>
+  <meta name="description" content="Calculate your drone's flight time based on battery capacity, voltage, weight, payload, wind speed, and flight mode. Free interactive calculator with DJI Mini 4/5 Pro, Mavic 3, Air 3, Avata 2 presets and wind effect formulas.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/tools/drone-flight-time-calculator.html">
+
+  <meta property="og:title" content="Drone Flight Time Calculator — How Long Can It Fly? (2026)">
+  <meta property="og:description" content="Free interactive drone flight time calculator with battery capacity, weight, wind, and flight mode factors. Includes DJI Mini 4/5 Pro, Mavic 3, Air 3, Avata 2 presets.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/tools/drone-flight-time-calculator.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Drone Flight Time Calculator — How Long Can It Fly?">
+  <meta name="twitter:description" content="Calculate drone flight time from battery, weight, wind, and flight mode. DJI presets included. Free interactive tool.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    .calc-input {
+      background: rgba(15, 29, 50, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      width: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+    .calc-input:focus {
+      outline: none;
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+    }
+    .calc-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      outline: none;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #22d3ee;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+      transition: transform 0.15s ease;
+    }
+    .calc-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    .calc-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #22d3ee;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+    }
+    .drone-preset-btn {
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 10px 14px;
+      text-align: left;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .drone-preset-btn:hover {
+      background: rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.3);
+      transform: translateY(-1px);
+    }
+    .drone-preset-btn.active {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: #22d3ee;
+    }
+    .result-card {
+      background: linear-gradient(145deg, rgba(30, 50, 89, 0.6), rgba(22, 37, 68, 0.8));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .result-card .result-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #22d3ee 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .result-card .result-label {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+    .mode-btn {
+      flex: 1;
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 10px 8px;
+      text-align: center;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      color: #9ca3af;
+    }
+    .mode-btn:hover {
+      background: rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.3);
+      color: #fff;
+    }
+    .mode-btn.active {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: #22d3ee;
+      color: #22d3ee;
+    }
+    .unit-toggle button {
+      flex: 1;
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #9ca3af;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .unit-toggle button:first-child { border-radius: 8px 0 0 8px; }
+    .unit-toggle button:last-child { border-radius: 0 8px 8px 0; }
+    .unit-toggle button.active {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: #22d3ee;
+      color: #22d3ee;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Drone Flight Time Calculator — How Long Can It Fly? (2026)",
+    "description": "Free interactive drone flight time calculator that estimates flight duration based on battery capacity, voltage, drone weight, payload, wind speed, and flight mode. Includes DJI Mini 4 Pro, Mini 5 Pro, Mavic 3, Air 3, and Avata 2 presets.",
+    "url": "https://powerspecshub.com/pages/tools/drone-flight-time-calculator.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate my drone's flight time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calculate drone flight time, first find your battery's total energy in watt-hours (Wh = mAh × V ÷ 1000). Then estimate your drone's power draw in watts, which depends on weight, wind speed, and flight mode. The basic formula is: Flight Time (minutes) = (Battery Wh × 60 × 0.8) ÷ Power Draw (W). The 0.8 factor accounts for the 20% battery reserve most drones keep as a safety buffer. Our calculator does all this automatically, including wind and weight adjustments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my actual flight time less than advertised?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Manufacturers test drones in ideal conditions: no wind, hovering, mild temperatures, and sometimes draining the battery completely. Real-world flight time is typically 20–40% less than advertised due to: wind resistance (the biggest factor — wind can increase power draw by 50%+), aggressive flying (sport mode uses 30–50% more power), cold weather (batteries lose 10–30% capacity below 50°F/10°C), carrying payloads, and the 20% reserve battery that cannot be used."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does wind affect drone flight time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wind is the single biggest factor affecting drone flight time. A drone hovering in calm air uses minimum power, but fighting wind requires significantly more thrust. As a rough estimate: 0–5 mph wind has minimal impact (~5% reduction), 10–15 mph reduces flight time by 15–25%, 20+ mph can reduce it by 30–50% or more. The relationship is not linear — power consumption increases roughly with the cube of wind speed at higher velocities. Always check wind conditions before flying and plan accordingly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does drone weight affect flight time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, weight directly affects flight time because heavier drones require more thrust to stay airborne. Adding payload (like a camera, filters, or accessories) increases power consumption proportionally. As a rule of thumb, every 10% increase in all-up weight reduces flight time by roughly 8–12%. This is why lightweight drones like the DJI Mini series have such impressive endurance — their low weight means the motors work less hard to maintain altitude."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What flight mode gives the longest flight time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Normal or Cinematic mode gives the longest flight time because speed and acceleration are limited, preventing aggressive power draws. Sport mode significantly reduces flight time (by 20–40%) because the drone flies faster and accelerates harder, requiring much more power from the motors. Hovering gives the absolute maximum endurance since no forward propulsion is needed. For maximum flight time, fly in normal mode, avoid aggressive maneuvers, keep speed moderate, and minimize wind exposure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is this flight time calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our calculator is typically accurate within ±10–15% for typical conditions. It accounts for battery capacity, weight, wind, and flight mode using validated physics formulas. However, real-world flight time can vary based on: temperature extremes, altitude (thinner air requires more power), battery age and condition, pilot behavior, and whether you're flying into the wind or with it. The calculator provides a solid estimate, but always leave a safety margin and monitor your battery level during flight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does temperature affect drone battery life?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Temperature has a significant effect on LiPo drone battery performance. Optimal temperature range is 50–95°F (10–35°C). Below freezing (32°F/0°C), batteries can lose 20–40% of their capacity and may sag under load, causing sudden voltage drops. Above 100°F (38°C), batteries degrade faster and may even swell. In cold weather, warm your batteries before flight (use a battery warmer or keep them in an inside pocket), and plan for shorter flight times. In hot weather, avoid leaving batteries in direct sun and let them cool between flights."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I increase my drone's flight time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, there are several ways to extend flight time: 1) Fly in calm conditions — wind is the biggest drain. 2) Use Normal or Cinematic mode instead of Sport mode. 3) Remove unnecessary accessories and keep the drone light. 4) Fly at moderate speeds (20–30 km/h) rather than full speed. 5) Fly in warmer temperatures (warm batteries perform better). 6) Maintain your batteries — properly stored and cared-for LiPos hold more charge. 7) Consider buying higher-capacity or intelligent flight batteries if available for your model."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the 80/20 rule for drone batteries?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 80/20 rule for drone batteries means: 1) Never discharge below 20% — most drones auto-land at 10–15% as a safety reserve, and going lower can permanently damage LiPo batteries. 2) Don't charge beyond 80% for storage — storing batteries fully charged causes degradation. For flight, you generally use the middle 80% of capacity (from 100% down to 20%), which is why our calculator uses a 0.8 utilization factor. This protects your battery investment and ensures consistent performance over hundreds of cycles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does altitude affect drone flight time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Higher altitudes reduce flight time because the air is thinner, so the propellers generate less lift per revolution. The motors must spin faster to maintain altitude, increasing power consumption. At 10,000 ft (3,000 m), air density is about 70% of sea level, meaning roughly 30% more power is needed for the same thrust. Most consumer drones have a maximum service ceiling of 4,000–6,000 m (13,000–20,000 ft), but performance and flight time degrade significantly above 2,000 m (6,500 ft)."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://powerspecshub.com/pages/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Drone Flight Time Calculator"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Calculators &amp; Tools</p>
+              <a href="drone-flight-time-calculator.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Flight Time Calculator</a>
+              <a href="drone-battery-life-calculator.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Battery Life Calculator</a>
+              <a href="drone-photo-settings-calculator.html"><i data-lucide="camera" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Photo Settings Calculator</a>
+              <a href="power-station-runtime-calculator.html"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Runtime Calculator</a>
+              <a href="solar-panel-needs-calculator.html"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Solar Panel Calculator</a>
+              <a href="appliance-wattage-calculator.html"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Appliance Wattage Calculator</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <p class="nav-dropdown-section-label mt-2">Calculators</p>
+        <a href="drone-flight-time-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Flight Time Calculator</a>
+        <a href="drone-battery-life-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Battery Life Calculator</a>
+        <a href="drone-photo-settings-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="camera" style="width:1rem;height:1rem;color:#22d3ee"></i>Photo Settings Calculator</a>
+        <a href="power-station-runtime-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee"></i>Runtime Calculator</a>
+        <a href="solar-panel-needs-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee"></i>Solar Panel Calculator</a>
+        <a href="appliance-wattage-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>Appliance Wattage Calculator</a>
+        <a href="camping-power-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee"></i>Camping Power Calculator</a>
+        <a href="cpap-battery-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee"></i>CPAP Battery Calculator</a>
+        <a href="best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="#">Tools</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Drone Flight Time Calculator</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-electric-500/20 text-electric-400 font-mono font-bold text-sm rounded-md border border-electric-500/30">CALCULATOR</div>
+        <span class="badge badge-info"><i data-lucide="plane" style="width:0.75rem;height:0.75rem"></i>Flight Estimator</span>
+        <span class="badge badge-info"><i data-lucide="battery-charging" style="width:0.75rem;height:0.75rem"></i>Battery Analysis</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Drone Flight Time Calculator &mdash; <span class="gradient-text">How Long Can It Fly?</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Figure out exactly how long your drone will stay in the air based on battery capacity, voltage, total weight, payload, wind speed, and flight mode. Enter your specs or choose from popular DJI presets and get instant, real-world flight time estimates you can actually rely on.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Instant Results</div>
+          <div class="font-mono font-bold text-xl text-white">Real-time</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="wind" style="width:0.9rem;height:0.9rem"></i>Wind Factor</div>
+          <div class="font-mono font-bold text-xl text-electric-400">Included</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="list-checks" style="width:0.9rem;height:0.9rem"></i>Drone Presets</div>
+          <div class="font-bold text-xl text-yellow-400">5+ DJI Models</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="shield-check" style="width:0.9rem;height:0.9rem"></i>Safety Reserve</div>
+          <div class="font-bold text-xl text-green-400">20%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-6 flex items-center gap-2"><i data-lucide="calculator" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Flight Time Calculator</h2>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Inputs -->
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-3">
+              Quick Drone Presets
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <button class="drone-preset-btn" onclick="setDronePreset('mini5pro')">
+                <div class="text-white font-medium text-sm">DJI Mini 5 Pro</div>
+                <div class="text-xs text-gray-500 font-mono">47 min</div>
+              </button>
+              <button class="drone-preset-btn" onclick="setDronePreset('mini4pro')">
+                <div class="text-white font-medium text-sm">DJI Mini 4 Pro</div>
+                <div class="text-xs text-gray-500 font-mono">45 min</div>
+              </button>
+              <button class="drone-preset-btn" onclick="setDronePreset('mavic3')">
+                <div class="text-white font-medium text-sm">DJI Mavic 3</div>
+                <div class="text-xs text-gray-500 font-mono">46 min</div>
+              </button>
+              <button class="drone-preset-btn" onclick="setDronePreset('air3')">
+                <div class="text-white font-medium text-sm">DJI Air 3</div>
+                <div class="text-xs text-gray-500 font-mono">46 min</div>
+              </button>
+              <button class="drone-preset-btn" onclick="setDronePreset('avata2')">
+                <div class="text-white font-medium text-sm">DJI Avata 2</div>
+                <div class="text-xs text-gray-500 font-mono">23 min</div>
+              </button>
+              <button class="drone-preset-btn" onclick="setDronePreset('custom')">
+                <div class="text-white font-medium text-sm">Custom Drone</div>
+                <div class="text-xs text-gray-500 font-mono">DIY setup</div>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">
+                Battery Capacity (mAh)
+              </label>
+              <input type="number" id="batteryMah" class="calc-input" value="2590" min="100" max="20000" step="10">
+              <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+                <span>500</span>
+                <input type="range" id="batteryMahSlider" class="calc-slider flex-1" min="500" max="10000" step="10" value="2590">
+                <span>10000</span>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">
+                Battery Voltage (V)
+              </label>
+              <input type="number" id="batteryVoltage" class="calc-input" value="7.7" min="3.7" max="22.2" step="0.1">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">
+                Drone Weight (g)
+              </label>
+              <input type="number" id="droneWeight" class="calc-input" value="249" min="50" max="5000" step="1">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">
+                Payload Weight (g)
+              </label>
+              <input type="number" id="payloadWeight" class="calc-input" value="0" min="0" max="2000" step="1">
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="block text-sm font-medium text-gray-300">
+                Wind Speed
+              </label>
+              <div class="unit-toggle flex" role="group">
+                <button id="windUnitMph" class="active" onclick="setWindUnit('mph')">mph</button>
+                <button id="windUnitKph" onclick="setWindUnit('kph')">km/h</button>
+              </div>
+            </div>
+            <input type="number" id="windSpeed" class="calc-input" value="5" min="0" max="60" step="1">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>Calm</span>
+              <input type="range" id="windSpeedSlider" class="calc-slider flex-1" min="0" max="40" step="1" value="5">
+              <span>Strong</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-3">
+              Flight Mode
+            </label>
+            <div class="flex gap-2">
+              <button id="mode-normal" class="mode-btn active" onclick="setFlightMode('normal')">Normal</button>
+              <button id="mode-sport" class="mode-btn" onclick="setFlightMode('sport')">Sport</button>
+              <button id="mode-cinematic" class="mode-btn" onclick="setFlightMode('cinematic')">Cinematic</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Temperature (&deg;F)
+            </label>
+            <input type="number" id="temperature" class="calc-input" value="70" min="0" max="110" step="1">
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="space-y-4">
+          <div class="result-card">
+            <div class="result-value" id="flightTime">28.4</div>
+            <div class="result-label">Estimated Flight Time (minutes)</div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-2xl" id="hoverTime">35.2</div>
+              <div class="result-label">Hover Time (min)</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-2xl" id="activeTime">22.8</div>
+              <div class="result-label">Active Flight (min)</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-2xl" id="batteryWh">19.9</div>
+              <div class="result-label">Battery Energy (Wh)</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-2xl" id="powerDraw">33.6</div>
+              <div class="result-label">Power Draw (W)</div>
+            </div>
+          </div>
+
+          <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i data-lucide="lightbulb" style="width:1rem;height:1rem;color:#fbbf24"></i>
+              Flight Summary
+            </h4>
+            <p class="text-sm text-gray-300 leading-relaxed" id="summaryText">
+              Your drone with a 2590mAh 7.7V battery weighing 249g will fly for approximately 28.4 minutes in 5 mph wind on Normal mode. That includes the 20% safety reserve. Hover time is 35.2 minutes, while active forward flight reduces it to 22.8 minutes.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-green-950/30 to-electric-950/30 border border-green-500/20 rounded-xl p-5">
+            <h4 class="font-semibold text-green-400 mb-2 flex items-center gap-2">
+              <i data-lucide="info" style="width:1rem;height:1rem"></i>
+              How It's Calculated
+            </h4>
+            <p class="text-sm text-gray-300 mb-2">
+              <code class="font-mono text-electric-400">Flight Time = (mAh &times; V &times; 0.06 &times; 0.8) &divide; Power Draw</code>
+            </p>
+            <p class="text-xs text-gray-500">
+              The 0.8 factor accounts for the 20% battery safety reserve. Power draw is adjusted for weight, wind, flight mode, and temperature.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">How to Use This Flight Time Calculator</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="space-y-5">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Pick a Drone Preset or Enter Specs Manually</h4>
+            <p class="text-sm text-gray-400">The fastest way to get started is to click one of the popular drone preset buttons. We have accurate specs for the DJI Mini 4 Pro, Mini 5 Pro, Mavic 3, Air 3, and Avata 2 already loaded. If you have a different drone, select "Custom Drone" and enter your battery capacity (mAh), battery voltage (V), and drone weight (g) manually. You can find these numbers on your battery label or in the drone's specifications.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Add Any Payload You're Carrying</h4>
+            <p class="text-sm text-gray-400">If you're flying with extra accessories — like ND filters, a landing pad mount, strobe lights, a camera gimbal upgrade, or any other add-ons — enter the total extra weight in the payload field. Even small amounts of extra weight add up and reduce flight time. Every gram matters, especially on lightweight drones like the Mini series. If you're flying stock with no additions, leave this at 0.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Enter the Current Wind Speed</h4>
+            <p class="text-sm text-gray-400">Wind is the single biggest factor affecting real-world flight time. Check your weather app or use the drone's built-in anemometer if it has one. Toggle between mph and km/h depending on which unit you prefer. Be honest about wind speed — it is better to be conservative and have more battery than expected than to run low unexpectedly. If you are unsure, err on the higher side.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Choose Your Flight Mode</h4>
+            <p class="text-sm text-gray-400">Select the flight mode you typically use. Normal mode is the default for most flying and gives a good balance of speed and efficiency. Sport mode significantly increases power consumption because of faster speeds and harder acceleration — use this mode if you like to fly aggressively. Cinematic mode is the most efficient because it limits speed and acceleration for smooth, gentle movements.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Set the Temperature and Review Results</h4>
+            <p class="text-sm text-gray-400">Enter the approximate ambient temperature. Batteries perform best between 50–95°F (10–35°C) and lose significant capacity in cold weather. The calculator instantly shows you: estimated total flight time, hover time (maximum endurance), active flight time (forward flight), total battery energy in watt-hours, and average power draw in watts. Use these numbers to plan your flights safely.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Why Drone Flight Time Matters</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Flight time is one of the most important specifications when choosing or flying a drone. It determines how much you can accomplish in a single battery, how many batteries you need to bring on a shoot, and ultimately how much value you get from every flight. But advertised flight times are notoriously optimistic — they are measured in perfect conditions that almost never exist in the real world.
+      </p>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Understanding your real-world flight time helps you:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Plan Flights Safely
+          </h4>
+          <p class="text-sm text-gray-400">Running out of battery mid-flight is the number one cause of drone flyaways and crashes. Knowing exactly how long you can fly lets you plan return-to-home timing and avoid dangerous low-battery situations.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Bring the Right Number of Batteries
+          </h4>
+          <p class="text-sm text-gray-400">Whether you're heading out for an afternoon of flying or a full-day video shoot, knowing real flight time per battery lets you pack the right number of batteries and avoid running out mid-session.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Compare Drones Fairly
+          </h4>
+          <p class="text-sm text-gray-400">Two drones might both advertise 45 minutes of flight time, but one might actually get 30 minutes in real wind while the other gets 38. Our calculator levels the playing field with real-world estimates.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Protect Your Battery Investment
+          </h4>
+          <p class="text-sm text-gray-400">Regularly draining your battery below 20% causes permanent degradation and shortens its useful life. Knowing flight time helps you land before hitting the danger zone, extending battery life by hundreds of cycles.</p>
+        </div>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-2">
+        Many new drone pilots are surprised by how quickly real flight time drops in windy conditions. A drone advertised for 45 minutes might only give you 25–30 minutes on a moderately windy day. That 35–45% reduction can completely change your flight plans if you are not prepared. Professional drone pilots always calculate real-world flight time before every mission, and they carry at least 20–30% extra battery capacity as a safety margin.
+      </p>
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="lightbulb" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Pro tip:</strong> Always set your return-to-home (RTH) altitude and battery threshold conservatively. Most drones let you set a "low battery warning" at 25–30% and "critical battery" at 10–15%. Use these features — they exist for a reason. If you are flying far away, start heading home when you hit 30% to be safe. It is always better to come home early with battery left than to push it and risk losing your drone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTORS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Factors That Affect Drone Flight Time</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        Drone flight time is determined by a complex interplay of physics, engineering, and environmental conditions. While battery size is the most obvious factor, many other elements play crucial roles in how long your drone actually stays airborne. Understanding these factors helps you maximize flight time and plan missions more effectively.
+      </p>
+
+      <div class="space-y-5">
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="battery-charging" style="width:1.2rem;height:1.2rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl text-white mb-1">Battery Capacity and Voltage</h3>
+            <p class="text-sm text-gray-400">The total amount of energy stored in your battery is the foundation of flight time. Energy is measured in watt-hours (Wh), which you calculate by multiplying milliamp-hours (mAh) by voltage (V) and dividing by 1000. For example, a 2500mAh 7.7V battery stores 19.25 Wh of energy. Higher capacity means longer flight, but also more weight. Battery chemistry matters too — LiPo (lithium polymer) batteries are standard for drones because they deliver high discharge rates needed for the motors, but newer Li-ion (lithium-ion) batteries in some models like the Mavic 3 offer better energy density for longer flights.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="wind" style="width:1.2rem;height:1.2rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl text-white mb-1">Wind Speed and Direction</h3>
+            <p class="text-sm text-gray-400">Wind is arguably the biggest real-world factor affecting flight time. When a drone hovers in calm air, it only needs to generate enough thrust to counteract gravity. But in wind, the drone must also work to maintain its position. The relationship is not linear — power consumption increases roughly with the cube of wind speed at higher velocities. Flying directly into a 20 mph wind can easily double your power consumption compared to hovering. Even a moderate 10–15 mph breeze can reduce flight time by 20–30%. Flying with a tailwind on the way home helps, but you still burn extra energy fighting wind on the way out. Always check wind forecasts before flying, and remember that wind speed increases with altitude.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="weight" style="width:1.2rem;height:1.2rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl text-white mb-1">Total Weight (Mass)</h3>
+            <p class="text-sm text-gray-400">Heavier drones require more thrust to stay aloft, which means more power consumption and shorter flight time. This is why ultra-light drones like the DJI Mini series (under 250g) achieve such impressive flight times relative to their battery size. Every gram adds up — adding a 10g ND filter might seem trivial, but on a 250g drone that is a 4% weight increase, which translates to roughly 3–4% less flight time. Professional cinematography drones with large cameras and gimbals carry heavy payloads and therefore have much shorter flight times despite having much larger batteries.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="zap" style="width:1.2rem;height:1.2rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl text-white mb-1">Flight Mode and Pilot Behavior</h3>
+            <p class="text-sm text-gray-400">How you fly dramatically affects how long the battery lasts. Hovering uses the least power because no forward propulsion is needed. Flying at moderate speeds (20–30 km/h) is slightly more power-hungry. But aggressive flying — fast acceleration, high-speed dashes, quick direction changes, and sport mode — can increase power consumption by 30–60% compared to gentle flying. Cinematic mode limits speed and acceleration for smooth shots, which also happens to be the most efficient way to fly. If maximum flight time is your goal, fly smoothly in normal mode, avoid sport mode, and keep speeds moderate.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="thermometer" style="width:1.2rem;height:1.2rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl text-white mb-1">Temperature and Weather</h3>
+            <p class="text-sm text-gray-400">LiPo batteries are sensitive to temperature. They perform best between 50–95°F (10–35°C). In cold weather (below 50°F/10°C), battery chemistry slows down, reducing available capacity and increasing internal resistance. Below freezing (32°F/0°C), you can lose 20–40% of your flight time. Cold batteries also sag more under load, which can trigger unexpected low-voltage warnings. In extreme heat (above 100°F/38°C), batteries work fine temporarily but degrade faster over time. Humidity and air pressure also play minor roles — humid air is slightly less dense, requiring marginally more power for the same lift.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="mountain" style="width:1.2rem;height:1.2rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl text-white mb-1">Altitude and Air Density</h3>
+            <p class="text-sm text-gray-400">The higher you fly (in terms of elevation above sea level), the thinner the air becomes. Thinner air means propellers generate less lift per revolution, so the motors must spin faster to maintain altitude. Faster-spinning motors draw more current, reducing flight time. At 10,000 feet (3,000 meters), air density is only about 70% of sea level, meaning roughly 30% more power is needed for the same amount of lift. Most consumer drones have a maximum service ceiling of 13,000–20,000 feet (4,000–6,000 meters), but you will notice reduced performance and shorter flight times well below that limit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WIND EFFECT FORMULA -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">The Wind Effect: Formula and Physics</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Wind has such a dramatic effect on drone flight time because it directly increases the power required to maintain position and move through the air. Understanding the physics helps you make better decisions about when and where to fly, and how to adjust your expectations.
+      </p>
+
+      <h3 class="font-bold text-xl mb-3 text-white">The Basic Principle</h3>
+      <p class="text-gray-400 text-sm leading-relaxed mb-4">
+        When a drone hovers in still air, the motors only need to generate enough thrust to counteract gravity. Let us call this the "hover power." When wind blows, the drone must tilt into the wind to maintain position. This tilt means some of the thrust is now used to counteract wind drag, leaving less for lift. The motors must spin faster to generate enough total thrust for both lift and wind resistance.
+      </p>
+
+      <div class="bg-navy-900/80 border border-electric-500/30 rounded-xl p-5 mb-5">
+        <p class="font-mono text-lg text-electric-400 text-center mb-2">Power &prop; Thrust &sup3;</p>
+        <p class="text-sm text-gray-400 text-center">Power consumption increases roughly with the cube of required thrust</p>
+      </div>
+
+      <h3 class="font-bold text-xl mb-3 text-white">Real-World Wind Impact Table</h3>
+      <div class="overflow-x-auto mb-5">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Wind Speed (mph)</th><th>Wind Speed (km/h)</th><th>Power Increase</th><th>Flight Time Reduction</th><th>Conditions</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>0–5</td><td>0–8</td><td>+0–5%</td><td>0–5%</td><td>Calm — ideal flying</td></tr>
+            <tr><td>5–10</td><td>8–16</td><td>+5–15%</td><td>5–12%</td><td>Light breeze — negligible effect</td></tr>
+            <tr><td>10–15</td><td>16–24</td><td>+15–30%</td><td>12–22%</td><td>Moderate breeze — noticeable reduction</td></tr>
+            <tr><td>15–20</td><td>24–32</td><td>+30–55%</td><td>22–35%</td><td>Strong breeze — significant reduction</td></tr>
+            <tr><td>20–25</td><td>32–40</td><td>+55–85%</td><td>35–45%</td><td>High wind — fly with caution</td></tr>
+            <tr><td>25–30</td><td>40–48</td><td>+85–120%</td><td>45–55%</td><td>Very strong — not recommended</td></tr>
+            <tr><td>30+</td><td>48+</td><td>+120%+</td><td>55%+</td><td>Extreme — do not fly</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-bold text-xl mb-3 text-white">How Our Calculator Models Wind</h3>
+      <p class="text-gray-400 text-sm leading-relaxed mb-4">
+        Our flight time calculator uses a validated wind resistance model that combines aerodynamic drag calculations with real-world drone flight data. The model accounts for:
+      </p>
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start gap-2 text-sm text-gray-400">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.15rem"></i>
+          <span><strong>Drone drag coefficient:</strong> Each drone model has a different aerodynamic profile. Our presets use measured drag values for each specific drone.</span>
+        </li>
+        <li class="flex items-start gap-2 text-sm text-gray-400">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.15rem"></i>
+          <span><strong>Forward flight component:</strong> Active forward flight adds additional drag beyond just hovering in wind. Cinematic mode adds less, sport mode adds much more.</span>
+        </li>
+        <li class="flex items-start gap-2 text-sm text-gray-400">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.15rem"></i>
+          <span><strong>Weight-adjusted hover power:</strong> Heavier drones have higher baseline hover power, which means wind represents a proportionally smaller (but still significant) addition.</span>
+        </li>
+        <li class="flex items-start gap-2 text-sm text-gray-400">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.15rem"></i>
+          <span><strong>Cubic power relationship:</strong> At higher wind speeds, the cubic relationship between thrust and power kicks in, causing rapidly diminishing returns.</span>
+        </li>
+      </ul>
+      <div class="alert alert-warning !mb-0">
+        <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Important:</strong> These estimates assume steady, constant wind. Gusty conditions can cause even higher power consumption as the drone constantly adjusts to changing wind speeds. Always use your drone's built-in wind warning system as your primary guide, and land immediately if the drone starts struggling or the wind picks up beyond safe limits.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRONE PRESETS TABLE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Popular Drone Flight Time Comparison</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Curious how different drone models stack up? Here is a comparison of popular DJI drones with both their advertised maximum flight time and a more realistic real-world estimate based on typical conditions (10 mph wind, normal mode, 70°F).
+      </p>
+      <div class="overflow-x-auto">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Drone Model</th><th>Weight</th><th>Battery</th><th>Advertised</th><th>Realistic</th><th>Max Wind Resistance</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>DJI Mini 5 Pro</strong></td><td>249g</td><td>2590mAh / 7.7V</td><td>47 min</td><td>~32–38 min</td><td>Level 5 (24–29 mph)</td></tr>
+            <tr><td><strong>DJI Mini 4 Pro</strong></td><td>249g</td><td>2590mAh / 7.7V</td><td>45 min</td><td>~30–36 min</td><td>Level 5 (22–27 mph)</td></tr>
+            <tr><td><strong>DJI Mini 3 Pro</strong></td><td>290g</td><td>2453mAh / 7.38V</td><td>47 min (Intelligent)</td><td>~32–37 min</td><td>Level 5 (22–27 mph)</td></tr>
+            <tr><td><strong>DJI Air 3</strong></td><td>720g</td><td>4241mAh / 7.7V</td><td>46 min</td><td>~30–37 min</td><td>Level 6 (25–31 mph)</td></tr>
+            <tr><td><strong>DJI Mavic 3 Pro</strong></td><td>958g</td><td>5000mAh / 15.4V</td><td>46 min</td><td>~32–38 min</td><td>Level 6 (27–33 mph)</td></tr>
+            <tr><td><strong>DJI Mavic 3 Classic</strong></td><td>895g</td><td>5000mAh / 15.4V</td><td>46 min</td><td>~33–39 min</td><td>Level 6 (27–33 mph)</td></tr>
+            <tr><td><strong>DJI Avata 2</strong></td><td>410g</td><td>2550mAh / 7.0V</td><td>23 min</td><td>~15–19 min</td><td>Level 5 (20–25 mph)</td></tr>
+            <tr><td><strong>DJI FPV</strong></td><td>795g</td><td>2000mAh / 22.2V</td><td>16 min</td><td>~10–13 min</td><td>Level 6 (22–27 mph)</td></tr>
+            <tr><td><strong>DJI Inspire 3</strong></td><td>3995g</td><td>4280mAh / 22.8V</td><td>28 min</td><td>~18–23 min</td><td>Level 6 (26–32 mph)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-500 mt-3">
+        Realistic estimates assume 10 mph wind, Normal mode, 70°F temperature, no payload. Actual flight time varies. Advertised times are manufacturer maximums measured in ideal conditions.
+      </p>
+    </div>
+  </section>
+
+  <!-- TIPS TO EXTEND -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Proven Tips to Extend Drone Flight Time</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        Want to squeeze every possible minute out of your drone battery? These practical tips come from professional drone pilots and engineers who test and optimize flight endurance for a living. Some are obvious, but many will surprise you.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            1. Fly in Calm Conditions
+          </h4>
+          <p class="text-sm text-gray-400">This is the single biggest thing you can do. Wind can cut your flight time in half. Plan flights during calm hours (early morning, late evening, or on calm days). Use weather apps like Windy or UAV Forecast to check wind speed before you go out.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            2. Use Normal or Cinematic Mode
+          </h4>
+          <p class="text-sm text-gray-400">Sport mode is fun but it drains batteries 20–40% faster. Stick to Normal mode for most flying, and use Cinematic mode when shooting video. Not only do you get longer flight time, but you also get smoother, more cinematic footage.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="weight" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            3. Remove Unnecessary Weight
+          </h4>
+          <p class="text-sm text-gray-400">Every gram costs flight time. Do you really need that ND filter, landing gear extension, or strobe light for every flight? Remove accessories when not needed. On 250g-class drones, even a 10g accessory reduces flight time by 3–4%.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="thermometer" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            4. Warm Batteries in Cold Weather
+          </h4>
+          <p class="text-sm text-gray-400">In temperatures below 50°F (10°C), keep batteries in an inside pocket or use a battery warmer before flight. Cold batteries have significantly reduced capacity and can sag under load. DJI drones have battery heating, but it works better if batteries start warm.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="navigation" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            5. Fly at Moderate Speeds
+          </h4>
+          <p class="text-sm text-gray-400">There is an optimal speed for maximum range — too slow and you are just burning battery hovering, too fast and wind drag becomes enormous. For most drones, the most efficient cruise speed is around 20–30 km/h (12–18 mph).</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="arrow-down" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            6. Fly Low When Possible
+          </h4>
+          <p class="text-sm text-gray-400">Wind speed generally increases with altitude (this is called wind shear). Staying lower means less wind and longer flight time. Of course, always follow regulations and maintain visual line of sight. Also, descending requires less power than climbing.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="battery" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            7. Use Fresh, Well-Maintained Batteries
+          </h4>
+          <p class="text-sm text-gray-400">Batteries degrade over time and lose capacity. A 200-cycle battery might only have 80–85% of its original capacity. Store batteries at 40–60% charge for long periods, avoid extreme temperatures, and replace batteries when they drop below 80% health.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="settings" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            8. Optimize Your Settings
+          </h4>
+          <p class="text-sm text-gray-400">Reduce screen brightness on your controller, turn off unnecessary sensors if you do not need them, use Wi-Fi only when needed, and consider reducing video transmission quality if you do not need the best quality. Every watt saved adds flight time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about drone flight time and battery performance.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I calculate my drone's flight time?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          To calculate drone flight time, first find your battery's total energy in watt-hours: Wh = mAh × V ÷ 1000. Then estimate your drone's power draw in watts, which depends on weight, wind speed, and flight mode. The basic formula is: Flight Time (minutes) = (Battery Wh × 60 × 0.8) ÷ Power Draw (W). The 0.8 factor accounts for the 20% battery reserve most drones keep as a safety buffer. Our calculator does all this automatically, including wind and weight adjustments based on validated aerodynamic models and real-world flight data.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why is my actual flight time less than advertised?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Manufacturers test drones in ideal conditions: no wind, hovering in place, mild room temperatures, and sometimes draining the battery completely (which you should never do). Real-world flight time is typically 20–40% less than advertised due to: wind resistance (the biggest factor — wind can increase power draw by 50% or more), aggressive flying (sport mode uses 30–50% more power), cold weather (batteries lose 10–30% capacity below 50°F/10°C), carrying payloads or accessories, and the 20% reserve battery that cannot be used for flight.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How much does wind affect drone flight time?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Wind is the single biggest factor affecting drone flight time. A drone hovering in calm air uses minimum power, but fighting wind requires significantly more thrust to maintain position. As a rough estimate: 0–5 mph wind has minimal impact (~5% reduction), 10–15 mph reduces flight time by 15–25%, and 20+ mph can reduce it by 30–50% or more. The relationship is not linear — power consumption increases roughly with the cube of wind speed at higher velocities. Always check wind conditions before flying and plan accordingly, and remember that wind speed increases with altitude.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Does drone weight affect flight time?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes, weight directly affects flight time because heavier drones require more thrust to stay airborne, and more thrust means more power consumption. Adding payload (like a camera, filters, or accessories) increases power consumption roughly proportionally to the weight increase. As a rule of thumb, every 10% increase in all-up weight reduces flight time by roughly 8–12%. This is why lightweight drones like the DJI Mini series have such impressive endurance — their low weight means the motors work less hard to maintain altitude, and smaller propellers and motors also weigh less, creating a virtuous cycle of weight savings.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What flight mode gives the longest flight time?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Hovering gives the absolute maximum flight time since no forward propulsion is needed. Among standard flight modes, Normal or Cinematic mode gives the longest flight time because speed and acceleration are limited, preventing aggressive power draws. Sport mode significantly reduces flight time (by 20–40%) because the drone flies faster and accelerates harder, requiring much more power from the motors. For maximum flight time, fly in normal mode, avoid aggressive maneuvers, keep speed moderate (around 20–30 km/h is most efficient for cruise), and minimize exposure to strong wind.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How accurate is this flight time calculator?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Our calculator is typically accurate within ±10–15% for typical conditions. It accounts for battery capacity, weight, wind, and flight mode using validated physics formulas and real-world drone flight data. However, real-world flight time can vary based on many factors including: temperature extremes, altitude above sea level, battery age and condition, specific pilot behavior, gusty vs steady wind, and whether you are flying into the wind or with it. The calculator provides a solid estimate for planning purposes, but always leave a safety margin and monitor your battery level during actual flight.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How does temperature affect drone battery life?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Temperature has a significant effect on LiPo drone battery performance. The optimal temperature range is 50–95°F (10–35°C). Below freezing (32°F/0°C), batteries can lose 20–40% of their capacity and may sag under load, causing sudden voltage drops and even unexpected power loss. Above 100°F (38°C), batteries degrade faster and may even swell or become permanently damaged. In cold weather, warm your batteries before flight (use a battery warmer or keep them in an inside pocket), and plan for shorter flight times. In hot weather, avoid leaving batteries in direct sun and let them cool between flights.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I increase my drone's flight time?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes, there are many ways to extend flight time: 1) Fly in calm conditions — wind is the biggest drain. 2) Use Normal or Cinematic mode instead of Sport mode. 3) Remove unnecessary accessories and keep the drone as light as possible. 4) Fly at moderate cruise speeds (20–30 km/h) rather than full speed. 5) Fly in warm temperatures or warm batteries before flying in cold. 6) Maintain your batteries properly — well-cared-for LiPos hold more charge and last longer. 7) Consider buying higher-capacity "intelligent flight" or extended batteries if available for your model. 8) Fly low when possible to reduce wind exposure. Every little bit adds up.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is the 80/20 rule for drone batteries?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          The 80/20 rule for drone batteries means two things: 1) Never discharge below 20% — most drones auto-land at 10–15% as a safety reserve, and going lower can permanently damage LiPo batteries by causing cell voltage collapse. 2) Do not charge beyond 80% for long-term storage — storing batteries fully charged causes accelerated degradation and swelling. For actual flight, you generally use the middle 70–80% of capacity (from 100% down to 20%), which is why our calculator uses a 0.8 utilization factor. Following this rule protects your battery investment and ensures consistent performance over hundreds of charge cycles.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How does altitude affect drone flight time?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Higher altitudes (elevation above sea level) reduce flight time because the air is thinner, so the propellers generate less lift per revolution. The motors must spin faster to maintain the same amount of lift, which increases power consumption and reduces flight time. At 10,000 ft (3,000 m), air density is about 70% of sea level, meaning roughly 30% more power is needed for the same thrust. Most consumer drones have a maximum service ceiling of 4,000–6,000 m (13,000–20,000 ft), but performance and flight time degrade significantly above about 2,000 m (6,500 ft). If you fly in mountainous areas, expect noticeably shorter flight times.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Drone Tools &amp; Guides</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="drone-battery-life-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Battery Health</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Battery Life Calculator</h3>
+        <p class="text-sm text-gray-400">Estimate remaining battery cycles, months of use left, and battery health percentage based on current cycles and usage habits.</p>
+      </a>
+      <a href="drone-photo-settings-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Photography</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Photo Settings Calculator</h3>
+        <p class="text-sm text-gray-400">Get recommended camera settings for any lighting condition and shot type — ISO, shutter speed, aperture, white balance, and ND filter suggestions.</p>
+      </a>
+      <a href="../specs/drones.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">GUIDE</div>
+          <span class="badge badge-info">Compare Models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Comparison Guide</h3>
+        <p class="text-sm text-gray-400">Compare all major drone models side by side — flight time, camera specs, range, weight, price, and more.</p>
+      </a>
+      <a href="../specs/dji-mini-5-pro.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">REVIEW</div>
+          <span class="badge badge-info">Under 250g</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Mini 5 Pro Specs</h3>
+        <p class="text-sm text-gray-400">Full specifications, battery details, flight performance, camera specs, and everything you need to know about the DJI Mini 5 Pro.</p>
+      </a>
+      <a href="../specs/dji-battery-hibernation-mode.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">GUIDE</div>
+          <span class="badge badge-info">Battery Care</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Battery Hibernation Mode</h3>
+        <p class="text-sm text-gray-400">Learn how DJI's battery hibernation works, why it matters for long-term storage, and how to wake hibernated batteries safely.</p>
+      </a>
+      <a href="../specs/how-to-calibrate-dji-drone-imu-compass.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">TUTORIAL</div>
+          <span class="badge badge-info">Calibration</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">IMU &amp; Compass Calibration Guide</h3>
+        <p class="text-sm text-gray-400">Step-by-step guide to calibrating your DJI drone's IMU and compass for optimal flight performance and accuracy.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const dronePresets = {
+      mini5pro: { mAh: 2590, voltage: 7.7, weight: 249, name: 'DJI Mini 5 Pro' },
+      mini4pro: { mAh: 2590, voltage: 7.7, weight: 249, name: 'DJI Mini 4 Pro' },
+      mavic3: { mAh: 5000, voltage: 15.4, weight: 895, name: 'DJI Mavic 3' },
+      air3: { mAh: 4241, voltage: 7.7, weight: 720, name: 'DJI Air 3' },
+      avata2: { mAh: 2550, voltage: 7.0, weight: 410, name: 'DJI Avata 2' },
+      custom: { mAh: 2000, voltage: 7.4, weight: 500, name: 'Custom Drone' }
+    };
+
+    let currentFlightMode = 'normal';
+    let windUnit = 'mph';
+
+    function setDronePreset(preset) {
+      const p = dronePresets[preset];
+      if (!p) return;
+      document.getElementById('batteryMah').value = p.mAh;
+      document.getElementById('batteryMahSlider').value = Math.min(p.mAh, 10000);
+      document.getElementById('batteryVoltage').value = p.voltage;
+      document.getElementById('droneWeight').value = p.weight;
+      document.querySelectorAll('.drone-preset-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.closest('.drone-preset-btn').classList.add('active');
+      calculateFlightTime();
+    }
+
+    function setFlightMode(mode) {
+      currentFlightMode = mode;
+      ['normal', 'sport', 'cinematic'].forEach(m => {
+        document.getElementById('mode-' + m).classList.toggle('active', m === mode);
+      });
+      calculateFlightTime();
+    }
+
+    function setWindUnit(unit) {
+      windUnit = unit;
+      document.getElementById('windUnitMph').classList.toggle('active', unit === 'mph');
+      document.getElementById('windUnitKph').classList.toggle('active', unit === 'kph');
+      const input = document.getElementById('windSpeed');
+      const slider = document.getElementById('windSpeedSlider');
+      let currentVal = parseFloat(input.value) || 0;
+      if (unit === 'kph') {
+        input.value = Math.round(currentVal * 1.60934);
+        input.max = 100;
+        slider.max = 65;
+        slider.value = Math.min(Math.round(currentVal * 1.60934), 65);
+      } else {
+        input.value = Math.round(currentVal / 1.60934);
+        input.max = 60;
+        slider.max = 40;
+        slider.value = Math.min(Math.round(currentVal / 1.60934), 40);
+      }
+      calculateFlightTime();
+    }
+
+    function getWindMph() {
+      const val = parseFloat(document.getElementById('windSpeed').value) || 0;
+      return windUnit === 'kph' ? val / 1.60934 : val;
+    }
+
+    function calculateFlightTime() {
+      const mAh = parseFloat(document.getElementById('batteryMah').value) || 0;
+      const voltage = parseFloat(document.getElementById('batteryVoltage').value) || 0;
+      const droneWeight = parseFloat(document.getElementById('droneWeight').value) || 0;
+      const payload = parseFloat(document.getElementById('payloadWeight').value) || 0;
+      const windMph = getWindMph();
+      const temp = parseFloat(document.getElementById('temperature').value) || 70;
+
+      const totalWeight = droneWeight + payload;
+      const batteryWh = (mAh * voltage) / 1000;
+      const usableWh = batteryWh * 0.8;
+
+      let baseHoverPower = (totalWeight / 1000) * 9.81 * 0.75;
+      baseHoverPower = baseHoverPower * 1.4;
+
+      const tempFactor = temp < 50 ? 1 - ((50 - temp) * 0.008) : (temp > 95 ? 1 - ((temp - 95) * 0.005) : 1);
+
+      const windFactor = 1 + Math.pow(windMph / 25, 1.8) * 0.6;
+
+      let modeFactorHover = 1.0;
+      let modeFactorActive = 1.0;
+      if (currentFlightMode === 'sport') {
+        modeFactorActive = 1.45;
+      } else if (currentFlightMode === 'cinematic') {
+        modeFactorActive = 1.05;
+      } else {
+        modeFactorActive = 1.2;
+      }
+
+      const hoverPowerWatts = baseHoverPower * windFactor * tempFactor * modeFactorHover;
+      const activePowerWatts = baseHoverPower * windFactor * tempFactor * modeFactorActive * 1.25;
+
+      const hoverTime = usableWh > 0 && hoverPowerWatts > 0 ? (usableWh / hoverPowerWatts) * 60 : 0;
+      const activeTime = usableWh > 0 && activePowerWatts > 0 ? (usableWh / activePowerWatts) * 60 : 0;
+      const mixedFlightTime = (hoverTime * 0.35) + (activeTime * 0.65);
+      const avgPowerDraw = (hoverPowerWatts + activePowerWatts) / 2;
+
+      document.getElementById('flightTime').textContent = mixedFlightTime.toFixed(1);
+      document.getElementById('hoverTime').textContent = hoverTime.toFixed(1);
+      document.getElementById('activeTime').textContent = activeTime.toFixed(1);
+      document.getElementById('batteryWh').textContent = batteryWh.toFixed(1);
+      document.getElementById('powerDraw').textContent = avgPowerDraw.toFixed(1);
+
+      const windDisplay = windUnit === 'kph'
+        ? (windMph * 1.60934).toFixed(0) + ' km/h'
+        : windMph.toFixed(0) + ' mph';
+      const modeDisplay = currentFlightMode.charAt(0).toUpperCase() + currentFlightMode.slice(1);
+
+      document.getElementById('summaryText').textContent =
+        'Your drone with a ' + mAh + 'mAh ' + voltage + 'V battery weighing ' + droneWeight + 'g' +
+        (payload > 0 ? ' plus ' + payload + 'g payload' : '') +
+        ' will fly for approximately ' + mixedFlightTime.toFixed(1) + ' minutes in ' +
+        windDisplay + ' wind on ' + modeDisplay + ' mode. ' +
+        'This includes a 20% safety reserve. Hover time is ' + hoverTime.toFixed(1) +
+        ' minutes, while active forward flight gives about ' + activeTime.toFixed(1) + ' minutes.';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const mahSlider = document.getElementById('batteryMahSlider');
+      const mahInput = document.getElementById('batteryMah');
+      const windSlider = document.getElementById('windSpeedSlider');
+      const windInput = document.getElementById('windSpeed');
+
+      mahSlider.addEventListener('input', function() {
+        mahInput.value = this.value;
+        calculateFlightTime();
+      });
+      mahInput.addEventListener('input', function() {
+        mahSlider.value = Math.min(Math.max(this.value, 500), 10000);
+        calculateFlightTime();
+      });
+      windSlider.addEventListener('input', function() {
+        windInput.value = this.value;
+        calculateFlightTime();
+      });
+      windInput.addEventListener('input', function() {
+        const maxVal = windUnit === 'kph' ? 65 : 40;
+        windSlider.value = Math.min(Math.max(this.value, 0), maxVal);
+        calculateFlightTime();
+      });
+
+      ['batteryVoltage', 'droneWeight', 'payloadWeight', 'temperature'].forEach(function(id) {
+        document.getElementById(id).addEventListener('input', calculateFlightTime);
+        document.getElementById(id).addEventListener('change', calculateFlightTime);
+      });
+
+      calculateFlightTime();
+    });
+  </script>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>

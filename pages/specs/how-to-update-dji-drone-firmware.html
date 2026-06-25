@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Update DJI Drone Firmware: Step-by-Step Guide (2026) | TechSpecsHub</title>
+  <meta name="description" content="How to update DJI drone firmware — complete step-by-step guide. Why update, preparation steps, updating via DJI Fly/DJI Go app, troubleshooting failed updates, firmware downgrade, and tips for smooth updates.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/specs/how-to-update-dji-drone-firmware.html">
+
+  <meta property="og:title" content="How to Update DJI Drone Firmware: Step-by-Step Guide (2026) | TechSpecsHub">
+  <meta property="og:description" content="Complete step-by-step guide to updating DJI drone firmware. Why update, preparation, updating via DJI Fly/DJI Go app, troubleshooting failed updates, and firmware downgrade.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/specs/how-to-update-dji-drone-firmware.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Update DJI Drone Firmware: Step-by-Step Guide (2026) | TechSpecsHub">
+  <meta name="twitter:description" content="Complete step-by-step guide to updating DJI drone firmware. Why update, preparation, updating via DJI Fly/DJI Go app, troubleshooting failed updates.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Update DJI Drone Firmware: Step-by-Step Guide (2026)",
+    "description": "Complete step-by-step guide to updating DJI drone firmware. Why update, preparation steps, how to update via DJI Fly/DJI Go app, troubleshooting failed updates, firmware downgrade, and tips.",
+    "url": "https://powerspecshub.com/pages/specs/how-to-update-dji-drone-firmware.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I update my DJI drone firmware?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To update your DJI drone firmware: 1) Make sure the drone battery is at least 50% charged (50%+ minimum, 80%+ recommended). 2) Install the latest version of the DJI Fly or DJI Go 4 app on your phone. 3) Connect your phone to the drone or remote controller via WiFi or USB. 4) Open the app and go to the firmware update section (usually in Settings > Firmware Update or you will see a notification badge). 5) If an update is available, tap 'Update' or 'Download and Update'. 6) Wait for the update to complete — this usually takes 5-15 minutes. 7) The drone will restart automatically when done. Do NOT turn off the drone, close the app, or disconnect during the update process. This can brick the drone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I update my DJI drone firmware?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you should generally keep your drone firmware updated. Firmware updates fix bugs, improve performance, add new features, improve flight safety, and patch security vulnerabilities. However, there are a few caveats: do NOT update right before an important flight or trip — wait until you have time to test afterward. If the current firmware works perfectly and the new update does not add anything you need, you can wait. And if you rely on certain third-party apps or hacks, be aware that updates can break them. For most people, updating is recommended for safety and reliability. Always read the release notes to see what changed before updating."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a DJI firmware update take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DJI firmware updates typically take 5 to 15 minutes total, depending on the size of the update and your internet speed. The download part takes 1-5 minutes depending on your WiFi speed, and the actual installation and reboot takes another 3-10 minutes. During the update, the drone may beep, the lights may flash, and the gimbal may move around — this is normal. Do not interrupt the update at any point. If it seems stuck for more than 20 minutes, there might be a problem, but give it at least 15-20 minutes before assuming something is wrong. Larger updates with major changes take longer than small bugfix updates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if firmware update fails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If a firmware update fails or gets interrupted, do not panic. Most of the time the drone will just restart and you can try again. In the worst case, the drone may enter 'recovery mode' where you can re-flash the firmware. Try these steps: 1) Restart the drone and try updating again. 2) Try a different update method — if app update failed, try DJI Assistant 2 on a computer. 3) Make sure the battery is fully charged and try again. 4) Check DJI's support site for recovery procedures. 5) If nothing works, contact DJI support — most firmware issues are fixable. The key is to not turn the drone off mid-update, which can cause a 'bricked' drone that needs service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I downgrade DJI firmware?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can usually downgrade DJI drone firmware to a previous version, but it is not as straightforward as updating. You will need to use DJI Assistant 2 software on a computer (not the mobile app). Connect the drone to your computer via USB, open DJI Assistant 2, log in, go to the firmware section, and you should see a list of available firmware versions — both newer and older. Select the version you want and follow the prompts. Not all older versions may be available — DJI sometimes removes very old versions. Also, some updates include safety features that cannot be downgraded. Always check DJI's forums or community sites to see if downgrading is possible for your specific model and version combination."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my DJI update taking so long?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your DJI firmware update is taking longer than expected, it could be due to: slow internet connection (the download takes longer), large update file size (major updates are bigger), weak WiFi connection to the drone, low battery (slow down the update process), or the drone is doing multiple restarts and calibrations. If it has been less than 20 minutes, be patient — it is probably still working. If it has been more than 30 minutes with no progress, there might be an issue. Do NOT turn off the drone unless you are absolutely sure it is frozen. Check the progress indicator in the app — if it is still moving, it is working. If it is completely stuck at 0% or 100% for 20+ minutes, you may need to restart and try again."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to update the remote controller too?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you should update the remote controller firmware when an update is available, in addition to the drone firmware. The remote and drone need to be on compatible firmware versions to work together properly. If one is updated but the other is not, you may have connection issues or feature problems. The DJI Fly app will usually prompt you to update both if updates are available for both. Remote controller updates are usually faster than drone updates — typically 2-5 minutes. Smart controllers (DJI RC, RC Pro) have their own system updates as well, similar to updating a phone or tablet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I update DJI firmware without the app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can update DJI firmware without the mobile app by using DJI Assistant 2 software on a Windows or Mac computer. Download DJI Assistant 2 from DJI's official website, install it on your computer, connect the drone (and remote if needed) to your computer via USB cable, open DJI Assistant 2, log in with your DJI account, select your drone, go to the Firmware Update tab, and follow the prompts. The computer method is often more reliable than the app and is the recommended method for major updates or if you are having trouble with the app-based update. You can also downgrade firmware using DJI Assistant 2."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I do before updating firmware?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Before updating your DJI drone firmware: 1) Charge the battery to at least 50% (80% or more is recommended to be safe — if the battery dies mid-update, you can brick the drone). 2) Make sure you have a stable internet connection (WiFi preferred over mobile data). 3) Backup any important photos or videos from the drone's internal storage. 4) Do not plan to fly immediately after — leave time to test afterward. 5) Read the release notes so you know what is changing. 6) Clear some space on your phone if needed. 7) Make sure the drone is on a flat, stable surface and will not be disturbed during the update. 8) Do not update right before a trip or important flight — always test after updating."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does DJI release firmware updates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DJI releases firmware updates for several reasons: to fix bugs and glitches, improve flight stability and reliability, add new features and flight modes, improve camera quality and performance, patch security vulnerabilities, comply with regulatory requirements (like new airspace rules), improve battery management, add compatibility with new accessories, and improve obstacle avoidance and other safety systems. Most updates include a mix of bug fixes and new features. Major updates (like going from v1.0 to v2.0) usually add significant new features, while minor updates (v1.1 to v1.2) are mostly bug fixes and small improvements."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Drones",
+        "item": "https://powerspecshub.com/pages/specs/drones.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Update DJI Firmware"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="../tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="../tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="drones.html">Drones</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">How to Update DJI Firmware</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-purple-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-purple-500/20 text-purple-400 font-mono font-bold text-sm rounded-md border border-purple-500/30">STEP-BY-STEP</div>
+        <span class="badge badge-info"><i data-lucide="plane" style="width:0.75rem;height:0.75rem"></i>DJI</span>
+        <span class="badge badge-info"><i data-lucide="download" style="width:0.75rem;height:0.75rem"></i>Firmware</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        How to Update DJI Drone Firmware &mdash; <span class="gradient-text">Step-by-Step Guide (2026)</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Keeping your DJI drone firmware up to date is important for safety, performance, and new features — but updating can be intimidating if you have never done it before. In this complete guide, we walk you through everything you need to know: why you should update, how to prepare, step-by-step instructions for both the DJI Fly app and DJI Assistant 2, how to troubleshoot failed updates, and even how to downgrade if you need to. Whether you have a Mini, Air, or Mavic series drone, this guide will help you update safely and successfully.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Time Needed</div>
+          <div class="font-mono font-bold text-xl text-electric-400">5-15 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="battery-charging" style="width:0.9rem;height:0.9rem"></i>Battery Needed</div>
+          <div class="font-mono font-bold text-xl text-green-400">50%+ min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="smartphone" style="width:0.9rem;height:0.9rem"></i>Methods</div>
+          <div class="font-bold text-xl text-yellow-400">App + PC</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="shield-check" style="width:0.9rem;height:0.9rem"></i>Difficulty</div>
+          <div class="font-bold text-xl text-purple-400">Easy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK ANSWER -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-purple-950/20 to-navy-900 border-purple-500/20">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="zap" style="width:1.25rem;height:1.25rem;color:#c084fc"></i>Quick Answer: How to Update DJI Firmware</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        <strong class="text-white">The easiest way to update your DJI drone firmware</strong> is through the DJI Fly app (or DJI Go 4 for older drones):
+      </p>
+      <ol class="text-sm text-gray-300 space-y-2 mb-4 pl-5 list-decimal">
+        <li>Charge the drone battery to at least 50% (80%+ recommended)</li>
+        <li>Connect your phone to the drone or remote (WiFi or USB)</li>
+        <li>Open DJI Fly app → Settings → Firmware Update</li>
+        <li>Tap "Update" if an update is available</li>
+        <li>Wait 5-15 minutes — do NOT turn anything off during the update</li>
+        <li>Drone will restart automatically when done</li>
+      </ol>
+      <div class="alert alert-critical !mb-0">
+        <i data-lucide="alert-octagon" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Never interrupt a firmware update.</strong> Do not turn off the drone, close the app, disconnect the cable, or fly away while updating. Interrupting mid-update can "brick" the drone — make it completely unresponsive — and you may need to send it to DJI for repair. Always update in a safe place where the drone will not be disturbed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE OF CONTENTS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="list" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Table of Contents</h2>
+      <div class="grid md:grid-cols-2 gap-2 text-sm">
+        <a href="#why-update" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">01</span>Why Update Firmware?</a>
+        <a href="#preparation" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">02</span>Preparation Steps</a>
+        <a href="#dji-fly-update" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">03</span>Update via DJI Fly App</a>
+        <a href="#dji-go4-update" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">04</span>Update via DJI Go 4 App</a>
+        <a href="#assistant2-update" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">05</span>Update via DJI Assistant 2 (PC)</a>
+        <a href="#remote-update" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">06</span>Updating Remote Controller</a>
+        <a href="#troubleshooting" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">07</span>Troubleshooting Failed Updates</a>
+        <a href="#downgrade" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">08</span>Firmware Downgrade</a>
+        <a href="#after-update" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">09</span>What to Do After Updating</a>
+        <a href="#best-practices" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">10</span>Best Practices</a>
+        <a href="#faq" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">11</span>Frequently Asked Questions</a>
+        <a href="#related" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">12</span>Related Guides</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY UPDATE -->
+  <section id="why-update" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Why Update Your Drone Firmware?</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Firmware is the software that runs inside your drone — it controls everything from flight stability to camera quality to obstacle avoidance. DJI regularly releases firmware updates to improve their drones. Here are the main reasons to keep your firmware up to date:
+      </p>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="shield" style="width:1.25rem;height:1.25rem;color:#4ade80"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Safety Improvements</h4>
+            <p class="text-sm text-gray-400">The most important reason to update. DJI constantly improves flight safety features like obstacle avoidance, return-to-home reliability, GPS accuracy, and fail-safe behavior. Updated firmware is generally safer to fly than outdated firmware.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sparkles" style="width:1.25rem;height:1.25rem;color:#60a5fa"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">New Features</h4>
+            <p class="text-sm text-gray-400">DJI often adds new features and flight modes via firmware updates — things like new camera modes, better tracking, new video formats, waypoint improvements, and more. Sometimes a firmware update adds features you did not even know you wanted.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-yellow-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="bug" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Bug Fixes</h4>
+            <p class="text-sm text-gray-400">All software has bugs, and drone firmware is no exception. Updates fix glitches, crashes, connection issues, camera problems, battery management issues, and all sorts of other bugs that can affect flight reliability.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="camera" style="width:1.25rem;height:1.25rem;color:#c084fc"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Better Image Quality</h4>
+            <p class="text-sm text-gray-400">Firmware updates often improve camera performance — better color science, less noise, improved dynamic range, better low-light performance, new video resolutions or frame rates, and better gimbal stabilization.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="lock" style="width:1.25rem;height:1.25rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Security Patches</h4>
+            <p class="text-sm text-gray-400">Like any connected device, drones can have security vulnerabilities. Firmware updates patch security holes that could potentially be exploited. This is especially important if you fly in sensitive areas or use your drone for business purposes.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-orange-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="globe" style="width:1.25rem;height:1.25rem;color:#fb923c"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Regulatory Compliance</h4>
+            <p class="text-sm text-gray-400">Sometimes updates add features required by new aviation regulations — things like remote ID, new geofencing rules, or airspace information updates. Keeping firmware current helps ensure you are flying legally.</p>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-warning mt-4 !mb-0">
+        <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>When NOT to update:</strong> Do not update right before an important trip, event, or flight. Wait until you have time to test afterward — just in case the update introduces new issues or changes behavior you are used to. Also, if you use third-party apps, hacks, or modifications, check if they are compatible with the new firmware before updating — updates can break them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREPARATION -->
+  <section id="preparation" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Preparation Steps Before Updating</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Proper preparation helps ensure a smooth update process and prevents problems. Do these things before you start:
+      </p>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-electric-400">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Charge the Battery</h4>
+            <p class="text-sm text-gray-400">Make sure the drone battery is at least 50% charged. 80% or more is recommended. If the battery dies in the middle of a firmware update, you can brick the drone — it will not boot up and may need to be sent for service. Use a fully charged battery to be safe.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-electric-400">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Stable Internet Connection</h4>
+            <p class="text-sm text-gray-400">You need to download the firmware file, which can be several hundred megabytes. Use a stable WiFi connection — avoid mobile data if possible, and do not use a public or unreliable WiFi network that might drop the connection mid-download.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-electric-400">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Backup Important Data</h4>
+            <p class="text-sm text-gray-400">While rare, firmware updates can sometimes cause data loss. If you have important photos or videos on the drone's internal storage, back them up to your computer or phone before updating. This is a good habit anyway.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-electric-400">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Read Release Notes</h4>
+            <p class="text-sm text-gray-400">Always read the release notes before updating so you know what is changing. Are there new features? Bug fixes? Known issues? This helps you know what to expect and lets you check if the update has any known problems.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-electric-400">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Find a Stable, Safe Place</h4>
+            <p class="text-sm text-gray-400">Place the drone on a flat, stable surface where it will not be disturbed during the update. Do not update while the drone is in a bag, on an uneven surface, or somewhere it could get knocked over. The gimbal will move around during calibration.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-electric-400">6</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Update the App First</h4>
+            <p class="text-sm text-gray-400">Make sure you have the latest version of the DJI Fly or DJI Go 4 app installed on your phone before updating the drone firmware. Outdated apps can have trouble with new firmware or might not show you that an update is available.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-electric-400">7</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Do Not Rush</h4>
+            <p class="text-sm text-gray-400">Set aside 15-30 minutes for the whole process. Do not try to squeeze an update in right before you need to fly. You want enough time to do it properly and test afterward. Patience prevents mistakes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DJI FLY UPDATE -->
+  <section id="dji-fly-update" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Updating via DJI Fly App (Step-by-Step)</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        The DJI Fly app is used by most newer DJI drones: Mini 3/4/5 series, Air 2S/Air 3, Mavic 3 series, Avata, and FPV. Here is how to update:
+      </p>
+      <ol class="text-sm text-gray-300 space-y-4 pl-5 list-decimal">
+        <li>
+          <strong>Power on the drone and remote controller.</strong> Wait 30-60 seconds for everything to fully boot up.
+        </li>
+        <li>
+          <strong>Connect your phone to the drone/remote.</strong> Use either WiFi connection or a USB cable. USB is more reliable for updates.
+        </li>
+        <li>
+          <strong>Open the DJI Fly app.</strong> If a firmware update is available, you will usually see a notification banner or a red badge on the settings icon.
+        </li>
+        <li>
+          <strong>Go to Firmware Update.</strong> Tap your profile icon → Settings → Firmware Update, or tap the update notification if you see one.
+        </li>
+        <li>
+          <strong>Check what is new.</strong> Read the release notes to see what changes and improvements are in the update.
+        </li>
+        <li>
+          <strong>Tap "Update" or "Download and Update".</strong> The app will download the firmware file first, then send it to the drone and install it.
+        </li>
+        <li>
+          <strong>Wait for the update to complete.</strong> This takes 5-15 minutes. The drone may beep, the lights will flash, and the gimbal may move around — this is all normal.
+        </li>
+        <li>
+          <strong>The drone will restart automatically.</strong> When it comes back on, the update is complete.
+        </li>
+        <li>
+          <strong>Verify the update.</strong> Go back to the firmware section to confirm you are on the latest version. Do a quick test flight to make sure everything works normally.
+        </li>
+      </ol>
+      <div class="alert alert-critical mt-4 !mb-0">
+        <i data-lucide="alert-octagon" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Do NOT:</strong> Turn off the drone, close the app, disconnect the cable, let your phone go to sleep, or take a call during the update. Any interruption can brick the drone. Leave everything alone until the update is fully complete and the drone has restarted.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DJI GO4 UPDATE -->
+  <section id="dji-go4-update" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Updating via DJI Go 4 App (Older Drones)</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Older DJI drones use the DJI Go 4 app instead of DJI Fly: Mavic Pro, Mavic 2 series, Phantom 4 series, Spark, Inspire 2, Osmo series. The process is similar:
+      </p>
+      <ol class="text-sm text-gray-300 space-y-4 pl-5 list-decimal">
+        <li>
+          <strong>Power on the drone and remote controller.</strong> Wait for them to fully start up and connect to each other.
+        </li>
+        <li>
+          <strong>Connect your phone to the remote.</strong> Use the USB cable or WiFi, depending on your setup.
+        </li>
+        <li>
+          <strong>Open DJI Go 4 app.</strong> Wait for it to connect to the drone.
+        </li>
+        <li>
+          <strong>Go to firmware settings.</strong> Tap the settings gear icon → "General Settings" → "Firmware Update" or look for an update notification.
+        </li>
+        <li>
+          <strong>Tap "Download and Update"</strong> if an update is available.
+        </li>
+        <li>
+          <strong>Wait for the download and installation.</strong> This can take 5-15 minutes depending on the update size.
+        </li>
+        <li>
+          <strong>The drone will restart.</strong> Wait for it to come back online.
+        </li>
+        <li>
+          <strong>Verify and test.</strong> Confirm you are on the new firmware version and do a quick test flight.
+        </li>
+      </ol>
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Not sure which app to use?</strong> Newer drones (Mini 3+, Air 2S+, Mavic 3+, Avata, FPV) use DJI Fly. Older drones (Mavic Pro, Mavic 2, Phantom, Spark, Inspire) use DJI Go 4. Check DJI's website if you are unsure — using the wrong app means you will not see the drone or firmware updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSISTANT 2 UPDATE -->
+  <section id="assistant2-update" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Updating via DJI Assistant 2 (Computer Method)</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Using DJI Assistant 2 on a Windows or Mac computer is often more reliable than the mobile app, especially for major updates or if you are having trouble with the app method. You can also downgrade firmware using this method.
+      </p>
+      <h3 class="font-bold text-xl mb-3">Step-by-Step:</h3>
+      <ol class="text-sm text-gray-300 space-y-3 mb-4 pl-5 list-decimal">
+        <li><strong>Download DJI Assistant 2</strong> from DJI's official website (dji.com). Make sure you get the correct version for your drone model — there are different versions for different product lines.</li>
+        <li><strong>Install the software</strong> on your Windows PC or Mac. Follow the installation prompts.</li>
+        <li><strong>Power on your drone.</strong> Make sure the battery is at least 50% charged.</li>
+        <li><strong>Connect the drone to your computer</strong> using a USB cable. Use the cable that came with the drone or a high-quality data cable.</li>
+        <li><strong>Open DJI Assistant 2</strong> and log in with your DJI account. You need an internet connection.</li>
+        <li><strong>Select your drone</strong> from the list of connected devices.</li>
+        <li><strong>Click on "Firmware Update"</strong> tab or section.</li>
+        <li><strong>Find the latest firmware version</strong> and click "Upgrade" or "Update". If you want to downgrade, you will see older versions listed here too.</li>
+        <li><strong>Read the release notes</strong> and confirm you want to update.</li>
+        <li><strong>Wait for the update to complete.</strong> This takes 5-15 minutes. The drone will restart when done.</li>
+        <li><strong>Close DJI Assistant 2,</strong> disconnect the USB cable, and you are done.</li>
+      </ol>
+      <div class="alert alert-success !mb-0">
+        <i data-lucide="check-circle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Benefits of computer update:</strong> More reliable than WiFi/app updates, you can see all available firmware versions, you can downgrade if needed, and it is often faster. The downside is you need a computer. If you are having repeated failures with the app method, try the computer method — it usually works when the app method does not.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REMOTE UPDATE -->
+  <section id="remote-update" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Updating the Remote Controller</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        In addition to the drone itself, you should also update the remote controller firmware when updates are available. The remote and drone need compatible firmware to work together properly.
+      </p>
+      <h3 class="font-bold text-xl mb-3">How to Update the Remote:</h3>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Remote controller updates are usually done through the same app as the drone update. When you connect to the drone and check for firmware updates, the app will show you if there is an update for the remote controller too. The process is similar:
+      </p>
+      <ol class="text-sm text-gray-300 space-y-2 mb-4 pl-5 list-decimal">
+        <li>Connect to the drone with the app open</li>
+        <li>Go to firmware update section</li>
+        <li>If a remote update is available, tap "Update"</li>
+        <li>Wait 2-5 minutes for the update</li>
+        <li>Remote will restart when done</li>
+      </ol>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Smart controllers like the DJI RC, RC 2, and RC Pro also have their own system updates (like updating a phone's operating system). These are separate from the regular remote firmware and are usually updated through the controller's own settings menu.
+      </p>
+      <div class="alert alert-warning !mb-0">
+        <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Update both together:</strong> When you see updates for both the drone and remote controller, update both. If one is updated but the other is not, you may have connection problems or features may not work correctly. The app usually prompts you to update both if needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TROUBLESHOOTING -->
+  <section id="troubleshooting" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Troubleshooting Failed Updates</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Sometimes firmware updates fail. Here is what to do if something goes wrong:
+      </p>
+      <h3 class="font-bold text-xl mb-3">Common Problems & Fixes</h3>
+      <div class="space-y-4">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-yellow-400 mb-2">Update stuck at X%</h4>
+          <p class="text-sm text-gray-300 mb-1">Give it time — updates can seem stuck for several minutes. If it has been less than 20 minutes, be patient.</p>
+          <p class="text-sm text-gray-400">If it has been more than 20-30 minutes with no progress, you may need to restart and try again. Try the computer method if the app method is stuck.</p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-yellow-400 mb-2">Update fails / error message</h4>
+          <p class="text-sm text-gray-300 mb-1">First, try again — sometimes updates fail on the first try for no obvious reason.</p>
+          <p class="text-sm text-gray-400">If it keeps failing: check your internet connection, try a different WiFi network, make sure the battery is fully charged, try the DJI Assistant 2 computer method instead, restart everything and try again.</p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-yellow-400 mb-2">Drone will not turn on after update</h4>
+          <p class="text-sm text-gray-300 mb-1">This is scary but often fixable. Try a different battery first — make sure the battery is charged.</p>
+          <p class="text-sm text-gray-400">If the drone is in recovery mode (lights flashing oddly), connect it to DJI Assistant 2 on a computer and try re-flashing the firmware. If nothing works, contact DJI support — most firmware issues are fixable.</p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-yellow-400 mb-2">App says no update available</h4>
+          <p class="text-sm text-gray-300 mb-1">Make sure you have the latest version of the app installed. Sometimes old apps do not show new updates.</p>
+          <p class="text-sm text-gray-400">Also check that you have the right app for your drone model (DJI Fly vs DJI Go 4). If you still do not see an update, it might not be available for your region yet — try again in a few days.</p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-yellow-400 mb-2">Gimbal behaving weirdly after update</h4>
+          <p class="text-sm text-gray-300 mb-1">Gimbal calibration is often needed after firmware updates. Go to settings and run the gimbal calibration.</p>
+          <p class="text-sm text-gray-400">Also try IMU calibration and compass calibration if flight seems off. Sometimes sensor parameters get reset after major updates.</p>
+        </div>
+      </div>
+      <div class="alert alert-critical mt-4 !mb-0">
+        <i data-lucide="alert-octagon" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>When to contact DJI support:</strong> If you have tried everything — both app and computer methods, multiple batteries, restarting everything — and the update keeps failing, or if the drone will not turn on or respond at all, it is time to contact DJI support. They can walk you through recovery procedures or arrange for service if needed. If your drone is under warranty or you have DJI Care, this should be covered.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNGRADE -->
+  <section id="downgrade" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Firmware Downgrade — Going Back to an Older Version</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Sometimes you might want to downgrade to an older firmware version — maybe the new version has bugs, removes a feature you liked, or breaks compatibility with third-party apps.
+      </p>
+      <h3 class="font-bold text-xl mb-3">How to Downgrade</h3>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        You can only downgrade using DJI Assistant 2 on a computer — the mobile apps do not support downgrading.
+      </p>
+      <ol class="text-sm text-gray-300 space-y-2 mb-4 pl-5 list-decimal">
+        <li>Download and install DJI Assistant 2 on your computer</li>
+        <li>Connect the drone to your computer via USB</li>
+        <li>Open DJI Assistant 2 and log in</li>
+        <li>Select your drone and go to Firmware Update</li>
+        <li>You will see a list of available firmware versions — both newer and older</li>
+        <li>Find the version you want to downgrade to</li>
+        <li>Click "Upgrade" or "Switch" next to that version (it still says upgrade even if going to an older version)</li>
+        <li>Wait for the process to complete — same as updating</li>
+        <li>Drone will restart when done</li>
+      </ol>
+      <div class="alert alert-warning !mb-0">
+        <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Downgrade limitations:</strong> Not all older versions are available — DJI sometimes removes very old firmware versions from the server. Some safety-critical updates cannot be downgraded. Also, going back too far might mean you miss important security patches and safety improvements. Downgrade at your own risk and only if you have a specific reason. Always research the version you want to downgrade to before doing it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFTER UPDATE -->
+  <section id="after-update" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">What to Do After Updating</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        After a firmware update, there are a few things you should do before you fly:
+      </p>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>
+          <div>
+            <p class="text-sm text-gray-300"><strong>Verify the version.</strong> Check the firmware version in the app to make sure the update was successful and you are on the version you expect.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>
+          <div>
+            <p class="text-sm text-gray-300"><strong>Do a test flight.</strong> Fly in a safe, open area close by. Test basic controls, takeoff and landing, camera functions, and make sure everything feels normal. Do not fly far or try new things on your first flight after an update.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>
+          <div>
+            <p class="text-sm text-gray-300"><strong>Check settings.</strong> Sometimes firmware updates reset certain settings to defaults. Check your camera settings, flight modes, RTH settings, and other preferences to make sure they are how you want them.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>
+          <div>
+            <p class="text-sm text-gray-300"><strong>Calibrate if needed.</strong> If the gimbal seems off or the drone drifts, run a gimbal calibration and IMU calibration. Compass calibration might be needed too.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>
+          <div>
+            <p class="text-sm text-gray-300"><strong>Test new features.</strong> If the update added new features, try them out in a safe environment to learn how they work before using them in important situations.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>
+          <div>
+            <p class="text-sm text-gray-300"><strong>Watch for issues.</strong> Keep an eye out for anything that seems broken or different from before. If you find a serious bug, you can consider downgrading or reporting it to DJI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST PRACTICES -->
+  <section id="best-practices" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Best Practices for Smooth Updates</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-green-400 mb-2">✓ Do</h4>
+          <ul class="text-xs text-gray-300 space-y-1">
+            <li>✓ Always charge the battery fully before updating</li>
+            <li>✓ Update both drone and remote together</li>
+            <li>✓ Use a stable internet connection</li>
+            <li>✓ Read release notes before updating</li>
+            <li>✓ Test fly after every update</li>
+            <li>✓ Keep the app updated too</li>
+            <li>✓ Use DJI Assistant 2 for big updates</li>
+            <li>✓ Give the update plenty of time</li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-red-400 mb-2">✗ Don't</h4>
+          <ul class="text-xs text-gray-300 space-y-1">
+            <li>✗ Don't interrupt the update once started</li>
+            <li>✗ Don't update right before an important flight</li>
+            <li>✗ Don't turn off the drone mid-update</li>
+            <li>✗ Don't close the app or disconnect cables</li>
+            <li>✗ Don't update with a low battery</li>
+            <li>✗ Don't use an unreliable WiFi connection</li>
+            <li>✗ Don't rush the process</li>
+            <li>✗ Don't fly immediately without testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about updating DJI drone firmware.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I update my DJI drone firmware?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          To update your DJI drone firmware: 1) Make sure the drone battery is at least 50% charged (50% minimum, 80%+ recommended to be safe). 2) Install the latest version of the DJI Fly or DJI Go 4 app on your phone — which app depends on your drone model. 3) Connect your phone to the drone or remote controller via WiFi or USB cable. 4) Open the app and go to the firmware update section (usually in Settings > Firmware Update, or you will see a notification badge if an update is available). 5) If an update is available, tap 'Update' or 'Download and Update'. 6) Wait for the update to complete — this usually takes 5-15 minutes. 7) The drone will restart automatically when done. Do NOT turn off the drone, close the app, or disconnect during the update process — interrupting can brick the drone.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Should I update my DJI drone firmware?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes, you should generally keep your drone firmware updated. Firmware updates fix bugs, improve flight performance and reliability, add new features, improve flight safety, and patch security vulnerabilities. However, there are a few caveats: do NOT update right before an important flight or trip — wait until you have time to test afterward to make sure everything works. If the current firmware works perfectly and the new update does not add anything you need, you can wait a while to see if others report issues. And if you rely on certain third-party apps or modifications, be aware that updates can break them. For most people, updating is recommended for safety and reliability. Always read the release notes to see what changed before updating.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How long does a DJI firmware update take?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          DJI firmware updates typically take 5 to 15 minutes total, depending on the size of the update and your internet speed. The download part takes 1-5 minutes depending on your WiFi speed and the file size — major updates with lots of changes can be several hundred megabytes. The actual installation and reboot takes another 3-10 minutes. During the update, the drone may beep, the status lights may flash in different patterns, and the gimbal may move around and calibrate itself — this is all normal. Do not interrupt the update at any point. If it seems stuck for more than 20 minutes, there might be a problem, but give it at least 15-20 minutes before assuming something is wrong. Larger updates with major changes take longer than small bugfix updates.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What happens if firmware update fails?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          If a firmware update fails or gets interrupted, do not panic. Most of the time the drone will just restart normally and you can try again. In the worst case, the drone may enter 'recovery mode' where you can re-flash the firmware. Try these steps: 1) Restart the drone and try updating again — sometimes it just fails randomly. 2) Try a different update method — if the app update failed, try DJI Assistant 2 on a computer, which is generally more reliable. 3) Make sure the battery is fully charged and try again — low batteries cause update failures. 4) Check DJI's support site or forums for specific recovery procedures for your model. 5) If nothing works, contact DJI support — most firmware issues are fixable. The key rule is to not turn the drone off mid-update, which can cause a 'bricked' drone that needs professional service.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I downgrade DJI firmware?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes, you can usually downgrade DJI drone firmware to a previous version, but it is not as straightforward as updating. You will need to use DJI Assistant 2 software on a Windows or Mac computer — the mobile apps do not support downgrading. Connect the drone to your computer via USB, open DJI Assistant 2, log in with your DJI account, go to the firmware section, and you should see a list of available firmware versions — both newer and older. Select the version you want and follow the prompts. Not all older versions may be available — DJI sometimes removes very old versions from the servers. Some updates include safety-critical features that cannot be downgraded. Always check DJI's forums or community sites to see if downgrading is possible and recommended for your specific model and version combination.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why is my DJI update taking so long?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          If your DJI firmware update is taking longer than expected, it could be due to: slow internet connection (the download takes longer), large update file size (major updates with lots of new features are bigger and take longer), weak WiFi connection to the drone or a poor USB connection, low battery (can slow down the update process), or the drone is doing multiple restarts and calibrations as part of the update. If it has been less than 20 minutes, be patient — it is probably still working even if progress seems slow. If it has been more than 30 minutes with absolutely no progress, there might be an issue. Do NOT turn off the drone unless you are absolutely sure it is frozen. Check the progress indicator in the app — if it is still moving or changing, it is working. If it is completely stuck at 0% or 100% for 20+ minutes, you may need to restart and try again with a different method.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Do I need to update the remote controller too?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes, you should update the remote controller firmware when an update is available, in addition to the drone firmware. The remote and drone need to be on compatible firmware versions to work together properly. If one is updated but the other is not, you may have connection issues, feature problems, or things might not work correctly. The DJI Fly app will usually prompt you to update both if updates are available for both. Remote controller updates are usually faster than drone updates — typically 2-5 minutes. Smart controllers like the DJI RC, RC 2, and RC Pro have their own system updates as well (like updating a phone's operating system), which are separate from the regular remote firmware and are updated through the controller's own settings menu.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I update DJI firmware without the app?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes, you can update DJI firmware without the mobile app by using DJI Assistant 2 software on a Windows or Mac computer. Download DJI Assistant 2 from DJI's official website, install it on your computer, connect the drone (and remote if needed) to your computer via USB cable, open DJI Assistant 2, log in with your DJI account, select your drone from the device list, go to the Firmware Update tab, and follow the prompts to update. The computer method is often more reliable than the app and is the recommended method for major updates or if you are having trouble with the app-based update. You can also downgrade firmware using DJI Assistant 2, which you cannot do with the mobile app. You will still need a DJI account and internet connection.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What should I do before updating firmware?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Before updating your DJI drone firmware: 1) Charge the battery to at least 50% — 80% or more is recommended because if the battery dies mid-update, you can brick the drone. 2) Make sure you have a stable internet connection — WiFi is preferred over mobile data. 3) Backup any important photos or videos from the drone's internal storage just in case. 4) Do not plan to fly immediately after — leave time to test afterward. 5) Read the release notes so you know what is changing and can check for known issues. 6) Clear some space on your phone if needed — the app needs room to download the firmware file. 7) Make sure the drone is on a flat, stable surface and will not be disturbed during the update. 8) Do not update right before a trip or important flight — always test after updating to make sure everything works.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why does DJI release firmware updates?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          DJI releases firmware updates for several reasons: to fix bugs and glitches, improve flight stability and reliability, add new features and flight modes, improve camera quality and performance, patch security vulnerabilities, comply with new aviation regulations (like remote ID or new geofencing rules), improve battery management and efficiency, add compatibility with new accessories, and improve obstacle avoidance and other safety systems. Most updates include a mix of bug fixes and new features. Major updates (like going from v1.0 to v2.0) usually add significant new features and big changes, while minor updates (v1.1 to v1.2) are mostly bug fixes, small improvements, and security patches. DJI supports their drones with firmware updates for several years after release.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Drone Guides</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="dji-fly-app-not-connecting-to-drone.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">CONNECT</div>
+          <span class="badge badge-info">Troubleshooting</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Fly App Not Connecting</h3>
+        <p class="text-sm text-gray-400">Fix connection issues between the DJI Fly app and your drone.</p>
+      </a>
+      <a href="dji-drone-return-to-home-not-working.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">RTH&nbsp;ISSUE</div>
+          <span class="badge badge-info">Troubleshooting</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Return to Home Not Working</h3>
+        <p class="text-sm text-gray-400">Troubleshoot RTH failures — GPS, compass calibration, and home point issues.</p>
+      </a>
+      <a href="dji-mini-4-pro-vs-mini-5-pro-specs.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">COMPARE</div>
+          <span class="badge badge-info">Mini</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Mini 4 Pro vs Mini 5 Pro</h3>
+        <p class="text-sm text-gray-400">Complete side-by-side specs comparison of DJI's top sub-250g drones.</p>
+      </a>
+      <a href="best-dji-drone-for-beginners-2026.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">BEGINNER</div>
+          <span class="badge badge-info">Guide</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Best DJI Drone for Beginners</h3>
+        <p class="text-sm text-gray-400">Which DJI drone to start with — buying guide for first-time pilots in 2026.</p>
+      </a>
+      <a href="drones.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">ALL&nbsp;DRONES</div>
+          <span class="badge badge-info">Category</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">All Drone Specs</h3>
+        <p class="text-sm text-gray-400">Browse all drone specifications, comparisons, and buying guides.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>

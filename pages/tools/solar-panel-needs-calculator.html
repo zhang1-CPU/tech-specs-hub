@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Panel Needs Calculator — How Many Panels Do I Need? (2026) | TechSpecsHub</title>
+  <meta name="description" content="Calculate how many solar panels you need to charge your portable power station. Free interactive calculator with real-world efficiency losses, tilt angle adjustments, and seasonal sunlight variations.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/tools/solar-panel-needs-calculator.html">
+
+  <meta property="og:title" content="Solar Panel Needs Calculator — How Many Panels Do I Need? (2026)">
+  <meta property="og:description" content="Free interactive calculator to figure out how many solar panels you need to charge your portable power station. Includes efficiency losses, tilt angle, and seasonal variations.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/tools/solar-panel-needs-calculator.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Solar Panel Needs Calculator — How Many Panels Do I Need?">
+  <meta name="twitter:description" content="Free interactive solar panel calculator for portable power stations. Real-world efficiency, tilt angle, and seasonal adjustments.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    .calc-input {
+      background: rgba(15, 29, 50, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      width: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+    .calc-input:focus {
+      outline: none;
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+    }
+    .calc-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      outline: none;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #22d3ee;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+      transition: transform 0.15s ease;
+    }
+    .calc-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    .calc-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #22d3ee;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+    }
+    .device-preset-btn {
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 10px 14px;
+      text-align: left;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .device-preset-btn:hover {
+      background: rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.3);
+      transform: translateY(-1px);
+    }
+    .result-card {
+      background: linear-gradient(145deg, rgba(30, 50, 89, 0.6), rgba(22, 37, 68, 0.8));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .result-card .result-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #fbbf24 0%, #22d3ee 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .result-card .result-label {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+    .season-card {
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+    .season-card .season-hours {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fbbf24;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Solar Panel Needs Calculator — How Many Panels Do I Need? (2026)",
+    "description": "Free interactive calculator to figure out how many solar panels you need to charge your portable power station. Includes efficiency losses, tilt angle adjustments, and seasonal sunlight variations.",
+    "url": "https://powerspecshub.com/pages/tools/solar-panel-needs-calculator.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate how many solar panels I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calculate solar panel needs, divide your power station capacity (Wh) by the product of panel wattage, peak sun hours per day, and system efficiency. The formula is: Panels Needed = Battery Capacity (Wh) ÷ (Panel Wattage (W) × Sun Hours × Efficiency). A typical real-world efficiency factor is 70% (0.7), accounting for panel angle, temperature losses, dust, MPPT charge controller efficiency, and wiring losses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is real solar output only 70% of rated panel wattage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solar panels are rated under ideal lab conditions (STC: 1000W/m² irradiance, 25°C cell temperature, no shading). Real-world output is lower due to: non-optimal tilt angle (5–20% loss), temperature (panels are less efficient when hot — 0.3–0.5% per °C above 25°C), dust and dirt (5–15% loss), wiring resistance (2–5% loss), MPPT charge controller efficiency (95–98%), and the fact that sunlight intensity varies throughout the day. 70% is a conservative real-world estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are peak sun hours and how do I find mine?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Peak sun hours (PSH) measure how much solar energy hits a location per day, expressed as hours of equivalent 1000W/m² intensity. It is not the same as hours of daylight. For example, 5 peak sun hours means you get the equivalent of 5 hours of full, direct sunlight per day. The US averages 3–6 peak sun hours depending on location and season. You can look up your area on NREL's PVWatts calculator or use our seasonal estimates based on your latitude."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does tilt angle affect solar panel output?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tilt angle significantly affects solar output. Optimal tilt is generally equal to your latitude for year-round production, or steeper in winter, shallower in summer. A flat panel (0° tilt) might produce 10–30% less than an optimally tilted panel. Portable solar panels are often used at sub-optimal angles — if you just lay them on the ground, expect 15–25% less output than if they were properly tilted toward the sun. Adjustable stands can significantly improve charging speed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can solar panels charge a 1000Wh power station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With a 100W solar panel and 5 peak sun hours per day at 70% real-world efficiency: 100W × 5h × 0.7 = 350Wh per day. So a 1000Wh station would take about 3 days to fully charge with one 100W panel. With two 100W panels (200W total): 700Wh/day — about 1.5 days. With 400W of panels: 1400Wh/day — charges in under a day. Actual time depends on weather, season, panel angle, and your power station's MPPT solar input limit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the maximum solar input for portable power stations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Maximum solar input varies widely by model. Small 300–500Wh stations typically accept 100–200W of solar. Mid-range 1000–2000Wh stations usually accept 200–800W. Large 3000–5000Wh home backup stations can accept 1000–3000W+ of solar. The MPPT charge controller in your power station limits how much solar it can process — buying more panels than the max input wastes money. Check your station's solar input rating before buying panels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use series or parallel wiring for solar panels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your power station's voltage requirements and your environmental conditions. Series wiring (positive to negative) increases voltage — good for MPPT charge controllers that need higher voltage, and better in partial shade. Parallel wiring (positive to positive, negative to negative) increases current but keeps voltage the same — simpler for small setups. Most portable power stations accept a range of voltages (e.g., 12–60V or 24–100V). Check your station's solar input voltage range and match your panel configuration to it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does weather affect solar charging?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Weather has a huge effect on solar output. Full, direct sun gives you 100% of rated output (adjusted for other losses). Light cloud cover: 50–70% output. Heavy overcast: 10–25% output. Rain or snow: near zero. Dust, dirt, and bird droppings on panels can reduce output by 5–25%. If you depend on solar charging, always have a backup plan (AC charging, spare battery) and size your system for the worst conditions you expect, not the best."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What size MPPT controller do I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most portable power stations have a built-in MPPT (Maximum Power Point Tracking) charge controller. The MPPT rating determines how much solar wattage the station can accept. For example, if your station has a 400W MPPT, you can connect up to 400W of solar panels (in practice, people often connect up to 120% of rated input for better low-light performance). External MPPT controllers are available for custom setups but are usually not needed with portable power stations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does solar panel efficiency matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Panel efficiency tells you how much of the sunlight hitting the panel gets converted to electricity. Typical portable panels are 18–23% efficient. Higher efficiency means more watts per square foot of panel area — important when space is limited (camping, RV). But for most portable power station use cases, total wattage matters more than efficiency. A 200W 20% efficient panel produces the same power as a 200W 23% efficient panel — the latter is just smaller and lighter."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://powerspecshub.com/pages/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Solar Panel Needs Calculator"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Calculators &amp; Tools</p>
+              <a href="power-station-runtime-calculator.html"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Runtime Calculator</a>
+              <a href="solar-panel-needs-calculator.html"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Solar Panel Calculator</a>
+              <a href="appliance-wattage-calculator.html"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Appliance Wattage Calculator</a>
+              <a href="camping-power-calculator.html"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Camping Power Calculator</a>
+              <a href="cpap-battery-calculator.html"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>CPAP Battery Calculator</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <p class="nav-dropdown-section-label mt-2">Calculators</p>
+        <a href="power-station-runtime-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee"></i>Runtime Calculator</a>
+        <a href="solar-panel-needs-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee"></i>Solar Panel Calculator</a>
+        <a href="appliance-wattage-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>Appliance Wattage Calculator</a>
+        <a href="camping-power-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee"></i>Camping Power Calculator</a>
+        <a href="cpap-battery-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee"></i>CPAP Battery Calculator</a>
+        <a href="best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="#">Tools</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Solar Panel Needs Calculator</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-yellow-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-yellow-500/20 text-yellow-400 font-mono font-bold text-sm rounded-md border border-yellow-500/30">CALCULATOR</div>
+        <span class="badge badge-info"><i data-lucide="sun" style="width:0.75rem;height:0.75rem"></i>Solar Sizing</span>
+        <span class="badge badge-info"><i data-lucide="trending-up" style="width:0.75rem;height:0.75rem"></i>Real-World Efficiency</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Solar Panel Needs Calculator &mdash; <span class="gradient-text">How Many Panels Do I Need?</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Figure out exactly how many solar panels you need to charge your portable power station. Enter your battery capacity, desired charge time, and location, and get instant estimates with real-world efficiency losses, tilt angle adjustments, and seasonal variations built in.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Real-World Efficiency</div>
+          <div class="font-mono font-bold text-xl text-yellow-400">~70%</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="sun" style="width:0.9rem;height:0.9rem"></i>Peak Sun Hours</div>
+          <div class="font-mono font-bold text-xl text-white">3&ndash;6 hrs</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="thermometer" style="width:0.9rem;height:0.9rem"></i>Temp Loss</div>
+          <div class="font-bold text-xl text-red-400">10&ndash;20%</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="sliders-horizontal" style="width:0.9rem;height:0.9rem"></i>Tilt Loss</div>
+          <div class="font-bold text-xl text-electric-400">5&ndash;25%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-6 flex items-center gap-2"><i data-lucide="calculator" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>Solar Panel Calculator</h2>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Inputs -->
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Power Station Capacity (Wh)
+            </label>
+            <input type="number" id="stationCapacity" class="calc-input" value="1024" min="50" max="20000" step="10">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>100Wh</span>
+              <input type="range" id="capacitySlider" class="calc-slider flex-1" min="100" max="5000" step="10" value="1024">
+              <span>5000Wh</span>
+            </div>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <button class="device-preset-btn text-xs" onclick="setCapacity(288)">288Wh (Jackery 300)</button>
+              <button class="device-preset-btn text-xs" onclick="setCapacity(512)">512Wh (Anker 521)</button>
+              <button class="device-preset-btn text-xs" onclick="setCapacity(1024)">1024Wh (EB3A)</button>
+              <button class="device-preset-btn text-xs" onclick="setCapacity(2048)">2048Wh (Delta 2)</button>
+              <button class="device-preset-btn text-xs" onclick="setCapacity(4096)">4096Wh (Delta Pro 3)</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Solar Panel Wattage (W)
+            </label>
+            <input type="number" id="panelWattage" class="calc-input" value="100" min="10" max="500" step="5">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>10W</span>
+              <input type="range" id="panelSlider" class="calc-slider flex-1" min="10" max="400" step="5" value="100">
+              <span>400W</span>
+            </div>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <button class="device-preset-btn text-xs" onclick="setPanel(50)">50W</button>
+              <button class="device-preset-btn text-xs" onclick="setPanel(100)">100W</button>
+              <button class="device-preset-btn text-xs" onclick="setPanel(200)">200W</button>
+              <button class="device-preset-btn text-xs" onclick="setPanel(300)">300W</button>
+              <button class="device-preset-btn text-xs" onclick="setPanel(400)">400W</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Peak Sun Hours Per Day
+            </label>
+            <input type="number" id="sunHours" class="calc-input" value="5" min="1" max="10" step="0.5">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>1hr</span>
+              <input type="range" id="sunSlider" class="calc-slider flex-1" min="1" max="8" step="0.5" value="5">
+              <span>8hrs</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3">
+              <div class="season-card">
+                <div class="text-xs text-gray-500 mb-1">Winter</div>
+                <div class="season-hours" id="winterHours">3.0</div>
+                <div class="text-xs text-gray-500">hrs/day</div>
+              </div>
+              <div class="season-card">
+                <div class="text-xs text-gray-500 mb-1">Spring</div>
+                <div class="season-hours" id="springHours">5.0</div>
+                <div class="text-xs text-gray-500">hrs/day</div>
+              </div>
+              <div class="season-card">
+                <div class="text-xs text-gray-500 mb-1">Summer</div>
+                <div class="season-hours" id="summerHours">6.5</div>
+                <div class="text-xs text-gray-500">hrs/day</div>
+              </div>
+              <div class="season-card">
+                <div class="text-xs text-gray-500 mb-1">Fall</div>
+                <div class="season-hours" id="fallHours">4.5</div>
+                <div class="text-xs text-gray-500">hrs/day</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">
+                System Efficiency
+              </label>
+              <select id="efficiency" class="calc-input">
+                <option value="0.6">60% (Very conservative)</option>
+                <option value="0.65">65% (Portable, flat panels)</option>
+                <option value="0.7" selected>70% (Typical real-world)</option>
+                <option value="0.75">75% (Tilted, clean panels)</option>
+                <option value="0.8">80% (Ideal conditions)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">
+                Desired Charge Time (days)
+              </label>
+              <input type="number" id="chargeDays" class="calc-input" value="2" min="0.5" max="10" step="0.5">
+            </div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="space-y-4">
+          <div class="result-card">
+            <div class="result-value" id="numPanels">3</div>
+            <div class="result-label">Number of Panels Needed</div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-2xl" id="totalWattage">300</div>
+              <div class="result-label">Total Solar Wattage</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-2xl" id="dailyCharged">210</div>
+              <div class="result-label">Wh Charged Per Day</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-2xl" id="chargeTime">4.9</div>
+              <div class="result-label">Days to Full Charge</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-2xl" id="hoursPerDay">12.2</div>
+              <div class="result-label">Hours of Sun Needed</div>
+            </div>
+          </div>
+
+          <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i data-lucide="sun" style="width:1rem;height:1rem;color:#fbbf24"></i>
+              Quick Summary
+            </h4>
+            <p class="text-sm text-gray-300 leading-relaxed" id="summaryText">
+              To charge a 1024Wh power station in 2 days with 100W panels and 5 peak sun hours per day at 70% efficiency, you need approximately 3 panels (300W total). With this setup, you will charge about 210Wh per day and reach full charge in about 4.9 days.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-yellow-950/30 to-electric-950/30 border border-yellow-500/20 rounded-xl p-5">
+            <h4 class="font-semibold text-yellow-400 mb-2 flex items-center gap-2">
+              <i data-lucide="info" style="width:1rem;height:1rem"></i>
+              Formula Used
+            </h4>
+            <p class="text-sm text-gray-300">
+              <code class="font-mono text-electric-400">Panels = Capacity ÷ (Panel W × Sun Hrs × Days × Efficiency)</code>
+            </p>
+            <p class="text-xs text-gray-500 mt-2">
+              70% efficiency accounts for tilt, temperature, dust, MPPT, and wiring losses.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">How to Use This Calculator</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="space-y-5">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-yellow-400">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Enter Your Power Station Capacity</h4>
+            <p class="text-sm text-gray-400">Start with the watt-hour (Wh) rating of your portable power station. This is the total battery capacity you want to charge with solar. You can find this number on the product page, the box, or the unit itself. Use the slider for quick adjustments, or type in an exact value. We also have quick presets for popular models from Jackery, EcoFlow, Bluetti, and Anker.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-yellow-400">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Choose Your Panel Wattage</h4>
+            <p class="text-sm text-gray-400">Enter the wattage of the solar panels you are considering. Most portable solar panels are 50W, 100W, 200W, or 400W. If you already have panels, use their rated wattage. Keep in mind that your power station has a maximum solar input limit — if you connect more watts than the station can accept, the excess is wasted. Check your station's specifications for the maximum solar input rating.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-yellow-400">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Set Peak Sun Hours for Your Location</h4>
+            <p class="text-sm text-gray-400">Peak sun hours measure how much usable sunlight you get per day, not just hours of daylight. Most locations get 3–6 peak sun hours depending on latitude, season, and weather. Use our seasonal reference to see how the numbers change throughout the year. For a conservative estimate, use winter sun hours — this ensures your system works even in the worst conditions.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-yellow-400">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Adjust Efficiency and Charge Time</h4>
+            <p class="text-sm text-gray-400">We default to 70% real-world efficiency, which is a good starting point for most portable solar setups. If you have adjustable stands and keep your panels clean, you might get 75%. If you just lay panels flat on the ground, use 65%. Then set how many days you are willing to wait for a full charge — faster charging means more panels (and more cost).</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-yellow-400">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Review the Results</h4>
+            <p class="text-sm text-gray-400">The calculator shows you how many panels you need, total solar wattage, how much energy you will charge per day, and how many days a full charge takes. Compare this against your power station's maximum solar input to make sure you are not over-paneling. If the number of panels seems too high or too low, adjust the panel wattage or charge time to find the sweet spot between cost and speed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EFFICIENCY EXPLANATION -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Why You Only Get ~70% of Rated Solar Output</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        If you have ever looked at a 100W solar panel and wondered why you only see 50–70W on your power station display, you are not alone. Solar panel wattage ratings are measured under Standard Test Conditions (STC) — perfect 1000W/m² sunlight, 25°C (77°F) cell temperature, no shading, perfectly angled toward the sun. Real-world conditions are never this ideal.
+      </p>
+
+      <div class="space-y-4 mb-5">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="thermometer-sun" style="width:1.1rem;height:1.1rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Temperature Loss (5–20%)</h4>
+            <p class="text-sm text-gray-400">Solar panels are less efficient when hot. Most panels lose about 0.3–0.5% of output per degree Celsius above 25°C (77°F). On a 90°F (32°C) day, the panel surface might be 120–140°F (50–60°C), causing 10–20% efficiency loss. This is why you actually get more output on cool, sunny days than on hot sunny days — counterintuitive but true.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sliders" style="width:1.1rem;height:1.1rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Tilt Angle Loss (5–25%)</h4>
+            <p class="text-sm text-gray-400">Panels produce maximum power when the sun hits them directly at a 90° angle. If your panels are flat on the ground (0° tilt) instead of angled toward the sun, you lose 15–25% of output compared to optimal tilt. Even with a stand, getting the perfect angle all day is impossible without a sun tracker. Portable setups typically lose 10–15% to sub-optimal tilt.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="cloud-drizzle" style="width:1.1rem;height:1.1rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Dust, Dirt, and Shading (5–15%)</h4>
+            <p class="text-sm text-gray-400">Dust, pollen, bird droppings, and dirt accumulate on panels over time and block sunlight. Even partial shading on one cell can reduce the output of an entire panel string. With portable panels that you set up and take down frequently, dirt is less of an issue, but it still adds up. A little cleaning can noticeably improve output.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="cable" style="width:1.1rem;height:1.1rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Wiring and MPPT Losses (3–8%)</h4>
+            <p class="text-sm text-gray-400">Some energy is lost as heat in the wires between your panels and power station — longer, thinner wires lose more. The MPPT (Maximum Power Point Tracking) charge controller in your power station is about 95–98% efficient. Together, these account for 3–8% total loss. Using the correct gauge wire and keeping cables short minimizes this loss.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun-dim" style="width:1.1rem;height:1.1rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Variable Sunlight Intensity</h4>
+            <p class="text-sm text-gray-400">Peak sun hours already account for the fact that sunlight is weaker in the morning and evening, stronger at midday. But clouds, haze, fog, and atmospheric conditions further reduce output. On a perfectly clear day you might hit 80% of rated output. On a hazy day, 60%. On a cloudy day, 10–30%. We use a 70% average for typical good conditions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+        <h4 class="font-semibold text-white mb-3">Breakdown of a 100W Panel on a Typical Day</h4>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-400">Rated output (STC)</span>
+            <span class="font-mono text-white">100W</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-400">Temperature loss (−10%)</span>
+            <span class="font-mono text-red-400">−10W</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-400">Tilt angle loss (−10%)</span>
+            <span class="font-mono text-red-400">−10W</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-400">Dust/dirt loss (−5%)</span>
+            <span class="font-mono text-red-400">−5W</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-400">Wiring + MPPT (−5%)</span>
+            <span class="font-mono text-red-400">−5W</span>
+          </div>
+          <div class="flex justify-between border-t border-white/10 pt-2 mt-2">
+            <span class="text-white font-semibold">Real-world output</span>
+            <span class="font-mono text-yellow-400 font-bold">~70W</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASONAL VARIATIONS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Seasonal Sunlight Variations</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        The number of peak sun hours you get varies dramatically by season — sometimes cutting your solar production in half between summer and winter. This is the single biggest factor in how much energy you can generate from solar panels.
+      </p>
+
+      <div class="overflow-x-auto mb-5">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>US Region</th><th>Winter</th><th>Spring</th><th>Summer</th><th>Fall</th><th>Annual Average</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Southwest (AZ, NM, NV)</strong></td>
+              <td>4.0</td>
+              <td>6.0</td>
+              <td>7.0</td>
+              <td>5.5</td>
+              <td>5.6</td>
+            </tr>
+            <tr>
+              <td><strong>Southern (TX, FL, GA)</strong></td>
+              <td>3.5</td>
+              <td>5.5</td>
+              <td>6.0</td>
+              <td>4.5</td>
+              <td>4.9</td>
+            </tr>
+            <tr>
+              <td><strong>Midwest (IL, OH, MO)</strong></td>
+              <td>2.5</td>
+              <td>4.5</td>
+              <td>5.5</td>
+              <td>3.5</td>
+              <td>4.0</td>
+            </tr>
+            <tr>
+              <td><strong>Northeast (NY, MA, PA)</strong></td>
+              <td>2.0</td>
+              <td>4.0</td>
+              <td>5.0</td>
+              <td>3.0</td>
+              <td>3.5</td>
+            </tr>
+            <tr>
+              <td><strong>Pacific Northwest (WA, OR)</strong></td>
+              <td>1.5</td>
+              <td>3.5</td>
+              <td>5.5</td>
+              <td>2.5</td>
+              <td>3.3</td>
+            </tr>
+            <tr>
+              <td><strong>Rocky Mountains (CO, WY)</strong></td>
+              <td>3.0</td>
+              <td>5.0</td>
+              <td>6.5</td>
+              <td>4.0</td>
+              <td>4.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-warning !mb-0">
+        <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Size for the worst season:</strong> If you plan to use solar year-round, always size your system based on winter sun hours, not summer. Your summer will have excess (which is fine — the battery just stops charging when full), but in winter you might barely get enough. If you only camp in summer, you can use summer numbers and get away with fewer panels.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TILT ANGLE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Tilt Angle and Orientation Tips</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        The angle and direction of your solar panels make a huge difference in how much energy they produce. Here is how to maximize your charging speed with portable panels.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-5">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="arrow-up" style="width:1rem;height:1rem"></i>
+            Optimal Tilt Angle
+          </h4>
+          <p class="text-sm text-gray-400 mb-2">
+            As a general rule, your tilt angle should roughly equal your latitude for year-round use. For summer-only use, use latitude minus 15°. For winter, use latitude plus 15°.
+          </p>
+          <p class="text-sm text-gray-400">
+            Example: At 40°N latitude, optimal tilt is 40° year-round, 25° in summer, 55° in winter.
+          </p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-yellow-400 mb-2 flex items-center gap-2">
+            <i data-lucide="compass" style="width:1rem;height:1rem"></i>
+            Face True South (in Northern Hemisphere)
+          </h4>
+          <p class="text-sm text-gray-400 mb-2">
+            In the Northern Hemisphere, panels should face true south (not magnetic south) for maximum production. Facing east or west instead of south can reduce output by 10–20%.
+          </p>
+          <p class="text-sm text-gray-400">
+            If you cannot face south, southeast or southwest are almost as good. North-facing panels produce very little.
+          </p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-green-400 mb-2 flex items-center gap-2">
+            <i data-lucide="clock" style="width:1rem;height:1rem"></i>
+            Adjust Throughout the Day
+          </h4>
+          <p class="text-sm text-gray-400 mb-2">
+            For maximum output, reposition your panels every 2–3 hours to follow the sun. This can increase daily energy by 10–25% compared to leaving them in one position.
+          </p>
+          <p class="text-sm text-gray-400">
+            This is only practical if you are at the campsite all day. If you are out hiking, set them for midday sun.
+          </p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-red-400 mb-2 flex items-center gap-2">
+            <i data-lucide="ban" style="width:1rem;height:1rem"></i>
+            Avoid Shading At All Costs
+          </h4>
+          <p class="text-sm text-gray-400 mb-2">
+            Even partial shading on one panel cell can reduce the output of the entire string by 50% or more. Tree branches, tent poles, roof overhangs — anything that casts a shadow costs you significant power.
+          </p>
+          <p class="text-sm text-gray-400">
+            Bypass diodes help, but the best solution is to position panels where they get full, unshaded sun all day.
+          </p>
+        </div>
+      </div>
+
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="lightbulb" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Portable panel pro tip:</strong> Most folding portable solar panels come with built-in kickstands. Use them — they are there for a reason. Even a 20–30° tilt makes a noticeable difference compared to laying the panel flat on the ground. If your panels do not have stands, prop them up on a cooler, box, or rock to get some angle toward the sun.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about solar panel sizing for portable power stations.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I calculate how many solar panels I need?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          To calculate solar panel needs, divide your power station capacity (Wh) by the product of panel wattage, peak sun hours per day, desired charge days, and system efficiency. The formula is: Panels Needed = Battery Capacity (Wh) ÷ (Panel Wattage (W) × Sun Hours × Days × Efficiency). A typical real-world efficiency factor is 70% (0.7), accounting for panel angle, temperature losses, dust, MPPT charge controller efficiency, and wiring losses. Use our calculator above for instant results — just enter your capacity, panel size, and sun hours.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why is real solar output only 70% of rated panel wattage?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Solar panels are rated under ideal lab conditions (STC: 1000W/m² irradiance, 25°C cell temperature, no shading, perfect angle). Real-world output is lower due to: non-optimal tilt angle (5–20% loss), temperature (panels are less efficient when hot — 0.3–0.5% per °C above 25°C), dust and dirt (5–15% loss), wiring resistance (2–5% loss), MPPT charge controller efficiency (95–98%), and varying sunlight intensity throughout the day. 70% is a conservative real-world estimate for portable setups.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What are peak sun hours and how do I find mine?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Peak sun hours (PSH) measure how much solar energy hits a location per day, expressed as hours of equivalent 1000W/m² intensity. It is not the same as hours of daylight. For example, 5 peak sun hours means you get the equivalent of 5 hours of full, direct sunlight per day spread across all daylight hours. The US averages 3–6 peak sun hours depending on location and season. You can look up your exact location using NREL's PVWatts Calculator online, or use our regional estimates in the seasonal variations section above.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How does tilt angle affect solar panel output?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Tilt angle significantly affects solar output. Optimal tilt is generally equal to your latitude for year-round production, or steeper in winter, shallower in summer. A flat panel (0° tilt) might produce 10–30% less than an optimally tilted panel. Portable solar panels are often used at sub-optimal angles — if you just lay them on the ground, expect 15–25% less output than if they were properly tilted toward the sun. Adjustable stands can significantly improve charging speed and are worth the extra cost if you rely on solar.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How fast can solar panels charge a 1000Wh power station?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          With a 100W solar panel and 5 peak sun hours per day at 70% real-world efficiency: 100W × 5h × 0.7 = 350Wh per day. So a 1000Wh station would take about 3 days to fully charge with one 100W panel. With two 100W panels (200W total): 700Wh/day — about 1.5 days. With 400W of panels: 1400Wh/day — charges in under a day. Actual time depends on weather, season, panel angle, and your power station's MPPT solar input limit. Always check your station's maximum solar input rating.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is the maximum solar input for portable power stations?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Maximum solar input varies widely by model. Small 300–500Wh stations typically accept 100–200W of solar. Mid-range 1000–2000Wh stations usually accept 200–800W. Large 3000–5000Wh home backup stations can accept 1000–3000W+ of solar. The MPPT charge controller in your power station limits how much solar it can process — buying more panels than the max input wastes money since the station cannot use the extra wattage. Check your station's solar input rating before buying panels.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Should I use series or parallel wiring for solar panels?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          It depends on your power station's voltage requirements and environmental conditions. Series wiring (positive to negative) increases voltage — good for MPPT charge controllers that need higher voltage, and somewhat better in partial shade (bypass diodes work better in series). Parallel wiring (positive to positive, negative to negative) increases current but keeps voltage the same — simpler for small setups. Most portable power stations accept a range of voltages (e.g., 12–60V or 24–100V). Check your station's solar input voltage range and match your panel configuration to stay within that range.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How does weather affect solar charging?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Weather has a huge effect on solar output. Full, direct sun gives you 100% of rated output (adjusted for other losses). Light cloud cover: 50–70% output. Heavy overcast: 10–25% output. Rain or snow: near zero. Dust, dirt, and bird droppings on panels can reduce output by 5–25%. If you depend on solar charging, always have a backup plan (AC charging, spare battery) and size your system for the worst conditions you expect, not the best. Winter camping in cloudy areas requires significantly more panels than summer in sunny locations.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What size MPPT controller do I need?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Most portable power stations have a built-in MPPT (Maximum Power Point Tracking) charge controller, so you do not need to buy a separate one. The MPPT rating determines how much solar wattage the station can accept. For example, if your station has a 400W MPPT, you can connect up to 400W of solar panels (in practice, people often connect up to 120% of rated input for better low-light and winter performance — the MPPT simply limits to its maximum). External MPPT controllers are available for custom setups but are usually not needed with modern portable power stations.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How much does solar panel efficiency matter?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Panel efficiency tells you how much of the sunlight hitting the panel gets converted to electricity. Typical portable panels are 18–23% efficient. Higher efficiency means more watts per square foot of panel area — important when space is limited (backpacking, small RV roof). But for most portable power station use cases, total wattage matters more than efficiency percentage. A 200W 20% efficient panel produces the same power as a 200W 23% efficient panel — the latter is just smaller, lighter, and usually more expensive. Pay for higher efficiency if you need to save weight or space; otherwise, focus on total wattage and build quality.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Calculators &amp; Guides</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="power-station-runtime-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Runtime</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Runtime Calculator</h3>
+        <p class="text-sm text-gray-400">Calculate how long your power station will run any device. 50+ device presets and battery sizing recommendations.</p>
+      </a>
+      <a href="appliance-wattage-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">CALCULATOR</div>
+          <span class="badge badge-info">50+ Appliances</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Appliance Wattage Calculator</h3>
+        <p class="text-sm text-gray-400">Add up multiple devices to find your total power consumption and figure out how much solar you really need.</p>
+      </a>
+      <a href="camping-power-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Camping</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Camping Power Calculator</h3>
+        <p class="text-sm text-gray-400">Plan your camping trip power needs including solar recommendations based on trip duration and gear type.</p>
+      </a>
+      <a href="cpap-battery-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Medical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">CPAP Battery Calculator</h3>
+        <p class="text-sm text-gray-400">Specialized calculator for CPAP runtime and solar needs — includes pressure settings and humidifier adjustments.</p>
+      </a>
+      <a href="../specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">COMPARE</div>
+          <span class="badge badge-info">All Brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Comparison</h3>
+        <p class="text-sm text-gray-400">Compare all major portable power station models side by side — including solar input ratings and MPPT specs.</p>
+      </a>
+      <a href="../specs/solar-charging-0w-power-station.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">TROUBLESHOOT</div>
+          <span class="badge badge-info">Solar 0W</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Solar Charging 0W Fix</h3>
+        <p class="text-sm text-gray-400">Troubleshoot why your solar panels show 0W on your power station — 8 common causes with step-by-step fixes.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setCapacity(wh) {
+      document.getElementById('stationCapacity').value = wh;
+      document.getElementById('capacitySlider').value = Math.min(wh, 5000);
+      calculateSolar();
+    }
+
+    function setPanel(w) {
+      document.getElementById('panelWattage').value = w;
+      document.getElementById('panelSlider').value = Math.min(w, 400);
+      calculateSolar();
+    }
+
+    function calculateSolar() {
+      const capacity = parseFloat(document.getElementById('stationCapacity').value) || 0;
+      const panelW = parseFloat(document.getElementById('panelWattage').value) || 1;
+      const sunHours = parseFloat(document.getElementById('sunHours').value) || 0;
+      const efficiency = parseFloat(document.getElementById('efficiency').value) || 0.7;
+      const chargeDays = parseFloat(document.getElementById('chargeDays').value) || 1;
+
+      const dailyPerPanel = panelW * sunHours * efficiency;
+      const totalNeededPerDay = capacity / chargeDays;
+      const numPanels = Math.ceil(totalNeededPerDay / dailyPerPanel);
+      const totalWattage = numPanels * panelW;
+      const totalDailyWh = numPanels * dailyPerPanel;
+      const daysToCharge = capacity / totalDailyWh;
+      const hoursNeeded = capacity / (numPanels * panelW * efficiency);
+
+      document.getElementById('numPanels').textContent = numPanels;
+      document.getElementById('totalWattage').textContent = totalWattage;
+      document.getElementById('dailyCharged').textContent = Math.round(totalDailyWh);
+      document.getElementById('chargeTime').textContent = daysToCharge.toFixed(1);
+      document.getElementById('hoursPerDay').textContent = hoursNeeded.toFixed(1);
+
+      const winterH = (sunHours * 0.6).toFixed(1);
+      const springH = (sunHours * 1.0).toFixed(1);
+      const summerH = (sunHours * 1.3).toFixed(1);
+      const fallH = (sunHours * 0.9).toFixed(1);
+
+      document.getElementById('winterHours').textContent = winterH;
+      document.getElementById('springHours').textContent = springH;
+      document.getElementById('summerHours').textContent = summerH;
+      document.getElementById('fallHours').textContent = fallH;
+
+      document.getElementById('summaryText').textContent =
+        'To charge a ' + capacity + 'Wh power station in ' + chargeDays +
+        ' day(s) with ' + panelW + 'W panels and ' + sunHours +
+        ' peak sun hours per day at ' + Math.round(efficiency * 100) +
+        '% efficiency, you need approximately ' + numPanels +
+        ' panel' + (numPanels !== 1 ? 's' : '') + ' (' + totalWattage +
+        'W total). With this setup, you will charge about ' + Math.round(totalDailyWh) +
+        'Wh per day and reach full charge in about ' + daysToCharge.toFixed(1) + ' days.';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const capacitySlider = document.getElementById('capacitySlider');
+      const capacityInput = document.getElementById('stationCapacity');
+      const panelSlider = document.getElementById('panelSlider');
+      const panelInput = document.getElementById('panelWattage');
+      const sunSlider = document.getElementById('sunSlider');
+      const sunInput = document.getElementById('sunHours');
+
+      capacitySlider.addEventListener('input', function() {
+        capacityInput.value = this.value;
+        calculateSolar();
+      });
+      capacityInput.addEventListener('input', function() {
+        capacitySlider.value = Math.min(Math.max(this.value, 100), 5000);
+        calculateSolar();
+      });
+      panelSlider.addEventListener('input', function() {
+        panelInput.value = this.value;
+        calculateSolar();
+      });
+      panelInput.addEventListener('input', function() {
+        panelSlider.value = Math.min(Math.max(this.value, 10), 400);
+        calculateSolar();
+      });
+      sunSlider.addEventListener('input', function() {
+        sunInput.value = this.value;
+        calculateSolar();
+      });
+      sunInput.addEventListener('input', function() {
+        sunSlider.value = Math.min(Math.max(this.value, 1), 8);
+        calculateSolar();
+      });
+
+      ['efficiency', 'chargeDays'].forEach(function(id) {
+        document.getElementById(id).addEventListener('input', calculateSolar);
+        document.getElementById(id).addEventListener('change', calculateSolar);
+      });
+
+      calculateSolar();
+    });
+  </script>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>

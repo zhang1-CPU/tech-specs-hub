@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Battery Life Calculator — How Many Cycles Left? (2026) | TechSpecsHub</title>
+  <meta name="description" content="Calculate your drone battery's remaining lifespan based on current cycles, usage habits, and storage conditions. Free interactive calculator with DJI battery cycle data, LiPo vs Li-ion comparison, and battery care tips.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/tools/drone-battery-life-calculator.html">
+
+  <meta property="og:title" content="Drone Battery Life Calculator — How Many Cycles Left? (2026)">
+  <meta property="og:description" content="Free interactive drone battery life calculator. Estimate remaining cycles, months/years left, and battery health. Includes DJI battery data, LiPo vs Li-ion comparison, and care tips.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/tools/drone-battery-life-calculator.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Drone Battery Life Calculator — How Many Cycles Left?">
+  <meta name="twitter:description" content="Estimate your drone battery's remaining life and cycles. DJI battery data included. Free interactive tool.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    .calc-input {
+      background: rgba(15, 29, 50, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      width: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+    .calc-input:focus {
+      outline: none;
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+    }
+    .calc-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      outline: none;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #22d3ee;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+      transition: transform 0.15s ease;
+    }
+    .calc-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    .calc-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #22d3ee;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+    }
+    .battery-preset-btn {
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 10px 14px;
+      text-align: left;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .battery-preset-btn:hover {
+      background: rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.3);
+      transform: translateY(-1px);
+    }
+    .battery-preset-btn.active {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: #22d3ee;
+    }
+    .result-card {
+      background: linear-gradient(145deg, rgba(30, 50, 89, 0.6), rgba(22, 37, 68, 0.8));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .result-card .result-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #22d3ee 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .result-card .result-label {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+    .health-bar {
+      height: 12px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      overflow: hidden;
+    }
+    .health-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.3s ease, background 0.3s ease;
+    }
+    .recommend-card {
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .recommend-good {
+      background: rgba(74, 222, 128, 0.1);
+      border: 1px solid rgba(74, 222, 128, 0.3);
+    }
+    .recommend-warn {
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+    .recommend-bad {
+      background: rgba(248, 113, 113, 0.1);
+      border: 1px solid rgba(248, 113, 113, 0.3);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Drone Battery Life Calculator — How Many Cycles Left? (2026)",
+    "description": "Free interactive drone battery life calculator that estimates remaining cycles, months/years of use, and battery health percentage. Includes DJI battery cycle data, LiPo vs Li-ion comparison, and battery care tips.",
+    "url": "https://powerspecshub.com/pages/tools/drone-battery-life-calculator.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many cycles do drone batteries last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most DJI LiPo drone batteries are rated for 200–300 charge cycles before reaching 80% capacity, while newer Li-ion batteries (like in the Mavic 3) can last 400–500+ cycles. A charge cycle is defined as using 100% of the battery's capacity (not necessarily one full charge — using 50% one day and 50% the next counts as one cycle). With proper care and storage, many batteries can exceed their rated cycle count. Poor storage and bad charging habits can significantly reduce battery life to 50–100 cycles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I check my DJI battery cycle count?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can check your DJI battery cycle count through the DJI Fly app or DJI Go 4 app. Connect your drone or battery to the app, go to the battery settings or battery info section, and look for \"Cycle Count\" or \"Charge Cycles.\" For intelligent flight batteries with LED indicators, you can sometimes find cycle count info through the battery management screen. You can also use third-party tools like DJI Assistant 2 on your computer, which provides detailed battery diagnostics including full cycle count and cell health data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is considered end-of-life for a drone battery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A drone battery is generally considered at end-of-life when it reaches 80% of its original capacity. At this point, you will notice significantly shorter flight times, increased voltage sag under load, and potentially unreliable performance. DJI considers batteries to have reached their useful life when capacity drops below 80% after the rated number of cycles. However, many pilots continue using batteries below 80% for non-critical flights. You should replace a battery immediately if it shows signs of swelling, damage, or erratic behavior — safety comes first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does storage temperature affect battery life?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, storage temperature is one of the biggest factors affecting long-term battery health. The ideal storage temperature for drone batteries is 59–77°F (15–25°C). Storing batteries above 95°F (35°C) for extended periods causes accelerated degradation and can lead to swelling. Freezing temperatures are also harmful — never store batteries below freezing for long periods. For long-term storage (more than 10 days), store batteries at 40–60% charge in a cool, dry place. DJI batteries have a self-discharge feature that automatically discharges to storage voltage after several days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between LiPo and Li-ion drone batteries?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "LiPo (lithium polymer) batteries have been the standard for drones for years because they offer high discharge rates needed for drone motors, are lightweight, and can be shaped flexibly. They typically last 200–300 cycles. Li-ion (lithium-ion) batteries, found in newer DJI models like the Mavic 3 and Inspire 3, use different chemistry that offers higher energy density (more capacity for the same weight) and much longer cycle life (400–500+ cycles). However, Li-ion batteries cannot deliver as high discharge rates, so they work better for larger, heavier drones with bigger batteries. Both types require proper care and storage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I extend my drone battery life?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To extend drone battery life: 1) Never drain below 20% — land before hitting the low battery warning. 2) Store at 40–60% charge for long periods, not fully charged or fully discharged. 3) Store in a cool, dry place (59–77°F / 15–25°C), away from direct sun. 4) Avoid extreme temperatures — let batteries acclimate before charging or flying. 5) Use the correct charger and avoid fast charging when not necessary. 6) Don't leave batteries fully charged for more than 2–3 days. 7) Inspect batteries regularly for swelling, damage, or abnormal behavior. 8) Use DJI's self-discharge feature for intelligent batteries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it bad to charge drone batteries after every flight?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is fine to charge after every flight if you plan to fly again soon. However, you should not leave batteries fully charged for long periods (more than 2–3 days) because this accelerates degradation. If you charge after a flight and then do not fly for a week or more, the battery sits at 100% charge the whole time, which is stressful on the cells. If you know you will not fly for more than a few days, either: 1) Only charge to 60–70% after the flight, or 2) Let the battery self-discharge to storage voltage (DJI batteries do this automatically after 5–10 days depending on the model)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the signs of a failing drone battery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Signs of a failing drone battery include: significantly shorter flight time than normal, sudden voltage drops during flight, battery swelling or puffing (the battery feels bloated or the wrapping is tight), cells that do not balance properly (cells differ by more than 0.05V), error messages on the app about battery health or abnormal discharge, difficulty holding a charge, the battery getting unusually hot during charging or flight, and the battery being unable to reach full charge. If you notice any swelling or physical damage, stop using the battery immediately and dispose of it properly — swollen LiPo batteries can be dangerous."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I still use a swollen drone battery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NO — you should NEVER use a swollen or puffed drone battery. Swelling is caused by gas buildup inside the battery from electrolyte decomposition, which means the battery is damaged and potentially dangerous. A swollen battery has reduced capacity, increased internal resistance, and a higher risk of thermal runaway (fire). Even if it still powers on, it could fail mid-flight causing a crash, or it could catch fire during charging. Dispose of swollen batteries properly at a battery recycling center. Do not puncture, incinerate, or throw them in the trash. Always handle swollen batteries with care and keep them in a fire-safe container."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should I store drone batteries long-term?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For long-term storage (more than 10 days): 1) Charge or discharge the battery to 40–60% (about 2–3 LED lights on DJI batteries). 2) Store in a cool, dry place at 59–77°F (15–25°C). 3) Use a fire-safe LiPo bag or battery storage box for extra safety. 4) Do not store in direct sunlight or in a hot car. 5) Check battery charge every 1–2 months and top up to 50% if needed. 6) For DJI intelligent batteries, enable the self-discharge feature (it usually activates automatically after 5–10 days). 7) Never store batteries fully charged or fully discharged for extended periods — both cause permanent damage. Following these rules can double or triple your battery's useful life."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://powerspecshub.com/pages/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Drone Battery Life Calculator"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Calculators &amp; Tools</p>
+              <a href="drone-flight-time-calculator.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Flight Time Calculator</a>
+              <a href="drone-battery-life-calculator.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Battery Life Calculator</a>
+              <a href="drone-photo-settings-calculator.html"><i data-lucide="camera" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Photo Settings Calculator</a>
+              <a href="power-station-runtime-calculator.html"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Runtime Calculator</a>
+              <a href="solar-panel-needs-calculator.html"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Solar Panel Calculator</a>
+              <a href="appliance-wattage-calculator.html"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Appliance Wattage Calculator</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <p class="nav-dropdown-section-label mt-2">Calculators</p>
+        <a href="drone-flight-time-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Flight Time Calculator</a>
+        <a href="drone-battery-life-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Battery Life Calculator</a>
+        <a href="drone-photo-settings-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="camera" style="width:1rem;height:1rem;color:#22d3ee"></i>Photo Settings Calculator</a>
+        <a href="power-station-runtime-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee"></i>Runtime Calculator</a>
+        <a href="solar-panel-needs-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee"></i>Solar Panel Calculator</a>
+        <a href="appliance-wattage-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>Appliance Wattage Calculator</a>
+        <a href="camping-power-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee"></i>Camping Power Calculator</a>
+        <a href="cpap-battery-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee"></i>CPAP Battery Calculator</a>
+        <a href="best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="#">Tools</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Drone Battery Life Calculator</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-electric-500/20 text-electric-400 font-mono font-bold text-sm rounded-md border border-electric-500/30">CALCULATOR</div>
+        <span class="badge badge-info"><i data-lucide="battery-charging" style="width:0.75rem;height:0.75rem"></i>Battery Health</span>
+        <span class="badge badge-info"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i>Lifespan Estimate</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Drone Battery Life Calculator &mdash; <span class="gradient-text">How Many Cycles Left?</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Estimate how much life your drone battery has left based on current cycle count, usage frequency, storage habits, and charging practices. Enter your battery details and get personalized estimates for remaining cycles, months of use, and overall health percentage.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="activity" style="width:0.9rem;height:0.9rem"></i>Health Score</div>
+          <div class="font-mono font-bold text-xl text-white">Personalized</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="repeat" style="width:0.9rem;height:0.9rem"></i>Remaining Cycles</div>
+          <div class="font-mono font-bold text-xl text-electric-400">Estimated</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="calendar" style="width:0.9rem;height:0.9rem"></i>Time Left</div>
+          <div class="font-bold text-xl text-yellow-400">Months/Years</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="shield-check" style="width:0.9rem;height:0.9rem"></i>DJI Data</div>
+          <div class="font-bold text-xl text-green-400">Verified</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-6 flex items-center gap-2"><i data-lucide="calculator" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Battery Life Calculator</h2>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Inputs -->
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-3">
+              Battery Model Presets
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <button class="battery-preset-btn" onclick="setBatteryPreset('mini5pro')">
+                <div class="text-white font-medium text-sm">Mini 5/4 Pro</div>
+                <div class="text-xs text-gray-500 font-mono">LiPo ~300 cycles</div>
+              </button>
+              <button class="battery-preset-btn" onclick="setBatteryPreset('mavic3')">
+                <div class="text-white font-medium text-sm">Mavic 3 Series</div>
+                <div class="text-xs text-gray-500 font-mono">Li-ion ~400 cycles</div>
+              </button>
+              <button class="battery-preset-btn" onclick="setBatteryPreset('air3')">
+                <div class="text-white font-medium text-sm">Air 3</div>
+                <div class="text-xs text-gray-500 font-mono">LiPo ~300 cycles</div>
+              </button>
+              <button class="battery-preset-btn" onclick="setBatteryPreset('avata2')">
+                <div class="text-white font-medium text-sm">Avata 2</div>
+                <div class="text-xs text-gray-500 font-mono">LiPo ~200 cycles</div>
+              </button>
+              <button class="battery-preset-btn" onclick="setBatteryPreset('fpv')">
+                <div class="text-white font-medium text-sm">DJI FPV</div>
+                <div class="text-xs text-gray-500 font-mono">LiPo ~200 cycles</div>
+              </button>
+              <button class="battery-preset-btn" onclick="setBatteryPreset('custom')">
+                <div class="text-white font-medium text-sm">Custom Battery</div>
+                <div class="text-xs text-gray-500 font-mono">Enter specs</div>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Current Cycle Count
+            </label>
+            <input type="number" id="currentCycles" class="calc-input" value="50" min="0" max="1000" step="1">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>0</span>
+              <input type="range" id="currentCyclesSlider" class="calc-slider flex-1" min="0" max="500" step="1" value="50">
+              <span>500</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Total Rated Cycles
+            </label>
+            <input type="number" id="ratedCycles" class="calc-input" value="300" min="50" max="1000" step="10">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Storage Habits
+            </label>
+            <select id="storageHabits" class="calc-input">
+              <option value="good">Good — stored at 40-60% charge, cool temperature</option>
+              <option value="average" selected>Average — sometimes stored full, room temperature</option>
+              <option value="poor">Poor — often stored full/empty, hot car, extreme temps</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Usage Frequency
+            </label>
+            <select id="usageFrequency" class="calc-input">
+              <option value="rare">Rare — once or twice per month</option>
+              <option value="moderate" selected>Moderate — weekly flights (~4 cycles/month)</option>
+              <option value="frequent">Frequent — multiple flights per week (~12 cycles/month)</option>
+              <option value="heavy">Heavy — daily flights (~25+ cycles/month)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Charging Habits
+            </label>
+            <select id="chargingHabits" class="calc-input">
+              <option value="good">Good — charge to 80% for storage, avoid deep discharge</option>
+              <option value="average" selected>Average — charge fully, usually land before 15%</option>
+              <option value="poor">Poor — regularly drain below 10%, always charge to 100%</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="space-y-4">
+          <div class="result-card">
+            <div class="result-value" id="healthPercent">92%</div>
+            <div class="result-label">Estimated Battery Health</div>
+            <div class="health-bar mt-3">
+              <div id="healthBarFill" class="health-bar-fill" style="width: 92%; background: linear-gradient(90deg, #22c55e, #4ade80);"></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-2xl" id="remainingCycles">265</div>
+              <div class="result-label">Remaining Cycles</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-2xl" id="totalCycles">315</div>
+              <div class="result-label">Estimated Total Cycles</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-2xl" id="monthsLeft">66</div>
+              <div class="result-label">Months Left</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-2xl" id="yearsLeft">5.5</div>
+              <div class="result-label">Years Left</div>
+            </div>
+          </div>
+
+          <div id="recommendCard" class="recommend-card recommend-good">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+              <i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80" id="recommendIcon"></i>
+              <span id="recommendTitle">Battery is in Good Condition</span>
+            </h4>
+            <p class="text-sm text-gray-300 leading-relaxed" id="recommendText">
+              Your battery is still in great shape with estimated 92% health remaining. Keep up the good storage and charging habits to maximize its lifespan. At your current usage rate, you can expect about 5.5 more years of use before reaching the 80% health threshold.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-green-950/30 to-electric-950/30 border border-green-500/20 rounded-xl p-5">
+            <h4 class="font-semibold text-green-400 mb-2 flex items-center gap-2">
+              <i data-lucide="info" style="width:1rem;height:1rem"></i>
+              How It's Calculated
+            </h4>
+            <p class="text-sm text-gray-300 mb-2">
+              <code class="font-mono text-electric-400">Health = 100% &times; (1 &minus; (Cycles / Total)<sup>1.1</sup>)</code>
+            </p>
+            <p class="text-xs text-gray-500">
+              Adjusted for storage, charging, and usage habits. Based on 80% capacity end-of-life threshold as used by DJI and most manufacturers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">How to Use This Battery Life Calculator</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="space-y-5">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Choose Your Battery Model or Enter Specs</h4>
+            <p class="text-sm text-gray-400">Start by selecting your drone battery model from our presets. We have accurate data for DJI Mini 4/5 Pro, Mavic 3 series, Air 3, Avata 2, and DJI FPV batteries. Each preset includes the correct rated cycle count and chemistry type. If you have a different battery, select "Custom Battery" and enter the total rated cycles manually — you can usually find this in the manufacturer's specifications or on the battery product page.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Enter Your Current Cycle Count</h4>
+            <p class="text-sm text-gray-400">Find your battery's current cycle count and enter it. For DJI batteries, you can find this in the DJI Fly app or DJI Go 4 app under Battery Settings / Battery Info. You can also use DJI Assistant 2 software on your computer for more detailed battery diagnostics. If you do not know the exact cycle count, estimate based on how long you have owned the battery and how often you fly — the usage frequency setting will help refine this estimate.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Rate Your Storage Habits</h4>
+            <p class="text-sm text-gray-400">Be honest about how you store your batteries when not in use. "Good" means you consistently store at 40–60% charge in a cool, dry place. "Average" means you sometimes store batteries fully charged and they sit at room temperature. "Poor" means batteries often sit fully charged or fully discharged for weeks, or are stored in hot cars or extreme temperatures. Storage is one of the biggest factors in long-term battery health.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Select Your Usage Frequency</h4>
+            <p class="text-sm text-gray-400">Choose how often you fly your drone. This helps us estimate how many cycles you add per month and project how many months or years of battery life you have left. Rare use is once or twice per month. Moderate is weekly flights. Frequent is multiple flights per week. Heavy is daily or near-daily flights like a professional pilot might do. More frequent use means you will go through cycles faster, reducing the calendar life of the battery.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Rate Your Charging Habits and Review Results</h4>
+            <p class="text-sm text-gray-400">Finally, select the option that best describes your charging practices. Good habits include rarely draining below 20%, charging to 80% for storage, and avoiding extreme temperatures during charging. Poor habits include regularly draining to single digits, always charging to 100% and leaving them that way, and fast charging all the time. The calculator will instantly show you estimated battery health percentage, remaining cycles, and how many months or years you can expect before reaching the 80% end-of-life threshold.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Why Drone Battery Life Matters</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Drone batteries are expensive — a single DJI intelligent flight battery can cost $80 to $200 or more, and professional-grade batteries cost even more. For many drone owners, batteries are the single biggest ongoing expense. Maximizing battery life directly saves you money and ensures you always have reliable power for your flights.
+      </p>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Understanding your battery health helps you:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Budget for Replacements
+          </h4>
+          <p class="text-sm text-gray-400">Know when to expect to replace your batteries so you can plan and budget accordingly. No surprises when a battery suddenly dies during an important shoot.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Fly Safely
+          </h4>
+          <p class="text-sm text-gray-400">Old or degraded batteries are more likely to fail mid-flight, causing crashes or flyaways. Knowing battery health helps you decide which batteries are safe for important or long-distance flights.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Optimize Care Habits
+          </h4>
+          <p class="text-sm text-gray-400">See how your storage and charging habits affect battery lifespan. Small changes in how you care for batteries can double or triple their useful life, saving you hundreds of dollars.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Protect Your Investment
+          </h4>
+          <p class="text-sm text-gray-400">Your drone and batteries are significant investments. Proper battery care protects that investment and ensures maximum value from every battery you purchase.</p>
+        </div>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-2">
+        Many drone pilots do not realize how much their habits affect battery life. A battery that might last 5 years with good care could fail in just 1–2 years with poor storage and charging practices. For a pilot with 3–4 batteries at $150 each, that is a difference of $450–600 in replacement costs over those years. And that does not even account for the risk of a battery failure causing a drone crash, which could cost you the entire drone.
+      </p>
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="lightbulb" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Pro tip:</strong> Rotate your batteries evenly so they all get roughly the same number of cycles. If you always use the same battery first, it will degrade much faster than the others. Label your batteries with numbers and rotate through them systematically. This way all your batteries age at the same rate and you always know what to expect from each one.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DJI BATTERY DATA -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">DJI Battery Cycle Life Data</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        DJI is the leading drone manufacturer, and their intelligent flight batteries are some of the best in the industry. Here is what you need to know about battery cycle life for popular DJI drone models, based on official DJI specifications and real-world user data.
+      </p>
+      <div class="overflow-x-auto mb-5">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Drone Model</th><th>Battery Type</th><th>Rated Cycles</th><th>Real-World (Good Care)</th><th>Capacity at Rated Cycles</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>DJI Mini 5 Pro</strong></td><td>LiPo (Intelligent)</td><td>300</td><td>350–450+</td><td>≥80%</td></tr>
+            <tr><td><strong>DJI Mini 4 Pro</strong></td><td>LiPo (Intelligent)</td><td>300</td><td>300–400+</td><td>≥80%</td></tr>
+            <tr><td><strong>DJI Mini 3 Pro</strong></td><td>LiPo (Intelligent)</td><td>300</td><td>300–400+</td><td>≥80%</td></tr>
+            <tr><td><strong>DJI Air 3</strong></td><td>LiPo (Intelligent)</td><td>300</td><td>300–400</td><td>≥80%</td></tr>
+            <tr><td><strong>DJI Mavic 3 Series</strong></td><td>Li-ion (Intelligent)</td><td>400</td><td>500–600+</td><td>≥80%</td></tr>
+            <tr><td><strong>DJI Mavic 2 Series</strong></td><td>LiPo (Intelligent)</td><td>200</td><td>250–350</td><td>≥80%</td></tr>
+            <tr><td><strong>DJI Avata 2</strong></td><td>LiPo (Intelligent)</td><td>200</td><td>200–300</td><td>≥80%</td></tr>
+            <tr><td><strong>DJI FPV</strong></td><td>LiPo (Intelligent)</td><td>200</td><td>150–250</td><td>≥80%</td></tr>
+            <tr><td><strong>DJI Inspire 3</strong></td><td>Li-ion (TB65)</td><td>400</td><td>400–500+</td><td>≥80%</td></tr>
+            <tr><td><strong>DJI Phantom 4 Series</strong></td><td>LiPo (Intelligent)</td><td>200</td><td>200–300</td><td>≥80%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 class="font-bold text-xl mb-3 text-white">Important Notes About Cycle Count</h3>
+      <ul class="space-y-2 mb-4">
+        <li class="flex items-start gap-2 text-sm text-gray-400">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.15rem"></i>
+          <span><strong>What counts as a cycle:</strong> A charge cycle means using 100% of the battery's capacity, but not necessarily from a single charge. If you use 60% one day and 40% the next, that counts as one cycle. Partial discharges are actually better for battery health.</span>
+        </li>
+        <li class="flex items-start gap-2 text-sm text-gray-400">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.15rem"></i>
+          <span><strong>80% threshold:</strong> DJI rates batteries to retain at least 80% of original capacity after the rated number of cycles. Below 80%, the battery is considered to have reached its useful life, though it may still work with reduced flight time.</span>
+        </li>
+        <li class="flex items-start gap-2 text-sm text-gray-400">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.15rem"></i>
+          <span><strong>Real-world can exceed rated:</strong> With excellent care — proper storage, avoiding deep discharges, moderate temperatures — many batteries exceed their rated cycle count by 20–50%. Good habits really do pay off.</span>
+        </li>
+        <li class="flex items-start gap-2 text-sm text-gray-400">
+          <i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.15rem"></i>
+          <span><strong>Poor care shortens life dramatically:</strong> Batteries that are regularly stored fully charged in hot environments can degrade to 80% in just 50–100 cycles — that is 3–5x faster than rated. This is the #1 avoidable cause of early battery death.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LIPO VS LI-ION -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">LiPo vs Li-Ion: Which Battery Type Lasts Longer?</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        DJI has been transitioning some of its higher-end drones from LiPo (lithium polymer) to Li-ion (lithium-ion) battery chemistry. The Mavic 3 series and Inspire 3 were the first to adopt Li-ion, and more models are expected to follow. Here is how the two technologies compare.
+      </p>
+      <div class="grid md:grid-cols-2 gap-6 mb-5">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <h3 class="font-bold text-xl mb-3 text-white flex items-center gap-2">
+            <i data-lucide="battery-charging" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>
+            LiPo (Lithium Polymer)
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 flex-shrink-0 mt-0.5">✓</span>
+              High discharge rate — can supply lots of power quickly
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 flex-shrink-0 mt-0.5">✓</span>
+              Lightweight and flexible form factors
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 flex-shrink-0 mt-0.5">✓</span>
+              Lower cost to manufacture
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 flex-shrink-0 mt-0.5">✗</span>
+              Shorter cycle life (200–300 cycles)
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 flex-shrink-0 mt-0.5">✗</span>
+              More sensitive to overcharging and damage
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 flex-shrink-0 mt-0.5">✗</span>
+              Lower energy density per weight
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-yellow-400 flex-shrink-0 mt-0.5">~</span>
+              Used in: Mini series, Air series, Avata, FPV
+            </li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <h3 class="font-bold text-xl mb-3 text-white flex items-center gap-2">
+            <i data-lucide="battery-full" style="width:1.25rem;height:1.25rem;color:#4ade80"></i>
+            Li-Ion (Lithium Ion)
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 flex-shrink-0 mt-0.5">✓</span>
+              Much longer cycle life (400–600+ cycles)
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 flex-shrink-0 mt-0.5">✓</span>
+              Higher energy density — more capacity for weight
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 flex-shrink-0 mt-0.5">✓</span>
+              More stable chemistry, lower fire risk
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 flex-shrink-0 mt-0.5">✗</span>
+              Lower discharge rate — needs larger battery
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 flex-shrink-0 mt-0.5">✗</span>
+              More expensive
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 flex-shrink-0 mt-0.5">✗</span>
+              Less flexible packaging options
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-yellow-400 flex-shrink-0 mt-0.5">~</span>
+              Used in: Mavic 3 series, Inspire 3
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-gray-300 text-sm leading-relaxed mb-2">
+        For most consumer drones, LiPo remains the standard because it provides the high discharge rates needed for agile flight performance in a lightweight package. But as Li-ion technology improves and DJI optimizes for larger drones with longer flight times, we expect to see more Li-ion batteries in the DJI lineup. If you are a heavy user who flies frequently, a Li-ion drone like the Mavic 3 might actually save you money over time because each battery lasts twice as many cycles.
+      </p>
+    </div>
+  </section>
+
+  <!-- EXTEND BATTERY LIFE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">How to Extend Drone Battery Life</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        Want to get the maximum possible life from your drone batteries? These evidence-based tips come from battery chemistry research and real-world drone pilot experience. Follow these and you can extend battery life by 50–100% compared to average practices.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="battery-medium" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            1. Store at 40–60% Charge
+          </h4>
+          <p class="text-sm text-gray-400">This is the single most important thing you can do. Storing batteries at 100% charge causes accelerated degradation. The ideal storage voltage is 3.8–3.9V per cell (roughly 40–60% charge). DJI intelligent batteries automatically self-discharge to storage voltage after 5–10 days, but you can also manually discharge them if you know you will not fly for a while.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="thermometer" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            2. Store in Cool, Dry Place
+          </h4>
+          <p class="text-sm text-gray-400">Heat is the enemy of battery health. The ideal storage temperature is 59–77°F (15–25°C). Never leave batteries in a hot car — interior temperatures can reach 140°F+ on a sunny day, causing rapid degradation and potentially swelling. A cool closet or drawer works great. Avoid humidity as well — moisture can damage battery electronics.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="battery-low" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            3. Never Discharge Below 20%
+          </h4>
+          <p class="text-sm text-gray-400">Deep discharges put extra stress on battery cells and shorten their lifespan. Try to land with 20–30% battery remaining. Not only is this safer (you have reserve power if something goes wrong), but it also significantly extends battery life. DJI's low battery warning at 20% is there for a reason — treat it as your "time to come home" marker, not a suggestion.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            4. Avoid Extreme Charging Practices
+          </h4>
+          <p class="text-sm text-gray-400">Charging puts stress on batteries. While DJI chargers are well-regulated and generally safe, you can reduce stress by: avoiding fast charging when you do not need it, not charging immediately after a flight (let batteries cool down), and not charging to 100% if you are not going to fly right away. If you know you will not fly for more than 2 days, only charge to 60–70%.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="rotate-cw" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            5. Rotate Batteries Evenly
+          </h4>
+          <p class="text-sm text-gray-400">If you have multiple batteries, rotate through them evenly so they all get similar use. If you always use battery #1 first and battery #3 last, battery #1 will degrade much faster. Label your batteries and use them in order — first in, first out. This way all batteries age at roughly the same rate and you get consistent performance from your entire fleet.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="eye" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            6. Inspect Regularly
+          </h4>
+          <p class="text-sm text-gray-400">Check your batteries regularly for signs of damage or swelling. Look at the battery case for bulges or deformation. Check the contacts for corrosion or dirt. Monitor the cell voltage in the DJI app — all cells should be within 0.05V of each other. If you notice anything unusual, stop using the battery and consider replacing it. Catching problems early prevents safety issues.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="snowflake" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            7. Warm Before Cold Weather Flights
+          </h4>
+          <p class="text-sm text-gray-400">Flying in cold weather? Warm your batteries before flight. Keep them in an inside pocket until you are ready to fly. Cold batteries have reduced capacity and increased internal resistance, which causes extra stress during flight. DJI drones with battery heating will warm the battery during flight, but starting warm reduces the stress on the battery even more.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="shield" style="width:1rem;height:1rem;color:#22d3ee"></i>
+            8. Use Fire-Safe Storage
+          </h4>
+          <p class="text-sm text-gray-400">While modern intelligent batteries are very safe, it is always a good idea to store batteries in a fire-safe LiPo bag or battery storage box, especially for long-term storage. This protects your home and property in the extremely unlikely event of a battery fire. It is a small investment for significant peace of mind. Never store batteries near flammable materials.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAILING BATTERY SIGNS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Signs of a Failing Drone Battery</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        Knowing when to replace a drone battery is important for both safety and performance. These are the most common signs that your battery is reaching the end of its useful life or has developed a fault.
+      </p>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="battery-charging" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-white mb-1">Significantly Shorter Flight Time</h3>
+            <p class="text-sm text-gray-400">The most obvious sign is noticeably shorter flight time than you used to get. If a battery that used to give you 30 minutes is now only giving 22–25 minutes under the same conditions, it has likely lost significant capacity. You can check exact capacity in the DJI app under battery health information. Generally, once flight time drops below 80% of what it was when new, the battery is nearing end of life.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="alert-triangle" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-white mb-1">Swelling or Puffing</h3>
+            <p class="text-sm text-gray-400">This is the most dangerous sign. If your battery looks bloated, swollen, or the plastic wrapping feels tight and rounded, it has developed gas inside from electrolyte decomposition. Stop using it immediately. Swollen batteries have higher risk of thermal runaway (fire) and can fail without warning. Never charge a swollen battery — dispose of it properly at a battery recycling center. Handle swollen batteries with extreme care.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="activity" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-white mb-1">Sudden Voltage Drops</h3>
+            <p class="text-sm text-gray-400">If the battery voltage suddenly drops during flight or the battery percentage jumps around erratically, this indicates high internal resistance and poor cell health. You might see the battery go from 30% to 10% in seconds, or trigger low battery warnings much earlier than expected. This can also be caused by cold temperatures, but if it happens in normal conditions, the battery is likely failing.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="thermometer" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-white mb-1">Unusual Heat During Charging or Use</h3>
+            <p class="text-sm text-gray-400">Batteries naturally warm up during charging and flight, but they should not get uncomfortably hot. If a battery gets so hot that you cannot hold it comfortably, or it gets significantly hotter than your other batteries during the same flight or charge, it likely has internal problems. Heat is caused by high internal resistance, which means the battery is wasting energy and degrading faster.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="x-circle" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-white mb-1">Error Messages in the App</h3>
+            <p class="text-sm text-gray-400">DJI intelligent batteries have sophisticated monitoring and will warn you about battery problems. If you see error messages like "Abnormal Battery," "Battery Cell Imbalance," "High Internal Resistance," or "Battery Deterioration," pay attention. Cell imbalance (cells differing by more than 0.05–0.1V) is a common early sign of battery aging. The app's battery health screen can give you detailed information.</p>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-critical mt-6 !mb-0">
+        <i data-lucide="alert-octagon" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Safety First:</strong> If a battery is swollen, damaged, or showing any signs of thermal runaway (getting very hot, hissing, smoking, or bulging rapidly), take it to a safe location immediately — place it on a non-flammable surface like concrete, away from anything flammable. Do not attempt to charge or discharge it. Contact your local battery recycling center for proper disposal. Never throw LiPo batteries in the trash or household recycling.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPER STORAGE GUIDE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Proper Battery Storage Guide</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        Proper storage is the single biggest factor in long-term battery health. Most battery damage happens when batteries are sitting around, not when they are being used. Follow this step-by-step guide to maximize the lifespan of your drone batteries during storage.
+      </p>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Get to the Right Charge Level</h4>
+            <p class="text-sm text-gray-400">The ideal storage charge for LiPo and Li-ion batteries is 40–60% (about 3.8–3.9V per cell). For DJI batteries with 4 LED indicators, this means 2 solid lights (or 2 out of 4). If your battery is fully charged from your last flight and you know you will not fly again for more than 2–3 days, either fly it down a bit or use the discharge function. DJI intelligent batteries auto-discharge after 5–10 days, but you can set the delay in the app.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Find the Right Location</h4>
+            <p class="text-sm text-gray-400">Store batteries in a cool, dry place with stable temperature. The ideal temperature range is 59–77°F (15–25°C). A closet or drawer inside your house works great. Avoid: hot garages in summer, cold sheds in winter, direct sunlight, humid basements, and near any heat sources. If you live in a very humid climate, consider using a desiccant pack to keep moisture down.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Use Proper Storage Containers</h4>
+            <p class="text-sm text-gray-400">While modern intelligent batteries are very safe, it is good practice to store them in a fire-resistant LiPo safety bag, battery storage box, or ceramic container. This provides an extra layer of protection in case of the extremely unlikely event of a battery fire. Make sure the storage area has good air circulation — do not seal batteries in an airtight container (they need to vent if something goes wrong). Keep away from flammable materials.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Check Periodically</h4>
+            <p class="text-sm text-gray-400">For long-term storage (more than 1 month), check your batteries every 4–6 weeks. They will slowly self-discharge over time. If the charge drops too low (below 20%), top them back up to 50%. LiPo batteries that self-discharge completely can be permanently damaged and may never hold a charge again. DJI intelligent batteries are designed to maintain storage voltage automatically, but it is still a good idea to check on them occasionally.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Prepare Before Your Next Flight</h4>
+            <p class="text-sm text-gray-400">When you are ready to fly again, take the batteries out and charge them fully before your flight. Give them time to acclimate to room temperature if they were stored in a cold location. Do not charge batteries that are below freezing — let them warm up first. It is normal for batteries that have been in long-term storage to take a cycle or two to reach full performance again. Do not worry if the first flight after storage is a bit shorter than usual.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about drone battery lifespan and care.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How many cycles do drone batteries last?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Most DJI LiPo drone batteries are rated for 200–300 charge cycles before reaching 80% of their original capacity, while newer Li-ion batteries (like in the Mavic 3 and Inspire 3) can last 400–500+ cycles. A charge cycle is defined as using 100% of the battery's capacity — not necessarily one full charge. Using 50% one day and 50% the next counts as one cycle. With excellent care and proper storage, many batteries can exceed their rated cycle count by 20–50%. Poor storage and bad charging habits can significantly reduce battery life to just 50–100 cycles.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I check my DJI battery cycle count?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          You can check your DJI battery cycle count through the DJI Fly app or DJI Go 4 app, depending on which app your drone uses. Connect your drone or battery to the app, go to the battery settings or battery info section, and look for "Cycle Count" or "Charge Cycles." For more detailed diagnostics, you can use DJI Assistant 2 software on your computer — this provides comprehensive battery health data including per-cell voltages, total capacity, discharge cycles, and more. Some older batteries with physical LED buttons may not show cycle count through the app and require DJI Assistant 2.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is considered end-of-life for a drone battery?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          A drone battery is generally considered at end-of-life when it reaches 80% of its original capacity. At this point, you will notice significantly shorter flight times, increased voltage sag under load, and potentially unreliable performance. DJI considers batteries to have reached their useful life when capacity drops below 80% after the rated number of cycles. However, many hobbyist pilots continue using batteries below 80% for casual, close-range flights. You should replace a battery immediately if it shows signs of swelling, physical damage, or erratic behavior — safety always comes first, and a failing battery can cause a crash.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Does storage temperature affect battery life?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes, storage temperature is one of the biggest factors affecting long-term battery health, and many pilots do not realize how dramatic the effect is. The ideal storage temperature for drone batteries is 59–77°F (15–25°C). Storing batteries above 95°F (35°C) for extended periods causes accelerated degradation and can lead to swelling and permanent capacity loss. Freezing temperatures are also harmful — never store batteries below freezing for long periods. For long-term storage (more than 10 days), store batteries at 40–60% charge in a cool, dry place. DJI batteries have a self-discharge feature that automatically discharges to storage voltage after several days.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is the difference between LiPo and Li-ion drone batteries?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          LiPo (lithium polymer) batteries have been the standard for drones for years because they offer high discharge rates needed for drone motors, are lightweight, and can be shaped flexibly. They typically last 200–300 cycles. Li-ion (lithium-ion) batteries, found in newer DJI models like the Mavic 3 series and Inspire 3, use different chemistry that offers higher energy density (more capacity for the same weight) and much longer cycle life (400–500+ cycles). However, Li-ion batteries cannot deliver as high discharge rates per weight, so they work better for larger, heavier drones with bigger batteries where sustained high power is less critical per gram. Both types require proper care and storage to maximize lifespan.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How can I extend my drone battery life?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          To extend drone battery life significantly: 1) Never discharge below 20% — land before hitting the low battery warning. 2) Store at 40–60% charge for long periods, not fully charged or fully discharged. 3) Store in a cool, dry place at 59–77°F (15–25°C), away from direct sun and heat sources. 4) Avoid extreme temperatures — let batteries acclimate before charging or flying. 5) Use the correct charger and avoid fast charging when not necessary. 6) Do not leave batteries fully charged for more than 2–3 days. 7) Inspect batteries regularly for swelling, damage, or abnormal behavior. 8) Use DJI's self-discharge feature for intelligent batteries. Following these best practices can double your battery's useful life.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Is it bad to charge drone batteries after every flight?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          It is fine to charge after every flight if you plan to fly again soon. However, you should not leave batteries fully charged for long periods (more than 2–3 days) because sitting at 100% charge is stressful on the cells and accelerates degradation. If you charge after a flight and then do not fly for a week or more, the battery sits fully charged the whole time, slowly degrading. If you know you will not fly for more than a few days, either: 1) Only charge to 60–70% after the flight, or 2) Let the battery self-discharge to storage voltage (DJI intelligent batteries do this automatically after 5–10 days, and you can adjust the delay in the app).
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What are the signs of a failing drone battery?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Common signs of a failing drone battery include: significantly shorter flight time than when new, sudden voltage drops during flight, battery swelling or puffing (the battery feels bloated), cells that do not balance properly (cells differ by more than 0.05V), error messages on the app about battery health or abnormal discharge, difficulty holding a full charge, the battery getting unusually hot during charging or flight, and the battery being unable to reach 100% charge. If you notice any swelling or physical damage, stop using the battery immediately and dispose of it properly — swollen LiPo batteries can be dangerous and have a higher risk of thermal runaway.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I still use a swollen drone battery?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          NO — you should NEVER use a swollen or puffed drone battery, no matter how slightly swollen. Swelling is caused by gas buildup inside the battery from electrolyte decomposition, which means the battery is internally damaged and potentially dangerous. A swollen battery has reduced capacity, increased internal resistance, and a significantly higher risk of thermal runaway (fire). Even if it still powers on, it could fail mid-flight causing a crash, or it could catch fire during charging. Dispose of swollen batteries properly at a battery recycling center or hazardous waste facility. Do not puncture, incinerate, or throw them in the trash. Always handle swollen batteries with care and keep them in a fire-safe container during transport.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How should I store drone batteries long-term?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          For long-term storage (more than 10 days): 1) Charge or discharge the battery to 40–60% (about 2 LED lights on DJI batteries, or 3.8–3.9V per cell). 2) Store in a cool, dry place at 59–77°F (15–25°C) — a closet or drawer inside your house is ideal. 3) Use a fire-safe LiPo bag or battery storage box for extra safety. 4) Do not store in direct sunlight, in a hot car, or in a freezing cold shed. 5) Check battery charge every 1–2 months and top up to 50% if needed. 6) For DJI intelligent batteries, the self-discharge feature will automatically discharge to storage voltage after 5–10 days (you can adjust this in the app). 7) Never store batteries fully charged or fully discharged for extended periods — both cause permanent damage. Following these rules can double or triple your battery's useful calendar life.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Drone Tools &amp; Guides</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="drone-flight-time-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Flight Time</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Flight Time Calculator</h3>
+        <p class="text-sm text-gray-400">Calculate how long your drone will fly based on battery, weight, wind speed, and flight mode. Includes DJI presets for Mini 4/5 Pro, Mavic 3, Air 3, and Avata 2.</p>
+      </a>
+      <a href="drone-photo-settings-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Photography</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Photo Settings Calculator</h3>
+        <p class="text-sm text-gray-400">Get recommended camera settings for any lighting condition and shot type — ISO, shutter speed, white balance, ND filter suggestions, and pro tips.</p>
+      </a>
+      <a href="../specs/drones.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">GUIDE</div>
+          <span class="badge badge-info">All Models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Comparison Guide</h3>
+        <p class="text-sm text-gray-400">Compare all major drone models side by side — flight time, battery specs, camera quality, range, weight, price, and more.</p>
+      </a>
+      <a href="../specs/dji-battery-hibernation-mode.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">GUIDE</div>
+          <span class="badge badge-info">Battery Care</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Battery Hibernation Mode</h3>
+        <p class="text-sm text-gray-400">Learn how DJI's battery hibernation works, why it matters for long-term storage, and how to safely wake hibernated batteries.</p>
+      </a>
+      <a href="../specs/dji-mini-5-pro.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">REVIEW</div>
+          <span class="badge badge-info">Under 250g</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Mini 5 Pro Specs</h3>
+        <p class="text-sm text-gray-400">Full specifications, battery details, flight performance, camera specs, and everything you need to know about the DJI Mini 5 Pro.</p>
+      </a>
+      <a href="../troubleshooting/dji-battery-not-charging.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">FIX</div>
+          <span class="badge badge-info">Troubleshooting</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Battery Not Charging</h3>
+        <p class="text-sm text-gray-400">Step-by-step troubleshooting guide for DJI batteries that will not charge. Covers hibernation mode, charger issues, and battery faults.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const batteryPresets = {
+      mini5pro: { rated: 300, name: 'DJI Mini 5/4 Pro Battery' },
+      mavic3: { rated: 400, name: 'DJI Mavic 3 Series Battery' },
+      air3: { rated: 300, name: 'DJI Air 3 Battery' },
+      avata2: { rated: 200, name: 'DJI Avata 2 Battery' },
+      fpv: { rated: 200, name: 'DJI FPV Battery' },
+      custom: { rated: 300, name: 'Custom Battery' }
+    };
+
+    function setBatteryPreset(preset) {
+      const p = batteryPresets[preset];
+      if (!p) return;
+      document.getElementById('ratedCycles').value = p.rated;
+      document.querySelectorAll('.battery-preset-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.closest('.battery-preset-btn').classList.add('active');
+      calculateBatteryLife();
+    }
+
+    function calculateBatteryLife() {
+      const currentCycles = parseFloat(document.getElementById('currentCycles').value) || 0;
+      const ratedCycles = parseFloat(document.getElementById('ratedCycles').value) || 300;
+      const storageHabits = document.getElementById('storageHabits').value;
+      const usageFrequency = document.getElementById('usageFrequency').value;
+      const chargingHabits = document.getElementById('chargingHabits').value;
+
+      let storageFactor = 1.0;
+      if (storageHabits === 'good') storageFactor = 1.25;
+      else if (storageHabits === 'average') storageFactor = 1.0;
+      else if (storageHabits === 'poor') storageFactor = 0.6;
+
+      let chargingFactor = 1.0;
+      if (chargingHabits === 'good') chargingFactor = 1.15;
+      else if (chargingHabits === 'average') chargingFactor = 1.0;
+      else if (chargingHabits === 'poor') chargingFactor = 0.75;
+
+      const totalEstimatedCycles = Math.round(ratedCycles * storageFactor * chargingFactor);
+
+      const cycleRatio = currentCycles / totalEstimatedCycles;
+      let healthPercent = 100 * (1 - Math.pow(cycleRatio, 1.15));
+      healthPercent = Math.max(0, Math.min(100, healthPercent));
+
+      const remainingCycles = Math.max(0, totalEstimatedCycles - currentCycles);
+
+      let cyclesPerMonth = 4;
+      if (usageFrequency === 'rare') cyclesPerMonth = 1.5;
+      else if (usageFrequency === 'moderate') cyclesPerMonth = 4;
+      else if (usageFrequency === 'frequent') cyclesPerMonth = 12;
+      else if (usageFrequency === 'heavy') cyclesPerMonth = 25;
+
+      const monthsLeft = remainingCycles / cyclesPerMonth;
+      const yearsLeft = monthsLeft / 12;
+
+      document.getElementById('healthPercent').textContent = Math.round(healthPercent) + '%';
+      document.getElementById('remainingCycles').textContent = Math.round(remainingCycles);
+      document.getElementById('totalCycles').textContent = Math.round(totalEstimatedCycles);
+      document.getElementById('monthsLeft').textContent = Math.round(monthsLeft);
+      document.getElementById('yearsLeft').textContent = yearsLeft.toFixed(1);
+
+      const healthBar = document.getElementById('healthBarFill');
+      healthBar.style.width = healthPercent + '%';
+      if (healthPercent >= 75) {
+        healthBar.style.background = 'linear-gradient(90deg, #22c55e, #4ade80)';
+      } else if (healthPercent >= 50) {
+        healthBar.style.background = 'linear-gradient(90deg, #eab308, #facc15)';
+      } else if (healthPercent >= 25) {
+        healthBar.style.background = 'linear-gradient(90deg, #f97316, #fb923c)';
+      } else {
+        healthBar.style.background = 'linear-gradient(90deg, #ef4444, #f87171)';
+      }
+
+      const recommendCard = document.getElementById('recommendCard');
+      const recommendIcon = document.getElementById('recommendIcon');
+      const recommendTitle = document.getElementById('recommendTitle');
+      const recommendText = document.getElementById('recommendText');
+
+      recommendCard.className = 'recommend-card';
+      if (healthPercent >= 75) {
+        recommendCard.classList.add('recommend-good');
+        recommendIcon.setAttribute('data-lucide', 'check-circle');
+        recommendIcon.style.color = '#4ade80';
+        recommendTitle.textContent = 'Battery is in Good Condition';
+        recommendText.textContent =
+          'Your battery is still in great shape with estimated ' + Math.round(healthPercent) +
+          '% health remaining. Keep up the good storage and charging habits to maximize its lifespan. ' +
+          'At your current usage rate, you can expect about ' + yearsLeft.toFixed(1) +
+          ' more years of use (' + Math.round(remainingCycles) + ' cycles) before reaching the 80% health threshold.';
+      } else if (healthPercent >= 50) {
+        recommendCard.classList.add('recommend-warn');
+        recommendIcon.setAttribute('data-lucide', 'alert-triangle');
+        recommendIcon.style.color = '#fbbf24';
+        recommendTitle.textContent = 'Battery is Moderately Used';
+        recommendText.textContent =
+          'Your battery has about ' + Math.round(healthPercent) +
+          '% health remaining and is showing moderate wear. This is normal for a battery with ' +
+          Math.round(currentCycles) + ' cycles. Consider improving storage and charging habits to extend its life. ' +
+          'At your current usage, you have roughly ' + Math.round(monthsLeft) +
+          ' months left. Start planning for a replacement within the next year or two.';
+      } else {
+        recommendCard.classList.add('recommend-bad');
+        recommendIcon.setAttribute('data-lucide', 'alert-octagon');
+        recommendIcon.style.color = '#f87171';
+        recommendTitle.textContent = 'Battery is Nearing End of Life';
+        recommendText.textContent =
+          'Your battery only has about ' + Math.round(healthPercent) +
+          '% health remaining. Flight time is significantly reduced and reliability may be compromised. ' +
+          'Consider replacing this battery soon, especially for important or long-distance flights. ' +
+          'At your current usage rate, you have only ' + Math.round(monthsLeft) +
+          ' months left before reaching the end-of-life threshold. Do not use this battery for critical missions.';
+      }
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const cyclesSlider = document.getElementById('currentCyclesSlider');
+      const cyclesInput = document.getElementById('currentCycles');
+
+      cyclesSlider.addEventListener('input', function() {
+        cyclesInput.value = this.value;
+        calculateBatteryLife();
+      });
+      cyclesInput.addEventListener('input', function() {
+        cyclesSlider.value = Math.min(Math.max(this.value, 0), 500);
+        calculateBatteryLife();
+      });
+
+      ['ratedCycles', 'storageHabits', 'usageFrequency', 'chargingHabits'].forEach(function(id) {
+        document.getElementById(id).addEventListener('input', calculateBatteryLife);
+        document.getElementById(id).addEventListener('change', calculateBatteryLife);
+      });
+
+      calculateBatteryLife();
+    });
+  </script>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camping Power Calculator — What Size Power Station Do I Need? (2026) | TechSpecsHub</title>
+  <meta name="description" content="Calculate exactly what size portable power station you need for camping. Free interactive calculator for car camping, backpacking, RV, and glamping. Gear wattage chart and power-saving tips included.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/tools/camping-power-calculator.html">
+
+  <meta property="og:title" content="Camping Power Calculator — What Size Power Station Do I Need? (2026)">
+  <meta property="og:description" content="Free interactive camping power calculator. Calculate your exact needs for car camping, backpacking, RV, and glamping trips. Gear wattage chart and power-saving tips.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/tools/camping-power-calculator.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Camping Power Calculator — What Size Do I Need?">
+  <meta name="twitter:description" content="Free camping power calculator. Car camping, backpacking, RV, and glamping power estimates with gear wattage reference chart.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    .calc-input {
+      background: rgba(15, 29, 50, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      width: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+    .calc-input:focus {
+      outline: none;
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+    }
+    .calc-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      outline: none;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #22d3ee;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+      transition: transform 0.15s ease;
+    }
+    .calc-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    .camping-type-btn {
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .camping-type-btn:hover {
+      background: rgba(34, 211, 238, 0.08);
+      border-color: rgba(34, 211, 238, 0.3);
+      transform: translateY(-2px);
+    }
+    .camping-type-btn.active {
+      background: rgba(34, 211, 238, 0.12);
+      border-color: #22d3ee;
+    }
+    .gear-item {
+      background: rgba(15, 29, 50, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+    .gear-item.active {
+      background: rgba(34, 211, 238, 0.08);
+      border-color: rgba(34, 211, 238, 0.3);
+    }
+    .result-card {
+      background: linear-gradient(145deg, rgba(30, 50, 89, 0.6), rgba(22, 37, 68, 0.8));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .result-card .result-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #a78bfa 0%, #22d3ee 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .result-card .result-label {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Camping Power Calculator — What Size Power Station Do I Need? (2026)",
+    "description": "Free interactive camping power calculator. Calculate your exact needs for car camping, backpacking, RV, and glamping trips. Includes gear wattage reference chart and power-saving tips.",
+    "url": "https://powerspecshub.com/pages/tools/camping-power-calculator.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What size power station do I need for camping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The size you need depends on your camping style. Backpacking: 100–300Wh (small, lightweight). Car camping weekend: 500–1000Wh (phones, lights, cooler, laptop). Car camping with fridge and CPAP: 1500–2000Wh. RV / long trips: 2000–4000Wh + solar panels. Use our calculator to add up your specific gear and trip duration for a personalized recommendation with a 20% safety buffer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my camping power needs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calculate camping power needs: list every device you will bring, note each device's wattage, estimate how many hours per day you will use each, multiply wattage × hours for each to get watt-hours (Wh), sum all Wh for daily total, multiply by number of days, add 20–30% safety buffer, and factor in inverter efficiency (~85% for AC). The formula is: Total Wh = Σ (Device Watts × Hours/Day × Days) × 1.2 Safety Buffer ÷ 0.85 Efficiency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a portable power station run a camping fridge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — a 12V portable camping fridge typically draws 40–80W average (compressor cycles on and off). For a 3-day trip with a 60W average fridge, you need about 60W × 24h × 3 days = 4,320Wh theoretical, or roughly 3,000Wh real-world with efficiency — but that is just for the fridge alone. With solar panels (200–400W), you can run a fridge indefinitely as long as you get enough sun. A 1000–2000Wh station plus 200W solar is a popular fridge setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What camping gear uses the most power?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The biggest power draws for camping are: 12V fridge/cooler (40–80W average, 24/7 use), CPAP machine (20–60W, 8 hours/night), electric blanket (100–200W), portable AC (500–1000W), microwave/coffee maker (600–1500W, short use), and space heaters (750–1500W). Lights, phone charging, and speakers use very little. Focus your power budget on the big-ticket items — a fridge alone can be 50–70% of your total consumption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I get solar panels for camping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solar panels are worth it for trips longer than 2–3 days, or if you have high-draw items like a fridge. With 100–200W of panels and 4–6 hours of sun, you can add 280–840Wh per day (at 70% real efficiency), significantly extending your trip. For weekend trips only, you may not need solar — just size the battery for 2–3 days. Consider foldable portable panels (100–200W) for car camping and smaller flexible panels for backpacking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I save power while camping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Top camping power-saving tips: use LED lights (5–10W vs 60W+ incandescent), use DC instead of AC whenever possible, pre-cool your fridge at home, limit fridge door openings, charge devices during the day while solar is producing, use a thermos for hot drinks instead of heating water repeatedly, use propane for cooking instead of electric, put your power station in ECO mode, and use low-power mode on devices. Even small savings add up to hours of extra runtime."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between car camping and backpacking power needs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Backpacking is all about weight — you want the smallest, lightest power station possible (100–300Wh) for just phone charging, headlamps, and camera batteries. Car camping lets you bring more capacity (500–2000Wh) for fridges, CPAP, laptops, and kitchen appliances. Weight matters much less when you are driving to the campsite. RV camping is the heaviest — you might need 2000–5000Wh with multiple solar panels for full off-grid living for extended periods."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long will a 500Wh power station last camping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 500Wh power station lasts roughly: Light use (phones, lights, speaker) — 2–4 days. Medium use (add laptop, camera batteries) — 1–2 days. With a 12V fridge — less than 1 day. With 100W solar panels, you can extend indefinitely in good sun (adding ~350Wh per day). These are rough estimates — actual runtime depends on exactly what you power and for how long. Use our calculator to get a personalized estimate based on your actual gear."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use a portable power station for glamping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely — glamping is where portable power stations shine. You can run string lights, a portable projector, a small fridge, a coffee maker, a speaker, and charge all your devices. For a 2–3 day glamping trip with lights, projector, fridge, and small appliances, we recommend 1000–2000Wh of capacity. Add 200W of solar for longer stays. The silent operation (no generator noise or fumes) is perfect for the glamping vibe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do I need for a 7-day camping trip?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a 7-day trip, solar panels are practically essential unless you bring a huge battery. A good setup is: 1500–2000Wh power station + 200–400W foldable solar panels. This gives you enough power for a 12V fridge, lights, phone/laptop charging, and occasional small appliances, as long as you get reasonable sun. Without solar, you would need 3000–5000Wh+ of battery for 7 days with a fridge, which gets very heavy and expensive. Solar is the practical choice for trips longer than 3 days."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://powerspecshub.com/pages/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Camping Power Calculator"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Calculators &amp; Tools</p>
+              <a href="power-station-runtime-calculator.html"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Runtime Calculator</a>
+              <a href="solar-panel-needs-calculator.html"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Solar Panel Calculator</a>
+              <a href="appliance-wattage-calculator.html"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Appliance Wattage Calculator</a>
+              <a href="camping-power-calculator.html"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Camping Power Calculator</a>
+              <a href="cpap-battery-calculator.html"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>CPAP Battery Calculator</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <p class="nav-dropdown-section-label mt-2">Calculators</p>
+        <a href="power-station-runtime-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee"></i>Runtime Calculator</a>
+        <a href="solar-panel-needs-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee"></i>Solar Panel Calculator</a>
+        <a href="appliance-wattage-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>Appliance Wattage Calculator</a>
+        <a href="camping-power-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee"></i>Camping Power Calculator</a>
+        <a href="cpap-battery-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee"></i>CPAP Battery Calculator</a>
+        <a href="best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="#">Tools</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Camping Power Calculator</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-purple-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-purple-500/20 text-purple-400 font-mono font-bold text-sm rounded-md border border-purple-500/30">CALCULATOR</div>
+        <span class="badge badge-info"><i data-lucide="tent" style="width:0.75rem;height:0.75rem"></i>Camping</span>
+        <span class="badge badge-info"><i data-lucide="sun" style="width:0.75rem;height:0.75rem"></i>Solar Ready</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Camping Power Calculator &mdash; <span class="gradient-text">What Size Do You Need?</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Figure out exactly what size portable power station you need for your next camping trip. Select your camping style, trip duration, number of people, and gear, and get personalized recommendations including solar panel sizing and power-saving tips.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="tent-tree" style="width:0.9rem;height:0.9rem"></i>Camping Styles</div>
+          <div class="font-bold text-xl text-white">4 Types</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="backpack" style="width:0.9rem;height:0.9rem"></i>Gear Items</div>
+          <div class="font-bold text-xl text-yellow-400">30+</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="shield" style="width:0.9rem;height:0.9rem"></i>Safety Buffer</div>
+          <div class="font-mono font-bold text-xl text-green-400">20%</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="sun" style="width:0.9rem;height:0.9rem"></i>Solar Rec</div>
+          <div class="font-bold text-xl text-electric-400">Auto</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-6 flex items-center gap-2"><i data-lucide="tent" style="width:1.25rem;height:1.25rem;color:#a78bfa"></i>Camping Power Calculator</h2>
+
+      <div class="space-y-6">
+        <!-- Camping Type -->
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-3">Camping Type</label>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <button class="camping-type-btn active" data-type="backpacking" onclick="setCampingType('backpacking')">
+              <i data-lucide="backpack" style="width:1.5rem;height:1.5rem;color:#22d3ee;margin:0 auto 8px"></i>
+              <div class="font-semibold text-sm">Backpacking</div>
+              <div class="text-xs text-gray-500">Ultralight</div>
+            </button>
+            <button class="camping-type-btn" data-type="car" onclick="setCampingType('car')">
+              <i data-lucide="car" style="width:1.5rem;height:1.5rem;color:#22d3ee;margin:0 auto 8px"></i>
+              <div class="font-semibold text-sm">Car Camping</div>
+              <div class="text-xs text-gray-500">Weekend</div>
+            </button>
+            <button class="camping-type-btn" data-type="rv" onclick="setCampingType('rv')">
+              <i data-lucide="home" style="width:1.5rem;height:1.5rem;color:#22d3ee;margin:0 auto 8px"></i>
+              <div class="font-semibold text-sm">RV / Van</div>
+              <div class="text-xs text-gray-500">Off-grid</div>
+            </button>
+            <button class="camping-type-btn" data-type="glamping" onclick="setCampingType('glamping')">
+              <i data-lucide="sparkles" style="width:1.5rem;height:1.5rem;color:#22d3ee;margin:0 auto 8px"></i>
+              <div class="font-semibold text-sm">Glamping</div>
+              <div class="text-xs text-gray-500">Luxury</div>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Trip Duration (days)</label>
+            <input type="number" id="tripDays" class="calc-input" value="3" min="1" max="30" step="1">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>1</span>
+              <input type="range" id="daysSlider" class="calc-slider flex-1" min="1" max="14" step="1" value="3">
+              <span>14</span>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Number of People</label>
+            <input type="number" id="numPeople" class="calc-input" value="2" min="1" max="10" step="1">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>1</span>
+              <input type="range" id="peopleSlider" class="calc-slider flex-1" min="1" max="8" step="1" value="2">
+              <span>8</span>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Sun Hours Per Day</label>
+            <input type="number" id="sunHours" class="calc-input" value="5" min="1" max="10" step="0.5">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>1</span>
+              <input type="range" id="sunSlider" class="calc-slider flex-1" min="1" max="8" step="0.5" value="5">
+              <span>8</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gear Selection -->
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-3">Gear &amp; Devices</label>
+          <div id="gearList" class="grid md:grid-cols-2 gap-2 max-h-[400px] overflow-y-auto pr-2">
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="grid lg:grid-cols-5 gap-4 pt-4 border-t border-white/10">
+          <div class="result-card lg:col-span-2">
+            <div class="result-value" id="totalWh">0</div>
+            <div class="result-label">Total Watt-Hours Needed</div>
+          </div>
+          <div class="result-card">
+            <div class="result-value text-2xl" id="dailyWh">0</div>
+            <div class="result-label">Daily Wh</div>
+          </div>
+          <div class="result-card">
+            <div class="result-value text-2xl" id="recommendedStation">0</div>
+            <div class="result-label">Recommended (Wh)</div>
+          </div>
+          <div class="result-card">
+            <div class="result-value text-2xl" id="solarRec">0</div>
+            <div class="result-label">Solar Rec (W)</div>
+          </div>
+        </div>
+
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+            <i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#a78bfa"></i>
+            Recommendation
+          </h4>
+          <p class="text-sm text-gray-300 leading-relaxed" id="recommendation">
+            Select your camping gear to see personalized power station recommendations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEAR WATTAGE CHART -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Camping Gear Wattage Reference Chart</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Not sure how much power your camping gear uses? Here is a comprehensive reference of common camping items with their typical wattage. Use these numbers to plan your power budget.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Item</th><th>Watts</th><th>Typical Use</th><th>Daily Wh Est.</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Headlamp (LED)</strong></td><td>1–3W</td><td>2–4 hrs/day</td><td>2–12 Wh</td></tr>
+            <tr><td><strong>LED Lantern</strong></td><td>3–10W</td><td>4–6 hrs/day</td><td>12–60 Wh</td></tr>
+            <tr><td><strong>String Lights (LED)</strong></td><td>10–20W</td><td>4–6 hrs/day</td><td>40–120 Wh</td></tr>
+            <tr><td><strong>Phone Charging</strong></td><td>5–15W</td><td>1–2 hrs/day</td><td>5–30 Wh</td></tr>
+            <tr><td><strong>Tablet / e-Reader</strong></td><td>10–20W</td><td>1–2 hrs/day</td><td>10–40 Wh</td></tr>
+            <tr><td><strong>Laptop</strong></td><td>30–80W</td><td>2–4 hrs/day</td><td>60–320 Wh</td></tr>
+            <tr><td><strong>Camera Batteries</strong></td><td>15–30W</td><td>1–2 hrs/day</td><td>15–60 Wh</td></tr>
+            <tr><td><strong>Drone Battery Charger</strong></td><td>50–100W</td><td>1–2 hrs/day</td><td>50–200 Wh</td></tr>
+            <tr><td><strong>Portable Speaker</strong></td><td>5–15W</td><td>4–6 hrs/day</td><td>20–90 Wh</td></tr>
+            <tr><td><strong>12V Fridge / Cooler</strong></td><td>40–80W avg</td><td>24 hrs/day</td><td>960–1,920 Wh</td></tr>
+            <tr><td><strong>Thermoelectric Cooler</strong></td><td>30–60W</td><td>12–24 hrs/day</td><td>360–1,440 Wh</td></tr>
+            <tr><td><strong>CPAP Machine</strong></td><td>20–60W</td><td>8 hrs/night</td><td>160–480 Wh</td></tr>
+            <tr><td><strong>Electric Blanket (12V)</strong></td><td>50–100W</td><td>4–6 hrs/night</td><td>200–600 Wh</td></tr>
+            <tr><td><strong>Camping Fan</strong></td><td>5–20W</td><td>6–12 hrs/day</td><td>30–240 Wh</td></tr>
+            <tr><td><strong>Portable Projector</strong></td><td>80–150W</td><td>2–3 hrs/night</td><td>160–450 Wh</td></tr>
+            <tr><td><strong>Portable Blender</strong></td><td>200–500W</td><td>10–20 min/day</td><td>33–167 Wh</td></tr>
+            <tr><td><strong>Electric Kettle</strong></td><td>800–1500W</td><td>10–20 min/day</td><td>133–500 Wh</td></tr>
+            <tr><td><strong>Microwave (Small)</strong></td><td>600–1000W</td><td>10–15 min/day</td><td>100–250 Wh</td></tr>
+            <tr><td><strong>Coffee Maker (Pod)</strong></td><td>1000–1500W</td><td>10–15 min/day</td><td>167–375 Wh</td></tr>
+            <tr><td><strong>Electric Grill</strong></td><td>1200–1800W</td><td>30–60 min/day</td><td>600–1,800 Wh</td></tr>
+            <tr><td><strong>Air Mattress Pump</strong></td><td>80–150W</td><td>5–10 min</td><td>7–25 Wh</td></tr>
+            <tr><td><strong>Wi-Fi Hotspot</strong></td><td>5–15W</td><td>8–12 hrs/day</td><td>40–180 Wh</td></tr>
+            <tr><td><strong>GPS / Navigation</strong></td><td>2–10W</td><td>4–8 hrs/day</td><td>8–80 Wh</td></tr>
+            <tr><td><strong>Portable AC (Small)</strong></td><td>500–1000W</td><td>4–6 hrs/day</td><td>2,000–6,000 Wh</td></tr>
+            <tr><td><strong>Space Heater</strong></td><td>750–1500W</td><td>2–4 hrs/day</td><td>1,500–6,000 Wh</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert alert-info mt-4 !mb-0">
+        <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Quick rule of thumb:</strong> If you are only charging phones and running lights, you need very little power (200–500Wh for a weekend). Add a 12V fridge and you jump to 1000–2000Wh+ because the fridge runs 24/7. A fridge is almost always the biggest power draw on a camping trip — decide early whether you want one, as it dictates the entire system size.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POWER SAVING TIPS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">10 Tips for Saving Power While Camping</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Use DC Instead of AC</h4>
+            <p class="text-sm text-gray-400">Whenever possible, use 12V DC or USB instead of AC wall outlets. Skipping the inverter conversion saves 10–15% of energy. Many camping appliances come in 12V versions — fridges, fans, blankets, lights.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Pre-Cool Your Fridge at Home</h4>
+            <p class="text-sm text-gray-400">Cool your fridge and all food/drinks at home before your trip. It takes much more power to cool warm items than to keep already-cold items cold. Add frozen water bottles to help maintain temperature.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Limit Fridge Door Openings</h4>
+            <p class="text-sm text-gray-400">Every time you open the fridge, cold air escapes and the compressor has to run more. Know what you want before opening, close the door quickly, and consider a separate cooler for drinks that get opened often.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Switch Everything to LED</h4>
+            <p class="text-sm text-gray-400">LED lights use 75–85% less power than incandescent or halogen. If you are still using old camping lights, upgrading to LED is the single easiest power-saving upgrade you can make.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Charge During Peak Sun Hours</h4>
+            <p class="text-sm text-gray-400">If you have solar, do your heavy charging (laptops, camera batteries, drone batteries) between 10 AM and 3 PM when the sun is strongest. Use solar directly instead of cycling battery charge.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">6</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Use Propane for Cooking</h4>
+            <p class="text-sm text-gray-400">Electric cooking appliances (kettles, grills, coffee makers) use a LOT of power. Stick with propane or butane for cooking and save your battery for things that really need electricity.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">7</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Use a Thermos for Hot Drinks</h4>
+            <p class="text-sm text-gray-400">Instead of boiling water multiple times a day (huge power draw), boil once and keep it hot in a thermos. A good thermos keeps water hot for 12+ hours — enough for morning coffee and evening tea.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">8</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Enable ECO Mode</h4>
+            <p class="text-sm text-gray-400">Turn on ECO mode on your power station. It automatically shuts down outputs when the load is very low, eliminating phantom drain from devices on standby. Just make sure to disable it for medical devices.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">9</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Dress for the Weather</h4>
+            <p class="text-sm text-gray-400">Instead of using electric blankets and heaters, wear warm layers and use a good sleeping bag rated for the temperature. Heating is the single biggest power drain — avoid it with proper gear.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-green-400">10</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Keep Your Battery Warm (Cold Weather)</h4>
+            <p class="text-sm text-gray-400">Lithium batteries lose significant capacity in cold weather (20–40% below freezing). Keep your power station inside your tent or insulated bag, or store it in a cooler with the fridge to maintain moderate temperature.</p>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-success mt-6 !mb-0">
+        <i data-lucide="zap" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Bottom line:</strong> The most power-efficient camping setup is: LED everything + 12V fridge + solar panels + propane cooking. This combination lets you camp off-grid indefinitely with a modest 1000–2000Wh power station and 200–400W of solar. You do not need a massive battery if you reduce consumption and supplement with solar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about camping power and portable power stations.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What size power station do I need for camping?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          The size you need depends on your camping style. Backpacking: 100–300Wh (small, lightweight, just phones and headlamps). Car camping weekend: 500–1000Wh (phones, lights, speaker, camera, laptop — no fridge). Car camping with fridge and CPAP: 1500–2000Wh minimum. RV / van life / long trips: 2000–4000Wh + 200–400W solar panels. Use our calculator above to add up your specific gear and trip duration for a personalized recommendation with a 20% safety buffer.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I calculate my camping power needs?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          To calculate camping power needs: 1) List every device you will bring, 2) Find each device's wattage from the label, manual, or our reference chart, 3) Estimate how many hours per day you will use each device, 4) Multiply wattage × hours for each to get watt-hours (Wh) per day, 5) Sum all Wh for your daily total, 6) Multiply by number of trip days, 7) Add 20–30% safety buffer, and 8) Divide by 0.85 to account for inverter efficiency. The formula is: Total Wh = Σ (Device Watts × Hours/Day × Days) × 1.2 Safety Buffer ÷ 0.85 Efficiency.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can a portable power station run a camping fridge?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes — a 12V portable camping fridge typically draws 40–80W average (the compressor cycles on and off, so average is much lower than the peak rating). For a 3-day trip with a 60W average fridge running 24/7, you need roughly 60W × 24h × 3 days = 4,320Wh theoretical, or about 3,000Wh real-world with efficiency losses. But that is just for the fridge alone. With 200–400W of solar panels, you can run a fridge indefinitely as long as you get enough sun. A 1000–2000Wh station plus 200W solar is the most popular fridge setup for weekend-to-week-long trips.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What camping gear uses the most power?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          The biggest power draws for camping are: 12V fridge/cooler (40–80W average, 24/7 use — usually the biggest total), CPAP machine (20–60W, 8 hours/night), electric blanket (100–200W), portable AC (500–1000W), microwave/coffee maker (600–1500W, short use), and space heaters (750–1500W). Lights, phone charging, and speakers use very little by comparison. A fridge alone can be 50–70% of your total daily consumption — decide early whether you need one, as it dictates the entire system size and budget.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Should I get solar panels for camping?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Solar panels are worth it for trips longer than 2–3 days, or if you have high-draw items like a fridge that you want to run indefinitely. With 100–200W of panels and 4–6 hours of sun, you can add roughly 280–840Wh per day (at 70% real-world efficiency), significantly extending your trip or letting you run a fridge continuously. For weekend trips only (2–3 days), you may not need solar — just size the battery for your full trip. Foldable 100–200W portable panels are the most popular for car camping; small flexible panels work for backpacking.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How can I save power while camping?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Top camping power-saving tips: use LED lights (5–10W vs 60W+ incandescent), use DC instead of AC whenever possible, pre-cool your fridge at home before the trip, limit fridge door openings, charge devices during peak sun hours, use propane for cooking instead of electric, keep hot drinks in a thermos instead of re-boiling, turn on ECO mode on your power station, dress warmly instead of using electric heat, and keep batteries warm in cold weather. Even small savings add up to hours or days of extra runtime.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is the difference between car camping and backpacking power needs?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Backpacking is all about weight and pack size — you want the smallest, lightest power bank possible (100–300Wh) for just phone charging, headlamps, and camera batteries. Weight of the battery matters more than cost. Car camping lets you bring much more capacity (500–2000Wh) for fridges, CPAP, laptops, projectors, and kitchen appliances. Weight matters much less when you are driving to the campsite. RV / van life is even heavier — you might need 2000–5000Wh with multiple solar panels for full off-grid living for extended periods.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How long will a 500Wh power station last camping?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          A 500Wh power station lasts roughly: Light use (phones, lights, speaker, camera batteries) — 2–4 days. Medium use (add a laptop, drone charger) — 1–2 days. With a 12V fridge running 24/7 — less than 1 day. With 100W solar panels in good sun, you can extend indefinitely (adding ~350Wh per day). These are rough estimates — actual runtime depends on exactly what you power and for how long. Use our calculator above to get a personalized estimate based on your actual gear and trip plans.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I use a portable power station for glamping?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Absolutely — glamping is where portable power stations really shine. You can run string lights, a portable projector for movie nights, a mini fridge, a coffee maker, a Bluetooth speaker, and charge all your devices. The silent operation (no generator noise or fumes) is perfect for the peaceful glamping vibe. For a 2–3 day glamping trip with lights, projector, small fridge, and morning coffee, we recommend 1000–2000Wh of capacity. Add 200W of solar for longer stays. It is the upgrade that turns "camping" into "glamping."
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What do I need for a 7-day camping trip?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          For a 7-day trip, solar panels are practically essential unless you bring a massive (and expensive) battery. A good all-around setup is: 1500–2000Wh power station + 200–400W foldable solar panels. This gives you enough power for a 12V fridge, lights, phone/laptop charging, and occasional small appliances, as long as you get reasonable sun (4–6 hours per day). Without solar and a fridge, you would need 3000–5000Wh+ of battery for 7 days, which gets very heavy and expensive. Solar is the practical, cost-effective choice for trips longer than 3 days.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Calculators &amp; Guides</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="power-station-runtime-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Runtime</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Runtime Calculator</h3>
+        <p class="text-sm text-gray-400">Calculate exact runtime for specific devices. Great for detailed analysis of your most important camping gear.</p>
+      </a>
+      <a href="solar-panel-needs-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Solar</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Solar Panel Needs Calculator</h3>
+        <p class="text-sm text-gray-400">Detailed solar panel sizing for your camping setup. Calculate exact panel wattage and charge times.</p>
+      </a>
+      <a href="appliance-wattage-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">CALCULATOR</div>
+          <span class="badge badge-info">50+ Appliances</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Appliance Wattage Calculator</h3>
+        <p class="text-sm text-gray-400">Comprehensive appliance wattage list. Build a complete power budget for home backup or RV use.</p>
+      </a>
+      <a href="cpap-battery-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Medical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">CPAP Battery Calculator</h3>
+        <p class="text-sm text-gray-400">Specialized calculator for CPAP camping. Includes pressure settings, humidifier, and heated tube options.</p>
+      </a>
+      <a href="../specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">COMPARE</div>
+          <span class="badge badge-info">All Brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Comparison</h3>
+        <p class="text-sm text-gray-400">Compare all major portable power station models side by side — find the perfect one for your camping style.</p>
+      </a>
+      <a href="../specs/portable-power-station-eco-mode.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">GUIDE</div>
+          <span class="badge badge-info">Battery Saving</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">ECO Mode Guide</h3>
+        <p class="text-sm text-gray-400">Learn how to use ECO mode to extend your camping battery life by 5–20% by eliminating vampire drain.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const campingPresets = {
+      backpacking: {
+        label: 'Backpacking',
+        defaultGear: ['headlamp', 'phone', 'powerbank', 'gps']
+      },
+      car: {
+        label: 'Car Camping',
+        defaultGear: ['led-lantern', 'phone', 'laptop', 'speaker', 'camera', 'cooler-12v']
+      },
+      rv: {
+        label: 'RV / Van',
+        defaultGear: ['led-lights', 'phone', 'laptop', 'fridge-12v', 'tv', 'wifi', 'coffee']
+      },
+      glamping: {
+        label: 'Glamping',
+        defaultGear: ['string-lights', 'phone', 'projector', 'speaker', 'fridge-12v', 'coffee', 'blender']
+      }
+    };
+
+    const gearItems = [
+      { id: 'headlamp', name: 'Headlamp (LED)', watts: 2, hours: 3 },
+      { id: 'led-lantern', name: 'LED Lantern', watts: 5, hours: 5 },
+      { id: 'string-lights', name: 'String Lights', watts: 15, hours: 5 },
+      { id: 'led-lights', name: 'LED Lights (multiple)', watts: 20, hours: 6 },
+      { id: 'phone', name: 'Phone Charging', watts: 10, hours: 2 },
+      { id: 'powerbank', name: 'Power Bank Top-up', watts: 15, hours: 2 },
+      { id: 'tablet', name: 'Tablet / e-Reader', watts: 15, hours: 2 },
+      { id: 'laptop', name: 'Laptop', watts: 50, hours: 3 },
+      { id: 'camera', name: 'Camera Batteries', watts: 20, hours: 2 },
+      { id: 'drone', name: 'Drone Batteries', watts: 60, hours: 2 },
+      { id: 'speaker', name: 'Bluetooth Speaker', watts: 10, hours: 5 },
+      { id: 'gps', name: 'GPS / Navigation', watts: 5, hours: 6 },
+      { id: 'wifi', name: 'Wi-Fi Hotspot', watts: 10, hours: 10 },
+      { id: 'cooler-12v', name: '12V Cooler (thermoelectric)', watts: 40, hours: 12 },
+      { id: 'fridge-12v', name: '12V Compressor Fridge', watts: 60, hours: 24 },
+      { id: 'cpap', name: 'CPAP Machine', watts: 35, hours: 8 },
+      { id: 'electric-blanket', name: 'Electric Blanket', watts: 80, hours: 6 },
+      { id: 'camping-fan', name: 'Camping Fan', watts: 10, hours: 8 },
+      { id: 'projector', name: 'Portable Projector', watts: 100, hours: 2 },
+      { id: 'tv', name: 'TV (32" LED)', watts: 60, hours: 3 },
+      { id: 'blender', name: 'Portable Blender', watts: 300, hours: 0.3 },
+      { id: 'kettle', name: 'Electric Kettle', watts: 1000, hours: 0.2 },
+      { id: 'coffee', name: 'Coffee Maker', watts: 1200, hours: 0.2 },
+      { id: 'microwave', name: 'Microwave (small)', watts: 700, hours: 0.2 },
+      { id: 'toaster', name: 'Toaster', watts: 800, hours: 0.1 },
+      { id: 'grill', name: 'Electric Grill', watts: 1500, hours: 0.5 },
+      { id: 'heater', name: 'Space Heater', watts: 1000, hours: 3 },
+      { id: 'ac-portable', name: 'Portable AC', watts: 800, hours: 4 },
+      { id: 'air-pump', name: 'Air Mattress Pump', watts: 100, hours: 0.1 },
+      { id: 'watches', name: 'Watch / Accessories Charging', watts: 5, hours: 1 },
+    ];
+
+    let currentType = 'backpacking';
+    let selectedGear = {};
+
+    function setCampingType(type) {
+      currentType = type;
+      document.querySelectorAll('.camping-type-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.type === type);
+      });
+      selectedGear = {};
+      campingPresets[type].defaultGear.forEach(id => {
+        const gear = gearItems.find(g => g.id === id);
+        if (gear) selectedGear[id] = { qty: 1, hours: gear.hours };
+      });
+      renderGear();
+      calculateCamping();
+    }
+
+    function renderGear() {
+      const list = document.getElementById('gearList');
+      list.innerHTML = gearItems.map(gear => {
+        const isActive = selectedGear[gear.id];
+        const qty = selectedGear[gear.id]?.qty || 1;
+        const hours = selectedGear[gear.id]?.hours || gear.hours;
+
+        return `
+          <div class="gear-item ${isActive ? 'active' : ''}" onclick="toggleGear('${gear.id}')">
+            <div>
+              <div class="font-medium text-sm ${isActive ? 'text-white' : 'text-gray-400'}">${gear.name}</div>
+              <div class="text-xs font-mono text-gray-500">${gear.watts}W</div>
+            </div>
+            <div class="flex items-center gap-2" onclick="event.stopPropagation()">
+              <input type="number" class="calc-input !py-1 !px-2 !text-xs !w-16" value="${qty}" min="0" max="10" step="1"
+                     onchange="setGearQty('${gear.id}', this.value)">
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleGear(id) {
+      if (selectedGear[id]) {
+        delete selectedGear[id];
+      } else {
+        const gear = gearItems.find(g => g.id === id);
+        selectedGear[id] = { qty: 1, hours: gear.hours };
+      }
+      renderGear();
+      calculateCamping();
+    }
+
+    function setGearQty(id, val) {
+      const qty = parseInt(val) || 0;
+      if (qty <= 0) {
+        delete selectedGear[id];
+      } else {
+        if (!selectedGear[id]) {
+          const gear = gearItems.find(g => g.id === id);
+          selectedGear[id] = { qty, hours: gear.hours };
+        } else {
+          selectedGear[id].qty = qty;
+        }
+      }
+      renderGear();
+      calculateCamping();
+    }
+
+    function calculateCamping() {
+      const days = parseFloat(document.getElementById('tripDays').value) || 1;
+      const people = parseFloat(document.getElementById('numPeople').value) || 1;
+      const sunHrs = parseFloat(document.getElementById('sunHours').value) || 5;
+
+      let dailyWh = 0;
+      let numItems = 0;
+
+      Object.keys(selectedGear).forEach(id => {
+        const gear = gearItems.find(g => g.id === id);
+        const qty = selectedGear[id].qty;
+        const hrs = selectedGear[id].hours;
+        dailyWh += gear.watts * qty * hrs;
+        numItems += qty;
+      });
+
+      const totalWh = dailyWh * days;
+      const recommendedWh = Math.round((totalWh / 0.85) * 1.2);
+      const solarWatts = days > 2 ? Math.round((dailyWh * 1.2) / (sunHrs * 0.7)) : 0;
+
+      document.getElementById('dailyWh').textContent = Math.round(dailyWh);
+      document.getElementById('totalWh').textContent = Math.round(totalWh);
+      document.getElementById('recommendedStation').textContent = recommendedWh;
+      document.getElementById('solarRec').textContent = solarWatts;
+
+      let rec = '';
+      if (numItems === 0) {
+        rec = 'Select your camping gear to see personalized power station recommendations.';
+      } else if (recommendedWh <= 300) {
+        rec = 'A small 200–300Wh power bank or portable station is perfect for backpacking and ultralight trips — just enough for phones, headlamps, and camera batteries. Look for something under 5 lbs like the Anker 521 PowerHouse or similar compact models.';
+      } else if (recommendedWh <= 1000) {
+        rec = 'A 500–1000Wh station is ideal for weekend car camping with lights, phones, laptops, and a speaker. Popular choices include the Bluetti EB3A (600W/268Wh upgraded), EcoFlow River 2 (300W/256Wh), or Jackery Explorer 1000 if you want more headroom. Add a 100W solar panel for trips longer than 3 days.';
+      } else if (recommendedWh <= 2000) {
+        rec = 'You need a mid-to-large capacity station — 1500–2000Wh is the sweet spot for car camping with a 12V fridge and CPAP. Consider the EcoFlow Delta 2 (1024Wh expandable), Jackery Explorer 2000 Plus, or Bluetti AC200MAX. Add 200–400W of solar panels for extended trips.';
+      } else if (recommendedWh <= 5000) {
+        rec = 'You need a heavy-duty power station or expandable system. Look at the EcoFlow Delta Pro 3 (4096Wh), Bluetti AC500 + B300, or Goal Zero Yeti 6000X. With multiple solar panels (400–800W), you can live off-grid for extended periods. These are great for RVs, van life, or base camp glamping.';
+      } else {
+        rec = 'Your power needs are substantial — consider a whole-home battery system or multiple portable stations in parallel. For off-grid RV or cabin use, a 5–15 kWh system with 800–2000W of solar is realistic. You might also consider a gas/propane generator for high-draw items like AC or electric heat, paired with a battery station for silent nighttime use.';
+      }
+      document.getElementById('recommendation').textContent = rec;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const daysSlider = document.getElementById('daysSlider');
+      const daysInput = document.getElementById('tripDays');
+      const peopleSlider = document.getElementById('peopleSlider');
+      const peopleInput = document.getElementById('numPeople');
+      const sunSlider = document.getElementById('sunSlider');
+      const sunInput = document.getElementById('sunHours');
+
+      daysSlider.addEventListener('input', function() {
+        daysInput.value = this.value;
+        calculateCamping();
+      });
+      daysInput.addEventListener('input', function() {
+        daysSlider.value = Math.min(Math.max(this.value, 1), 14);
+        calculateCamping();
+      });
+      peopleSlider.addEventListener('input', function() {
+        peopleInput.value = this.value;
+        calculateCamping();
+      });
+      peopleInput.addEventListener('input', function() {
+        peopleSlider.value = Math.min(Math.max(this.value, 1), 8);
+        calculateCamping();
+      });
+      sunSlider.addEventListener('input', function() {
+        sunInput.value = this.value;
+        calculateCamping();
+      });
+      sunInput.addEventListener('input', function() {
+        sunSlider.value = Math.min(Math.max(this.value, 1), 8);
+        calculateCamping();
+      });
+
+      setCampingType('backpacking');
+    });
+  </script>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>

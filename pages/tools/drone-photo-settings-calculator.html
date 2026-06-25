@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Photography Settings Calculator — Best Settings for Aerial Shots (2026) | TechSpecsHub</title>
+  <meta name="description" content="Get the best drone camera settings for any lighting condition and shot type. Free interactive calculator with recommended ISO, shutter speed, aperture, white balance, ND filter suggestions, and pro tips for aerial photography.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/tools/drone-photo-settings-calculator.html">
+
+  <meta property="og:title" content="Drone Photography Settings Calculator — Best Settings for Aerial Shots (2026)">
+  <meta property="og:description" content="Free interactive drone photo settings calculator. Get recommended ISO, shutter speed, white balance, and ND filter for any condition. Pro tips included.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/tools/drone-photo-settings-calculator.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Drone Photography Settings Calculator">
+  <meta name="twitter:description" content="Best camera settings for drone photography. ISO, shutter speed, ND filter guide. Free interactive tool.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    .calc-input {
+      background: rgba(15, 29, 50, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      width: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+    .calc-input:focus {
+      outline: none;
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+    }
+    .result-card {
+      background: linear-gradient(145deg, rgba(30, 50, 89, 0.6), rgba(22, 37, 68, 0.8));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .result-card .result-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #22d3ee 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .result-card .result-label {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+    .setting-btn {
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: center;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      color: #9ca3af;
+      flex: 1;
+    }
+    .setting-btn:hover {
+      background: rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.3);
+      color: #fff;
+    }
+    .setting-btn.active {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: #22d3ee;
+      color: #22d3ee;
+    }
+    .setting-group-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .drone-select-btn {
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 10px 14px;
+      text-align: left;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .drone-select-btn:hover {
+      background: rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.3);
+      transform: translateY(-1px);
+    }
+    .drone-select-btn.active {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: #22d3ee;
+    }
+    .tip-box {
+      border-radius: 12px;
+      padding: 16px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Drone Photography Settings Calculator — Best Settings for Aerial Shots (2026)",
+    "description": "Free interactive drone photography settings calculator that recommends optimal camera settings based on lighting conditions, shot type, and desired effect. Includes ND filter guide, exposure triangle explanation, and pro tips.",
+    "url": "https://powerspecshub.com/pages/tools/drone-photo-settings-calculator.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the best camera settings for drone photography?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best settings depend on the lighting conditions and what you are shooting. For sunny-day landscape photography: ISO 100, shutter speed 1/500–1/1000s, f/2.8–f/4, auto white balance or 5500K. For golden hour: ISO 100–200, shutter speed 1/60–1/200s, f/2.8, warmer white balance (4500–5500K). For night photography: ISO 800–3200, shutter speed 2–8 seconds (use tripod mode), f/2.8, manual white balance (3200–4000K for city lights). Always shoot in RAW format for maximum editing flexibility."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need ND filters for drone photography?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ND (neutral density) filters are extremely useful for drone photography and video. They reduce the amount of light entering the lens, allowing you to use slower shutter speeds for motion blur (cinematic look) or wider apertures for shallower depth of field in bright conditions. For photos, ND filters are less critical because you can usually just increase shutter speed, but they help when you want a specific creative effect like silky water or motion-blurred clouds. For video, ND filters are practically essential for maintaining the 180-degree shutter rule (shutter speed = double the frame rate). A set of ND8, ND16, ND32, and ND64 covers most conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What ISO should I use for drone photos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Always use the lowest native ISO your drone camera supports (usually ISO 100) for the best image quality and least noise. Only increase ISO when you cannot get a fast enough shutter speed at base ISO, such as in low light or at night. Modern drone cameras like the Mavic 3 handle ISO 400–800 very well, and ISO 1600 is usable in a pinch. Avoid ISO 3200+ unless absolutely necessary as noise becomes very noticeable. Shooting in RAW gives you more flexibility to clean up noise in post-production without losing detail."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best shutter speed for aerial photography?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For sharp drone photos, use a shutter speed fast enough to eliminate motion blur from the drone's movement and camera shake. A good rule of thumb is at least 1/500s for most shots, and 1/1000s or faster if you are flying fast or shooting in windy conditions. If your drone has a mechanical shutter (like the Mavic 3), you can use faster shutter speeds without rolling shutter issues. For video, follow the 180-degree rule: shutter speed should be roughly double your frame rate (e.g., 1/60s for 30fps, 1/50s for 24fps) for natural-looking motion blur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I shoot in RAW or JPEG with my drone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Always shoot in RAW (DNG format) if your drone supports it. RAW files contain much more image data than JPEG, giving you significantly more flexibility in post-processing. You can recover blown-out highlights, lift shadows without noise penalty, adjust white balance freely, and make much larger exposure corrections than with JPEG. The downside is that RAW files take more storage space and require editing. If you need quick shareable photos straight from the drone, shoot RAW+JPEG so you get both. For professional or important work, RAW is non-negotiable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What white balance should I use for drone photography?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If shooting in RAW, you can safely use Auto White Balance (AWB) since you can easily adjust it later during editing. If shooting JPEG or video, set a custom white balance for the most accurate colors. Sunny day: 5200–5600K. Cloudy: 6000–6500K. Golden hour/sunset: 4500–5500K (slightly warm enhances the golden light). Night/city lights: 3200–4000K. For video, it is better to set a fixed white balance rather than auto so colors do not shift mid-shot. When in doubt, shoot RAW and you can fix white balance perfectly in post."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get sharp photos from my drone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To get consistently sharp drone photos: 1) Use a fast enough shutter speed (at least 1/500s, faster in wind). 2) Use the lowest ISO possible (ISO 100). 3) Shoot in manual mode for consistent results. 4) Use burst shooting and pick the sharpest frame — drones are moving even in GPS mode. 5) Stop down slightly if your lens is sharpest at f/4–f/5.6 rather than wide open. 6) Shoot at the optimal altitude and angle for your subject. 7) Use timer shooting or delay to eliminate shake from pressing the shutter. 8) For maximum sharpness, hover and let the drone stabilize before shooting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the best settings for golden hour drone photos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Golden hour (the hour after sunrise and before sunset) is the best time for drone photography. Recommended settings: ISO 100–200 (keep it low for quality), shutter speed 1/60–1/250s (slower because there is less light, but fast enough to avoid motion blur), aperture f/2.8–f/4 (wide open to let in light, or stop down slightly for more sharpness), white balance around 4800–5500K (slightly warm to enhance the golden glow, or use auto if shooting RAW), and shoot in RAW for maximum editing flexibility. Use a tripod or steady hover for the sharpest results. Bracket exposures if the scene has high dynamic range."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I take good night photos with a drone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Night drone photography is challenging but rewarding. Key tips: Use manual mode. Set ISO to 800–3200 (higher for more light, but watch for noise). Use the slowest shutter speed you can get away with — 2–8 seconds if your drone has tripod mode or is very stable. Keep aperture wide open (f/2.8). Shoot in RAW for noise reduction in post. Use a 2-second delay or timer to avoid shake. Lower the drone closer to your subject for less wind and better stability. If your drone has night mode or long exposure modes, use them. Avoid flying too high at night — you will get more wind and less stable footage. Always maintain visual line of sight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the 180-degree shutter rule for drone video?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 180-degree shutter rule states that your shutter speed should be approximately double your frame rate for natural-looking motion blur. For example: shooting 24fps? Use 1/50s shutter speed. Shooting 30fps? Use 1/60s. Shooting 60fps? Use 1/120s. This gives motion blur that looks natural to the human eye — not too choppy, not too blurry. On a bright sunny day, achieving slow shutter speeds requires ND filters to reduce the light entering the lens. This is why ND filters are essential for drone video. Without them, you are forced to use fast shutter speeds that result in jittery, unnatural-looking footage."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://powerspecshub.com/pages/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Drone Photo Settings Calculator"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Calculators &amp; Tools</p>
+              <a href="drone-flight-time-calculator.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Flight Time Calculator</a>
+              <a href="drone-battery-life-calculator.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Battery Life Calculator</a>
+              <a href="drone-photo-settings-calculator.html"><i data-lucide="camera" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Photo Settings Calculator</a>
+              <a href="power-station-runtime-calculator.html"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Runtime Calculator</a>
+              <a href="solar-panel-needs-calculator.html"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Solar Panel Calculator</a>
+              <a href="appliance-wattage-calculator.html"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Appliance Wattage Calculator</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <p class="nav-dropdown-section-label mt-2">Calculators</p>
+        <a href="drone-flight-time-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Flight Time Calculator</a>
+        <a href="drone-battery-life-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Battery Life Calculator</a>
+        <a href="drone-photo-settings-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="camera" style="width:1rem;height:1rem;color:#22d3ee"></i>Photo Settings Calculator</a>
+        <a href="power-station-runtime-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee"></i>Runtime Calculator</a>
+        <a href="solar-panel-needs-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee"></i>Solar Panel Calculator</a>
+        <a href="appliance-wattage-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>Appliance Wattage Calculator</a>
+        <a href="camping-power-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee"></i>Camping Power Calculator</a>
+        <a href="cpap-battery-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee"></i>CPAP Battery Calculator</a>
+        <a href="best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="#">Tools</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Drone Photo Settings Calculator</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-electric-500/20 text-electric-400 font-mono font-bold text-sm rounded-md border border-electric-500/30">CALCULATOR</div>
+        <span class="badge badge-info"><i data-lucide="camera" style="width:0.75rem;height:0.75rem"></i>Camera Settings</span>
+        <span class="badge badge-info"><i data-lucide="sun" style="width:0.75rem;height:0.75rem"></i>ND Filter Guide</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Drone Photography Settings Calculator &mdash; <span class="gradient-text">Best Settings for Aerial Shots</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Get perfectly exposed drone photos every time. Select your lighting conditions, shot type, and desired effect for instant camera setting recommendations — ISO, shutter speed, aperture, white balance, ND filter suggestions, and pro tips from aerial photographers.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="sun" style="width:0.9rem;height:0.9rem"></i>Lighting Modes</div>
+          <div class="font-mono font-bold text-xl text-white">6+ Scenarios</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="camera" style="width:0.9rem;height:0.9rem"></i>Shot Types</div>
+          <div class="font-mono font-bold text-xl text-electric-400">4 Categories</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="sliders" style="width:0.9rem;height:0.9rem"></i>ND Filters</div>
+          <div class="font-bold text-xl text-yellow-400">Recommended</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="sparkles" style="width:0.9rem;height:0.9rem"></i>Pro Tips</div>
+          <div class="font-bold text-xl text-green-400">Included</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-6 flex items-center gap-2"><i data-lucide="camera" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Photo Settings Calculator</h2>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Inputs -->
+        <div class="space-y-6">
+          <div>
+            <label class="setting-group-title flex items-center gap-2">
+              <i data-lucide="sun" style="width:1rem;height:1rem;color:#fbbf24"></i>
+              Lighting Condition
+            </label>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="setting-btn active" onclick="setLighting('sunny')" id="light-sunny">☀️ Sunny</button>
+              <button class="setting-btn" onclick="setLighting('cloudy')" id="light-cloudy">☁️ Cloudy</button>
+              <button class="setting-btn" onclick="setLighting('sunset')" id="light-sunset">🌅 Golden Hour</button>
+              <button class="setting-btn" onclick="setLighting('night')" id="light-night">🌙 Night</button>
+              <button class="setting-btn" onclick="setLighting('overcast')" id="light-overcast">🌧️ Overcast</button>
+              <button class="setting-btn" onclick="setLighting('snow')" id="light-snow">❄️ Snow</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="setting-group-title flex items-center gap-2">
+              <i data-lucide="frame" style="width:1rem;height:1rem;color:#22d3ee"></i>
+              Shot Type
+            </label>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="setting-btn active" onclick="setShotType('landscape')" id="shot-landscape">🏔️ Landscape</button>
+              <button class="setting-btn" onclick="setShotType('portrait')" id="shot-portrait">👤 Portrait</button>
+              <button class="setting-btn" onclick="setShotType('architecture')" id="shot-architecture">🏗️ Architecture</button>
+              <button class="setting-btn" onclick="setShotType('action')" id="shot-action">⚡ Action</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="setting-group-title flex items-center gap-2">
+              <i data-lucide="wand-2" style="width:1rem;height:1rem;color:#a855f7"></i>
+              Desired Effect
+            </label>
+            <div class="grid grid-cols-3 gap-2">
+              <button class="setting-btn active" onclick="setEffect('sharp')" id="effect-sharp">Sharp</button>
+              <button class="setting-btn" onclick="setEffect('cinematic')" id="effect-cinematic">Cinematic</button>
+              <button class="setting-btn" onclick="setEffect('blur')" id="effect-blur">Bokeh</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="setting-group-title flex items-center gap-2">
+              <i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>
+              Drone Model
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <button class="drone-select-btn" onclick="setDroneModel('mini5pro')" id="drone-mini5pro">
+                <div class="text-white font-medium text-sm">Mini 5/4 Pro</div>
+                <div class="text-xs text-gray-500 font-mono">1/1.3" sensor</div>
+              </button>
+              <button class="drone-select-btn active" onclick="setDroneModel('mavic3')" id="drone-mavic3">
+                <div class="text-white font-medium text-sm">Mavic 3</div>
+                <div class="text-xs text-gray-500 font-mono">4/3 CMOS</div>
+              </button>
+              <button class="drone-select-btn" onclick="setDroneModel('air3')" id="drone-air3">
+                <div class="text-white font-medium text-sm">Air 3</div>
+                <div class="text-xs text-gray-500 font-mono">1/1.3" dual</div>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label class="setting-group-title flex items-center gap-2">
+              <i data-lucide="film" style="width:1rem;height:1rem;color:#f472b6"></i>
+              Photo or Video?
+            </label>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="setting-btn active" onclick="setMode('photo')" id="mode-photo">📷 Photo</button>
+              <button class="setting-btn" onclick="setMode('video')" id="mode-video">🎬 Video</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="space-y-4">
+          <div class="grid grid-cols-2 gap-3">
+            <div class="result-card">
+              <div class="result-value" id="isoValue">100</div>
+              <div class="result-label">ISO</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value" id="shutterValue">1/800s</div>
+              <div class="result-label">Shutter Speed</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="result-card">
+              <div class="result-value" id="apertureValue">f/4</div>
+              <div class="result-label">Aperture</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value" id="wbValue">5500K</div>
+              <div class="result-label">White Balance</div>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-value text-2xl" id="ndValue">ND8 (Recommended)</div>
+            <div class="result-label">ND Filter Suggestion</div>
+          </div>
+
+          <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+              <i data-lucide="camera" style="width:1rem;height:1rem;color:#22d3ee"></i>
+              Shooting Mode
+            </h4>
+            <p class="text-sm text-gray-300 leading-relaxed" id="shootingMode">
+              Manual Mode (M) — Full control for consistent results. Shoot in RAW (DNG) for maximum editing flexibility.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-purple-950/30 to-electric-950/30 border border-purple-500/20 rounded-xl p-5">
+            <h4 class="font-semibold text-purple-400 mb-2 flex items-center gap-2">
+              <i data-lucide="sparkles" style="width:1rem;height:1rem"></i>
+              Pro Tip
+            </h4>
+            <p class="text-sm text-gray-300 leading-relaxed" id="proTip">
+              Use a 2-second delay timer when shooting in wind to eliminate camera shake from pressing the shutter button. Shoot in burst mode and pick the sharpest frame.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">How to Use This Settings Calculator</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="space-y-5">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Select the Lighting Condition</h4>
+            <p class="text-sm text-gray-400">Choose the option that best matches the current lighting conditions where you are flying. Sunny for bright clear days, cloudy for partial cloud cover, golden hour for sunrise/sunset, night for low-light and astrophotography, overcast for heavy cloud cover and flat light, and snow for bright snowy conditions where you need extra exposure compensation. If conditions are in between (like partly cloudy), pick the brighter option — it is easier to darken an image in post than to recover noise from underexposure.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Choose Your Shot Type</h4>
+            <p class="text-sm text-gray-400">Select what you are primarily photographing. Landscape mode is optimized for wide scenic shots with maximum depth of field. Portrait mode optimizes for people and softer backgrounds. Architecture mode prioritizes sharpness and straight lines. Action mode uses the fastest shutter speeds to freeze motion. Your shot type helps determine the optimal aperture and shutter speed combination — for example, landscapes need more depth of field (smaller aperture) while action shots need fast shutter speeds.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Pick Your Desired Effect</h4>
+            <p class="text-sm text-gray-400">Choose the creative look you want to achieve. "Sharp" maximizes detail and crispness — great for landscape and architecture. "Cinematic" adds subtle motion blur and a more film-like appearance — perfect for video and cinematic stills. "Bokeh" (blur background) uses the widest aperture to isolate your subject with a soft, blurred background — ideal for portraits and close-up details. The effect you choose will influence aperture recommendations and ND filter suggestions.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Select Your Drone Model</h4>
+            <p class="text-sm text-gray-400">Choose your drone model so the recommendations match your camera's capabilities. Different drones have different sensor sizes, lens apertures, ISO ranges, and features. A full-frame or 4/3 sensor (like the Mavic 3) performs much better at high ISO than a smaller 1/1.3" sensor (Mini series). Some drones have variable aperture while others are fixed. We currently support DJI Mini 4/5 Pro, Mavic 3 series, and Air 3 — the most popular photography drones on the market.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Choose Photo or Video Mode</h4>
+            <p class="text-sm text-gray-400">Toggle between photo and video mode. Settings for still photography prioritize sharpness, low ISO, and depth of field. Video mode follows the 180-degree shutter rule for natural motion blur and will recommend ND filters to achieve proper shutter speed in bright conditions. For video, the ND filter recommendation is particularly important — without it, you will be forced to use very fast shutter speeds that result in choppy, unnatural-looking footage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Why Camera Settings Matter for Drone Photography</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Modern drone cameras are incredibly capable, but they are still limited by physics and sensor size. Getting the best possible image quality requires understanding how to optimize your camera settings for the conditions. Auto mode works fine for casual snapshots, but if you want professional-quality aerial photos, you need to take control.
+      </p>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Learning to use manual settings helps you:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Get Consistent Results
+          </h4>
+          <p class="text-sm text-gray-400">Auto mode constantly changes exposure between shots, making it hard to edit a batch of photos consistently. Manual mode gives you the same exposure across your entire shoot.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Maximize Image Quality
+          </h4>
+          <p class="text-sm text-gray-400">Auto mode might choose ISO 400 when ISO 100 would work perfectly. By controlling settings manually, you always use the optimal settings for the best quality.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Achieve Creative Vision
+          </h4>
+          <p class="text-sm text-gray-400">Want silky waterfall blur? Motion-blurred clouds? Shallow depth of field? These creative effects require specific manual settings — auto mode will never give them to you.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Handle Tricky Lighting
+          </h4>
+          <p class="text-sm text-gray-400">High-contrast scenes, sunsets, backlit subjects, and snow scenes often fool auto exposure. Manual mode lets you get exactly the exposure you want regardless of the scene.</p>
+        </div>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-2">
+        The good news is that drone photography settings are simpler than regular photography because you are typically shooting from above with lots of light. Once you learn the basics, you will find yourself using the same starting settings for 80% of your shots and only making minor adjustments. And our calculator gives you a perfect starting point for any condition.
+      </p>
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="lightbulb" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Pro tip:</strong> Always shoot in RAW (DNG) format. RAW files contain 2–4 stops more dynamic range than JPEG, meaning you can recover blown-out skies and lift shadows without introducing noise. The difference in editing flexibility is enormous. If storage space is a concern, most drones let you shoot RAW+JPEG so you get the best of both worlds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPOSURE TRIANGLE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">The Exposure Triangle for Drones</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        Understanding exposure is the foundation of great photography. The "exposure triangle" refers to the three settings that control how bright or dark your photo is: ISO, shutter speed, and aperture. Changing one affects the others — there is always a tradeoff. Here is how it applies specifically to drone photography.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-3">
+            <i data-lucide="sun" style="width:1.5rem;height:1.5rem;color:#f87171"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">ISO</h3>
+          <p class="text-sm text-gray-400 mb-3">Controls the sensor's sensitivity to light.</p>
+          <ul class="space-y-1.5 text-xs text-gray-400">
+            <li><span class="text-green-400">Low (100–200):</span> Best quality, least noise</li>
+            <li><span class="text-yellow-400">Medium (400–800):</span> Good quality, usable noise</li>
+            <li><span class="text-red-400">High (1600+):</span> Noisy, reduced detail</li>
+          </ul>
+          <p class="text-xs text-gray-500 mt-3"><strong>Drone tip:</strong> Always keep ISO at the lowest setting possible (usually 100) for daytime photos. Only increase ISO when you have to.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-3">
+            <i data-lucide="timer" style="width:1.5rem;height:1.5rem;color:#60a5fa"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">Shutter Speed</h3>
+          <p class="text-sm text-gray-400 mb-3">How long the sensor is exposed to light.</p>
+          <ul class="space-y-1.5 text-xs text-gray-400">
+            <li><span class="text-green-400">Fast (1/500s+):</span> Freezes action, sharp photos</li>
+            <li><span class="text-yellow-400">Medium (1/60–1/250s):</span> Some motion blur</li>
+            <li><span class="text-red-400">Slow (1/30s or slower):</span> Blur from drone movement</li>
+          </ul>
+          <p class="text-xs text-gray-500 mt-3"><strong>Drone tip:</strong> Use at least 1/500s for sharp stills. For video, use the 180° rule (shutter = 2× framerate).</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+          <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-3">
+            <i data-lucide="aperture" style="width:1.5rem;height:1.5rem;color:#c084fc"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">Aperture</h3>
+          <p class="text-sm text-gray-400 mb-3">Size of the lens opening (f-stop).</p>
+          <ul class="space-y-1.5 text-xs text-gray-400">
+            <li><span class="text-green-400">Wide (f/2.8):</span> More light, shallow DOF</li>
+            <li><span class="text-yellow-400">Medium (f/4–f/5.6):</span> Balanced sharpness</li>
+            <li><span class="text-red-400">Narrow (f/8+):</span> More DOF, diffraction softness</li>
+          </ul>
+          <p class="text-xs text-gray-500 mt-3"><strong>Drone tip:</strong> Most drone lenses are sharpest around f/4–f/5.6. Wide open (f/2.8) can be softer in the corners.</p>
+        </div>
+      </div>
+
+      <h3 class="font-bold text-xl mb-3 text-white">How They Work Together</h3>
+      <p class="text-gray-400 text-sm leading-relaxed mb-4">
+        Imagine a seesaw: if you increase one setting, you need to decrease another to maintain the same exposure. For example, if you increase shutter speed from 1/500s to 1/1000s (letting in half the light), you could compensate by opening up the aperture from f/4 to f/2.8 (doubling the light), or by doubling ISO from 100 to 200. The combination you choose depends on what is most important for your shot.
+      </p>
+      <p class="text-gray-400 text-sm leading-relaxed mb-2">
+        For drone photography, the typical priority order is: 1) Keep ISO as low as possible for quality, 2) Use a shutter speed fast enough for sharpness, 3) Use aperture to fine-tune exposure and creative control. If you cannot get a fast enough shutter speed at base ISO, first open up the aperture, then increase ISO only as a last resort. ND filters let you use slower shutter speeds or wider apertures in bright light without overexposing.
+      </p>
+    </div>
+  </section>
+
+  <!-- ND FILTER GUIDE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Complete ND Filter Guide for Drones</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        ND (neutral density) filters are one of the most useful accessories for drone photography and videography. Think of them like sunglasses for your drone's camera — they reduce the amount of light entering the lens without affecting color. This allows you to use creative settings that would normally overexpose the image in bright conditions.
+      </p>
+
+      <h3 class="font-bold text-xl mb-3 text-white">What ND Filter Strength Do You Need?</h3>
+      <div class="overflow-x-auto mb-5">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Filter</th><th>Light Reduction</th><th>Stops</th><th>Best For</th><th>Conditions</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>ND4</strong></td><td>1/4 (25%)</td><td>2 stops</td><td>Photo: slight aperture control</td><td>Cloudy/overcast days</td></tr>
+            <tr><td><strong>ND8</strong></td><td>1/8 (12.5%)</td><td>3 stops</td><td>Video: 24/30fps on cloudy</td><td>Cloudy to partly sunny</td></tr>
+            <tr><td><strong>ND16</strong></td><td>1/16 (6.25%)</td><td>4 stops</td><td>Video: 24/30fps sunny days</td><td>Bright sunny days</td></tr>
+            <tr><td><strong>ND32</strong></td><td>1/32 (3.1%)</td><td>5 stops</td><td>Video: 60fps / snow / beach</td><td>Very bright, snow, water</td></tr>
+            <tr><td><strong>ND64</strong></td><td>1/64 (1.5%)</td><td>6 stops</td><td>Photo: long exposure, motion blur</td><td>Extremely bright conditions</td></tr>
+            <tr><td><strong>ND1000</strong></td><td>1/1000 (0.1%)</td><td>10 stops</td><td>Photo: ultra-long exposure</td><td>Daytime long exposures</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-bold text-xl mb-3 text-white">ND Filters for Video: The 180-Degree Rule</h3>
+      <p class="text-gray-400 text-sm leading-relaxed mb-4">
+        For cinematic video, the 180-degree shutter rule says your shutter speed should be approximately double your frame rate. This gives the most natural-looking motion blur, similar to what we see in movies. The problem: on a bright sunny day, even at ISO 100 and f/8, you might need a shutter speed of 1/2000s or faster for proper exposure — way too fast for cinematic video.
+      </p>
+      <p class="text-gray-400 text-sm leading-relaxed mb-4">
+        ND filters solve this by reducing the light so you can use the correct shutter speed. For example: shooting 30fps video on a sunny day? You want 1/60s shutter speed. At ISO 100 and f/4, you might need an ND16 or ND32 filter to get down to 1/60s without overexposing.
+      </p>
+
+      <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5 mb-5">
+        <h4 class="font-semibold text-electric-400 mb-2">Quick ND Filter Guide for Video</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li>• <strong>24fps / 30fps video, sunny day:</strong> ND16 – ND32</li>
+          <li>• <strong>24fps / 30fps video, cloudy day:</strong> ND4 – ND8</li>
+          <li>• <strong>60fps video, sunny day:</strong> ND32 – ND64</li>
+          <li>• <strong>60fps video, cloudy day:</strong> ND8 – ND16</li>
+          <li>• <strong>120fps slow motion:</strong> ND64 – ND128 (bright conditions)</li>
+        </ul>
+      </div>
+
+      <h3 class="font-bold text-xl mb-3 text-white">ND Filters for Photography</h3>
+      <p class="text-gray-400 text-sm leading-relaxed mb-4">
+        ND filters are less essential for still photography because you can usually just use a faster shutter speed. But they are valuable for specific creative effects:
+      </p>
+      <ul class="space-y-2 mb-4 text-sm text-gray-400">
+        <li class="flex items-start gap-2">
+          <span class="text-electric-400 font-semibold flex-shrink-0">→</span>
+          <span><strong>Motion-blurred clouds:</strong> Use ND64 or ND1000 with a slow shutter speed to blur moving clouds for a dramatic, dreamy effect.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-electric-400 font-semibold flex-shrink-0">→</span>
+          <span><strong>Silky water:</strong> Shooting a waterfall or river from above? An ND filter lets you use a 1–5 second exposure to make the water look silky smooth.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-electric-400 font-semibold flex-shrink-0">→</span>
+          <span><strong>Wide-aperture bokeh:</strong> Want to shoot wide open (f/2.8) for shallow depth of field on a bright day? Use an ND filter to reduce light so you do not overexpose.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-electric-400 font-semibold flex-shrink-0">→</span>
+          <span><strong>Removing people/cars:</strong> A long exposure with a strong ND filter can make moving people or cars disappear from the frame — great for clean architectural shots.</span>
+        </li>
+      </ul>
+
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Buying advice:</strong> If you are just starting, get a set of ND8, ND16, and ND32. These three cover 90% of common video and photo situations. Look for high-quality filters with multi-coated glass — cheap filters can reduce image sharpness and cause color casts. PolarPro and Freewell make excellent drone filter kits. Consider getting a CPL (circular polarizer) filter as well — it reduces glare from water and buildings and makes skies bluer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOLDEN HOUR / NIGHT / PANORAMA -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Special Shooting Scenarios</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="space-y-6">
+        <div class="pb-6 border-b border-white/10">
+          <h3 class="font-bold text-2xl mb-3 text-white flex items-center gap-3">
+            <i data-lucide="sunset" style="width:1.5rem;height:1.5rem;color:#fbbf24"></i>
+            Golden Hour Settings
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-3">
+            Golden hour — the first hour after sunrise and the last hour before sunset — is universally considered the best time for drone photography. The warm, soft light adds depth and dimension to your shots, and long shadows create texture and interest from above. Here are our recommended settings for golden hour aerial photography.
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+              <h4 class="font-semibold text-yellow-400 mb-2">📷 Golden Hour Photo Settings</h4>
+              <ul class="space-y-1.5 text-sm text-gray-400 font-mono">
+                <li>ISO: 100–200</li>
+                <li>Shutter: 1/60s – 1/250s</li>
+                <li>Aperture: f/2.8 – f/5.6</li>
+                <li>WB: 4800–5500K (warm)</li>
+                <li>Format: RAW (DNG)</li>
+              </ul>
+            </div>
+            <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+              <h4 class="font-semibold text-electric-400 mb-2">💡 Golden Hour Pro Tips</h4>
+              <ul class="space-y-1.5 text-sm text-gray-400">
+                <li>• Plan your flight timing carefully</li>
+                <li>• Shoot with the sun at your back</li>
+                <li>• Bracket exposures for HDR</li>
+                <li>• Use longer shadows for dramatic composition</li>
+                <li>• Try both low and high angles</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="pb-6 border-b border-white/10">
+          <h3 class="font-bold text-2xl mb-3 text-white flex items-center gap-3">
+            <i data-lucide="moon" style="width:1.5rem;height:1.5rem;color:#818cf8"></i>
+            Night Photography Tips
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-3">
+            Night drone photography is challenging but can produce stunning results. City lights, starry skies, and illuminated landscapes look incredible from above. However, low light means you must deal with high ISO noise and slow shutter speeds — and drones are not as stable as tripods. Here is how to get the best night shots.
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+              <h4 class="font-semibold text-blue-400 mb-2">🌙 Night Photo Settings</h4>
+              <ul class="space-y-1.5 text-sm text-gray-400 font-mono">
+                <li>ISO: 800–3200 (camera dependent)</li>
+                <li>Shutter: 2–8 seconds</li>
+                <li>Aperture: f/2.8 (wide open)</li>
+                <li>WB: 3200–4000K</li>
+                <li>Mode: Manual / Tripod Mode</li>
+              </ul>
+            </div>
+            <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+              <h4 class="font-semibold text-purple-400 mb-2">✨ Night Photography Tips</h4>
+              <ul class="space-y-1.5 text-sm text-gray-400">
+                <li>• Use tripod mode if available</li>
+                <li>• Fly lower for less wind &amp; stability</li>
+                <li>• Use 2s timer to eliminate shake</li>
+                <li>• Shoot RAW for noise reduction</li>
+                <li>• Maintain visual line of sight always</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-2xl mb-3 text-white flex items-center gap-3">
+            <i data-lucide="panorama" style="width:1.5rem;height:1.5rem;color:#4ade80"></i>
+            Panorama Settings &amp; Tips
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-3">
+            Drones are perfect for panoramic photography because you can capture sweeping vistas from a unique aerial perspective. Most modern DJI drones have an automatic panorama mode (180°, wide, or 360°), but you can also shoot manual panoramas for maximum quality and control.
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+              <h4 class="font-semibold text-green-400 mb-2">🏔️ Panorama Settings</h4>
+              <ul class="space-y-1.5 text-sm text-gray-400 font-mono">
+                <li>ISO: 100 (consistent exposure)</li>
+                <li>Mode: Manual (locked exposure)</li>
+                <li>Format: RAW (best for stitching)</li>
+                <li>Overlap: 30–50% between shots</li>
+                <li>White balance: Manual (locked)</li>
+              </ul>
+            </div>
+            <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+              <h4 class="font-semibold text-yellow-400 mb-2">🎯 Panorama Pro Tips</h4>
+              <ul class="space-y-1.5 text-sm text-gray-400">
+                <li>• Shoot in manual for even exposure</li>
+                <li>• Hover steadily between shots</li>
+                <li>• Use plenty of overlap for easier stitching</li>
+                <li>• Shoot vertically for taller panoramas</li>
+                <li>• Post-process: Lightroom, PTGui, or Photoshop</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMON MISTAKES -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Common Drone Photography Mistakes (and How to Fix Them)</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        Even experienced drone photographers make these mistakes. Learning to avoid them will immediately improve the quality of your aerial photos.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-red-400 mb-2">❌ Always Shooting Straight Down</h4>
+          <p class="text-sm text-gray-400">The top-down "bird's eye view" is cool but gets repetitive. Mix it up with different angles: 45° oblique shots, low-angle shots that show height, and eye-level shots for intimacy. The most dramatic drone photos are often shot at 30–60° angles, not straight down.</p>
+          <p class="text-xs text-green-400 mt-2">✅ <strong>Fix:</strong> Try different camera angles — 0°, 30°, 45°, 90° — and see what works best for your subject.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-red-400 mb-2">❌ Shooting JPEG Only</h4>
+          <p class="text-sm text-gray-400">JPEG files are convenient, but they throw away massive amounts of image data. If your exposure is off or the white balance is wrong, you have very little room to fix it in editing. RAW files give you 2–4 stops more dynamic range and complete white balance control.</p>
+          <p class="text-xs text-green-400 mt-2">✅ <strong>Fix:</strong> Always shoot in RAW. If you need quick shares, use RAW+JPEG mode.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-red-400 mb-2">❌ Too High, Too Far</h4>
+          <p class="text-sm text-gray-400">Many new pilots fly at 400 feet for every shot. But the most interesting drone photos are often shot at 50–150 feet, where you can see details and the sense of height is more dramatic. Flying too high makes everything look small and flat.</p>
+          <p class="text-xs text-green-400 mt-2">✅ <strong>Fix:</strong> Vary your altitude. Try low, medium, and high shots of the same subject and compare.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-red-400 mb-2">❌ No Composition or Story</h4>
+          <p class="text-sm text-gray-400">Just because you can fly anywhere does not mean every angle makes a good photo. Apply the same composition rules you would use with a regular camera: rule of thirds, leading lines, framing, symmetry, and a clear subject or focal point.</p>
+          <p class="text-xs text-green-400 mt-2">✅ <strong>Fix:</strong> Before pressing the shutter, ask: "What is my subject, and what is the story?"</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-red-400 mb-2">❌ Ignoring Light Quality</h4>
+          <p class="text-sm text-gray-400">Harsh midday sun creates flat, high-contrast aerial photos with deep shadows and blown highlights. The best light is golden hour (sunrise/sunset) and the soft, even light of overcast days. Plan your flights around the best light.</p>
+          <p class="text-xs text-green-400 mt-2">✅ <strong>Fix:</strong> Wake up early or fly late. Golden hour is worth it — your photos will improve dramatically.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-red-400 mb-2">❌ Not Bracketing Exposures</h4>
+          <p class="text-sm text-gray-400">Aerial scenes often have huge dynamic range between bright sky and dark ground. One exposure is rarely enough to capture both. Bracketing (shooting multiple exposures at different brightness levels) lets you create HDR images with detail in both shadows and highlights.</p>
+          <p class="text-xs text-green-400 mt-2">✅ <strong>Fix:</strong> Use AEB (Auto Exposure Bracketing) at ±2 or ±3 stops and merge in post.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about drone photography settings and techniques.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What are the best camera settings for drone photography?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          The best settings depend on the lighting conditions and what you are shooting. For sunny-day landscape photography: ISO 100, shutter speed 1/500–1/1000s, f/2.8–f/4, auto white balance or 5500K, and shoot in RAW. For golden hour: ISO 100–200, shutter speed 1/60–1/200s, f/2.8, warmer white balance (4500–5500K) to enhance the golden glow. For night photography: ISO 800–3200, shutter speed 2–8 seconds (use tripod mode if available), f/2.8 wide open, manual white balance around 3200–4000K for city lights. Always shoot in RAW format for maximum editing flexibility and dynamic range.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Do I need ND filters for drone photography?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          ND (neutral density) filters are extremely useful for drone video and certain types of still photography. They reduce the amount of light entering the lens, allowing you to use slower shutter speeds for motion blur (cinematic look) or wider apertures for shallower depth of field in bright conditions. For still photos, ND filters are less critical because you can usually just increase shutter speed instead. However, they are essential for creative effects like silky waterfalls, motion-blurred clouds, or ultra-long exposures. For video, ND filters are practically mandatory for maintaining the 180-degree shutter rule. A set of ND8, ND16, ND32, and ND64 covers most conditions.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What ISO should I use for drone photos?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Always use the lowest native ISO your drone camera supports (usually ISO 100) for the best image quality and least noise. Only increase ISO when you cannot get a fast enough shutter speed at base ISO, such as in low light, at night, or when you need a specific aperture/shutter combination. Modern drone cameras like the Mavic 3 handle ISO 400–800 very well, and ISO 1600 is usable in a pinch. Avoid ISO 3200+ unless absolutely necessary as noise becomes very noticeable and detail is lost. Shooting in RAW gives you significantly more flexibility to clean up noise in post-production without losing image detail.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is the best shutter speed for aerial photography?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          For sharp drone photos, use a shutter speed fast enough to eliminate motion blur from the drone's movement, wind vibration, and camera shake. A good rule of thumb is at least 1/500s for most shots, and 1/1000s or faster if you are flying fast, shooting in windy conditions, or need maximum sharpness. If your drone has a mechanical shutter (like the Mavic 3), you can use very fast shutter speeds without rolling shutter distortion. For video, follow the 180-degree rule: shutter speed should be roughly double your frame rate (e.g., 1/60s for 30fps, 1/50s for 24fps) for natural-looking motion blur. ND filters are usually needed to achieve these slow shutter speeds in bright daylight.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Should I shoot in RAW or JPEG with my drone?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Always shoot in RAW (DNG format) if your drone supports it. RAW files contain much more image data than JPEG, giving you significantly more flexibility in post-processing. You can recover blown-out highlights, lift shadows without noise penalty, adjust white balance freely without quality loss, and make much larger exposure corrections than with JPEG. RAW files are also 10-bit or 12-bit compared to 8-bit JPEG, meaning way more color data for smoother gradients and better color grading. The downsides are that RAW files take more storage space (2–3x more) and require editing before sharing. If you need quick shareable photos straight from the drone, shoot RAW+JPEG so you get both. For professional or important work, RAW is non-negotiable.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What white balance should I use for drone photography?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          If shooting in RAW, you can safely use Auto White Balance (AWB) since you can easily and perfectly adjust it later during editing with zero quality loss. If shooting JPEG or video, set a custom white balance for the most accurate colors across all shots. Common settings: Sunny day = 5200–5600K, Cloudy = 6000–6500K (warmer to compensate for cool light), Golden hour/sunset = 4500–5500K (slightly warm enhances the golden light — some photographers even go higher for more warmth), Night/city lights = 3200–4000K. For video, it is much better to set a fixed white balance rather than auto so colors do not shift mid-shot as the camera pans across different colored surfaces.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I get sharp photos from my drone?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          To get consistently sharp drone photos: 1) Use a fast enough shutter speed — at least 1/500s for stills, faster in wind. 2) Use the lowest ISO possible (ISO 100) for clean detail. 3) Shoot in manual mode for consistent results. 4) Use burst shooting (5–10 frames) and pick the sharpest frame — drones are constantly moving even in GPS mode, and one frame will always be sharper than the rest. 5) Stop down slightly if your lens is sharpest at f/4–f/5.6 rather than wide open (test your lens to find its sweet spot). 6) Shoot at the optimal altitude and angle for your subject. 7) Use the 2-second timer shooting delay to eliminate shake from pressing the shutter button. 8) For maximum sharpness, hover in place and let the drone fully stabilize before shooting.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What are the best settings for golden hour drone photos?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Golden hour (the first hour after sunrise and last hour before sunset) is the best time for drone photography. Recommended settings: ISO 100–200 (keep it low for maximum quality), shutter speed 1/60–1/250s (slower because there is less light, but still fast enough to avoid motion blur), aperture f/2.8–f/4 (wide open to let in light, or stop down slightly for more edge-to-edge sharpness), white balance around 4800–5500K (slightly warm to enhance the golden glow, or use auto if shooting RAW), and always shoot in RAW for maximum editing flexibility. Use a steady hover or tripod mode for the sharpest results. Bracket exposures (AEB ±2 stops) if the scene has high dynamic range between bright sky and dark foreground.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I take good night photos with a drone?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Night drone photography is challenging but very rewarding. Key tips: Use manual mode with full control. Set ISO to 800–3200 (higher for more light, but watch for noise — the Mavic 3 handles high ISO much better than Mini series). Use the slowest shutter speed you can get away with — 2–8 seconds if your drone has tripod mode or is very stable in calm conditions. Keep aperture wide open (f/2.8) to maximize light gathering. Shoot in RAW so you can reduce noise in post-production without losing detail. Use a 2-second delay or self-timer to avoid shake from pressing the shutter. Lower the drone closer to your subject for less wind and better stability. If your drone has dedicated night mode or long exposure modes, use them. Avoid flying too high at night — you will encounter more wind and less stability. Always maintain visual line of sight per regulations.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is the 180-degree shutter rule for drone video?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          The 180-degree shutter rule states that your shutter speed should be approximately double your frame rate for natural-looking motion blur — the same as a 180-degree shutter angle on a film camera. For example: shooting 24fps? Use 1/50s shutter speed. Shooting 30fps? Use 1/60s. Shooting 60fps? Use 1/120s. This amount of motion blur looks most natural to the human eye — not too choppy/strobing, not too blurry. On a bright sunny day, achieving these slow shutter speeds requires ND filters to reduce the light entering the lens without overexposing. This is precisely why ND filters are considered essential for drone video — without them, you are forced to use very fast shutter speeds that result in jittery, unnatural-looking footage with harsh, strobing motion.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Drone Tools &amp; Guides</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="drone-flight-time-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Flight Time</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Flight Time Calculator</h3>
+        <p class="text-sm text-gray-400">Calculate how long your drone will fly based on battery capacity, weight, wind speed, and flight mode. Includes DJI presets.</p>
+      </a>
+      <a href="drone-battery-life-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Battery Health</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Battery Life Calculator</h3>
+        <p class="text-sm text-gray-400">Estimate remaining battery cycles, months of use, and health percentage. Personalized for your usage and storage habits.</p>
+      </a>
+      <a href="../specs/drones.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">GUIDE</div>
+          <span class="badge badge-info">All Models</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Comparison Guide</h3>
+        <p class="text-sm text-gray-400">Compare all major drone models side by side — camera specs, sensors, flight time, range, weight, price, and more.</p>
+      </a>
+      <a href="../specs/dji-mini-5-pro.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">REVIEW</div>
+          <span class="badge badge-info">Under 250g</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Mini 5 Pro Specs</h3>
+        <p class="text-sm text-gray-400">Full specifications for the DJI Mini 5 Pro, including camera sensor details, video capabilities, flight performance, and battery life.</p>
+      </a>
+      <a href="../specs/dji-gimbal-not-working-stuck.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">FIX</div>
+          <span class="badge badge-info">Gimbal</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Gimbal Troubleshooting</h3>
+        <p class="text-sm text-gray-400">Step-by-step guide to fixing stuck gimbals, calibration errors, and camera issues on DJI drones.</p>
+      </a>
+      <a href="../specs/how-to-calibrate-dji-drone-imu-compass.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">TUTORIAL</div>
+          <span class="badge badge-info">Calibration</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">IMU &amp; Compass Calibration Guide</h3>
+        <p class="text-sm text-gray-400">Learn how to properly calibrate your DJI drone's IMU and compass for stable flight and accurate positioning.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentLighting = 'sunny';
+    let currentShotType = 'landscape';
+    let currentEffect = 'sharp';
+    let currentDrone = 'mavic3';
+    let currentMode = 'photo';
+
+    const settings = {
+      sunny: {
+        landscape: {
+          sharp: { iso: '100', shutter: '1/1000s', aperture: 'f/5.6', wb: '5500K', nd: 'None needed', mode: 'Manual (M) — RAW for best dynamic range.', tip: 'Use AEB bracketing (±2 stops) to handle high contrast between sky and ground. Shoot at golden hour for better light.' },
+          cinematic: { iso: '100', shutter: '1/120s', aperture: 'f/4', wb: '5500K', nd: 'ND16 – ND32', mode: 'Manual (M) — Use ND filter for cinematic motion blur.', tip: 'Use ND16 or ND32 to get 1/60–1/120s shutter for cinematic feel. Shoot RAW for color grading.' },
+          blur: { iso: '100', shutter: '1/4000s+', aperture: 'f/2.8', wb: '5500K', nd: 'ND8 (if needed)', mode: 'Aperture Priority or Manual — wide open for shallow DOF.', tip: 'Shoot wide open and get close to your subject for maximum background blur. Drones have deep DOF from far away.' }
+        },
+        portrait: {
+          sharp: { iso: '100', shutter: '1/800s', aperture: 'f/4', wb: '5500K', nd: 'None needed', mode: 'Manual (M) — Focus on the subject\'s eyes.', tip: 'Get close, use the tele lens if available. Shoot from slightly above for flattering angles.' },
+          cinematic: { iso: '100', shutter: '1/60s', aperture: 'f/4', wb: '5200K', nd: 'ND32', mode: 'Manual (M) — ND filter essential for slow shutter.', tip: 'Use ND32 for 1/60s at 30fps. Golden hour light is perfect for drone portraits.' },
+          blur: { iso: '100', shutter: '1/2000s', aperture: 'f/2.8', wb: '5500K', nd: 'ND4 – ND8', mode: 'Manual (M) — Wide open for creamy bokeh.', tip: 'Fly close to your subject and use wide aperture. The telephoto lens on Air 3 or Mavic 3 works best for bokeh.' }
+        },
+        architecture: {
+          sharp: { iso: '100', shutter: '1/500s', aperture: 'f/5.6', wb: '5500K', nd: 'None needed', mode: 'Manual (M) — Stop down for max sharpness.', tip: 'Stop down to f/5.6 for edge-to-edge sharpness. Shoot in RAW for perspective correction in post.' },
+          cinematic: { iso: '100', shutter: '1/60s', aperture: 'f/4', wb: '5500K', nd: 'ND32', mode: 'Manual (M) — Slow shutter for motion.', tip: 'Slow shutter speed with ND filter can show movement of clouds/people for dramatic effect.' },
+          blur: { iso: '100', shutter: '1/2000s', aperture: 'f/2.8', wb: '5500K', nd: 'ND4', mode: 'Manual (M) — Wide open for detail shots.', tip: 'For architectural details, get close and shoot wide open. Full building shots need deep DOF though.' }
+        },
+        action: {
+          sharp: { iso: '100 – 200', shutter: '1/2000s+', aperture: 'f/2.8', wb: '5500K', nd: 'None needed', mode: 'Shutter Priority or Manual — Fast shutter freezes action.', tip: 'Use the fastest shutter speed you can. Burst mode helps capture the peak moment. Sport mode for maneuverability.' },
+          cinematic: { iso: '100', shutter: '1/120s', aperture: 'f/4', wb: '5500K', nd: 'ND16', mode: 'Manual (M) — Balanced motion blur for action.', tip: '1/120s at 60fps gives smooth cinematic action. Track with the subject for best results.' },
+          blur: { iso: '100', shutter: '1/30s', aperture: 'f/5.6', wb: '5500K', nd: 'ND64', mode: 'Manual (M) — Slow shutter for motion blur trails.', tip: 'Motion blur on moving subjects looks great from above. Use ND64 for slow shutter in bright sun.' }
+        }
+      },
+      cloudy: {
+        landscape: {
+          sharp: { iso: '100', shutter: '1/320s', aperture: 'f/4', wb: '6000K', nd: 'None needed', mode: 'Manual (M) — Even light is great for detail.', tip: 'Cloudy light is soft and even — perfect for landscape detail. White balance slightly warmer to compensate.' },
+          cinematic: { iso: '100', shutter: '1/60s', aperture: 'f/4', wb: '6000K', nd: 'ND8', mode: 'Manual (M) — Less ND needed than sunny.', tip: 'ND8 is usually enough for cinematic shutter on cloudy days. Soft light is very flattering.' },
+          blur: { iso: '100', shutter: '1/1000s', aperture: 'f/2.8', wb: '6000K', nd: 'None needed', mode: 'Manual (M) — Wide open works great.', tip: 'Overcast light lets you shoot wide open without shutter speed being too fast. Perfect for bokeh.' }
+        },
+        portrait: {
+          sharp: { iso: '100', shutter: '1/400s', aperture: 'f/4', wb: '6200K', nd: 'None needed', mode: 'Manual (M) — Soft flat light is flattering.', tip: 'Overcast days are the best for portraits — no harsh shadows on faces. Warm up the white balance slightly.' },
+          cinematic: { iso: '100', shutter: '1/50s', aperture: 'f/2.8', wb: '6000K', nd: 'ND4 – ND8', mode: 'Manual (M) — Soft cinematic look.', tip: 'Cloudy + portrait + cinematic is a beautiful combo. Soft light with slight motion blur.' },
+          blur: { iso: '100', shutter: '1/500s', aperture: 'f/2.8', wb: '6000K', nd: 'None needed', mode: 'Manual (M) — Perfect bokeh conditions.', tip: 'Soft overcast light + wide aperture = dreamy portraits. No squinting, no harsh shadows.' }
+        },
+        architecture: {
+          sharp: { iso: '100', shutter: '1/250s', aperture: 'f/5.6', wb: '6000K', nd: 'None needed', mode: 'Manual (M) — Even light for details.', tip: 'Cloudy days are excellent for architectural detail — even lighting across all surfaces.' },
+          cinematic: { iso: '100', shutter: '1/60s', aperture: 'f/4', wb: '6000K', nd: 'ND8', mode: 'Manual (M) — Moody overcast vibe.', tip: 'Moody overcast skies can add drama to architectural shots. Expose for the building.' },
+          blur: { iso: '100', shutter: '1/640s', aperture: 'f/2.8', wb: '6000K', nd: 'None needed', mode: 'Manual (M) — Detail shots work great.', tip: 'Get in close for architectural details with shallow DOF. Clouds add context in wide shots.' }
+        },
+        action: {
+          sharp: { iso: '100 – 200', shutter: '1/1000s', aperture: 'f/2.8', wb: '6000K', nd: 'None needed', mode: 'Shutter Priority — Freeze the action.', tip: 'Cloudy days still need fast shutter for action. You may need to bump ISO slightly.' },
+          cinematic: { iso: '100', shutter: '1/120s', aperture: 'f/2.8', wb: '6000K', nd: 'ND4', mode: 'Manual (M) — Less ND than sunny.', tip: 'ND4 might be enough for 60fps on cloudy days. Test and adjust.' },
+          blur: { iso: '100', shutter: '1/30s', aperture: 'f/4', wb: '6000K', nd: 'ND16 – ND32', mode: 'Manual (M) — Motion blur effect.', tip: 'Motion blur action shots from above look very cool. Need ND filter for slow enough shutter.' }
+        }
+      },
+      sunset: {
+        landscape: {
+          sharp: { iso: '100 – 200', shutter: '1/125s', aperture: 'f/4', wb: '5000K (warm)', nd: 'None needed', mode: 'Manual (M) — Use AEB bracketing for HDR.', tip: 'Golden hour = best light. Shoot a series of exposures from sunset through blue hour. Bracketing is essential.' },
+          cinematic: { iso: '200', shutter: '1/50s', aperture: 'f/2.8', wb: '4800K', nd: 'ND4', mode: 'Manual (M) — Magical golden hour light.', tip: 'Golden hour + cinematic = stunning results. Warm white balance enhances the glow. ND4 for motion blur.' },
+          blur: { iso: '100', shutter: '1/250s', aperture: 'f/2.8', wb: '5200K', nd: 'None needed', mode: 'Manual (M) — Warm bokeh highlights.', tip: 'Golden hour bokeh with warm highlights looks incredible. Shoot into the sun for rim light.' }
+        },
+        portrait: {
+          sharp: { iso: '100 – 200', shutter: '1/200s', aperture: 'f/4', wb: '4800K (warm)', nd: 'None needed', mode: 'Manual (M) — Golden hour is perfect.', tip: 'Golden hour is the best time for portraits — warm, soft, glowing light. Shoot with sun behind subject for rim light.' },
+          cinematic: { iso: '200', shutter: '1/50s', aperture: 'f/2.8', wb: '4500K', nd: 'None / ND4', mode: 'Manual (M) — Dreamy golden portraits.', tip: 'Cinematic golden hour portraits are magical. Low angle with sun behind creates lens flare.' },
+          blur: { iso: '100', shutter: '1/320s', aperture: 'f/2.8', wb: '5000K', nd: 'None needed', mode: 'Manual (M) — Bokeh + gold = magic.', tip: 'Golden hour + wide aperture + background bokeh with warm highlights. Unbeatable combination.' }
+        },
+        architecture: {
+          sharp: { iso: '100 – 200', shutter: '1/60s', aperture: 'f/5.6', wb: '5000K', nd: 'None needed', mode: 'Manual (M) — Warm light on buildings.', tip: 'Golden hour makes buildings glow. Long shadows add dimension. Shoot wide and close for variety.' },
+          cinematic: { iso: '200', shutter: '1/30s', aperture: 'f/4', wb: '4800K', nd: 'ND4', mode: 'Manual (M) — Golden cinematic.', tip: 'Architecture + golden hour + cinematic settings = stunning results. Clouds add motion.' },
+          blur: { iso: '100', shutter: '1/200s', aperture: 'f/2.8', wb: '5200K', nd: 'None needed', mode: 'Manual (M) — Detail shots.', tip: 'Get close for architectural details bathed in golden light with soft backgrounds.' }
+        },
+        action: {
+          sharp: { iso: '200 – 400', shutter: '1/500s', aperture: 'f/2.8', wb: '5000K', nd: 'None needed', mode: 'Shutter Priority — Fast enough for action.', tip: 'Golden hour action shots have beautiful warm light. You may need ISO 400 as light fades.' },
+          cinematic: { iso: '200', shutter: '1/60s', aperture: 'f/2.8', wb: '4800K', nd: 'None needed', mode: 'Manual (M) — Golden motion.', tip: 'Action in golden hour with cinematic motion blur looks epic. No ND filter needed usually.' },
+          blur: { iso: '100', shutter: '1/15s', aperture: 'f/5.6', wb: '5000K', nd: 'ND8', mode: 'Manual (M) — Motion blur + sunset.', tip: 'Slow shutter + action + sunset colors = incredibly dramatic photos. Use tripod mode.' }
+        }
+      },
+      night: {
+        landscape: {
+          sharp: { iso: '800 – 1600', shutter: '2 – 4s', aperture: 'f/2.8', wb: '3800K', nd: 'None (obviously)', mode: 'Manual / Tripod Mode — Long exposure for clean results.', tip: 'Use tripod mode if available. Lower altitude = less wind = sharper. Shoot RAW for noise reduction.' },
+          cinematic: { iso: '1600', shutter: '1/30s', aperture: 'f/2.8', wb: '3600K', nd: 'None', mode: 'Manual (M) — Night cinematic look.', tip: 'Night video is challenging. Use the lowest ISO you can. Mavic 3 performs much better than Mini series at night.' },
+          blur: { iso: '400 – 800', shutter: '4 – 8s', aperture: 'f/2.8', wb: '4000K', nd: 'None', mode: 'Manual / Tripod Mode — Light trails & bokeh.', tip: 'City lights from above with long exposure look amazing. Light trails from cars are stunning. Tripod mode essential.' }
+        },
+        portrait: {
+          sharp: { iso: '800 – 1600', shutter: '1/60s', aperture: 'f/2.8', wb: '3600K', nd: 'None', mode: 'Manual (M) — Use available light.', tip: 'Night portraits are hard from a drone. Get close, use lights, wide open. Expect more noise.' },
+          cinematic: { iso: '1600', shutter: '1/30s', aperture: 'f/2.8', wb: '3200K', nd: 'None', mode: 'Manual (M) — Moody night vibe.', tip: 'Moody night cinematography can be incredible. City lights as background bokeh.' },
+          blur: { iso: '800', shutter: '1 – 2s', aperture: 'f/2.8', wb: '3600K', nd: 'None', mode: 'Manual / Tripod Mode — Bokeh city lights.', tip: 'Bokeh balls from city lights at night are gorgeous. Use tripod mode for stability.' }
+        },
+        architecture: {
+          sharp: { iso: '400 – 800', shutter: '2 – 5s', aperture: 'f/4', wb: '3800K', nd: 'None', mode: 'Manual / Tripod Mode — Sharp night architecture.', tip: 'Illuminated buildings at night are stunning from above. Tripod mode for sharp long exposures.' },
+          cinematic: { iso: '800 – 1600', shutter: '1/30s', aperture: 'f/2.8', wb: '3600K', nd: 'None', mode: 'Manual (M) — Cinematic city lights.', tip: 'Cityscapes at night from a drone look unreal. Shoot during blue hour for best results.' },
+          blur: { iso: '400', shutter: '4 – 8s', aperture: 'f/4', wb: '4000K', nd: 'None', mode: 'Manual / Tripod Mode — Light trails.', tip: 'Long exposures of buildings + traffic light trails = iconic drone night shots. Need very stable hover.' }
+        },
+        action: {
+          sharp: { iso: '1600 – 3200', shutter: '1/250s', aperture: 'f/2.8', wb: '4000K', nd: 'None', mode: 'Shutter Priority — High ISO for speed.', tip: 'Night action is very challenging. You need high ISO. Mavic 3 handles it better than smaller sensors.' },
+          cinematic: { iso: '1600', shutter: '1/60s', aperture: 'f/2.8', wb: '3800K', nd: 'None', mode: 'Manual (M) — Night action cinematic.', tip: 'Night action video is grainy on most drones. Stick to well-lit areas. Lower altitude for closer/brighter.' },
+          blur: { iso: '800', shutter: '1/4s', aperture: 'f/2.8', wb: '4000K', nd: 'None', mode: 'Manual — Motion blur light trails.', tip: 'Moving lights at night with slow shutter = amazing light trails. Very creative possibilities.' }
+        }
+      },
+      overcast: {
+        landscape: {
+          sharp: { iso: '100', shutter: '1/160s', aperture: 'f/5.6', wb: '6500K', nd: 'None needed', mode: 'Manual (M) — Flat light, great for detail.', tip: 'Heavy overcast = soft even light. Perfect for capturing landscape detail. Colors will be muted — boost in post.' },
+          cinematic: { iso: '100', shutter: '1/50s', aperture: 'f/4', wb: '6500K', nd: 'ND4', mode: 'Manual (M) — Moody overcast look.', tip: 'Moody overcast cinematic has a great atmosphere. ND4 for motion blur on water/vegetation.' },
+          blur: { iso: '100', shutter: '1/400s', aperture: 'f/2.8', wb: '6500K', nd: 'None needed', mode: 'Manual (M) — Soft bokeh.', tip: 'Even overcast light is great for soft, even bokeh without harsh highlights.' }
+        },
+        portrait: {
+          sharp: { iso: '100', shutter: '1/200s', aperture: 'f/4', wb: '6500K', nd: 'None needed', mode: 'Manual (M) — Most flattering light.', tip: 'Overcast days are actually the BEST for portraits — perfectly soft, even light. No harsh shadows.' },
+          cinematic: { iso: '100', shutter: '1/50s', aperture: 'f/2.8', wb: '6500K', nd: 'ND4', mode: 'Manual (M) — Moody soft portraits.', tip: 'Moody overcast portraits can be very artistic. Add warmth in post-production.' },
+          blur: { iso: '100', shutter: '1/320s', aperture: 'f/2.8', wb: '6500K', nd: 'None needed', mode: 'Manual (M) — Soft dreamy bokeh.', tip: 'Soft overcast light creates beautiful, even bokeh without any harsh highlight circles.' }
+        },
+        architecture: {
+          sharp: { iso: '100', shutter: '1/125s', aperture: 'f/5.6', wb: '6500K', nd: 'None needed', mode: 'Manual (M) — Perfect for details.', tip: 'Overcast days show architectural details beautifully with no harsh shadows blowing out highlights.' },
+          cinematic: { iso: '100', shutter: '1/50s', aperture: 'f/4', wb: '6500K', nd: 'ND4', mode: 'Manual (M) — Gloomy & dramatic.', tip: 'Gloomy overcast architecture shots can be very moody and dramatic. Look for leading lines.' },
+          blur: { iso: '100', shutter: '1/250s', aperture: 'f/2.8', wb: '6500K', nd: 'None needed', mode: 'Manual (M) — Architectural details.', tip: 'Get close-up architectural details with soft bokeh backgrounds. Overcast light is ideal.' }
+        },
+        action: {
+          sharp: { iso: '100 – 200', shutter: '1/500s', aperture: 'f/2.8', wb: '6500K', nd: 'None needed', mode: 'Shutter Priority — Moderate speed.', tip: 'Overcast days need less shutter speed than sun for same action. Still fast enough for sharpness.' },
+          cinematic: { iso: '100', shutter: '1/60s', aperture: 'f/2.8', wb: '6500K', nd: 'ND4', mode: 'Manual (M) — Moody action.', tip: 'Moody overcast + cinematic action = dramatic footage. ND4 usually sufficient.' },
+          blur: { iso: '100', shutter: '1/15s', aperture: 'f/4', wb: '6500K', nd: 'ND8 – ND16', mode: 'Manual (M) — Motion blur.', tip: 'Motion blur action on overcast days looks artsy and dramatic. Need ND for slow shutter.' }
+        }
+      },
+      snow: {
+        landscape: {
+          sharp: { iso: '100', shutter: '1/1000s', aperture: 'f/4', wb: '5800K', nd: 'ND4 (optional)', mode: 'Manual (M) — +0.7 to +1.3 exposure comp for bright snow.', tip: 'Snow scenes are very bright. Overexpose slightly (+1 stop) from meter reading to keep snow white, not gray.' },
+          cinematic: { iso: '100', shutter: '1/60s', aperture: 'f/4', wb: '6000K', nd: 'ND32 – ND64', mode: 'Manual (M) — Bright snow needs heavy ND.', tip: 'Snow reflects tons of light — you need stronger ND than usual for cinematic shutter speeds.' },
+          blur: { iso: '100', shutter: '1/4000s', aperture: 'f/2.8', wb: '5800K', nd: 'None / ND4', mode: 'Manual (M) — Fast shutter, wide open.', tip: 'Bright snow means you can shoot wide open even with very fast shutter. Bokeh on snow looks magical.' }
+        },
+        portrait: {
+          sharp: { iso: '100', shutter: '1/800s', aperture: 'f/4', wb: '6000K', nd: 'None needed', mode: 'Manual (M) — Watch for exposure.', tip: 'Snow portraits are bright and clean. Expose for the face, not the snow. Reflective snow can fill in shadows.' },
+          cinematic: { iso: '100', shutter: '1/50s', aperture: 'f/4', wb: '6000K', nd: 'ND32', mode: 'Manual (M) — Snow cinematic.', tip: 'Snow scenes + cinematic settings look incredibly clean and crisp. Need strong ND filter.' },
+          blur: { iso: '100', shutter: '1/2000s', aperture: 'f/2.8', wb: '5800K', nd: 'None / ND4', mode: 'Manual (M) — Bright bokeh.', tip: 'Snow reflects so much light you can shoot wide open AND have fast shutter. Perfect bokeh conditions.' }
+        },
+        architecture: {
+          sharp: { iso: '100', shutter: '1/640s', aperture: 'f/5.6', wb: '5800K', nd: 'None needed', mode: 'Manual (M) — Snow + architecture = clean.', tip: 'Snow makes everything look clean and graphic. Look for contrast between dark buildings and white snow.' },
+          cinematic: { iso: '100', shutter: '1/60s', aperture: 'f/4', wb: '6000K', nd: 'ND32', mode: 'Manual (M) — Crisp winter look.', tip: 'Winter architecture cinematic videos have a very clean, crisp aesthetic. Strong ND needed.' },
+          blur: { iso: '100', shutter: '1/1600s', aperture: 'f/2.8', wb: '5800K', nd: 'None needed', mode: 'Manual (M) — Icy details.', tip: 'Close-up details of ice, snow, and architecture with bokeh. Beautiful and unique.' }
+        },
+        action: {
+          sharp: { iso: '100', shutter: '1/2000s+', aperture: 'f/2.8', wb: '6000K', nd: 'None needed', mode: 'Shutter Priority — Very fast shutter.', tip: 'Snow sports from above are epic. Bright snow means you can use extremely fast shutter speeds for freezing action.' },
+          cinematic: { iso: '100', shutter: '1/120s', aperture: 'f/4', wb: '6000K', nd: 'ND32', mode: 'Manual (M) — Winter action cinematic.', tip: 'Cinematic snow action is stunning. You need strong ND (ND32+) because snow reflects so much light.' },
+          blur: { iso: '100', shutter: '1/30s', aperture: 'f/5.6', wb: '5800K', nd: 'ND64', mode: 'Manual (M) — Snow motion trails.', tip: 'Powder spray motion blur from above looks unreal. Use ND64 for slow shutter in bright snow.' }
+        }
+      }
+    };
+
+    function setLighting(lighting) {
+      currentLighting = lighting;
+      ['sunny', 'cloudy', 'sunset', 'night', 'overcast', 'snow'].forEach(l => {
+        document.getElementById('light-' + l).classList.toggle('active', l === lighting);
+      });
+      updateDisplay();
+    }
+
+    function setShotType(type) {
+      currentShotType = type;
+      ['landscape', 'portrait', 'architecture', 'action'].forEach(t => {
+        document.getElementById('shot-' + t).classList.toggle('active', t === type);
+      });
+      updateDisplay();
+    }
+
+    function setEffect(effect) {
+      currentEffect = effect;
+      ['sharp', 'cinematic', 'blur'].forEach(e => {
+        document.getElementById('effect-' + e).classList.toggle('active', e === effect);
+      });
+      updateDisplay();
+    }
+
+    function setDroneModel(drone) {
+      currentDrone = drone;
+      ['mini5pro', 'mavic3', 'air3'].forEach(d => {
+        document.getElementById('drone-' + d).classList.toggle('active', d === drone);
+      });
+    }
+
+    function setMode(mode) {
+      currentMode = mode;
+      ['photo', 'video'].forEach(m => {
+        document.getElementById('mode-' + m).classList.toggle('active', m === mode);
+      });
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const s = settings[currentLighting][currentShotType][currentEffect];
+      if (!s) return;
+
+      let iso = s.iso;
+      let shutter = s.shutter;
+      let aperture = s.aperture;
+      let wb = s.wb;
+      let nd = s.nd;
+      let modeText = s.mode;
+      let tip = s.tip;
+
+      if (currentDrone === 'mini5pro') {
+        aperture = currentEffect === 'blur' ? 'f/1.7' : 'f/2.8 – f/4';
+        if (currentLighting === 'night') {
+          iso = currentEffect === 'sharp' ? '800' : '400 – 800';
+        }
+      }
+
+      if (currentMode === 'video') {
+        nd = currentLighting === 'sunny' ? 'ND16 – ND32' :
+             currentLighting === 'cloudy' ? 'ND4 – ND8' :
+             currentLighting === 'sunset' ? 'None – ND4' :
+             currentLighting === 'night' ? 'None' :
+             currentLighting === 'overcast' ? 'ND4' :
+             currentLighting === 'snow' ? 'ND32 – ND64' : 'ND8';
+        shutter = currentEffect === 'sharp' ? '1/120s (60fps)' :
+                  currentEffect === 'cinematic' ? '1/50s (24fps)' :
+                  '1/60s (30fps)';
+        modeText = 'Manual Mode — Use ND filter for correct shutter speed per 180° rule. Shoot D-Log/M-Log for color grading.';
+      }
+
+      document.getElementById('isoValue').textContent = iso;
+      document.getElementById('shutterValue').textContent = shutter;
+      document.getElementById('apertureValue').textContent = aperture;
+      document.getElementById('wbValue').textContent = wb;
+      document.getElementById('ndValue').textContent = nd;
+      document.getElementById('shootingMode').textContent = modeText;
+      document.getElementById('proTip').textContent = tip;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      updateDisplay();
+    });
+  </script>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>

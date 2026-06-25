@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portable Power Station Runtime Calculator — How Long Will It Last? (2026) | TechSpecsHub</title>
+  <meta name="description" content="Calculate how long your portable power station will run devices like fridges, phones, laptops, CPAP machines, and TVs. Free interactive runtime calculator with 50+ device presets and battery sizing recommendations.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/tools/power-station-runtime-calculator.html">
+
+  <meta property="og:title" content="Portable Power Station Runtime Calculator — How Long Will It Last? (2026)">
+  <meta property="og:description" content="Free interactive calculator to estimate how long your portable power station will run any device. Includes 50+ device presets and battery sizing recommendations.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/tools/power-station-runtime-calculator.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portable Power Station Runtime Calculator — How Long Will It Last?">
+  <meta name="twitter:description" content="Free interactive runtime calculator for portable power stations. 50+ device presets, battery sizing, and real-world efficiency calculations.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+    .calc-input {
+      background: rgba(15, 29, 50, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      width: 100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+    .calc-input:focus {
+      outline: none;
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+    }
+    .calc-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      outline: none;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #22d3ee;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+      transition: transform 0.15s ease;
+    }
+    .calc-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    .calc-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #22d3ee;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+    }
+    .device-preset-btn {
+      background: rgba(15, 29, 50, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 10px 14px;
+      text-align: left;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .device-preset-btn:hover {
+      background: rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.3);
+      transform: translateY(-1px);
+    }
+    .device-preset-btn.active {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: #22d3ee;
+    }
+    .result-card {
+      background: linear-gradient(145deg, rgba(30, 50, 89, 0.6), rgba(22, 37, 68, 0.8));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .result-card .result-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #22d3ee 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .result-card .result-label {
+      font-size: 0.875rem;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Portable Power Station Runtime Calculator — How Long Will It Last? (2026)",
+    "description": "Free interactive calculator to estimate how long your portable power station will run any device. Includes 50+ device presets, battery sizing recommendations, and real-world efficiency calculations.",
+    "url": "https://powerspecshub.com/pages/tools/power-station-runtime-calculator.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate how long my power station will last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calculate runtime, divide the power station's battery capacity (in watt-hours, Wh) by the total wattage of your devices, then multiply by the inverter efficiency factor (typically 0.85–0.9 for AC output). The formula is: Runtime (hours) = Battery Capacity (Wh) × Efficiency ÷ Device Wattage (W). For example, a 1000Wh power station running a 100W device at 85% efficiency = 1000 × 0.85 ÷ 100 = 8.5 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good efficiency factor for power stations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most portable power stations have an inverter efficiency of 85–92% for AC output. DC output (USB, 12V car port) is more efficient at 90–95% because it skips the DC-to-AC conversion step. We use 85% as a conservative real-world estimate for AC devices. Pure sine wave inverters tend to be 2–5% more efficient than modified sine wave models."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate are runtime estimates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Runtime estimates are typically accurate within ±10–15% for steady loads. Variables that affect real-world runtime include: ambient temperature (batteries perform worse in extreme cold or heat), battery age and cycle count, device power fluctuations (compressor-based devices like fridges cycle on and off), and whether you're using AC or DC output. Always size for 20–30% more capacity than you think you need as a safety buffer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my actual runtime shorter than advertised?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Advertised runtime numbers often use ideal lab conditions: perfect temperature, brand new battery, DC-only loads, and no inverter loss. Real-world factors that reduce runtime include: inverter inefficiency (10–15% loss for AC), battery degradation over cycles, cold weather (can reduce capacity by 20–40% below freezing), phantom/standby loads, and running multiple devices simultaneously. Our calculator uses conservative real-world efficiency factors for more accurate estimates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many watt-hours do I need for camping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a typical weekend camping trip (2–3 nights), most people need 500–1500Wh depending on gear. Light use (phones, lights, camera charging): 300–500Wh. Medium use (add a CPAP, laptop, or 12V cooler): 1000–2000Wh. Heavy use (full-size fridge, cooking appliances, multiple devices): 2000Wh+. Use our calculator to add up your specific devices and get a personalized estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does running multiple devices at once reduce total runtime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, total runtime is based on total wattage draw. If you run a 50W light and a 100W fridge simultaneously, that's 150W total draw — the same as running a single 150W device. The power station's battery has a fixed amount of energy (watt-hours), and every watt you draw reduces the remaining runtime proportionally. Some devices have surge wattage when starting up (like fridge compressors), which briefly draws more power but does not significantly affect total runtime."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between watts and watt-hours?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Watts (W) measure the rate of power consumption at any given moment — think of it as the speed of energy flow. Watt-hours (Wh) measure the total amount of energy used over time — think of it as the total distance traveled. A 100W device running for 1 hour uses 100Wh. The same device running for 5 hours uses 500Wh. Power stations are rated in Wh (capacity), while devices are rated in W (draw rate)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does battery age affect runtime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All batteries degrade over charge cycles. Lithium-ion (NMC) batteries typically retain 80% capacity after 500–800 cycles. Lithium iron phosphate (LFP) batteries last much longer — 3000–6000+ cycles to reach 80% capacity. A 5-year-old power station with NMC cells might only have 60–70% of its original capacity, meaning runtime is proportionally reduced. You can check actual capacity in the companion app on most smart power stations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use AC or DC output to maximize runtime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Always use DC output when possible to maximize runtime. DC devices (USB charging, 12V car port) skip the DC-to-AC inverter conversion step, saving 10–15% in efficiency losses. For example, charging your phone via USB is more efficient than using an AC wall charger plugged into the power station. Many 12V appliances like car coolers and CPAP machines can run directly from DC — use the DC output if your power station has one."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much capacity do I need as a safety buffer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We recommend sizing your power station 20–30% larger than your calculated minimum needs. This buffer accounts for: battery degradation over time, unexpected extra device use, colder-than-expected weather, and inaccurate wattage estimates. If you plan to use solar charging to top up during the day, you can reduce the buffer slightly, but it is still wise to have at least 10–15% headroom for peace of mind."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://powerspecshub.com/pages/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Power Station Runtime Calculator"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Calculators &amp; Tools</p>
+              <a href="power-station-runtime-calculator.html"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Runtime Calculator</a>
+              <a href="solar-panel-needs-calculator.html"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Solar Panel Calculator</a>
+              <a href="appliance-wattage-calculator.html"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Appliance Wattage Calculator</a>
+              <a href="camping-power-calculator.html"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Camping Power Calculator</a>
+              <a href="cpap-battery-calculator.html"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>CPAP Battery Calculator</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <p class="nav-dropdown-section-label mt-2">Calculators</p>
+        <a href="power-station-runtime-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="calculator" style="width:1rem;height:1rem;color:#22d3ee"></i>Runtime Calculator</a>
+        <a href="solar-panel-needs-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="sun" style="width:1rem;height:1rem;color:#22d3ee"></i>Solar Panel Calculator</a>
+        <a href="appliance-wattage-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="zap" style="width:1rem;height:1rem;color:#22d3ee"></i>Appliance Wattage Calculator</a>
+        <a href="camping-power-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="tent" style="width:1rem;height:1rem;color:#22d3ee"></i>Camping Power Calculator</a>
+        <a href="cpap-battery-calculator.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wind" style="width:1rem;height:1rem;color:#22d3ee"></i>CPAP Battery Calculator</a>
+        <a href="best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="#">Tools</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Power Station Runtime Calculator</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-electric-500/20 text-electric-400 font-mono font-bold text-sm rounded-md border border-electric-500/30">CALCULATOR</div>
+        <span class="badge badge-info"><i data-lucide="battery-charging" style="width:0.75rem;height:0.75rem"></i>Runtime Estimator</span>
+        <span class="badge badge-info"><i data-lucide="zap" style="width:0.75rem;height:0.75rem"></i>50+ Devices</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Portable Power Station Runtime Calculator &mdash; <span class="gradient-text">How Long Will It Last?</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Figure out exactly how long your portable power station will run any device — from phones and laptops to fridges and CPAP machines. Enter your battery capacity and device wattage, or pick from 50+ common device presets, and get instant, real-world runtime estimates with efficiency loss baked in.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Instant Results</div>
+          <div class="font-mono font-bold text-xl text-white">Real-time</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>Efficiency Factor</div>
+          <div class="font-mono font-bold text-xl text-electric-400">85%</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="list-checks" style="width:0.9rem;height:0.9rem"></i>Device Presets</div>
+          <div class="font-bold text-xl text-yellow-400">50+</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="shield-check" style="width:0.9rem;height:0.9rem"></i>Safety Buffer</div>
+          <div class="font-bold text-xl text-green-400">20%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-6 flex items-center gap-2"><i data-lucide="calculator" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Runtime Calculator</h2>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Inputs -->
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Battery Capacity (Wh)
+            </label>
+            <input type="number" id="batteryCapacity" class="calc-input" value="1000" min="50" max="50000" step="10">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>50Wh</span>
+              <input type="range" id="batteryCapacitySlider" class="calc-slider flex-1" min="50" max="5000" step="10" value="1000">
+              <span>5000Wh</span>
+            </div>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <button class="device-preset-btn text-xs" onclick="setBattery(288)">288Wh (Jackery 300)</button>
+              <button class="device-preset-btn text-xs" onclick="setBattery(512)">512Wh (Anker 521)</button>
+              <button class="device-preset-btn text-xs" onclick="setBattery(1024)">1024Wh (Bluetti EB3A)</button>
+              <button class="device-preset-btn text-xs" onclick="setBattery(2048)">2048Wh (EcoFlow Delta 2)</button>
+              <button class="device-preset-btn text-xs" onclick="setBattery(4096)">4096Wh (Delta Pro 3)</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Device Wattage (W)
+            </label>
+            <input type="number" id="deviceWattage" class="calc-input" value="60" min="1" max="5000" step="1">
+            <div class="mt-2 flex items-center gap-3 text-xs text-gray-500">
+              <span>1W</span>
+              <input type="range" id="deviceWattageSlider" class="calc-slider flex-1" min="1" max="1000" step="1" value="60">
+              <span>1000W</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-3">
+              Quick Device Presets
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <button class="device-preset-btn" onclick="setWattage(5)">
+                <div class="text-white font-medium text-sm">Phone Charging</div>
+                <div class="text-xs text-gray-500 font-mono">5W</div>
+              </button>
+              <button class="device-preset-btn" onclick="setWattage(45)">
+                <div class="text-white font-medium text-sm">Laptop</div>
+                <div class="text-xs text-gray-500 font-mono">45W</div>
+              </button>
+              <button class="device-preset-btn" onclick="setWattage(10)">
+                <div class="text-white font-medium text-sm">LED Light</div>
+                <div class="text-xs text-gray-500 font-mono">10W</div>
+              </button>
+              <button class="device-preset-btn" onclick="setWattage(60)">
+                <div class="text-white font-medium text-sm">12V Fridge</div>
+                <div class="text-xs text-gray-500 font-mono">60W avg</div>
+              </button>
+              <button class="device-preset-btn" onclick="setWattage(30)">
+                <div class="text-white font-medium text-sm">CPAP Machine</div>
+                <div class="text-xs text-gray-500 font-mono">30W avg</div>
+              </button>
+              <button class="device-preset-btn" onclick="setWattage(80)">
+                <div class="text-white font-medium text-sm">32&quot; TV</div>
+                <div class="text-xs text-gray-500 font-mono">80W</div>
+              </button>
+              <button class="device-preset-btn" onclick="setWattage(700)">
+                <div class="text-white font-medium text-sm">Microwave</div>
+                <div class="text-xs text-gray-500 font-mono">700W</div>
+              </button>
+              <button class="device-preset-btn" onclick="setWattage(1500)">
+                <div class="text-white font-medium text-sm">Space Heater</div>
+                <div class="text-xs text-gray-500 font-mono">1500W</div>
+              </button>
+              <button class="device-preset-btn" onclick="setWattage(250)">
+                <div class="text-white font-medium text-sm">Blender</div>
+                <div class="text-xs text-gray-500 font-mono">250W</div>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">
+                Number of Devices
+              </label>
+              <input type="number" id="numDevices" class="calc-input" value="1" min="1" max="20" step="1">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">
+                Hours Used Per Day
+              </label>
+              <input type="number" id="hoursPerDay" class="calc-input" value="4" min="0.5" max="24" step="0.5">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">
+              Inverter Efficiency
+            </label>
+            <select id="efficiency" class="calc-input">
+              <option value="0.95">95% (DC output / USB)</option>
+              <option value="0.90">90% (High-efficiency AC)</option>
+              <option value="0.85" selected>85% (Standard AC — recommended)</option>
+              <option value="0.80">80% (Older / budget inverter)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="space-y-4">
+          <div class="result-card">
+            <div class="result-value" id="runtimeHours">14.2</div>
+            <div class="result-label">Total Runtime (hours)</div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-2xl" id="dailyWh">204</div>
+              <div class="result-label">Daily Consumption (Wh)</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-2xl" id="totalDraw">60</div>
+              <div class="result-label">Total Draw (W)</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-2xl" id="daysRuntime">3.5</div>
+              <div class="result-label">Days of Use</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-2xl" id="recommendedWh">1200</div>
+              <div class="result-label">Recommended Battery (Wh)</div>
+            </div>
+          </div>
+
+          <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i data-lucide="lightbulb" style="width:1rem;height:1rem;color:#fbbf24"></i>
+              Quick Summary
+            </h4>
+            <p class="text-sm text-gray-300 leading-relaxed" id="summaryText">
+              A 1000Wh power station running a 60W device will last approximately 14.2 hours at 85% inverter efficiency. If used 4 hours per day, the battery will last about 3.5 days between charges. We recommend a 1200Wh battery for this load with a 20% safety buffer.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-green-950/30 to-electric-950/30 border border-green-500/20 rounded-xl p-5">
+            <h4 class="font-semibold text-green-400 mb-2 flex items-center gap-2">
+              <i data-lucide="info" style="width:1rem;height:1rem"></i>
+              Formula Used
+            </h4>
+            <p class="text-sm text-gray-300">
+              <code class="font-mono text-electric-400">Runtime = (Battery Capacity × Efficiency) ÷ Total Wattage</code>
+            </p>
+            <p class="text-xs text-gray-500 mt-2">
+              Recommended size includes a 20% safety buffer for real-world conditions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">How to Use This Calculator</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="space-y-5">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Enter Your Power Station's Capacity</h4>
+            <p class="text-sm text-gray-400">Find the watt-hour (Wh) rating of your portable power station. This is usually printed on the box, the unit itself, or in the product specifications. Common sizes range from 200Wh for small units up to 5000Wh+ for large home backup systems. You can use the slider or type in the exact number. We also have quick preset buttons for popular models like Jackery, EcoFlow, Bluetti, and Anker.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Enter Your Device's Wattage</h4>
+            <p class="text-sm text-gray-400">Look for the wattage rating on your device's label, power brick, or manual. If you are not sure, use one of our device presets — we have accurate real-world wattage for 50+ common devices including phones, laptops, fridges, CPAP machines, TVs, microwaves, and more. Keep in mind that some devices (like fridges) have both running wattage and surge/startup wattage — use the running wattage for runtime calculations.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Adjust Quantity and Usage Time</h4>
+            <p class="text-sm text-gray-400">If you are running multiple of the same device, adjust the number of devices. For estimating daily or trip-level use, enter how many hours per day you expect to use the device. The calculator will show you both total continuous runtime AND how many days of typical use you can expect.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Choose the Right Efficiency Setting</h4>
+            <p class="text-sm text-gray-400">We default to 85% efficiency, which is a conservative real-world estimate for AC output — this accounts for inverter loss, idle power draw, and real-world conditions. If you are using only DC output (USB charging, 12V car port), select 95% for a more accurate estimate. Older or budget power stations might only be 80% efficient — if in doubt, use 85% as a safe middle ground.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Review the Results</h4>
+            <p class="text-sm text-gray-400">The calculator instantly shows you total runtime in hours, daily energy consumption, days of use, and our recommended battery size with a 20% safety buffer. We recommend sizing up 20–30% from your calculated minimum to account for battery degradation, cold weather, and unexpected usage. Use the recommended size as a starting point when shopping for a power station.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Why Runtime Calculations Matter</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Buying a portable power station is a significant investment — often $500 to $5,000 or more. The last thing you want is to get to your campsite, tailgate, or experience a power outage and realize your station cannot power what you need. Conversely, you do not want to spend thousands on more capacity than you will ever actually use.
+      </p>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Accurate runtime calculations help you:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Buy the Right Size
+          </h4>
+          <p class="text-sm text-gray-400">Avoid overspending on capacity you do not need, or — worse — buying too small and being left without power when you need it most.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Plan Your Trips
+          </h4>
+          <p class="text-sm text-gray-400">Know exactly how long you can go between charges on a camping trip or during an outage. Plan solar charging around your actual consumption.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Compare Models Fairly
+          </h4>
+          <p class="text-sm text-gray-400">Two 1000Wh power stations might have very different real-world runtime due to inverter efficiency. Our calculator uses real efficiency factors.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <h4 class="font-semibold text-electric-400 mb-2 flex items-center gap-2">
+            <i data-lucide="check-circle" style="width:1rem;height:1rem"></i>
+            Avoid Battery Damage
+          </h4>
+          <p class="text-sm text-gray-400">Regularly draining a battery below 10–20% can shorten its lifespan. Knowing runtime helps you recharge before it gets too low.</p>
+        </div>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-2">
+        Many people are surprised by how much (or how little) certain devices draw. A 12V fridge might only use 50–60W average despite having a 100W+ compressor, because the compressor cycles on and off. On the other hand, a simple electric space heater draws 1500W continuously and can drain even a large power station in under two hours.
+      </p>
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="lightbulb" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Pro tip:</strong> If you want the most accurate measurement, plug your device into your power station and watch the real-time wattage display (or app) for 10–15 minutes. Write down the average draw, then use that number in our calculator. Nothing beats a real measurement with your specific device and settings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULA EXPLANATION -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">The Math Behind Runtime Calculations</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        At its core, calculating power station runtime is simple division. But there are several important factors that people often miss, which is why advertised runtime numbers rarely match real-world experience. Let us break it down step by step.
+      </p>
+
+      <h3 class="font-bold text-xl mb-3 text-white">The Basic Formula</h3>
+      <div class="bg-navy-900/80 border border-electric-500/30 rounded-xl p-5 mb-5">
+        <p class="font-mono text-xl text-electric-400 text-center mb-2">Runtime (hours) = Battery Capacity (Wh) ÷ Device Wattage (W)</p>
+        <p class="text-sm text-gray-400 text-center">This is the theoretical ideal — 100% efficiency, perfect conditions</p>
+      </div>
+
+      <h3 class="font-bold text-xl mb-3 text-white">The Real-World Formula</h3>
+      <div class="bg-navy-900/80 border border-green-500/30 rounded-xl p-5 mb-5">
+        <p class="font-mono text-xl text-green-400 text-center mb-2">Runtime = (Capacity × Efficiency) ÷ Total Draw</p>
+        <p class="text-sm text-gray-400 text-center">This accounts for inverter loss, idle drain, and real conditions</p>
+      </div>
+
+      <h3 class="font-bold text-xl mb-3 text-white">What Affects Runtime?</h3>
+      <div class="space-y-4 mb-5">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="zap" style="width:0.9rem;height:0.9rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Inverter Efficiency (Biggest Factor)</h4>
+            <p class="text-sm text-gray-400">Portable power stations store energy as DC (direct current). When you plug an AC device into the wall outlet, the inverter converts DC to AC — and this conversion wastes 10–15% of the energy as heat. That is why DC output (USB, 12V) gives you more runtime than AC output for the same device.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="thermometer" style="width:0.9rem;height:0.9rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Temperature</h4>
+            <p class="text-sm text-gray-400">Lithium batteries perform best between 50–85°F (10–30°C). Below freezing, capacity can drop by 20–40%. Above 100°F (38°C), you get reduced capacity and accelerated battery degradation. If you are camping in cold weather, expect significantly less runtime than the calculator shows.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="battery-low" style="width:0.9rem;height:0.9rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Battery Age and Cycle Count</h4>
+            <p class="text-sm text-gray-400">Every charge cycle slightly reduces battery capacity. NMC batteries retain ~80% capacity after 500 cycles; LFP batteries last 3000–6000+ cycles. A 3-year-old power station used regularly might only have 70–90% of its original capacity left. Most smart stations show actual capacity in the app.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="activity" style="width:0.9rem;height:0.9rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Idle / Standby Drain</h4>
+            <p class="text-sm text-gray-400">The power station itself uses a small amount of power just to run its display, BMS (battery management system), and inverter idle circuitry. This is usually 2–10W, which is negligible for short-term use but adds up over days. ECO mode can help by turning off unused outputs.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="trending-up" style="width:0.9rem;height:0.9rem;color:#fbbf24"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Device Power Variations</h4>
+            <p class="text-sm text-gray-400">Many devices do not draw constant power. Fridge compressors cycle on and off. Laptops use more power under load than when idle. Phones draw less as they approach full charge. For the most accurate estimate, use the average power draw over time, not the peak or rated wattage.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="font-bold text-xl mb-3 text-white">Worked Example</h3>
+      <div class="bg-navy-900/60 border border-white/10 rounded-xl p-5">
+        <p class="text-gray-300 text-sm mb-3"><strong>Scenario:</strong> You have a 1024Wh Bluetti EB3A and want to run a 12V car cooler that draws 60W average. You use it 8 hours per day on a camping trip. How long will it last?</p>
+        <div class="space-y-2 text-sm font-mono text-gray-300">
+          <p>Step 1: Start with battery capacity → 1,024 Wh</p>
+          <p>Step 2: Apply efficiency factor (DC = 95%) → 1,024 × 0.95 = 972.8 Wh usable</p>
+          <p>Step 3: Divide by device wattage → 972.8 ÷ 60 = 16.2 hours continuous runtime</p>
+          <p>Step 4: Divide by daily usage → 16.2 ÷ 8 = 2 days of use</p>
+          <p class="text-green-400 mt-2">Answer: About 16 hours total, or 2 full days of 8-hour use.</p>
+        </div>
+        <p class="text-xs text-gray-500 mt-3">With a 20% safety buffer, we would recommend at least 1,200Wh (or about 2 days of solar charging to extend the trip).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVICE WATTAGE REFERENCE -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Common Device Wattage Reference</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Not sure how many watts your device uses? Here is a comprehensive reference table of common devices and their typical power consumption. These are real-world averages — actual wattage varies by brand, model, and settings.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Device</th><th>Typical Wattage</th><th>Surge Wattage</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Smartphone charging</strong></td><td>5–18W</td><td>—</td><td>Fast chargers use more</td></tr>
+            <tr><td><strong>Tablet charging</strong></td><td>10–30W</td><td>—</td><td>Depends on size</td></tr>
+            <tr><td><strong>Laptop</strong></td><td>30–100W</td><td>—</td><td>Gaming laptops: 100–200W</td></tr>
+            <tr><td><strong>LED light bulb</strong></td><td>5–15W</td><td>—</td><td>Equivalent to 40–100W incandescent</td></tr>
+            <tr><td><strong>String lights (LED)</strong></td><td>10–30W</td><td>—</td><td>Great for camping ambiance</td></tr>
+            <tr><td><strong>CPAP machine</strong></td><td>20–60W</td><td>—</td><td>With humidifier: 40–80W</td></tr>
+            <tr><td><strong>12V car cooler / fridge</strong></td><td>40–80W avg</td><td>80–150W</td><td>Compressor cycles on/off</td></tr>
+            <tr><td><strong>Full-size refrigerator</strong></td><td>100–200W avg</td><td>500–800W</td><td>Needs pure sine wave</td></tr>
+            <tr><td><strong>32&quot; LED TV</strong></td><td>50–80W</td><td>—</td><td>Larger TVs use more</td></tr>
+            <tr><td><strong>55&quot; 4K TV</strong></td><td>80–150W</td><td>—</td><td>OLED uses more power</td></tr>
+            <tr><td><strong>Router / modem</strong></td><td>5–20W</td><td>—</td><td>Always-on device</td></tr>
+            <tr><td><strong>Wi-Fi hotspot</strong></td><td>5–15W</td><td>—</td><td></td></tr>
+            <tr><td><strong>Portable speaker</strong></td><td>5–20W</td><td>—</td><td>Depends on volume</td></tr>
+            <tr><td><strong>Drone battery charger</strong></td><td>50–100W</td><td>—</td><td>Per battery</td></tr>
+            <tr><td><strong>Camera battery charger</strong></td><td>10–30W</td><td>—</td><td></td></tr>
+            <tr><td><strong>Electric blanket</strong></td><td>100–200W</td><td>—</td><td>12V versions available</td></tr>
+            <tr><td><strong>Coffee maker (pod)</strong></td><td>1000–1500W</td><td>—</td><td>Short use time</td></tr>
+            <tr><td><strong>Microwave</strong></td><td>600–1500W</td><td>—</td><td>Short use time</td></tr>
+            <tr><td><strong>Toaster</strong></td><td>800–1500W</td><td>—</td><td>Short use time</td></tr>
+            <tr><td><strong>Electric grill</strong></td><td>1200–1800W</td><td>—</td><td>Heavy power draw</td></tr>
+            <tr><td><strong>Space heater</strong></td><td>750–1500W</td><td>—</td><td>Huge drain — avoid if possible</td></tr>
+            <tr><td><strong>Hair dryer</strong></td><td>1000–1800W</td><td>—</td><td>Short use time</td></tr>
+            <tr><td><strong>Fan (box/standing)</strong></td><td>30–80W</td><td>—</td><td>12V fans are more efficient</td></tr>
+            <tr><td><strong>Air conditioner (portable)</strong></td><td>500–1200W</td><td>1500–3000W</td><td>Requires large power station</td></tr>
+            <tr><td><strong>Game console</strong></td><td>50–200W</td><td>—</td><td>Standby: 5–15W</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert alert-info mt-4 !mb-0">
+        <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Surge wattage note:</strong> Devices with motors or compressors (fridges, AC units, pumps) draw a brief surge of 2–5x their running wattage when starting up. Your power station must handle this surge — check the surge/peak rating, not just continuous output. Runtime calculations use running wattage, not surge.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about power station runtime calculations.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I calculate how long my power station will last?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          To calculate runtime, divide the power station's battery capacity (in watt-hours, Wh) by the total wattage of your devices, then multiply by the inverter efficiency factor (typically 0.85–0.9 for AC output). The formula is: Runtime (hours) = Battery Capacity (Wh) × Efficiency ÷ Device Wattage (W). For example, a 1000Wh power station running a 100W device at 85% efficiency = 1000 × 0.85 ÷ 100 = 8.5 hours. You can also use our calculator above — just enter your capacity and device wattage for instant results.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is a good efficiency factor for power stations?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Most portable power stations have an inverter efficiency of 85–92% for AC output. DC output (USB, 12V car port) is more efficient at 90–95% because it skips the DC-to-AC conversion step. We use 85% as a conservative real-world estimate for AC devices in our calculator. Pure sine wave inverters tend to be 2–5% more efficient than modified sine wave models. Higher-end stations from EcoFlow, Bluetti, and Goal Zero typically have 88–92% efficiency, while budget brands might be 80–85%.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How accurate are runtime estimates?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Runtime estimates are typically accurate within ±10–15% for steady loads. Variables that affect real-world runtime include: ambient temperature (batteries perform worse in extreme cold or heat), battery age and cycle count, device power fluctuations (compressor-based devices like fridges cycle on and off), and whether you're using AC or DC output. Always size for 20–30% more capacity than you think you need as a safety buffer. The most accurate way to know is to test with your actual devices.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why is my actual runtime shorter than advertised?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Advertised runtime numbers often use ideal lab conditions: perfect room temperature, brand new battery, DC-only loads, and no inverter loss. Real-world factors that reduce runtime include: inverter inefficiency (10–15% loss for AC), battery degradation over cycles, cold weather (can reduce capacity by 20–40% below freezing), phantom/standby loads, and running multiple devices simultaneously. Our calculator uses conservative real-world efficiency factors for more accurate estimates than manufacturer marketing numbers.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How many watt-hours do I need for camping?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          For a typical weekend camping trip (2–3 nights), most people need 500–1500Wh depending on gear. Light use (phones, lights, camera charging): 300–500Wh. Medium use (add a CPAP, laptop, or 12V cooler): 1000–2000Wh. Heavy use (full-size fridge, cooking appliances, multiple devices): 2000Wh+. Use our calculator above to add up your specific devices and get a personalized estimate. If you bring solar panels, you can get away with a smaller battery because you will be recharging during the day.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Does running multiple devices at once reduce total runtime?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes, total runtime is based on total wattage draw. If you run a 50W light and a 100W fridge simultaneously, that is 150W total draw — the same as running a single 150W device. The power station's battery has a fixed amount of energy (watt-hours), and every watt you draw reduces the remaining runtime proportionally. Some devices have surge wattage when starting up (like fridge compressors), which briefly draws more power but does not significantly affect total runtime since surges only last a second or two.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is the difference between watts and watt-hours?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Watts (W) measure the rate of power consumption at any given moment — think of it as the speed of energy flow. Watt-hours (Wh) measure the total amount of energy used over time — think of it as the total distance traveled. A 100W device running for 1 hour uses 100Wh. The same device running for 5 hours uses 500Wh. Power stations are rated in Wh (capacity), while devices are rated in W (draw rate). This is why you can run a low-wattage device for many hours on a single charge, while a high-wattage device drains the battery quickly.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How does battery age affect runtime?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          All batteries degrade over charge cycles. Lithium-ion (NMC) batteries typically retain 80% capacity after 500–800 cycles. Lithium iron phosphate (LFP) batteries last much longer — 3000–6000+ cycles to reach 80% capacity. A 5-year-old power station with NMC cells might only have 60–70% of its original capacity, meaning runtime is proportionally reduced. You can check actual capacity in the companion app on most smart power stations. If your runtime has dropped significantly, the battery has likely degraded — this is normal wear and tear, not a defect.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Should I use AC or DC output to maximize runtime?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Always use DC output when possible to maximize runtime. DC devices (USB charging, 12V car port) skip the DC-to-AC inverter conversion step, saving 10–15% in efficiency losses. For example, charging your phone via USB is more efficient than using an AC wall charger plugged into the power station. Many 12V appliances like car coolers and CPAP machines can run directly from DC — use the DC output if your power station has one. You can also buy DC versions of many camping appliances specifically for this reason.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How much capacity do I need as a safety buffer?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          We recommend sizing your power station 20–30% larger than your calculated minimum needs. This buffer accounts for: battery degradation over time, unexpected extra device use, colder-than-expected weather, and inaccurate wattage estimates. If you plan to use solar charging to top up during the day, you can reduce the buffer slightly, but it is still wise to have at least 10–15% headroom for peace of mind. Our calculator automatically recommends a battery size with a 20% safety factor built in.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Calculators &amp; Guides</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="solar-panel-needs-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Solar</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Solar Panel Needs Calculator</h3>
+        <p class="text-sm text-gray-400">Calculate how many solar panels you need to charge your power station in a given time. Includes efficiency losses and real-world sunlight estimates.</p>
+      </a>
+      <a href="appliance-wattage-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">CALCULATOR</div>
+          <span class="badge badge-info">50+ Appliances</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Appliance Wattage Calculator</h3>
+        <p class="text-sm text-gray-400">Add up multiple devices to find your total power consumption and get recommended power station size.</p>
+      </a>
+      <a href="camping-power-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Camping</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Camping Power Calculator</h3>
+        <p class="text-sm text-gray-400">Plan your camping trip power needs — trip duration, people, gear type, and solar recommendations.</p>
+      </a>
+      <a href="cpap-battery-calculator.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">CALCULATOR</div>
+          <span class="badge badge-info">Medical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">CPAP Battery Calculator</h3>
+        <p class="text-sm text-gray-400">Specialized calculator for CPAP runtime — includes pressure settings, humidifier, and heated tube adjustments.</p>
+      </a>
+      <a href="../specs/outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">COMPARE</div>
+          <span class="badge badge-info">All Brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Comparison</h3>
+        <p class="text-sm text-gray-400">Compare all major portable power station models side by side — capacity, output, solar input, and more.</p>
+      </a>
+      <a href="../specs/portable-power-station-eco-mode.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">GUIDE</div>
+          <span class="badge badge-info">Battery Saving</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">ECO Mode Guide</h3>
+        <p class="text-sm text-gray-400">Learn how ECO mode can extend your runtime by eliminating vampire drain from standby devices.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setBattery(wh) {
+      document.getElementById('batteryCapacity').value = wh;
+      document.getElementById('batteryCapacitySlider').value = Math.min(wh, 5000);
+      calculateRuntime();
+    }
+
+    function setWattage(w) {
+      document.getElementById('deviceWattage').value = w;
+      document.getElementById('deviceWattageSlider').value = Math.min(w, 1000);
+      calculateRuntime();
+    }
+
+    function calculateRuntime() {
+      const capacity = parseFloat(document.getElementById('batteryCapacity').value) || 0;
+      const wattage = parseFloat(document.getElementById('deviceWattage').value) || 0;
+      const numDevices = parseInt(document.getElementById('numDevices').value) || 1;
+      const hoursPerDay = parseFloat(document.getElementById('hoursPerDay').value) || 1;
+      const efficiency = parseFloat(document.getElementById('efficiency').value) || 0.85;
+
+      const totalDraw = wattage * numDevices;
+      const usableWh = capacity * efficiency;
+      const runtimeHours = totalDraw > 0 ? usableWh / totalDraw : 0;
+      const dailyWh = totalDraw * hoursPerDay;
+      const daysRuntime = dailyWh > 0 ? usableWh / dailyWh : 0;
+      const recommendedWh = dailyWh > 0 ? dailyWh * 1.2 : 0;
+
+      document.getElementById('runtimeHours').textContent = runtimeHours.toFixed(1);
+      document.getElementById('dailyWh').textContent = Math.round(dailyWh);
+      document.getElementById('totalDraw').textContent = Math.round(totalDraw);
+      document.getElementById('daysRuntime').textContent = daysRuntime.toFixed(1);
+      document.getElementById('recommendedWh').textContent = Math.round(recommendedWh);
+
+      document.getElementById('summaryText').textContent =
+        'A ' + capacity + 'Wh power station running a ' + wattage + 'W device' +
+        (numDevices > 1 ? ' (' + numDevices + ' devices)' : '') +
+        ' will last approximately ' + runtimeHours.toFixed(1) + ' hours at ' +
+        Math.round(efficiency * 100) + '% inverter efficiency. ' +
+        'If used ' + hoursPerDay + ' hours per day, the battery will last about ' +
+        daysRuntime.toFixed(1) + ' days between charges. ' +
+        'We recommend a ' + Math.round(recommendedWh) + 'Wh battery for this load with a 20% safety buffer.';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const capacitySlider = document.getElementById('batteryCapacitySlider');
+      const capacityInput = document.getElementById('batteryCapacity');
+      const wattageSlider = document.getElementById('deviceWattageSlider');
+      const wattageInput = document.getElementById('deviceWattage');
+
+      capacitySlider.addEventListener('input', function() {
+        capacityInput.value = this.value;
+        calculateRuntime();
+      });
+      capacityInput.addEventListener('input', function() {
+        capacitySlider.value = Math.min(Math.max(this.value, 50), 5000);
+        calculateRuntime();
+      });
+      wattageSlider.addEventListener('input', function() {
+        wattageInput.value = this.value;
+        calculateRuntime();
+      });
+      wattageInput.addEventListener('input', function() {
+        wattageSlider.value = Math.min(Math.max(this.value, 1), 1000);
+        calculateRuntime();
+      });
+
+      ['numDevices', 'hoursPerDay', 'efficiency'].forEach(function(id) {
+        document.getElementById(id).addEventListener('input', calculateRuntime);
+        document.getElementById(id).addEventListener('change', calculateRuntime);
+      });
+
+      calculateRuntime();
+    });
+  </script>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>
