@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calibrate DJI Drone IMU & Compass: Step-by-Step Guide (2026) | TechSpecsHub</title>
+  <meta name="description" content="How to calibrate DJI drone IMU and compass: complete step-by-step guide. Learn when to calibrate, pre-calibration checklist, IMU calibration steps, compass calibration steps, common mistakes, and verification for Mini, Mavic, Air, and Avata drones.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/specs/how-to-calibrate-dji-drone-imu-compass.html">
+
+  <meta property="og:title" content="How to Calibrate DJI Drone IMU & Compass: Step-by-Step Guide (2026) | TechSpecsHub">
+  <meta property="og:description" content="How to calibrate DJI drone IMU and compass: complete step-by-step guide. Learn when to calibrate, pre-calibration checklist, IMU calibration steps, compass calibration steps, common mistakes, and verification for Mini, Mavic, Air, and Avata drones.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/specs/how-to-calibrate-dji-drone-imu-compass.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-02T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Calibrate DJI Drone IMU & Compass: Step-by-Step Guide (2026) | TechSpecsHub">
+  <meta name="twitter:description" content="How to calibrate DJI drone IMU and compass: complete step-by-step guide. Learn when to calibrate, pre-calibration checklist, IMU calibration steps, compass calibration steps, common mistakes, and verification for Mini, Mavic, Air, and Avata drones.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Article", "HowTo"],
+    "headline": "How to Calibrate DJI Drone IMU & Compass: Step-by-Step Guide (2026)",
+    "description": "How to calibrate DJI drone IMU and compass: complete step-by-step guide. Learn when to calibrate, pre-calibration checklist, IMU calibration steps, compass calibration steps, common mistakes, and verification for Mini, Mavic, Air, and Avata drones.",
+    "url": "https://powerspecshub.com/pages/specs/how-to-calibrate-dji-drone-imu-compass.html",
+    "datePublished": "2026-06-02",
+    "dateModified": "2026-06-25",
+    "author": { "@type": "Organization", "name": "TechSpecsHub" },
+    "publisher": { "@type": "Organization", "name": "TechSpecsHub", "url": "https://powerspecshub.com/" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calibrate my DJI drone's compass?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calibrate a DJI drone's compass: go to DJI Fly app Settings → Safety → Compass → Calibrate. The app will prompt you to hold the drone horizontally and rotate it 360 degrees slowly (about 10 seconds per rotation). Then hold the drone vertically with the camera pointing down and rotate it 360 degrees again. The app will show 'Calibration Successful' when done. Always calibrate away from metal objects, power lines, and reinforced concrete. Calibrate before flying in a new location."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calibrate my DJI drone's IMU?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calibrate a DJI drone's IMU: place the drone on a perfectly flat, level surface. Open DJI Fly app, go to Settings → Safety → IMU → Calibrate. Follow the on-screen instructions — you'll need to place the drone in multiple orientations (flat on bottom, on its left side, on its right side, upside down, nose down, nose up). Each position takes 5-10 seconds. The whole process takes 2-5 minutes. Don't move or touch the drone during calibration. Make sure the battery is above 50% before starting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I calibrate my drone's compass?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You should calibrate your DJI drone's compass in these situations: when the app prompts you to calibrate, when flying in a new location more than 30 miles / 50 km from where you last calibrated, if the drone drifts or flies erratically, if you get a 'compass error' or 'compass interference' warning, if you've traveled a significant distance since your last flight, or if you notice the heading indicator on the app is wrong. Many pilots calibrate their compass every time they fly in a new area — it only takes 30 seconds and is good practice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I calibrate the IMU?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You should calibrate your DJI drone's IMU when the app recommends it, if the drone drifts significantly in hover, if you get an 'IMU error' or 'IMU calibration required' warning, after a crash or hard landing, after the drone has been stored in extreme temperatures, or if you notice the attitude indicator is off even when the drone is on a flat surface. Unlike the compass, you don't need to calibrate the IMU every time you fly or travel — it's much more stable and only needs calibration occasionally. Most drones go months without needing an IMU calibration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calibrate my drone inside my house?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can calibrate the IMU indoors as long as you have a flat, level surface — the IMU doesn't use magnetic sensors, so indoor metal objects don't affect it. However, you should NOT calibrate the compass indoors. The compass calibration must be done outdoors, away from metal objects, reinforced concrete, power lines, and any other sources of magnetic interference. Indoor environments have too much magnetic interference from building structure, appliances, and electronics, which will result in a bad compass calibration that causes the drone to drift or fly erratically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if compass calibration is wrong?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A bad compass calibration can cause serious flight problems. The drone might drift significantly, fly in circles, have incorrect heading information, or even fly away in the wrong direction when using Return to Home. The drone's position hold (GPS mode) relies on accurate compass data to know which direction it's facing. If the compass is wrong, the drone can get confused about its orientation. In severe cases, the drone might enter Atti mode and drift with the wind, or it could fly in the opposite direction you expect. Always verify your compass is working correctly after calibration by checking the heading indicator before taking off."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does IMU calibration take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IMU calibration on a DJI drone typically takes 2 to 5 minutes total. The process involves placing the drone in 5 to 6 different positions (depending on the model), and each position takes 5 to 15 seconds to complete. The drone's internal sensors need time to stabilize and take readings in each orientation. Make sure you have a flat, level surface and enough time to complete the full process without rushing. Never interrupt IMU calibration once it's started — let it finish completely. If you have to stop, you'll need to start over from the beginning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my DJI say 'compass interference'?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 'compass interference' warning on a DJI drone means the compass is detecting abnormal magnetic fields that could affect its accuracy. This is usually caused by flying near metal objects, power lines, reinforced concrete buildings, cars, or other sources of electromagnetic interference. If you see this warning, move to a different location away from potential interference sources and recalibrate the compass. Flying with compass interference can cause the drone to drift, lose position hold, or fly erratically. In most cases, simply moving 20-30 feet away from the source of interference will resolve the warning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to calibrate a new DJI drone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "New DJI drones come factory-calibrated, but you should still do a compass calibration before your first flight in your location. The factory calibration is done in a controlled environment and may not be accurate for where you'll be flying. The DJI Fly app will usually prompt you to calibrate the compass on your first flight. IMU calibration on a new drone is generally not needed — the factory IMU calibration is quite accurate. However, if you get an IMU warning or the drone seems to drift, you can recalibrate the IMU on a flat, level surface before your first flight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I fly without compass calibration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Technically, you can fly a DJI drone without a calibrated compass, but it's not recommended and the drone will have significant limitations. Without a working compass, the drone will fly in ATTI (Attitude) mode, which means it uses only the IMU and barometer for stabilization. It won't be able to hold position automatically, it will drift with the wind, and GPS features like Return to Home won't work properly. The drone will warn you before takeoff if the compass needs calibration. Always calibrate the compass before flying in GPS mode — it only takes 30 seconds and is essential for safe flight."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://powerspecshub.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Drones", "item": "https://powerspecshub.com/pages/specs/drones.html" },
+      { "@type": "ListItem", "position": 3, "name": "How to Calibrate DJI Drone IMU & Compass" }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="drones.html">Drones &amp; UAV</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">IMU &amp; Compass Calibration Guide</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-yellow-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-yellow-500/20 text-yellow-400 font-mono font-bold text-sm rounded-md border border-yellow-500/30">CALIBRATION GUIDE</div>
+        <span class="badge badge-warning"><i data-lucide="compass" style="width:0.75rem;height:0.75rem"></i>IMU + Compass</span>
+        <span class="badge badge-info"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Step-by-Step</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        How to Calibrate DJI Drone IMU &amp; Compass &mdash; <span class="gradient-text">Step-by-Step Guide</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        IMU and compass calibration are two of the most important pre-flight procedures, yet they're also among the most misunderstood. Do it wrong and your drone can drift, behave erratically, or even fly away. Do it right and you'll have rock-solid position hold, accurate Return to Home, and confidence in every flight. This guide covers everything you need to know about calibrating both systems on any DJI drone.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Compass Time</div>
+          <div class="font-mono font-bold text-xl text-white">30 sec</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="timer" style="width:0.9rem;height:0.9rem"></i>IMU Time</div>
+          <div class="font-mono font-bold text-xl text-white">2&ndash;5 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="map-pin" style="width:0.9rem;height:0.9rem"></i>Compass Location</div>
+          <div class="font-bold text-xl text-yellow-400">Outdoors Only</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>Cost</div>
+          <div class="font-mono font-bold text-xl text-green-400">Free</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8 border-electric-400/30">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="zap" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Quick Answer: How to Calibrate</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        For compass calibration: go to DJI Fly → Settings → Safety → Compass → Calibrate. Hold the drone horizontally and rotate 360° slowly, then hold vertically (camera down) and rotate 360°. For IMU calibration: place drone on a flat, level surface, go to Settings → Safety → IMU → Calibrate, and follow on-screen positions. Compass takes 30 seconds (do it outdoors), IMU takes 2-5 minutes (can be done indoors on a level surface).
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Compass: Calibrate in new locations away from metal</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>IMU: Only calibrate when needed, on a flat surface</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Battery should be above 50% before calibration</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Never interrupt calibration once started</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Verify calibration with a test hover before each flight</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Remove gimbal cover during IMU calibration</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="list" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Table of Contents</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+        <a href="#what-is-imu" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">i</span> What is IMU &amp; Compass?</a>
+        <a href="#when-calibrate" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">?</span> When to Calibrate</a>
+        <a href="#pre-checklist" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">✓</span> Pre-Calibration Checklist</a>
+        <a href="#compass-steps" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs font-mono font-bold">C</span> Compass Calibration Steps</a>
+        <a href="#imu-steps" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-mono font-bold">I</span> IMU Calibration Steps</a>
+        <a href="#common-mistakes" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs font-mono font-bold">!</span> Common Mistakes</a>
+        <a href="#verification" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xs font-mono font-bold">✓</span> Post-Calibration Verification</a>
+        <a href="#model-differences" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs font-mono font-bold">M</span> Model-Specific Differences</a>
+        <a href="#faq" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">?</span> Frequently Asked Questions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Understanding IMU and Compass</h2>
+    <div class="space-y-5">
+
+      <div id="what-is-imu" class="glass-card p-6 md:p-7">
+        <h3 class="font-bold text-xl mb-3">What is the IMU?</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          IMU stands for Inertial Measurement Unit. It's a collection of sensors inside your drone — accelerometers and gyroscopes — that measure the drone's movement, acceleration, and orientation in 3D space. The IMU tells the flight controller which way is up, how fast the drone is moving, and at what angle it's tilted.
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          Think of the IMU as the drone's inner ear — it senses motion and balance. Without a properly calibrated IMU, the drone wouldn't know which way is up, couldn't hover stably, and would likely crash immediately.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          <div class="bg-navy-900/60 border border-white/10 rounded-lg p-4">
+            <h4 class="font-semibold text-white mb-2">What the IMU Does</h4>
+            <ul class="space-y-1.5 text-sm text-gray-300 list-disc list-inside">
+              <li>Measures acceleration (accelerometers)</li>
+              <li>Measures rotation rate (gyroscopes)</li>
+              <li>Determines drone attitude/tilt</li>
+              <li>Enables stable hover</li>
+              <li>Detects sudden movements (crash detection)</li>
+            </ul>
+          </div>
+          <div class="bg-navy-900/60 border border-white/10 rounded-lg p-4">
+            <h4 class="font-semibold text-white mb-2">IMU Calibration Facts</h4>
+            <ul class="space-y-1.5 text-sm text-gray-300 list-disc list-inside">
+              <li>Needs a perfectly flat, level surface</li>
+              <li>Can be done indoors or outdoors</li>
+              <li>Takes 2-5 minutes</li>
+              <li>Only needed occasionally</li>
+              <li>Very stable once calibrated</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <h3 class="font-bold text-xl mb-3">What is the Compass?</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          The compass (or magnetometer) measures the Earth's magnetic field to determine which direction the drone is facing — its heading or yaw. This is essential for GPS-based flight modes like Position Hold, Waypoints, and Return to Home. The compass tells the drone "which way is north" so it knows its orientation relative to the world.
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          Think of the compass as the drone's internal compass needle. Without it, the drone wouldn't know which direction it's facing, and GPS position hold wouldn't work correctly — the drone might drift or fly in circles.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          <div class="bg-navy-900/60 border border-white/10 rounded-lg p-4">
+            <h4 class="font-semibold text-white mb-2">What the Compass Does</h4>
+            <ul class="space-y-1.5 text-sm text-gray-300 list-disc list-inside">
+              <li>Measures Earth's magnetic field</li>
+              <li>Determines drone heading (yaw)</li>
+              <li>Essential for GPS flight modes</li>
+              <li>Enables accurate Return to Home</li>
+              <li>Provides orientation for waypoint missions</li>
+            </ul>
+          </div>
+          <div class="bg-navy-900/60 border border-white/10 rounded-lg p-4">
+            <h4 class="font-semibold text-white mb-2">Compass Calibration Facts</h4>
+            <ul class="space-y-1.5 text-sm text-gray-300 list-disc list-inside">
+              <li>Must be done outdoors</li>
+              <li>Keep away from metal and magnetic sources</li>
+              <li>Takes only 30 seconds</li>
+              <li>Calibrate when traveling to new areas</li>
+              <li>Sensitive to environmental interference</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="when-calibrate" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4">When to Calibrate (and When Not To)</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        One of the most common questions pilots have is "how often should I calibrate?" The answer depends on whether we're talking about the compass or the IMU — they have very different calibration needs.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div>
+          <h3 class="font-bold text-lg mb-3 text-yellow-400 flex items-center gap-2"><i data-lucide="compass" style="width:1.1rem;height:1.1rem"></i> When to Calibrate Compass</h3>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>When the DJI Fly app prompts you to</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>When flying in a new location 30+ miles / 50+ km from last calibration</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>If you see "compass error" or "compass interference" warnings</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>If the drone drifts or flies erratically in GPS mode</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>If the heading indicator is wrong or spinning</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>After a crash or hard landing</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Many pilots calibrate before every flight in a new area (good practice)</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-3 text-blue-400 flex items-center gap-2"><i data-lucide="activity" style="width:1.1rem;height:1.1rem"></i> When to Calibrate IMU</h3>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>When the app recommends or requires it</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>If you see "IMU error" or "IMU calibration required"</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>If the drone drifts significantly in hover</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>After a crash or hard landing</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>After the drone was stored in extreme temperatures</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>If attitude indicator is off on a flat surface</span></li>
+            <li class="flex items-start gap-2"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Don't</strong> calibrate IMU every time you fly — it's not needed</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pre-checklist" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-yellow-950/10 to-navy-900 border-yellow-500/20">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="clipboard-check" style="width:1.25rem;height:1.25rem;color:#fbbf24"></i>Pre-Calibration Checklist</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Before you start any calibration, go through this checklist to ensure the best results:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="battery" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Battery &gt; 50%:</strong> Make sure the drone battery is at least half full. Low battery can cause calibration to fail or shut down mid-process.</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Normal temperature:</strong> The drone should be at room temperature. Don't calibrate immediately after bringing it in from a cold car or hot sunlight.</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="map-pin" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Good location (compass):</strong> For compass calibration, be outdoors in an open area. Stay at least 30 feet / 10 meters from cars, buildings, power lines, metal fences, and reinforced concrete.</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="layout" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Flat surface (IMU):</strong> For IMU calibration, you need a perfectly flat, level surface. A table or hard floor works — not grass or carpet.</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="smartphone" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Phone ready:</strong> Have your phone connected to the controller with DJI Fly open and the drone connected.</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="camera-off" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Remove gimbal cover:</strong> Take off the gimbal protector before IMU calibration. It's not needed for compass calibration but it's good practice.</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="rotate-ccw" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Enough time:</strong> Don't rush. Compass takes 30 seconds, IMU takes 2-5 minutes. Set aside enough time to complete the process.</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="wifi-off" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span><strong>No metal on you:</strong> Before compass calibration, take off any metal jewelry, watches, or belt buckles — they can interfere with the magnetometer.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="compass-steps" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Compass Calibration: Step-by-Step</h2>
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-green-950/20 to-navy-900 border-green-500/20">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        Compass calibration is quick and straightforward. The process is essentially the same across all DJI drone models — Mini, Mavic, Air, and Avata all use the same two-step rotation method.
+      </p>
+      <ol class="space-y-4 text-sm">
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">1</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Prepare Your Location</h4>
+            <p class="text-gray-300">Go outdoors to an open area. Stay at least 30 feet / 10 meters away from cars, buildings, metal fences, power lines, and reinforced concrete. Make sure you have enough space to spin around slowly with your arms outstretched.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">2</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Power On and Connect</h4>
+            <p class="text-gray-300">Power on the drone and controller. Connect your phone, open DJI Fly, and wait for the drone to connect. You don't need GPS lock for compass calibration, but you do need the drone connected to the app.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">3</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Start Calibration in the App</h4>
+            <p class="text-gray-300">In DJI Fly, tap the three dots (⋯) in the top right → Safety → scroll down to Compass → tap "Calibrate" or "Start." The app will show instructions and the drone's status light will start flashing yellow, indicating calibration mode.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">4</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">First Rotation (Horizontal)</h4>
+            <p class="text-gray-300">Hold the drone horizontally at chest level, with the camera facing forward (the normal flying position). Slowly rotate your entire body 360 degrees to the left or right — it should take about 10 seconds per full rotation. Go slow and steady. The app will prompt you when this step is done (usually a checkmark or the indicator turns green).</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">5</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Second Rotation (Vertical)</h4>
+            <p class="text-gray-300">Now hold the drone vertically with the nose pointing straight down (camera facing the ground, top of the drone facing you). Keep your arms steady and slowly rotate your body 360 degrees again, same speed as before. The drone's top surface should face you the whole time.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">6</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Wait for Confirmation</h4>
+            <p class="text-gray-300">When both rotations are complete, the app will show "Calibration Successful" or a green checkmark. The drone's status light will stop flashing yellow and return to normal. If it fails, try again in a different location — you're probably near a source of magnetic interference.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="alert alert-info mt-6 !mb-0">
+        <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Tip:</strong> The direction you rotate (clockwise or counter-clockwise) doesn't matter — pick one and be consistent. What matters is going slow and steady, and completing the full 360 degrees without stopping. If you go too fast, the calibration might fail or give inaccurate results.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="imu-steps" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">IMU Calibration: Step-by-Step</h2>
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-blue-950/20 to-navy-900 border-blue-500/20">
+      <p class="text-gray-300 leading-relaxed mb-5">
+        IMU calibration takes a bit longer than compass calibration and requires placing the drone in multiple positions. The exact number of positions varies by model — newer drones typically have 6 positions, while some older models have 5. The app will guide you through each one.
+      </p>
+      <ol class="space-y-4 text-sm">
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center font-mono font-bold text-blue-400">1</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Prepare a Flat, Level Surface</h4>
+            <p class="text-gray-300">Find a hard, flat, perfectly level surface. A table, desk, or hard floor works well. Grass, carpet, or uneven ground do NOT work. If you're not sure if the surface is level, you can use a small level app on your phone to check. A slightly unlevel surface will result in a poor IMU calibration.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center font-mono font-bold text-blue-400">2</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Prepare the Drone</h4>
+            <p class="text-gray-300">Remove the gimbal cover and propeller guards if you have them installed. Make sure the drone is at room temperature — not hot from sitting in the sun or cold from being in a fridge. Battery should be at least 50% charged. Place the drone on the flat surface in the normal, upright position.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center font-mono font-bold text-blue-400">3</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Power On and Open Calibration</h4>
+            <p class="text-gray-300">Power on the drone and controller. Open DJI Fly, connect to the drone. Go to Settings (⋯) → Safety → scroll down to IMU → tap "Calibrate." The app will show a warning about needing a flat surface — confirm to start.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center font-mono font-bold text-blue-400">4</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Follow On-Screen Positions</h4>
+            <p class="text-gray-300">The app will show you which position to place the drone in. Common positions include:</p>
+            <ul class="mt-2 space-y-1.5 text-gray-300 list-disc list-inside">
+              <li><strong>Position 1:</strong> Drone flat on its belly (normal landing position)</li>
+              <li><strong>Position 2:</strong> Drone on its left side</li>
+              <li><strong>Position 3:</strong> Drone on its right side</li>
+              <li><strong>Position 4:</strong> Drone upside down (on its top)</li>
+              <li><strong>Position 5:</strong> Drone standing on its nose (front down)</li>
+              <li><strong>Position 6:</strong> Drone standing on its tail (back down)</li>
+            </ul>
+            <p class="text-gray-300 mt-2">Each position takes 5-15 seconds. The app will show a progress indicator and tell you when to move to the next position.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center font-mono font-bold text-blue-400">5</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Handle Each Position Carefully</h4>
+            <p class="text-gray-300">When placing the drone in each position, set it down gently and then remove your hands completely. Don't hold it or touch it while calibration is in progress for that position. Make sure the drone is stable and not rocking. If the drone falls or moves during a position, the calibration will fail and you'll need to start over.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center font-mono font-bold text-blue-400">6</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Complete All Positions</h4>
+            <p class="text-gray-300">Continue through all positions until the app shows "Calibration Successful." The total process takes 2-5 minutes depending on the model. When done, place the drone back in its normal upright position. Don't interrupt the process — if you have to stop for any reason, you'll need to start completely over.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="alert alert-warning mt-6 !mb-0">
+        <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Important:</strong> Never move or touch the drone while IMU calibration is in progress for a given position. Even slight vibrations or movement can cause inaccurate calibration results, leading to drift or unstable flight. Set the drone down gently, remove your hands, and wait for the app to tell you to move to the next position.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="common-mistakes" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Common Calibration Mistakes to Avoid</h2>
+    <div class="space-y-4">
+      <div class="glass-card p-5 md:p-6">
+        <h3 class="font-bold text-lg mb-2 text-red-400">1. Calibrating Compass Indoors or Near Metal</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          This is the #1 mistake. Indoor environments are full of metal in the walls, floors, appliances, and furniture. Reinforced concrete has rebar that distorts magnetic fields. Calibrating near a car, metal fence, or power lines will give you a bad calibration. Always calibrate the compass outdoors in an open field or park, well away from any metal objects or structures.
+        </p>
+      </div>
+      <div class="glass-card p-5 md:p-6">
+        <h3 class="font-bold text-lg mb-2 text-red-400">2. Rotating Too Fast During Compass Calibration</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Many people spin around quickly, but that actually gives the compass less time to take accurate readings. You should rotate slowly — about 10 seconds per full 360-degree rotation. Slow and steady wins the race here. Think "walking pace" rotation, not "dancing" speed.
+        </p>
+      </div>
+      <div class="glass-card p-5 md:p-6">
+        <h3 class="font-bold text-lg mb-2 text-red-400">3. IMU Calibration on Uneven Surfaces</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          The IMU needs a perfectly flat, level surface to calibrate correctly. Grass, carpet, couches, beds, and car hoods are all bad choices. A hard table, desk, tile floor, or concrete pad works best. If the surface isn't level, the drone's "level" reference will be wrong, and it will drift or tilt in flight.
+        </p>
+      </div>
+      <div class="glass-card p-5 md:p-6">
+        <h3 class="font-bold text-lg mb-2 text-red-400">4. Interrupting Calibration Mid-Process</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Never turn off the drone, close the app, or move the drone while calibration is in progress. Interrupting IMU calibration can leave the drone in an uncalibrated state, which means it won't fly properly. If you accidentally interrupt it, you'll need to start the full calibration over from the beginning.
+        </p>
+      </div>
+      <div class="glass-card p-5 md:p-6">
+        <h3 class="font-bold text-lg mb-2 text-red-400">5. Calibrating IMU Too Often</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Unlike the compass, you don't need to calibrate the IMU every time you fly or every time you travel. The IMU is very stable and only needs occasional calibration. Over-calibrating can actually be counterproductive if you do it on a slightly unlevel surface, as each new calibration replaces the previous (possibly good) one. Only calibrate the IMU when the drone shows an error or you notice drift.
+        </p>
+      </div>
+      <div class="glass-card p-5 md:p-6">
+        <h3 class="font-bold text-lg mb-2 text-red-400">6. Wearing Metal During Compass Calibration</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          You're holding the drone during compass calibration, so anything metal on your body — a watch, ring, belt buckle, keys in your pocket — can interfere with the compass readings. Take off metal jewelry and empty your pockets before calibrating. It seems minor, but a steel watch band held inches from the drone's compass can cause significant interference.
+        </p>
+      </div>
+      <div class="glass-card p-5 md:p-6">
+        <h3 class="font-bold text-lg mb-2 text-red-400">7. Not Verifying After Calibration</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Just because the app says "calibration successful" doesn't mean it's perfect. Always verify with a test hover before flying far. Take off, hover at eye level for 10-15 seconds, and watch for drift. If the drone holds position well and the heading indicator matches reality, you're good. If it drifts or the heading is wrong, recalibrate in a better location.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="verification" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-green-950/10 to-navy-900 border-green-500/20">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="check-circle-2" style="width:1.25rem;height:1.25rem;color:#4ade80"></i>Post-Calibration Verification</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        After calibration, always verify before you fly. Here's how to check that everything is working correctly:
+      </p>
+      <div class="space-y-4 text-sm">
+        <div class="flex gap-3">
+          <div class="w-8 h-8 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400 text-xs">1</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Check the Heading Indicator</h4>
+            <p class="text-gray-300">On the DJI Fly map view, the little triangle shows which direction the drone is facing. Pick up the drone, point it north (use a compass app on your phone), and see if the app matches. Rotate the drone and see if the indicator rotates smoothly with it. If it spins erratically or points the wrong way, the compass calibration is bad.</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-8 h-8 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400 text-xs">2</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Check Attitude Indicator</h4>
+            <p class="text-gray-300">Place the drone on a flat surface. Look at the artificial horizon / attitude indicator in the app — the horizon line should be level. If it's tilted significantly, the IMU might need recalibration on a flatter surface. A small amount of tilt (a degree or two) is normal, but anything more noticeable should be recalibrated.</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-8 h-8 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400 text-xs">3</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Do a Test Hover</h4>
+            <p class="text-gray-300">Go to an open area, take off, and hover at eye level (about 5-10 feet high) for 10-15 seconds. Don't touch the controls. The drone should stay in roughly the same spot. A little drift is normal in wind, but it shouldn't take off in one direction or start circling. If it holds position well, your calibration is good.</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-8 h-8 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400 text-xs">4</div>
+          <div>
+            <h4 class="font-semibold text-white mb-1">Watch for Warning Messages</h4>
+            <p class="text-gray-300">Keep an eye on the app during the first minute of flight. If you see "compass interference," "compass error," "IMU error," or "ATTI mode" warnings, land immediately and recalibrate. Warnings that appear during flight but aren't there on the ground often mean you're flying near interference sources — move to a clearer area.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="model-differences" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Model-Specific Calibration Notes</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        The calibration process is very similar across all DJI models, but there are a few differences to be aware of:
+      </p>
+      <div class="overflow-x-auto">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Model</th><th>Compass Location</th><th>IMU Positions</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Mini 2 / 3 / 4 Pro</strong></td><td>Inside main body</td><td>6 positions</td><td>Standard calibration procedure</td></tr>
+            <tr><td><strong>Mavic 3 / 3 Pro</strong></td><td>Inside main body</td><td>6 positions</td><td>May have dual IMUs for redundancy</td></tr>
+            <tr><td><strong>Air 2 / 2S / 3</strong></td><td>Inside main body</td><td>6 positions</td><td>Standard procedure</td></tr>
+            <tr><td><strong>Avata / FPV</strong></td><td>Inside main body</td><td>6 positions</td><td>FPV mode uses additional sensors</td></tr>
+            <tr><td><strong>Mavic 2 / Pro</strong></td><td>Inside main body</td><td>5 positions</td><td>Use DJI Go 4 app, not DJI Fly</td></tr>
+            <tr><td><strong>Phantom 4</strong></td><td>Inside landing gear legs</td><td>5 positions</td><td>Use DJI Go 4 app</td></tr>
+            <tr><td><strong>Spark</strong></td><td>Inside main body</td><td>5 positions</td><td>Use DJI Go 4 app</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-400 text-sm mt-4">
+        The biggest difference is which app to use: DJI Fly for newer models (Mini 2+, Air 2+, Mavic 3, Avata, FPV), and DJI Go 4 for older models (Mavic Pro/2, Phantom, Spark, Inspire). Always follow the in-app instructions for your specific model — they're the most accurate guide.
+      </p>
+    </div>
+  </section>
+
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about DJI drone IMU and compass calibration.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I calibrate my DJI drone's compass?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">To calibrate a DJI drone's compass: go to the DJI Fly app, tap the settings icon (three dots) → Safety → Compass → Calibrate. The app will prompt you to hold the drone horizontally at chest level and rotate your body 360 degrees slowly — take about 10 seconds per full rotation. When prompted, hold the drone vertically with the camera pointing straight down and rotate 360 degrees again. The app will show "Calibration Successful" when complete. Always calibrate outdoors in an open area, away from metal objects, power lines, and reinforced concrete. Many pilots calibrate the compass before every flight in a new location.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I calibrate my DJI drone's IMU?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">To calibrate a DJI drone's IMU: place the drone on a perfectly flat, level surface like a table or hard floor. Remove the gimbal cover and make sure the battery is above 50%. Power on the drone, open DJI Fly, go to Settings → Safety → IMU → Calibrate. Follow the on-screen instructions — you'll need to place the drone in multiple positions (usually 6 on newer models): flat on bottom, on left side, on right side, upside down, nose down, and tail down. Each position takes 5-15 seconds. The whole process takes 2-5 minutes. Don't move or touch the drone during calibration. When complete, the app will show "Calibration Successful."</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>When should I calibrate my drone's compass?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">You should calibrate your DJI drone's compass when: the DJI Fly app prompts you to, when flying in a new location more than 30 miles / 50 km from where you last calibrated, if you get a "compass error" or "compass interference" warning, if the drone drifts or flies erratically in GPS mode, if the heading indicator on the app is wrong or spinning, after a crash or hard landing, or if you've traveled a significant distance since your last flight. Many experienced pilots make it a habit to calibrate the compass before every flight when they're in a new area — it only takes 30 seconds and is good safety practice.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>When should I calibrate the IMU?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">You should calibrate your DJI drone's IMU when the app recommends or requires it, if you see an "IMU error" or "IMU calibration required" warning, if the drone drifts significantly in stable hover (after ruling out compass issues), after a crash or hard landing, after the drone has been stored in extreme temperatures (very hot or very cold), or if you notice the attitude/horizon indicator is off even when the drone is on a known-flat surface. Unlike the compass, you generally don't need to calibrate the IMU every time you fly or travel — it's much more stable. Most drones go months without needing an IMU calibration. Over-calibrating can actually be harmful if you do it on an uneven surface.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I calibrate my drone inside my house?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">You can calibrate the IMU indoors as long as you have a perfectly flat, level surface — the IMU uses accelerometers and gyroscopes, not magnetic sensors, so indoor metal objects don't affect it. However, you should NEVER calibrate the compass indoors. Compass calibration must be done outdoors in an open area, away from metal objects, reinforced concrete, power lines, appliances, and other sources of magnetic interference. Indoor environments are full of metal in the walls, floors, and furniture, which will result in a bad compass calibration. A poorly calibrated compass can cause the drone to drift, fly erratically, or even fly away.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What happens if compass calibration is wrong?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">A bad compass calibration can cause serious flight problems. The drone might drift significantly even with full GPS lock, fly in slow circles, show incorrect heading information on the app, or behave unpredictably when you give control inputs. More dangerously, Return to Home might send the drone in the wrong direction. The drone's GPS position hold relies on accurate compass data to know which direction it's facing — without that, the flight controller gets confused about orientation. In severe cases, the drone might switch to ATTI mode and drift with the wind. Always verify your compass is working after calibration by checking the heading indicator and doing a test hover before flying far.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How long does IMU calibration take?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">IMU calibration on a DJI drone typically takes 2 to 5 minutes total. The process involves placing the drone in 5 to 6 different positions depending on the model, and each position takes 5 to 15 seconds to complete. The drone's internal sensors need time to stabilize and take accurate readings in each orientation. The exact duration depends on the model and how quickly you move between positions. Make sure you have a flat, level surface and enough time to complete the full process without rushing. Never interrupt IMU calibration once it's started — if you have to stop for any reason, you'll need to start over from the beginning.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why does my DJI say "compass interference"?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">A "compass interference" warning on a DJI drone means the compass is detecting abnormal or distorted magnetic fields that could affect its accuracy. This is usually caused by flying near metal objects like cars, fences, or buildings, power lines, reinforced concrete, or other sources of electromagnetic interference like cell towers or industrial equipment. If you see this warning on the ground, move to a different location farther from potential interference sources and recalibrate the compass. If you see it in flight, move away from whatever structure is causing it. In most cases, simply moving 20-30 feet away from the source will resolve the warning. Flying with compass interference is dangerous — the drone might drift or lose position hold.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Do I need to calibrate a new DJI drone?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">New DJI drones come factory-calibrated from the factory, but you should still do a compass calibration before your first flight at your location. The factory calibration is done in a controlled environment in China and may not be perfectly accurate for where you'll be flying. The DJI Fly app will usually prompt you to calibrate the compass on your first flight anyway. IMU calibration on a brand new drone is generally not needed — the factory IMU calibration is quite accurate and the IMU is very stable. However, if you get an IMU warning out of the box or the drone seems to drift, you can recalibrate the IMU on a flat, level surface before your first flight.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I fly without compass calibration?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">Technically, you can fly a DJI drone without a calibrated compass, but it's not recommended and the drone will have significant limitations. Without a working compass, the drone will operate in ATTI (Attitude) mode, which means it uses only the IMU and barometer for stabilization. It won't be able to hold position automatically — it will drift with the wind — and GPS features like Return to Home, ActiveTrack, and Waypoints won't work properly or at all. The drone will warn you before takeoff if the compass needs calibration. Always calibrate the compass before flying in GPS mode — it only takes 30 seconds and is essential for safe, predictable flight. Only fly without compass calibration if you're an experienced pilot and have no other option.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related DJI Drone Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="dji-drone-gps-weak-signal.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-blue-500/20 text-blue-400 font-mono font-semibold text-sm rounded-md border border-blue-500/30">GPS</div>
+          <span class="badge badge-warning">8 Fixes</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">GPS Weak Signal</h3>
+        <p class="text-sm text-gray-400">8 fixes for DJI GPS weak signal. Open area relocation, wait time, IMU calibration, compass calibration, and interference sources.</p>
+      </a>
+      <a href="dji-drone-wont-turn-on.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">WON'T START</div>
+          <span class="badge badge-critical">9 Fixes</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Won't Turn On</h3>
+        <p class="text-sm text-gray-400">9 causes and fixes for a DJI drone that won't power on. Battery hibernation, power button sequence, contacts, temperature, and more.</p>
+      </a>
+      <a href="dji-gimbal-not-working-stuck.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">GIMBAL</div>
+          <span class="badge badge-warning">8 Fixes</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Gimbal Not Working</h3>
+        <p class="text-sm text-gray-400">8 fixes for DJI gimbal problems. Gimbal cover check, calibration, IMU recalibration, motor overload, firmware, and damage inspection.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">More DJI Drone Resources</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Drone specifications, error code database, and complete troubleshooting guides for every DJI model.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="drones.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Drone Comparison</a>
+        <a href="dji-mini-5-pro.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="plane" style="width:1rem;height:1rem"></i>Mini 5 Pro Specs</a>
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 text-gray-300 hover:text-white font-medium rounded-lg transition-all"><i data-lucide="arrow-right" style="width:1rem;height:1rem"></i>Error Code Database</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/5 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

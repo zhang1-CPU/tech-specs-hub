@@ -92,6 +92,56 @@
     <priority>0.80</priority>
   </url>
 
+  <!-- Long-Tail Tutorial Pages - Outdoor Power (high intent, low competition) -->
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/portable-power-station-output-not-working.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/portable-power-station-beeping.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/portable-power-station-wont-turn-on.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/portable-power-station-not-charging.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/portable-power-station-eco-mode.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/solar-charging-0w-power-station.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/power-station-charging-stops-at-80.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/how-to-store-portable-power-station.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <!-- Hybrid & EV Battery Specs -->
   <url>
     <loc>https://powerspecshub.com/pages/specs/hybrid-cars.html</loc>
@@ -112,6 +162,50 @@
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
+  </url>
+
+  <!-- Long-Tail Tutorial Pages - Drones (high intent, low competition) -->
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/dji-drone-wont-turn-on.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/dji-battery-hibernation-mode.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/dji-drone-gps-weak-signal.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/dji-controller-disconnecting-mid-flight.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/dji-drone-not-connecting-to-controller.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/how-to-calibrate-dji-drone-imu-compass.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://powerspecshub.com/pages/specs/dji-gimbal-not-working-stuck.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <!-- Smart Home -->

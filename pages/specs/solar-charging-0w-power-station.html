@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Charging Shows 0W? 8 Causes &amp; Fixes for Power Stations (2026) | TechSpecsHub</title>
+  <meta name="description" content="Solar charging showing 0W on your portable power station? 8 causes with step-by-step fixes for MPPT wake up, voltage mismatch, wrong port, panel orientation, connector issues, and silent mode throttling.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/specs/solar-charging-0w-power-station.html">
+
+  <meta property="og:title" content="Solar Charging Shows 0W? 8 Causes &amp; Fixes for Power Stations (2026) | TechSpecsHub">
+  <meta property="og:description" content="Solar charging showing 0W on your portable power station? 8 causes with step-by-step fixes for MPPT, voltage mismatch, wrong port, and more.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/specs/solar-charging-0w-power-station.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Solar Charging Shows 0W? 8 Causes &amp; Fixes for Power Stations (2026) | TechSpecsHub">
+  <meta name="twitter:description" content="Solar charging showing 0W on your portable power station? 8 causes with step-by-step fixes.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Solar Charging Shows 0W? 8 Causes &amp; Fixes for Power Stations (2026)",
+    "description": "8 causes and step-by-step fixes for when solar charging shows 0 watts on portable power stations from EcoFlow, Jackery, Bluetti, and Anker.",
+    "url": "https://powerspecshub.com/pages/specs/solar-charging-0w-power-station.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is my solar panel showing 0W on my power station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solar charging showing 0W on a power station is almost always caused by one of 8 issues: solar input not activated, MPPT wake-up required, voltage mismatch (panel Voc below station minimum), wrong port used, connector polarity reversed, panel in full shade or wrong angle, faulty cable/connector, or the station battery is already 100% full. The most common causes are voltage mismatch and input activation issues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get my solar panel to charge my power station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with these steps: 1) Confirm solar charging is enabled on the station (some require pressing a Solar button), 2) Check the panel is in direct sunlight, 3) Verify you are using the correct solar input port (not the DC/car port), 4) Check that panel open-circuit voltage (Voc) is within the station's MPPT range, 5) Ensure polarity is correct, 6) Try a different cable, 7) Wake up the MPPT by connecting panels in full sun."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is MPPT wake-up and why won't my solar start?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MPPT wake-up is when the solar charge controller needs a minimum voltage from the panels to start charging. If the panel voltage is too low (early morning, heavy cloud, or panels with low Voc), the MPPT controller never wakes up and shows 0W. The solution is to make sure panels are in strong sunlight and that the panel open-circuit voltage exceeds the station's minimum MPPT voltage by at least 2-3V for reliable wake-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use any solar panel with my power station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — your solar panel must match your power station's solar input specifications. The most important spec is the MPPT voltage range. The panel's open-circuit voltage (Voc) must be above the station's minimum MPPT voltage and below the maximum MPPT voltage. Also check the maximum wattage, connector type (MC4, XT60, etc.), and whether you need an adapter. Mismatched voltage is the #1 cause of 0W solar charging."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my solar show 0W in the morning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solar shows 0W in the morning because the sunlight intensity is too low. MPPT controllers need a minimum voltage (typically 10-30V depending on the station) to wake up and start charging. In early morning light, the panel voltage is below this threshold. As the sun rises and intensity increases, the voltage will cross the threshold and charging will start automatically — usually around 200-500W/m² of irradiance depending on your panel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I test if my solar panel is working?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To test a solar panel: 1) Put it in full direct sun, 2) Use a multimeter set to DC voltage to measure across the positive and negative terminals — you should see a voltage close to the panel's rated Voc (open-circuit voltage), 3) If you see 0V or very low voltage, the panel or its wiring is faulty, 4) If voltage is good, the issue is with the power station's MPPT, the cable, or the connection. Always test under bright sun, not shade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does silent mode affect solar charging?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Silent mode (also called Quiet mode) reduces the maximum charge speed to keep the cooling fan off and minimize noise. On some models, it throttles charging to around 200-400W — but it should never cause 0W. If you see 0W, silent mode is not the cause. However, if you see very low wattage on a sunny day with a big panel array, silent mode could be limiting the charge rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can reversed polarity damage my power station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most modern power stations have reverse polarity protection on the solar input, so connecting positive to negative will not damage the station — it will simply show 0W and not charge. However, this protection does not always extend to the DC input or car charger port. Always double-check polarity before connecting, especially if you are making custom cables or using adapters from third parties."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my MPPT is broken?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To determine if the MPPT is broken: 1) Confirm the solar panel works by testing its voltage with a multimeter in full sun, 2) Try a different known-good cable, 3) Test with a different solar panel that works with other stations, 4) Try all solar input ports, 5) Reset the power station, 6) If you still get 0W with confirmed-good panels and cables, the MPPT charge controller is likely faulty and needs warranty service. Always test with direct sun, not indirect or shade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does solar stop when battery is full?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solar charging stops when the battery reaches 100% because the Battery Management System (BMS) stops accepting charge to protect the battery from overcharging. This is completely normal. The station may show 0W input or very low wattage (trickle charge). Some stations continue to pass solar power directly to loads (pass-through charging) even when the battery is full, but the battery itself stops charging."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Outdoor Power",
+        "item": "https://powerspecshub.com/pages/specs/outdoor-power.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Solar 0W Troubleshooting"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="../tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="../tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="outdoor-power.html">Outdoor Power</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Solar 0W Troubleshooting</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-orange-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-orange-500/20 text-orange-400 font-mono font-bold text-sm rounded-md border border-orange-500/30">SOLAR&nbsp;0W</div>
+        <span class="badge badge-warning"><i data-lucide="sun" style="width:0.75rem;height:0.75rem"></i>MPPT Issues</span>
+        <span class="badge badge-info"><i data-lucide="layers" style="width:0.75rem;height:0.75rem"></i>All Brands</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Solar Charging Shows 0W? &mdash; <span class="gradient-text">8 Causes &amp; Fixes (2026)</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        You set up your solar panels, plug them in, and… nothing. 0 watts. The display shows no solar input, even though the sun is shining. This is one of the most common — and most frustrating — solar charging problems. The good news: 90% of the time, it is a simple fix. This guide walks through every cause of 0W solar charging, from MPPT wake-up issues to voltage mismatch, wrong ports, connector problems, and more.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="check-circle" style="width:0.9rem;height:0.9rem"></i>Success Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">90%+</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Fix Time</div>
+          <div class="font-mono font-bold text-xl text-electric-400">5&ndash;30&nbsp;min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Most Common</div>
+          <div class="font-bold text-lg text-yellow-400">Voltage Mismatch</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="wrench" style="width:0.9rem;height:0.9rem"></i>Difficulty</div>
+          <div class="font-bold text-xl text-electric-400">Easy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK FIX -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-orange-950/20 to-navy-900 border-orange-500/20">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="zap" style="width:1.25rem;height:1.25rem;color:#fb923c"></i>Quick Answer: Why Is My Solar Showing 0W?</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        <strong class="text-white">Solar charging showing 0W is almost always caused by voltage mismatch, MPPT wake-up failure, wrong port, or a connection issue.</strong> Start with the simplest fixes first: make sure solar input is enabled, panels are in direct sun, you are using the correct solar port (not the car/DC port), and polarity is correct. If that does not work, check that your panel's open-circuit voltage (Voc) is above your station's minimum MPPT voltage — this is the #1 cause of 0W solar with third-party panels.
+      </p>
+      <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+        <p class="text-sm text-gray-300">
+          <strong class="text-electric-400">90-second check:</strong> Solar input enabled? ✓ &nbsp; Panels in direct sun? ✓ &nbsp; Correct solar port? ✓ &nbsp; Polarity correct? ✓ &nbsp; Panel Voc > station min voltage? ✓
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE OF CONTENTS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="list" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Table of Contents</h2>
+      <div class="grid md:grid-cols-2 gap-2 text-sm">
+        <a href="#quick-diagnostic" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">01</span>3-Minute Quick Diagnostic</a>
+        <a href="#cause-1" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">02</span>Cause 1: Solar Input Not Activated</a>
+        <a href="#cause-2" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">03</span>Cause 2: MPPT Wake-Up Failure</a>
+        <a href="#cause-3" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">04</span>Cause 3: Voltage Mismatch</a>
+        <a href="#cause-4" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">05</span>Cause 4: Wrong Port Used</a>
+        <a href="#cause-5" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">06</span>Cause 5: Polarity Reversed</a>
+        <a href="#cause-6" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">07</span>Cause 6: Shade / Wrong Orientation</a>
+        <a href="#cause-7" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">08</span>Cause 7: Faulty Cable or Connector</a>
+        <a href="#cause-8" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">09</span>Cause 8: Battery Already Full</a>
+        <a href="#silent-mode" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">10</span>Silent Mode &amp; Charge Throttling</a>
+        <a href="#panel-test" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">11</span>How to Test Solar Panels</a>
+        <a href="#brand-notes" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">12</span>Brand-Specific Notes</a>
+        <a href="#faq" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">13</span>Frequently Asked Questions</a>
+        <a href="#related" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">14</span>Related Guides</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK DIAGNOSTIC -->
+  <section id="quick-diagnostic" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">3-Minute Quick Diagnostic</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Run through this checklist first. Most 0W solar issues are caught in the first 3 steps.
+      </p>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 p-3 bg-navy-900/60 rounded-xl border border-white/5">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400 text-sm">1</span>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-white">Is solar charging enabled?</div>
+            <p class="text-sm text-gray-400">Some stations require pressing a Solar button or enabling solar input in the app. Check the display — does it show a solar icon or "PV Input" indicator?</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-navy-900/60 rounded-xl border border-white/5">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400 text-sm">2</span>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-white">Are panels in direct sunlight?</div>
+            <p class="text-sm text-gray-400">No shade, no clouds, panels facing the sun. Even partial shade on one cell of a panel string can kill output. Test around noon when the sun is strongest.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-navy-900/60 rounded-xl border border-white/5">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400 text-sm">3</span>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-white">Are you plugged into the right port?</div>
+            <p class="text-sm text-gray-400">Use the port labeled "Solar" or "PV Input". Do NOT use the car/DC input or Anderson port unless the manual says it supports solar. Many stations have separate DC and solar ports.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-navy-900/60 rounded-xl border border-white/5">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400 text-sm">4</span>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-white">Is polarity correct?</div>
+            <p class="text-sm text-gray-400">Positive to positive, negative to negative. Check your cable and any adapters. Reverse polarity = 0W (and could damage stations without protection).</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-navy-900/60 rounded-xl border border-white/5">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400 text-sm">5</span>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-white">Is panel Voc within MPPT range?</div>
+            <p class="text-sm text-gray-400">Check your panel's Voc (open-circuit voltage) rating and compare to your station's MPPT voltage range. Panel Voc must be ABOVE the minimum MPPT voltage.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-navy-900/60 rounded-xl border border-white/5">
+          <div class="w-8 h-8 bg-electric-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="font-mono font-bold text-electric-400 text-sm">6</span>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-white">Is the battery already full?</div>
+            <p class="text-sm text-gray-400">At 100%, the BMS stops accepting charge. The display may show 0W input even with full sun. Use some battery and try again.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAUSE 1 -->
+  <section id="cause-1" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Cause 1: Solar Input Not Activated</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        This sounds obvious, but you would be surprised how many people miss it. On some power stations, solar charging does not start automatically — you need to manually enable the solar input.
+      </p>
+      <h4 class="font-semibold text-white mb-2">How to check:</h4>
+      <ul class="text-sm text-gray-300 space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i data-lucide="circle" style="width:0.375rem;height:0.375rem;color:#22d3ee;flex-shrink:0;margin-top:0.4rem"></i><span>Look at the display for a solar panel icon or "PV", "Solar", or "Solar Input" label</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="circle" style="width:0.375rem;height:0.375rem;color:#22d3ee;flex-shrink:0;margin-top:0.4rem"></i><span>If there is a dedicated "Solar" button, press it to activate</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="circle" style="width:0.375rem;height:0.375rem;color:#22d3ee;flex-shrink:0;margin-top:0.4rem"></i><span>Check the app — some stations let you toggle solar input on/off in settings</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="circle" style="width:0.375rem;height:0.375rem;color:#22d3ee;flex-shrink:0;margin-top:0.4rem"></i><span>If the station has multiple input modes (AC/DC/Solar), make sure it is set to Solar or Auto</span></li>
+      </ul>
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Brand note:</strong> Bluetti and EcoFlow usually auto-detect solar input. Jackery and Anker sometimes require manual activation, especially on budget models. Check your manual for your specific model.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAUSE 2 -->
+  <section id="cause-2" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Cause 2: MPPT Wake-Up Failure</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        <strong class="text-white">MPPT wake-up failure is the second most common cause of 0W solar.</strong> MPPT (Maximum Power Point Tracking) charge controllers need a minimum voltage from the solar panels to "wake up" and start charging. If the panel voltage is too low, the MPPT controller stays in standby and shows 0W.
+      </p>
+      <h4 class="font-semibold text-white mb-2">Why this happens:</h4>
+      <ul class="text-sm text-gray-300 space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i data-lucide="sunrise" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Early morning / late afternoon:</strong> Low light intensity means low panel voltage. The sun needs to be high enough for panels to produce sufficient voltage.</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="cloud" style="width:1rem;height:1rem;color:#9ca3af;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Heavy cloud cover:</strong> Even if it is "bright" outside, heavy clouds reduce irradiance enough to drop panel voltage below the MPPT minimum.</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="battery-low" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Panel Voc too close to minimum:</strong> If your panel's rated Voc is only slightly above the station's minimum MPPT voltage, real-world conditions (temperature, dust, slight shade) can push it below threshold.</span></li>
+      </ul>
+      <h4 class="font-semibold text-white mb-2">How to fix:</h4>
+      <ol class="text-sm text-gray-300 space-y-2 mb-4 list-decimal list-inside">
+        <li>Wait until midday when the sun is strongest</li>
+        <li>Move panels into direct, unshaded sunlight</li>
+        <li>Tilt panels toward the sun at the correct angle (latitude + 15° in winter, -15° in summer)</li>
+        <li>If using multiple panels, connect them in series to boost voltage (series adds voltage, parallel adds current)</li>
+        <li>Make sure panel Voc is at least 2-3V above the station's minimum MPPT voltage for reliable wake-up</li>
+      </ol>
+      <div class="alert alert-warning !mb-0">
+        <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Important:</strong> Never exceed the maximum MPPT voltage of your station. Adding panels in series increases total Voc. If you go above the max, you can damage the MPPT controller. Always calculate total series Voc (add individual panel Voc values) and ensure it is below the station's maximum PV voltage — ideally with 10-15% margin for cold weather (panel voltage increases as temperature drops).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAUSE 3 -->
+  <section id="cause-3" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Cause 3: Voltage Mismatch (#1 Cause)</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        <strong class="text-white">Voltage mismatch is the #1 cause of 0W solar charging, especially with third-party panels.</strong> Your solar panel's open-circuit voltage (Voc) must be within your power station's MPPT voltage range. If the panel Voc is below the minimum MPPT voltage, the station will show 0W — no exceptions.
+      </p>
+      <div class="overflow-x-auto mb-6">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Brand &amp; Model</th><th>MPPT Voltage Range</th><th>Max Solar Wattage</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>EcoFlow Delta Pro 3</td><td>12-150V</td><td>1,600W</td></tr>
+            <tr><td>EcoFlow Delta 2</td><td>11-100V</td><td>500W</td></tr>
+            <tr><td>Jackery Explorer 1000 v2</td><td>12-60V</td><td>200W</td></tr>
+            <tr><td>Bluetti AC200MAX</td><td>10-145V</td><td>900W</td></tr>
+            <tr><td>Anker 535 (PowerHouse 512Wh)</td><td>12-60V</td><td>200W</td></tr>
+            <tr><td>Anker 757 (PowerHouse 1229Wh)</td><td>11-60V</td><td>500W</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4 class="font-semibold text-white mb-2">How to check compatibility:</h4>
+      <ol class="text-sm text-gray-300 space-y-2 mb-4 list-decimal list-inside">
+        <li>Find your solar panel's <strong>Voc (Open-Circuit Voltage)</strong> on the label or spec sheet</li>
+        <li>Find your power station's <strong>MPPT voltage range</strong> in the manual or specs</li>
+        <li>Panel Voc must be <strong>higher than the minimum</strong> MPPT voltage (ideally by 2-3V+)</li>
+        <li>Panel Voc must be <strong>lower than the maximum</strong> MPPT voltage (ideally with margin)</li>
+        <li>For multiple panels in series: <strong>add all Voc values</strong> together</li>
+        <li>For multiple panels in parallel: <strong>Voc stays the same</strong> (only current adds)</li>
+      </ol>
+      <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5 mb-4">
+        <h4 class="font-semibold text-electric-400 mb-2">Example: 100W 12V Panel + Jackery Explorer 1000 v2</h4>
+        <p class="text-sm text-gray-300">
+          A typical 100W "12V" panel has a Voc around 21-22V. Jackery Explorer 1000 v2 MPPT range is 12-60V. Panel Voc (22V) is above minimum (12V) and below maximum (60V). <span class="text-green-400 font-semibold">✓ Compatible</span>
+        </p>
+      </div>
+      <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+        <h4 class="font-semibold text-red-400 mb-2">Example: 50W 5V USB Panel + EcoFlow Delta 2</h4>
+        <p class="text-sm text-gray-300">
+          A small 50W USB panel might have Voc of only 9-10V. EcoFlow Delta 2 minimum MPPT is 11V. Panel Voc (10V) is below minimum (11V). <span class="text-red-400 font-semibold">✗ NOT compatible — will show 0W</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAUSE 4 -->
+  <section id="cause-4" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Cause 4: Wrong Port Used</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Many power stations have multiple input ports — AC charging, car/DC charging, and solar/PV input. They look different and serve different purposes. Plugging solar panels into the wrong port will result in 0W charging (or worse, potential damage).
+      </p>
+      <h4 class="font-semibold text-white mb-2">Common port types and what they are for:</h4>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="font-semibold text-electric-400 mb-1">Solar / PV Input</div>
+          <p class="text-sm text-gray-300 mb-1"><strong>Connector:</strong> MC4, XT60, or proprietary solar connector</p>
+          <p class="text-sm text-gray-400">This is the correct port for solar panels. It connects directly to the MPPT charge controller.</p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="font-semibold text-yellow-400 mb-1">Car / DC Input</div>
+          <p class="text-sm text-gray-300 mb-1"><strong>Connector:</strong> DC barrel plug, Anderson, or car cigarette lighter</p>
+          <p class="text-sm text-gray-400">For charging from a vehicle's 12V outlet. Generally NOT for solar — the DC input has different voltage requirements and no MPPT.</p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="font-semibold text-green-400 mb-1">AC Input</div>
+          <p class="text-sm text-gray-300 mb-1"><strong>Connector:</strong> Standard AC power plug</p>
+          <p class="text-sm text-gray-400">For wall charging only. Never plug solar into AC input.</p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="font-semibold text-purple-400 mb-1">Expansion Battery Port</div>
+          <p class="text-sm text-gray-300 mb-1"><strong>Connector:</strong> Proprietary large connector</p>
+          <p class="text-sm text-gray-400">For connecting extra battery modules only. Not for solar or any other input.</p>
+        </div>
+      </div>
+      <div class="alert alert-critical !mb-0">
+        <i data-lucide="alert-octagon" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Important:</strong> Some stations (like certain EcoFlow models) support solar through the DC input using a special adapter cable. Always check your manual. If your station has a dedicated solar port, always use that one — it will have the MPPT controller and proper protection.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAUSE 5 -->
+  <section id="cause-5" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Cause 5: Polarity Reversed</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Reversed polarity (positive connected to negative, and vice versa) will result in 0W charging. Most modern power stations have reverse polarity protection on the solar input, so it will not damage the station — it just will not charge.
+      </p>
+      <h4 class="font-semibold text-white mb-2">Common ways polarity gets reversed:</h4>
+      <ul class="text-sm text-gray-300 space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i data-lucide="circle" style="width:0.375rem;height:0.375rem;color:#22d3ee;flex-shrink:0;margin-top:0.4rem"></i><span>Using a third-party adapter cable that is wired incorrectly</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="circle" style="width:0.375rem;height:0.375rem;color:#22d3ee;flex-shrink:0;margin-top:0.4rem"></i><span>MC4 connectors swapped (MC4 connectors are keyed, but people force them)</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="circle" style="width:0.375rem;height:0.375rem;color:#22d3ee;flex-shrink:0;margin-top:0.4rem"></i><span>Custom cables with wires swapped</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="circle" style="width:0.375rem;height:0.375rem;color:#22d3ee;flex-shrink:0;margin-top:0.4rem"></i><span>Panel wired backwards at the junction box (rare, but happens with DIY panels)</span></li>
+      </ul>
+      <h4 class="font-semibold text-white mb-2">How to check:</h4>
+      <ol class="text-sm text-gray-300 space-y-2 mb-4 list-decimal list-inside">
+        <li>Trace the wires from the panel to the station</li>
+        <li>Red wire = positive (+), black/blue = negative (-)</li>
+        <li>Check that "+" on panel goes to "+" on station, and "-" goes to "-"</li>
+        <li>If using MC4 connectors: male (+) on panel should connect to female (-) on station cable, or vice versa — check the labels on the connectors themselves</li>
+        <li>When in doubt, use a multimeter to verify polarity (see panel testing section below)</li>
+      </ol>
+      <div class="alert alert-warning !mb-0">
+        <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Safety note:</strong> While solar inputs usually have reverse polarity protection, DC inputs and car charger ports may NOT. Always double-check polarity when using adapters or custom cables. If you smell burning or see smoke, disconnect immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAUSE 6 -->
+  <section id="cause-6" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Cause 6: Shade or Wrong Panel Orientation</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Solar panels need direct, unshaded sunlight to produce power. Even a small amount of shade on one part of a panel can dramatically reduce output — and in some cases (with certain panel types and configurations), drop it to 0W.
+      </p>
+      <h4 class="font-semibold text-white mb-2">How shade kills output:</h4>
+      <p class="text-sm text-gray-300 mb-4">
+        Solar panels are made of individual solar cells wired in series. In a typical 60-cell panel, all 60 cells are in series. If even one cell is fully shaded, it can act as a diode and block the entire string — dropping output to near zero. This is the "Christmas light effect" — one bulb burns out, the whole string goes dark.
+      </p>
+      <h4 class="font-semibold text-white mb-2">Things that cause shading issues:</h4>
+      <ul class="text-sm text-gray-300 space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i data-lucide="tree-deciduous" style="width:1rem;height:1rem;color:#22c55e;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Tree branches:</strong> Even thin branches cast shadows that kill output</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#9ca3af;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Buildings or structures:</strong> Roof overhangs, chimneys, nearby buildings</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="cloud" style="width:1rem;height:1rem;color:#9ca3af;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Cloud cover:</strong> Heavy clouds reduce output to 5-20% of full sun; very heavy clouds can drop below MPPT wake-up threshold</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="footprints" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Dirt, dust, leaves, snow:</strong> Anything covering the panel surface blocks light</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="sun" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Wrong angle:</strong> Panels flat on the ground produce 20-50% less than panels tilted at the optimal angle</span></li>
+      </ul>
+      <h4 class="font-semibold text-white mb-2">How to fix:</h4>
+      <ol class="text-sm text-gray-300 space-y-2 list-decimal list-inside">
+        <li>Move panels to a location with full, unobstructed sun — no shadows at all</li>
+        <li>Clean the panel surface — remove dust, dirt, leaves, snow</li>
+        <li>Tilt panels at the optimal angle: roughly your latitude + 15° in winter, -15° in summer</li>
+        <li>Face panels true south (Northern Hemisphere) or true north (Southern Hemisphere)</li>
+        <li>If using multiple panels, consider parallel wiring or panels with bypass diodes to reduce shading impact</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CAUSE 7 -->
+  <section id="cause-7" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Cause 7: Faulty Cable or Connector</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Cables and connectors wear out over time — especially if you set up and take down panels frequently. A broken wire inside the cable insulation, a corroded connector, or a loose pin can cause 0W charging.
+      </p>
+      <h4 class="font-semibold text-white mb-2">Common cable/connector failures:</h4>
+      <ul class="text-sm text-gray-300 space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i data-lucide="cable" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Broken wire inside cable:</strong> Frequent bending and coiling causes metal fatigue. The wire breaks inside the insulation where you cannot see it.</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="unplug" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Loose MC4 connectors:</strong> MC4 connectors need to click into place. If they are not fully seated, there is no electrical contact.</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="corner-down-right" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Damaged connector pins:</strong> Bent or corroded pins inside the connector prevent proper contact.</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="plug-zap" style="width:1rem;height:1rem;color:#a855f7;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Faulty adapter:</strong> Cheap third-party adapters sometimes have internal wiring issues.</span></li>
+      </ul>
+      <h4 class="font-semibold text-white mb-2">How to diagnose:</h4>
+      <ol class="text-sm text-gray-300 space-y-2 mb-4 list-decimal list-inside">
+        <li>Try a different cable — if a known-good cable works, your original cable is bad</li>
+        <li>Wiggle the cable at both ends while watching the display — if the wattage flickers, you have a loose or broken connection</li>
+        <li>Check MC4 connectors — push firmly until you hear a click. To disconnect, press the release tabs and pull straight out</li>
+        <li>Inspect connector pins for corrosion, bending, or dirt</li>
+        <li>Test continuity with a multimeter (if you have one)</li>
+      </ol>
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Pro tip:</strong> Always use the manufacturer's official solar charging cable. Third-party cables from Amazon or eBay are common sources of problems — wrong gauge, wrong polarity, cheap connectors. For $20-30, the official cable is worth it to avoid hours of troubleshooting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAUSE 8 -->
+  <section id="cause-8" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Cause 8: Battery Is Already 100% Full</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        When the battery reaches 100% charge, the Battery Management System (BMS) stops accepting charge to protect the battery from overcharging. The solar input display will show 0W or very low wattage because the battery is full and not drawing any power.
+      </p>
+      <h4 class="font-semibold text-white mb-2">What happens:</h4>
+      <ul class="text-sm text-gray-300 space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i data-lucide="battery-full" style="width:1rem;height:1rem;color:#22c55e;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Battery at 100%:</strong> BMS stops charging. Solar input shows 0W on most stations.</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="plug-zap" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Pass-through charging:</strong> Some stations continue to power output loads from solar even when the battery is full. The battery stops charging, but solar still feeds the inverter.</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="timer" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><span><strong>Trickle charge:</strong> Some stations show a small amount (5-20W) for top-balancing and BMS maintenance even at 100%.</span></li>
+      </ul>
+      <h4 class="font-semibold text-white mb-2">How to confirm:</h4>
+      <ol class="text-sm text-gray-300 space-y-2 list-decimal list-inside">
+        <li>Check the battery percentage on the display</li>
+        <li>If it shows 100%, this is normal — your station is working correctly</li>
+        <li>Use some power (run an appliance, charge something) to bring the battery below 100%</li>
+        <li>Solar charging should resume within a minute or two</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SILENT MODE -->
+  <section id="silent-mode" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Silent Mode &amp; Charge Throttling (Low Wattage, Not 0W)</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Silent mode (also called Quiet mode) does not cause 0W charging — but it does limit charging speed. If you are seeing low wattage (e.g., 200W instead of 500W), silent mode might be the reason.
+      </p>
+      <h4 class="font-semibold text-white mb-2">What silent mode does:</h4>
+      <p class="text-sm text-gray-300 mb-4">
+        Silent mode reduces the maximum charging power to keep the cooling fan off or at low speed. It prioritizes quiet operation over charging speed. The charge rate in silent mode varies by model:
+      </p>
+      <div class="overflow-x-auto mb-4">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Brand</th><th>Silent Mode Charge Limit</th><th>How to Disable</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>EcoFlow</td><td>~200-400W (varies by model)</td><td>App → Charging → Silent Mode → Off</td></tr>
+            <tr><td>Bluetti</td><td>~200-300W (varies by model)</td><td>Screen/App → Quiet Mode → Off</td></tr>
+            <tr><td>Anker</td><td>~100-200W</td><td>App → Charge Speed → Standard/Turbo</td></tr>
+            <tr><td>Jackery</td><td>No dedicated silent mode</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert alert-info !mb-0">
+        <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Key point:</strong> Silent mode throttles charging but never causes 0W. If you see 0W, silent mode is NOT the problem. Look at the 8 causes above. But if you see reduced wattage and want faster charging, check if silent mode is enabled.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANEL TEST -->
+  <section id="panel-test" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">How to Test If Your Solar Panel Is Working</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        If you have gone through all 8 causes and still get 0W, you need to determine whether the problem is with the panel or the power station. A multimeter test will tell you for sure.
+      </p>
+      <h4 class="font-semibold text-white mb-2">What you need:</h4>
+      <ul class="text-sm text-gray-300 space-y-2 mb-4">
+        <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>A digital multimeter (any $10-20 multimeter works)</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Full, direct sunlight</span></li>
+        <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Safety: do not touch bare metal contacts while testing — solar panels can produce dangerous voltage</span></li>
+      </ul>
+      <h4 class="font-semibold text-white mb-2">Step-by-step open-circuit voltage (Voc) test:</h4>
+      <ol class="text-sm text-gray-300 space-y-3 list-decimal list-inside mb-4">
+        <li>Set the multimeter to DC voltage (V⎓) on a range higher than your panel's rated Voc (e.g., 200V range for a 24V panel)</li>
+        <li>Place the solar panel in full direct sunlight — no shade at all</li>
+        <li>Disconnect the panel from everything — nothing connected to the output</li>
+        <li>Touch the red (positive) multimeter probe to the positive terminal of the panel</li>
+        <li>Touch the black (negative) multimeter probe to the negative terminal of the panel</li>
+        <li>Read the voltage on the display</li>
+      </ol>
+      <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+        <h4 class="font-semibold text-white mb-2">How to interpret the results:</h4>
+        <div class="space-y-2 text-sm">
+          <div class="flex items-start gap-2">
+            <span class="text-green-400 font-semibold flex-shrink-0">✓ Good:</span>
+            <span class="text-gray-300">Voltage is close to the panel's rated Voc (within ±10%). Panel is working fine — the problem is with the station, cable, or setup.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-yellow-400 font-semibold flex-shrink-0">△ Low:</span>
+            <span class="text-gray-300">Voltage is significantly below rated Voc. Possible causes: shade, dirty panel, bad light, or degraded cells.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="text-red-400 font-semibold flex-shrink-0">✗ Bad:</span>
+            <span class="text-gray-300">0V or very close to 0V. The panel is faulty — broken wire, failed bypass diode, or damaged cells.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND NOTES -->
+  <section id="brand-notes" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Brand-Specific Solar Charging Notes</h2>
+    <div class="glass-card p-6 md:p-8">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-electric-400 mb-2">EcoFlow</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Auto-detects solar input — usually plug-and-play</li>
+            <li>• X-Stream charging can mix AC + solar simultaneously</li>
+            <li>• Use app to see detailed solar stats (voltage, current, wattage)</li>
+            <li>• Silent mode limits solar charge speed</li>
+            <li>• Delta Pro 3 supports up to 1,600W solar at 12-150V</li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-yellow-400 mb-2">Jackery</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Some models require Solar/Side Input button press</li>
+            <li>• SolarSaga panels have built-in voltage optimization</li>
+            <li>• MPPT range tends to be narrower (12-60V typical)</li>
+            <li>• No app on most models — check display for solar icon</li>
+            <li>• Explorer 1000 v2: 200W max solar</li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-red-400 mb-2">Bluetti</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Excellent MPPT range (10-145V on many models)</li>
+            <li>• Touchscreen shows detailed PV info</li>
+            <li>• Quiet mode available — limits charge speed</li>
+            <li>• Dual solar inputs on AC200MAX and higher models</li>
+            <li>• Check PV icon on main screen for input status</li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-green-400 mb-2">Anker</h4>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• 535 and 757 models have MPPT solar input</li>
+            <li>• Use Anker app to monitor and control charging</li>
+            <li>• MPPT range: 11-60V (most models)</li>
+            <li>• Charge speed modes: Standard, Turbo, and Silent</li>
+            <li>• 521 budget model has simpler solar implementation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about 0W solar charging on portable power stations.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why is my solar panel showing 0W on my power station?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Solar charging showing 0W on a power station is almost always caused by one of 8 issues: solar input not activated, MPPT wake-up required, voltage mismatch (panel Voc below station minimum), wrong port used, connector polarity reversed, panel in full shade or wrong angle, faulty cable/connector, or the station battery is already 100% full. The most common causes are voltage mismatch and input activation issues. Start with the simplest fixes (check port, sun, activation) before moving to more complex diagnostics.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I get my solar panel to charge my power station?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Start with these steps: 1) Confirm solar charging is enabled on the station (some require pressing a Solar button), 2) Check the panel is in direct sunlight with no shade, 3) Verify you are using the correct solar input port (not the DC/car port), 4) Check that panel open-circuit voltage (Voc) is within the station's MPPT range and above the minimum, 5) Ensure polarity is correct (positive to positive), 6) Try a different cable if possible, 7) Wake up the MPPT by connecting panels in strong midday sun.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is MPPT wake-up and why won't my solar start?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          MPPT wake-up is when the solar charge controller needs a minimum voltage from the panels to start charging. If the panel voltage is too low (early morning, heavy cloud, or panels with low Voc), the MPPT controller never wakes up and shows 0W. The solution is to make sure panels are in strong sunlight and that the panel open-circuit voltage exceeds the station's minimum MPPT voltage by at least 2-3V for reliable wake-up. Series-wired panels have higher voltage and wake up more easily.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I use any solar panel with my power station?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          No — your solar panel must match your power station's solar input specifications. The most important spec is the MPPT voltage range. The panel's open-circuit voltage (Voc) must be above the station's minimum MPPT voltage and below the maximum MPPT voltage. Also check the maximum wattage, connector type (MC4, XT60, etc.), and whether you need an adapter. Mismatched voltage is the number one cause of 0W solar charging. Always verify compatibility before buying third-party panels.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why does my solar show 0W in the morning?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Solar shows 0W in the morning because the sunlight intensity is too low. MPPT controllers need a minimum voltage (typically 10-30V depending on the station) to wake up and start charging. In early morning light, the panel voltage is below this threshold. As the sun rises and intensity increases, the voltage will cross the threshold and charging will start automatically — usually around 200-500W/m² of irradiance depending on your panel. Panels with higher Voc wake up earlier in the morning.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I test if my solar panel is working?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          To test a solar panel: 1) Put it in full direct sun, 2) Use a multimeter set to DC voltage to measure across the positive and negative terminals — you should see a voltage close to the panel's rated Voc (open-circuit voltage), 3) If you see 0V or very low voltage, the panel or its wiring is faulty, 4) If voltage is good, the issue is with the power station's MPPT, the cable, or the connection. Always test under bright midday sun, not shade or early morning. A $10-20 multimeter is all you need.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Does silent mode affect solar charging?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Silent mode (also called Quiet mode) reduces the maximum charge speed to keep the cooling fan off and minimize noise. On some models, it throttles charging to around 200-400W — but it should never cause 0W. If you see 0W, silent mode is not the cause. However, if you see very low wattage on a sunny day with a big panel array, silent mode could be limiting the charge rate. Disable silent mode in the app or on the display to get full charging speed.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can reversed polarity damage my power station?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Most modern power stations have reverse polarity protection on the solar input, so connecting positive to negative will not damage the station — it will simply show 0W and not charge. However, this protection does not always extend to the DC input or car charger port. Always double-check polarity before connecting, especially if you are making custom cables or using adapters from third parties. If you smell burning or see smoke, disconnect immediately.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I know if my MPPT is broken?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          To determine if the MPPT is broken: 1) Confirm the solar panel works by testing its voltage with a multimeter in full sun, 2) Try a different known-good cable, 3) Test with a different solar panel that works with other stations, 4) Try all solar input ports on the station, 5) Reset the power station to factory defaults, 6) If you still get 0W with confirmed-good panels and cables, the MPPT charge controller is likely faulty and needs warranty service. Always test with direct midday sun, not indirect or shade.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why does solar stop when battery is full?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Solar charging stops when the battery reaches 100% because the Battery Management System (BMS) stops accepting charge to protect the battery from overcharging. This is completely normal — all lithium-ion batteries have this protection. The station may show 0W input or very low wattage (trickle charge for BMS balancing). Some stations continue to pass solar power directly to loads (pass-through charging) even when the battery is full, but the battery itself stops charging. Use some power and charging will resume.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Guides &amp; Resources</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="portable-power-station-not-charging.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">CHARGE&nbsp;FAULT</div>
+          <span class="badge badge-info">Universal</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Not Charging (All Sources)</h3>
+        <p class="text-sm text-gray-400">Complete charging troubleshooting guide for AC wall, solar, and DC/car charging issues.</p>
+      </a>
+      <a href="power-station-charging-stops-at-80.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">80%&nbsp;LIMIT</div>
+          <span class="badge badge-info">All Brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Charging Stops at 80%</h3>
+        <p class="text-sm text-gray-400">Why your power station stops charging at 80% and whether it is normal or something to fix.</p>
+      </a>
+      <a href="portable-power-station-wont-turn-on.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">DEAD</div>
+          <span class="badge badge-info">All Brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Won't Turn On</h3>
+        <p class="text-sm text-gray-400">9 causes with fixes for dead power stations — BMS lockout, hard reset, and more.</p>
+      </a>
+      <a href="portable-power-station-eco-mode.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-green-500/20 text-green-400 font-mono font-semibold text-sm rounded-md border border-green-500/30">ECO&nbsp;MODE</div>
+          <span class="badge badge-info">Guide</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">ECO Mode Guide</h3>
+        <p class="text-sm text-gray-400">Complete guide to ECO mode — how it works, battery savings, when to use it, and how to disable.</p>
+      </a>
+      <a href="ecoflow-delta-pro-3.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">SPEC&nbsp;SHEET</div>
+          <span class="badge badge-info">EcoFlow</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">EcoFlow Delta Pro 3 Specs</h3>
+        <p class="text-sm text-gray-400">Full specifications including MPPT range, max solar wattage, and all port details.</p>
+      </a>
+      <a href="outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">COMPARE</div>
+          <span class="badge badge-info">All Brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Comparison</h3>
+        <p class="text-sm text-gray-400">Compare all major portable power station models side by side — capacity, output, solar input, and more.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>

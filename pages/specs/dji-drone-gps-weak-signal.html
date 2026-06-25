@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJI Drone GPS Weak Signal? 8 Fixes to Get 10+ Satellites (2026) | TechSpecsHub</title>
+  <meta name="description" content="DJI drone GPS weak signal? 8 proven fixes to get 10+ satellites fast. Learn why GPS matters, how to relocate for better signal, IMU calibration, compass calibration, interference sources, and satellite count requirements for Mini, Mavic, Air, and Avata.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/specs/dji-drone-gps-weak-signal.html">
+
+  <meta property="og:title" content="DJI Drone GPS Weak Signal? 8 Fixes to Get 10+ Satellites (2026) | TechSpecsHub">
+  <meta property="og:description" content="DJI drone GPS weak signal? 8 proven fixes to get 10+ satellites fast. Learn why GPS matters, how to relocate for better signal, IMU calibration, compass calibration, interference sources, and satellite count requirements for Mini, Mavic, Air, and Avata.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/specs/dji-drone-gps-weak-signal.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-10T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DJI Drone GPS Weak Signal? 8 Fixes to Get 10+ Satellites (2026) | TechSpecsHub">
+  <meta name="twitter:description" content="DJI drone GPS weak signal? 8 proven fixes to get 10+ satellites fast. Learn why GPS matters, how to relocate for better signal, IMU calibration, compass calibration, interference sources, and satellite count requirements for Mini, Mavic, Air, and Avata.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Article", "HowTo"],
+    "headline": "DJI Drone GPS Weak Signal? 8 Fixes to Get 10+ Satellites (2026)",
+    "description": "DJI drone GPS weak signal? 8 proven fixes to get 10+ satellites fast. Learn why GPS matters, how to relocate for better signal, IMU calibration, compass calibration, interference sources, and satellite count requirements for Mini, Mavic, Air, and Avata.",
+    "url": "https://powerspecshub.com/pages/specs/dji-drone-gps-weak-signal.html",
+    "datePublished": "2026-06-10",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is my DJI drone showing weak GPS signal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DJI drone GPS weak signal is usually caused by being in an area with obstructed sky view (buildings, trees, mountains), flying near sources of radio interference (power lines, cell towers, Wi-Fi routers), outdated GPS almanac data, cold weather affecting the GPS module, or needing compass/IMU calibration. Start by moving to an open area with a clear view of the sky and waiting 2-5 minutes for satellite acquisition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many satellites does a DJI drone need to fly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DJI drones need at least 6 satellites for basic GPS positioning, but 10+ satellites are recommended for stable flight and accurate positioning. For Return-to-Home (RTH) to work reliably, you need 10+ satellites with good signal quality. Most DJI drones won't even allow GPS mode with fewer than 6 satellites and will default to ATTI (attitude) mode instead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take for a DJI drone to get GPS signal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A DJI drone typically gets GPS signal in 30 seconds to 2 minutes if it has recent GPS almanac data and a clear view of the sky. If it's the first flight in a new location or the drone hasn't been flown in a while (cold start), it can take 2-5 minutes to download fresh satellite almanac data. Keep the drone stationary with a clear view of the sky during acquisition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does weather affect DJI GPS signal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Weather has a surprisingly small effect on DJI GPS signal — GPS radio waves penetrate clouds, rain, and snow reasonably well. However, very heavy rain or thick storm clouds can cause slight signal attenuation. Cold weather doesn't directly affect GPS signals but can slow down the GPS module's initial acquisition time. The biggest weather-related factor is actually wind, which doesn't affect GPS but affects flight stability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I fix weak GPS signal on my DJI Mini?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To fix weak GPS on a DJI Mini, first move to a completely open area away from buildings and trees with a full 360° view of the sky. Power on the drone and leave it stationary for 2-5 minutes. If still weak, calibrate the compass in the DJI Fly app, make sure you're flying in the open (not indoors or under cover), and avoid flying near power lines, cell towers, or other sources of electromagnetic interference."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my compass showing errors with good GPS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compass errors with good GPS signal usually mean the compass needs calibration, or you're near a metallic object or electromagnetic interference source. Metal structures, cars, reinforced concrete, power lines, and even the metal in your phone or keys near the controller can cause compass interference. Move to a completely open area away from metal objects and recalibrate the compass in the DJI app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I fly my DJI drone without GPS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can fly a DJI drone without GPS in ATTI (Attitude) mode, but it's significantly harder and not recommended for beginners. In ATTI mode, the drone maintains altitude but will drift with wind — it won't hold position automatically. Return-to-Home and other GPS-dependent features won't work. Only fly without GPS if you're an experienced pilot in a wide open area with plenty of room for drift."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What GPS systems do DJI drones use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Modern DJI drones use multiple satellite navigation systems simultaneously for better coverage and accuracy: GPS (US), GLONASS (Russia), Galileo (Europe), and BeiDou (China). Using multiple constellations means the drone can see more satellites at once, improving positioning accuracy and reducing the chance of signal loss. Entry-level models may only use GPS + GLONASS, while premium models use all four."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I improve GPS signal on my DJI drone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To improve DJI GPS signal: fly in open areas with clear sky view, stay away from buildings/trees/power lines, wait for 10+ satellites before takeoff, keep GPS almanac fresh by flying regularly, calibrate compass when prompted, avoid flying near sources of RF interference, keep the drone's GPS module clean and unobstructed, and make sure firmware is up to date."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does GPS get weak when I fly near my house?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GPS gets weak near houses because the building structure blocks part of the sky, reducing the number of satellites the drone can see. Houses also contain Wi-Fi routers, electronics, and metal framing that can interfere with GPS signals. Reinforced concrete and metal roofs are especially problematic. For best GPS signal, take off and fly at least 20-30 meters (65-100 feet) away from buildings."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Drones",
+        "item": "https://powerspecshub.com/pages/specs/drones.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "DJI GPS Weak Signal"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+            </div>
+          </div>
+
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="hidden sm:flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span>Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="drones.html">Drones &amp; UAV</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">DJI GPS Weak Signal</span>
+    </nav>
+  </section>
+
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-blue-500/20 text-blue-400 font-mono font-bold text-sm rounded-md border border-blue-500/30">GPS SIGNAL</div>
+        <span class="badge badge-warning"><i data-lucide="plane" style="width:0.75rem;height:0.75rem"></i>All DJI Models</span>
+        <span class="badge badge-info"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i>Beginner Friendly</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        DJI GPS Weak Signal? &mdash; <span class="gradient-text">8 Fixes to Get 10+ Satellites</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        Weak GPS signal is one of the most frustrating DJI drone problems — it prevents takeoff, limits flight modes, and makes Return-to-Home unreliable. Before you assume the GPS module is broken, know that 90% of weak GPS issues are caused by simple environmental factors or quick-fix settings. This guide covers every cause and solution, from the most obvious to the more subtle.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Fix Time</div>
+          <div class="font-mono font-bold text-xl text-white">30 sec &ndash; 10 min</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-green-400">Free</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="satellite" style="width:0.9rem;height:0.9rem"></i>Target Satellites</div>
+          <div class="font-bold text-xl text-electric-400">10+ satellites</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~90%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8 border-electric-400/30">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="zap" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Quick Answer: How to Fix Weak GPS Signal</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        If your DJI drone shows weak GPS signal, the #1 fix is to move to a completely open area with a full 360° view of the sky — away from buildings, trees, and power lines. Power on the drone and leave it stationary for 2-5 minutes to acquire satellites. If that doesn't work, calibrate the compass in the DJI Fly app and make sure you're not near sources of electromagnetic interference.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Move to open area with clear view of the entire sky</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Wait 2-5 minutes with drone stationary</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Calibrate compass in the DJI app</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Stay away from power lines and metal structures</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Wait for 10+ satellites before takeoff</span></div>
+        <div class="flex items-start gap-2 text-sm text-gray-200"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><span>Avoid flying indoors or under tree cover</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="list" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Table of Contents</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+        <a href="#why-gps-matters" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">0</span> Why GPS Signal Matters</a>
+        <a href="#fix-1" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">1</span> Move to an Open Area</a>
+        <a href="#fix-2" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">2</span> Wait for Satellite Acquisition</a>
+        <a href="#fix-3" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">3</span> Calibrate the Compass</a>
+        <a href="#fix-4" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">4</span> Calibrate the IMU</a>
+        <a href="#fix-5" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">5</span> Avoid Interference Sources</a>
+        <a href="#fix-6" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">6</span> Update Drone Firmware</a>
+        <a href="#fix-7" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">7</span> Check GPS Module Health</a>
+        <a href="#fix-8" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">8</span> Cold Weather Warm-Up</a>
+        <a href="#satellite-count" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">★</span> Satellite Count Requirements</a>
+        <a href="#faq" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="w-6 h-6 rounded-full bg-electric-500/20 text-electric-400 flex items-center justify-center text-xs font-mono font-bold">?</span> Frequently Asked Questions</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-gps-matters" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-7">
+      <h3 class="font-bold text-2xl mb-3">Why GPS Signal Matters (And What "Weak" Actually Means)</h3>
+      <p class="text-gray-300 leading-relaxed mb-3">
+        GPS (Global Positioning System) is what allows your DJI drone to know exactly where it is in the world. Without a strong GPS signal, the drone can't hold its position automatically, can't return home safely, and many intelligent flight modes won't work. DJI drones don't just use one GPS system — modern models use multiple satellite constellations simultaneously including GPS (US), GLONASS (Russia), Galileo (Europe), and BeiDou (China).
+      </p>
+      <p class="text-gray-300 leading-relaxed mb-3">
+        "Weak GPS signal" doesn't necessarily mean the drone sees zero satellites — it means it doesn't see <em>enough</em> satellites with <em>good enough</em> signal quality to maintain stable positioning. The drone needs at least 6 satellites for basic 2D positioning and 10+ for reliable 3D positioning with Return-to-Home capability.
+      </p>
+      <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm">
+        <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">GPS Signal Quality by Satellite Count</div>
+        <div class="space-y-2 text-sm">
+          <div class="flex items-center gap-3"><span class="w-20 font-mono text-red-400">0-5 sats</span><div class="flex-1 h-2 bg-navy-800 rounded-full overflow-hidden"><div class="h-full bg-red-500 w-1/4 rounded-full"></div></div><span class="text-xs text-gray-400">ATTI mode only — no position hold</span></div>
+          <div class="flex items-center gap-3"><span class="w-20 font-mono text-yellow-400">6-9 sats</span><div class="flex-1 h-2 bg-navy-800 rounded-full overflow-hidden"><div class="h-full bg-yellow-500 w-1/2 rounded-full"></div></div><span class="text-xs text-gray-400">Basic GPS — marginal accuracy</span></div>
+          <div class="flex items-center gap-3"><span class="w-20 font-mono text-green-400">10-15 sats</span><div class="flex-1 h-2 bg-navy-800 rounded-full overflow-hidden"><div class="h-full bg-green-500 w-3/4 rounded-full"></div></div><span class="text-xs text-gray-400">Good GPS — stable positioning</span></div>
+          <div class="flex items-center gap-3"><span class="w-20 font-mono text-electric-400">16+ sats</span><div class="flex-1 h-2 bg-navy-800 rounded-full overflow-hidden"><div class="h-full bg-electric-400 w-full rounded-full"></div></div><span class="text-xs text-gray-400">Excellent — best accuracy</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">8 Fixes for DJI Drone Weak GPS Signal</h2>
+    <div class="space-y-5">
+
+      <div id="fix-1" class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">1</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Move to a Completely Open Area (#1 Fix)</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              This is by far the most common cause of weak GPS signal, and the easiest to fix. GPS satellites are orbiting about 20,000 km (12,500 miles) above the Earth, and your drone needs a clear line of sight to as many of them as possible. Buildings, trees, hills, bridges, overhangs — anything that blocks the sky — reduces the number of satellites the drone can see and weakens the signal.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              Even if you think you're in an "open" area, you might be surprised how much nearby trees or buildings are blocking the sky. For the best GPS signal, you need a full 360° unobstructed view of the sky, from horizon to horizon.
+            </p>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">How to Find a Good GPS Location</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Find a large open field or park:</strong> The bigger the open area, the better. Sports fields, large parks, empty parking lots, and meadows are all good choices.</li>
+              <li><strong>Stay away from buildings:</strong> Maintain at least 20-30 meters (65-100 feet) of clearance from buildings, especially tall ones. Even a single-story house can block satellites near the horizon.</li>
+              <li><strong>Avoid tree cover:</strong> Don't fly under trees or near dense tree lines. Leafy trees can significantly attenuate GPS signals, and thick evergreen trees are even worse.</li>
+              <li><strong>Watch for overhead obstacles:</strong> Power lines, bridges, awnings, and anything else above the drone can block satellite signals. Make sure there's clear sky directly above and all around.</li>
+              <li><strong>Hilltop is ideal:</strong> If you can get to the top of a hill or elevated area, you'll have an even better view of the sky in all directions.</li>
+              <li><strong>Take off from open ground:</strong> Even if you plan to fly to an open area, take off from an open spot so the drone can acquire a good GPS lock before it even leaves the ground.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div id="fix-2" class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">2</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Wait Long Enough for Satellite Acquisition</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              A lot of people get impatient. They power on the drone, see 3-4 satellites after 10 seconds, and immediately think "weak GPS signal." But satellite acquisition takes time — especially if the drone hasn't been flown in a while or you're in a new location far from where you last flew.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              DJI drones store GPS almanac data — information about where satellites are supposed to be in the sky. This data helps the drone find satellites quickly. But if the drone hasn't been flown in more than a couple of weeks, or if you've traveled hundreds of kilometers since your last flight, the almanac data is stale and the drone needs to download fresh data. This is called a "cold start" and it takes longer.
+            </p>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Expected Acquisition Times</h4>
+            <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside">
+              <li><strong>Warm start (flown recently, same area):</strong> 30 seconds to 2 minutes. The drone uses stored almanac data to quickly locate satellites.</li>
+              <li><strong>Cold start (first flight in new area):</strong> 2-5 minutes. The drone needs to download fresh satellite almanac data from the satellites themselves.</li>
+              <li><strong>Very cold start (not flown in months):</strong> 5-10 minutes. The drone has to rebuild its entire satellite database from scratch.</li>
+            </ul>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Tips for Faster GPS Acquisition</h4>
+            <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside">
+              <li>Keep the drone stationary — don't walk around with it while it's acquiring satellites.</li>
+              <li>Place the drone on a flat, non-metallic surface (not on a car hood or metal table).</li>
+              <li>Make sure the top of the drone (where the GPS antenna is) is facing up toward the sky.</li>
+              <li>Don't cover the top of the drone with your hand or any other object.</li>
+              <li>Fly regularly — at least once every 1-2 weeks — to keep the GPS almanac fresh.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="fix-3" class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">3</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Calibrate the Compass</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              While compass calibration isn't strictly a "GPS fix," a poorly calibrated compass can make it <em>seem</em> like you have GPS problems. The compass provides directional information (which way the drone is facing), and if it's giving bad data, the drone's position hold can be unstable even with good GPS signal. The DJI app might also show "compass error" or "weak GPS" warnings when the real issue is the compass.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              You should calibrate the compass whenever you fly in a new location that's far from where you last calibrated, whenever the app prompts you to, after any crash or hard landing, or if you notice the drone drifting or behaving strangely.
+            </p>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">How to Calibrate DJI Drone Compass</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Go to settings:</strong> Open the DJI Fly app, connect to your drone, and go to Settings &rarr; Safety &rarr; Compass &rarr; Calibrate.</li>
+              <li><strong>Start calibration:</strong> Tap "Start" and follow the on-screen instructions. The app will guide you through two steps.</li>
+              <li><strong>Step 1 — Horizontal rotation:</strong> Hold the drone horizontally (level) at eye level. Slowly rotate it 360° around the vertical axis. The app will show a progress bar. When it turns green, step 1 is done.</li>
+              <li><strong>Step 2 — Vertical rotation (nose down):</strong> Hold the drone vertically with the nose pointing straight down. Slowly rotate it 360° around the front-to-back axis. The app will show when it's done.</li>
+              <li><strong>Wait for completion:</strong> When both steps are done, the app will show "Calibration Successful." If it says "Calibration Failed," move to a different area away from metal and try again.</li>
+              <li><strong>Verify:</strong> Check the compass heading in the app. It should match the direction the drone is actually facing.</li>
+            </ol>
+            <div class="alert alert-warning mt-4 !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Important:</strong> Always calibrate the compass in an open area away from metal objects, cars, buildings with steel reinforcement, power lines, and underground pipes. Don't calibrate indoors. If calibration keeps failing, you're probably near a source of magnetic interference — move to a different location.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="fix-4" class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">4</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Calibrate the IMU</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              The IMU (Inertial Measurement Unit) works together with GPS to determine the drone's position and attitude. While the IMU itself doesn't receive GPS signals, an uncalibrated IMU can cause poor flight stability and positioning inaccuracy that might seem like a GPS problem. If the drone is drifting even with 10+ satellites, the IMU might need calibration.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              IMU calibration ensures the drone's accelerometers and gyroscopes are properly calibrated to the local gravity and rotation rates. You should calibrate the IMU whenever the app prompts you to, after a crash or hard landing, if you notice unstable flight, or after significant temperature changes.
+            </p>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">How to Calibrate the IMU</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Find a flat, level surface:</strong> IMU calibration requires a perfectly flat and level surface. A table or desk is fine — just make sure it's not wobbly.</li>
+              <li><strong>Warm up the drone:</strong> Power on the drone and let it sit for 1-2 minutes so the IMU sensors can reach operating temperature.</li>
+              <li><strong>Go to settings:</strong> In the DJI Fly app, go to Settings &rarr; Safety &rarr; IMU &rarr; Calibrate IMU.</li>
+              <li><strong>Follow on-screen prompts:</strong> The app will guide you through placing the drone in multiple orientations (usually 6 positions: flat on belly, nose up, nose down, left side, right side, upside down). Wait for each position to complete before moving to the next.</li>
+              <li><strong>Don't move or touch:</strong> Don't touch the drone or the surface during calibration. Even slight vibrations can throw off the calibration.</li>
+              <li><strong>Wait for completion:</strong> IMU calibration takes 2-5 minutes. When it's done, the app will show "Calibration Successful."</li>
+              <li><strong>Restart:</strong> After IMU calibration, power the drone off and back on for the new calibration to take full effect.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div id="fix-5" class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">5</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Avoid Sources of Radio Frequency Interference</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              GPS signals are relatively weak radio signals from space, and they can be drowned out by stronger radio signals on Earth. This is called Radio Frequency Interference (RFI) or Electromagnetic Interference (EMI). Sources of interference near your flight location can weaken GPS signals or cause the drone to lose satellite lock entirely.
+            </p>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Common Sources of GPS Interference</h4>
+            <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside">
+              <li><strong>Power lines and electrical substations:</strong> High-voltage power lines produce strong electromagnetic fields that can interfere with GPS reception.</li>
+              <li><strong>Cell phone towers:</strong> Cell towers transmit on frequencies that can sometimes interfere with GPS, especially older 2G/3G towers.</li>
+              <li><strong>Wi-Fi routers and hotspots:</strong> While Wi-Fi is on a different frequency band, very strong Wi-Fi signals (like from a stadium or convention center) can cause front-end overload in the GPS receiver.</li>
+              <li><strong>Radio transmitters:</strong> Ham radio, broadcast towers, and other RF transmitters can cause interference.</li>
+              <li><strong>Metal structures:</strong> Large metal objects like bridges, steel buildings, and even cars don't interfere directly, but they can reflect and multipath GPS signals.</li>
+              <li><strong>Your own phone:</strong> The phone in your pocket near the controller shouldn't cause GPS issues at the drone, but it's worth noting that other electronic devices can interfere with the compass.</li>
+            </ul>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">How to Avoid Interference</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li>Fly at least 50-100 meters (150-300 feet) away from power lines and electrical substations.</li>
+              <li>Maintain distance from cell towers — at least 100 meters (300 feet) if possible.</li>
+              <li>Avoid flying directly over large industrial areas with lots of electrical equipment.</li>
+              <li>Don't fly near radio towers or broadcast antennas.</li>
+              <li>If you're getting weak signal in one spot, try moving 50-100 meters in any direction — you might be able to fly around a local interference source.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div id="fix-6" class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-orange-500/20 border border-orange-500/40 flex items-center justify-center font-mono font-bold text-orange-400">6</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Update the Drone's Firmware</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              DJI regularly releases firmware updates that can improve GPS performance, fix GPS-related bugs, and improve satellite acquisition speed. If your drone's firmware is significantly out of date, you might be missing GPS performance improvements. This is especially true for newer drone models that receive frequent updates in their first year.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              Firmware updates can improve things like GPS almanac handling, multi-constellation support (enabling more satellite systems), and interference rejection algorithms.
+            </p>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">How to Update DJI Drone Firmware</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Using DJI Fly app (simplest):</strong> Connect to the drone with the app. If a firmware update is available, you'll see a notification. Tap "Update" and follow the prompts. The drone will restart during the process.</li>
+              <li><strong>Using DJI Assistant 2 (more reliable):</strong> For a clean firmware flash, connect the drone to a computer via USB and use DJI Assistant 2. Select your model, go to Firmware Update, and click "Update" for the latest version.</li>
+              <li><strong>Keep battery charged:</strong> Make sure the battery is at least 50% charged before starting a firmware update — the drone won't start an update with low battery.</li>
+              <li><strong>Don't interrupt:</strong> Never turn off the drone or disconnect during a firmware update — this can "brick" the drone (make it unresponsive).</li>
+              <li><strong>Update controller too:</strong> Make sure your remote controller firmware is also up to date. Mismatched firmware can cause various issues.</li>
+              <li><strong>Test:</strong> After updating, take the drone outside and test GPS acquisition to see if it's improved.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div id="fix-7" class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-orange-500/20 border border-orange-500/40 flex items-center justify-center font-mono font-bold text-orange-400">7</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Check for GPS Module Damage or Issues</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              If you've tried everything and you still get consistently weak GPS signal — even in the middle of a wide open field on a clear day — it's possible the GPS module itself has a problem. This is the least common cause, but it does happen, especially after a crash or if the drone has been physically damaged.
+            </p>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Signs of GPS Module Problems</h4>
+            <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside mb-3">
+              <li><strong>Consistently low satellite count:</strong> Never more than 5-6 satellites even in perfect conditions.</li>
+              <li><strong>Frequent GPS drops:</strong> GPS signal comes and goes even when the drone isn't moving.</li>
+              <li><strong>Jumpy position:</strong> The drone's position on the map jumps around erratically even when the drone is hovering.</li>
+              <li><strong>Never had good GPS:</strong> If the drone has never shown more than a few satellites since day one, there might be a manufacturing defect.</li>
+              <li><strong>After a crash:</strong> GPS issues that start right after a crash or hard landing suggest physical damage.</li>
+            </ul>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">What to Check</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Inspect the drone shell:</strong> Look for cracks, dents, or damage on the top of the drone where the GPS antenna is located. Physical damage here can impair GPS reception.</li>
+              <li><strong>Check for aftermarket accessories:</strong> If you've added any stickers, decals, or accessories to the top of the drone, they might be blocking the GPS antenna. Metal stickers or decals are especially bad.</li>
+              <li><strong>Remove filters and accessories:</strong> If you have a camera filter or other accessories, try removing them to see if GPS improves. Some poorly designed accessories can interfere.</li>
+              <li><strong>Try another location:</strong> Test in a completely different area (at least a few kilometers away) to rule out local interference.</li>
+              <li><strong>Factory reset:</strong> Try resetting the drone to factory defaults via DJI Assistant 2, then set it up again. A settings issue could be causing the problem.</li>
+              <li><strong>Contact DJI Support:</strong> If you've tried everything and the GPS module seems faulty, contact DJI Support. If the drone is under warranty, they should repair or replace it.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div id="fix-8" class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-orange-500/20 border border-orange-500/40 flex items-center justify-center font-mono font-bold text-orange-400">8</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Cold Weather Warm-Up for GPS Module</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              While cold weather doesn't directly weaken GPS signals (radio waves penetrate cold air just fine), it <em>can</em> affect the performance of the GPS module itself. GPS receivers are electronic devices, and electronics can behave differently at extreme temperatures. Very cold temperatures can slow down the GPS module's initial acquisition time and reduce its sensitivity.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              This is more of an issue for premium drones with more sensitive electronics, but it can affect any DJI model in very cold conditions (below -10°C / 14°F).
+            </p>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Cold Weather GPS Tips</h4>
+            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+              <li><strong>Keep the drone warm before flight:</strong> Keep the drone inside a warm car or inside your house until just before takeoff. Don't leave it out in the cold any longer than necessary.</li>
+              <li><strong>Warm up the battery:</strong> DJI's battery self-heating feature (on models that have it) warms the battery, but it also helps warm the rest of the drone's internals including the GPS module.</li>
+              <li><strong>Allow extra acquisition time:</strong> In cold weather, give the GPS module extra time to acquire satellites. Plan for 5-10 minutes instead of the usual 2-5 minutes.</li>
+              <li><strong>Wait for a good lock:</strong> Don't take off until you have 12+ satellites with strong signal quality. GPS accuracy can be slightly degraded in very cold conditions, so having more satellites helps compensate.</li>
+              <li><strong>Keep batteries warm:</strong> Use battery warmers or keep spare batteries in an inside pocket close to your body.</li>
+            </ol>
+            <div class="alert alert-info mt-4 !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Note:</strong> Cold weather has a much bigger effect on battery performance than on GPS performance. The main cold-weather concern is reduced battery capacity and shorter flight times, not GPS issues. But if you're having trouble getting a GPS lock in very cold weather, warming the drone might help.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="satellite-count" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="satellite" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>How Many Satellites Do You Actually Need?</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        The number of satellites needed depends on what you want to do. Here's a breakdown by flight mode and feature:
+      </p>
+      <div class="overflow-x-auto">
+        <table class="specs-table w-full text-sm">
+          <thead>
+            <tr><th>Feature / Mode</th><th>Min. Satellites</th><th>Recommended</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ATTI Mode (no GPS)</td><td>0</td><td>&mdash;</td><td>No position hold, drone drifts with wind. For experienced pilots only.</td></tr>
+            <tr><td>Basic GPS Position Hold</td><td>6</td><td>8+</td><td>Drone can hold position, but accuracy may be marginal.</td></tr>
+            <tr><td>Stable GPS Flight</td><td>8</td><td>10+</td><td>Reliable position hold with good accuracy.</td></tr>
+            <tr><td>Return-to-Home (RTH)</td><td>10</td><td>12+</td><td>RTH requires good 3D positioning accuracy for safety.</td></tr>
+            <tr><td>Intelligent Flight Modes</td><td>10</td><td>12+</td><td>ActiveTrack, Waypoints, QuickShots all need strong GPS.</td></tr>
+            <tr><td>Best Image Stabilization</td><td>12</td><td>16+</td><td>More satellites = better position data = smoother video.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-400 text-sm mt-4">
+        Modern DJI drones with multi-constellation GPS support (GPS + GLONASS + Galileo + BeiDou) can typically see 15-25+ satellites in good conditions. Entry-level models with fewer satellite systems might see 10-15.
+      </p>
+    </div>
+  </section>
+
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about DJI drone GPS signal issues.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why is my DJI drone showing weak GPS signal?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">DJI drone GPS weak signal is usually caused by being in an area with obstructed sky view — buildings, trees, mountains, or anything that blocks the drone's line of sight to the sky. Other common causes include flying near sources of radio interference (power lines, cell towers, Wi-Fi routers), outdated GPS almanac data (from not flying regularly), needing a compass or IMU calibration, or simply not waiting long enough for satellite acquisition. Start with the simplest fixes: move to a completely open area with a clear view of the sky and wait 2-5 minutes with the drone stationary.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How many satellites does a DJI drone need to fly?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">DJI drones need at least 6 satellites for basic GPS positioning, but 10+ satellites are recommended for stable flight and accurate positioning. For Return-to-Home (RTH) to work reliably, you need 10+ satellites with good signal quality. Most DJI drones won't even allow GPS mode with fewer than 6 satellites — they'll default to ATTI (attitude) mode instead, where the drone maintains altitude but drifts with wind. For intelligent flight modes like ActiveTrack or Waypoints, aim for 12+ satellites for the best performance and reliability.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How long does it take for a DJI drone to get GPS signal?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">A DJI drone typically gets a GPS lock in 30 seconds to 2 minutes if it has recent GPS almanac data (from flying regularly) and a clear view of the sky. This is called a "warm start." If it's the first flight in a new location or the drone hasn't been flown in more than 2-3 weeks (a "cold start"), it can take 2-5 minutes to download fresh satellite almanac data. If it hasn't been flown in months (a "very cold start"), it might take 5-10 minutes. Keep the drone stationary on a flat surface with a clear sky view during acquisition — moving it around slows things down.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Does weather affect DJI GPS signal?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">Weather has surprisingly little effect on DJI GPS signal. GPS radio waves penetrate clouds, rain, snow, and fog reasonably well. Very heavy rain or extremely thick storm clouds can cause slight signal attenuation (weakening), but it's usually not noticeable. Cold weather doesn't directly affect GPS signals either, but it can slow down the GPS module's initial acquisition time because electronics work differently at extreme temperatures. The biggest weather-related flight concern is wind, which doesn't affect GPS but does affect flight stability and battery consumption.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I fix weak GPS signal on my DJI Mini?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">To fix weak GPS on a DJI Mini, start by moving to a completely open area away from buildings, trees, and power lines with a full 360° view of the sky. Power on the drone and leave it stationary on a flat surface for 2-5 minutes. If the signal is still weak, calibrate the compass in the DJI Fly app (Settings → Safety → Compass → Calibrate) in an open area away from metal. Make sure you're not flying indoors, under cover, or near sources of electromagnetic interference. Also check that your Mini's firmware is up to date, as DJI frequently improves GPS performance through updates.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why is my compass showing errors with good GPS?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">Compass errors with good GPS signal usually mean the compass needs calibration, or you're near a metallic object or electromagnetic interference source. The compass and GPS are separate systems — the GPS tells the drone where it is, while the compass tells it which direction it's facing. Metal structures, cars, reinforced concrete, power lines, and even the metal in your phone or keys near the controller can cause compass interference. To fix it, move to a completely open area away from metal objects and recalibrate the compass through the DJI app.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I fly my DJI drone without GPS?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">Yes, you can fly a DJI drone without GPS in ATTI (Attitude) mode, but it's significantly harder and not recommended for beginners. In ATTI mode, the drone maintains its altitude using the barometer but won't hold position — it will drift with wind, and you have to manually correct for drift constantly. Return-to-Home, ActiveTrack, Waypoints, and all other GPS-dependent features won't work. Only fly without GPS if you're an experienced pilot in a very wide open area with plenty of room for wind drift. Never fly ATTI mode near people, buildings, or obstacles.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What GPS systems do DJI drones use?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">Modern DJI drones use multiple satellite navigation systems simultaneously for better coverage, faster acquisition, and more accurate positioning. This includes: GPS (United States), GLONASS (Russia), Galileo (European Union), and BeiDou (China). Using multiple constellations means the drone can see many more satellites at once — often 20+ in good conditions — which improves positioning accuracy and makes it less likely to lose signal in challenging environments. Entry-level models like the Mini 2 may only support GPS + GLONASS, while premium models like the Mavic 3 Pro support all four major systems.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I improve GPS signal on my DJI drone?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">To improve DJI GPS signal: fly in completely open areas with a clear 360° view of the sky, stay well away from buildings, trees, and power lines, always wait for 10+ satellites before takeoff, fly regularly to keep GPS almanac data fresh, calibrate the compass whenever prompted or when flying in a new area, avoid flying near sources of RF interference, keep the top of the drone (where the GPS antenna is) clean and unobstructed, make sure the drone firmware is up to date, and consider that premium models have better GPS modules with more satellite constellation support.</p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why does GPS get weak when I fly near my house?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">GPS gets weak near houses for two main reasons. First, the building physically blocks part of the sky, reducing the number of satellites the drone can see — especially satellites near the horizon. Even a single-story house can block 10-20% of the visible sky. Second, houses contain electronics that can cause radio interference: Wi-Fi routers, cordless phones, smart home devices, and electrical wiring. Reinforced concrete and metal framing can also reflect GPS signals, causing multipath interference. For the best GPS signal, take off and fly at least 20-30 meters (65-100 feet) away from any buildings.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related DJI Drone Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="how-to-calibrate-dji-drone-imu-compass.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">CALIBRATION</div>
+          <span class="badge badge-warning">Step-by-Step</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">IMU &amp; Compass Calibration</h3>
+        <p class="text-sm text-gray-400">Complete step-by-step guide to calibrating your DJI drone's IMU and compass. When to calibrate, common mistakes, and how to verify success.</p>
+      </a>
+      <a href="dji-drone-not-connecting-to-controller.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">LINKING</div>
+          <span class="badge badge-info">Complete Guide</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Drone Won't Connect to Controller</h3>
+        <p class="text-sm text-gray-400">Complete pairing guide for DJI drones. App version checks, firmware compatibility, step-by-step linking, and cable troubleshooting.</p>
+      </a>
+      <a href="../troubleshooting/dji-imu-calibration-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">ERROR</div>
+          <span class="badge badge-critical">Troubleshooting</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">IMU Calibration Error</h3>
+        <p class="text-sm text-gray-400">Troubleshooting IMU calibration failures on DJI drones — common causes and how to fix persistent calibration errors.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="glass-card p-8 md:p-10 text-center bg-gradient-to-br from-navy-900 to-navy-800/50">
+      <h2 class="font-bold text-2xl md:text-3xl mb-3">More DJI Drone Resources</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Drone specifications, error code database, and complete troubleshooting guides for every DJI model.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="drones.html" class="inline-flex items-center gap-2 px-5 py-3 bg-electric-500 hover:bg-electric-400 text-navy-950 font-bold rounded-lg transition-all"><i data-lucide="file-text" style="width:1rem;height:1rem"></i>Drone Comparison</a>
+        <a href="dji-mini-5-pro.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-all border border-white/10"><i data-lucide="plane" style="width:1rem;height:1rem"></i>Mini 5 Pro Specs</a>
+        <a href="../error-code-db.html" class="inline-flex items-center gap-2 px-5 py-3 text-gray-300 hover:text-white font-medium rounded-lg transition-all"><i data-lucide="arrow-right" style="width:1rem;height:1rem"></i>Error Code Database</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/5 bg-navy-950 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center">
+              <i data-lucide="cpu" style="width:1.1rem;height:1.1rem;color:#0a1628"></i>
+            </div>
+            <span class="font-bold text-lg">TechSpecs<span class="gradient-text">Hub</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Verified technical specifications, error code references, and step-by-step troubleshooting for the devices people actually own.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
+            <li><a href="hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
+            <li><a href="drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
+            <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
+            <li><a href="../brand-index.html" class="text-gray-400 hover:text-electric-400">Brand Index A&ndash;Z</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3 text-sm">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../about.html" class="text-gray-400 hover:text-electric-400">About</a></li>
+            <li><a href="../contact.html" class="text-gray-400 hover:text-electric-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; 2026 TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1"><i data-lucide="shield-check" style="width:0.875rem;height:0.875rem"></i><span>Data updated: June 2026</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portable Power Station Not Charging? AC, Solar &amp; DC Fixes (2026) | TechSpecsHub</title>
+  <meta name="description" content="Portable power station not charging from AC, solar, or DC? Complete troubleshooting guide with 3-minute diagnostic, cable issues, wall outlet problems, temperature limits, BMS protection, solar 0W fixes, and slow car charging.">
+  <meta name="theme-color" content="#0a1628">
+  <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://powerspecshub.com/pages/specs/portable-power-station-not-charging.html">
+
+  <meta property="og:title" content="Portable Power Station Not Charging? AC, Solar &amp; DC Fixes (2026) | TechSpecsHub">
+  <meta property="og:description" content="Portable power station not charging from AC, solar, or DC? Complete troubleshooting guide with 3-minute diagnostic, cable issues, BMS protection, and solar 0W fixes.">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://powerspecshub.com/pages/specs/portable-power-station-not-charging.html">
+  <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta property="og:site_name" content="TechSpecsHub">
+  <meta property="article:published_time" content="2026-06-25T00:00:00Z">
+  <meta property="article:modified_time" content="2026-06-25T00:00:00Z">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portable Power Station Not Charging? AC, Solar &amp; DC Fixes (2026) | TechSpecsHub">
+  <meta name="twitter:description" content="Portable power station not charging from AC, solar, or DC? Complete troubleshooting guide.">
+  <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
+  <meta name="twitter:site" content="@TechSpecsHub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
+            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
+          },
+          fontFamily: {
+            display: ['Space Grotesk','system-ui','sans-serif'],
+            mono: ['JetBrains Mono','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Article", "HowTo"],
+    "headline": "Portable Power Station Not Charging? AC, Solar & DC Fixes (2026)",
+    "description": "Troubleshoot charging problems from all sources: AC wall power, solar panels, and DC car charging. Covers cable issues, BMS protection, temperature limits, and solar 0W diagnosis.",
+    "url": "https://powerspecshub.com/pages/specs/portable-power-station-not-charging.html",
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "author": {
+      "@type": "Organization",
+      "name": "TechSpecsHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSpecsHub",
+      "url": "https://powerspecshub.com/"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://powerspecshub.com/assets/images/og-default.png"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is my portable power station not charging?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most common reasons are: faulty charging cable or adapter, tripped wall outlet, battery temperature too cold or too hot, BMS charge protection mode, wrong solar voltage, or a faulty charge port. Start with the 3-minute check: test the wall outlet, try a different cable, check temperature, and verify the charge indicator on the display."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my solar charging showing 0W?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solar charging at 0W usually means: the MPPT controller hasn't woken up, wrong voltage (open circuit voltage outside the MPPT range), wrong solar input port, shaded panels, reversed polarity, or the battery is already full. Start by checking the solar input voltage with a multimeter, and verify the panels are facing the sun with no shading."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my car charging so slow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Car charging is slow because most 12V car ports only supply 100-150W (10-15A at 12V). A 1,000Wh power station would take 7-10 hours from a car port. Some cars only power the cigarette lighter when the engine is running, and many limit the port to 10A. For faster charging, use AC or solar instead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can temperature prevent my power station from charging?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — the BMS disables charging if the battery temperature is outside the safe range. Charging is typically disabled below 32°F (0°C) and above 113°F (45°C) for most LFP batteries. Some units have a low-temperature charge cut-off at 41°F (5°C). Warm or cool the unit to room temperature and try again."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is BMS charge protection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMS charge protection is when the Battery Management System temporarily disables charging to protect the battery. This happens if: battery is already full (100%), temperature is out of range, cells are severely imbalanced, cell voltage is too high (over-voltage protection), or there is a charging fault. It is a safety feature, not a defect."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my charger is bad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Test the charger output with a multimeter set to DC voltage. Plug the charger into the wall, then measure the voltage on the DC output connector. Compare to the rated voltage printed on the charger label. If voltage reads 0V or flutters wildly, the charger is dead. If it reads within 5% of the rated voltage, the charger is fine."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does charging stop before 100%?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Charging stopping before 100% is usually normal — it is the CV (constant voltage) phase where charge current tapers down as the battery approaches full. If it stops at 80% or 90% and stays there, check for a charge limit setting in the app (many units let you set a custom charge limit to prolong battery life). Temperature can also cause throttling near full."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use a different brand charger for my power station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, as long as the voltage matches exactly and the current rating is equal to or higher than the original. Using a charger with higher voltage (even by 1-2V) can damage the BMS and battery. Always match voltage exactly. The current (amps) can be higher — the unit will only draw what it needs. Make sure the connector polarity is correct (center positive is standard)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to fully charge a power station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Charge time depends on capacity and charge rate. A 1,000Wh station charging at 500W takes about 2 hours. A 4,000Wh station at 1,600W takes about 2.5-3 hours. Formula: capacityWh / chargeWatts = hours (roughly, minus losses). Fast-charging models like EcoFlow Delta Pro 3 can charge from 0-80% in 50 minutes with AC+Solar combined."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my charging speed fluctuate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fluctuating charge speed is normal, especially with solar (clouds pass by, sun angle changes). With AC charging, the charge rate decreases as the battery fills — this is the normal CC-CV charge profile. Temperature also affects charge rate: the BMS slows down charging if the battery gets too warm or too cold. Big fluctuations might indicate a loose cable connection."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://powerspecshub.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Outdoor Power",
+        "item": "https://powerspecshub.com/pages/specs/outdoor-power.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Power Station Not Charging"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body class="bg-navy-950 text-white min-h-screen font-display">
+
+  <header>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <a href="../../index.html" class="flex items-center gap-2.5 flex-shrink-0">
+          <div class="w-9 h-9 bg-gradient-to-br from-electric-400 to-electric-600 rounded-lg flex items-center justify-center shadow-lg shadow-electric-500/20">
+            <i data-lucide="cpu" style="width:1.25rem;height:1.25rem;color:#0a1628"></i>
+          </div>
+          <span class="font-bold text-lg tracking-tight">TechSpecs<span class="gradient-text">Hub</span></span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Categories <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Device Categories</p>
+              <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-trigger">
+            <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
+              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+            </button>
+            <div class="nav-dropdown">
+              <p class="nav-dropdown-section-label">Data Resources</p>
+              <a href="../error-code-db.html"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0"></i>Error Code Database</a>
+              <a href="../master-specs.html"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Master Specs Comparison</a>
+              <a href="../brand-index.html"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Brand Index A&ndash;Z</a>
+              <hr class="my-2 border-white/10">
+              <p class="nav-dropdown-section-label">Buyer's Guides</p>
+              <a href="../tools/best-multimeters-2026.html"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0"></i>Best Multimeters 2026</a>
+            </div>
+          </div>
+          <a href="../about.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="search-btn" class="flex items-center gap-2 pl-3 pr-2 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all text-sm text-gray-300 hover:text-white">
+            <i data-lucide="search" style="width:0.9rem;height:0.9rem"></i>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/10 rounded text-xs text-gray-400 font-mono ml-1">&crarr;K</kbd>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+            <i data-lucide="menu" style="width:1.25rem;height:1.25rem"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
+        <p class="nav-dropdown-section-label">Categories</p>
+        <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <hr class="border-white/10 my-2">
+        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
+        <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
+        <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
+        <a href="../tools/best-multimeters-2026.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="wrench" style="width:1rem;height:1rem;color:#fbbf24"></i>Best Multimeters 2026</a>
+        <hr class="border-white/10 my-2">
+        <a href="../about.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="info" style="width:1rem;height:1rem;color:#22d3ee"></i>About</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="search-modal">
+    <div id="search-backdrop"></div>
+    <div class="modal-inner">
+      <div class="modal-box">
+        <div class="flex items-center gap-3 px-4 py-3.5 border-b border-white/10">
+          <i data-lucide="search" style="width:1.1rem;height:1.1rem;color:#6b7280;flex-shrink:0"></i>
+          <input id="search-input-field" type="text" placeholder="Search models, error codes, specs&hellip;" autocomplete="off" spellcheck="false">
+          <button id="search-close-btn" class="p-1.5 text-gray-400 hover:text-white rounded transition-colors flex-shrink-0">
+            <i data-lucide="x" style="width:1rem;height:1rem"></i>
+          </button>
+        </div>
+        <div id="search-results-list"></div>
+        <div class="border-t border-white/5 px-4 py-2.5 flex items-center justify-between text-xs text-gray-500">
+          <span>Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Enter</kbd> to search, <kbd class="bg-white/10 px-1.5 py-0.5 rounded font-mono text-gray-300">Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="outdoor-power.html">Outdoor Power</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Not Charging</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6">
+    <div class="glass-card p-8 md:p-10 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-electric-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative flex flex-wrap items-center gap-3 mb-5">
+        <div class="px-3 py-1.5 bg-yellow-500/20 text-yellow-400 font-mono font-bold text-sm rounded-md border border-yellow-500/30">CHARGE&nbsp;FAULT</div>
+        <span class="badge badge-info"><i data-lucide="layers" style="width:0.75rem;height:0.75rem"></i>All Brands</span>
+        <span class="badge badge-warning"><i data-lucide="zap" style="width:0.75rem;height:0.75rem"></i>AC / Solar / DC</span>
+      </div>
+
+      <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
+        Portable Power Station Not Charging &mdash; <span class="gradient-text">AC, Solar &amp; DC Fixes</span>
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
+        When your portable power station refuses to charge, the problem could be anything from a $10 cable to a failed charge controller. This guide covers all three charging methods — AC wall power, solar panels, and 12V car charging — with a systematic diagnostic approach that works for EcoFlow, Jackery, Bluetti, Anker, and every other major brand.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="clock" style="width:0.9rem;height:0.9rem"></i>Diagnostic Time</div>
+          <div class="font-mono font-bold text-xl text-white">3&nbsp;min&ndash;2&nbsp;hr</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="dollar-sign" style="width:0.9rem;height:0.9rem"></i>DIY Cost</div>
+          <div class="font-mono font-bold text-xl text-electric-400">$0&ndash;$50</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="zap" style="width:0.9rem;height:0.9rem"></i>Top Cause</div>
+          <div class="font-bold text-xl text-yellow-400">Cable / Adapter</div>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-4">
+          <div class="flex items-center gap-2 text-gray-400 text-xs uppercase tracking-wide mb-2"><i data-lucide="percent" style="width:0.9rem;height:0.9rem"></i>DIY Fix Rate</div>
+          <div class="font-mono font-bold text-xl text-green-400">~75%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-MINUTE DIAGNOSTIC -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8 bg-gradient-to-br from-electric-950/20 to-navy-900 border-electric-500/20">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="zap" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Quick Answer: 3-Minute Diagnostic</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        <strong class="text-white">If your portable power station is not charging, start with these three quick checks.</strong> First, test the wall outlet with another device — at least 20% of "not charging" calls are just dead outlets. Second, try a different charging cable and adapter — cables fail constantly. Third, check the temperature: if the unit is frozen or baking in the sun, the BMS disables charging for safety. If none of these fix it, work through the detailed causes below for your specific charge source.
+      </p>
+      <div class="grid md:grid-cols-3 gap-3 mt-4">
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <div class="text-electric-400 font-semibold mb-1 flex items-center gap-2"><i data-lucide="plug" style="width:1rem;height:1rem"></i>Step 1: Check Power Source</div>
+          <p class="text-sm text-gray-300">Test wall outlet with a lamp. For solar, check for sun and no shading. For car, make sure engine is running.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <div class="text-electric-400 font-semibold mb-1 flex items-center gap-2"><i data-lucide="cable" style="width:1rem;height:1rem"></i>Step 2: Swap Cable &amp; Adapter</div>
+          <p class="text-sm text-gray-300">Try a known-good cable and charger. This is the #1 fix for charging issues.</p>
+        </div>
+        <div class="bg-navy-900/60 border border-white/10 rounded-xl p-4">
+          <div class="text-electric-400 font-semibold mb-1 flex items-center gap-2"><i data-lucide="thermometer" style="width:1rem;height:1rem"></i>Step 3: Check Temperature</div>
+          <p class="text-sm text-gray-300">Bring to room temperature. Charging is disabled below 32°F / 0°C and above 113°F / 45°C.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE OF CONTENTS -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="glass-card p-6 md:p-8">
+      <h2 class="font-bold text-2xl mb-4 flex items-center gap-2"><i data-lucide="list" style="width:1.25rem;height:1.25rem;color:#22d3ee"></i>Table of Contents</h2>
+      <div class="grid md:grid-cols-2 gap-2 text-sm">
+        <a href="#how-charging-works" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">01</span>How Power Station Charging Works</a>
+        <a href="#common-causes" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">02</span>Common Causes (All Charge Sources)</a>
+        <a href="#ac-charging" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">03</span>AC Wall Charging Troubleshooting</a>
+        <a href="#solar-charging" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">04</span>Solar Charging Troubleshooting</a>
+        <a href="#car-charging" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">05</span>12V Car / DC Charging Troubleshooting</a>
+        <a href="#temperature" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">06</span>Temperature &amp; Charging</a>
+        <a href="#bms-protection" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">07</span>BMS Charge Protection</a>
+        <a href="#charge-port" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">08</span>Charge Port Issues</a>
+        <a href="#slow-charging" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">09</span>Slow Charging Explained</a>
+        <a href="#brand-notes" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">10</span>Brand-Specific Notes</a>
+        <a href="#faq" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">11</span>Frequently Asked Questions</a>
+        <a href="#related" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><span class="text-electric-400 font-mono">12</span>Related Guides</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW CHARGING WORKS -->
+  <section id="how-charging-works" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">How Power Station Charging Works</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Understanding the charging path helps you diagnose problems faster. A portable power station can accept charge from multiple sources, and each source follows a different path to the battery:
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 my-6">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center mb-3">
+            <i data-lucide="plug" style="width:1.5rem;height:1.5rem;color:#fbbf24"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">AC Charging Path</h3>
+          <p class="text-sm text-gray-400 mb-2">Wall outlet → AC adapter → charge controller → BMS → battery</p>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Most common charging method</li>
+            <li>• Fastest charge speed (on most models)</li>
+            <li>• Uses AC/DC power brick (or built-in)</li>
+            <li>• 1-6 hours typical charge time</li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <div class="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mb-3">
+            <i data-lucide="sun" style="width:1.5rem;height:1.5rem;color:#fb923c"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Solar Charging Path</h3>
+          <p class="text-sm text-gray-400 mb-2">Solar panels → MPPT controller → BMS → battery</p>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Off-grid / portable charging</li>
+            <li>• MPPT optimizes panel output</li>
+            <li>• Variable speed (depends on sun)</li>
+            <li>• Voltage must match MPPT range</li>
+          </ul>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-3">
+            <i data-lucide="car" style="width:1.5rem;height:1.5rem;color:#60a5fa"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Car / DC Charging Path</h3>
+          <p class="text-sm text-gray-400 mb-2">Car 12V port → DC-DC converter → BMS → battery</p>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>• Slowest charging method</li>
+            <li>• 100-150W typical (10-15A at 12V)</li>
+            <li>• Works while driving</li>
+            <li>• Requires engine running on many cars</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-gray-300 leading-relaxed">
+        The key diagnostic insight: <strong class="text-white">if one charge source works and another does not, the problem is in the source or cable, not the battery or BMS.</strong> If AC charging works but solar does not, the solar panels, connectors, or MPPT port are the issue. If nothing charges at all, the problem is in the BMS, battery, or charge controller.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMMON CAUSES -->
+  <section id="common-causes" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Common Causes (All Charge Sources)</h2>
+    <p class="text-gray-400 mb-6">These causes apply regardless of which charging method you are using. Check these first before diving into source-specific issues.</p>
+
+    <div class="space-y-4">
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">01</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Battery Is Already Full (100%)</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              The simplest explanation: the battery is already at 100% and charging has stopped normally. This sounds obvious, but people often misread the display or the display was not updated. If you just charged it to 100% and unplugged it for a minute, plugging it back in shows no charge because it is already full.
+            </p>
+            <div class="alert alert-info !mb-0">
+              <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>How to check:</strong> Turn on the unit and look at the battery percentage. If it shows 100%, charging stopped because it is done. Some units stop charging at 99% or 98% due to cell balancing — this is also normal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">02</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Temperature Out of Range</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              The BMS disables charging if the battery temperature is too cold or too hot. This is the #2 most common cause of "not charging" that people do not expect. Lithium batteries have a safe charging temperature range — typically 32°F to 113°F (0°C to 45°C) for LFP, and 41°F to 104°F (5°C to 40°C) for NMC.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              If you leave your power station in a freezing garage or in a car on a 100°F summer day, charging slows down or stops completely. The unit may show a temperature warning icon or error code, or it may just silently not charge.
+            </p>
+            <div class="alert alert-warning !mb-0">
+              <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Fix:</strong> Bring the unit indoors to room temperature (60-75°F / 15-25°C) for 1-2 hours. Let it acclimate slowly — do not try to heat it quickly. Once the internal battery temperature sensors register a safe temperature, charging will resume normally.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">BMS Charge Protection Mode</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              The BMS (Battery Management System) can temporarily disable charging for several protective reasons. This is a safety feature, not a defect. The most common BMS charge-inhibit conditions:
+            </p>
+            <ul class="space-y-2 text-sm text-gray-200 mb-4">
+              <li class="flex items-start gap-2"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Temperature out of range:</strong> too cold or too hot (covered above)</li>
+              <li class="flex items-start gap-2"><i data-lucide="activity" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Over-voltage protection:</strong> cells are already at max voltage (battery is full)</li>
+              <li class="flex items-start gap-2"><i data-lucide="scale" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>Cell imbalance:</strong> if individual cell voltages differ too much, the BMS pauses charging to balance</li>
+              <li class="flex items-start gap-2"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i><strong>BMS fault code:</strong> E5 (cell imbalance), E6 (charge fault), or equivalent</li>
+            </ul>
+            <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4">
+              <p class="text-sm text-gray-200 mb-2"><strong>What to do:</strong></p>
+              <ul class="text-sm text-gray-300 space-y-1">
+                <li>• Check the display for error codes</li>
+                <li>• Check cell voltages in the app</li>
+                <li>• Perform a BMS reset (hold power button 30s on most brands)</li>
+                <li>• If cell imbalance is mild, a full charge + full discharge cycle can rebalance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">04</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Charge Limit Set in App</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              Many smart power stations let you set a custom charge limit (e.g., stop charging at 80%) to prolong battery life. If you set this and forgot about it, charging will stop at your set limit and appear to be "not charging fully."
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              This is a feature, not a bug — stopping at 80% can significantly extend battery lifespan, especially for units that stay plugged in most of the time (UPS/backup use). But it catches people off guard when they expect 100%.
+            </p>
+            <div class="alert alert-info !mb-0">
+              <i data-lucide="lightbulb" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Where to check:</strong> Open the app → Settings → Charging → Charge Limit / Custom Charge. Set it to 100% if you want a full charge. See our <a href="power-station-charging-stops-at-80.html" class="text-electric-400 hover:underline">80% charge limit guide</a> for more details.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 md:p-7">
+        <div class="flex items-start gap-4">
+          <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">05</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2">Damaged Charge Port</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">
+              The charge input port on the unit itself can become damaged from repeated plugging/unplugging, from being dropped with the cable plugged in, or from corrosion if used in damp environments. Signs of a bad charge port: the connector feels loose, wiggling the cable makes charging start/stop, or the port looks visibly damaged (bent pins, melted plastic).
+            </p>
+            <div class="alert alert-critical !mb-0">
+              <i data-lucide="alert-octagon" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+              <p class="text-sm"><strong>Important:</strong> If the charge port shows signs of burning, melting, or corrosion, stop using it immediately. A damaged port can be a fire hazard. Contact the manufacturer for repair. Do not try to charge through a damaged port.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AC CHARGING -->
+  <section id="ac-charging" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">AC Wall Charging Troubleshooting</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        If AC charging does not work but solar or car charging does (or vice versa), the problem is isolated to the AC charge path. Follow this AC-specific diagnostic:
+      </p>
+      <ol class="space-y-4 text-gray-300">
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 w-7 h-7 bg-electric-500/20 border border-electric-500/40 rounded-full flex items-center justify-center font-mono text-sm font-bold text-electric-400">1</span>
+          <div>
+            <strong class="text-white">Test the wall outlet.</strong> Plug in a lamp, phone charger, or something simple to confirm the outlet has power. At least 20% of AC charging complaints are just dead outlets or tripped GFCI breakers.
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 w-7 h-7 bg-electric-500/20 border border-electric-500/40 rounded-full flex items-center justify-center font-mono text-sm font-bold text-electric-400">2</span>
+          <div>
+            <strong class="text-white">Try a different AC cable.</strong> The IEC power cord (computer-style cable) or the AC cable from wall to brick can fail. Swap in a known-good cable.
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 w-7 h-7 bg-electric-500/20 border border-electric-500/40 rounded-full flex items-center justify-center font-mono text-sm font-bold text-electric-400">3</span>
+          <div>
+            <strong class="text-white">Test the AC adapter output.</strong> Set a multimeter to DC voltage (200V range). Plug the adapter into the wall. Measure the voltage on the DC output connector. Compare to the rated voltage printed on the adapter label. If voltage reads 0V, the adapter is dead.
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 w-7 h-7 bg-electric-500/20 border border-electric-500/40 rounded-full flex items-center justify-center font-mono text-sm font-bold text-electric-400">4</span>
+          <div>
+            <strong class="text-white">Check the charge port on the unit.</strong> Look inside with a flashlight. Is the center pin straight? Any debris, corrosion, or burn marks? Gently wiggle the connector — if it feels loose, the port may have broken solder joints.
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 w-7 h-7 bg-electric-500/20 border border-electric-500/40 rounded-full flex items-center justify-center font-mono text-sm font-bold text-electric-400">5</span>
+          <div>
+            <strong class="text-white">Reset the unit.</strong> Unplug everything. Hold the power button for 30 seconds (or brand-specific reset). This clears any latched BMS charge faults.
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex-shrink-0 w-7 h-7 bg-electric-500/20 border border-electric-500/40 rounded-full flex items-center justify-center font-mono text-sm font-bold text-electric-400">6</span>
+          <div>
+            <strong class="text-white">Try a different charge source.</strong> If solar charging works but AC does not, the AC charge path has failed. If nothing charges at all, the BMS or main charge controller is the issue.
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SOLAR CHARGING -->
+  <section id="solar-charging" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Solar Charging Troubleshooting (0W or Low Wattage)</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Solar charging issues have their own unique set of causes. The display showing 0W solar input does not necessarily mean anything is broken — it is usually a simple wiring or setup issue. Here is the solar-specific diagnostic flow:
+      </p>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-yellow-400 text-sm">1</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">MPPT Wake-Up (Most Common)</h4>
+            <p class="text-sm text-gray-400">Some MPPT controllers need a minimum voltage to "wake up" and start charging. If the battery is very low or the solar voltage is just at the edge, the MPPT may not start. Make sure the panels are in strong, direct sun and the open-circuit voltage is within the MPPT range. Sometimes connecting AC power briefly while solar is connected can wake up the MPPT.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-yellow-400 text-sm">2</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Voltage Mismatch (#2 Cause)</h4>
+            <p class="text-sm text-gray-400">Every MPPT controller has a voltage range (e.g., 12-120V for EcoFlow Delta Pro 3). If your solar panel array's open-circuit voltage (Voc) is below the minimum or above the maximum, the MPPT will not charge. This is the #1 mistake with DIY solar setups — people wire panels in series/parallel without checking voltage. Check your panel Voc and multiply by the number of panels in series. It must fall within the MPPT range.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-yellow-400 text-sm">3</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Wrong Port / Reversed Polarity</h4>
+            <p class="text-sm text-gray-400">Make sure you are plugging into the correct solar input port (not the car port or DC output port). On units with multiple solar ports, they may have different voltage ratings. Also check polarity: solar panels are positive on one wire, negative on the other. Reversing them will not charge (and on units without reverse polarity protection, could damage the MPPT). XT60 connectors are keyed so you cannot reverse them — if you have bare wires, double-check.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-yellow-400 text-sm">4</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Panel Orientation &amp; Shading</h4>
+            <p class="text-sm text-gray-400">Solar panels need direct sun. Even partial shading of one cell in a series string can kill the output of the entire string (the "Christmas light effect"). For 0W output, check: panels facing the sun? No clouds? No trees/buildings shadowing? Panel angle optimal? Even a small amount of shading on one panel can drop output dramatically with series wiring.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-yellow-400 text-sm">5</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Connector Issues</h4>
+            <p class="text-sm text-gray-400">MC4 connectors can be finicky. Make sure they click into place firmly. Loose MC4 connections are a very common cause of no solar output. Also check for bent pins on XT60 connectors, corrosion on bare wires, or damaged cables. Measure the voltage at the end of the cable that plugs into the power station — if it reads 0V but the panel end has voltage, the cable or connector is broken.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="font-mono font-bold text-yellow-400 text-sm">6</span>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Silent Mode / Charge Throttling</h4>
+            <p class="text-sm text-gray-400">Some units have a "Silent" charging mode that limits charge power to reduce fan noise. If you expect 500W but only see 200W, check if Silent mode is enabled. The app usually has a charge speed setting: Silent, Standard, Turbo, etc. Make sure it is set to Standard or Turbo for maximum charge speed.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 alert alert-info">
+        <i data-lucide="lightbulb" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
+        <p class="text-sm"><strong>Pro tip:</strong> For more detailed solar troubleshooting, see our dedicated <a href="solar-charging-0w-power-station.html" class="text-electric-400 hover:underline">solar charging 0W guide</a> with 8 causes and step-by-step fixes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAR CHARGING -->
+  <section id="car-charging" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">12V Car / DC Charging Troubleshooting</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Car charging is the slowest method and often confuses people because it seems like "nothing is happening" when it is actually just charging very slowly. Here is what to check:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <h3 class="font-bold text-lg mb-3">Common Car Charging Issues</h3>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start gap-2">
+              <i data-lucide="car" style="width:1rem;height:1rem;color:#60a5fa;flex-shrink:0;margin-top:0.1rem"></i>
+              <div>
+                <strong class="text-white">Engine not running:</strong> Many cars only power the cigarette lighter when the ignition is on or the engine is running. Try starting the engine.
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="car" style="width:1rem;height:1rem;color:#60a5fa;flex-shrink:0;margin-top:0.1rem"></i>
+              <div>
+                <strong class="text-white">Blown car fuse:</strong> The car's cigarette lighter fuse may be blown. Test the port with a phone charger or other 12V device.
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="car" style="width:1rem;height:1rem;color:#60a5fa;flex-shrink:0;margin-top:0.1rem"></i>
+              <div>
+                <strong class="text-white">Wrong port:</strong> Make sure you are plugging into the car charging input on the power station, not the 12V output port. Some units use the same style connector for both input and output — check the labels.
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="car" style="width:1rem;height:1rem;color:#60a5fa;flex-shrink:0;margin-top:0.1rem"></i>
+              <div>
+                <strong class="text-white">Center pin issue:</strong> Some car port cables have a spring-loaded center pin that loses tension over time. Try pushing the plug in firmly or wiggling it slightly.
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-3">Why Car Charging Is So Slow</h3>
+          <p class="text-sm text-gray-400 mb-3">
+            Car charging feels broken because it is just inherently slow. A typical 12V car port supplies 10-15A, which is only 120-180W. Compare that to AC charging at 500-1,600W and you can see why it feels like nothing is happening.
+          </p>
+          <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4">
+            <p class="text-sm text-gray-200 mb-2"><strong>Example charge times:</strong></p>
+            <ul class="text-sm text-gray-300 space-y-1">
+              <li>• 500Wh station from car: ~3-4 hours</li>
+              <li>• 1,000Wh station from car: ~7-10 hours</li>
+              <li>• 2,000Wh station from car: ~15-20 hours</li>
+              <li>• 4,000Wh station from car: ~30-40 hours</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLOW CHARGING -->
+  <section id="slow-charging" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Slow Charging — Is It Normal?</h2>
+    <div class="glass-card p-6 md:p-8">
+      <p class="text-gray-300 leading-relaxed mb-4">
+        "Slow charging" is one of the most common complaints, and it is almost always normal. Lithium battery charging follows a specific profile called CC-CV (Constant Current - Constant Voltage). Understanding this prevents a lot of frustration:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-electric-400 mb-2">Phase 1: CC (Constant Current) — 0% to ~80%</h4>
+          <p class="text-sm text-gray-300">
+            The battery charges at full power (max current). This is the fast phase. If you see full charge wattage here and it stays steady, everything is working normally.
+          </p>
+        </div>
+        <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
+          <h4 class="font-semibold text-yellow-400 mb-2">Phase 2: CV (Constant Voltage) — ~80% to 100%</h4>
+          <p class="text-sm text-gray-300">
+            The charge current gradually tapers down as the battery approaches full. This is completely normal and necessary for battery health. The last 20% takes about as long as the first 80%.
+          </p>
+        </div>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Other factors that affect charge speed:
+      </p>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li class="flex items-start gap-2"><i data-lucide="chevron-right" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Temperature:</strong> Charging slows down in both cold and hot conditions. Optimal charging temperature is 60-75°F (15-25°C).</li>
+        <li class="flex items-start gap-2"><i data-lucide="chevron-right" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Charge mode setting:</strong> Silent / Quiet mode limits charge power to reduce fan noise. Standard and Turbo modes are faster.</li>
+        <li class="flex items-start gap-2"><i data-lucide="chevron-right" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Using the unit while charging:</strong> If you are discharging (powering devices) at the same time as charging, net charge speed is reduced.</li>
+        <li class="flex items-start gap-2"><i data-lucide="chevron-right" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i><strong>Cable quality:</strong> Thin or long cables cause voltage drop, reducing effective charge power. Use the stock cable for fastest charging.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BRAND NOTES -->
+  <section id="brand-notes" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="font-bold text-3xl mb-5">Brand-Specific Charging Notes</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="zap" style="width:1.2rem;height:1.2rem"></i>EcoFlow</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          EcoFlow Delta and River series have built-in AC chargers (no external brick on most models) using a standard IEC C14 cord. X-Stream charging is very fast — Delta Pro 3 can do 0-80% in 50 minutes. If AC charging fails, try a different IEC cord first. EcoFlow's MPPT range is 12-120V on most models — make sure your solar array Voc falls within this range. EcoFlow also supports AC+Solar simultaneous charging for maximum speed.
+        </p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="sun" style="width:1.2rem;height:1.2rem"></i>Jackery</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          Jackery Explorer series uses an external AC power brick with a barrel connector. The brick is a common failure point — Jackery sells replacements. Jackery's solar input range varies by model: check your specific model's specs for the MPPT voltage range. Jackery uses Anderson Powerpole connectors on some models and barrel connectors on others — make sure you have the correct adapter.
+        </p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-red-400 flex items-center gap-2"><i data-lucide="flame" style="width:1.2rem;height:1.2rem"></i>Bluetti</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          Bluetti AC200Max, AC300, and AC500 use external chargers with XT60 connectors (very reliable). Many Bluetti models have dual MPPT inputs for solar. Bluetti's charging is known for being reliable but not the fastest. The AC500 can do 5,000W charging with two AC adapters. Check the Bluetti app for detailed charging information and mode selection.
+        </p>
+      </div>
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="shield" style="width:1.2rem;height:1.2rem"></i>Anker</h3>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          Anker 521, 535, and 757 PowerHouse models support USB-C PD input on some models (60-100W) plus DC barrel input. Anker's BMS is conservative about charge temperature — it will not charge below 41°F (5°C), which is lower than some competitors. The 757 model supports fast charging up to 1,000W with the included AC adapter. Car charging works well on all Anker models.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h2 class="font-bold text-3xl md:text-4xl mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-400">Common questions about power station charging problems.</p>
+    </div>
+    <div class="space-y-3">
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why is my portable power station not charging?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          The most common reasons are: faulty charging cable or adapter, tripped wall outlet, battery temperature too cold or too hot, BMS charge protection mode, wrong solar voltage, or a faulty charge port. Start with the 3-minute check: test the wall outlet with another device, try a different charging cable and adapter, check that the unit is at room temperature, and verify the charge indicator on the display. About 75% of charging issues are fixed by replacing the cable or adapter.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why is my solar charging showing 0W?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Solar charging at 0W usually means: the MPPT controller has not woken up (needs minimum voltage), wrong voltage (open circuit voltage outside the MPPT range), wrong solar input port, shaded panels, reversed polarity, broken connectors, or the battery is already full. Start by checking the solar input voltage with a multimeter, and verify the panels are facing direct sun with no shading. Make sure you are plugging into the solar input port, not a DC output port.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why is my car charging so slow?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Car charging is inherently slow because most 12V car ports only supply 100-150W (10-15A at 12V). A 1,000Wh power station takes 7-10 hours from a car port. A 4,000Wh station takes 30-40 hours. Many cars only power the cigarette lighter when the engine is running — if you charge with the engine off, you also risk draining your car battery. For faster charging, use AC wall power or solar panels.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can temperature prevent my power station from charging?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes — the BMS disables charging if the battery temperature is outside the safe range. Charging is typically disabled below 32°F (0°C) and above 113°F (45°C) for most LFP batteries. NMC batteries have an even narrower range. Some units have a low-temperature charge cut-off at 41°F (5°C). Warm or cool the unit to room temperature (60-75°F / 15-25°C) for 1-2 hours and try again.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>What is BMS charge protection?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          BMS charge protection is when the Battery Management System temporarily disables charging to protect the battery. This happens if: battery is already full (100%), temperature is out of safe range, cells are severely imbalanced, cell voltage is too high (over-voltage protection), or there is a charging fault (E6 code on EcoFlow). It is a safety feature, not a defect. A full reset usually clears latched faults.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How do I know if my charger is bad?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Test the charger output with a multimeter set to DC voltage. Plug the charger into a working wall outlet. Measure the voltage on the DC output connector (center pin is usually positive, barrel is negative). Compare to the rated voltage printed on the charger label. If voltage reads 0V, the adapter is dead. If it reads within 5% of the rated voltage, the charger is fine. Fluctuating voltage also indicates a failing adapter.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why does charging stop before 100%?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Charging slowing down near 100% is normal — it is the CV (constant voltage) phase where charge current tapers down as the battery approaches full. If it stops at 80% or 90% and stays there, check for a custom charge limit setting in the app (many units let you set a charge limit to prolong battery life). Temperature can also cause throttling near full. Some units stop at 98-99% for cell balancing — this is also normal.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Can I use a different brand charger for my power station?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Yes, as long as the voltage matches exactly and the current rating is equal to or higher than the original. Using a charger with higher voltage (even by 1-2V) can damage the BMS and battery — always match voltage exactly. The current (amps) can be higher because the unit will only draw what it needs. Make sure the connector polarity is correct (center positive is standard on almost all power stations).
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>How long does it take to fully charge a power station?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Charge time depends on battery capacity and charge rate. Rough formula: capacityWh ÷ chargeWatts = hours (minus ~15% for losses). Examples: 500Wh at 300W = ~2 hours. 1,000Wh at 500W = ~2.5 hours. 4,000Wh at 1,600W = ~3 hours. Fast-charging models like EcoFlow Delta Pro 3 can do 0-80% in 50 minutes with AC+Solar combined charging. Solar charging varies wildly based on sun conditions.
+        </p>
+      </details>
+      <details class="glass-card p-5 group">
+        <summary class="cursor-pointer font-semibold flex items-center justify-between gap-4">
+          <span>Why does my charging speed fluctuate?</span>
+          <i data-lucide="chevron-down" style="width:1rem;height:1rem" class="text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+        </summary>
+        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
+          Fluctuating charge speed is normal, especially with solar (clouds pass by, sun angle changes throughout the day). With AC charging, the charge rate decreases as the battery fills — this is the normal CC-CV charge profile. Temperature also affects charge rate: the BMS slows down charging if the battery gets too warm or too cold. Big, sudden fluctuations might indicate a loose cable connection or dirty connector contacts.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES -->
+  <section id="related" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="font-bold text-3xl mb-5">Related Guides &amp; Resources</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="solar-charging-0w-power-station.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">SOLAR&nbsp;0W</div>
+          <span class="badge badge-info">Universal</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Solar 0W Guide</h3>
+        <p class="text-sm text-gray-400">Deep dive into solar charging issues — 8 causes with step-by-step fixes for MPPT, wiring, and panel setup.</p>
+      </a>
+      <a href="power-station-charging-stops-at-80.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">80%&nbsp;LIMIT</div>
+          <span class="badge badge-info">Universal</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Charging Stops at 80%</h3>
+        <p class="text-sm text-gray-400">Why charging stops at 80% — app charge limits, BMS thermal slowdown, battery calibration, and when it is normal.</p>
+      </a>
+      <a href="portable-power-station-wont-turn-on.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">DEAD&nbsp;UNIT</div>
+          <span class="badge badge-info">Universal</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Won't Turn On</h3>
+        <p class="text-sm text-gray-400">Complete diagnostic guide for power stations that won't power on — BMS reset, firmware recovery, and RMA criteria.</p>
+      </a>
+      <a href="../troubleshooting/power-station-bms-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">BMS&nbsp;FAULT</div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">BMS Error Codes</h3>
+        <p class="text-sm text-gray-400">Complete BMS error code reference for all major brands — what each code means and how to fix it.</p>
+      </a>
+      <a href="ecoflow-delta-pro-3.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-electric-500/20 text-electric-400 font-mono font-semibold text-sm rounded-md border border-electric-500/30">SPEC&nbsp;SHEET</div>
+          <span class="badge badge-info">EcoFlow</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">EcoFlow Delta Pro 3 Specs</h3>
+        <p class="text-sm text-gray-400">Full specifications for the EcoFlow Delta Pro 3 — 4,096Wh LFP, 4,000W inverter, 1,600W solar.</p>
+      </a>
+      <a href="outdoor-power.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">COMPARE</div>
+          <span class="badge badge-info">All Brands</span>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Power Station Comparison</h3>
+        <p class="text-sm text-gray-400">Compare all major portable power station models side by side — capacity, output, solar input, and more.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <hr class="border-white/10 my-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div>&copy; <span id="current-year">2026</span> TechSpecsHub. All rights reserved.</div>
+        <div class="flex items-center gap-1">
+          <i data-lucide="shield-check" style="width:0.875rem;height:0.875rem;color:#6b7280"></i>
+          <span>Data updated: June 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js" defer></script>
+
+</body>
+</html>
