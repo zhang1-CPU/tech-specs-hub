@@ -8,9 +8,9 @@
   <meta name="theme-color" content="#0a1628">
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -35,25 +35,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  
+  
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <script type="application/ld+json">
@@ -89,6 +74,52 @@
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Error Code Database",
+      "item": "https://powerspecshub.com/pages/error-code-db.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "3D Printer Bed Leveling"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -110,18 +141,18 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
 
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Data Resources</p>
@@ -151,13 +182,13 @@
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
         <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
-        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -202,11 +233,12 @@
       </div>
 
       <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
-        3D Printer Bed Leveling Problems &mdash; <span class="gradient-text">First Layer Troubleshooting Guide</span>
+        3D Printer Bed Leveling Problems — <span class="gradient-text">First Layer Troubleshooting Guide</span>
       </h1>
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div>
 
       <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
-        A properly leveled bed is the foundation of every successful 3D print. When the first layer fails &mdash; whether it does not stick, squishes too much, gaps appear, or parts warp off the bed &mdash; nothing else matters. This guide walks through every bed leveling system from manual paper-test to BLTouch auto-leveling, mesh compensation, Z-offset fine-tuning, and PEI build surface maintenance. Fix your first layer once and print reliably for months.
+        A properly leveled bed is the foundation of every successful 3D print. When the first layer fails — whether it does not stick, squishes too much, gaps appear, or parts warp off the bed — nothing else matters. This guide walks through every bed leveling system from manual paper-test to BLTouch auto-leveling, mesh compensation, Z-offset fine-tuning, and PEI build surface maintenance. Fix your first layer once and print reliably for months.
       </p>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
@@ -265,7 +297,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <h2 class="font-bold text-3xl mb-5">Tools & Materials You'll Need</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="glass-card p-5">
         <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="ruler" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Measurement</h3></div>
@@ -288,7 +320,7 @@
       <div class="glass-card p-5">
         <div class="flex items-center gap-2 mb-2 text-green-400"><i data-lucide="sparkles" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Build Surface</h3></div>
         <ul class="space-y-1.5 text-sm text-gray-300">
-          <li>Isopropyl alcohol (90%+ concentration) &amp; lint-free cloth</li>
+          <li>Isopropyl alcohol (90%+ concentration) & lint-free cloth</li>
           <li>Dish soap (for deep cleaning PEI sheets)</li>
           <li>PEI sheet replacement (if old sheet is worn smooth)</li>
           <li>Hairspray or glue stick (temporary adhesion boost)</li>
@@ -298,7 +330,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree — Work These In Order</h2>
     <div class="space-y-4">
 
       <div class="glass-card p-6 md:p-7">
@@ -306,10 +338,10 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Clean your build surface thoroughly</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">This is the simplest and most overlooked fix. Finger oil, dust, and old filament residue will ruin bed adhesion faster than any leveling issue. Wipe the bed thoroughly with isopropyl alcohol (90%+ concentration) and a lint-free cloth. For PEI sheets that are heavily contaminated, wash with dish soap and hot water, rinse well, and air dry &mdash; do not touch the surface with bare fingers afterward.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">This is the simplest and most overlooked fix. Finger oil, dust, and old filament residue will ruin bed adhesion faster than any leveling issue. Wipe the bed thoroughly with isopropyl alcohol (90%+ concentration) and a lint-free cloth. For PEI sheets that are heavily contaminated, wash with dish soap and hot water, rinse well, and air dry — do not touch the surface with bare fingers afterward.</p>
             <div class="alert alert-info !mb-0">
               <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
-              <p class="text-sm"><strong>PEI maintenance tip:</strong> PEI sheets work best when they have a slightly matte texture. If your sheet has gone glossy-smooth from many prints, the adhesion drops significantly. You can restore texture by gently sanding with 1000&ndash;2000 grit sandpaper in a circular pattern, then cleaning with IPA. Do not sand textured PEI &mdash; you will destroy the texture.</p>
+              <p class="text-sm"><strong>PEI maintenance tip:</strong> PEI sheets work best when they have a slightly matte texture. If your sheet has gone glossy-smooth from many prints, the adhesion drops significantly. You can restore texture by gently sanding with 1000&ndash;2000 grit sandpaper in a circular pattern, then cleaning with IPA. Do not sand textured PEI — you will destroy the texture.</p>
             </div>
           </div>
         </div>
@@ -320,7 +352,7 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Perform manual bed leveling (paper test)</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Even if you have an auto-leveling probe, you must get the bed roughly level first &mdash; mesh compensation cannot fix a bed that is tilted by millimeters. Home all axes, then move the nozzle to each corner and adjust the bed springs until a standard sheet of paper slides between nozzle and bed with slight friction. Work in a diagonal pattern: front-left &rarr; back-right &rarr; front-right &rarr; back-left. Repeat 2&ndash;3 passes.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">Even if you have an auto-leveling probe, you must get the bed roughly level first — mesh compensation cannot fix a bed that is tilted by millimeters. Home all axes, then move the nozzle to each corner and adjust the bed springs until a standard sheet of paper slides between nozzle and bed with slight friction. Work in a diagonal pattern: front-left &rarr; back-right &rarr; front-right &rarr; back-left. Repeat 2&ndash;3 passes.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Manual Leveling Steps</div>
               <ul class="space-y-2 text-sm text-gray-300">
@@ -328,7 +360,7 @@
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Move nozzle to front-left corner, 5&ndash;10mm from edges. Adjust bed spring until paper drags slightly.</li>
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Move to opposite corner (back-right), adjust that spring. Do not re-adjust the first corner.</li>
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Move to front-right, adjust. Then back-left, adjust. Repeat full loop 2&ndash;3 times.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Check the center of the bed last &mdash; if center is way off, your bed may be warped or you need mesh leveling.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Check the center of the bed last — if center is way off, your bed may be warped or you need mesh leveling.</li>
               </ul>
             </div>
           </div>
@@ -340,7 +372,7 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Calibrate Z-offset (the most important setting)</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Z-offset is the distance between your probe's trigger point and the nozzle tip (for auto-level) or simply how high the nozzle is above the bed at Z=0 (for manual). A 0.05mm error in Z-offset is the difference between a perfect first layer and complete failure. Print a first-layer test pattern &mdash; concentric squares or a grid pattern &mdash; and adjust Z-offset live while printing until the filament squishes just right.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">Z-offset is the distance between your probe's trigger point and the nozzle tip (for auto-level) or simply how high the nozzle is above the bed at Z=0 (for manual). A 0.05mm error in Z-offset is the difference between a perfect first layer and complete failure. Print a first-layer test pattern — concentric squares or a grid pattern — and adjust Z-offset live while printing until the filament squishes just right.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">First Layer Quality Assessment</div>
               <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -367,10 +399,10 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">04</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">BLTouch / probe calibration</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">If you have an auto-leveling probe (BLTouch, CRTouch, inductive, or capacitive), verify it is working correctly. The probe mount must be rigid &mdash; any flex or wobble causes inconsistent trigger heights. Check the set screw on the BLTouch body that holds the core in place; it often loosens from vibration. Test repeatability by probing the same spot 10 times &mdash; readings should vary by no more than &plusmn;0.005mm.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">If you have an auto-leveling probe (BLTouch, CRTouch, inductive, or capacitive), verify it is working correctly. The probe mount must be rigid — any flex or wobble causes inconsistent trigger heights. Check the set screw on the BLTouch body that holds the core in place; it often loosens from vibration. Test repeatability by probing the same spot 10 times — readings should vary by no more than &plusmn;0.005mm.</p>
             <div class="alert alert-warning !mb-0">
               <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
-              <p class="text-sm"><strong>BLTouch common issues:</strong> blinking red light = the probe is in error state (pin not deployed properly or trigger distance too short). Deploy and stow the pin with M401/M402 commands. If the pin sticks, clean inside the probe body with compressed air. If the probe triggers too late (nozzle crashes before probe fires), adjust the set screw on top &mdash; turning it clockwise lowers the trigger point (pin triggers sooner). Always re-set Z-offset after any BLTouch adjustment.</p>
+              <p class="text-sm"><strong>BLTouch common issues:</strong> blinking red light = the probe is in error state (pin not deployed properly or trigger distance too short). Deploy and stow the pin with M401/M402 commands. If the pin sticks, clean inside the probe body with compressed air. If the probe triggers too late (nozzle crashes before probe fires), adjust the set screw on top — turning it clockwise lowers the trigger point (pin triggers sooner). Always re-set Z-offset after any BLTouch adjustment.</p>
             </div>
           </div>
         </div>
@@ -381,11 +413,11 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">05</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Run mesh bed leveling</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Once the bed is roughly level and Z-offset is close, run a full bed mesh to compensate for remaining unevenness. Most beds have some amount of warp, bowl, or tilt that manual leveling cannot fix &mdash; mesh compensation adjusts the Z height in real time as the nozzle moves around the bed. Use a 3&times;3 or 5&times;5 grid for most beds; use 7&times;7 or higher for large beds or very warped surfaces.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">Once the bed is roughly level and Z-offset is close, run a full bed mesh to compensate for remaining unevenness. Most beds have some amount of warp, bowl, or tilt that manual leveling cannot fix — mesh compensation adjusts the Z height in real time as the nozzle moves around the bed. Use a 3&times;3 or 5&times;5 grid for most beds; use 7&times;7 or higher for large beds or very warped surfaces.</p>
             <div class="overflow-x-auto">
               <table class="specs-table w-full text-sm">
                 <thead>
-                  <tr><th>Firmware</th><th>Mesh Leveling Command</th><th>Save &amp; Load</th></tr>
+                  <tr><th>Firmware</th><th>Mesh Leveling Command</th><th>Save & Load</th></tr>
                 </thead>
                 <tbody>
                   <tr><td><strong>Marlin</strong> (UBL/Bilinear)</td><td>G29 (after G28) or menu &rarr; Bed Leveling</td><td>M500 saves, G29 A activates</td></tr>
@@ -424,7 +456,7 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Fix warping, corner lifting, and edge curl</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Warping happens when plastic cools and shrinks, pulling the edges of the print up from the bed. Warping is not a leveling problem &mdash; it is a thermal and adhesion problem. Even a perfectly level bed will warp if the cooling is wrong, the bed is too cold, or the filament is prone to shrinkage (ABS, ASA, PC). Use these strategies in order of effectiveness.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">Warping happens when plastic cools and shrinks, pulling the edges of the print up from the bed. Warping is not a leveling problem — it is a thermal and adhesion problem. Even a perfectly level bed will warp if the cooling is wrong, the bed is too cold, or the filament is prone to shrinkage (ABS, ASA, PC). Use these strategies in order of effectiveness.</p>
             <ul class="space-y-2 text-sm text-gray-200">
               <li class="flex items-start gap-3"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Brim or raft:</strong> adding extra contact area on the first layer is the most reliable warping fix. Brim uses less filament and is easier to remove than raft.</li>
               <li class="flex items-start gap-3"><i data-lucide="check-circle" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i><strong>Enclosure:</strong> for ABS, ASA, PC, and other high-shrink materials, an enclosure is mandatory. Even a cardboard box around the printer helps dramatically.</li>
@@ -440,23 +472,23 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Probe &amp; Firmware-Specific Notes</h2>
+    <h2 class="font-bold text-3xl mb-5">Probe & Firmware-Specific Notes</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="map-pin" style="width:1.2rem;height:1.2rem"></i>BLTouch / CRTouch</h3>
-        <p class="text-gray-300 leading-relaxed mb-3">BLTouch uses a Hall effect sensor to detect when the pin pushes up. The set screw on top adjusts the trigger height &mdash; clockwise = pin triggers sooner (nozzle higher above bed), counter-clockwise = pin triggers later (nozzle closer). If you get "probing failed" errors, first check that the pin moves freely. Clean the inside with compressed air if needed. The probe should be mounted such that the pin is 2&ndash;3mm above the nozzle tip when deployed.</p>
+        <p class="text-gray-300 leading-relaxed mb-3">BLTouch uses a Hall effect sensor to detect when the pin pushes up. The set screw on top adjusts the trigger height — clockwise = pin triggers sooner (nozzle higher above bed), counter-clockwise = pin triggers later (nozzle closer). If you get "probing failed" errors, first check that the pin moves freely. Clean the inside with compressed air if needed. The probe should be mounted such that the pin is 2&ndash;3mm above the nozzle tip when deployed.</p>
       </div>
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-purple-400 flex items-center gap-2"><i data-lucide="zap" style="width:1.2rem;height:1.2rem"></i>Inductive / Capacitive Probes</h3>
-        <p class="text-gray-300 leading-relaxed mb-3">Inductive probes only work with metal beds (spring steel sheet works, but you must account for the sheet thickness). Capacitive probes work with glass and PEI but are sensitive to humidity and temperature drift. Both types need a stable 5V or 24V supply &mdash; voltage drops cause false triggers. Keep the probe face clean of plastic dust and debris. Inductive probes should be mounted 4&ndash;8mm above the nozzle tip for best sensitivity.</p>
+        <p class="text-gray-300 leading-relaxed mb-3">Inductive probes only work with metal beds (spring steel sheet works, but you must account for the sheet thickness). Capacitive probes work with glass and PEI but are sensitive to humidity and temperature drift. Both types need a stable 5V or 24V supply — voltage drops cause false triggers. Keep the probe face clean of plastic dust and debris. Inductive probes should be mounted 4&ndash;8mm above the nozzle tip for best sensitivity.</p>
       </div>
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="grid-3x3" style="width:1.2rem;height:1.2rem"></i>Mesh Density Tips</h3>
-        <p class="text-gray-300 leading-relaxed mb-3">More mesh points = better compensation but longer probing time. For small beds (200&times;200), a 3&times;3 mesh is usually enough if the bed is reasonably flat. For 300&times;300+ beds, use 5&times;5 minimum. If your bed is significantly warped, go to 7&times;7 or higher. Always remember that mesh compensation is a band-aid &mdash; if the bed is warped by more than 0.3&ndash;0.5mm, you should replace or flip the bed, or add a thicker build plate.</p>
+        <p class="text-gray-300 leading-relaxed mb-3">More mesh points = better compensation but longer probing time. For small beds (200&times;200), a 3&times;3 mesh is usually enough if the bed is reasonably flat. For 300&times;300+ beds, use 5&times;5 minimum. If your bed is significantly warped, go to 7&times;7 or higher. Always remember that mesh compensation is a band-aid — if the bed is warped by more than 0.3&ndash;0.5mm, you should replace or flip the bed, or add a thicker build plate.</p>
       </div>
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="refresh-cw" style="width:1.2rem;height:1.2rem"></i>When to Re-Level</h3>
-        <p class="text-gray-300 leading-relaxed mb-3">You should re-check bed level: after any nozzle change, after moving the printer, after removing and reinstalling the build plate, after a major print failure where the head crashed, or every 10&ndash;20 hours of printing (bed springs settle over time). With silicone bed spacers instead of springs, you can go months between re-levels. With an auto-probe, mesh validity depends on how stable your mechanical system is &mdash; check weekly if you print a lot.</p>
+        <p class="text-gray-300 leading-relaxed mb-3">You should re-check bed level: after any nozzle change, after moving the printer, after removing and reinstalling the build plate, after a major print failure where the head crashed, or every 10&ndash;20 hours of printing (bed springs settle over time). With silicone bed spacers instead of springs, you can go months between re-levels. With an auto-probe, mesh validity depends on how stable your mechanical system is — check weekly if you print a lot.</p>
       </div>
     </div>
   </section>
@@ -467,23 +499,23 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Bed is visibly warped (more than 0.3mm across the surface) &mdash; replace the bed, flip it, or add a cast aluminum tooling plate.</p>
+          <p class="text-sm text-gray-200">Bed is visibly warped (more than 0.3mm across the surface) — replace the bed, flip it, or add a cast aluminum tooling plate.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">BLTouch probe has inconsistent trigger height (&plusmn;0.01mm or more) &mdash; replace the probe, or upgrade to CRTouch.</p>
+          <p class="text-sm text-gray-200">BLTouch probe has inconsistent trigger height (&plusmn;0.01mm or more) — replace the probe, or upgrade to CRTouch.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">PEI sheet is smooth, glossy, and nothing sticks anymore &mdash; replace the PEI sheet or re-texture with fine sandpaper (smooth PEI only).</p>
+          <p class="text-sm text-gray-200">PEI sheet is smooth, glossy, and nothing sticks anymore — replace the PEI sheet or re-texture with fine sandpaper (smooth PEI only).</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Bed springs compress and drift within days &mdash; upgrade to silicone bed spacers (more stable, less frequent re-leveling).</p>
+          <p class="text-sm text-gray-200">Bed springs compress and drift within days — upgrade to silicone bed spacers (more stable, less frequent re-leveling).</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Manual leveling takes forever and never stays &mdash; install a BLTouch/CRTouch auto-probe if your board supports it.</p>
+          <p class="text-sm text-gray-200">Manual leveling takes forever and never stays — install a BLTouch/CRTouch auto-probe if your board supports it.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
@@ -501,7 +533,7 @@
           <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">THERMAL</div>
           <span class="badge badge-critical">Safety</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Thermal Runaway &amp; Heating Fault</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Thermal Runaway & Heating Fault</h3>
         <p class="text-sm text-gray-400">Thermistor testing, heater cartridge replacement, PID tuning, and Marlin/Klipper thermal protection settings.</p>
       </a>
       <a href="3d-printer-filament-jam.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
@@ -509,7 +541,7 @@
           <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">CLOG</div>
           <span class="badge badge-warning">Warning</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Filament Jam &amp; Nozzle Clog</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Filament Jam & Nozzle Clog</h3>
         <p class="text-sm text-gray-400">Cold pull method, nozzle cleaning, Bowden tube removal, heat break clogs, wet filament issues, and extruder gear wear.</p>
       </a>
       <a href="3d-printer-layer-shifting.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
@@ -517,7 +549,7 @@
           <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">SHIFT</div>
           <span class="badge badge-info">Mechanical</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Layer Shifting &amp; Misalignment</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Layer Shifting & Misalignment</h3>
         <p class="text-sm text-gray-400">Belt tension, stepper current, V-slot wheels, linear rail maintenance, and print speed/acceleration tuning.</p>
       </a>
     </div>
@@ -534,7 +566,18 @@
     </div>
   </section>
 
-  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<footer class="border-t border-white/10 bg-navy-950 mt-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="md:col-span-1">
@@ -550,13 +593,13 @@
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
-            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
-            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
             <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>

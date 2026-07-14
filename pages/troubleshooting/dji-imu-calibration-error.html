@@ -8,9 +8,9 @@
   <meta name="theme-color" content="#0a1628">
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -35,25 +35,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  
+  
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <script type="application/ld+json">
@@ -90,6 +75,52 @@
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Error Code Database",
+      "item": "https://powerspecshub.com/pages/error-code-db.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "DJI IMU Calibration Error"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -111,18 +142,18 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
 
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Data Resources</p>
@@ -151,14 +182,14 @@
       <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
-        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
-        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid & EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -203,8 +234,9 @@
       </div>
 
       <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
-        DJI IMU Calibration Error &mdash; <span class="gradient-text">IMU Abnormal, Vibration &amp; Drift Fixes</span>
+        DJI IMU Calibration Error — <span class="gradient-text">IMU Abnormal, Vibration & Drift Fixes</span>
       </h1>
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div>
 
       <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
         "IMU Calibration Required" and "IMU Abnormal" are among the most common DJI drone warnings, especially after temperature changes, hard landings, or extended storage. The IMU (Inertial Measurement Unit) combines 3-axis accelerometers and 3-axis gyroscopes to determine the drone's attitude. Most IMU errors are not hardware failures — they're caused by temperature drift, vibration from loose parts, or simply needing a fresh calibration on a perfectly level surface.
@@ -243,14 +275,14 @@
             MEMS sensors are sensitive to temperature, vibration, and physical shock. A drone that sat in a cold car overnight and then powers up on a 90&deg;F day will almost certainly need a re-calibration. Similarly, a hard landing or a crash can physically shift the IMU module or introduce vibration sources that confuse the sensors.
           </p>
           <ul class="space-y-1 pl-1 text-gray-300">
-            <li><span class="text-white font-semibold">&bull; Temperature drift is the #1 cause &mdash; MEMS accelerometer bias shifts with temperature.</span></li>
+            <li><span class="text-white font-semibold">&bull; Temperature drift is the #1 cause — MEMS accelerometer bias shifts with temperature.</span></li>
             <li class="text-white font-semibold">&bull; Vibration from loose propellers, damaged motor bearings, or cracked frames can overwhelm IMU filters.</li>
             <li class="text-white font-semibold">&bull; Physical damage from crashes can misalign the IMU PCB or break solder joints.</li>
             <li class="text-white font-semibold">&bull; Firmware bugs can occasionally trigger false IMU errors (always update first).</li>
           </ul>
         </div>
         <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
-          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Before You Calibrate &mdash; Quick Checks</h3>
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Before You Calibrate — Quick Checks</h3>
           <ul class="space-y-2 text-sm text-gray-200">
             <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Drone is at room temperature (not cold from fridge/car)?</li>
             <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>On a perfectly flat, level surface?</li>
@@ -266,7 +298,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <h2 class="font-bold text-3xl mb-5">Tools & Materials You'll Need</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="glass-card p-5">
         <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Tools</h3></div>
@@ -314,7 +346,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">1</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Verify Temperature &mdash; Cold vs Warm IMU</h3>
+            <h3 class="font-bold text-xl mb-2">Verify Temperature — Cold vs Warm IMU</h3>
             <p class="text-gray-300 leading-relaxed mb-3">The single most common cause of IMU calibration failure is temperature mismatch. MEMS accelerometers and gyroscopes have temperature-dependent bias. DJI drones perform a "warm IMU" calibration that expects the sensors to be at normal operating temperature (typically 25&ndash;40&deg;C after a few minutes of power-on). If you calibrate a cold drone, the calibration will be wrong once the sensors warm up during flight.</p>
 
             <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Procedure</h4>
@@ -323,11 +355,11 @@
               <li>Power on the drone (with props removed) and let it idle for 5&ndash;10 minutes so the IMU reaches operating temperature.</li>
               <li>Check the IMU temperature in DJI Fly: Settings &rarr; Safety &rarr; IMU &rarr; Sensor State.</li>
               <li>Ideal calibration temperature range: 20&ndash;35&deg;C (68&ndash;95&deg;F).</li>
-              <li>If the drone was stored in a cold vehicle or in freezing conditions, warm it up slowly &mdash; do NOT use a heater or hair dryer (can cause condensation).</li>
+              <li>If the drone was stored in a cold vehicle or in freezing conditions, warm it up slowly — do NOT use a heater or hair dryer (can cause condensation).</li>
             </ol>
             <div class="alert alert-info mt-4 !mb-0">
               <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
-              <p class="text-sm"><strong>Cold IMU phenomenon:</strong> On the Mini 3 and Mini 4 series, a cold start below 10&deg;C often triggers "IMU Calibration Required" immediately. This is normal &mdash; the temperature coefficient of the MEMS sensor is exceeding the factory calibration range. Warm up the drone and the error usually clears on its own.</p>
+              <p class="text-sm"><strong>Cold IMU phenomenon:</strong> On the Mini 3 and Mini 4 series, a cold start below 10&deg;C often triggers "IMU Calibration Required" immediately. This is normal — the temperature coefficient of the MEMS sensor is exceeding the factory calibration range. Warm up the drone and the error usually clears on its own.</p>
             </div>
           </div>
         </div>
@@ -398,7 +430,7 @@
 
             <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Vibration Diagnostic Checklist</h4>
             <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
-              <li>Inspect all four propellers for chips, cracks, or bent tips. Replace any damaged propellers immediately &mdash; even a tiny chip causes massive vibration.</li>
+              <li>Inspect all four propellers for chips, cracks, or bent tips. Replace any damaged propellers immediately — even a tiny chip causes massive vibration.</li>
               <li>Check that propellers are tightly seated. On folding props, ensure the blades move freely but have no vertical play at the hub.</li>
               <li>Gently wiggle each motor by hand. If any motor has side-to-side play (more than 0.5mm), the motor bearing is worn and causing vibration.</li>
               <li>Inspect the drone frame for cracks, especially around motor arms and the body-to-arm joints. A cracked frame transmits engine vibration directly to the IMU.</li>
@@ -423,7 +455,7 @@
               <li>In DJI Assistant 2, go to "Firmware Update" and click "Refresh" next to the current version.</li>
               <li>After refreshing, re-run IMU calibration (Step 3 above) and test.</li>
               <li>If the error persists and you're on a very recent firmware version, consider downgrading to the previous stable version (if available in DJI Assistant 2).</li>
-              <li>Check DJI forums and Reddit for reports of IMU issues with your specific firmware version &mdash; you may not be alone.</li>
+              <li>Check DJI forums and Reddit for reports of IMU issues with your specific firmware version — you may not be alone.</li>
               <li>Ensure both the drone battery and remote controller battery are above 50% during any firmware operation.</li>
             </ol>
             <div class="alert alert-info mt-4 !mb-0">
@@ -438,17 +470,17 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">6</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Physical Inspection &amp; IMU Module Check</h3>
+            <h3 class="font-bold text-xl mb-2">Physical Inspection & IMU Module Check</h3>
             <p class="text-gray-300 leading-relaxed mb-3">If all software fixes fail, the IMU module itself may have a physical problem. This could be a loose connector, a damaged sensor, or a PCB that shifted after a crash. The IMU is typically mounted on a small PCB inside the drone's main body, sometimes under a metal shielding can.</p>
 
             <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Physical Inspection Procedure</h4>
             <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
               <li>Power off the drone and remove the battery. Wait 2 minutes for all capacitors to discharge.</li>
-              <li>Remove the bottom shell screws (usually 6&ndash;8 screws depending on model). Keep track of screw lengths &mdash; they often differ.</li>
+              <li>Remove the bottom shell screws (usually 6&ndash;8 screws depending on model). Keep track of screw lengths — they often differ.</li>
               <li>Gently separate the bottom shell. Be careful of any cables connecting to the shell (LEDs, bottom sensors).</li>
-              <li>Locate the IMU module &mdash; it's usually a small square PCB with a metal shield can, near the center of the flight controller board.</li>
+              <li>Locate the IMU module — it's usually a small square PCB with a metal shield can, near the center of the flight controller board.</li>
               <li>Inspect the IMU PCB and its connector. Is the connector fully seated? Any signs of corrosion or water damage?</li>
-              <li>Gently press on the IMU shield can with a plastic spudger &mdash; if there's movement, the PCB may have come loose from its mounts.</li>
+              <li>Gently press on the IMU shield can with a plastic spudger — if there's movement, the PCB may have come loose from its mounts.</li>
               <li>Re-seat the IMU flex cable or connector. Use isopropyl alcohol on a cotton swab to clean the connector pins if they look dirty.</li>
               <li>Inspect the flight controller board for any visibly damaged components near the IMU area.</li>
               <li>Re-assemble and re-test calibration.</li>
@@ -461,7 +493,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">7</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">IMU Module Replacement &mdash; When Is It Necessary?</h3>
+            <h3 class="font-bold text-xl mb-2">IMU Module Replacement — When Is It Necessary?</h3>
             <p class="text-gray-300 leading-relaxed mb-3">True IMU hardware failure is rare but it does happen, especially after a hard crash or water exposure. If you've completed all previous steps and calibration consistently fails on one or more axes, or if the sensor readings are obviously wrong (e.g., accelerometer shows 2g when stationary), the IMU sensor has likely failed.</p>
 
             <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Signs of True IMU Hardware Failure</h4>
@@ -501,7 +533,7 @@
         </ul>
       </div>
       <div class="glass-card p-6">
-        <h3 class="font-bold text-xl mb-3 text-electric-400 flex items-center gap-2"><i data-lucide="package" style="width:1.25rem;height:1.25rem"></i>Replacement Parts &amp; Costs</h3>
+        <h3 class="font-bold text-xl mb-3 text-electric-400 flex items-center gap-2"><i data-lucide="package" style="width:1.25rem;height:1.25rem"></i>Replacement Parts & Costs</h3>
         <div class="overflow-x-auto">
           <table class="specs-table w-full text-sm">
             <thead>
@@ -527,11 +559,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">IMU calibration fails more than 5 times in a row even on a known-flat surface &mdash; sensor may be dead.</p>
+          <p class="text-sm text-gray-200">IMU calibration fails more than 5 times in a row even on a known-flat surface — sensor may be dead.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="flame" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Drone has been in a severe crash that also bent the airframe &mdash; IMU alignment requires factory jigs.</p>
+          <p class="text-sm text-gray-200">Drone has been in a severe crash that also bent the airframe — IMU alignment requires factory jigs.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
@@ -539,15 +571,15 @@
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Drone is still under DJI Care or manufacturer warranty &mdash; opening the shell voids coverage.</p>
+          <p class="text-sm text-gray-200">Drone is still under DJI Care or manufacturer warranty — opening the shell voids coverage.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">The drone flies erratically with constant IMU warnings &mdash; dangerous to keep testing in the air.</p>
+          <p class="text-sm text-gray-200">The drone flies erratically with constant IMU warnings — dangerous to keep testing in the air.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">You don't have experience working with tiny PCBs and flex connectors &mdash; it's easy to cause more damage.</p>
+          <p class="text-sm text-gray-200">You don't have experience working with tiny PCBs and flex connectors — it's easy to cause more damage.</p>
         </div>
       </div>
     </div>
@@ -562,7 +594,7 @@
           <span class="badge badge-warning">Warning</span>
         </div>
         <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">DJI Gimbal Error Codes</h3>
-        <p class="text-sm text-gray-400">Gimbal IMU and vibration often interact &mdash; if your IMU error is paired with a gimbal error, check this guide too.</p>
+        <p class="text-sm text-gray-400">Gimbal IMU and vibration often interact — if your IMU error is paired with a gimbal error, check this guide too.</p>
       </a>
       <a href="dji-compass-error.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
         <div class="flex items-start gap-3 mb-3">
@@ -594,7 +626,18 @@
     </div>
   </section>
 
-  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<footer class="border-t border-white/10 bg-navy-950 mt-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="md:col-span-1">
@@ -610,13 +653,13 @@
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
-            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
-            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
             <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>

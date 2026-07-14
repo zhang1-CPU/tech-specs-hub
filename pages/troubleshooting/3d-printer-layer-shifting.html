@@ -8,9 +8,9 @@
   <meta name="theme-color" content="#0a1628">
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -35,25 +35,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  
+  
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <script type="application/ld+json">
@@ -90,6 +75,52 @@
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Error Code Database",
+      "item": "https://powerspecshub.com/pages/error-code-db.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "3D Printer Layer Shifting"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -111,18 +142,18 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
 
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Data Resources</p>
@@ -152,13 +183,13 @@
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
         <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
-        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -203,11 +234,12 @@
       </div>
 
       <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
-        3D Printer Layer Shifting &mdash; <span class="gradient-text">Misalignment Troubleshooting Guide</span>
+        3D Printer Layer Shifting — <span class="gradient-text">Misalignment Troubleshooting Guide</span>
       </h1>
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div>
 
       <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
-        Layer shifting &mdash; when one or more layers are offset horizontally, turning a precision print into a stepped mess &mdash; is one of the most frustrating and common mechanical failures in FDM 3D printing. The shift can happen on X, Y, or both axes, and it can be consistent or random. The root cause is almost always mechanical: loose belts, binding motion systems, stepper motors losing steps, or print speeds that exceed what your machine can reliably handle. This guide walks through systematic diagnosis from belt tension to stepper current, wheel lubrication to linear rail maintenance, and speed tuning to get your printer printing perfectly aligned again.
+        Layer shifting — when one or more layers are offset horizontally, turning a precision print into a stepped mess — is one of the most frustrating and common mechanical failures in FDM 3D printing. The shift can happen on X, Y, or both axes, and it can be consistent or random. The root cause is almost always mechanical: loose belts, binding motion systems, stepper motors losing steps, or print speeds that exceed what your machine can reliably handle. This guide walks through systematic diagnosis from belt tension to stepper current, wheel lubrication to linear rail maintenance, and speed tuning to get your printer printing perfectly aligned again.
       </p>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
@@ -237,10 +269,10 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
           <p>
-            Layer shifting happens when the print head or bed does not move to the correct position, so the next layer starts offset from where it should be. The stepper motor has "lost steps" &mdash; the firmware commanded a move but the motor did not complete the full movement, or the belt slipped on a pulley. Every layer shift traces back to one of these root causes:
+            Layer shifting happens when the print head or bed does not move to the correct position, so the next layer starts offset from where it should be. The stepper motor has "lost steps" — the firmware commanded a move but the motor did not complete the full movement, or the belt slipped on a pulley. Every layer shift traces back to one of these root causes:
           </p>
           <ul class="space-y-2 pl-1 text-gray-300">
-            <li><span class="text-white font-semibold">&bull; <strong>Belt too loose:</strong> the belt slips on the pulley teeth, especially during fast direction changes &mdash; the single most common cause.</span></li>
+            <li><span class="text-white font-semibold">&bull; <strong>Belt too loose:</strong> the belt slips on the pulley teeth, especially during fast direction changes — the single most common cause.</span></li>
             <li class="text-white font-semibold">&bull; <strong>Belt too tight:</strong> excessive belt tension causes binding and premature wear on bearings and motors, which can also cause lost steps.</li>
             <li class="text-white font-semibold">&bull; <strong>Stepper current too low:</strong> the motor does not have enough torque to move the axis at the requested speed and acceleration, so it skips steps.</li>
             <li class="text-white font-semibold">&bull; <strong>Motion system binding:</strong> V-slot wheels that are too tight, dirty linear rails, or a gantry that is not square create friction that the motor cannot overcome.</li>
@@ -254,7 +286,7 @@
           <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Quick Symptom Check</h3>
           <p class="text-sm text-gray-200 mb-3">Answer these first:</p>
           <ul class="space-y-2 text-sm text-gray-200">
-            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Which axis shifts &mdash; X, Y, or both?</li>
+            <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Which axis shifts — X, Y, or both?</li>
             <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Is the shift consistent (same layer height) or random?</li>
             <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Does it happen at the same point in every print?</li>
             <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Did it start after a recent change (new nozzle, speed settings, firmware)?</li>
@@ -266,7 +298,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <h2 class="font-bold text-3xl mb-5">Tools & Materials You'll Need</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="glass-card p-5">
         <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="wrench" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Mechanical</h3></div>
@@ -299,7 +331,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree — Work These In Order</h2>
     <div class="space-y-4">
 
       <div class="glass-card p-6 md:p-7">
@@ -307,14 +339,14 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Inspect belts for proper tension and wear</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Belt tension is the #1 cause of layer shifting, and it is also the easiest thing to check and fix. With the printer powered off, push the print head (X-axis) or bed (Y-axis) by hand. You should feel smooth, consistent resistance. Pluck the belt like a guitar string &mdash; it should produce a low, clear tone, not a floppy rattle. A belt that is too loose will slip on the pulley teeth during fast moves, especially during direction changes. A belt that is too tight causes excess friction and can actually make layer shifting worse by binding the system.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">Belt tension is the #1 cause of layer shifting, and it is also the easiest thing to check and fix. With the printer powered off, push the print head (X-axis) or bed (Y-axis) by hand. You should feel smooth, consistent resistance. Pluck the belt like a guitar string — it should produce a low, clear tone, not a floppy rattle. A belt that is too loose will slip on the pulley teeth during fast moves, especially during direction changes. A belt that is too tight causes excess friction and can actually make layer shifting worse by binding the system.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Belt Tension Guidelines</div>
               <ul class="space-y-2 text-sm text-gray-300">
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Guitar string test: pluck the belt &mdash; it should produce a clear low note, not a dull thud.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Deflection test: press on the belt halfway between two pulleys &mdash; it should deflect about 5&ndash;10mm with moderate finger pressure.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Guitar string test: pluck the belt — it should produce a clear low note, not a dull thud.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Deflection test: press on the belt halfway between two pulleys — it should deflect about 5&ndash;10mm with moderate finger pressure.</li>
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Visual check: the belt should sit fully on the pulley teeth, with no visible gaps or riding up.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>GT2 belts: ensure the belt teeth are properly meshed with pulley teeth &mdash; misaligned belts ride up and skip.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>GT2 belts: ensure the belt teeth are properly meshed with pulley teeth — misaligned belts ride up and skip.</li>
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Belt wear: check for fraying, cracked teeth, or stretched belt material. Replace if worn.</li>
               </ul>
             </div>
@@ -341,15 +373,15 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Service V-slot wheels (V-slot frame printers)</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">V-slot wheels are the most common motion system on budget and mid-range 3D printers. The eccentric nuts that set the wheel tension can loosen over time from vibration, causing the wheels to ride too loose or too tight. Wheels that are too tight create binding; wheels that are too loose allow the carriage to wobble, which can also cause print artifacts. Clean the V-slot rails with isopropyl alcohol and a lint-free cloth, then adjust each eccentric nut so the wheel just touches the rail without binding. A slight preload is good &mdash; you should not be able to wiggle the carriage side to side.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">V-slot wheels are the most common motion system on budget and mid-range 3D printers. The eccentric nuts that set the wheel tension can loosen over time from vibration, causing the wheels to ride too loose or too tight. Wheels that are too tight create binding; wheels that are too loose allow the carriage to wobble, which can also cause print artifacts. Clean the V-slot rails with isopropyl alcohol and a lint-free cloth, then adjust each eccentric nut so the wheel just touches the rail without binding. A slight preload is good — you should not be able to wiggle the carriage side to side.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">V-Slot Wheel Maintenance</div>
               <ul class="space-y-2 text-sm text-gray-300">
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Clean V-slot rails with IPA and a lint-free cloth to remove dust, grease, and plastic debris.</li>
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Adjust eccentric nuts: turn slightly to tighten or loosen the wheel against the rail.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Lubricate V-slot wheels with PTFE dry lube or silicone-based lubricant &mdash; never use oil or grease, they attract dust.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Lubricate V-slot wheels with PTFE dry lube or silicone-based lubricant — never use oil or grease, they attract dust.</li>
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Check wheels for flat spots: if you see a flat spot on the plastic wheel, it needs replacement.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Bearings inside the wheels can also fail &mdash; if a wheel spins roughly or has play, replace the bearing or the whole wheel.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Bearings inside the wheels can also fail — if a wheel spins roughly or has play, replace the bearing or the whole wheel.</li>
               </ul>
             </div>
           </div>
@@ -361,10 +393,10 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">04</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Maintain linear rails (rail-based printers)</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Linear rail printers (coreXY, IDEX, high-end machines) require different maintenance. Rails should be cleaned and re-greased periodically, especially if the printer is in a dusty environment. First, wipe the rail clean with isopropyl alcohol and a lint-free cloth to remove old grease and debris. Then apply a thin bead of linear rail grease (typically lithium-based or PTFE-based grease formulated for linear motion) along the rail. Move the carriage back and forth several times to distribute the grease evenly, then wipe off any excess. Do not over-grease &mdash; excess grease attracts dust and can cause more problems than it solves.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">Linear rail printers (coreXY, IDEX, high-end machines) require different maintenance. Rails should be cleaned and re-greased periodically, especially if the printer is in a dusty environment. First, wipe the rail clean with isopropyl alcohol and a lint-free cloth to remove old grease and debris. Then apply a thin bead of linear rail grease (typically lithium-based or PTFE-based grease formulated for linear motion) along the rail. Move the carriage back and forth several times to distribute the grease evenly, then wipe off any excess. Do not over-grease — excess grease attracts dust and can cause more problems than it solves.</p>
             <div class="alert alert-warning !mb-0">
               <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
-              <p class="text-sm"><strong>Linear rail note:</strong> never run linear rails dry &mdash; metal-on-metal contact will quickly ruin both the rail and the carriage balls. If you hear a metallic scraping or grinding sound from the rails, stop printing immediately and lubricate. Also check that the rail mounting bolts are tight &mdash; loose rails can shift and cause binding or layer shifts. For coreXY machines, verify both X and Y rails are parallel and the gantry is level.</p>
+              <p class="text-sm"><strong>Linear rail note:</strong> never run linear rails dry — metal-on-metal contact will quickly ruin both the rail and the carriage balls. If you hear a metallic scraping or grinding sound from the rails, stop printing immediately and lubricate. Also check that the rail mounting bolts are tight — loose rails can shift and cause binding or layer shifts. For coreXY machines, verify both X and Y rails are parallel and the gantry is level.</p>
             </div>
           </div>
         </div>
@@ -385,8 +417,8 @@
                   <tr><td><strong>A4988 / DRV8825</strong> (potentiometer)</td><td>Adjust Vref pot on driver module</td><td>0.8&ndash;1.5A (NEMA 17)</td></tr>
                   <tr><td><strong>TMC2209 / TMC2208</strong> (UART)</td><td>Set via firmware (M913 / M906)</td><td>0.8&ndash;2.0A (NEMA 17)</td></tr>
                   <tr><td><strong>TMC5160 / TMC2130</strong> (SPI)</td><td>Set via firmware / config</td><td>1.0&ndash;2.5A (NEMA 17/23)</td></tr>
-                  <tr><td><strong>Marlin</strong></td><td>M906 X Y Z E (set current in mA)</td><td>Depends on motor &amp; driver</td></tr>
-                  <tr><td><strong>Klipper</strong></td><td>run_current in tmcXXXX section</td><td>Depends on motor &amp; driver</td></tr>
+                  <tr><td><strong>Marlin</strong></td><td>M906 X Y Z E (set current in mA)</td><td>Depends on motor & driver</td></tr>
+                  <tr><td><strong>Klipper</strong></td><td>run_current in tmcXXXX section</td><td>Depends on motor & driver</td></tr>
                 </tbody>
               </table>
             </div>
@@ -399,7 +431,7 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Tune print speed, acceleration, and jerk</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">If you have fixed all mechanical issues and still get layer shifts at high speeds, your printer simply cannot reliably handle the acceleration and velocity you are asking it to do. Every printer has a mechanical limit &mdash; push past it and the motors lose steps. Reduce acceleration values for X and Y axes, reduce maximum speed, or increase the number of steps per square millimeter for smoother motion. Start with conservative values and work up. An acceleration tower test print is a great way to find your printer's limits without wasting plastic on full prints.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">If you have fixed all mechanical issues and still get layer shifts at high speeds, your printer simply cannot reliably handle the acceleration and velocity you are asking it to do. Every printer has a mechanical limit — push past it and the motors lose steps. Reduce acceleration values for X and Y axes, reduce maximum speed, or increase the number of steps per square millimeter for smoother motion. Start with conservative values and work up. An acceleration tower test print is a great way to find your printer's limits without wasting plastic on full prints.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Starting Points for Tuning</div>
               <ul class="space-y-2 text-sm text-gray-300">
@@ -421,10 +453,10 @@
             <h3 class="font-bold text-xl mb-2">Check frame square, gantry level, and pulley grub screws</h3>
             <p class="text-gray-300 leading-relaxed mb-3">If you have tried everything else and still have persistent layer shifting, check the fundamentals of your machine's construction. A frame that is not square, a gantry that is twisted, or a loose pulley grub screw can cause all sorts of mysterious alignment issues. These are less common causes but they are worth verifying if you have eliminated everything else.</p>
             <ul class="space-y-2 text-sm text-gray-200">
-              <li class="flex items-start gap-3"><i data-lucide="alert-octagon" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Pulley grub screws:</strong> the set screws that hold timing pulleys to the motor shaft can loosen over time. When they slip, the motor turns but the pulley does not &mdash; instant layer shift. Check every pulley on every motor shaft. Use blue Loctite on the grub screw threads after tightening to prevent future loosening.</li>
-              <li class="flex items-start gap-3"><i data-lucide="flame" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Frame square:</strong> if the printer frame is not square (twisted or racked), the axes cannot move perfectly perpendicular. This causes a type of layer shift that gets worse the further you get from home. Measure diagonals of the frame base &mdash; they should be equal. Adjust feet or shim as needed.</li>
-              <li class="flex items-start gap-3"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Gantry level / parallel:</strong> on printers with a moving gantry (coreXY, H-bot), if the two sides of the gantry are at different heights or the gantry is not parallel to the bed, you can get binding and layer shifting. Use a gauge block or digital caliper to measure gantry height at both ends &mdash; they should match within 0.1mm.</li>
-              <li class="flex items-start gap-3"><i data-lucide="message-square-warning" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Z-axis binding:</strong> sometimes layer shifts that look like X/Y shifts are actually caused by Z-axis binding &mdash; the head cannot move down for the next layer, so it prints in mid-air, which looks like a shift. Check Z-axis lead screw alignment and lubrication.</li>
+              <li class="flex items-start gap-3"><i data-lucide="alert-octagon" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Pulley grub screws:</strong> the set screws that hold timing pulleys to the motor shaft can loosen over time. When they slip, the motor turns but the pulley does not — instant layer shift. Check every pulley on every motor shaft. Use blue Loctite on the grub screw threads after tightening to prevent future loosening.</li>
+              <li class="flex items-start gap-3"><i data-lucide="flame" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Frame square:</strong> if the printer frame is not square (twisted or racked), the axes cannot move perfectly perpendicular. This causes a type of layer shift that gets worse the further you get from home. Measure diagonals of the frame base — they should be equal. Adjust feet or shim as needed.</li>
+              <li class="flex items-start gap-3"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Gantry level / parallel:</strong> on printers with a moving gantry (coreXY, H-bot), if the two sides of the gantry are at different heights or the gantry is not parallel to the bed, you can get binding and layer shifting. Use a gauge block or digital caliper to measure gantry height at both ends — they should match within 0.1mm.</li>
+              <li class="flex items-start gap-3"><i data-lucide="message-square-warning" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Z-axis binding:</strong> sometimes layer shifts that look like X/Y shifts are actually caused by Z-axis binding — the head cannot move down for the next layer, so it prints in mid-air, which looks like a shift. Check Z-axis lead screw alignment and lubrication.</li>
               <li class="flex items-start gap-3"><i data-lucide="trash-2" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Cable strain:</strong> on printers where cables move with the gantry, a stiff or poorly-routed cable bundle can pull on the gantry enough to cause missed steps. Ensure cable chains move freely and there is no excess strain on the hotend cable bundle.</li>
             </ul>
           </div>
@@ -435,19 +467,19 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Printer Type &amp; Firmware-Specific Notes</h2>
+    <h2 class="font-bold text-3xl mb-5">Printer Type & Firmware-Specific Notes</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="move-horizontal" style="width:1.2rem;height:1.2rem"></i>Cartesian / i3 Style</h3>
-        <p class="text-gray-300 leading-relaxed mb-3">i3-style printers (Ender 3, Prusa MK4, etc.) have the X-axis on a gantry that moves up and down on Z lead screws, and the bed moves in Y. These are particularly prone to Y-axis layer shifts because the bed has significant mass that must accelerate and decelerate. Belt tension on the Y-axis is critical &mdash; the bed is heavy and the belt has to move all of it. Also check that the bed wheels are not too tight &mdash; excessive V-slot wheel tension is a very common cause of Y-axis layer shifts on i3 printers.</p>
+        <p class="text-gray-300 leading-relaxed mb-3">i3-style printers (Ender 3, Prusa MK4, etc.) have the X-axis on a gantry that moves up and down on Z lead screws, and the bed moves in Y. These are particularly prone to Y-axis layer shifts because the bed has significant mass that must accelerate and decelerate. Belt tension on the Y-axis is critical — the bed is heavy and the belt has to move all of it. Also check that the bed wheels are not too tight — excessive V-slot wheel tension is a very common cause of Y-axis layer shifts on i3 printers.</p>
       </div>
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-purple-400 flex items-center gap-2"><i data-lucide="git-branch" style="width:1.2rem;height:1.2rem"></i>CoreXY / H-Bot</h3>
-        <p class="text-gray-300 leading-relaxed mb-3">CoreXY printers (Voron, Rat Rig, etc.) use a belt system where both motors contribute to both X and Y movement. This means a belt tension problem on either motor can cause shifts in both axes. CoreXY requires that both belts are at identical tension &mdash; a difference between the two belts causes torque on the gantry, which can cause binding and layer shifting. Use a tension gauge to match both belts as closely as possible. Also verify that the gantry is perfectly level and both rails are parallel.</p>
+        <p class="text-gray-300 leading-relaxed mb-3">CoreXY printers (Voron, Rat Rig, etc.) use a belt system where both motors contribute to both X and Y movement. This means a belt tension problem on either motor can cause shifts in both axes. CoreXY requires that both belts are at identical tension — a difference between the two belts causes torque on the gantry, which can cause binding and layer shifting. Use a tension gauge to match both belts as closely as possible. Also verify that the gantry is perfectly level and both rails are parallel.</p>
       </div>
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="settings" style="width:1.2rem;height:1.2rem"></i>Stepper Driver Tuning</h3>
-        <p class="text-gray-300 leading-relaxed mb-3">Modern TMC stepper drivers have many configurable parameters that affect performance. SpreadCycle mode provides the most torque and is best for printing. StealthChop is quieter but can have issues with higher speeds and can cause layer shifts at high acceleration. If you are using StealthChop and getting layer shifts, try switching to SpreadCycle mode for the X and Y axes. Also check that coolstep is configured properly &mdash; if the driver current is being reduced too aggressively during printing, you can lose torque and skip steps.</p>
+        <p class="text-gray-300 leading-relaxed mb-3">Modern TMC stepper drivers have many configurable parameters that affect performance. SpreadCycle mode provides the most torque and is best for printing. StealthChop is quieter but can have issues with higher speeds and can cause layer shifts at high acceleration. If you are using StealthChop and getting layer shifts, try switching to SpreadCycle mode for the X and Y axes. Also check that coolstep is configured properly — if the driver current is being reduced too aggressively during printing, you can lose torque and skip steps.</p>
       </div>
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="triangle" style="width:1.2rem;height:1.2rem"></i>Delta Printers</h3>
@@ -462,23 +494,23 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Timing belt is stretched, frayed, or has cracked/rounded teeth &mdash; replace with new GT2 belt of the same width (6mm or 9mm).</p>
+          <p class="text-sm text-gray-200">Timing belt is stretched, frayed, or has cracked/rounded teeth — replace with new GT2 belt of the same width (6mm or 9mm).</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">V-slot wheels have flat spots, cracked plastic, or rough bearings &mdash; replace wheels (and bearings if needed).</p>
+          <p class="text-sm text-gray-200">V-slot wheels have flat spots, cracked plastic, or rough bearings — replace wheels (and bearings if needed).</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Stepper motor is getting very hot (over 80&deg;C) or has visibly lost torque &mdash; replace the motor (NEMA 17 standard).</p>
+          <p class="text-sm text-gray-200">Stepper motor is getting very hot (over 80&deg;C) or has visibly lost torque — replace the motor (NEMA 17 standard).</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Linear rail carriage is notchy, has play, or balls have fallen out &mdash; replace the carriage (and possibly the rail).</p>
+          <p class="text-sm text-gray-200">Linear rail carriage is notchy, has play, or balls have fallen out — replace the carriage (and possibly the rail).</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Stepper driver is faulty (one axis does not move, makes grinding noise, overheats instantly) &mdash; replace the driver module.</p>
+          <p class="text-sm text-gray-200">Stepper driver is faulty (one axis does not move, makes grinding noise, overheats instantly) — replace the driver module.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
@@ -496,7 +528,7 @@
           <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">THERMAL</div>
           <span class="badge badge-critical">Safety</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Thermal Runaway &amp; Heating Fault</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Thermal Runaway & Heating Fault</h3>
         <p class="text-sm text-gray-400">Thermistor testing, heater cartridge replacement, PID tuning, and Marlin/Klipper thermal protection settings.</p>
       </a>
       <a href="3d-printer-bed-leveling-problems.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
@@ -504,7 +536,7 @@
           <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">BED&nbsp;LEVEL</div>
           <span class="badge badge-warning">Common</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Bed Leveling &amp; First Layer</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Bed Leveling & First Layer</h3>
         <p class="text-sm text-gray-400">BLTouch calibration, mesh bed leveling, Z-offset adjustment, PEI sheet maintenance, and warping fixes.</p>
       </a>
       <a href="3d-printer-filament-jam.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
@@ -512,7 +544,7 @@
           <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">CLOG</div>
           <span class="badge badge-warning">Warning</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Filament Jam &amp; Nozzle Clog</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Filament Jam & Nozzle Clog</h3>
         <p class="text-sm text-gray-400">Cold pull method, nozzle cleaning, Bowden tube removal, heat break clogs, wet filament issues, and extruder gear wear.</p>
       </a>
     </div>
@@ -529,7 +561,18 @@
     </div>
   </section>
 
-  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<footer class="border-t border-white/10 bg-navy-950 mt-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="md:col-span-1">
@@ -545,13 +588,13 @@
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
-            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
-            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
             <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>

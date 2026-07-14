@@ -19,6 +19,17 @@
   --gray-500: #6b7280;
 }
 
+i[data-lucide] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+i[data-lucide]:not([width]):not([style*="width"]) {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 /* ---------- Body defaults (in case Tailwind is slow) ---------- */
 body {
   background: var(--navy-950);

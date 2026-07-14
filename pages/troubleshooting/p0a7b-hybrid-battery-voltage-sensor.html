@@ -8,9 +8,9 @@
   <meta name="theme-color" content="#0a1628">
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -35,25 +35,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  
+  
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <script type="application/ld+json">
@@ -87,6 +72,52 @@
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Error Code Database",
+      "item": "https://powerspecshub.com/pages/error-code-db.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "P0A7B — Voltage Sensor Circuit Low"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -108,18 +139,18 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
 
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Data Resources</p>
@@ -148,14 +179,14 @@
       <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
-        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
-        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid & EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -185,7 +216,7 @@
       <span class="breadcrumb-sep">/</span>
       <a href="../error-code-db.html">Error Code Database</a>
       <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">P0A7B &mdash; Voltage Sensor Circuit Low</span>
+      <span class="breadcrumb-current">P0A7B — Voltage Sensor Circuit Low</span>
     </nav>
   </section>
 
@@ -200,8 +231,9 @@
       </div>
 
       <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
-        Battery Voltage Sensor Circuit Low &mdash; <span class="gradient-text">Diagnosis, Testing &amp; Replacement</span>
+        Battery Voltage Sensor Circuit Low — <span class="gradient-text">Diagnosis, Testing & Replacement</span>
       </h1>
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div>
 
       <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
         Generic OBD-II hybrid battery code indicating the Battery Control Module (BCM) has detected a voltage signal below the expected minimum threshold from one of the individual module voltage sensors. On Toyota Prius models, this is typically caused by a failed sense wire connection, corroded sensor tap point on the bus bar, or a faulty voltage detection circuit inside the battery ECU. Distinguishing a sensor fault from an actual failing module is critical to avoiding unnecessary battery pack replacement.
@@ -234,10 +266,10 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="md:col-span-2 space-y-3 text-gray-300 leading-relaxed">
           <p>
-            P0A7B is set when the Hybrid Vehicle ECU detects that the voltage reading from one of the individual battery module voltage sensors is below the minimum threshold specified by the manufacturer &mdash; typically below <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">6.0V</code> for a 7.2V NiMH module, or outside the plausible range that a real battery module could produce under any operating condition.
+            P0A7B is set when the Hybrid Vehicle ECU detects that the voltage reading from one of the individual battery module voltage sensors is below the minimum threshold specified by the manufacturer — typically below <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">6.0V</code> for a 7.2V NiMH module, or outside the plausible range that a real battery module could produce under any operating condition.
           </p>
           <p>
-            Unlike P0A7F (battery deterioration) or P0A80 (replace pack), which indicate actual module performance problems, P0A7B is a <em class="text-white">circuit fault</em>. It means the ECU cannot trust the voltage reading it is receiving. The sensor could be reading artificially low due to a broken wire, high-resistance connection, or a failed sensor circuit &mdash; even though the actual module voltage is perfectly fine.
+            Unlike P0A7F (battery deterioration) or P0A80 (replace pack), which indicate actual module performance problems, P0A7B is a <em class="text-white">circuit fault</em>. It means the ECU cannot trust the voltage reading it is receiving. The sensor could be reading artificially low due to a broken wire, high-resistance connection, or a failed sensor circuit — even though the actual module voltage is perfectly fine.
           </p>
           <p>
             On Toyota Prius Gen 2 (2004&ndash;2009), the voltage sensing is handled by the Battery ECU mounted directly on the battery pack. There are 28 voltage sense wires (one per 7.2V module) that tap into the bus bars connecting each module. The most common failure point on Gen 2 Prius is corrosion at the sense wire terminal on the bus bar, caused by moisture buildup inside the battery enclosure over many years of service.
@@ -262,14 +294,14 @@
     <div class="alert alert-critical">
       <i data-lucide="alert-triangle" style="width:1.25rem;height:1.25rem;flex-shrink:0;margin-top:0.1rem"></i>
       <div>
-        <strong class="block mb-1 text-white">High Voltage Danger &mdash; 201.6V DC across the full pack</strong>
+        <strong class="block mb-1 text-white">High Voltage Danger — 201.6V DC across the full pack</strong>
         <p class="text-sm leading-relaxed">Voltage sensor wires connect directly to the high-voltage bus bars. Always disconnect the 12V auxiliary battery negative terminal first, remove the HV service plug (safety interlock), and wait a minimum of <strong class="text-white">10 minutes</strong> for the inverter capacitors to discharge before probing any sensor wires or bus bars. Wear Class 0 insulated gloves rated for 1000V. Never work alone on a high-voltage system.</p>
       </div>
     </div>
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Tools &amp; Safety Equipment</h2>
+    <h2 class="font-bold text-3xl mb-5">Tools & Safety Equipment</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="glass-card p-5">
         <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="hard-hat" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety</h3></div>
@@ -285,7 +317,7 @@
         <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="cpu" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Diagnostic</h3></div>
         <ul class="space-y-1.5 text-sm text-gray-300">
           <li>OBD-II scan tool with live module data (Dr. Prius / Techstream)</li>
-          <li>Digital multimeter &mdash; CAT III 600V</li>
+          <li>Digital multimeter — CAT III 600V</li>
           <li>Fine-tip multimeter probes for sense wires</li>
           <li>Pin-piercing test probes (optional)</li>
           <li>Wiring diagram for battery ECU connector</li>
@@ -306,7 +338,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Step-by-Step Diagnostic &amp; Repair Procedure</h2>
+    <h2 class="font-bold text-3xl mb-5">Step-by-Step Diagnostic & Repair Procedure</h2>
 
     <div class="space-y-4">
 
@@ -315,7 +347,7 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Identify which sensor is failing from live data</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Connect a hybrid-capable scan tool and access live battery module voltage data. With the vehicle in READY mode, observe all 28 module voltages (or however many your vehicle has). The problematic sensor will show a voltage that is either 0V, a negative value, or significantly lower than all other modules &mdash; often around <code class="text-electric-400">0.5&ndash;2.0V</code> when the module is actually fine. Note the module number and its physical position in the pack.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">Connect a hybrid-capable scan tool and access live battery module voltage data. With the vehicle in READY mode, observe all 28 module voltages (or however many your vehicle has). The problematic sensor will show a voltage that is either 0V, a negative value, or significantly lower than all other modules — often around <code class="text-electric-400">0.5&ndash;2.0V</code> when the module is actually fine. Note the module number and its physical position in the pack.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">How to tell sensor vs. module</div>
               <p>If one module reads dramatically lower than neighbors (e.g., 1.2V vs. 7.8V for all others) and the vehicle still drives normally with decent MPG, it is almost certainly a sensor fault. A truly failed module would cause the pack to behave poorly, and the voltage would sag under load rather than sitting at an impossibly low constant value.</p>
@@ -328,7 +360,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">02</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Locate the sensor wire &amp; module in the pack</h3>
+            <h3 class="font-bold text-xl mb-2">Locate the sensor wire & module in the pack</h3>
             <p class="text-gray-300 leading-relaxed mb-3">On Prius Gen 2/3, voltage sense wires originate from the Battery ECU mounted on the side of the battery pack enclosure. Each wire runs to a specific bus bar between modules. Module 1 is at the front-left of the pack; module numbering follows the series connection path. Consult a wiring diagram for your exact model to map module numbers to physical positions. Remove the rear cargo trim and battery pack access cover to gain visual access.</p>
             <div class="alert alert-info !mb-0">
               <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
@@ -342,7 +374,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">03</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Disconnect 12V &amp; HV service plug &mdash; wait 10 minutes</h3>
+            <h3 class="font-bold text-xl mb-2">Disconnect 12V & HV service plug — wait 10 minutes</h3>
             <p class="text-gray-300 leading-relaxed mb-3">Put on Class 0 insulated gloves. Turn ignition OFF and remove the key/fob from the cabin. Disconnect the negative terminal of the 12V auxiliary battery. Locate and remove the HV service plug on the battery pack enclosure. Set a timer for <strong class="text-white">10 minutes minimum</strong>. During this time, the high-voltage capacitors inside the inverter and any residual charge on the bus bars will dissipate through the internal discharge resistors.</p>
             <div class="alert alert-critical !mb-0">
               <i data-lucide="zap" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
@@ -360,7 +392,7 @@
             <p class="text-gray-300 leading-relaxed mb-3">Locate the specific sense wire terminal that connects to the affected module's bus bar. Carefully inspect the terminal and the bus bar surface for corrosion, oxidation, or a loose crimp. On Gen 2 Prius, the sense wire terminals are small spade connectors or bolt-on lugs that attach directly to the bus bar bolt. Green/white corrosion, blackening, or a loose connection are all common causes of a low-voltage sensor reading.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Common failure pattern</div>
-              <p>On 2004&ndash;2009 Prius (Gen 2), moisture can condense inside the battery pack enclosure, especially in humid climates. Over 10+ years, this moisture causes corrosion at the bus bar / sense wire interface. The resistance of the corroded connection creates a voltage divider effect, causing the sensor to read artificially low &mdash; exactly what triggers P0A7B.</p>
+              <p>On 2004&ndash;2009 Prius (Gen 2), moisture can condense inside the battery pack enclosure, especially in humid climates. Over 10+ years, this moisture causes corrosion at the bus bar / sense wire interface. The resistance of the corroded connection creates a voltage divider effect, causing the sensor to read artificially low — exactly what triggers P0A7B.</p>
             </div>
           </div>
         </div>
@@ -370,7 +402,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Test sensor wire continuity &amp; verify with multimeter</h3>
+            <h3 class="font-bold text-xl mb-2">Test sensor wire continuity & verify with multimeter</h3>
             <p class="text-gray-300 leading-relaxed mb-3">Disconnect the sense wire connector at the Battery ECU end. Set your multimeter to resistance (ohms) mode. Measure the resistance between the sense wire terminal at the bus bar end and the corresponding pin at the ECU connector. A good wire should show less than <code class="text-electric-400">1 ohm</code>. Next, measure the actual module voltage directly at the bus bar terminals with your multimeter and compare it to the scan tool reading.</p>
             <div class="alert alert-warning !mb-0">
               <i data-lucide="alert-circle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
@@ -384,7 +416,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Clean or repair the connection &mdash; retest</h3>
+            <h3 class="font-bold text-xl mb-2">Clean or repair the connection — retest</h3>
             <p class="text-gray-300 leading-relaxed mb-3">If corrosion is found at the bus bar terminal, clean both the terminal and the bus bar surface with a small wire brush or fiberglass pen, then spray with contact cleaner (DeoxIT). If the wire has a broken strand or a bad crimp, repair with a new matching terminal (molex-style connector). Apply a thin layer of dielectric grease to the connection to prevent future corrosion. Reconnect everything, reinstall the HV service plug, reconnect the 12V battery, and verify the sensor reading with your scan tool.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">If cleaning doesn't work</div>
@@ -398,7 +430,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">07</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Clear codes &amp; verify with a test drive</h3>
+            <h3 class="font-bold text-xl mb-2">Clear codes & verify with a test drive</h3>
             <p class="text-gray-300 leading-relaxed mb-3">Once the sensor reading matches the actual module voltage within <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">0.1V</code>, clear all DTCs with the scan tool. Take the vehicle on a 15&ndash;20 minute test drive covering both city and highway conditions. Monitor the live module voltages during the drive to confirm the previously faulty sensor now tracks correctly with the rest of the pack and that P0A7B does not return.</p>
             <div class="alert alert-success !mb-0">
               <i data-lucide="check-circle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
@@ -418,15 +450,15 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Multiple sensors read abnormally and you suspect the <strong>Battery ECU itself</strong> has failed &mdash; replacement may require programming.</p>
+          <p class="text-sm text-gray-200">Multiple sensors read abnormally and you suspect the <strong>Battery ECU itself</strong> has failed — replacement may require programming.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="droplets" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">You find <strong>extensive corrosion</strong> affecting multiple bus bars and sense wires &mdash; the pack may need rebuilding or replacement.</p>
+          <p class="text-sm text-gray-200">You find <strong>extensive corrosion</strong> affecting multiple bus bars and sense wires — the pack may need rebuilding or replacement.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">The actual module voltage <strong>is</strong> low &mdash; meaning you have both a sensor issue and a real module failure.</p>
+          <p class="text-sm text-gray-200">The actual module voltage <strong>is</strong> low — meaning you have both a sensor issue and a real module failure.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="shield-off" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
@@ -438,7 +470,7 @@
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="package" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">The vehicle is still under the <strong>hybrid battery warranty</strong> (8 years / 100,000 miles &mdash; do not void it with DIY disassembly).</p>
+          <p class="text-sm text-gray-200">The vehicle is still under the <strong>hybrid battery warranty</strong> (8 years / 100,000 miles — do not void it with DIY disassembly).</p>
         </div>
       </div>
     </div>
@@ -485,7 +517,18 @@
     </div>
   </section>
 
-  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<footer class="border-t border-white/10 bg-navy-950 mt-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="md:col-span-1">
@@ -501,13 +544,13 @@
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
-            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
-            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
             <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>

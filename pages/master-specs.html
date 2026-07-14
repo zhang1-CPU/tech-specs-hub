@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Specs Comparison &mdash; All Devices Side-by-Side</title>
+  <title>Master Specs Comparison — All Devices Side-by-Side</title>
   <meta name="description" content="Side-by-side technical specification comparison for portable power stations, hybrid/EV battery packs, drones, and smart home devices.">
   <meta name="theme-color" content="#0a1628">
   <!-- Critical Inline CSS: pre-render base styles so first paint is not broken -->
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
   <!-- Resource Preload Hints: tells browser to start DNS/TLS/load EARLY -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -20,7 +20,7 @@
   <link rel="canonical" href="https://powerspecshub.com/pages/master-specs.html">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Master Specs Comparison &mdash; All Devices Side-by-Side">
+  <meta property="og:title" content="Master Specs Comparison — All Devices Side-by-Side">
   <meta property="og:description" content="Side-by-side technical specification comparison for portable power stations, hybrid/EV battery packs, drones, and smart home devices.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://powerspecshub.com/pages/master-specs.html">
@@ -29,7 +29,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Master Specs Comparison &mdash; All Devices Side-by-Side">
+  <meta name="twitter:title" content="Master Specs Comparison — All Devices Side-by-Side">
   <meta name="twitter:description" content="Side-by-side technical specification comparison for portable power stations, hybrid/EV battery packs, drones, and smart home devices.">
   <meta name="twitter:image" content="https://powerspecshub.com/assets/images/og-default.png">
 
@@ -39,7 +39,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Master Specs Comparison",
-    "headline": "Master Specs Comparison &mdash; All Devices Side-by-Side",
+    "headline": "Master Specs Comparison — All Devices Side-by-Side",
     "description": "Side-by-side technical specification comparison for portable power stations, hybrid/EV battery packs, drones, and smart home devices.",
     "url": "https://powerspecshub.com/pages/master-specs.html",
     "publisher": {
@@ -54,26 +54,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  
+  
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/tailwind-compiled.css">
   <link rel="stylesheet" href="../assets/css/main.css">
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -96,12 +104,12 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
           <a href="error-code-db.html" class="px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">Error Codes</a>
@@ -126,8 +134,8 @@
       <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
-        <a href="specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
-        <a href="specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid & EV Batteries</a>
+        <a href="specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
         <a href="error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/5 text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
@@ -178,7 +186,7 @@
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
     <div class="flex flex-wrap gap-3">
       <a href="#power" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-navy-800/60 border border-white/10 hover:border-electric-400/40 transition-all text-sm"><i data-lucide="battery-charging" style="width:0.9rem;height:0.9rem;color:#22d3ee"></i>Power Stations</a>
-      <a href="#hybrid" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-navy-800/60 border border-white/10 hover:border-electric-400/40 transition-all text-sm"><i data-lucide="car" style="width:0.9rem;height:0.9rem;color:#22d3ee"></i>Hybrid &amp; EV Battery</a>
+      <a href="#hybrid" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-navy-800/60 border border-white/10 hover:border-electric-400/40 transition-all text-sm"><i data-lucide="car" style="width:0.9rem;height:0.9rem;color:#22d3ee"></i>Hybrid & EV Battery</a>
       <a href="#drones" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-navy-800/60 border border-white/10 hover:border-electric-400/40 transition-all text-sm"><i data-lucide="plane" style="width:0.9rem;height:0.9rem;color:#22d3ee"></i>Drones</a>
       <a href="#smarthome" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-navy-800/60 border border-white/10 hover:border-electric-400/40 transition-all text-sm"><i data-lucide="home" style="width:0.9rem;height:0.9rem;color:#22d3ee"></i>Smart Home</a>
     </div>
@@ -291,7 +299,7 @@
     <div class="glass-card p-6 md:p-10 overflow-hidden">
       <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
         <div>
-          <h2 class="font-bold text-2xl mb-1 flex items-center gap-2"><i data-lucide="car" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>Hybrid &amp; EV Battery Packs</h2>
+          <h2 class="font-bold text-2xl mb-1 flex items-center gap-2"><i data-lucide="car" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>Hybrid & EV Battery Packs</h2>
           <p class="text-sm text-gray-400">High-voltage traction and module-level specs for the most common hybrid packs.</p>
         </div>
         <span class="badge badge-info">Category</span>
@@ -383,7 +391,7 @@
       <div class="flex items-start justify-between flex-wrap gap-4 mb-6">
         <div>
           <h2 class="font-bold text-2xl mb-1 flex items-center gap-2"><i data-lucide="plane" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>Drones</h2>
-          <p class="text-sm text-gray-400">Current popular DJI drones &mdash; the most-searched consumer/camera drones.</p>
+          <p class="text-sm text-gray-400">Current popular DJI drones — the most-searched consumer/camera drones.</p>
         </div>
         <span class="badge badge-info">Category</span>
       </div>
@@ -486,8 +494,8 @@
             </tr>
             <tr>
               <td><strong>Battery Life</strong></td>
-              <td>5,200 mAh &mdash; 180 min</td>
-              <td>4,400 mAh &mdash; 120 min</td>
+              <td>5,200 mAh — 180 min</td>
+              <td>4,400 mAh — 120 min</td>
               <td>Mains + battery backup</td>
               <td>Mains powered</td>
             </tr>
@@ -547,7 +555,7 @@
             <h4 class="font-semibold text-white mb-1.5 flex items-center gap-2">
               <span class="text-electric-400 font-mono text-sm">01</span> Start with your use case.
             </h4>
-            <p class="text-sm text-gray-400">If you need off-grid solar, focus on the Power Stations table. If you're troubleshooting a Prius hybrid battery, the Hybrid &amp; EV Battery table is your starting point.</p>
+            <p class="text-sm text-gray-400">If you need off-grid solar, focus on the Power Stations table. If you're troubleshooting a Prius hybrid battery, the Hybrid & EV Battery table is your starting point.</p>
           </div>
           <div>
             <h4 class="font-semibold text-white mb-1.5 flex items-center gap-2">
@@ -574,7 +582,18 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<!-- FOOTER -->
   <footer class="border-t border-white/10 bg-navy-950 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -591,13 +610,13 @@
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
-            <li><a href="specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
-            <li><a href="specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
             <li><a href="specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>

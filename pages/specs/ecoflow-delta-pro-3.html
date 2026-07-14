@@ -10,9 +10,9 @@
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
   <!-- Resource Preload Hints -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -22,7 +22,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="EcoFlow Delta Pro 3 Full Spec Sheet — 4,096Wh LFP, 4,000W Inverter, 1,600W Solar | TechSpecsHub">
   <meta property="og:description" content="Complete EcoFlow Delta Pro 3 specifications: 4,096 Wh LFP battery, 4,000W continuous inverter, 1,600W MPPT solar input, idle drain, charge efficiency, cycle life, and the complete error code list.">
-  <meta property="og:type" content="WebSite">
+  <meta property="og:type" content="product">
   <meta property="og:url" content="https://powerspecshub.com/pages/specs/ecoflow-delta-pro-3.html">
   <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
   <meta property="og:site_name" content="TechSpecsHub">
@@ -41,34 +41,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind CSS (Pre-compiled) -->
+  <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": "Product",
     "headline": "EcoFlow Delta Pro 3 Full Spec Sheet — 4,096Wh LFP, 4,000W Inverter, 1,600W Solar | TechSpecsHub",
     "description": "Complete EcoFlow Delta Pro 3 specifications: 4,096 Wh LFP battery, 4,000W continuous inverter, 1,600W MPPT solar input, idle drain, charge efficiency, cycle life, and the complete error code list.",
     "url": "https://powerspecshub.com/pages/specs/ecoflow-delta-pro-3.html",
@@ -80,13 +64,112 @@
       "url": "https://powerspecshub.com/"
     },
     "mainEntity": {
-      "@type": "WebSite",
+      "@type": "Product",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     }
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many solar panels can I connect to the Delta Pro 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Delta Pro 3 supports up to 1,600W of solar input across two XT60 ports. Each port handles up to 800W with a voltage range of 12\u2013120V. Most users pair it with 2\u20134 \u00d7 400W panels in series. Remember: real-world output is ~70% of panel rating in good sun."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the Delta Pro 3 as a whole-home backup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can power critical circuits during an outage \u2014 fridge, lights, internet, TV, a few small appliances. But it's not a whole-home system. For that, you'd need the expanded version (up to 24 kWh with extra batteries) paired with a transfer switch connected to essential circuits. A 4,096 Wh unit alone will run essential loads for 1\u20132 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the battery really last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EcoFlow rates the LFP battery at 4,000 cycles to 80% capacity. If you use one full charge per week (common for backup/camping), that's roughly 77 years. Even with daily use, it's 11+ years. Realistically, the inverter or BMS electronics will likely fail before the battery cells in most use cases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the UPS mode really 0ms transfer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes \u2014 EcoFlow uses an online double-conversion topology in UPS mode, meaning the inverter is always running and there is zero transfer time when grid power fails. This protects sensitive electronics like computers, gaming consoles, and medical equipment. Most competitors use a standby topology with 10\u201330ms transfer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I expand the Delta Pro 3 with extra batteries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes \u2014 you can add up to 2 EcoFlow Extra Batteries (each 4,096 Wh) for a total of 12,288 Wh. They connect in series via a dedicated port. You can also use the EcoFlow Double Voltage Hub to connect two Delta Pro 3 units for 240V output at up to 8,000W."
+      }
+    }
+  ]
+}</script>
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Specs",
+      "item": "https://powerspecshub.com/pages/master-specs.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Outdoor Power",
+      "item": "https://powerspecshub.com/pages/specs/outdoor-power.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "EcoFlow Delta Pro 3"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -111,17 +194,17 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data
+              Tools & Data
               <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
@@ -154,14 +237,14 @@
       <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
-        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
-        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid & EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -194,7 +277,7 @@
   <!-- BREADCRUMB -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
     <nav class="breadcrumb">
-      <a href="../../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="../error-code-db.html">Specs</a><span class="breadcrumb-sep">/</span><a href="outdoor-power.html">Outdoor Power</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">EcoFlow Delta Pro 3</span>
+      <a href="../../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="../master-specs.html">Specs</a><span class="breadcrumb-sep">/</span><a href="outdoor-power.html">Outdoor Power</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">EcoFlow Delta Pro 3</span>
     </nav>
   </div>
   <!-- PRODUCT HERO -->
@@ -253,7 +336,8 @@
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
       <div>
-        <h2 class="font-bold text-2xl md:text-3xl mb-2">Full Specifications</h2>
+        
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div><h2 class="font-bold text-2xl md:text-3xl mb-2">Full Specifications</h2>
         <p class="text-gray-400 text-sm">Complete technical specifications for the EcoFlow Delta Pro 3.</p>
       </div>
       <span class="badge badge-info"><i data-lucide="check-circle" style="width:0.8rem;height:0.8rem"></i>OEM Verified</span>
@@ -432,7 +516,18 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<!-- FOOTER -->
   <footer class="border-t border-white/5 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <hr class="border-white/10 my-8">

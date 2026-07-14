@@ -10,9 +10,9 @@
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
   <!-- Resource Preload Hints: tells browser to start DNS/TLS/load EARLY -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -22,7 +22,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Navigation & Marine GPS Specs — Chartplotter, Sonar, Marine Radio | TechSpecsHub">
   <meta property="og:description" content="GPS accuracy, marine radio specs, chartplotter comparison, and sonar transducer data for marine electronics.">
-  <meta property="og:type" content="WebSite">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://powerspecshub.com/pages/specs/navigation.html">
   <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
   <meta property="og:site_name" content="TechSpecsHub">
@@ -40,34 +40,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind CSS (Pre-compiled) -->
+  <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": "CollectionPage",
     "headline": "Navigation & Marine GPS Specs — Chartplotter, Sonar, Marine Radio | TechSpecsHub",
     "description": "GPS accuracy, marine radio specs, chartplotter comparison, and sonar transducer data for marine electronics.",
     "url": "https://powerspecshub.com/pages/specs/navigation.html",
@@ -79,13 +63,59 @@
       "url": "https://powerspecshub.com/"
     },
     "mainEntity": {
-      "@type": "WebSite",
+      "@type": "CollectionPage",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     }
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Specs",
+      "item": "https://powerspecshub.com/pages/master-specs.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Navigation, Marine & GPS"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -114,19 +144,19 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
 
           <!-- Tools & Data dropdown -->
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data
+              Tools & Data
               <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
@@ -162,14 +192,14 @@
       <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
-        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
-        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid & EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -205,9 +235,9 @@
     <nav class="breadcrumb">
       <a href="../../index.html">Home</a>
       <span class="breadcrumb-sep">/</span>
-      <a href="../error-code-db.html">Specs</a>
+      <a href="../master-specs.html">Specs</a>
       <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">Navigation, Marine &amp; GPS</span>
+      <span class="breadcrumb-current">Navigation, Marine & GPS</span>
     </nav>
   </div>
 
@@ -220,12 +250,13 @@
     <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-electric-500/10 border border-electric-500/30 rounded-full text-xs font-semibold text-electric-400 mb-6 tracking-wide uppercase">
         <i data-lucide="compass" style="width:0.85rem;height:0.85rem"></i>
-        Navigation &amp; Marine &middot; Updated June 2026
+        Navigation & Marine &middot; Updated June 2026
       </div>
 
       <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-[1.1] tracking-tight">
-        Navigation, Marine &amp; <span class="gradient-text">GPS Specifications</span>
+        Navigation, Marine & <span class="gradient-text">GPS Specifications</span>
       </h1>
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div>
       <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
         Chartplotters, fishfinders, GNSS receivers, and marine electronics. The technical specs that determine whether your electronics actually work where you need them.
       </p>
@@ -259,7 +290,7 @@
         <div>
           <div class="flex items-center gap-3 mb-3">
             <span class="badge badge-cyan">01</span>
-            <h2 class="font-bold text-2xl md:text-3xl">GNSS &amp; GPS Fundamentals</h2>
+            <h2 class="font-bold text-2xl md:text-3xl">GNSS & GPS Fundamentals</h2>
           </div>
           <p class="text-gray-400 max-w-3xl">GNSS is the umbrella term. GPS is one constellation among many. More satellites in view = faster lock and better precision under tree cover.</p>
         </div>
@@ -283,7 +314,7 @@
         <div class="glass-card p-6">
           <div class="flex items-center gap-2 mb-3">
             <i data-lucide="radio" style="width:1.15rem;height:1.15rem;color:#22d3ee"></i>
-            <h3 class="font-bold text-lg">Frequencies &amp; RTK</h3>
+            <h3 class="font-bold text-lg">Frequencies & RTK</h3>
           </div>
           <p class="text-gray-400 text-sm leading-relaxed mb-4">Consumer GNSS receivers use L1 at 1575.42 MHz. Newer dual-band receivers add L2/L5 for better signal through foliage, inside buildings, and in urban canyons.</p>
           <div class="space-y-3 text-sm">
@@ -413,7 +444,7 @@
       <div class="mb-8">
         <div class="flex items-center gap-3 mb-3">
           <span class="badge badge-cyan">03</span>
-          <h2 class="font-bold text-2xl md:text-3xl">Fishfinder &amp; Sonar Specifications</h2>
+          <h2 class="font-bold text-2xl md:text-3xl">Fishfinder & Sonar Specifications</h2>
         </div>
         <p class="text-gray-400 max-w-3xl">CHIRP vs single-frequency sonar. Frequency tradeoffs for deep water vs shallow water. And the proprietary imaging technologies from each major brand.</p>
       </div>
@@ -437,7 +468,7 @@
             <i data-lucide="thermometer-sun" style="width:1.15rem;height:1.15rem;color:#fbbf24"></i>
             <h3 class="font-bold text-lg">Low Frequency = Depth</h3>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">50 kHz / 83 kHz traditional single-frequency transducers are designed for deep saltwater &mdash; but have relatively poor detail near the surface.</p>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">50 kHz / 83 kHz traditional single-frequency transducers are designed for deep saltwater — but have relatively poor detail near the surface.</p>
           <div class="space-y-1.5 text-sm">
             <div class="flex justify-between"><span class="text-gray-500">Typical max depth:</span><span class="font-mono text-white">1,000+ ft</span></div>
             <div class="flex justify-between"><span class="text-gray-500">Target separation:</span><span class="font-mono text-white">Fair</span></div>
@@ -450,7 +481,7 @@
             <i data-lucide="zap" style="width:1.15rem;height:1.15rem;color:#f87171"></i>
             <h3 class="font-bold text-lg">High Frequency = Detail</h3>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">455 kHz / 800 kHz CHIRP imaging delivers stunning detail in shallow water. Ideal for structure-fishing &mdash; but maxes out around 200&ndash;300 ft.</p>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">455 kHz / 800 kHz CHIRP imaging delivers stunning detail in shallow water. Ideal for structure-fishing — but maxes out around 200&ndash;300 ft.</p>
           <div class="space-y-1.5 text-sm">
             <div class="flex justify-between"><span class="text-gray-500">Typical max depth:</span><span class="font-mono text-white">200 &ndash; 300 ft</span></div>
             <div class="flex justify-between"><span class="text-gray-500">Target separation:</span><span class="font-mono text-white">Excellent</span></div>
@@ -467,15 +498,15 @@
         <div class="grid md:grid-cols-3 gap-4 text-sm">
           <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
             <div class="font-semibold text-white mb-1.5">Humminbird</div>
-            <p class="text-gray-400 leading-relaxed"><strong class="text-white">MEGA Down Imaging+, MEGA Side Imaging+, MEGA 360</strong> &mdash; high-frequency (1.2 MHz+) imaging for extreme detail. MEGA 360 provides 360-degree view around the boat.</p>
+            <p class="text-gray-400 leading-relaxed"><strong class="text-white">MEGA Down Imaging+, MEGA Side Imaging+, MEGA 360</strong> — high-frequency (1.2 MHz+) imaging for extreme detail. MEGA 360 provides 360-degree view around the boat.</p>
           </div>
           <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
             <div class="font-semibold text-white mb-1.5">Lowrance / Simrad</div>
-            <p class="text-gray-400 leading-relaxed"><strong class="text-white">StructureScan 3D, ActiveTarget, ActiveImaging</strong> &mdash; real-time forward-looking sonar for trolling. 3D rendering of underwater structure and fish.</p>
+            <p class="text-gray-400 leading-relaxed"><strong class="text-white">StructureScan 3D, ActiveTarget, ActiveImaging</strong> — real-time forward-looking sonar for trolling. 3D rendering of underwater structure and fish.</p>
           </div>
           <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
             <div class="font-semibold text-white mb-1.5">Garmin</div>
-            <p class="text-gray-400 leading-relaxed"><strong class="text-white">SideV&uuml;, ClearV&uuml;, LiveScope</strong> &mdash; LiveScope provides real-time scanning sonar with perspective and forward modes. UHD transducers (Ultra High-Definition) at 2 kW power.</p>
+            <p class="text-gray-400 leading-relaxed"><strong class="text-white">SideV&uuml;, ClearV&uuml;, LiveScope</strong> — LiveScope provides real-time scanning sonar with perspective and forward modes. UHD transducers (Ultra High-Definition) at 2 kW power.</p>
           </div>
         </div>
       </div>
@@ -566,7 +597,7 @@
       <div class="mb-8">
         <div class="flex items-center gap-3 mb-3">
           <span class="badge badge-cyan">05</span>
-          <h2 class="font-bold text-2xl md:text-3xl">Handheld GPS &amp; Watches</h2>
+          <h2 class="font-bold text-2xl md:text-3xl">Handheld GPS & Watches</h2>
         </div>
         <p class="text-gray-400 max-w-3xl">Hiking, hunting, and backcountry GPS receivers. Multi-constellation support, battery life, and ruggedness are the key specs.</p>
       </div>
@@ -704,7 +735,7 @@
             <i data-lucide="ship" style="width:1.15rem;height:1.15rem;color:#fbbf24"></i>
             <h3 class="font-bold text-lg">AIS (Automatic Identification System)</h3>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed">Collision-avoidance system that shows positions of nearby ships equipped with AIS transponders on your chartplotter. Most commercial vessels over 300 GT are required to broadcast AIS. An AIS receiver lets you see them &mdash; an AIS transceiver lets you be seen too.</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Collision-avoidance system that shows positions of nearby ships equipped with AIS transponders on your chartplotter. Most commercial vessels over 300 GT are required to broadcast AIS. An AIS receiver lets you see them — an AIS transceiver lets you be seen too.</p>
         </div>
       </div>
     </section>
@@ -714,9 +745,9 @@
       <div class="mb-8">
         <div class="flex items-center gap-3 mb-3">
           <span class="badge badge-cyan">07</span>
-          <h2 class="font-bold text-2xl md:text-3xl">Power Consumption &amp; Battery Runtime</h2>
+          <h2 class="font-bold text-2xl md:text-3xl">Power Consumption & Battery Runtime</h2>
         </div>
-        <p class="text-gray-400 max-w-3xl">Marine electronics run on 12V DC. Chartplotter + VHF + fishfinder stack up quickly &mdash; the battery bank is often the real limiting factor on a day of fishing.</p>
+        <p class="text-gray-400 max-w-3xl">Marine electronics run on 12V DC. Chartplotter + VHF + fishfinder stack up quickly — the battery bank is often the real limiting factor on a day of fishing.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
@@ -772,7 +803,7 @@
               <span class="badge badge-red font-mono flex-shrink-0 mt-0.5">GPS Not Responding</span>
               <div class="flex-1">
                 <p class="text-gray-300 mb-2"><strong class="text-white">Most likely cause:</strong> NMEA 2000 backbone power issue. A disconnected or reversed power/ground connection at the backbone terminator kills the entire NMEA 2000 network.</p>
-                <p class="text-gray-400 text-sm"><strong class="text-white">Troubleshooting:</strong> Check red (12V+) and black (ground) wires at both terminators. Measure voltage at backbone &mdash; should be 12.0&ndash;13.8V DC. Confirm terminator resistors (120 &Omega;) installed at BOTH ends of the backbone.</p>
+                <p class="text-gray-400 text-sm"><strong class="text-white">Troubleshooting:</strong> Check red (12V+) and black (ground) wires at both terminators. Measure voltage at backbone — should be 12.0&ndash;13.8V DC. Confirm terminator resistors (120 &Omega;) installed at BOTH ends of the backbone.</p>
               </div>
             </div>
           </div>
@@ -790,7 +821,7 @@
               <span class="badge badge-red font-mono flex-shrink-0 mt-0.5">Transducer Fault</span>
               <div class="flex-1">
                 <p class="text-gray-300 mb-2"><strong class="text-white">Most likely cause:</strong> Transducer element failure. Ceramic element cracked from impact or long-term fatigue.</p>
-                <p class="text-gray-400 text-sm"><strong class="text-white">Troubleshooting:</strong> Unit beeps continuously or shows "Transducer Fault". Measure resistance across element &mdash; should be 500&ndash;1,500 &Omega;. If open or shorted, replace transducer (typically covered under warranty if under 2 years).</p>
+                <p class="text-gray-400 text-sm"><strong class="text-white">Troubleshooting:</strong> Unit beeps continuously or shows "Transducer Fault". Measure resistance across element — should be 500&ndash;1,500 &Omega;. If open or shorted, replace transducer (typically covered under warranty if under 2 years).</p>
               </div>
             </div>
           </div>
@@ -817,7 +848,7 @@
               <span class="badge badge-red font-mono flex-shrink-0 mt-0.5">Software Update Failed</span>
               <div class="flex-1">
                 <p class="text-gray-300 mb-2"><strong class="text-white">Most likely cause:</strong> Corrupted download, bad SD card, or insufficient battery/voltage during flash.</p>
-                <p class="text-gray-400 text-sm"><strong class="text-white">Troubleshooting:</strong> Use fresh 4&ndash;32 GB SD card formatted FAT32. Re-download update from manufacturer. Ensure engine running or battery charger connected during update. Never interrupt mid-update &mdash; bricking is possible.</p>
+                <p class="text-gray-400 text-sm"><strong class="text-white">Troubleshooting:</strong> Use fresh 4&ndash;32 GB SD card formatted FAT32. Re-download update from manufacturer. Ensure engine running or battery charger connected during update. Never interrupt mid-update — bricking is possible.</p>
               </div>
             </div>
           </div>
@@ -852,7 +883,7 @@
             <div class="flex items-start gap-3 mb-2">
               <span class="badge badge-red font-mono flex-shrink-0 mt-0.5">SeaTalk ng Fault</span>
               <div class="flex-1">
-                <p class="text-gray-300 mb-2"><strong class="text-white">Most likely cause:</strong> Backbone short or power issue. SeaTalk ng is Raymarine's flavor of NMEA 2000 &mdash; same physical layer, same rules.</p>
+                <p class="text-gray-300 mb-2"><strong class="text-white">Most likely cause:</strong> Backbone short or power issue. SeaTalk ng is Raymarine's flavor of NMEA 2000 — same physical layer, same rules.</p>
                 <p class="text-gray-400 text-sm"><strong class="text-white">Troubleshooting:</strong> Check power injector connections. Measure voltage at backbone. Check for pinched cable near steering/trim. Verify 120 &Omega; terminators at both ends of backbone run.</p>
               </div>
             </div>
@@ -862,7 +893,7 @@
               <span class="badge badge-red font-mono flex-shrink-0 mt-0.5">PILOT FAULT</span>
               <div class="flex-1">
                 <p class="text-gray-300 mb-2"><strong class="text-white">Most likely cause:</strong> Autopilot heading sensor calibration issue. Fluxgate compass not calibrated or subjected to magnetic interference from nearby wiring.</p>
-                <p class="text-gray-400 text-sm"><strong class="text-white">Troubleshooting:</strong> Perform a full dockside calibration (Deviation table &mdash; rotate boat through 360&deg; at slow speed). Verify no new high-current DC wiring within 1m of fluxgate. Check Rudder Reference Unit (RRU) connection for loose pins.</p>
+                <p class="text-gray-400 text-sm"><strong class="text-white">Troubleshooting:</strong> Perform a full dockside calibration (Deviation table — rotate boat through 360&deg; at slow speed). Verify no new high-current DC wiring within 1m of fluxgate. Check Rudder Reference Unit (RRU) connection for loose pins.</p>
               </div>
             </div>
           </div>
@@ -877,7 +908,7 @@
           <span class="badge badge-cyan">09</span>
           <h2 class="font-bold text-2xl md:text-3xl">NMEA Protocols Explained</h2>
         </div>
-        <p class="text-gray-400 max-w-3xl">NMEA 0183, NMEA 2000, and Signal K are the three marine data networking standards you'll encounter. They're not interchangeable &mdash; understanding the difference matters for installation planning.</p>
+        <p class="text-gray-400 max-w-3xl">NMEA 0183, NMEA 2000, and Signal K are the three marine data networking standards you'll encounter. They're not interchangeable — understanding the difference matters for installation planning.</p>
       </div>
 
       <div class="glass-card p-6">
@@ -888,8 +919,8 @@
               <div class="text-xs text-gray-500 font-mono">RS-422 serial, 4800 baud</div>
             </div>
             <div class="flex-1 text-gray-400 leading-relaxed">
-              <p class="mb-2">The original marine data protocol &mdash; an ASCII-based serial format. A single talker (e.g. GPS) can drive multiple listeners (e.g. chartplotter, VHF, AIS).</p>
-              <p><strong class="text-white">Limitations:</strong> Slow (4800 baud). One talker per network run. No device discovery. Wires must be a twisted shielded pair connected A(+) / B(-), with shield grounded at ONE end only (not both &mdash; that creates a ground loop).</p>
+              <p class="mb-2">The original marine data protocol — an ASCII-based serial format. A single talker (e.g. GPS) can drive multiple listeners (e.g. chartplotter, VHF, AIS).</p>
+              <p><strong class="text-white">Limitations:</strong> Slow (4800 baud). One talker per network run. No device discovery. Wires must be a twisted shielded pair connected A(+) / B(-), with shield grounded at ONE end only (not both — that creates a ground loop).</p>
             </div>
           </div>
 
@@ -901,8 +932,8 @@
               <div class="text-xs text-gray-500 font-mono">CAN bus, 250 kbps</div>
             </div>
             <div class="flex-1 text-gray-400 leading-relaxed">
-              <p class="mb-2">The modern standard. Based on CAN (Controller Area Network) &mdash; the same physical layer used in cars. Multi-drop network where any device can talk to any other device. Device auto-discovery and plug-and-play.</p>
-              <p><strong class="text-white">Installation rules:</strong> Requires dedicated 12V backbone power at both terminators. 120 &Omega; resistor terminator at each end of the backbone (exactly two, never one or three). T-connectors drop devices off the backbone. Maximum cable length &mdash; 100m backbone, 6m drop cables.</p>
+              <p class="mb-2">The modern standard. Based on CAN (Controller Area Network) — the same physical layer used in cars. Multi-drop network where any device can talk to any other device. Device auto-discovery and plug-and-play.</p>
+              <p><strong class="text-white">Installation rules:</strong> Requires dedicated 12V backbone power at both terminators. 120 &Omega; resistor terminator at each end of the backbone (exactly two, never one or three). T-connectors drop devices off the backbone. Maximum cable length — 100m backbone, 6m drop cables.</p>
             </div>
           </div>
 
@@ -929,7 +960,7 @@
           <span class="badge badge-cyan">10</span>
           <h2 class="font-bold text-2xl md:text-3xl">Antenna Placement Guidelines</h2>
         </div>
-        <p class="text-gray-400 max-w-3xl">Antenna placement is 80% of the battle. A $500 antenna in a bad location performs worse than a $50 antenna in a good location. The rules are simple &mdash; follow them.</p>
+        <p class="text-gray-400 max-w-3xl">Antenna placement is 80% of the battle. A $500 antenna in a bad location performs worse than a $50 antenna in a good location. The rules are simple — follow them.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 mb-6">
@@ -952,7 +983,7 @@
           </div>
           <ul class="text-sm text-gray-400 space-y-2.5 leading-relaxed">
             <li><strong class="text-white">Height is everything:</strong> VHF is line-of-sight. Each foot of height adds ~1.22 miles of range. Minimum 10 ft above deck for usable range.</li>
-            <li><strong class="text-white">Separation:</strong> Keep at least 3 ft (1m) horizontal separation between VHF and GPS/GNSS antennas &mdash; transmit signal desensitizes GPS receiver.</li>
+            <li><strong class="text-white">Separation:</strong> Keep at least 3 ft (1m) horizontal separation between VHF and GPS/GNSS antennas — transmit signal desensitizes GPS receiver.</li>
             <li><strong class="text-white">Ground plane:</strong> Fiberglass whip antennas need a ground plane (metal) or are tuned specifically for fiberglass mounts.</li>
           </ul>
         </div>
@@ -963,9 +994,9 @@
             <h3 class="font-bold text-lg">Radar Scanner</h3>
           </div>
           <ul class="text-sm text-gray-400 space-y-2.5 leading-relaxed">
-            <li><strong class="text-white">Unobstructed 360&deg;:</strong> Anything blocking the radar beam creates a blind spot on the display. Cabin bulkheads, masts, davits &mdash; all bad.</li>
+            <li><strong class="text-white">Unobstructed 360&deg;:</strong> Anything blocking the radar beam creates a blind spot on the display. Cabin bulkheads, masts, davits — all bad.</li>
             <li><strong class="text-white">Mounting height:</strong> Higher = better long-range detection, but worse close-in coverage (due to beam elevation). 8&ndash;15 ft above waterline typical.</li>
-            <li><strong class="text-white">Cable length:</strong> Radar cable is critical. RG-8X minimum for up to 25 ft; RG-213 required for longer runs. Never splice radar coax &mdash; replace whole run.</li>
+            <li><strong class="text-white">Cable length:</strong> Radar cable is critical. RG-8X minimum for up to 25 ft; RG-213 required for longer runs. Never splice radar coax — replace whole run.</li>
           </ul>
         </div>
       </div>
@@ -980,7 +1011,7 @@
             <p><strong class="text-white">Never run data cables parallel to power cables.</strong> DC power wiring creates a magnetic field that induces noise in signal cables. Cross at 90&deg; when unavoidable.</p>
           </div>
           <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-            <p><strong class="text-white">Use twisted-shielded cable for NMEA 0183.</strong> The shield protects against engine and alternator noise. Ground shield at ONE end only &mdash; typically at the talker (GPS) end.</p>
+            <p><strong class="text-white">Use twisted-shielded cable for NMEA 0183.</strong> The shield protects against engine and alternator noise. Ground shield at ONE end only — typically at the talker (GPS) end.</p>
           </div>
         </div>
       </div>
@@ -991,9 +1022,9 @@
       <div class="mb-8">
         <div class="flex items-center gap-3 mb-3">
           <span class="badge badge-cyan">11</span>
-          <h2 class="font-bold text-2xl md:text-3xl">Environmental Ratings &amp; Display Specs</h2>
+          <h2 class="font-bold text-2xl md:text-3xl">Environmental Ratings & Display Specs</h2>
         </div>
-        <p class="text-gray-400 max-w-3xl">Marine electronics live in a harsh environment &mdash; vibration, salt spray, UV, and temperature extremes. The rating tells you whether a unit is actually seaworthy or just "water resistant" marketing.</p>
+        <p class="text-gray-400 max-w-3xl">Marine electronics live in a harsh environment — vibration, salt spray, UV, and temperature extremes. The rating tells you whether a unit is actually seaworthy or just "water resistant" marketing.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
@@ -1003,10 +1034,10 @@
             IP Rating Reference
           </h3>
           <div class="space-y-2.5 text-sm">
-            <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">IPX5</span><span class="font-mono text-white">Jetted water &mdash; acceptable for flybridge use</span></div>
-            <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">IPX6</span><span class="font-mono text-white">Heavy seas / powerful jets &mdash; minimum for exposed helm</span></div>
-            <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">IPX7</span><span class="font-mono text-white">1 m immersion for 30 min &mdash; standard marine rating</span></div>
-            <div class="flex justify-between py-1.5"><span class="text-gray-400">IPX8</span><span class="font-mono text-white">Continuous immersion &mdash; for transducers and underwater sensors only</span></div>
+            <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">IPX5</span><span class="font-mono text-white">Jetted water — acceptable for flybridge use</span></div>
+            <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">IPX6</span><span class="font-mono text-white">Heavy seas / powerful jets — minimum for exposed helm</span></div>
+            <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">IPX7</span><span class="font-mono text-white">1 m immersion for 30 min — standard marine rating</span></div>
+            <div class="flex justify-between py-1.5"><span class="text-gray-400">IPX8</span><span class="font-mono text-white">Continuous immersion — for transducers and underwater sensors only</span></div>
           </div>
         </div>
 
@@ -1017,9 +1048,9 @@
           </h3>
           <div class="space-y-2.5 text-sm">
             <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">Indoor display</span><span class="font-mono text-white">300 &ndash; 500 nits (unreadable in direct sun)</span></div>
-            <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">Good marine display</span><span class="font-mono text-white">1,000+ nits &mdash; visible on an overcast day</span></div>
-            <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">Premium marine display</span><span class="font-mono text-white">2,000+ nits &mdash; readable in direct sunlight</span></div>
-            <div class="flex justify-between py-1.5"><span class="text-gray-400">Night operation</span><span class="font-mono text-white">&lt; 10 nits adjustable &mdash; important for preserving night vision</span></div>
+            <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">Good marine display</span><span class="font-mono text-white">1,000+ nits — visible on an overcast day</span></div>
+            <div class="flex justify-between py-1.5 border-b border-white/5"><span class="text-gray-400">Premium marine display</span><span class="font-mono text-white">2,000+ nits — readable in direct sunlight</span></div>
+            <div class="flex justify-between py-1.5"><span class="text-gray-400">Night operation</span><span class="font-mono text-white">&lt; 10 nits adjustable — important for preserving night vision</span></div>
           </div>
         </div>
       </div>
@@ -1027,14 +1058,14 @@
       <div class="glass-card p-6 mt-6">
         <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
           <i data-lucide="thermometer" style="width:1.1rem;height:1.1rem;color:#22d3ee"></i>
-          Temperature &amp; Environmental Specs to Verify
+          Temperature & Environmental Specs to Verify
         </h3>
         <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-400 leading-relaxed">
           <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
             <p><strong class="text-white">Operating temperature:</strong> Marine units should be rated at minimum &minus;20&deg;C to +55&deg;C (&minus;4&deg;F to +131&deg;F). Automotive/consumer units rated 0&ndash;40&deg;C will fail in open-boat use.</p>
           </div>
           <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-            <p><strong class="text-white">Humidity:</strong> Should be rated at 95% RH non-condensing. Condensation inside the case shortens life dramatically &mdash; look for units with Gore-Tex style pressure equalization vents.</p>
+            <p><strong class="text-white">Humidity:</strong> Should be rated at 95% RH non-condensing. Condensation inside the case shortens life dramatically — look for units with Gore-Tex style pressure equalization vents.</p>
           </div>
         </div>
       </div>
@@ -1042,7 +1073,18 @@
 
   </main>
 
-  <!-- FOOTER -->
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<!-- FOOTER -->
   <footer class="border-t border-white/10 bg-navy-950 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -1062,16 +1104,16 @@
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
-            <li><a href="hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
-            <li><a href="drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
             <li><a href="smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
-            <li><a href="ebike-micromobility.html" class="text-gray-400 hover:text-electric-400">E-Bike &amp; Micromobility</a></li>
+            <li><a href="ebike-micromobility.html" class="text-gray-400 hover:text-electric-400">E-Bike & Micromobility</a></li>
             <li><a href="3d-printers.html" class="text-gray-400 hover:text-electric-400">3D Printers</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>

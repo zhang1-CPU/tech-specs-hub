@@ -8,9 +8,9 @@
   <meta name="theme-color" content="#0a1628">
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -35,25 +35,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  
+  
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <script type="application/ld+json">
@@ -90,6 +75,52 @@
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Error Code Database",
+      "item": "https://powerspecshub.com/pages/error-code-db.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "3D Printer Filament Jam"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -111,18 +142,18 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
 
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Data Resources</p>
@@ -152,13 +183,13 @@
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
         <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
-        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -203,8 +234,9 @@
       </div>
 
       <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
-        3D Printer Filament Jam &mdash; <span class="gradient-text">Clogged Nozzle Troubleshooting Guide</span>
+        3D Printer Filament Jam — <span class="gradient-text">Clogged Nozzle Troubleshooting Guide</span>
       </h1>
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div>
 
       <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
         A clogged nozzle or filament jam is one of the most frustrating issues in 3D printing. Filament stops flowing mid-print, the extruder gear grinds away at the plastic, and you end up with a half-printed part and a headache. Whether the clog is in the nozzle itself, the heat break, the Bowden tube, or right at the extruder, this guide walks through systematic diagnosis and every proven clearing method from cold pulls to full nozzle replacement. Fix the clog, identify the root cause, and prevent it from coming back.
@@ -240,9 +272,9 @@
             Filament flow problems have many possible causes, and they all present with similar symptoms: under-extrusion, clicking in the extruder, or no filament coming out at all. The key to fast repair is identifying exactly where the blockage is before you start taking things apart.
           </p>
           <ul class="space-y-2 pl-1 text-gray-300">
-            <li><span class="text-white font-semibold">&bull; <strong>Nozzle clog:</strong> burnt plastic, dust, or foreign material is stuck in the nozzle bore &mdash; the #1 most common blockage location.</span></li>
-            <li class="text-white font-semibold">&bull; <strong>Heat break clog:</strong> molten filament has crept up into the heat break and solidified, creating a plug above the nozzle &mdash; common with all-metal hotends and high-temperature materials.</li>
-            <li class="text-white font-semibold">&bull; <strong>Bowden tube issue:</strong> the PTFE tube has worn, melted at the end, or the filament has swollen inside the tube &mdash; very common on Bowden-style printers.</li>
+            <li><span class="text-white font-semibold">&bull; <strong>Nozzle clog:</strong> burnt plastic, dust, or foreign material is stuck in the nozzle bore — the #1 most common blockage location.</span></li>
+            <li class="text-white font-semibold">&bull; <strong>Heat break clog:</strong> molten filament has crept up into the heat break and solidified, creating a plug above the nozzle — common with all-metal hotends and high-temperature materials.</li>
+            <li class="text-white font-semibold">&bull; <strong>Bowden tube issue:</strong> the PTFE tube has worn, melted at the end, or the filament has swollen inside the tube — very common on Bowden-style printers.</li>
             <li class="text-white font-semibold">&bull; <strong>Wet filament:</strong> filament that has absorbed moisture pops and bubbles when heated, leaving carbonized residue that builds up over time and causes clogs.</li>
             <li class="text-white font-semibold">&bull; <strong>Extruder gear wear:</strong> the drive gear teeth have worn down or the idler tension is wrong, so the gear grinds through the filament instead of pushing it.</li>
           </ul>
@@ -266,7 +298,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <h2 class="font-bold text-3xl mb-5">Tools & Materials You'll Need</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="glass-card p-5">
         <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="wrench" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Cleaning Tools</h3></div>
@@ -287,7 +319,7 @@
         </ul>
       </div>
       <div class="glass-card p-5">
-        <div class="flex items-center gap-2 mb-2 text-green-400"><i data-lucide="droplets" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Diagnostic &amp; Prevention</h3></div>
+        <div class="flex items-center gap-2 mb-2 text-green-400"><i data-lucide="droplets" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Diagnostic & Prevention</h3></div>
         <ul class="space-y-1.5 text-sm text-gray-300">
           <li>Digital calipers (to measure filament diameter)</li>
           <li>Filament dryer or dry box (for wet filament)</li>
@@ -299,7 +331,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree — Work These In Order</h2>
     <div class="space-y-4">
 
       <div class="glass-card p-6 md:p-7">
@@ -307,7 +339,7 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Locate where the jam actually is</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Before disassembling anything, figure out exactly where the blockage is. Heat the hotend to printing temperature. Unload filament, then try to push a fresh piece through by hand. If it pushes through easily, the problem is at the extruder (gear slipping, broken drive gear, idler tension). If you cannot push it through at all, the clog is in the hotend &mdash; proceed to the next steps. If you have a Bowden setup, disconnect the tube at the hotend and try pushing filament through just the tube first.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">Before disassembling anything, figure out exactly where the blockage is. Heat the hotend to printing temperature. Unload filament, then try to push a fresh piece through by hand. If it pushes through easily, the problem is at the extruder (gear slipping, broken drive gear, idler tension). If you cannot push it through at all, the clog is in the hotend — proceed to the next steps. If you have a Bowden setup, disconnect the tube at the hotend and try pushing filament through just the tube first.</p>
             <div class="alert alert-info !mb-0">
               <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
               <p class="text-sm"><strong>Jam location test:</strong> heat nozzle to 220&deg;C for PLA, 240&deg;C for PETG. Cut a clean flat end on a piece of filament. Push by hand into the extruder. If filament comes out the nozzle in a straight curl, the nozzle is clear and your problem is elsewhere. If it comes out sideways, curled, or not at all, you have a nozzle or heat break clog.</p>
@@ -341,10 +373,10 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">03</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Clean the nozzle with a needle and brush</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">If a cold pull does not clear it, try cleaning the nozzle from the outside while it is hot. Heat the nozzle to 5&ndash;10&deg;C above the printing temperature of the clogged material. Use a brass wire brush to clean the outside of the nozzle &mdash; do not use steel brushes on brass nozzles, they will scratch and damage the plating. Then gently insert a cleaning needle of the appropriate size (0.3mm for a 0.4mm nozzle) into the nozzle tip from below to break up the clog. Be careful not to bend the needle inside the nozzle.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">If a cold pull does not clear it, try cleaning the nozzle from the outside while it is hot. Heat the nozzle to 5&ndash;10&deg;C above the printing temperature of the clogged material. Use a brass wire brush to clean the outside of the nozzle — do not use steel brushes on brass nozzles, they will scratch and damage the plating. Then gently insert a cleaning needle of the appropriate size (0.3mm for a 0.4mm nozzle) into the nozzle tip from below to break up the clog. Be careful not to bend the needle inside the nozzle.</p>
             <div class="alert alert-warning !mb-0">
               <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
-              <p class="text-sm"><strong>Nozzle needle safety:</strong> always clean the nozzle from the bottom up, never from the top down. Pushing debris up into the heat break can make the clog worse. Use needles made of spring steel &mdash; they are less likely to break off inside the nozzle. If a needle does break inside, you will likely need to replace the nozzle. Always wear eye protection when working with heated nozzles and needles.</p>
+              <p class="text-sm"><strong>Nozzle needle safety:</strong> always clean the nozzle from the bottom up, never from the top down. Pushing debris up into the heat break can make the clog worse. Use needles made of spring steel — they are less likely to break off inside the nozzle. If a needle does break inside, you will likely need to replace the nozzle. Always wear eye protection when working with heated nozzles and needles.</p>
             </div>
           </div>
         </div>
@@ -359,10 +391,10 @@
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Bowden Tube Maintenance Tips</div>
               <ul class="space-y-2 text-sm text-gray-300">
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Always cut PTFE tubing with a sharp razor blade or dedicated tube cutter &mdash; a clean square cut prevents jams.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Ensure the tube is fully seated in the hotend and secured with the collet clip &mdash; a loose tube causes retraction problems and jams.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>If printing above 240&deg;C regularly, use a Capricorn XS or all-metal hotend &mdash; standard PTFE degrades above 250&deg;C.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Replace the Bowden tube every 6&ndash;12 months depending on usage &mdash; the inside wears and filament dust accumulates.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Always cut PTFE tubing with a sharp razor blade or dedicated tube cutter — a clean square cut prevents jams.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>Ensure the tube is fully seated in the hotend and secured with the collet clip — a loose tube causes retraction problems and jams.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0;margin-top:0.1rem"></i>If printing above 240&deg;C regularly, use a Capricorn XS or all-metal hotend — standard PTFE degrades above 250&deg;C.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Replace the Bowden tube every 6&ndash;12 months depending on usage — the inside wears and filament dust accumulates.</li>
               </ul>
             </div>
           </div>
@@ -374,7 +406,7 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">05</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Remove and soak the nozzle (for stubborn clogs)</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">If the cold pull and needle do not work, remove the nozzle from the hotend and clean it thoroughly. Always remove nozzles when hot &mdash; attempting to unscrew a cold nozzle can strip threads or break the heat block. Heat the hotend to 200&deg;C, then use a wrench to unscrew the nozzle. Once removed, you can clean it by heating it with a torch or heat gun and wiping with a brass brush, or by soaking it in acetone (for ABS/ASA clogs) or a specialized nozzle cleaner solution overnight.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">If the cold pull and needle do not work, remove the nozzle from the hotend and clean it thoroughly. Always remove nozzles when hot — attempting to unscrew a cold nozzle can strip threads or break the heat block. Heat the hotend to 200&deg;C, then use a wrench to unscrew the nozzle. Once removed, you can clean it by heating it with a torch or heat gun and wiping with a brass brush, or by soaking it in acetone (for ABS/ASA clogs) or a specialized nozzle cleaner solution overnight.</p>
             <div class="overflow-x-auto">
               <table class="specs-table w-full text-sm">
                 <thead>
@@ -398,14 +430,14 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Diagnose and fix heat break clogs</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">If you have an all-metal hotend and the clog is above the nozzle (in the heat break), the problem is usually heat creep &mdash; heat traveling up the heat break and melting filament too early, which then solidifies and creates a plug. This is especially common with PETG, nylon, and other materials that have a wide softening temperature range. Ensure your part cooling fan is working and directed at the heat sink, not just the print. Check that the heat break is properly tightened into both the heat block and the heat sink.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">If you have an all-metal hotend and the clog is above the nozzle (in the heat break), the problem is usually heat creep — heat traveling up the heat break and melting filament too early, which then solidifies and creates a plug. This is especially common with PETG, nylon, and other materials that have a wide softening temperature range. Ensure your part cooling fan is working and directed at the heat sink, not just the print. Check that the heat break is properly tightened into both the heat block and the heat sink.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Heat Creep Fixes</div>
               <ul class="space-y-2 text-sm text-gray-300">
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Verify hotend cooling fan is running at 100% whenever the hotend is above 50&deg;C.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Clean dust and debris from the heat sink fins &mdash; clogged fins reduce cooling dramatically.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Clean dust and debris from the heat sink fins — clogged fins reduce cooling dramatically.</li>
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Apply fresh thermal paste between heat break and heat sink (if it is a threaded assembly, use high-temp thread compound).</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Reduce retraction distance &mdash; excessive retraction pulls molten plastic up into the heat break where it cools and solidifies.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>Reduce retraction distance — excessive retraction pulls molten plastic up into the heat break where it cools and solidifies.</li>
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#fbbf24;flex-shrink:0;margin-top:0.1rem"></i>For persistent heat creep with high-temp materials, upgrade to a bi-metal heat break (copper inner + stainless outer) or a water-cooled hotend.</li>
               </ul>
             </div>
@@ -418,11 +450,11 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">07</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Check extruder gear wear and wet filament</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">If the nozzle is clear but you still have under-extrusion or clicking, the problem may be at the extruder or in the filament itself. Inspect the extruder drive gear &mdash; if the teeth are worn down or filled with plastic dust, it cannot grip the filament properly. Check the idler tension &mdash; too loose and the gear slips, too tight and it grinds through the filament. Also check your filament for moisture &mdash; wet filament causes popping, stringing, and can leave carbonized residue that builds up into clogs over time.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">If the nozzle is clear but you still have under-extrusion or clicking, the problem may be at the extruder or in the filament itself. Inspect the extruder drive gear — if the teeth are worn down or filled with plastic dust, it cannot grip the filament properly. Check the idler tension — too loose and the gear slips, too tight and it grinds through the filament. Also check your filament for moisture — wet filament causes popping, stringing, and can leave carbonized residue that builds up into clogs over time.</p>
             <ul class="space-y-2 text-sm text-gray-200">
               <li class="flex items-start gap-3"><i data-lucide="alert-octagon" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Wet filament diagnosis:</strong> listen for popping/crackling sounds during extrusion, look for tiny bubbles in the extruded line, and check for excessive stringing. Nylon, PETG, and TPU absorb moisture the fastest; PLA is slower but still absorbs moisture over weeks in humid environments.</li>
               <li class="flex items-start gap-3"><i data-lucide="flame" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Drying filament:</strong> use a dedicated filament dryer, food dehydrator, or oven (low temperature, monitored). Typical drying times: 4&ndash;6 hours for PLA/PETG at 40&ndash;50&deg;C, 6&ndash;12 hours for nylon/TPU at 60&ndash;70&deg;C. Store in airtight containers with desiccant after drying.</li>
-              <li class="flex items-start gap-3"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Extruder gear wear:</strong> look at the drive gear teeth under magnification. If they appear rounded or polished instead of sharp, the gear is worn out and needs replacement. Also check for plastic dust packed into the gear teeth &mdash; clean with a brush.</li>
+              <li class="flex items-start gap-3"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Extruder gear wear:</strong> look at the drive gear teeth under magnification. If they appear rounded or polished instead of sharp, the gear is worn out and needs replacement. Also check for plastic dust packed into the gear teeth — clean with a brush.</li>
               <li class="flex items-start gap-3"><i data-lucide="message-square-warning" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Idler tension:</strong> the idler spring should be tight enough that the filament has visible teeth marks but not so tight that it grinds grooves into the filament. If you see lots of plastic shavings under the extruder, the tension is too high.</li>
               <li class="flex items-start gap-3"><i data-lucide="trash-2" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Filament diameter inconsistency:</strong> measure filament diameter with calipers at several points along the spool. If it varies by more than &plusmn;0.05mm from nominal (1.75mm), poor filament quality could be causing your extrusion issues.</li>
             </ul>
@@ -434,18 +466,18 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Hotend &amp; Material-Specific Notes</h2>
+    <h2 class="font-bold text-3xl mb-5">Hotend & Material-Specific Notes</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-electric-400 flex items-center gap-2"><i data-lucide="flame" style="width:1.2rem;height:1.2rem"></i>All-Metal vs PTFE-Lined Hotends</h3>
-        <p class="text-gray-300 leading-relaxed mb-3">PTFE-lined hotends (the most common on budget printers) have a Teflon tube that goes all the way into the nozzle. They work great for PLA and PETG but the PTFE starts degrading above 250&deg;C, releasing toxic fumes and eventually melting. If you regularly print above 240&deg;C (nylon, PC, polycarbonate), you need an all-metal hotend. All-metal hotends are more prone to heat creep clogs because there is no PTFE barrier to stop heat from traveling upward &mdash; you need good heat sink cooling.</p>
+        <p class="text-gray-300 leading-relaxed mb-3">PTFE-lined hotends (the most common on budget printers) have a Teflon tube that goes all the way into the nozzle. They work great for PLA and PETG but the PTFE starts degrading above 250&deg;C, releasing toxic fumes and eventually melting. If you regularly print above 240&deg;C (nylon, PC, polycarbonate), you need an all-metal hotend. All-metal hotends are more prone to heat creep clogs because there is no PTFE barrier to stop heat from traveling upward — you need good heat sink cooling.</p>
       </div>
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-purple-400 flex items-center gap-2"><i data-lucide="droplets" style="width:1.2rem;height:1.2rem"></i>Wet Filament Damage</h3>
         <p class="text-gray-300 leading-relaxed mb-3">Moisture in filament is more damaging than most people realize. When wet filament passes through the hotend, the water boils and creates steam bubbles. These bubbles pop, leaving tiny carbonized particles of plastic behind. Over many hours of printing, these particles build up on the nozzle walls and eventually form a partial or complete clog. The solution is twofold: dry your filament before use, and store it in airtight containers with desiccant. A filament dryer is one of the best upgrades you can buy for print consistency.</p>
       </div>
       <div class="glass-card p-6">
-        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="settings-2" style="width:1.2rem;height:1.2rem"></i>Nozzle Type &amp; Wear</h3>
+        <h3 class="font-bold text-xl mb-2 text-green-400 flex items-center gap-2"><i data-lucide="settings-2" style="width:1.2rem;height:1.2rem"></i>Nozzle Type & Wear</h3>
         <p class="text-gray-300 leading-relaxed mb-3">Brass nozzles are standard and work great for PLA, PETG, and ABS, but they wear quickly with abrasive filaments like carbon fiber, glow-in-the-dark, or wood-filled PLA. If you print a lot of abrasive materials, upgrade to a hardened steel nozzle or a ruby-tipped nozzle. A worn nozzle has a larger opening than its rated size, which causes over-extrusion and poor print quality. You can check nozzle wear by measuring the orifice with a microscope or by doing an extrusion width test and comparing to expected values.</p>
       </div>
       <div class="glass-card p-6">
@@ -461,23 +493,23 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Nozzle is stripped, bent, or you broke a cleaning needle inside &mdash; replace with the same size and thread type.</p>
+          <p class="text-sm text-gray-200">Nozzle is stripped, bent, or you broke a cleaning needle inside — replace with the same size and thread type.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Bowden tube is melted, deformed, or has rough interior &mdash; replace with Capricorn XS or equivalent PTFE tubing.</p>
+          <p class="text-sm text-gray-200">Bowden tube is melted, deformed, or has rough interior — replace with Capricorn XS or equivalent PTFE tubing.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Extruder drive gear teeth are worn smooth or broken &mdash; replace the gear (usually steel or hardened steel upgrade).</p>
+          <p class="text-sm text-gray-200">Extruder drive gear teeth are worn smooth or broken — replace the gear (usually steel or hardened steel upgrade).</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Heat break is clogged and cannot be cleared, or you have chronic heat creep &mdash; replace with bi-metal heat break.</p>
+          <p class="text-sm text-gray-200">Heat break is clogged and cannot be cleared, or you have chronic heat creep — replace with bi-metal heat break.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Hotend cooling fan is seized or not spinning fast enough &mdash; replace the fan (do not print without it, you will get heat creep).</p>
+          <p class="text-sm text-gray-200">Hotend cooling fan is seized or not spinning fast enough — replace the fan (do not print without it, you will get heat creep).</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
@@ -495,7 +527,7 @@
           <div class="px-2.5 py-1 bg-red-500/20 text-red-400 font-mono font-semibold text-sm rounded-md border border-red-500/30">THERMAL</div>
           <span class="badge badge-critical">Safety</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Thermal Runaway &amp; Heating Fault</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Thermal Runaway & Heating Fault</h3>
         <p class="text-sm text-gray-400">Thermistor testing, heater cartridge replacement, PID tuning, and Marlin/Klipper thermal protection settings.</p>
       </a>
       <a href="3d-printer-bed-leveling-problems.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
@@ -503,7 +535,7 @@
           <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">BED&nbsp;LEVEL</div>
           <span class="badge badge-warning">Common</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Bed Leveling &amp; First Layer</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Bed Leveling & First Layer</h3>
         <p class="text-sm text-gray-400">BLTouch calibration, mesh bed leveling, Z-offset adjustment, PEI sheet maintenance, and warping fixes.</p>
       </a>
       <a href="3d-printer-layer-shifting.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
@@ -511,7 +543,7 @@
           <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">SHIFT</div>
           <span class="badge badge-info">Mechanical</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Layer Shifting &amp; Misalignment</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Layer Shifting & Misalignment</h3>
         <p class="text-sm text-gray-400">Belt tension, stepper current, V-slot wheels, linear rail maintenance, and print speed/acceleration tuning.</p>
       </a>
     </div>
@@ -528,7 +560,18 @@
     </div>
   </section>
 
-  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<footer class="border-t border-white/10 bg-navy-950 mt-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="md:col-span-1">
@@ -544,13 +587,13 @@
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
-            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
-            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
             <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>

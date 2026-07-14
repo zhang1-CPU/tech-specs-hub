@@ -10,9 +10,9 @@
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
   <!-- Resource Preload Hints: tells browser to start DNS/TLS/load EARLY -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -40,27 +40,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind CSS (Pre-compiled) -->
+  <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <!-- JSON-LD Structured Data -->
@@ -95,6 +79,52 @@
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Error Code Database",
+      "item": "https://powerspecshub.com/pages/error-code-db.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "P0A80 — Hybrid Battery Replace"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -117,18 +147,18 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
 
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Data Resources</p>
@@ -157,14 +187,14 @@
       <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
-        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
-        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid & EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -196,7 +226,7 @@
       <span class="breadcrumb-sep">/</span>
       <a href="../error-code-db.html">Error Code Database</a>
       <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">P0A80 &mdash; Hybrid Battery Replace</span>
+      <span class="breadcrumb-current">P0A80 — Hybrid Battery Replace</span>
     </nav>
   </section>
 
@@ -212,8 +242,9 @@
       </div>
 
       <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
-        Hybrid Battery Pack Below Threshold &mdash; <span class="gradient-text">Diagnostic &amp; Module Replacement</span>
+        Hybrid Battery Pack Below Threshold — <span class="gradient-text">Diagnostic & Module Replacement</span>
       </h1>
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div>
 
       <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
         Generic OBD-II hybrid battery fault indicating State-of-Health (SOH) below the manufacturer's threshold. Most common on 2004-2022 Toyota Prius vehicles when individual nickel-metal hydride (NiMH) battery modules degrade unevenly, creating a voltage imbalance greater than 0.5V between the strongest and weakest modules.
@@ -276,7 +307,7 @@
     <div class="alert alert-critical">
       <i data-lucide="alert-triangle" style="width:1.25rem;height:1.25rem;flex-shrink:0;margin-top:0.1rem"></i>
       <div>
-        <strong class="block mb-1 text-white">High Voltage Danger &mdash; 201.6V DC (Prius) / up to 355V (other hybrids)</strong>
+        <strong class="block mb-1 text-white">High Voltage Danger — 201.6V DC (Prius) / up to 355V (other hybrids)</strong>
         <p class="text-sm leading-relaxed">The hybrid battery pack and associated orange-cased cables carry lethal voltage. Always disconnect the 12V auxiliary battery negative terminal first, remove the HV service plug (safety interlock), and wait a minimum of <strong class="text-white">10 minutes</strong> for the inverter capacitors to discharge before touching any orange-cased component. Wear Class 0 insulated gloves rated for 1000V. Never work alone on a high-voltage system.</p>
       </div>
     </div>
@@ -284,7 +315,7 @@
 
   <!-- TOOLS & SAFETY EQUIPMENT -->
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Tools &amp; Safety Equipment</h2>
+    <h2 class="font-bold text-3xl mb-5">Tools & Safety Equipment</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="glass-card p-5">
         <div class="flex items-center gap-2 mb-2 text-red-400"><i data-lucide="hard-hat" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Safety</h3></div>
@@ -300,7 +331,7 @@
         <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="cpu" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Diagnostic</h3></div>
         <ul class="space-y-1.5 text-sm text-gray-300">
           <li>OBD-II scan tool with hybrid battery live data (Techstream / Dr. Prius)</li>
-          <li>Digital multimeter &mdash; CAT III 600V</li>
+          <li>Digital multimeter — CAT III 600V</li>
           <li>Thermal camera (optional, for hot-spot detection)</li>
           <li>Battery load tester (optional)</li>
         </ul>
@@ -321,7 +352,7 @@
 
   <!-- STEP-BY-STEP DIAGNOSTIC PROCEDURE -->
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Step-by-Step Diagnostic &amp; Replacement Procedure</h2>
+    <h2 class="font-bold text-3xl mb-5">Step-by-Step Diagnostic & Replacement Procedure</h2>
 
     <div class="space-y-4">
 
@@ -330,8 +361,8 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">01</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Confirm the code &amp; read live module voltages</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Connect the OBD-II scan tool capable of reading hybrid battery data (Techstream, Dr. Prius, or a comparable aftermarket tool). Pull all stored codes, freeze frame data, and &mdash; most importantly &mdash; live individual module voltages with the vehicle in READY mode and fan on high.</p>
+            <h3 class="font-bold text-xl mb-2">Confirm the code & read live module voltages</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Connect the OBD-II scan tool capable of reading hybrid battery data (Techstream, Dr. Prius, or a comparable aftermarket tool). Pull all stored codes, freeze frame data, and — most importantly — live individual module voltages with the vehicle in READY mode and fan on high.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">What to record</div>
               <p>Highest module voltage, lowest module voltage, and the module number(s) showing below <code class="text-electric-400">7.2V</code>. A spread greater than <code class="text-red-400">0.5V</code> confirms a failing module; anything over <code class="text-yellow-400">0.3V</code> is the early-warning territory (see P0A7F).</p>
@@ -349,7 +380,7 @@
             <p class="text-gray-300 leading-relaxed mb-3">Modules are numbered physically from the front-left of the pack. With the scan tool running, apply a sustained discharge load (headlights, rear defroster, HVAC on high in READY) for 60 seconds and re-read. The modules that collapse fastest are the ones to replace.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Rule of thumb</div>
-              <p>If fewer than 5 modules are weak, individual replacement is usually economic. If more than 5 modules have collapsed, consider a full-pack remanufactured unit &mdash; the remaining good modules are likely to fail within 12&ndash;24 months.</p>
+              <p>If fewer than 5 modules are weak, individual replacement is usually economic. If more than 5 modules have collapsed, consider a full-pack remanufactured unit — the remaining good modules are likely to fail within 12&ndash;24 months.</p>
             </div>
           </div>
         </div>
@@ -375,8 +406,8 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">04</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Remove the HV service plug &mdash; wait 10 minutes</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Put on Class 0 insulated gloves. Locate the HV service plug on the battery pack enclosure (often orange, on top or side of the pack). Rotate the handle to unlock and pull it out &mdash; this physically breaks the high-voltage circuit. Set a timer for <strong class="text-white">10 minutes minimum</strong>. Do not touch any orange-cased components during this period.</p>
+            <h3 class="font-bold text-xl mb-2">Remove the HV service plug — wait 10 minutes</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Put on Class 0 insulated gloves. Locate the HV service plug on the battery pack enclosure (often orange, on top or side of the pack). Rotate the handle to unlock and pull it out — this physically breaks the high-voltage circuit. Set a timer for <strong class="text-white">10 minutes minimum</strong>. Do not touch any orange-cased components during this period.</p>
             <div class="alert alert-info !mb-0">
               <i data-lucide="info" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
               <p class="text-sm">After 10 minutes, verify with the CAT III multimeter that module-to-chassis voltage reads <code class="text-electric-400">&lt; 3V</code> before proceeding. Never trust the interlock alone.</p>
@@ -391,7 +422,7 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Remove battery pack access cover</h3>
-            <p class="text-gray-300 leading-relaxed">Remove the rear cargo-area trim panel and the battery pack access cover. Photograph or label every connector (high-voltage bus bars, temperature sensors, voltage sense wires) before disassembly &mdash; a mistake here is expensive. Lift the pack if required; use a battery lift cart or jack with wooden blocks to avoid twisting the enclosure.</p>
+            <p class="text-gray-300 leading-relaxed">Remove the rear cargo-area trim panel and the battery pack access cover. Photograph or label every connector (high-voltage bus bars, temperature sensors, voltage sense wires) before disassembly — a mistake here is expensive. Lift the pack if required; use a battery lift cart or jack with wooden blocks to avoid twisting the enclosure.</p>
           </div>
         </div>
       </div>
@@ -401,8 +432,8 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">06</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Extract faulty modules &amp; inspect bus bars</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Remove the bus bars connecting the suspect modules. Visually inspect every bus bar and module terminal for green/white corrosion, arcing marks, or melted plastic. Clean bus bars with a wire brush + isopropyl alcohol, or replace if pitted. Bag each removed module and note its original position &mdash; some rebuilders accept cores for credit.</p>
+            <h3 class="font-bold text-xl mb-2">Extract faulty modules & inspect bus bars</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Remove the bus bars connecting the suspect modules. Visually inspect every bus bar and module terminal for green/white corrosion, arcing marks, or melted plastic. Clean bus bars with a wire brush + isopropyl alcohol, or replace if pitted. Bag each removed module and note its original position — some rebuilders accept cores for credit.</p>
             <div class="alert alert-warning !mb-0">
               <i data-lucide="flame" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
               <p class="text-sm">NiMH modules can short internally and vent if physically damaged. Do not drop, puncture, or disassemble used modules. Dispose of at a licensed battery recycler.</p>
@@ -416,8 +447,8 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">07</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Install replacement modules &mdash; match Ah rating exactly</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Install new or remanufactured modules in the same physical orientation. Torque bus bar nuts to the OEM specification (Prius Gen 2/3: <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">53 N&middot;m</code> for main bus bars, <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">10 N&middot;m</code> for sense wires). The Ah (ampere-hour) rating of replacement modules must match the original pack rating &mdash; mixing 6.0 Ah and 6.5 Ah modules will create a new imbalance within months.</p>
+            <h3 class="font-bold text-xl mb-2">Install replacement modules — match Ah rating exactly</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Install new or remanufactured modules in the same physical orientation. Torque bus bar nuts to the OEM specification (Prius Gen 2/3: <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">53 N&middot;m</code> for main bus bars, <code class="font-mono text-electric-400 bg-navy-900/80 px-1.5 py-0.5 rounded">10 N&middot;m</code> for sense wires). The Ah (ampere-hour) rating of replacement modules must match the original pack rating — mixing 6.0 Ah and 6.5 Ah modules will create a new imbalance within months.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-4 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Best practice</div>
               <p>Pre-charge new modules to match the resting voltage of the existing good modules (usually <code class="text-electric-400">~7.8&ndash;8.0V open-circuit</code>) before installation. This prevents the ECU from immediately flagging a new imbalance during the first drive cycle.</p>
@@ -432,7 +463,7 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">08</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Reassemble, reconnect, clear codes, relearn drive</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">Reinstall the access cover and HV service plug (insert fully and rotate handle to locked). Reconnect the 12V auxiliary battery &mdash; <strong class="text-white">positive first, negative last</strong>. Turn the ignition to READY. Clear all DTCs via the scan tool. Perform a <strong class="text-white">20+ mile mixed city/highway relearn drive</strong> so the HV ECU can re-calibrate State-of-Health and re-learn the new module voltage baseline.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">Reinstall the access cover and HV service plug (insert fully and rotate handle to locked). Reconnect the 12V auxiliary battery — <strong class="text-white">positive first, negative last</strong>. Turn the ignition to READY. Clear all DTCs via the scan tool. Perform a <strong class="text-white">20+ mile mixed city/highway relearn drive</strong> so the HV ECU can re-calibrate State-of-Health and re-learn the new module voltage baseline.</p>
             <div class="alert alert-success !mb-0">
               <i data-lucide="check-circle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
               <p class="text-sm">Read module voltages after the relearn drive. If the pack shows &lt; 0.15V spread across all modules, the repair is successful. Re-check at 500 miles and 5,000 miles to confirm long-term stability.</p>
@@ -452,15 +483,15 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200"><strong>More than 5 modules</strong> have failed. This typically means thermal runaway propagation &mdash; the pack should be replaced or professionally rebuilt.</p>
+          <p class="text-sm text-gray-200"><strong>More than 5 modules</strong> have failed. This typically means thermal runaway propagation — the pack should be replaced or professionally rebuilt.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Bus bars show <strong>corrosion, black arcing marks, or melted plastic</strong>. These indicate an intermittent high-current fault &mdash; the bus bar material is compromised.</p>
+          <p class="text-sm text-gray-200">Bus bars show <strong>corrosion, black arcing marks, or melted plastic</strong>. These indicate an intermittent high-current fault — the bus bar material is compromised.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="cable" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Orange-cased <strong>HV wiring</strong> shows nicks, abrasion, or swelling &mdash; replace the harness by a certified hybrid technician.</p>
+          <p class="text-sm text-gray-200">Orange-cased <strong>HV wiring</strong> shows nicks, abrasion, or swelling — replace the harness by a certified hybrid technician.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="shield-off" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
@@ -472,7 +503,7 @@
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="package" style="width:1.1rem;height:1.1rem;color:#f87171;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">The vehicle is still under <strong>hybrid battery warranty</strong> (8 years / 100,000 miles in most regions &mdash; do not void it with DIY disassembly).</p>
+          <p class="text-sm text-gray-200">The vehicle is still under <strong>hybrid battery warranty</strong> (8 years / 100,000 miles in most regions — do not void it with DIY disassembly).</p>
         </div>
       </div>
     </div>
@@ -496,7 +527,7 @@
           <span class="badge badge-info">System</span>
         </div>
         <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Hybrid Control System Fault</h3>
-        <p class="text-sm text-gray-400">Generic hybrid system malfunction. Usually appears alongside a more specific code &mdash; investigate the companion codes first.</p>
+        <p class="text-sm text-gray-400">Generic hybrid system malfunction. Usually appears alongside a more specific code — investigate the companion codes first.</p>
       </a>
       <a href="p0a7f-hybrid-battery-deterioration.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
         <div class="flex items-start gap-3 mb-3">
@@ -504,7 +535,7 @@
           <span class="badge badge-warning">Thermal</span>
         </div>
         <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Inverter Cooling Performance</h3>
-        <p class="text-sm text-gray-400">Insufficient cooling flow to the inverter / converter. Can mimic battery failure &mdash; always check cooling fans alongside P0A80.</p>
+        <p class="text-sm text-gray-400">Insufficient cooling flow to the inverter / converter. Can mimic battery failure — always check cooling fans alongside P0A80.</p>
       </a>
     </div>
   </section>
@@ -521,7 +552,18 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<!-- FOOTER -->
   <footer class="border-t border-white/10 bg-navy-950 mt-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -538,13 +580,13 @@
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
-            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
-            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
             <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>

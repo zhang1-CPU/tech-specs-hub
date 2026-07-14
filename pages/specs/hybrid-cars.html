@@ -10,9 +10,9 @@
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
   <!-- Resource Preload Hints -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -22,7 +22,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Hybrid & EV Battery Specs — Toyota Prius, Camry, Tesla, Honda Insight | TechSpecsHub">
   <meta property="og:description" content="Module-level specs, fault codes, and repair guides for Toyota Prius, Camry Hybrid, RAV4 HV, Tesla LFP, and Honda Insight hybrid battery systems. All data cross-referenced with OEM service manuals.">
-  <meta property="og:type" content="WebSite">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://powerspecshub.com/pages/specs/hybrid-cars.html">
   <meta property="og:image" content="https://powerspecshub.com/assets/images/og-default.png">
   <meta property="og:site_name" content="TechSpecsHub">
@@ -41,34 +41,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Tailwind CSS (Pre-compiled) -->
+  <link rel="stylesheet" href="assets/css/tailwind-compiled.css">
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": "CollectionPage",
     "headline": "Hybrid & EV Battery Specs — Toyota Prius, Camry, Tesla, Honda Insight | TechSpecsHub",
     "description": "Module-level specs, fault codes, and repair guides for Toyota Prius, Camry Hybrid, RAV4 HV, Tesla LFP, and Honda Insight hybrid battery systems. All data cross-referenced with OEM service manuals.",
     "url": "https://powerspecshub.com/pages/specs/hybrid-cars.html",
@@ -80,13 +64,106 @@
       "url": "https://powerspecshub.com/"
     },
     "mainEntity": {
-      "@type": "WebSite",
+      "@type": "CollectionPage",
       "name": "TechSpecsHub",
       "url": "https://powerspecshub.com/"
     }
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does a Toyota Prius hybrid battery really last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In moderate climates, 150,000\u2013200,000 miles (10\u201314 years) is typical for the original NiMH pack. In very hot climates, 100,000\u2013130,000 miles is more common due to heat accelerating cell degradation. The 8-year / 100k-mile factory warranty covers early failures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I drive with a P0A80 code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technically yes \u2014 the vehicle enters fail-safe mode and runs primarily on gas. But it's risky: the inverter must work harder to compensate for weak cells, and a complete pack failure can leave you stranded. If the 'Check Hybrid System' light is on with P0A80, get it diagnosed within a week or two."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I replace just the bad modules or the whole pack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Replacing only weak modules costs less upfront but is usually a false economy. Hybrid battery cells age together \u2014 if one or two have failed, the rest are close behind. A remanufactured pack with all-new matched cells and a 2\u20133 year warranty is almost always better value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Dr. Prius and is it accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dr. Prius is a mobile app that reads Toyota hybrid battery data through a Bluetooth OBD-II adapter. It shows individual module voltages and can estimate pack health. It's reasonably accurate for identifying which modules are weak, but don't treat its 'battery life remaining' percentage as gospel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I clean the hybrid battery cooling fan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The HV battery cooling fan intake is usually in the rear parcel shelf or side panel. Locate the intake grille, gently vacuum dust from the surface, then use low-pressure compressed air to blow out dust from the fan housing. Do this every 10,000\u201315,000 miles. A clogged fan causes the battery to run hot and shortens life significantly."
+      }
+    }
+  ]
+}</script>
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Specs",
+      "item": "https://powerspecshub.com/pages/master-specs.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Hybrid & EV Batteries"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -111,17 +188,17 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data
+              Tools & Data
               <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
@@ -154,14 +231,14 @@
       <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
-        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
-        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid & EV Batteries</a>
+        <a href="drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -194,7 +271,7 @@
   <!-- BREADCRUMB -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
     <nav class="breadcrumb">
-      <a href="../../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="../error-code-db.html">Specs</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Hybrid & EV Batteries</span>
+      <a href="../../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="../master-specs.html">Specs</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Hybrid & EV Batteries</span>
     </nav>
   </div>
   <!-- HERO -->
@@ -237,7 +314,8 @@
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
       <div>
-        <h2 class="font-bold text-2xl md:text-3xl mb-2">Hybrid Battery Specifications</h2>
+        
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div><h2 class="font-bold text-2xl md:text-3xl mb-2">Hybrid Battery Specifications</h2>
         <p class="text-gray-400 text-sm">OEM HV battery pack specs by vehicle model. Scroll horizontally on mobile.</p>
       </div>
       <span class="badge badge-info"><i data-lucide="check-circle" style="width:0.8rem;height:0.8rem"></i>OEM Verified</span>
@@ -273,7 +351,7 @@
       <a href="../troubleshooting/p0a80-replace-hybrid-battery.html" class="glass-card p-5 hover:bg-white/5 transition-all group">
         <div class="flex items-start gap-4">
           <div class="w-10 h-10 bg-red-500/15 rounded-lg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="alert-triangle" style="width:1.2rem;height:1.2rem;color:var(--tw-color)"></i>
+            <i data-lucide="alert-triangle" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
           </div>
           <div class="flex-1">
             <h3 class="font-semibold mb-1 group-hover:text-electric-400 transition-colors">P0A80 — Replace Hybrid Battery Pack</h3>
@@ -284,7 +362,7 @@
       <a href="../troubleshooting/p0a7f-hybrid-battery-deterioration.html" class="glass-card p-5 hover:bg-white/5 transition-all group">
         <div class="flex items-start gap-4">
           <div class="w-10 h-10 bg-yellow-500/15 rounded-lg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="battery-warning" style="width:1.2rem;height:1.2rem;color:var(--tw-color)"></i>
+            <i data-lucide="battery-warning" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
           </div>
           <div class="flex-1">
             <h3 class="font-semibold mb-1 group-hover:text-electric-400 transition-colors">P0A7F — Battery Pack Deterioration</h3>
@@ -295,7 +373,7 @@
       <a href="../troubleshooting/p3000-hybrid-battery-control-module.html" class="glass-card p-5 hover:bg-white/5 transition-all group">
         <div class="flex items-start gap-4">
           <div class="w-10 h-10 bg-orange-500/15 rounded-lg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="cpu" style="width:1.2rem;height:1.2rem;color:var(--tw-color)"></i>
+            <i data-lucide="cpu" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
           </div>
           <div class="flex-1">
             <h3 class="font-semibold mb-1 group-hover:text-electric-400 transition-colors">P3000 — Battery Control System Fault</h3>
@@ -306,7 +384,7 @@
       <a href="../troubleshooting/p0a7b-hybrid-battery-voltage-sensor.html" class="glass-card p-5 hover:bg-white/5 transition-all group">
         <div class="flex items-start gap-4">
           <div class="w-10 h-10 bg-blue-500/15 rounded-lg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="gauge" style="width:1.2rem;height:1.2rem;color:var(--tw-color)"></i>
+            <i data-lucide="gauge" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
           </div>
           <div class="flex-1">
             <h3 class="font-semibold mb-1 group-hover:text-electric-400 transition-colors">P0A7B — Voltage Sensor Circuit</h3>
@@ -317,7 +395,7 @@
       <a href="../troubleshooting/p0ac4-hybrid-battery-temperature-sensor.html" class="glass-card p-5 hover:bg-white/5 transition-all group">
         <div class="flex items-start gap-4">
           <div class="w-10 h-10 bg-red-500/15 rounded-lg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="thermometer" style="width:1.2rem;height:1.2rem;color:var(--tw-color)"></i>
+            <i data-lucide="thermometer" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
           </div>
           <div class="flex-1">
             <h3 class="font-semibold mb-1 group-hover:text-electric-400 transition-colors">P0AC4 — Temperature Sensor Fault</h3>
@@ -328,7 +406,7 @@
       <a href="../troubleshooting/p0a9d-hybrid-inverter-fault.html" class="glass-card p-5 hover:bg-white/5 transition-all group">
         <div class="flex items-start gap-4">
           <div class="w-10 h-10 bg-purple-500/15 rounded-lg flex items-center justify-center flex-shrink-0">
-            <i data-lucide="zap" style="width:1.2rem;height:1.2rem;color:var(--tw-color)"></i>
+            <i data-lucide="zap" style="width:1.2rem;height:1.2rem;color:#f87171"></i>
           </div>
           <div class="flex-1">
             <h3 class="font-semibold mb-1 group-hover:text-electric-400 transition-colors">P0A9D — Hybrid Inverter Fault</h3>
@@ -469,7 +547,18 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<!-- FOOTER -->
   <footer class="border-t border-white/5 mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <hr class="border-white/10 my-8">

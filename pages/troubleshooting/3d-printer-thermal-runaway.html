@@ -8,9 +8,9 @@
   <meta name="theme-color" content="#0a1628">
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -35,25 +35,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  
+  
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <script type="application/ld+json">
@@ -90,6 +75,52 @@
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Error Code Database",
+      "item": "https://powerspecshub.com/pages/error-code-db.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "3D Printer Thermal Runaway"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -111,18 +142,18 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
 
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Data Resources</p>
@@ -152,13 +183,13 @@
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
         <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>
-        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -203,11 +234,12 @@
       </div>
 
       <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
-        3D Printer Thermal Runaway Error &mdash; <span class="gradient-text">Heating Fault Diagnostic Guide</span>
+        3D Printer Thermal Runaway Error — <span class="gradient-text">Heating Fault Diagnostic Guide</span>
       </h1>
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div>
 
       <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
-        A thermal runaway error is one of the most critical safety features on any FDM 3D printer. When triggered, the firmware immediately cuts power to the heater to prevent a fire. Most thermal faults are not actual runaways &mdash; they are caused by a faulty thermistor, loose wiring, a failing heater cartridge, or incorrect PID values. This guide walks through systematic diagnosis for both hotend and heated bed thermal errors on Marlin, Klipper, and RepRapFirmware machines.
+        A thermal runaway error is one of the most critical safety features on any FDM 3D printer. When triggered, the firmware immediately cuts power to the heater to prevent a fire. Most thermal faults are not actual runaways — they are caused by a faulty thermistor, loose wiring, a failing heater cartridge, or incorrect PID values. This guide walks through systematic diagnosis for both hotend and heated bed thermal errors on Marlin, Klipper, and RepRapFirmware machines.
       </p>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
@@ -240,13 +272,13 @@
             Thermal runaway protection works by monitoring the temperature rise rate. If the heater is commanded on but the thermistor does not report a temperature increase within a set time window (typically 20&ndash;60 seconds), the firmware assumes something is wrong and shuts down. The fault almost always falls into one of these categories:
           </p>
           <ul class="space-y-2 pl-1 text-gray-300">
-            <li><span class="text-white font-semibold">&bull; <strong>Thermistor failure:</strong> the temperature sensor has gone open-circuit, shorted, or drifted out of spec &mdash; the #1 cause of false thermal errors.</span></li>
+            <li><span class="text-white font-semibold">&bull; <strong>Thermistor failure:</strong> the temperature sensor has gone open-circuit, shorted, or drifted out of spec — the #1 cause of false thermal errors.</span></li>
             <li class="text-white font-semibold">&bull; <strong>Heater cartridge problem:</strong> the heating element has partially failed or is not making good thermal contact with the heat block.</li>
             <li class="text-white font-semibold">&bull; <strong>Loose / broken wiring:</strong> a connector pin has backed out, a wire has fractured from repeated flexing, or a crimp is failing.</li>
             <li class="text-white font-semibold">&bull; <strong>PID tuning needed:</strong> after a nozzle change, new filament type, or firmware flash, the PID values are wrong and the temperature oscillates or rises too slowly.</li>
           </ul>
           <p class="text-gray-400 text-sm">
-            Work through these steps from easiest-to-hardest. Never disable thermal runaway protection &mdash; it is there to save your printer and your house.
+            Work through these steps from easiest-to-hardest. Never disable thermal runaway protection — it is there to save your printer and your house.
           </p>
         </div>
         <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
@@ -265,21 +297,21 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <h2 class="font-bold text-3xl mb-5">Tools & Materials You'll Need</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="glass-card p-5">
         <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="zap" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Electrical</h3></div>
         <ul class="space-y-1.5 text-sm text-gray-300">
-          <li>Digital multimeter (resistance &amp; continuity mode)</li>
+          <li>Digital multimeter (resistance & continuity mode)</li>
           <li>Replacement NTC 100K thermistor (B3950 or B57560G)</li>
           <li>Replacement heater cartridge (24V 40W or 12V 40W)</li>
-          <li>Heat shrink tubing &amp; soldering iron (for wire repair)</li>
+          <li>Heat shrink tubing & soldering iron (for wire repair)</li>
         </ul>
       </div>
       <div class="glass-card p-5">
         <div class="flex items-center gap-2 mb-2 text-yellow-400"><i data-lucide="tool" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Mechanical</h3></div>
         <ul class="space-y-1.5 text-sm text-gray-300">
-          <li>Allen key / hex wrench set (1.5mm &amp; 2mm)</li>
+          <li>Allen key / hex wrench set (1.5mm & 2mm)</li>
           <li>Small Phillips screwdriver (for control board access)</li>
           <li>Thermal paste (for heat block thermistor seating)</li>
           <li>PTFE tape (for thermistor threads if cartridge type)</li>
@@ -298,7 +330,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree &mdash; Work These In Order</h2>
+    <h2 class="font-bold text-3xl mb-5">Diagnostic Tree — Work These In Order</h2>
     <div class="space-y-4">
 
       <div class="glass-card p-6 md:p-7">
@@ -341,7 +373,7 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">03</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Verify heater cartridge resistance</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">If the thermistor checks out, test the heater cartridge itself. Disconnect it from the board and measure resistance. A 24V 40W cartridge should read approximately 14.4 ohms; a 12V 40W cartridge reads about 3.6 ohms. A reading of infinite ohms means the heater coil has burned out &mdash; replace the cartridge.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">If the thermistor checks out, test the heater cartridge itself. Disconnect it from the board and measure resistance. A 24V 40W cartridge should read approximately 14.4 ohms; a 12V 40W cartridge reads about 3.6 ohms. A reading of infinite ohms means the heater coil has burned out — replace the cartridge.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Expected Resistance Values</div>
               <ul class="space-y-2 text-sm text-gray-300">
@@ -363,7 +395,7 @@
             <p class="text-gray-300 leading-relaxed mb-3">Wiring problems are the second most common cause. The thermistor wires flex with every X-axis movement and eventually break inside the insulation. Check the full wire run from the control board connector, through the cable chain or wrap, all the way to the hotend. Pay special attention to strain relief points and where the wire enters the heat block.</p>
             <div class="alert alert-warning !mb-0">
               <i data-lucide="alert-triangle" style="width:1rem;height:1rem;flex-shrink:0;margin-top:0.1rem"></i>
-              <p class="text-sm"><strong>Common failure points:</strong> where the cable exits the cable chain at the hotend side, inside the hotend connector (dupont pins can back out), at the MOSFET terminal block, and anywhere the wire is pinched or zip-tied tightly. Gently tug each wire at connectors &mdash; a loose pin will pull out easily.</p>
+              <p class="text-sm"><strong>Common failure points:</strong> where the cable exits the cable chain at the hotend side, inside the hotend connector (dupont pins can back out), at the MOSFET terminal block, and anywhere the wire is pinched or zip-tied tightly. Gently tug each wire at connectors — a loose pin will pull out easily.</p>
             </div>
           </div>
         </div>
@@ -374,14 +406,14 @@
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-electric-500/20 border border-electric-500/40 flex items-center justify-center font-mono font-bold text-electric-400">05</div>
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2">Re-seat thermistor and check thermal contact</h3>
-            <p class="text-gray-300 leading-relaxed mb-3">If the thermistor is not making good thermal contact with the heat block, it will read lower than the actual temperature and the heater will run too long &mdash; but more commonly, poor contact causes temperature spikes/drops that confuse the PID controller. Remove the thermistor, clean the hole with a small drill bit or needle, apply a tiny amount of thermal paste, and re-seat it firmly. For screw-in type thermistors, use PTFE tape on the threads.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">If the thermistor is not making good thermal contact with the heat block, it will read lower than the actual temperature and the heater will run too long — but more commonly, poor contact causes temperature spikes/drops that confuse the PID controller. Remove the thermistor, clean the hole with a small drill bit or needle, apply a tiny amount of thermal paste, and re-seat it firmly. For screw-in type thermistors, use PTFE tape on the threads.</p>
             <div class="bg-navy-900/80 border border-white/10 rounded-lg p-5 text-sm text-gray-200">
               <div class="font-mono text-xs text-gray-500 mb-2 uppercase tracking-wide">Thermistor Installation Tips</div>
               <ul class="space-y-2 text-sm text-gray-300">
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Press-fit cartridge: insert fully, secure with set screw, avoid crushing the glass bead.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Screw-in type: wrap 2&ndash;3 turns of PTFE tape clockwise, thread in snugly &mdash; do not over-torque.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Screw-in type: wrap 2&ndash;3 turns of PTFE tape clockwise, thread in snugly — do not over-torque.</li>
                 <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Surface-mount (bed): ensure the thermistor is pressed flat against the heater plate, secured with kapton tape or adhesive pad.</li>
-                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>Never: let the thermistor wires touch the heater cartridge leads &mdash; this will inject noise into the temperature reading.</li>
+                <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i>Never: let the thermistor wires touch the heater cartridge leads — this will inject noise into the temperature reading.</li>
               </ul>
             </div>
           </div>
@@ -421,8 +453,8 @@
             <ul class="space-y-2 text-sm text-gray-200">
               <li class="flex items-start gap-3"><i data-lucide="alert-octagon" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Marlin:</strong> check <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">THERMAL_PROTECTION_HOTENDS</code> and <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">THERMAL_PROTECTION_BED</code> in Configuration.h. Defaults: period 40s, hysteresis 5&deg;C.</li>
               <li class="flex items-start gap-3"><i data-lucide="flame" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Klipper:</strong> verify <code class="bg-navy-900 px-1.5 py-0.5 rounded font-mono text-xs">verify_heater</code> settings in printer.cfg under each heater section. Default check_gain_time: 20s for hotend, 60s for bed.</li>
-              <li class="flex items-start gap-3"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>MINTEMP/MAXTEMP:</strong> these are separate safety limits. If you see MINTEMP errors at room temperature, the thermistor type setting in firmware is wrong &mdash; check that you have the correct thermistor table selected.</li>
-              <li class="flex items-start gap-3"><i data-lucide="message-square-warning" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>MOSFET fault:</strong> if the heater stays on even when the firmware says it should be off, the MOSFET on your control board or external MOSFET module has failed shorted. Replace immediately &mdash; this is a fire hazard.</li>
+              <li class="flex items-start gap-3"><i data-lucide="thermometer" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>MINTEMP/MAXTEMP:</strong> these are separate safety limits. If you see MINTEMP errors at room temperature, the thermistor type setting in firmware is wrong — check that you have the correct thermistor table selected.</li>
+              <li class="flex items-start gap-3"><i data-lucide="message-square-warning" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>MOSFET fault:</strong> if the heater stays on even when the firmware says it should be off, the MOSFET on your control board or external MOSFET module has failed shorted. Replace immediately — this is a fire hazard.</li>
               <li class="flex items-start gap-3"><i data-lucide="trash-2" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0;margin-top:0.1rem"></i><strong>Never disable thermal runaway protection.</strong> If you are tempted to turn it off because of false triggers, find and fix the root cause instead.</li>
             </ul>
           </div>
@@ -449,7 +481,7 @@
       </div>
       <div class="glass-card p-6">
         <h3 class="font-bold text-xl mb-2 text-yellow-400 flex items-center gap-2"><i data-lucide="zap" style="width:1.2rem;height:1.2rem"></i>MOSFET / Control Board</h3>
-        <p class="text-gray-300 leading-relaxed mb-3">If the heater cartridge and thermistor both test good, but the heater does not heat at all (zero rise), check the MOSFET on your control board or the external MOSFET module. Use a multimeter to verify voltage is reaching the heater terminals when the firmware commands heat. If no voltage, the MOSFET or fuse has failed. If voltage is present but no heat, go back to step 3 &mdash; the heater cartridge is open circuit.</p>
+        <p class="text-gray-300 leading-relaxed mb-3">If the heater cartridge and thermistor both test good, but the heater does not heat at all (zero rise), check the MOSFET on your control board or the external MOSFET module. Use a multimeter to verify voltage is reaching the heater terminals when the firmware commands heat. If no voltage, the MOSFET or fuse has failed. If voltage is present but no heat, go back to step 3 — the heater cartridge is open circuit.</p>
       </div>
     </div>
   </section>
@@ -460,23 +492,23 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="alert-octagon" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Heater cartridge has infinite resistance (burned out) &mdash; replace with correct voltage/power rating.</p>
+          <p class="text-sm text-gray-200">Heater cartridge has infinite resistance (burned out) — replace with correct voltage/power rating.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="zap" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Thermistor reads open or shorted &mdash; replace with the correct type (100K NTC, matching B value).</p>
+          <p class="text-sm text-gray-200">Thermistor reads open or shorted — replace with the correct type (100K NTC, matching B value).</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="activity" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">MOSFET on control board has failed short &mdash; replace the board or install an external MOSFET module.</p>
+          <p class="text-sm text-gray-200">MOSFET on control board has failed short — replace the board or install an external MOSFET module.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="tool" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Heated bed PCB has delaminated or traces have lifted &mdash; replace the bed or install a silicone heater on top.</p>
+          <p class="text-sm text-gray-200">Heated bed PCB has delaminated or traces have lifted — replace the bed or install a silicone heater on top.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="message-square-warning" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
-          <p class="text-sm text-gray-200">Temperature readings are noisy/jittery and wiring checks out &mdash; control board ADC may be damaged, replace board.</p>
+          <p class="text-sm text-gray-200">Temperature readings are noisy/jittery and wiring checks out — control board ADC may be damaged, replace board.</p>
         </div>
         <div class="flex items-start gap-3 bg-navy-900/60 border border-white/10 rounded-xl p-4">
           <i data-lucide="shield" style="width:1.1rem;height:1.1rem;color:#fbbf24;flex-shrink:0;margin-top:0.15rem"></i>
@@ -494,15 +526,15 @@
           <div class="px-2.5 py-1 bg-yellow-500/20 text-yellow-400 font-mono font-semibold text-sm rounded-md border border-yellow-500/30">BED&nbsp;LEVEL</div>
           <span class="badge badge-warning">Common</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Bed Leveling &amp; First Layer</h3>
-        <p class="text-sm text-gray-400">BLTouch calibration, mesh bed leveling, Z-offset, PEI sheet maintenance, and warping fixes &mdash; the other common print failure mode.</p>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Bed Leveling & First Layer</h3>
+        <p class="text-sm text-gray-400">BLTouch calibration, mesh bed leveling, Z-offset, PEI sheet maintenance, and warping fixes — the other common print failure mode.</p>
       </a>
       <a href="3d-printer-filament-jam.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
         <div class="flex items-start gap-3 mb-3">
           <div class="px-2.5 py-1 bg-orange-500/20 text-orange-400 font-mono font-semibold text-sm rounded-md border border-orange-500/30">CLOG</div>
           <span class="badge badge-warning">Warning</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Filament Jam &amp; Nozzle Clog</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Filament Jam & Nozzle Clog</h3>
         <p class="text-sm text-gray-400">Cold pull method, nozzle cleaning, Bowden tube removal, heat break clogs, wet filament issues, and extruder gear wear diagnosis.</p>
       </a>
       <a href="3d-printer-layer-shifting.html" class="glass-card p-6 block hover:border-electric-400/50 transition-all group">
@@ -510,7 +542,7 @@
           <div class="px-2.5 py-1 bg-purple-500/20 text-purple-400 font-mono font-semibold text-sm rounded-md border border-purple-500/30">SHIFT</div>
           <span class="badge badge-info">Mechanical</span>
         </div>
-        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Layer Shifting &amp; Misalignment</h3>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-electric-400 transition-colors">Layer Shifting & Misalignment</h3>
         <p class="text-sm text-gray-400">Belt tension, stepper current, V-slot wheels, linear rail maintenance, and print speed/acceleration tuning for layer alignment.</p>
       </a>
     </div>
@@ -527,7 +559,18 @@
     </div>
   </section>
 
-  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<footer class="border-t border-white/10 bg-navy-950 mt-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="md:col-span-1">
@@ -543,13 +586,13 @@
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
-            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
-            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
             <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>

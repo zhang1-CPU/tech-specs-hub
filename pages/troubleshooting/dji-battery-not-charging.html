@@ -8,9 +8,9 @@
   <meta name="theme-color" content="#0a1628">
   <style>html,body{background-color:#0a1628;color:#ffffff;margin:0;padding:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}a{color:#22d3ee;text-decoration:none}code,pre{font-family:ui-monospace,monospace}</style>
 
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="preconnect" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link >
   <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
@@ -35,25 +35,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950:'#0a1628', 900:'#0f1d32', 800:'#162544', 700:'#1e3259' },
-            electric: { 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2' }
-          },
-          fontFamily: {
-            display: ['Space Grotesk','system-ui','sans-serif'],
-            mono: ['JetBrains Mono','monospace']
-          }
-        }
-      }
-    }
-  </script>
+  
+  
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.445.0/dist/umd/lucide.js" defer></script>
   <link rel="stylesheet" href="../../assets/css/main.css">
 
   <script type="application/ld+json">
@@ -89,6 +74,52 @@
   }
   </script>
 
+
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://powerspecshub.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Error Code Database",
+      "item": "https://powerspecshub.com/pages/error-code-db.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Drone Battery Not Charging"
+    }
+  ]
+}</script>
+  <!-- GA4 Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEQ0R6DSNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MEQ0R6DSNQ', {
+      'send_page_view': true,
+      'storage': 'granted',
+      'client_storage': 'granted'
+    });
+  </script>
 </head>
 <body class="bg-navy-950 text-white min-h-screen font-display">
 
@@ -110,18 +141,18 @@
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Device Categories</p>
               <a href="../specs/outdoor-power.html"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Outdoor Power Stations</a>
-              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid &amp; EV Batteries</a>
-              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones &amp; UAV</a>
+              <a href="../specs/hybrid-cars.html"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Hybrid & EV Batteries</a>
+              <a href="../specs/drones.html"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Drones & UAV</a>
               <a href="../specs/smart-home.html"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Smart Home Devices</a>
-              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike &amp; Micromobility</a>
+              <a href="../specs/ebike-micromobility.html"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>E-Bike & Micromobility</a>
               <a href="../specs/3d-printers.html"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>3D Printers</a>
-              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation &amp; Marine</a>
+              <a href="../specs/navigation.html"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee;flex-shrink:0"></i>Navigation & Marine</a>
             </div>
           </div>
 
           <div class="nav-dropdown-trigger">
             <button class="flex items-center gap-1.5 px-3 py-2 text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">
-              Tools &amp; Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
+              Tools & Data <i data-lucide="chevron-down" style="width:0.875rem;height:0.875rem"></i>
             </button>
             <div class="nav-dropdown">
               <p class="nav-dropdown-section-label">Data Resources</p>
@@ -150,14 +181,14 @@
       <div class="max-w-7xl mx-auto px-4 py-3 space-y-1 text-sm">
         <p class="nav-dropdown-section-label">Categories</p>
         <a href="../specs/outdoor-power.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="battery-charging" style="width:1rem;height:1rem;color:#22d3ee"></i>Outdoor Power Stations</a>
-        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid &amp; EV Batteries</a>
-        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones &amp; UAV</a>
+        <a href="../specs/hybrid-cars.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="car" style="width:1rem;height:1rem;color:#22d3ee"></i>Hybrid & EV Batteries</a>
+        <a href="../specs/drones.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="plane" style="width:1rem;height:1rem;color:#22d3ee"></i>Drones & UAV</a>
         <a href="../specs/smart-home.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="home" style="width:1rem;height:1rem;color:#22d3ee"></i>Smart Home Devices</a>
-        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike &amp; Micromobility</a>
+        <a href="../specs/ebike-micromobility.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="bike" style="width:1rem;height:1rem;color:#22d3ee"></i>E-Bike & Micromobility</a>
         <a href="../specs/3d-printers.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="box" style="width:1rem;height:1rem;color:#22d3ee"></i>3D Printers</a>
-        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation &amp; Marine</a>
+        <a href="../specs/navigation.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="compass" style="width:1rem;height:1rem;color:#22d3ee"></i>Navigation & Marine</a>
         <hr class="border-white/10 my-2">
-        <p class="nav-dropdown-section-label">Tools &amp; Data</p>
+        <p class="nav-dropdown-section-label">Tools & Data</p>
         <a href="../error-code-db.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="alert-circle" style="width:1rem;height:1rem;color:#f87171"></i>Error Code Database</a>
         <a href="../master-specs.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="table-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Master Specs Comparison</a>
         <a href="../brand-index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-gray-300 hover:text-white transition-all"><i data-lucide="building-2" style="width:1rem;height:1rem;color:#22d3ee"></i>Brand Index A&ndash;Z</a>
@@ -202,8 +233,9 @@
       </div>
 
       <h1 class="font-bold text-4xl md:text-5xl mb-4 leading-tight">
-        DJI Battery Not Charging &mdash; <span class="gradient-text">Deep Discharge Recovery, Health &amp; Balancing</span>
+        DJI Battery Not Charging — <span class="gradient-text">Deep Discharge Recovery, Health & Balancing</span>
       </h1>
+<div class="flex items-center gap-2 text-xs text-gray-500 mb-4"><i data-lucide="calendar" style="width:0.75rem;height:0.75rem"></i><span>Last Updated: July 14, 2026</span></div>
 
       <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-3xl">
         "Battery Not Charging" and "Battery Error" are among the most frustrating DJI drone problems, especially when you have a flight planned. DJI intelligent flight batteries have built-in protection circuits that can put the battery into sleep mode or hibernation to prevent damage from deep discharge. Most charging issues are not dead batteries — they're batteries in protection mode that need a wake-up procedure, dirty contacts, or a firmware mismatch.
@@ -242,14 +274,14 @@
             When a battery is deeply discharged (voltage drops below a safe threshold), the BMS puts it into "sleep mode" or "hibernation" to prevent further discharge that could permanently damage the cells. The battery will refuse to charge normally until it's woken up. Similarly, if the BMS detects an imbalance between cells, an over-temperature condition, or a communication error, it will show a battery error and may prevent charging or flight.
           </p>
           <ul class="space-y-1 pl-1 text-gray-300">
-            <li><span class="text-white font-semibold">&bull; Deep discharge protection is the #1 cause of "not charging" &mdash; battery is asleep, not dead.</span></li>
+            <li><span class="text-white font-semibold">&bull; Deep discharge protection is the #1 cause of "not charging" — battery is asleep, not dead.</span></li>
             <li class="text-white font-semibold">&bull; Dirty or corroded charge contacts prevent communication between charger and BMS.</li>
-            <li class="text-white font-semibold">&bull; Battery firmware must match drone firmware &mdash; mismatches cause errors.</li>
-            <li class="text-white font-semibold">&bull; LiPo cells degrade over time &mdash; expect reduced capacity after 200-300 charge cycles.</li>
+            <li class="text-white font-semibold">&bull; Battery firmware must match drone firmware — mismatches cause errors.</li>
+            <li class="text-white font-semibold">&bull; LiPo cells degrade over time — expect reduced capacity after 200-300 charge cycles.</li>
           </ul>
         </div>
         <div class="bg-navy-900/80 border border-white/10 rounded-xl p-5">
-          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Before You Troubleshoot &mdash; Quick Checks</h3>
+          <h3 class="font-semibold text-sm uppercase tracking-wide text-gray-400 mb-3">Before You Troubleshoot — Quick Checks</h3>
           <ul class="space-y-2 text-sm text-gray-200">
             <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></i>Charger is plugged into a working outlet?</li>
             <li class="flex items-start gap-2"><i data-lucide="check" style="width:1rem;height:1rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem"></li>
@@ -268,7 +300,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Tools &amp; Materials You'll Need</h2>
+    <h2 class="font-bold text-3xl mb-5">Tools & Materials You'll Need</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="glass-card p-5">
         <div class="flex items-center gap-2 mb-2 text-electric-400"><i data-lucide="brush" style="width:1rem;height:1rem"></i><h3 class="font-semibold">Cleaning Supplies</h3></div>
@@ -305,7 +337,7 @@
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="font-bold text-3xl mb-5">Battery Charging Problems &mdash; Step-by-Step Fixes</h2>
+    <h2 class="font-bold text-3xl mb-5">Battery Charging Problems — Step-by-Step Fixes</h2>
 
     <div class="space-y-4">
 
@@ -313,7 +345,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center font-mono font-bold text-green-400">A</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Battery Won't Charge At All &mdash; Deep Discharge Recovery</h3>
+            <h3 class="font-bold text-xl mb-2">Battery Won't Charge At All — Deep Discharge Recovery</h3>
             <p class="text-gray-300 leading-relaxed mb-3">The most common scenario: the battery was stored for too long and self-discharged below the safe minimum voltage. The BMS puts the battery into sleep mode to protect the cells from further discharge. In this state, the battery shows no lights when you press the power button, and the charger does nothing when you plug it in. The good news: about 70% of these batteries can be recovered.</p>
 
             <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Step-by-Step Recovery Procedure</h4>
@@ -360,7 +392,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">C</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Battery Firmware Update &mdash; Fixes Communication Errors</h3>
+            <h3 class="font-bold text-xl mb-2">Battery Firmware Update — Fixes Communication Errors</h3>
             <p class="text-gray-300 leading-relaxed mb-3">"Battery Error" or "Battery Communication Error" messages that appear in the DJI app are sometimes caused by outdated battery firmware. The battery has its own firmware that must be compatible with the drone's firmware. When you update the drone's firmware, the battery firmware should update automatically — but sometimes it doesn't, resulting in communication errors.</p>
 
             <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Battery Firmware Update Procedure</h4>
@@ -386,10 +418,10 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center font-mono font-bold text-yellow-400">D</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Cell Balancing &mdash; Fixing "Battery Cell Imbalance" Errors</h3>
+            <h3 class="font-bold text-xl mb-2">Cell Balancing — Fixing "Battery Cell Imbalance" Errors</h3>
             <p class="text-gray-300 leading-relaxed mb-3">DJI intelligent batteries use multiple LiPo cells wired in series (3S = 3 cells, 4S = 4 cells). For proper performance, all cells must have roughly the same voltage. If one cell is significantly higher or lower than the others, the BMS will flag a "Cell Imbalance" error and may prevent flight or charging. Minor imbalances are normal and can be fixed with a balance charge.</p>
 
-            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Checking &amp; Fixing Cell Imbalance</h4>
+            <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Checking & Fixing Cell Imbalance</h4>
             <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
               <li><strong>Check cell voltages:</strong> In the DJI Fly app, go to Settings &rarr; Battery &rarr; Advanced &rarr; Battery Details. You'll see the voltage of each individual cell. They should all be within about 0.05V of each other. A difference of more than 0.1V is problematic.</li>
               <li><strong>Basic balancing (DJI charger):</strong> Simply leaving the battery on the charger after it reaches 100% can help. DJI chargers perform balance charging — they continue to top up lower cells even after the battery shows full. Leave the battery on charge for at least 1-2 hours after the "full" indicator comes on.</li>
@@ -415,7 +447,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-orange-500/20 border border-orange-500/40 flex items-center justify-center font-mono font-bold text-orange-400">E</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">Battery Health Check in DJI App &mdash; Assessing Condition</h3>
+            <h3 class="font-bold text-xl mb-2">Battery Health Check in DJI App — Assessing Condition</h3>
             <p class="text-gray-300 leading-relaxed mb-3">The DJI Fly and DJI Go 4 apps include a battery health feature that shows the overall condition of your intelligent battery. This is your best tool for deciding whether a battery is still safe to use or should be retired. The app reports charge cycles, overall health percentage, and sometimes individual cell status.</p>
 
             <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">How to Check Battery Health</h4>
@@ -445,7 +477,7 @@
         <div class="flex items-start gap-4">
           <div class="step-number w-10 h-10 flex-shrink-0 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-red-400">F</div>
           <div class="flex-1">
-            <h3 class="font-bold text-xl mb-2">When to Retire a Battery &mdash; End-of-Life Signs</h3>
+            <h3 class="font-bold text-xl mb-2">When to Retire a Battery — End-of-Life Signs</h3>
             <p class="text-gray-300 leading-relaxed mb-3">LiPo batteries don't last forever. DJI intelligent batteries are designed for approximately 200 charge cycles before they drop below 80% of their original capacity. Beyond that point, performance drops and safety risks increase. Knowing when to retire a battery is critical for flight safety — a battery failure mid-flight causes an immediate crash.</p>
 
             <h4 class="font-semibold text-white mt-4 mb-2 uppercase tracking-wide text-sm">Retire the Battery If Any of These Are True</h4>
@@ -583,7 +615,18 @@
     </div>
   </section>
 
-  <footer class="border-t border-white/10 bg-navy-950 mt-8">
+    <!-- REPORT ERROR SECTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center text-sm text-gray-500">
+      <a href="../contact.html" class="inline-flex items-center gap-1.5 text-electric-400 hover:text-electric-300 transition-colors">
+        <i data-lucide="alert-circle" style="width:0.75rem;height:0.75rem"></i>
+        Report an error or suggest an update
+      </a>
+      <span class="mx-2">|</span>
+      <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">Editorial standards</a>
+    </div>
+  </section>
+<footer class="border-t border-white/10 bg-navy-950 mt-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="md:col-span-1">
@@ -599,13 +642,13 @@
           <h4 class="font-semibold text-white mb-3 text-sm">Specs by Category</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../specs/outdoor-power.html" class="text-gray-400 hover:text-electric-400">Outdoor Power Stations</a></li>
-            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid &amp; EV Batteries</a></li>
-            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones &amp; UAV</a></li>
+            <li><a href="../specs/hybrid-cars.html" class="text-gray-400 hover:text-electric-400">Hybrid & EV Batteries</a></li>
+            <li><a href="../specs/drones.html" class="text-gray-400 hover:text-electric-400">Drones & UAV</a></li>
             <li><a href="../specs/smart-home.html" class="text-gray-400 hover:text-electric-400">Smart Home Devices</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-3 text-sm">Tools &amp; Data</h4>
+          <h4 class="font-semibold text-white mb-3 text-sm">Tools & Data</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="../error-code-db.html" class="text-gray-400 hover:text-electric-400">Error Code Database</a></li>
             <li><a href="../master-specs.html" class="text-gray-400 hover:text-electric-400">Master Specs Comparison</a></li>
